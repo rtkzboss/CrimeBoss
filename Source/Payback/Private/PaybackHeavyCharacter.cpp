@@ -19,11 +19,11 @@ APaybackHeavyCharacter::APaybackHeavyCharacter(const FObjectInitializer& ObjectI
     this->ShockChargeMeshComponentAttachBone = TEXT("neck_01");
     this->m_ParticleComponent = NULL;
     this->PSObject = NULL;
-    this->WeakSpotCapsule->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
-    this->ShockChargeMeshComponent1->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
-    this->ShockChargeMeshComponent2->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
-    this->ShockChargeMeshComponent3->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
-    this->ShockChargeMeshComponent4->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
+    this->WeakSpotCapsule->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    this->ShockChargeMeshComponent1->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    this->ShockChargeMeshComponent2->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    this->ShockChargeMeshComponent3->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    this->ShockChargeMeshComponent4->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
 }
 
 void APaybackHeavyCharacter::OnWeakSpotCompromised(const UPrimitiveComponent* inWeakSpotComponent, const FIGS_HitInfo& inLastHitInfo) {

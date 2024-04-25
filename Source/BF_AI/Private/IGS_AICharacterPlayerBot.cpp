@@ -26,8 +26,8 @@ ADEPRECATED_IGS_AICharacterPlayerBot::ADEPRECATED_IGS_AICharacterPlayerBot(const
     const FProperty* p_Mesh_Parent = GetClass()->FindPropertyByName("Mesh");
     this->LootBagInteractiveComponent = CreateDefaultSubobject<UIGS_LootBagInteractiveComponent>(TEXT("LootBagInteractiveComponent"));
     this->NetworkCharacter = CreateDefaultSubobject<UIGS_NetworkComponentCharacter>(TEXT("NetworkComponentCharacter"));
-    this->BotSuppressionHandlerComponent->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
-    this->LootBagInteractiveComponent->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
+    this->BotSuppressionHandlerComponent->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    this->LootBagInteractiveComponent->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
 }
 
 

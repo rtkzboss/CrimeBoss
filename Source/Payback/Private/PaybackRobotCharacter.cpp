@@ -12,7 +12,7 @@ APaybackRobotCharacter::APaybackRobotCharacter(const FObjectInitializer& ObjectI
     this->ForcedOverloadTime = 0.00f;
     this->OverloadOuterDamageRange = 300.00f;
     this->m_WeakSpotComponent = CreateDefaultSubobject<UIGS_WeakSpotComponent>(TEXT("WeakSpot Component"));
-    this->WeakSpotCollision->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
+    this->WeakSpotCollision->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
 }
 
 void APaybackRobotCharacter::StartOverloadSequenceDelayed(AController* inInstigator, const float inDelay) {

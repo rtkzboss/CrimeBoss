@@ -26,8 +26,8 @@ APaybackAICharacter::APaybackAICharacter(const FObjectInitializer& ObjectInitial
     this->StartWithWeapon = false;
     this->ShootableHelmetBoneName = TEXT("head");
     this->InteractionStealthKill = CreateDefaultSubobject<UIGS_InteractionStealthKillComponent>(TEXT("Interaction Stealth Kill"));
-    this->AimAssistCapsule->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
-    this->ShootableHelmetCollision->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
+    this->AimAssistCapsule->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    this->ShootableHelmetCollision->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
     this->InteractionStealthKill->SetupAttachment(RootComponent);
 }
 

@@ -33,13 +33,13 @@ AIGS_LaserTrap::AIGS_LaserTrap(const FObjectInitializer& ObjectInitializer) : Su
     this->EnableFromStart = true;
     this->mR_bIsEnabled = false;
     this->mR_bIsBeamEnabled = false;
-    this->BeamEmitter->SetupAttachment(RootComponent);
     this->LaserMesh->SetupAttachment(RootComponent);
     this->StatusLight->SetupAttachment(RootComponent);
     this->AkAudioComponent->SetupAttachment(RootComponent);
     this->BeamOrigin->SetupAttachment(RootComponent);
     this->BeamDetectionBox->SetupAttachment(BeamOrigin);
     this->BeamDirectionArrow->SetupAttachment(RootComponent);
+    this->BeamEmitter->SetupAttachment(RootComponent);
 }
 
 void AIGS_LaserTrap::SetEnabled(bool inState, bool inIgnoreChargeTime) {
