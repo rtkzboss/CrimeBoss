@@ -10,9 +10,8 @@ AIGS_AmmoBoxBase::AIGS_AmmoBoxBase(const FObjectInitializer& ObjectInitializer) 
     (*this).InteractiveComponent = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Pickup Interaction"));
     (*this).InitialBoxID = EIGS_AmmoBoxItem::BaseLarge;
     (*this).mR_BoxID = EIGS_AmmoBoxItem::BaseLarge;
-    (*this).PickupMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RootComp"));
-    (*this).SceneRoot = (USceneComponent*)PickupMeshComp;
-    (*this).RootComponent = (USceneComponent*)PickupMeshComp;
+    (*this).PickupMeshComp = (UPrimitiveComponent*)RootComponent;
+    (*this).SceneRoot = (USceneComponent*)RootComponent;
     (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
 }
 

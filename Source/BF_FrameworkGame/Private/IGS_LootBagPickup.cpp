@@ -6,11 +6,10 @@
 
 AIGS_LootBagPickup::AIGS_LootBagPickup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).PlacedInLevelItemType = EIGS_ItemType::Item_UNKNOWN;
-    (*this).SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("RootComp"));
+    (*this).SkeletalMesh = (USkeletalMeshComponent*)RootComponent;
     (*this).IsPickableByAI = true;
     (*this).PickupMeshComp = (UPrimitiveComponent*)SkeletalMesh;
     (*this).SceneRoot = (USceneComponent*)SkeletalMesh;
-    (*this).RootComponent = (USceneComponent*)SkeletalMesh;
 }
 
 

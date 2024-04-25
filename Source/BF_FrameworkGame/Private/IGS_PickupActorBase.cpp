@@ -9,12 +9,10 @@ AIGS_PickupActorBase::AIGS_PickupActorBase(const FObjectInitializer& ObjectIniti
     (*this).bRegistersToPickupsManager = true;
     (*this).SquaredVelocityForInAirNeeded = 4.000000000e+03f;
     (*this).DisableInteractionOnThrowTime = 5.000000000e-01f;
-    (*this).SceneRoot = nullptr;
     (*this).PrimaryActorTick.bCanEverTick = true;
     (*this).PrimaryActorTick.bStartWithTickEnabled = false;
     (*this).bReplicates = true;
     (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
-    (*this).RootComponent = nullptr;
 }
 
 void AIGS_PickupActorBase::WakePhysics(bool inThrownPhysics) {

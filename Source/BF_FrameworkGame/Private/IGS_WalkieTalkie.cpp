@@ -7,9 +7,8 @@
 
 AIGS_WalkieTalkie::AIGS_WalkieTalkie(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).InteractiveComponent = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Pickup Interaction"));
-    (*this).PickupMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RootComp"));
-    (*this).SceneRoot = (USceneComponent*)PickupMeshComp;
-    (*this).RootComponent = (USceneComponent*)PickupMeshComp;
+    (*this).PickupMeshComp = (UStaticMeshComponent*)RootComponent;
+    (*this).SceneRoot = (USceneComponent*)RootComponent;
     (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
 }
 

@@ -13,7 +13,7 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UUserWidget> ItemWidgetTemplate;
     
-    UIGS_MenuTileView();
+    UIGS_MenuTileView(const FObjectInitializer& ObjectInitializer);
 
 };
 
