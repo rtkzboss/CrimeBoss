@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 0,
+	"VersionName": "1.06",
+	"FriendlyName": "Widget Thumbs",
+	"Description": "Content Browser thumbnails for Widget Blueprints",
+	"Category": "Editor",
+	"CreatedBy": "Randy Croucher",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/c81cb24afdbb4ae5bddc3a4f8ac4eecd",
+	"SupportURL": "",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true
+}

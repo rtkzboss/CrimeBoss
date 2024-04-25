@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.2",
+	"FriendlyName": "Not Yet Content Browser",
+	"Description": "Content Browser filter for unused assets",
+	"Category": "Editor",
+	"CreatedBy": "Not Yet",
+	"CreatedByURL": "https://www.notyet.eu/",
+	"DocsURL": "https://gitlab.com/NotYetGames/NotYetContentBrowser/wikis/home",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fb71ac527bb644f4b0a125b01b96368d",
+	"SupportURL": "https://gitlab.com/NotYetGames/NotYetContentBrowser/wikis/home",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true
+}

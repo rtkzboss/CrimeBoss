@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 10,
+	"VersionName": "1.81",
+	"FriendlyName": "MeshBake",
+	"Description": "",
+	"Category": "Editor",
+	"CreatedBy": "4h Interactive",
+	"CreatedByURL": "https://4hinteractive.com",
+	"DocsURL": "https://4hinteractive.com/MeshBake_Documentation",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/278558c1c26643d9b820f30cd8004a12",
+	"SupportURL": "https://4hinteractive.com/MeshBake_Documentation",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true
+}

@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.4.8",
+	"FriendlyName": "Mutable",
+	"Description": "Mutable adds the tools and runtime to create customizable objects for your games.",
+	"Category": "CustomizableObjects",
+	"CreatedBy": "Anticto Estudi Binari, SL",
+	"CreatedByURL": "https://anticto.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CustomizableObject",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		}
+	]
+}

@@ -1,0 +1,48 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EMETA_LogCategory.generated.h"
+
+UENUM(BlueprintType)
+enum class EMETA_LogCategory : uint8 {
+    None,
+    Graph,
+    Heister,
+    TurfWar,
+    Stash,
+    Time,
+    RandEvent,
+    MetaPerks,
+    MarketLootEvent,
+    MarketWeaponEvent,
+    MarketEquipmentEvent,
+    MarketHireArmyEvent,
+    BossLevel,
+    WarehouseAttack,
+    Cash,
+    NameGenerator,
+    Blackmarket,
+    RandomCharacterPool,
+    RevengePool,
+    HeisterPromotion,
+    PlotlineSelection,
+    Heat,
+    PoliceInvestigation,
+    Detective,
+    MoneyMakingOpportunities,
+    PawnShop,
+    Statistics,
+    UI,
+    Unlock_Reward,
+    Missions,
+    Meta2FPS,
+    FPS2Meta,
+    Ambush,
+    Gangs,
+    JobManager,
+    Save,
+    Equipment,
+    Achievement,
+    GoalManager,
+    WeakenMissions,
+};
+

@@ -1,0 +1,25 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1",
+	"FriendlyName": "Path Follow",
+	"Description": "Create almost any kind of animation directly in U4 editor.",
+	"Category": "Gameplay",
+	"CreatedBy": "Jiri Dockal (pathfollow@jiridockal.com)",
+	"CreatedByURL": "http://jiridockal.com/",
+	"DocsURL": "goo.gl/JroCCa",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7c19d00ad42a4b67972eea383dedb7f3",
+	"SupportURL": "",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "PathFollow",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit"
+		}
+	]
+}

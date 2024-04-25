@@ -1,0 +1,1167 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{256D7BCB-4C1F-576B-542F-B297527C3549}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Payback",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"AkAudio",
+				"PhysicsCore",
+				"AdvancedSessions",
+				"CinematicCamera",
+				"BF_GUIBase",
+				"InputCore",
+				"AIModule",
+				"ApplicationCore",
+				"GameplayTags",
+				"Common_Utils",
+				"Common_Data",
+				"BF_AI",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"BF_FrameworkGame",
+				"BF_LevelGenerator",
+				"BF_Loading",
+				"PaybackDefinitions",
+				"BF_Voiceover",
+				"Common_Save",
+				"BF_AudioBase",
+				"BF_Audio",
+				"BF_Network",
+				"BF_Pool",
+				"BF_Rendering",
+				"BF_Analytics",
+				"BF_Settings",
+				"UMG",
+				"Slate",
+				"NavigationSystem",
+				"CustomizableObject",
+				"EngineSettings"
+			]
+		},
+		{
+			"Name": "PaybackDefinitions",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"InputCore",
+				"SlateCore",
+				"Slate",
+				"GameplayTags",
+				"AkAudio",
+				"GenericGraphRuntime"
+			]
+		},
+		{
+			"Name": "Common_Data",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"CustomizableObjectPopulation",
+				"CustomizableObject",
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"InputCore",
+				"GameplayTags",
+				"PhysicsCore",
+				"AkAudio",
+				"Common_Utils",
+				"BF_Debug",
+				"BF_Pool",
+				"PaybackDefinitions",
+				"SlateCore",
+				"Slate",
+				"UMG"
+			]
+		},
+		{
+			"Name": "Common_Utils",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"Slate",
+				"SlateCore",
+				"UMG",
+				"AkAudio",
+				"PaybackDefinitions",
+				"BF_Debug",
+				"GameplayTags",
+				"EOSSDK",
+				"JsonUtilities",
+				"Json"
+			]
+		},
+		{
+			"Name": "BF_Loading",
+			"Type": "Runtime",
+			"LoadingPhase": "PreLoadingScreen",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"RenderCore",
+				"Slate",
+				"SlateCore",
+				"UMG",
+				"MoviePlayer",
+				"DeveloperSettings",
+				"GameplayTags",
+				"Common_Utils",
+				"AkAudio",
+				"BF_Input",
+				"BF_GUIBase",
+				"PreLoadScreen"
+			]
+		},
+		{
+			"Name": "BF_LevelGenerator",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"GameplayTags",
+				"PaybackDefinitions",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"BF_Covers",
+				"BF_FrameworkGame",
+				"BF_Rendering",
+				"AIModule",
+				"GameplayTasks",
+				"NavigationSystem",
+				"Navmesh",
+				"CoverGenerator",
+				"LevelSequence"
+			]
+		},
+		{
+			"Name": "BF_Analytics",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"Analytics",
+				"Sockets",
+				"HTTP",
+				"Json"
+			]
+		},
+		{
+			"Name": "BF_Animations",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"GameplayTasks",
+				"AnimGraphRuntime",
+				"PhysicsCore",
+				"GameplayTags",
+				"Common_Utils",
+				"Common_Data",
+				"BF_Pool",
+				"BF_FrameworkBase",
+				"BF_FrameworkGame",
+				"BF_Debug",
+				"BF_AI",
+				"BF_Network",
+				"BF_Voiceover",
+				"PaybackDefinitions"
+			]
+		},
+		{
+			"Name": "BF_GUI",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PhysicsCore",
+				"InteractiveToolsFramework",
+				"GameplayTags",
+				"UMG",
+				"Slate",
+				"SlateCore",
+				"InputCore",
+				"AkAudio",
+				"EngineSettings",
+				"Common_Utils",
+				"Common_Data",
+				"BF_FrameworkBase",
+				"BF_FrameworkGame",
+				"BF_Debug",
+				"BF_Settings",
+				"PaybackDefinitions",
+				"Payback",
+				"BF_Input",
+				"BF_GUIBase",
+				"KantanChartsDatasource",
+				"KantanChartsUMG",
+				"KantanCHartsSlate",
+				"BF_Voiceover",
+				"BF_AI",
+				"BF_Audio",
+				"DLSSBlueprint",
+				"XeSSBlueprint"
+			]
+		},
+		{
+			"Name": "BF_Props",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PaybackDefinitions",
+				"BF_FrameworkBase",
+				"AkAudio",
+				"BF_FrameworkGame",
+				"BF_LevelGenerator"
+			]
+		},
+		{
+			"Name": "Common_Save",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"GameplayTags",
+				"AIModule",
+				"SlateCore",
+				"Slate",
+				"Json",
+				"JsonUtilities",
+				"PaybackDefinitions",
+				"Common_Data",
+				"Common_Utils"
+			]
+		},
+		{
+			"Name": "BF_Settings",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"InputCore",
+				"RHI",
+				"AkAudio",
+				"SlateCore",
+				"Slate",
+				"ApplicationCore",
+				"BF_Input",
+				"BF_Debug",
+				"PaybackDefinitions",
+				"DLSSBlueprint",
+				"XeSSBlueprint"
+			]
+		},
+		{
+			"Name": "BF_Rendering",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"RHI",
+				"BF_FrameworkBase",
+				"BF_Settings"
+			]
+		},
+		{
+			"Name": "BF_Pool",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"BF_Debug",
+				"Engine",
+				"AkAudio",
+				"PaybackDefinitions",
+				"GameplayTags",
+				"Common_Utils"
+			]
+		},
+		{
+			"Name": "BF_Network",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"AkAudio",
+				"PhysicsCore",
+				"GameplayTags",
+				"Common_Data",
+				"PaybackDefinitions",
+				"Common_Utils",
+				"Common_Data",
+				"BF_FrameworkBase",
+				"BF_FrameworkGame",
+				"BF_Impacts",
+				"BF_Pool",
+				"BF_Voiceover",
+				"BF_Debug",
+				"BF_Audio",
+				"BF_Loading",
+				"BF_Settings"
+			]
+		},
+		{
+			"Name": "BF_Covers",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"CoverGenerator",
+				"BF_Debug",
+				"PaybackDefinitions",
+				"AIModule",
+				"NavigationSystem",
+				"NavMesh",
+				"Common_Utils"
+			]
+		},
+		{
+			"Name": "BF_Input",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"Slate",
+				"SlateCore",
+				"InputCore",
+				"UMG",
+				"DeveloperSettings",
+				"Common_Utils",
+				"KiBLII",
+				"BF_Debug"
+			]
+		},
+		{
+			"Name": "BF_FrameworkBase",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"AIModule",
+				"RenderCore",
+				"NetCore",
+				"PhysicsCore",
+				"Landscape",
+				"SlateCore",
+				"AkAudio",
+				"PathFollow",
+				"AdvancedSessions",
+				"Common_Data",
+				"Common_Utils",
+				"PaybackDefinitions",
+				"BF_Settings",
+				"BF_Debug",
+				"Common_Save",
+				"BF_Pool",
+				"BF_Loading",
+				"GameplayTags",
+				"GameplayTasks",
+				"DeveloperSettings",
+				"UMG",
+				"SkinnedDecalComponent",
+				"HeatMapsRuntime",
+				"BF_Loading",
+				"NavigationSystem",
+				"CustomizableObject",
+				"EngineSettings",
+				"Steamworks"
+			]
+		},
+		{
+			"Name": "BF_Debug",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PhysicsCore",
+				"UMG",
+				"Slate",
+				"SlateCore",
+				"AkAudio",
+				"PaybackDefinitions",
+				"CoverGenerator"
+			]
+		},
+		{
+			"Name": "BF_FrameworkGame",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PhysicsCore",
+				"RenderCore",
+				"InputCore",
+				"PaybackDefinitions",
+				"Common_Utils",
+				"Common_Data",
+				"CoverGenerator",
+				"AkAudio",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"BF_Input",
+				"BF_Settings",
+				"Common_Save",
+				"BF_Loading",
+				"BF_Navigation",
+				"BF_Covers",
+				"BF_Rendering",
+				"BF_Impacts",
+				"BF_Pool",
+				"BF_AudioBase",
+				"BF_Analytics",
+				"CustomizableObject",
+				"AIModule",
+				"Landscape",
+				"NavMesh",
+				"NavigationSystem",
+				"RHI",
+				"PathFollow",
+				"GameplayTags",
+				"GameplayTasks",
+				"SkinnedDecalComponent",
+				"DeveloperSettings",
+				"AdvancedSessions",
+				"UMG"
+			]
+		},
+		{
+			"Name": "BF_Navigation",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"NavMesh",
+				"NavigationSystem",
+				"AIModule",
+				"RHI",
+				"RenderCore"
+			]
+		},
+		{
+			"Name": "BF_AI",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PhysicsCore",
+				"PaybackDefinitions",
+				"Common_Utils",
+				"Common_Data",
+				"Common_Save",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"BF_FrameworkGame",
+				"BF_Voiceover",
+				"BF_Navigation",
+				"CoverGenerator",
+				"BF_Covers",
+				"BF_LevelGenerator",
+				"BF_Network",
+				"BF_Pool",
+				"AIModule",
+				"NavMesh",
+				"NavigationSystem",
+				"GameplayTasks",
+				"RHI",
+				"GameplayTags",
+				"RenderCore",
+				"HeatMapsRuntime",
+				"UMG",
+				"PathFollow",
+				"InputCore",
+				"AkAudio"
+			]
+		},
+		{
+			"Name": "BF_Voiceover",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"BF_Analytics",
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"InputCore",
+				"AkAudio",
+				"GameplayTags",
+				"CustomizableObject",
+				"CustomizableObjectPopulation",
+				"PaybackDefinitions",
+				"BF_FrameworkBase",
+				"BF_FrameworkGame",
+				"BF_Debug",
+				"Common_Data",
+				"Common_Utils",
+				"BF_AudioBase",
+				"BF_Loading",
+				"BF_Settings"
+			]
+		},
+		{
+			"Name": "BF_Impacts",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"AkAudio",
+				"Landscape",
+				"PhysicsCore",
+				"GameplayTags",
+				"PaybackDefinitions",
+				"Common_Utils",
+				"BF_FrameworkBase",
+				"BF_Pool",
+				"SkinnedDecalComponent"
+			]
+		},
+		{
+			"Name": "BF_Audio",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"AkAudio",
+				"PaybackDefinitions",
+				"Common_Utils",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"BF_Settings",
+				"BF_AudioBase",
+				"BF_FrameworkGame",
+				"BF_Loading",
+				"GameplayTags",
+				"EOSSDK",
+				"GameplayTags"
+			]
+		},
+		{
+			"Name": "BF_AudioBase",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"AkAudio",
+				"Slate",
+				"PaybackDefinitions",
+				"Common_utils",
+				"BF_FrameworkBase",
+				"BF_Debug",
+				"BF_Settings"
+			]
+		},
+		{
+			"Name": "BF_RideableVehicles",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PhysicsCore",
+				"UMG",
+				"Landscape",
+				"AkAudio",
+				"PaybackDefinitions",
+				"Common_Utils",
+				"BF_FrameworkGame",
+				"BF_FrameworkBase",
+				"BF_Pool",
+				"RenderCore"
+			]
+		},
+		{
+			"Name": "CrimeBossMeta",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"InputCore",
+				"SlateCore",
+				"Slate",
+				"UMG",
+				"Common_Save",
+				"Common_Data",
+				"Common_Utils",
+				"PaybackDefinitions",
+				"BF_GUI",
+				"BF_Voiceover",
+				"BF_FrameworkBase",
+				"BF_FrameworkGame",
+				"BF_Input",
+				"GenericGraphRuntime",
+				"Json",
+				"JsonUtilities",
+				"GameplayTags",
+				"RenderCore"
+			]
+		},
+		{
+			"Name": "BF_GUIBase",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"CoreUObject",
+				"Engine",
+				"PhysicsCore",
+				"InteractiveToolsFramework",
+				"GameplayTags",
+				"UMG",
+				"Slate",
+				"SlateCore",
+				"InputCore",
+				"Common_Utils",
+				"BF_Input"
+			]
+		},
+		{
+			"Name": "IGS_UIFramework",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "PS5AudioFeatures",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ConsoleEnhanced",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/86123c85a4474d609c5cef8a7fc5786b"
+		},
+		{
+			"Name": "ProductivityTools",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/8beef99c4399462189d66689e2b48475"
+		},
+		{
+			"Name": "GameplayAbilities",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemSteam",
+			"Enabled": true
+		},
+		{
+			"Name": "Niagara",
+			"Enabled": true
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		},
+		{
+			"Name": "CoverGenerator",
+			"Enabled": true
+		},
+		{
+			"Name": "Wwise",
+			"Enabled": true
+		},
+		{
+			"Name": "KantanCharts",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/89bd18db011b4bd19606db2e31020f13"
+		},
+		{
+			"Name": "ApexDestruction",
+			"Enabled": true
+		},
+		{
+			"Name": "AdvancedSessions",
+			"Enabled": true
+		},
+		{
+			"Name": "AdvancedSteamSessions",
+			"Enabled": true
+		},
+		{
+			"Name": "SteamVR",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"Linux",
+				"Mac"
+			]
+		},
+		{
+			"Name": "PythonScriptPlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "SmokeTests",
+			"Enabled": true
+		},
+		{
+			"Name": "PathFollow",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/7c19d00ad42a4b67972eea383dedb7f3"
+		},
+		{
+			"Name": "MagicLeapMedia",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Lumin"
+			]
+		},
+		{
+			"Name": "MagicLeap",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Lumin",
+				"Mac",
+				"Win64"
+			]
+		},
+		{
+			"Name": "MagicLeapPassableWorld",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Lumin",
+				"Mac",
+				"Win64"
+			]
+		},
+		{
+			"Name": "MLSDK",
+			"Enabled": false
+		},
+		{
+			"Name": "GameplayInsights",
+			"Enabled": true
+		},
+		{
+			"Name": "TraceSourceFilters",
+			"Enabled": true
+		},
+		{
+			"Name": "TraceDataFilters",
+			"Enabled": true
+		},
+		{
+			"Name": "ControlRig",
+			"Enabled": true
+		},
+		{
+			"Name": "MeshBake",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/278558c1c26643d9b820f30cd8004a12"
+		},
+		{
+			"Name": "AnimationBudgetAllocator",
+			"Enabled": true
+		},
+		{
+			"Name": "ChaosVehiclesPlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "Water",
+			"Enabled": true
+		},
+		{
+			"Name": "ElectronicNodes",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/5cb2a394d0c04e73891762be4cbd7216"
+		},
+		{
+			"Name": "MORT",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/f6a838d3c72b4d28b5635da50d3335e5"
+		},
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true
+		},
+		{
+			"Name": "ActorPalette",
+			"Enabled": true
+		},
+		{
+			"Name": "AssetSearch",
+			"Enabled": true
+		},
+		{
+			"Name": "EnhancedInput",
+			"Enabled": true
+		},
+		{
+			"Name": "ACLPlugin",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/993b51e29e9a48d0b3fb449645b82cb6"
+		},
+		{
+			"Name": "RigLogic",
+			"Enabled": true
+		},
+		{
+			"Name": "WidgetThumbs",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/c81cb24afdbb4ae5bddc3a4f8ac4eecd"
+		},
+		{
+			"Name": "UIParticleSystem",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher: //ue/marketplace/content/10b64fc937ac49edba22761bb0b9eaeb"
+		},
+		{
+			"Name": "BuilderToolkit",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/67adf46c87104e6e9b3dc1fbf75adf3a"
+		},
+		{
+			"Name": "LightExplorer",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/4dc7591f494343f1ae6cac5192bb1f62"
+		},
+		{
+			"Name": "MultiTool",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/252d5e4820694c15814112ca738aba1d"
+		},
+		{
+			"Name": "NotYetContentBrowser",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/fb71ac527bb644f4b0a125b01b96368d"
+		},
+		{
+			"Name": "CascadeToNiagaraConverter",
+			"Enabled": true
+		},
+		{
+			"Name": "Mutable",
+			"Enabled": true
+		},
+		{
+			"Name": "MutablePopulation",
+			"Enabled": true
+		},
+		{
+			"Name": "DLSS",
+			"Enabled": true,
+			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/nvidia-dlss"
+		},
+		{
+			"Name": "SlateInsights",
+			"Enabled": true
+		},
+		{
+			"Name": "HoudiniEngine",
+			"Enabled": true
+		},
+		{
+			"Name": "SkinnedDecalComponent",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/05b6b0f2f8f049aaa469a1da4e09275c"
+		},
+		{
+			"Name": "AssetsCleaner",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/3caab7c6e81f449296989122c043ae21"
+		},
+		{
+			"Name": "Reflex",
+			"Enabled": true,
+			"WhitelistPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "Prefabricator",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/39ccbbf668e84847890992df9922e355"
+		},
+		{
+			"Name": "AppleARKit",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"IOS",
+				"Win64",
+				"Mac"
+			]
+		},
+		{
+			"Name": "AppleARKitFaceSupport",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"IOS",
+				"Win64",
+				"Mac"
+			]
+		},
+		{
+			"Name": "BlueprintFileUtils",
+			"Enabled": true
+		},
+		{
+			"Name": "RMAFoliageTools",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/cd8704edc80c41dd9ff67a0d7cfb5515"
+		},
+		{
+			"Name": "VariantManager",
+			"Enabled": true
+		},
+		{
+			"Name": "GPULightmass",
+			"Enabled": true
+		},
+		{
+			"Name": "CommonUI",
+			"Enabled": true
+		},
+		{
+			"Name": "BinkMedia",
+			"Enabled": true
+		},
+		{
+			"Name": "VarDump",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/1e9d283c988a42409d66a6071b9d1e69"
+		},
+		{
+			"Name": "DebugFunctionLibrary",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/19bd81002c7643aeab6b002563cbe0dd"
+		},
+		{
+			"Name": "DataTableEditorUtilities",
+			"Enabled": true,
+			"MarketplaceURL": "https://unrealengineresources.com/plugins"
+		},
+		{
+			"Name": "EditorScriptingTools",
+			"Enabled": true,
+			"MarketplaceURL": "https://unrealengineresources.com/plugins"
+		},
+		{
+			"Name": "PowerIK",
+			"Enabled": true,
+			"MarketplaceURL": "https://www.unrealengine.com/marketplace/en-US/product/power-ik"
+		},
+		{
+			"Name": "HeatMaps",
+			"Enabled": true
+		},
+		{
+			"Name": "SignificanceManager",
+			"Enabled": true
+		},
+		{
+			"Name": "EOSShared",
+			"Enabled": true
+		},
+		{
+			"Name": "OnlineSubsystemEOS",
+			"Enabled": true
+		},
+		{
+			"Name": "EOSVoiceChat",
+			"Enabled": true
+		},
+		{
+			"Name": "SGXProducer",
+			"Enabled": true
+		},
+		{
+			"Name": "OculusVR",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"Android"
+			]
+		},
+		{
+			"Name": "OpenXREyeTracker",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"Linux",
+				"HoloLens",
+				"Android"
+			]
+		},
+		{
+			"Name": "OpenXRHandTracking",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"Linux",
+				"HoloLens",
+				"Android"
+			]
+		},
+		{
+			"Name": "OpenXR",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Win32",
+				"Win64",
+				"Linux",
+				"Android",
+				"HoloLens"
+			]
+		},
+		{
+			"Name": "AndroidDeviceProfileSelector",
+			"Enabled": false
+		},
+		{
+			"Name": "AndroidMedia",
+			"Enabled": false
+		},
+		{
+			"Name": "AndroidMoviePlayer",
+			"Enabled": false
+		},
+		{
+			"Name": "OnlineSubsystemGooglePlay",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"Android"
+			]
+		},
+		{
+			"Name": "AndroidPermission",
+			"Enabled": false
+		},
+		{
+			"Name": "GooglePAD",
+			"Enabled": false
+		},
+		{
+			"Name": "IOSDeviceProfileSelector",
+			"Enabled": false
+		},
+		{
+			"Name": "OnlineSubsystemIOS",
+			"Enabled": false,
+			"SupportedTargetPlatforms": [
+				"IOS",
+				"TVOS"
+			]
+		},
+		{
+			"Name": "InstanceTool",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/0283702886e8467383899c7b791c4b40"
+		},
+		{
+			"Name": "VolumeVis",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/fd043fb548f642ee8014d99bbb8c6d87"
+		},
+		{
+			"Name": "XeSS",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "FSR2",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "MovieRenderPipeline",
+			"Enabled": true
+		},
+		{
+			"Name": "AppleProResMedia",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
+		},
+		{
+			"Name": "KiBLII",
+			"Enabled": true,
+			"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/40187333591a4ad6babfbfbbe9d2ed16"
+		},
+		{
+			"Name": "WinDualShock",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Win64"
+			]
+		}
+	],
+	"TargetPlatforms": [
+		"PS5",
+		"WindowsNoEditor",
+		"XSX",
+		"GDK",
+		"PS4",
+		"Switch",
+		"WinGDK",
+		"XboxOne",
+		"XboxOneGDK"
+	]
+}
