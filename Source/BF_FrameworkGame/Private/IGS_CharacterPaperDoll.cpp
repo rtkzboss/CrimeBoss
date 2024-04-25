@@ -11,8 +11,8 @@ AIGS_CharacterPaperDoll::AIGS_CharacterPaperDoll(const FObjectInitializer& Objec
     this->RightHandAttachedActor = NULL;
     this->AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
     this->TeamSide = EIGS_TeamSideEnum::TS_Unknown;
-    this->BaseMesh->SetupAttachment(RootComponent);
     this->AkComponent->SetupAttachment(BaseMesh);
+    this->BaseMesh->SetupAttachment(RootComponent);
 }
 
 

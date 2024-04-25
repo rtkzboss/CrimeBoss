@@ -87,12 +87,12 @@ AIGS_PlayerCharacter::AIGS_PlayerCharacter(const FObjectInitializer& ObjectIniti
     this->OutOfBoundsAkState = NULL;
     this->PersonPrespectiveFPPAkSwitch = NULL;
     this->PersonPrespectiveTPPAkSwitch = NULL;
-    this->Camera->SetupAttachment(RootComponent);
     this->SuppressionHandlerComponent->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
     this->LootBagInteractiveComponent->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
     this->CarryableInteractiveComponent->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
     this->ReviveComponent->SetupAttachment(p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted>(this));
     this->SpringArmComponent->SetupAttachment(RootComponent);
+    this->Camera->SetupAttachment(RootComponent);
 }
 
 void AIGS_PlayerCharacter::Use(bool inIsHolding) {

@@ -42,9 +42,9 @@ AIGS_IntelligentGameCharacter::AIGS_IntelligentGameCharacter(const FObjectInitia
     this->PressureWatcherComponent = CreateDefaultSubobject<UIGS_CharacterPressureWatcherComponent>(TEXT("PressureWatcherComponent"));
     this->AimAssistTargetComponent = CreateDefaultSubobject<UIGS_AimAssistTargetComponent>(TEXT("AimAssistTargetComponent"));
     this->mR_NextRandomAnimationSeed = -1;
+    this->AimAtArrowComp->SetupAttachment(RootComponent);
     this->LookAtArrowComp->SetupAttachment(RootComponent);
     this->PawnDirArrowComp->SetupAttachment(RootComponent);
-    this->AimAtArrowComp->SetupAttachment(RootComponent);
 }
 
 void AIGS_IntelligentGameCharacter::ThrowAwayBag() const {

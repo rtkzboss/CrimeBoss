@@ -17,11 +17,11 @@ AIGS_WalkRope::AIGS_WalkRope(const FObjectInitializer& ObjectInitializer) : Supe
     this->EndText = CreateDefaultSubobject<UTextRenderComponent>(TEXT("EndText"));
     this->Player = NULL;
     this->OnRopeWalking = false;
-    this->StartText->SetupAttachment(StartTriggerBox);
-    this->EndText->SetupAttachment(EndTriggerBox);
     this->WalkSpline->SetupAttachment(RootComponent);
     this->StartTriggerBox->SetupAttachment(RootComponent);
     this->EndTriggerBox->SetupAttachment(RootComponent);
+    this->StartText->SetupAttachment(StartTriggerBox);
+    this->EndText->SetupAttachment(EndTriggerBox);
 }
 
 void AIGS_WalkRope::SetTargetLook_Implementation(FRotator inTargetLook) {

@@ -51,9 +51,6 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     this->PrimaryShooter = EIGS_WeaponAttackType::AT_UNKNOWN;
     this->Basher = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Basher"));
     this->VirtualSightSocketName = TEXT("VirtualSight");
-    this->MagazineModMesh->SetupAttachment(RootComponent);
-    this->SecondMagazineModMesh->SetupAttachment(RootComponent);
-    this->StockModMesh->SetupAttachment(RootComponent);
     this->LaserArrow->SetupAttachment(RootComponent);
     this->FlashSpotLight->SetupAttachment(RootComponent);
     this->FlashPointLight->SetupAttachment(FlashSpotLight);
@@ -69,6 +66,9 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     this->VisibilityModMesh->SetupAttachment(RootComponent);
     this->BarrelModMesh->SetupAttachment(RootComponent);
     this->GripModMesh->SetupAttachment(RootComponent);
+    this->MagazineModMesh->SetupAttachment(RootComponent);
+    this->SecondMagazineModMesh->SetupAttachment(RootComponent);
+    this->StockModMesh->SetupAttachment(RootComponent);
 }
 
 void AIGS_WeaponBase::StopAttack() {
