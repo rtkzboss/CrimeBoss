@@ -98,15 +98,19 @@ void UIGS_WidgetFocusableSpinBox::SetStepSizeValue(int32 InValue) {
 }
 
 void UIGS_WidgetFocusableSpinBox::SetMinValue(int32 InValue) {
+    MinValue = InValue;
 }
 
 void UIGS_WidgetFocusableSpinBox::SetMaxValue(int32 InValue) {
+    MaxValue = InValue;
 }
 
 void UIGS_WidgetFocusableSpinBox::SetEnumNames(const TArray<FText>& inEnumNames) {
 }
 
 void UIGS_WidgetFocusableSpinBox::SetCurrentValue(int32 InValue) {
+    CurrentValue = InValue;
+    OnValueChangedEvent.Broadcast(CurrentValue);
 }
 
 void UIGS_WidgetFocusableSpinBox::ScrollRight() {

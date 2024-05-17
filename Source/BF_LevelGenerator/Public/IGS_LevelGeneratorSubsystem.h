@@ -26,6 +26,7 @@ private:
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetDefaultSeed() const;
-    
+
+    TStatId GetStatId() const override { return TStatId(); }
 };
 

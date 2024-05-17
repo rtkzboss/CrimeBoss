@@ -93,21 +93,28 @@ void UIGS_WidgetFocusableSlider::UpdateText() const {
 }
 
 void UIGS_WidgetFocusableSlider::SetStepSizeValue(float InValue) {
+    StepSize = InValue;
 }
 
 void UIGS_WidgetFocusableSlider::SetSpinBoxNameText(FText inSpinBoxNameText) {
+    SpinBoxNameText = inSpinBoxNameText;
 }
 
 void UIGS_WidgetFocusableSlider::SetSliderStyle(FSliderStyle inNewStyle) {
 }
 
 void UIGS_WidgetFocusableSlider::SetMinValue(float InValue) {
+    MinValue = InValue;
 }
 
 void UIGS_WidgetFocusableSlider::SetMaxValue(float InValue) {
+    MaxValue = InValue;
 }
 
 void UIGS_WidgetFocusableSlider::SetCurrentValue(float InValue) {
+    auto factor = powf(10.f, MaximumFractionalDigits);
+    CurrentValue = roundf(InValue * factor) / factor;
+    OnValueChangedEvent.Broadcast(CurrentValue);
 }
 
 void UIGS_WidgetFocusableSlider::ScrollRight() {
