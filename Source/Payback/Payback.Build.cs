@@ -5,7 +5,11 @@ public class Payback : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "OnlineSubsystem",
+            "CommonUI",
+        });
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AkAudio",
