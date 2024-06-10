@@ -31,7 +31,7 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void OnTextCommited(const FText& Text, TEnumAsByte<ETextCommit::Type> CommitMethod);
+    void OnTextCommited(const FText& Text, ETextCommit::Type CommitMethod);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnTextChatStateChangedEvent(bool inOpen);

@@ -5,7 +5,10 @@ public class AdvancedSessions : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "OnlineSubsystem",
+        });
         PublicDependencyModuleNames.AddRange(new string[] {
             "Core",
             "CoreUObject",

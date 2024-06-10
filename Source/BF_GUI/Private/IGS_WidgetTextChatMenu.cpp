@@ -11,7 +11,7 @@ UIGS_WidgetTextChatMenu::UIGS_WidgetTextChatMenu() {
 void UIGS_WidgetTextChatMenu::OpenChat_Implementation() {
 }
 
-void UIGS_WidgetTextChatMenu::OnTextCommited_Implementation(const FText& Text, TEnumAsByte<ETextCommit::Type> CommitMethod) {
+void UIGS_WidgetTextChatMenu::OnTextCommited_Implementation(const FText& Text, ETextCommit::Type CommitMethod) {
 }
 
 
