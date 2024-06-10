@@ -1,6 +1,7 @@
 #include "META_UniqueCharacterGraphInfo.h"
 
 FMETA_UniqueCharacterGraphInfo::FMETA_UniqueCharacterGraphInfo() {
+    (*this).Graph = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).UnlockTag, 0)) = NAME_None;
     (*this).LoadoutOverride.PrimaryWeapon = nullptr;
     (*this).LoadoutOverride.SecondaryWeapon = nullptr;

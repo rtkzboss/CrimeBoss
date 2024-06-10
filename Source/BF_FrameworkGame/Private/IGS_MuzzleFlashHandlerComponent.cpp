@@ -2,6 +2,12 @@
 #include "ComponentInstanceDataCache.h"
 
 UIGS_MuzzleFlashHandlerComponent::UIGS_MuzzleFlashHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).MuzzleFlashParticleFPV = nullptr;
+    (*this).MuzzleFlashParticle3PV = nullptr;
+    (*this).MuzzleFlashParticleCascadeFPV = nullptr;
+    (*this).MuzzleFlashParticleCascade3PV = nullptr;
+    (*this).BarrelSmokeParticleFPV = nullptr;
+    (*this).BarrelSmokeParticle3PV = nullptr;
     (*this).BarrelSmokeStartAfterShots = 3;
     (*this).MuzzleFlashStopTime = 1.000000015e-01f;
     (*this).MaxTimeBetweenShotsForBarrelSmoke = 1.250000000e+00f;

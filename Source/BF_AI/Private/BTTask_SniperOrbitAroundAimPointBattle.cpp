@@ -2,9 +2,9 @@
 #include "EIGS_AimType.h"
 
 UBTTask_SniperOrbitAroundAimPointBattle::UBTTask_SniperOrbitAroundAimPointBattle() {
-    auto& gen529 = (*this).SnipePointKey.AllowedTypes;
-    gen529.Empty();
-    gen529.AddDefaulted(1);
+    auto& gen0 = (*this).SnipePointKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*this).NodeName = TEXT("Sniper orbit around aim point Battle");
 }
 

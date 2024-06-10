@@ -6,9 +6,9 @@
 #include "IGS_GeneralListenerController.h"
 
 AIGS_GeneralListener::AIGS_GeneralListener(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    auto& gen557 = (*this).SupportedHearingTags;
-    gen557.Empty();
-    gen557.AddDefaulted(2);
+    auto& gen0 = (*this).SupportedHearingTags;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
     (*this).bStartsActive = true;
     (*this).AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
     (*this).AIControllerClass = AIGS_GeneralListenerController::StaticClass();

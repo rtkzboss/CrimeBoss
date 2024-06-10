@@ -4,8 +4,8 @@
 #include "Net/UnrealNetwork.h"
 
 UIGS_WaveManager::UIGS_WaveManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    static ConstructorHelpers::FObjectFinder<UIGS_WaveManagerData> gen634(TEXT("/Game/00_Main/Core/GameModes/DA_WaveManagerData.DA_WaveManagerData"));
-    (*this).WaveManagerData = gen634.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_WaveManagerData> gen0(TEXT("/Game/00_Main/Core/GameModes/DA_WaveManagerData.DA_WaveManagerData"));
+    (*this).WaveManagerData = gen0.Object;
     (*this).CurrentPhase = EIGS_PressurePhase::PP_Unknown;
     (*this).InitControlCheckTime = -1.000000000e+00f;
     (*this).LastTeamSideEnum = EIGS_TeamSideEnum::TS_Unknown;

@@ -13,6 +13,9 @@ FIGS_NetProjectileHitResult::FIGS_NetProjectileHitResult() {
     (*this).ImpactNormal.X = 0.000000000e+00f;
     (*this).ImpactNormal.Y = 0.000000000e+00f;
     (*this).ImpactNormal.Z = 0.000000000e+00f;
+    (*this).Actor = nullptr;
+    (*this).Component = nullptr;
+    (*this).PhysMaterial = nullptr;
     (*this).BoneName = NAME_None;
     (*this).Distance = 0.000000000e+00f;
     (*this).bBlockingHit = false;

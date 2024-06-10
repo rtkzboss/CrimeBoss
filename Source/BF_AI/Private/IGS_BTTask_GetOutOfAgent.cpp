@@ -2,15 +2,15 @@
 #include "EIGS_CharacterVsHeistersCollisionStatus.h"
 
 UIGS_BTTask_GetOutOfAgent::UIGS_BTTask_GetOutOfAgent() {
-    auto& gen434 = (*this).LookPosKey.AllowedTypes;
-    gen434.Empty();
-    gen434.AddDefaulted(1);
-    auto& gen435 = (*this).AcceptableRadiusKey.AllowedTypes;
-    gen435.Empty();
-    gen435.AddDefaulted(1);
-    auto& gen436 = (*this).BlackboardKey.AllowedTypes;
-    gen436.Empty();
-    gen436.AddDefaulted(2);
+    auto& gen0 = (*this).LookPosKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
+    auto& gen1 = (*this).AcceptableRadiusKey.AllowedTypes;
+    gen1.Empty();
+    gen1.AddDefaulted(1);
+    auto& gen2 = (*this).BlackboardKey.AllowedTypes;
+    gen2.Empty();
+    gen2.AddDefaulted(2);
     (*this).NodeName = TEXT("Get Out Of Agent");
 }
 

@@ -1,6 +1,9 @@
 #include "META_BaseNotification.h"
 
 UMETA_BaseNotification::UMETA_BaseNotification() {
+    (*this).ID = nullptr;
+    (*this).Image = nullptr;
+    (*this).AggregationNotificationID = nullptr;
 }
 
 void UMETA_BaseNotification::SetInfo(TSoftObjectPtr<UMETA_NotificationID> inID, EMETA_NotificationType inType, FText InTitle, FText inDescription, EMETA_NotificationEffect inEffect, TSoftObjectPtr<UTexture2D> inImage, TSoftObjectPtr<UMETA_NotificationID> inAggregationID, bool inHideInIntro) {

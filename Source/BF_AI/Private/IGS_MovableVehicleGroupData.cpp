@@ -2,5 +2,6 @@
 
 FIGS_MovableVehicleGroupData::FIGS_MovableVehicleGroupData() {
     (*this).IsDefault = false;
+    (*this).Vehicle = nullptr;
 }
 

@@ -5,8 +5,7 @@
 #include "EMETA_ObjectiveType.h"
 
 FIGS_GameStateData::FIGS_GameStateData() {
-    auto& gen1835 = (*this).Heisters;
-    gen1835.Empty();
+    (*this).Heisters.Empty();
     (*this).StartupSource = EIGS_MissionStartupSource::Editor;
     (*this).MissionSubtype = TEXT("");
     (*this).QPModeSource = EIGS_QPModeSource::INVALID;
@@ -60,20 +59,16 @@ FIGS_GameStateData::FIGS_GameStateData() {
     (*this).BonusObjectiveData.Config.OutputParamOperator = EMETA_ConditionOperator::GreaterOrEqual;
     (*this).BonusObjectiveData.Config.DaysToComplete = 1;
     (*this).BonusObjectiveData.Config.ShowInFPS = true;
-    auto& gen1836 = (*this).MetaBonuses.ArmyPerkData;
-    gen1836.Empty();
+    (*this).MetaBonuses.ArmyPerkData.Empty();
     (*this).IntelLevel = -1;
     (*this).ExpectedPlayerCount = -1;
     (*this).MissionName = FText::FromString(TEXT(""));
     (*this).TotalMissionValue = 0;
     (*this).ObjectiveValue = 0;
     (*this).TotalLootbagCount = -1;
-    auto& gen1837 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0));
-    gen1837.Empty();
-    auto& gen1838 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0));
-    gen1838.Empty();
-    auto& gen1839 = (*this).SpecialLoot.Loot;
-    gen1839.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0)).Empty();
+    (*this).SpecialLoot.Loot.Empty();
     (*this).SpecialLoot.Money = 0;
     (*this).SpecialLoot.bIsFilled = false;
     (*this).Respect = EMETA_RespectLvl::Low;

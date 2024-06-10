@@ -5,6 +5,7 @@
 #include "VT/RuntimeVirtualTextureEnum.h"
 
 UPropMeshComponent::UPropMeshComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).StaticMeshPtr = nullptr;
 }
 
 

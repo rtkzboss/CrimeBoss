@@ -7,12 +7,12 @@
 #include "IGS_DynamicMaterialHandlerComponent.h"
 
 AIGS_WieldableBase::AIGS_WieldableBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> gen262(TEXT("/Game/00_Main/MaterialLibrary/Common/MPC_GlobalsCharactersWeapons.MPC_GlobalsCharactersWeapons"));
-    (*this).WieldableMPC = gen262.Object;
+    static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> gen0(TEXT("/Game/00_Main/MaterialLibrary/Common/MPC_GlobalsCharactersWeapons.MPC_GlobalsCharactersWeapons"));
+    (*this).WieldableMPC = gen0.Object;
     (*this).DynamicMaterialHandlerComponent = CreateDefaultSubobject<UIGS_DynamicMaterialHandlerComponent>(TEXT("DynamicMaterialHandlerComponent"));
     (*this).WieldableMesh = CreateDefaultSubobject<USkeletalMeshComponentBudgeted>(TEXT("WieldableMesh"));
-    static ConstructorHelpers::FObjectFinder<UAkAudioEvent> gen263(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Events/Default_Work_Unit/WU_Weapons/WU_Weapons_Ranged/AKE_Weapon_Inspect_Stop.AKE_Weapon_Inspect_Stop"));
-    (*this).StopInspectingAkEvent = gen263.Object;
+    static ConstructorHelpers::FObjectFinder<UAkAudioEvent> gen1(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Events/Default_Work_Unit/WU_Weapons/WU_Weapons_Ranged/AKE_Weapon_Inspect_Stop.AKE_Weapon_Inspect_Stop"));
+    (*this).StopInspectingAkEvent = gen1.Object;
     (*this).PrimaryActorTick.bCanEverTick = true;
     (*this).RootComponent = (USceneComponent*)WieldableMesh;
 }

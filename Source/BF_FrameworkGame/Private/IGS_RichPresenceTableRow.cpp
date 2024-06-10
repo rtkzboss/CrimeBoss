@@ -6,7 +6,6 @@ FIGS_RichPresenceTableRow::FIGS_RichPresenceTableRow() {
     (*this).StrEpic = TEXT("");
     (*this).StrSteam = TEXT("");
     (*this).StrXbox = TEXT("");
-    auto& gen3112 = (*this).Params;
-    gen3112.Empty();
+    (*this).Params.Empty();
 }
 

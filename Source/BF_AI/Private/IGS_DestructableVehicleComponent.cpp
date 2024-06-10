@@ -3,6 +3,7 @@
 #include "Net/UnrealNetwork.h"
 
 UIGS_DestructableVehicleComponent::UIGS_DestructableVehicleComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).Settings = nullptr;
     (*this).bCanBeDestroyed = true;
     (*this).bExplodeOutDoors = true;
     (*this).EngineHealth = 4.000000000e+03f;

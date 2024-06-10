@@ -2,8 +2,7 @@
 #include "Animation/InputScaleBias.h"
 
 FIGS_CarWheels_AnimGraphNode::FIGS_CarWheels_AnimGraphNode() {
-    auto& gen2039 = (*this).Wheels;
-    gen2039.Empty();
+    (*this).Wheels.Empty();
     (*this).SuspenssionRoot.BoneName = NAME_None;
     (*this).WheelsRadius = 3.300000000e+01f;
     (*this).FrontWheelsAngle = 0.000000000e+00f;

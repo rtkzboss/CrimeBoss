@@ -2,9 +2,9 @@
 
 UBTTask_RotateToCoverDirection::UBTTask_RotateToCoverDirection() {
     (*this).AccaptedAngle = 2.500000000e+01f;
-    auto& gen520 = (*this).BlackboardKey.AllowedTypes;
-    gen520.Empty();
-    gen520.AddDefaulted(1);
+    auto& gen0 = (*this).BlackboardKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*this).NodeName = TEXT("Rotate To Cover Direction");
 }
 

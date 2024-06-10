@@ -2,23 +2,23 @@
 #include "EIGS_CharacterVsHeistersCollisionStatus.h"
 
 UBTTask_MoveToCover::UBTTask_MoveToCover() {
-    auto& gen474 = (*this).CoverBlackboardKey.AllowedTypes;
-    gen474.Empty();
-    gen474.AddDefaulted(1);
+    auto& gen0 = (*this).CoverBlackboardKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).CoverBlackboardKey, 0)) = 255;
-    auto& gen475 = (*this).IsApproachMoveKey.AllowedTypes;
-    gen475.Empty();
-    gen475.AddDefaulted(1);
+    auto& gen1 = (*this).IsApproachMoveKey.AllowedTypes;
+    gen1.Empty();
+    gen1.AddDefaulted(1);
     (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).IsApproachMoveKey, 0)) = 255;
-    auto& gen476 = (*this).LookPosKey.AllowedTypes;
-    gen476.Empty();
-    gen476.AddDefaulted(1);
-    auto& gen477 = (*this).AcceptableRadiusKey.AllowedTypes;
-    gen477.Empty();
-    gen477.AddDefaulted(1);
-    auto& gen478 = (*this).BlackboardKey.AllowedTypes;
-    gen478.Empty();
-    gen478.AddDefaulted(2);
+    auto& gen2 = (*this).LookPosKey.AllowedTypes;
+    gen2.Empty();
+    gen2.AddDefaulted(1);
+    auto& gen3 = (*this).AcceptableRadiusKey.AllowedTypes;
+    gen3.Empty();
+    gen3.AddDefaulted(1);
+    auto& gen4 = (*this).BlackboardKey.AllowedTypes;
+    gen4.Empty();
+    gen4.AddDefaulted(2);
     (*this).NodeName = TEXT("Move To Cover");
 }
 

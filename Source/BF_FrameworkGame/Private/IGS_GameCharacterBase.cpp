@@ -17,8 +17,8 @@ AIGS_GameCharacterBase::AIGS_GameCharacterBase(const FObjectInitializer& ObjectI
     (*this).TeamSide = EIGS_TeamSideEnum::TS_Unknown;
     (*this).CharacterWieldable3PVModelScaleMultiplier = 1.000000000e+00f;
     (*this).CharacterWieldableFPVModelScaleMultiplier = 1.000000000e+00f;
-    static ConstructorHelpers::FObjectFinder<UClass> gen264(TEXT("/Game/00_Main/Core/Tables/Impacts/Shot/ID/BP_ImpactShot_KillConfirmed.BP_ImpactShot_KillConfirmed_C"));
-    (*this).KillConfirmedParticleID = gen264.Object;
+    static ConstructorHelpers::FObjectFinder<UClass> gen0(TEXT("/Game/00_Main/Core/Tables/Impacts/Shot/ID/BP_ImpactShot_KillConfirmed.BP_ImpactShot_KillConfirmed_C"));
+    (*this).KillConfirmedParticleID = gen0.Object;
     (*this).RollbackComponent = CreateDefaultSubobject<UIGS_RollbackComponent>(TEXT("RollbackComponent"));
     (*this).AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
     (*this).DangerAreaComponent = CreateDefaultSubobject<UIGS_DangerAreaComponent>(TEXT("DangerAreaComp"));

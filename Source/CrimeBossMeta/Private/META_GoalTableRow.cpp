@@ -9,14 +9,15 @@ FMETA_GoalTableRow::FMETA_GoalTableRow() {
     (*this).GoalType = EMETA_GoalType::INVALID;
     (*this).GoalPurpose = EMETA_GoalPurpose::INVALID;
     (*this).Priority = EMETA_GoalPriority::Medium;
+    (*this).StoryGoal.Graph = nullptr;
     (*this).StoryGoal.Title = FText::FromString(TEXT(""));
     (*this).StoryGoal.Description = FText::FromString(TEXT(""));
+    (*this).StoryGoal.Icon = nullptr;
+    (*this).StoryGoal.Picture = nullptr;
     (*this).StoryGoal.bIsGoalRepeatable = false;
     (*this).StoryGoal.DaysBetweenAttempts = 1;
-    auto& gen3432 = (*this).StoryGoal.Missions;
-    gen3432.Empty();
-    auto& gen3433 = (*this).StoryGoal.ActionCardsGoal;
-    gen3433.Empty();
+    (*this).StoryGoal.Missions.Empty();
+    (*this).StoryGoal.ActionCardsGoal.Empty();
     (*this).StoryGoal.RespectByDefault = 0;
     (*this).StoryGoal.UseLockRespectCondition = false;
     (*this).StoryGoal.UnlockRespect = EMETA_RespectLvl::Low;
@@ -25,6 +26,8 @@ FMETA_GoalTableRow::FMETA_GoalTableRow() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).StoryGoal.EntitlementTag, 0)) = NAME_None;
     (*this).MoneyMakingGoal.Title = FText::FromString(TEXT(""));
     (*this).MoneyMakingGoal.Description = FText::FromString(TEXT(""));
+    (*this).MoneyMakingGoal.Icon = nullptr;
+    (*this).MoneyMakingGoal.Picture = nullptr;
     (*this).MoneyMakingGoal.UseLockRespectCondition = false;
     (*this).MoneyMakingGoal.UnlockRespect = EMETA_RespectLvl::Low;
     (*this).MoneyMakingGoal.LockRespect = EMETA_RespectLvl::Low;
@@ -33,10 +36,8 @@ FMETA_GoalTableRow::FMETA_GoalTableRow() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MoneyMakingGoal.LootType, 0)) = NAME_None;
     (*this).MoneyMakingGoal.MonetaryValue.Min = 0;
     (*this).MoneyMakingGoal.MonetaryValue.Max = 0;
-    auto& gen3434 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MoneyMakingGoal.MissionTypeTags, 0));
-    gen3434.Empty();
-    auto& gen3435 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MoneyMakingGoal.MissionTypeTags, 0));
-    gen3435.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MoneyMakingGoal.MissionTypeTags, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MoneyMakingGoal.MissionTypeTags, 0)).Empty();
     (*this).MoneyMakingGoal.EnemyGangIDs = 0;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MoneyMakingGoal.EntitlementTag, 0)) = NAME_None;
 }

@@ -6,8 +6,8 @@
 #include "EIGS_WieldableClass.h"
 
 FIGS_MeleeWeaponData::FIGS_MeleeWeaponData() {
-    auto& gen1905 = (*this).AttackDefinitions;
-    gen1905.Empty();
+    (*this).WwiseWeaponName = nullptr;
+    (*this).AttackDefinitions.Empty();
     (*this).AIAttackDefinition.AttackType = EIGS_MeleeAttackType::MAT_Primary;
     (*this).AIAttackDefinition.DamageType = nullptr;
     (*this).AIAttackDefinition.ImpactType = nullptr;

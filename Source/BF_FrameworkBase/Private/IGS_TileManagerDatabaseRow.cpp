@@ -10,8 +10,7 @@ FIGS_TileManagerDatabaseRow::FIGS_TileManagerDatabaseRow() {
     (*this).NumberOfNavMeshBounds = 0;
     (*this).IsEnabled = false;
     (*this).ParentDataTable = TEXT("");
-    auto& gen2089 = (*this).Scenarios;
-    gen2089.Empty();
+    (*this).Scenarios.Empty();
     (*this).NumberOfPlayerSpawns = 0;
     (*this).NumberOfBpRooms = 0;
     (*this).NumberOfHelicopers = 0;

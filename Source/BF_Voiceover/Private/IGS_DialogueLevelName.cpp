@@ -3,13 +3,10 @@
 
 FIGS_DialogueLevelName::FIGS_DialogueLevelName() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).LevelTag, 0)) = NAME_None;
-    auto& gen3404 = (*this).LevelNames;
-    gen3404.Empty();
-    auto& gen3405 = (*this).LevelCharacters;
-    gen3405.Empty();
+    (*this).LevelNames.Empty();
+    (*this).LevelCharacters.Empty();
     (*this).BlacklistOption = EIGS_DialogueBlacklistOption::NoBlacklist;
-    auto& gen3406 = (*this).BlacklistLevelNames;
-    gen3406.Empty();
+    (*this).BlacklistLevelNames.Empty();
     (*this).BlacklistAlwaysEnabled = false;
     (*this).BlacklistDefaultLevelsPreload = false;
     (*this).UseDefaultLevelsPreload = true;

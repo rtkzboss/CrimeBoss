@@ -7,6 +7,8 @@ FIGS_NewsInfoDefinition::FIGS_NewsInfoDefinition() {
     (*this).Description = FText::FromString(TEXT(""));
     (*this).BinkAlpha = nullptr;
     (*this).BinkRGB = nullptr;
+    (*this).RGBVideo = nullptr;
+    (*this).VideoMask = nullptr;
     (*this).ShowInMenu = false;
 }
 

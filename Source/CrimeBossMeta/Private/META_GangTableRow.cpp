@@ -7,5 +7,6 @@ FMETA_GangTableRow::FMETA_GangTableRow() {
     (*this).BossGender = ETextGender::Masculine;
     (*this).BossDescription = FText::FromString(TEXT(""));
     (*this).GangDescription = FText::FromString(TEXT(""));
+    (*this).Image = nullptr;
 }
 

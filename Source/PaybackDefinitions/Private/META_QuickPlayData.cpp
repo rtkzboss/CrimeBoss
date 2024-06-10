@@ -29,9 +29,9 @@ UMETA_QuickPlayData::UMETA_QuickPlayData() {
     (*this).ChainMinusScorePerKilledCivilian = 5000;
     (*this).ChainMinusScorePerReviveUsed = 10000;
     (*this).ChainMinusScorePerKilledHeister = 20000;
-    auto& gen236 = (*this).TutorialCharacters;
-    gen236.Empty();
-    gen236.AddDefaulted(4);
+    auto& gen0 = (*this).TutorialCharacters;
+    gen0.Empty();
+    gen0.AddDefaulted(4);
 }
 
 

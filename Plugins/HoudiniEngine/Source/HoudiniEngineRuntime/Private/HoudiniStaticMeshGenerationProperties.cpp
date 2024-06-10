@@ -56,9 +56,9 @@ FHoudiniStaticMeshGenerationProperties::FHoudiniStaticMeshGenerationProperties()
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0)).GameTraceChannel16 = ECR_Block;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0)).GameTraceChannel17 = ECR_Block;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0)).GameTraceChannel18 = ECR_Block;
-    auto& gen1611 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0));
-    gen1611.Empty();
-    gen1611.AddDefaulted(3);
+    auto& gen0 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0));
+    gen0.Empty();
+    gen0.AddDefaulted(3);
     (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("MaxDepenetrationVelocity")->ContainerPtrToValuePtr<float>(&(*this).DefaultBodyInstance, 0)) = 0.000000000e+00f;
     (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("MassInKgOverride")->ContainerPtrToValuePtr<float>(&(*this).DefaultBodyInstance, 0)) = 1.000000000e+02f;
     (*this).DefaultBodyInstance.LinearDamping = 9.999999776e-03f;
@@ -95,7 +95,6 @@ FHoudiniStaticMeshGenerationProperties::FHoudiniStaticMeshGenerationProperties()
     (*this).bGeneratedUseMaximumStreamingTexelRatio = false;
     (*this).GeneratedStreamingDistanceMultiplier = 1.000000000e+00f;
     (*this).GeneratedFoliageDefaultSettings = nullptr;
-    auto& gen1612 = (*this).GeneratedAssetUserData;
-    gen1612.Empty();
+    (*this).GeneratedAssetUserData.Empty();
 }
 

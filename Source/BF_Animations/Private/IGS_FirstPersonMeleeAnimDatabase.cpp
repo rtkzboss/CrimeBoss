@@ -1,22 +1,19 @@
 #include "IGS_FirstPersonMeleeAnimDatabase.h"
 
 FIGS_FirstPersonMeleeAnimDatabase::FIGS_FirstPersonMeleeAnimDatabase() {
+    (*this).ID = nullptr;
     (*this).EquipMontage = nullptr;
     (*this).UnequipMontage = nullptr;
-    auto& gen2044 = (*this).Attack_Light_Chain;
-    gen2044.Empty();
-    auto& gen2045 = (*this).Attack_Heavy_Chain;
-    gen2045.Empty();
+    (*this).Attack_Light_Chain.Empty();
+    (*this).Attack_Heavy_Chain.Empty();
     (*this).MeleePushMontage = nullptr;
     (*this).MarkMontage = nullptr;
     (*this).OneHandCalmWeaponPose = false;
     (*this).MeleePush = nullptr;
     (*this).EquipWeaponMontage = nullptr;
     (*this).UnequipWeaponMontage = nullptr;
-    auto& gen2046 = (*this).WeaponAttack_Light_Chain;
-    gen2046.Empty();
-    auto& gen2047 = (*this).WeaponAttack_Heavy_Chain;
-    gen2047.Empty();
+    (*this).WeaponAttack_Light_Chain.Empty();
+    (*this).WeaponAttack_Heavy_Chain.Empty();
     (*this).MarkWeaponMontage = nullptr;
     (*this).Locomotion.IdleWalkBlendSpace = nullptr;
     (*this).Locomotion.JumpStart = nullptr;
@@ -38,7 +35,6 @@ FIGS_FirstPersonMeleeAnimDatabase::FIGS_FirstPersonMeleeAnimDatabase() {
     (*this).SpecialAnimations.TakeWeaponMontage = nullptr;
     (*this).SpecialAnimations.SpecialTakeWeaponMontage = nullptr;
     (*this).SpecialAnimations.WeaponInteractonMontage = nullptr;
-    auto& gen2048 = (*this).LinkedGraphs;
-    gen2048.Empty();
+    (*this).LinkedGraphs.Empty();
 }
 

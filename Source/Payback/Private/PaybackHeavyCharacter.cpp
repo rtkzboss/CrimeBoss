@@ -16,6 +16,7 @@ APaybackHeavyCharacter::APaybackHeavyCharacter(const FObjectInitializer& ObjectI
     (*this).CompromisedDamageMultiplier.Value = 2.000000000e+00f;
     (*this).WeakSpotComponent = CreateDefaultSubobject<UIGS_WeakSpotComponent>(TEXT("WeakSpot Component"));
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).WeakSpotCompromisedAnimation, 0)) = TEXT("Anim.Combat.Heavy.HelmOff");
+    (*this).PSTemplate = nullptr;
     (*this).ParticleScale.X = 1.000000000e+00f;
     (*this).ParticleScale.Y = 1.000000000e+00f;
     (*this).ParticleScale.Z = 1.000000000e+00f;

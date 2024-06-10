@@ -28,6 +28,9 @@ FIGS_BashResult::FIGS_BashResult() {
     (*this).HitResult.ElementIndex = 0;
     (*this).HitResult.bBlockingHit = false;
     (*this).HitResult.bStartPenetrating = false;
+    (*this).HitResult.PhysMaterial = nullptr;
+    (*this).HitResult.Actor = nullptr;
+    (*this).HitResult.Component = nullptr;
     (*this).HitResult.BoneName = NAME_None;
     (*this).HitResult.MyBoneName = NAME_None;
     (*this).Damage = 0.000000000e+00f;

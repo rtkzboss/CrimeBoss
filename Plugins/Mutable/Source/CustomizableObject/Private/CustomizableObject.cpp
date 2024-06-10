@@ -1,6 +1,7 @@
 #include "CustomizableObject.h"
 
 UCustomizableObject::UCustomizableObject() {
+    (*this).MaskOutCache = nullptr;
 }
 
 void UCustomizableObject::UnloadMaskOutCache() {

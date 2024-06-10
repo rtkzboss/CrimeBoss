@@ -12,19 +12,17 @@
 #include "EMETA_StealthMode.h"
 
 FMETA_MoneyMakingMissionRowInfo::FMETA_MoneyMakingMissionRowInfo() {
+    (*this).Picture = nullptr;
+    (*this).MapIconOverride = nullptr;
     (*this).Name = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
     (*this).DaysOnMap = -1;
     (*this).MinCrewSize = 1;
     (*this).MaxCrewSize = 4;
-    auto& gen1933 = (*this).WeaponsRequired;
-    gen1933.Empty();
-    auto& gen1934 = (*this).CharactersRequired;
-    gen1934.Empty();
-    auto& gen1935 = (*this).CharactersRequiredButNotOwned;
-    gen1935.Empty();
-    auto& gen1936 = (*this).ResultsWhenJobIsNotRemovedFromTheMap;
-    gen1936.Empty();
+    (*this).WeaponsRequired.Empty();
+    (*this).CharactersRequired.Empty();
+    (*this).CharactersRequiredButNotOwned.Empty();
+    (*this).ResultsWhenJobIsNotRemovedFromTheMap.Empty();
     (*this).FPSMissionInfo.FPSMissionID = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).FPSMissionInfo.Scenario, 0)) = NAME_None;
     (*this).FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
@@ -46,22 +44,16 @@ FMETA_MoneyMakingMissionRowInfo::FMETA_MoneyMakingMissionRowInfo() {
     (*this).FPSMissionInfo.bForceHeat = false;
     (*this).FPSMissionInfo.bMinimalHeatOnly = false;
     (*this).FPSMissionInfo.Heat = EMETA_Heat::Medium;
-    auto& gen1937 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen1937.Empty();
-    auto& gen1938 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen1938.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
     (*this).FPSMissionInfo.TotalLootbagCount = -1;
     (*this).FPSMissionInfo.ForcedDetectivesCount = 0;
     (*this).FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;
     (*this).FPSMissionInfo.bDownedCharctersSurvive = false;
     (*this).UnlockRespect = EMETA_RespectLvl::Low;
-    auto& gen1939 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0));
-    gen1939.Empty();
-    auto& gen1940 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0));
-    gen1940.Empty();
-    auto& gen1941 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0));
-    gen1941.Empty();
-    auto& gen1942 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0));
-    gen1942.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0)).Empty();
 }
 

@@ -5,12 +5,12 @@
 
 UIGS_NetworkComponentCharacter::UIGS_NetworkComponentCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).mR_ShooterType = EIGS_WeaponAttackType::AT_UNKNOWN;
-    auto& gen642 = (*this).mR_AvailableWieldables;
-    gen642.Empty();
-    gen642.AddDefaulted(6);
-    auto& gen643 = (*this).m_OwningInventoryObjects;
-    gen643.Empty();
-    gen643.AddDefaulted(6);
+    auto& gen0 = (*this).mR_AvailableWieldables;
+    gen0.Empty();
+    gen0.AddDefaulted(6);
+    auto& gen1 = (*this).m_OwningInventoryObjects;
+    gen1.Empty();
+    gen1.AddDefaulted(6);
     (*this).mR_CurrentSlot = EIGS_WieldableSlot::S_Unarmed;
     (*this).VoiceExpressionEnabled = true;
     (*this).NearDeathHealthPercentage = 4.000000060e-01f;

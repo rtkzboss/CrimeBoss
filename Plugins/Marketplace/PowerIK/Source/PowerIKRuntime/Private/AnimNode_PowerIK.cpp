@@ -9,14 +9,10 @@ FAnimNode_PowerIK::FAnimNode_PowerIK() {
     (*this).BodyInertia.UseSpring = false;
     (*this).BodyInertia.SpringStrength = 1.000000000e+02f;
     (*this).BodyInertia.SpringDamping = 2.000000030e-01f;
-    auto& gen1640 = (*this).BendDirections;
-    gen1640.Empty();
-    auto& gen1641 = (*this).ExcludedBones;
-    gen1641.Empty();
-    auto& gen1642 = (*this).JointLimits;
-    gen1642.Empty();
-    auto& gen1643 = (*this).Effectors;
-    gen1643.Empty();
+    (*this).BendDirections.Empty();
+    (*this).ExcludedBones.Empty();
+    (*this).JointLimits.Empty();
+    (*this).Effectors.Empty();
     (*this).SmoothingMaxSpeedMultiplier = 1.000000000e+00f;
     (*this).SmoothingMaxDistanceMultiplier = 1.000000000e+00f;
     (*this).CenterOfGravityConstraint.Alpha = 0.000000000e+00f;

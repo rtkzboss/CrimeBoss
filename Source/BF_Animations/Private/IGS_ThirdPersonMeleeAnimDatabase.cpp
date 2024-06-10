@@ -1,6 +1,7 @@
 #include "IGS_ThirdPersonMeleeAnimDatabase.h"
 
 FIGS_ThirdPersonMeleeAnimDatabase::FIGS_ThirdPersonMeleeAnimDatabase() {
+    (*this).ID = nullptr;
     (*this).WeaponGripStand = nullptr;
     (*this).WeaponGripCrouch = nullptr;
     (*this).WeaponGripRun = nullptr;
@@ -47,14 +48,10 @@ FIGS_ThirdPersonMeleeAnimDatabase::FIGS_ThirdPersonMeleeAnimDatabase() {
     (*this).LeanRightCrouch = nullptr;
     (*this).LeanCrouchUp = nullptr;
     (*this).MeleePush = nullptr;
-    auto& gen2085 = (*this).Attack_Light_Chain;
-    gen2085.Empty();
-    auto& gen2086 = (*this).Attack_Heavy_Chain;
-    gen2086.Empty();
-    auto& gen2087 = (*this).Attack_Light_Chain_Crouch;
-    gen2087.Empty();
-    auto& gen2088 = (*this).Attack_Heavy_Chain_Crouch;
-    gen2088.Empty();
+    (*this).Attack_Light_Chain.Empty();
+    (*this).Attack_Heavy_Chain.Empty();
+    (*this).Attack_Light_Chain_Crouch.Empty();
+    (*this).Attack_Heavy_Chain_Crouch.Empty();
     (*this).SlidingAnimations.Weapon_Slide_Aim_Offset = nullptr;
     (*this).SlidingAnimations.Slide_In = nullptr;
     (*this).SlidingAnimations.Slide_Loop = nullptr;

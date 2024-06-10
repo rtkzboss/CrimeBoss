@@ -16,8 +16,8 @@ AIGS_LevelBlockingBounds::AIGS_LevelBlockingBounds(const FObjectInitializer& Obj
     (*this).BlockerComponent = CreateDefaultSubobject<UIGS_CustomBoxComponent>(TEXT("BlockerComponent"));
     (*this).NavModifierComponent = CreateDefaultSubobject<UIGS_NavModifierComponent>(TEXT("NavModifierComponent"));
     (*this).PostProcessComponent = CreateDefaultSubobject<UPostProcessComponent>(TEXT("PostProcessComponent"));
-    static ConstructorHelpers::FObjectFinder<UIGS_LevelBlockingBoundsSettings> gen606(TEXT("/Game/00_Main/Blueprints/Gameplay/Colliders/LevelBounds/DA_LevelBlockingBoundsSettings.DA_LevelBlockingBoundsSettings"));
-    (*this).Settings = gen606.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_LevelBlockingBoundsSettings> gen0(TEXT("/Game/00_Main/Blueprints/Gameplay/Colliders/LevelBounds/DA_LevelBlockingBoundsSettings.DA_LevelBlockingBoundsSettings"));
+    (*this).Settings = gen0.Object;
     (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("ObjectType")->ContainerPtrToValuePtr<TEnumAsByte<ECollisionChannel>>(&(*this).BodyInstance, 0)) = ECC_WorldDynamic;
     (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionProfileName")->ContainerPtrToValuePtr<FName>(&(*this).BodyInstance, 0)) = TEXT("Trigger");
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).Visibility = ECR_Ignore;
@@ -34,9 +34,9 @@ AIGS_LevelBlockingBounds::AIGS_LevelBlockingBounds(const FObjectInitializer& Obj
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel14 = ECR_Ignore;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel16 = ECR_Ignore;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel17 = ECR_Ignore;
-    auto& gen607 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0));
-    gen607.Empty();
-    gen607.AddDefaulted(22);
+    auto& gen1 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0));
+    gen1.Empty();
+    gen1.AddDefaulted(22);
     (*this).Color.B = 0;
     (*this).Color.G = 0;
     (*this).Color.R = 255;

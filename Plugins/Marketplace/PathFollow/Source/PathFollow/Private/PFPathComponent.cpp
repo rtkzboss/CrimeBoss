@@ -10,9 +10,9 @@ UPFPathComponent::UPFPathComponent(const FObjectInitializer& ObjectInitializer) 
     (*this).DrawerConfig.PathColor.B = 255;
     (*this).DrawerConfig.PathColor.A = 255;
     (*this).DrawerConfig.Thickness = 5.000000000e+00f;
-    auto& gen89 = (*this)._speedCurve._speedCurve.Points;
-    gen89.Empty();
-    gen89.AddDefaulted(2);
+    auto& gen0 = (*this)._speedCurve._speedCurve.Points;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
 }
 
 float UPFPathComponent::GetTimeForPath() {

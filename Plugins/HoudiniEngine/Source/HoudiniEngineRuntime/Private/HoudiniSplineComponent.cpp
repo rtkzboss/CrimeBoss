@@ -2,12 +2,12 @@
 #include "ComponentInstanceDataCache.h"
 
 UHoudiniSplineComponent::UHoudiniSplineComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    auto& gen200 = (*this).CurvePoints;
-    gen200.Empty();
-    gen200.AddDefaulted(2);
-    auto& gen201 = (*this).DisplayPoints;
-    gen201.Empty();
-    gen201.AddDefaulted(2);
+    auto& gen0 = (*this).CurvePoints;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
+    auto& gen1 = (*this).DisplayPoints;
+    gen1.Empty();
+    gen1.AddDefaulted(2);
     (*this).CurveOrder = 2;
     (*this).bIsHoudiniSplineVisible = true;
     (*this).bCookOnCurveChanged = true;

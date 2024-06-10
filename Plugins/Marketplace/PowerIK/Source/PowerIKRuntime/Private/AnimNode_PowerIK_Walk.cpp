@@ -9,8 +9,7 @@ FAnimNode_PowerIK_Walk::FAnimNode_PowerIK_Walk() {
     (*this).BodyInertia.UseSpring = false;
     (*this).BodyInertia.SpringStrength = 1.000000000e+02f;
     (*this).BodyInertia.SpringDamping = 2.000000030e-01f;
-    auto& gen1648 = (*this).Limbs;
-    gen1648.Empty();
+    (*this).Limbs.Empty();
     (*this).StepMaxReachDistance = 2.000000000e+02f;
     (*this).StepDurationMultiplier = 1.000000000e+00f;
     (*this).StepHeightMultiplier = 1.000000000e+00f;
@@ -20,12 +19,9 @@ FAnimNode_PowerIK_Walk::FAnimNode_PowerIK_Walk() {
     (*this).PrintTeleportWarning = false;
     (*this).CollisionChannel = ECC_WorldStatic;
     (*this).TraceComplex = true;
-    auto& gen1649 = (*this).BendDirections;
-    gen1649.Empty();
-    auto& gen1650 = (*this).ExcludedBones;
-    gen1650.Empty();
-    auto& gen1651 = (*this).JointLimits;
-    gen1651.Empty();
+    (*this).BendDirections.Empty();
+    (*this).ExcludedBones.Empty();
+    (*this).JointLimits.Empty();
     (*this).MaxSquashIterations = 6;
     (*this).MaxStretchIterations = 6;
     (*this).MaxFinalIterations = 3;

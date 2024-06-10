@@ -14,6 +14,8 @@
 FMETA_RivalAttackMissionRowInfo::FMETA_RivalAttackMissionRowInfo() {
     (*this).Name = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
+    (*this).Picture = nullptr;
+    (*this).MapIconOverride = nullptr;
     (*this).FPSMissionInfo.FPSMissionID = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).FPSMissionInfo.Scenario, 0)) = NAME_None;
     (*this).FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
@@ -35,10 +37,8 @@ FMETA_RivalAttackMissionRowInfo::FMETA_RivalAttackMissionRowInfo() {
     (*this).FPSMissionInfo.bForceHeat = false;
     (*this).FPSMissionInfo.bMinimalHeatOnly = false;
     (*this).FPSMissionInfo.Heat = EMETA_Heat::Medium;
-    auto& gen913 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen913.Empty();
-    auto& gen914 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen914.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
     (*this).FPSMissionInfo.TotalLootbagCount = -1;
     (*this).FPSMissionInfo.ForcedDetectivesCount = 0;
     (*this).FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;

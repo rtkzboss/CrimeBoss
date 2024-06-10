@@ -1,6 +1,7 @@
 #include "IGS_LoadingScreenManager.h"
 
 UIGS_LoadingScreenManager::UIGS_LoadingScreenManager() {
+    (*this).CustomBackgroundTexture = nullptr;
 }
 
 void UIGS_LoadingScreenManager::SetLoadingScreenSetupType(UObject* inWCO, FGameplayTag inTag) {

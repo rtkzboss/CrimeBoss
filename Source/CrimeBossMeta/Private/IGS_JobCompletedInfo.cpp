@@ -23,12 +23,9 @@ FIGS_JobCompletedInfo::FIGS_JobCompletedInfo() {
     (*this).SharedData.MissionID.B = 0;
     (*this).SharedData.MissionID.C = 0;
     (*this).SharedData.MissionID.D = 0;
-    auto& gen957 = (*this).SharedData.Heisters;
-    gen957.Empty();
-    auto& gen958 = (*this).SharedData.Detectives;
-    gen958.Empty();
-    auto& gen959 = (*this).SharedData.PlayedPresets.PlayedPresets;
-    gen959.Empty();
+    (*this).SharedData.Heisters.Empty();
+    (*this).SharedData.Detectives.Empty();
+    (*this).SharedData.PlayedPresets.PlayedPresets.Empty();
     (*this).SharedData.UserDifficulty = EIGS_UserDifficulty::UD_Easy;
     (*this).SharedData.LobbyVisibility = EMETA_LobbyVisibilityType::Private;
     (*this).SharedData.MPLobbyType = EIGS_MPLobbyType::Normal;

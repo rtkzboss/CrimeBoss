@@ -1,6 +1,8 @@
 #include "IGS_SuspicionComponentHolder.h"
 
 FIGS_SuspicionComponentHolder::FIGS_SuspicionComponentHolder() {
+    (*this).SuspicionComponent = nullptr;
+    (*this).SuspicionComponentActor = nullptr;
     (*this).SenseHolder.LastSeenLocation.X = 3.402823466e+38f;
     (*this).SenseHolder.LastSeenLocation.Y = 3.402823466e+38f;
     (*this).SenseHolder.LastSeenLocation.Z = 3.402823466e+38f;

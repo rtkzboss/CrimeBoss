@@ -7,9 +7,9 @@
 
 AIGS_WaterCannon::AIGS_WaterCannon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).TurretID = -1;
-    auto& gen593 = (*this).WeaponModsArray;
-    gen593.Empty();
-    gen593.AddDefaulted(8);
+    auto& gen0 = (*this).WeaponModsArray;
+    gen0.Empty();
+    gen0.AddDefaulted(8);
 }
 
 void AIGS_WaterCannon::RemoveUnusedTurrets_MULTICAST_Implementation() {

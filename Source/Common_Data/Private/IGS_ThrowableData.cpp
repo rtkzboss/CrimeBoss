@@ -5,6 +5,8 @@
 #include "EIGS_WieldableClass.h"
 
 FIGS_ThrowableData::FIGS_ThrowableData() {
+    (*this).Projectile = nullptr;
+    (*this).Equipment = nullptr;
     (*this).GrenadeData.OverlapsOnExplosion = true;
     (*this).GrenadeData.bLineTraceOnOverlap = false;
     (*this).GrenadeData.LineTraceZOffset = 1.000000000e+02f;

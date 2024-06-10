@@ -8,16 +8,16 @@ UIGS_CharacterWieldablesHolderComponent::UIGS_CharacterWieldablesHolderComponent
     (*this).CurrentSlotType = EIGS_WieldableSlot::S_Unarmed;
     (*this).LastSlotType = EIGS_WieldableSlot::S_Unarmed;
     (*this).bIsUnarmed = true;
-    auto& gen254 = (*this).WieldableSlots;
-    gen254.Empty();
-    gen254.AddDefaulted(6);
+    auto& gen0 = (*this).WieldableSlots;
+    gen0.Empty();
+    gen0.AddDefaulted(6);
     (*this).ReduceWeaponDamageForTeamSides = 1;
-    auto& gen255 = (*TBaseStructure<FGameplayTagQuery>::Get()->FindPropertyByName("TagDictionary")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AllowedWieldables, 0));
-    gen255.Empty();
-    gen255.AddDefaulted(1);
-    auto& gen256 = (*TBaseStructure<FGameplayTagQuery>::Get()->FindPropertyByName("QueryTokenStream")->ContainerPtrToValuePtr<TArray<uint8>>(&(*this).AllowedWieldables, 0));
-    gen256.Empty();
-    gen256.AddDefaulted(5);
+    auto& gen1 = (*TBaseStructure<FGameplayTagQuery>::Get()->FindPropertyByName("TagDictionary")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AllowedWieldables, 0));
+    gen1.Empty();
+    gen1.AddDefaulted(1);
+    auto& gen2 = (*TBaseStructure<FGameplayTagQuery>::Get()->FindPropertyByName("QueryTokenStream")->ContainerPtrToValuePtr<TArray<uint8>>(&(*this).AllowedWieldables, 0));
+    gen2.Empty();
+    gen2.AddDefaulted(5);
 }
 
 bool UIGS_CharacterWieldablesHolderComponent::WieldItem(UIGS_WieldableInventoryObjectBase* inInventoryObject) {

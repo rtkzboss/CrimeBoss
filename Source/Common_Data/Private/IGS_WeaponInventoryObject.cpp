@@ -3,6 +3,8 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_WeaponInventoryObject::UIGS_WeaponInventoryObject() {
+    (*this).WeaponSkin = nullptr;
+    (*this).DefaultWeaponSkin = nullptr;
     (*this).ShouldConsumeAmmo = true;
     (*this).ItemType = EIGS_ItemType::Item_Weapon;
 }

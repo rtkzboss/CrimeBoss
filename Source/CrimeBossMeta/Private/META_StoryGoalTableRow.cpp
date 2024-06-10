@@ -1,14 +1,15 @@
 #include "META_StoryGoalTableRow.h"
 
 FMETA_StoryGoalTableRow::FMETA_StoryGoalTableRow() {
+    (*this).Graph = nullptr;
     (*this).Title = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
+    (*this).Icon = nullptr;
+    (*this).Picture = nullptr;
     (*this).bIsGoalRepeatable = false;
     (*this).DaysBetweenAttempts = 1;
-    auto& gen3438 = (*this).Missions;
-    gen3438.Empty();
-    auto& gen3439 = (*this).ActionCardsGoal;
-    gen3439.Empty();
+    (*this).Missions.Empty();
+    (*this).ActionCardsGoal.Empty();
     (*this).RespectByDefault = 0;
     (*this).UseLockRespectCondition = false;
     (*this).UnlockRespect = EMETA_RespectLvl::Low;

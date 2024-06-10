@@ -6,6 +6,7 @@
 #include "Templates/SubclassOf.h"
 
 AIGS_PickupActorInventoryItem::AIGS_PickupActorInventoryItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).R_WeaponSkin = nullptr;
     (*this).R_GlobalItemCount = 1;
     (*this).R_EquipmentCount = 1;
 }

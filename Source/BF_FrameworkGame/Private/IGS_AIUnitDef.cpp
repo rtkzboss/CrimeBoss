@@ -2,11 +2,12 @@
 #include "EIGS_CoverPreset.h"
 
 FIGS_AIUnitDef::FIGS_AIUnitDef() {
+    (*this).Controller = nullptr;
+    (*this).Pawn = nullptr;
     (*this).Loadout.PrimaryWeapon = nullptr;
     (*this).Loadout.SecondaryWeapon = nullptr;
     (*this).Loadout.MeleeWeapon = nullptr;
-    auto& gen2551 = (*this).ThrowablePool;
-    gen2551.Empty();
+    (*this).ThrowablePool.Empty();
     (*this).Stats.HP = 2.800000000e+02f;
     (*this).Stats.Shield = 0.000000000e+00f;
     (*this).Stats.WeaponDamage = 1.000000000e+00f;

@@ -11,8 +11,7 @@ FIGS_MetaCutsceneNodeOption::FIGS_MetaCutsceneNodeOption() {
     (*this).ChoiceSelectionSound = nullptr;
     (*this).ChoiceVisibility = EIGS_CutsceneChoiceVisibility::Visible;
     (*this).ChoiceVisibilityConditionFail = EIGS_CutsceneChoiceVisibility::Disabled;
-    auto& gen962 = (*this).ChoiceVisibilityConditions;
-    gen962.Empty();
+    (*this).ChoiceVisibilityConditions.Empty();
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ValueTag, 0)) = NAME_None;
     (*this).PriceValue = 0.000000000e+00f;
     (*this).VisibilityValue = EIGS_CutsceneChoiceVisibility::Visible;

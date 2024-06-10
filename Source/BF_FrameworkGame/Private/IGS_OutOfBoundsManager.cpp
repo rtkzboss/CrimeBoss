@@ -2,8 +2,8 @@
 #include "IGS_LevelBlockingBoundsSettings.h"
 
 UIGS_OutOfBoundsManager::UIGS_OutOfBoundsManager() {
-    static ConstructorHelpers::FObjectFinder<UIGS_LevelBlockingBoundsSettings> gen608(TEXT("/Game/00_Main/Blueprints/Gameplay/Colliders/LevelBounds/DA_LevelBlockingBoundsSettings.DA_LevelBlockingBoundsSettings"));
-    (*this).Settings = gen608.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_LevelBlockingBoundsSettings> gen0(TEXT("/Game/00_Main/Blueprints/Gameplay/Colliders/LevelBounds/DA_LevelBlockingBoundsSettings.DA_LevelBlockingBoundsSettings"));
+    (*this).Settings = gen0.Object;
 }
 
 void UIGS_OutOfBoundsManager::ResetOutOfBoundsCounter(AIGS_PlayerCharacter* inCharacter) {

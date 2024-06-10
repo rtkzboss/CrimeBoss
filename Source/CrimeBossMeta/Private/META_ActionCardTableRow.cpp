@@ -2,6 +2,7 @@
 #include "EMETA_ActionCardTheme.h"
 
 FMETA_ActionCardTableRow::FMETA_ActionCardTableRow() {
+    (*this).ID = nullptr;
     (*this).Data.Title = FText::FromString(TEXT(""));
     (*this).Data.Description = FText::FromString(TEXT(""));
     (*this).Data.Theme = EMETA_ActionCardTheme::Favour;

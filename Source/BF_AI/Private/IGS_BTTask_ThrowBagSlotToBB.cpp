@@ -1,13 +1,13 @@
 #include "IGS_BTTask_ThrowBagSlotToBB.h"
 
 UIGS_BTTask_ThrowBagSlotToBB::UIGS_BTTask_ThrowBagSlotToBB() {
-    auto& gen546 = (*this).ThrowRequestKey.AllowedTypes;
-    gen546.Empty();
-    gen546.AddDefaulted(1);
+    auto& gen0 = (*this).ThrowRequestKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).ThrowRequestKey, 0)) = 255;
-    auto& gen547 = (*this).ThrowSlotKey.AllowedTypes;
-    gen547.Empty();
-    gen547.AddDefaulted(1);
+    auto& gen1 = (*this).ThrowSlotKey.AllowedTypes;
+    gen1.Empty();
+    gen1.AddDefaulted(1);
     (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).ThrowSlotKey, 0)) = 255;
     (*this).NodeName = TEXT("Throw Bag Slot To BB");
 }

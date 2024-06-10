@@ -8,7 +8,9 @@
 #include "Templates/SubclassOf.h"
 
 AIGS_WeaponPickupActor::AIGS_WeaponPickupActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).WeaponSkin = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).WeaponSkinTag, 0)) = TEXT("ID.Skins.Weapons.Default.Base");
+    (*this).DefaultMesh = nullptr;
     (*this).WeaponPickupSkelMeshComp = CreateDefaultSubobject<USkeletalMeshComponentBudgeted>(TEXT("RootComp"));
     (*this).SightModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SightModMesh"));
     (*this).VisibilityModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisibilityModMesh"));
@@ -16,9 +18,9 @@ AIGS_WeaponPickupActor::AIGS_WeaponPickupActor(const FObjectInitializer& ObjectI
     (*this).GripModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GripModMesh"));
     (*this).MagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MagazineModMesh"));
     (*this).StockModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StockModMesh"));
-    auto& gen639 = (*this).WeaponModsArray;
-    gen639.Empty();
-    gen639.AddDefaulted(6);
+    auto& gen0 = (*this).WeaponModsArray;
+    gen0.Empty();
+    gen0.AddDefaulted(6);
     (*this).mR_IsVisible = true;
     (*this).PickupMeshComp = (UPrimitiveComponent*)WeaponPickupSkelMeshComp;
     (*this).SceneRoot = (USceneComponent*)WeaponPickupSkelMeshComp;

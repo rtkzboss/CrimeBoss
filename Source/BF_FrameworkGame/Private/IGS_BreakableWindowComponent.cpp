@@ -9,9 +9,9 @@
 #include "Net/UnrealNetwork.h"
 
 UIGS_BreakableWindowComponent::UIGS_BreakableWindowComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    auto& gen588 = (*this).mR_DecalsLocation;
-    gen588.Empty();
-    gen588.AddDefaulted(7);
+    auto& gen0 = (*this).mR_DecalsLocation;
+    gen0.Empty();
+    gen0.AddDefaulted(7);
     (*this).mR_CurrentDecalIndex = -1;
     (*this).MinDecalAngle = 1.500000060e-01f;
     (*this).MaxDecalAngle = 8.500000238e-01f;

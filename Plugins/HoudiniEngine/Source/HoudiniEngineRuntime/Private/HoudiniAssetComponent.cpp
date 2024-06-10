@@ -49,9 +49,9 @@ UHoudiniAssetComponent::UHoudiniAssetComponent(const FObjectInitializer& ObjectI
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).StaticMeshGenerationProperties.DefaultBodyInstance, 0)), 0)).GameTraceChannel16 = ECR_Block;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).StaticMeshGenerationProperties.DefaultBodyInstance, 0)), 0)).GameTraceChannel17 = ECR_Block;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).StaticMeshGenerationProperties.DefaultBodyInstance, 0)), 0)).GameTraceChannel18 = ECR_Block;
-    auto& gen196 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).StaticMeshGenerationProperties.DefaultBodyInstance, 0)), 0));
-    gen196.Empty();
-    gen196.AddDefaulted(3);
+    auto& gen0 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).StaticMeshGenerationProperties.DefaultBodyInstance, 0)), 0));
+    gen0.Empty();
+    gen0.AddDefaulted(3);
     (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("MassInKgOverride")->ContainerPtrToValuePtr<float>(&(*this).StaticMeshGenerationProperties.DefaultBodyInstance, 0)) = 1.000000000e+02f;
     (*this).StaticMeshGenerationProperties.DefaultBodyInstance.LinearDamping = 9.999999776e-03f;
     (*this).StaticMeshGenerationProperties.DefaultBodyInstance.MassScale = 1.000000000e+00f;
@@ -85,10 +85,10 @@ UHoudiniAssetComponent::UHoudiniAssetComponent(const FObjectInitializer& ObjectI
     (*this).bEnableProxyStaticMeshRefinementOnPreSaveWorldOverride = true;
     (*this).bEnableProxyStaticMeshRefinementOnPreBeginPIEOverride = true;
     (*this).AssetId = -1;
-    (*this).ComponentGUID.A = -316707980;
-    (*this).ComponentGUID.B = 1147956538;
-    (*this).ComponentGUID.C = -746123385;
-    (*this).ComponentGUID.D = -1480454161;
+    (*this).ComponentGUID.A = -992259044;
+    (*this).ComponentGUID.B = 1268506412;
+    (*this).ComponentGUID.C = -1832478796;
+    (*this).ComponentGUID.D = 2136932050;
     (*this).AssetState = EHoudiniAssetState::NewHDA;
     (*this).SubAssetIndex = 4294967295;
     (*this).bEnableCooking = true;

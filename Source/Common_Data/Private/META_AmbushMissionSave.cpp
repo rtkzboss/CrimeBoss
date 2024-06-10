@@ -6,8 +6,7 @@ FMETA_AmbushMissionSave::FMETA_AmbushMissionSave() {
     (*this).InstigatorMissionID = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).InstigatorMissionTileID, 0)) = NAME_None;
     (*this).PreviousFPSMissionData.MissionResult = EMETA_JobResult::Success;
-    auto& gen1906 = (*this).PreviousFPSMissionData.Loot;
-    gen1906.Empty();
+    (*this).PreviousFPSMissionData.Loot.Empty();
     (*this).PreviousFPSMissionData.MoneyCollected = 0;
     (*this).PreviousFPSMissionData.CivilCasualties = 0;
     (*this).PreviousFPSMissionData.PoliceCasualties = 0;

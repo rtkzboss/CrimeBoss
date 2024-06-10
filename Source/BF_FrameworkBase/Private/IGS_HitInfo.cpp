@@ -2,6 +2,12 @@
 
 FIGS_HitInfo::FIGS_HitInfo() {
     (*this).DamageTypeClass = nullptr;
+    (*this).Instigator = nullptr;
+    (*this).InstigatorPawn = nullptr;
+    (*this).SourceActor = nullptr;
+    (*this).TargetActor = nullptr;
+    (*this).TargetComponent = nullptr;
+    (*this).PhysicalMaterialHit = nullptr;
     (*this).Bone = NAME_None;
     (*this).ImpactPoint.X = 0.000000000e+00f;
     (*this).ImpactPoint.Y = 0.000000000e+00f;

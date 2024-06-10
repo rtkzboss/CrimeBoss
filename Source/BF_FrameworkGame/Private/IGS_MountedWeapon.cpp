@@ -32,9 +32,9 @@ AIGS_MountedWeapon::AIGS_MountedWeapon(const FObjectInitializer& ObjectInitializ
     (*this).Reloader = CreateDefaultSubobject<UIGS_SimpleReloader>(TEXT("Reloader"));
     (*this).DefaultMagazineCount = 3;
     (*this).lastActiveSlot = EIGS_WieldableSlot::S_Unarmed;
-    auto& gen592 = (*this).WeaponModsArray;
-    gen592.Empty();
-    gen592.AddDefaulted(8);
+    auto& gen0 = (*this).WeaponModsArray;
+    gen0.Empty();
+    gen0.AddDefaulted(8);
     (*this).CanReloadInADS = false;
     (*this).bReplicates = true;
     (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;

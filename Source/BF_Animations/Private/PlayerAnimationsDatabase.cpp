@@ -1,8 +1,8 @@
 #include "PlayerAnimationsDatabase.h"
 
 FPlayerAnimationsDatabase::FPlayerAnimationsDatabase() {
-    auto& gen2059 = (*this).AttackType;
-    gen2059.Empty();
+    (*this).ID = nullptr;
+    (*this).AttackType.Empty();
     (*this).WeaponGripStand = nullptr;
     (*this).WeaponGripCrouch = nullptr;
     (*this).WeaponGripRun = nullptr;
@@ -68,8 +68,7 @@ FPlayerAnimationsDatabase::FPlayerAnimationsDatabase() {
     (*this).SlidingAnimations.Slide_Out_Crouch_Idle = nullptr;
     (*this).SlidingAnimations.Slide_Out_Idle = nullptr;
     (*this).SlidingAnimations.Slide_Out_Crouch_Walk = nullptr;
-    auto& gen2060 = (*this).ModInfo;
-    gen2060.Empty();
+    (*this).ModInfo.Empty();
     (*this).LightHitReactions = nullptr;
     (*this).MediumHitReactions = nullptr;
     (*this).HeavyHitReactions = nullptr;

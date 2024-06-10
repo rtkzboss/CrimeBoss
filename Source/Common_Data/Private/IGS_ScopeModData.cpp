@@ -2,10 +2,13 @@
 
 FIGS_ScopeModData::FIGS_ScopeModData() {
     (*this).IsDynamicScope = false;
+    (*this).DynamicScopeMesh = nullptr;
+    (*this).ReticleMaterial = nullptr;
+    (*this).ReticleTortillaMaterial = nullptr;
     (*this).ScopeType = EIGS_ScopeType::Scope_Normal;
-    auto& gen1956 = (*this).ScopeZoom;
-    gen1956.Empty();
-    gen1956.AddDefaulted(1);
+    auto& gen0 = (*this).ScopeZoom;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*this).WeaponTortillaOffset.X = 0.000000000e+00f;
     (*this).WeaponTortillaOffset.Y = 0.000000000e+00f;
     (*this).WeaponTortillaOffset.Z = 0.000000000e+00f;

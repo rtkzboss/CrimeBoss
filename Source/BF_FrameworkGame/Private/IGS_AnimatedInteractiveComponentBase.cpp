@@ -13,12 +13,12 @@ UIGS_AnimatedInteractiveComponentBase::UIGS_AnimatedInteractiveComponentBase(con
     (*this).FailsafeTime = 2.000000000e+00f;
     (*this).bSetFlyingWhenLerping = true;
     (*this).bRotatePitch = true;
-    auto& gen573 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).InputTagsToApply, 0));
-    gen573.Empty();
-    gen573.AddDefaulted(6);
-    auto& gen574 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).InputTagsToApply, 0));
-    gen574.Empty();
-    gen574.AddDefaulted(3);
+    auto& gen0 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).InputTagsToApply, 0));
+    gen0.Empty();
+    gen0.AddDefaulted(6);
+    auto& gen1 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).InputTagsToApply, 0));
+    gen1.Empty();
+    gen1.AddDefaulted(3);
     (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 

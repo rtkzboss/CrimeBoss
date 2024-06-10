@@ -5,6 +5,7 @@
 #include "Templates/SubclassOf.h"
 
 AIGS_VehicleSpawner::AIGS_VehicleSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).ForceVehicleSpawn = nullptr;
     (*this).MaxSpawnsCount = -1;
     (*this).bEnabled = true;
     (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));

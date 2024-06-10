@@ -15,8 +15,8 @@ UIGS_GameCharacterMovementComponent::UIGS_GameCharacterMovementComponent(const F
     (*this).StopSlideSpeed = 2.800000000e+02f;
     (*this).SlideLookTurnMultiplier = 3.000000119e-01f;
     (*this).SlideLowerBodyMultiplier = 3.000000119e-01f;
-    static ConstructorHelpers::FObjectFinder<UClass> gen249(TEXT("/Game/00_Main/GameplayAbilitySystem/Effects/GE_MoveSpeedMultiplier.GE_MoveSpeedMultiplier_C"));
-    (*this).MoveSpeedMultiplierGE = gen249.Object;
+    static ConstructorHelpers::FObjectFinder<UClass> gen0(TEXT("/Game/00_Main/GameplayAbilitySystem/Effects/GE_MoveSpeedMultiplier.GE_MoveSpeedMultiplier_C"));
+    (*this).MoveSpeedMultiplierGE = gen0.Object;
     (*this).CalmWalkSpeed = 1.000000000e+02f;
     (*this).CalmRunSpeed = 2.800000000e+02f;
     (*this).CalmSprintSpeed = 4.900000000e+02f;

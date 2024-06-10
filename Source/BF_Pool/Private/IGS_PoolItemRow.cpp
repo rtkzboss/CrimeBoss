@@ -2,6 +2,7 @@
 
 FIGS_PoolItemRow::FIGS_PoolItemRow() {
     (*this).ID = nullptr;
+    (*this).CustomPoolObjectClass = nullptr;
     (*this).PoolNetMode = EIGS_PoolNetMode::Everywhere;
     (*this).bIsDynamic = true;
     (*this).bIsCircular = false;

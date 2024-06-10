@@ -1,9 +1,9 @@
 #include "IGS_BTTask_SquadDoorBreachTakePos.h"
 
 UIGS_BTTask_SquadDoorBreachTakePos::UIGS_BTTask_SquadDoorBreachTakePos() {
-    auto& gen534 = (*this).BreachRolesKey.AllowedTypes;
-    gen534.Empty();
-    gen534.AddDefaulted(1);
+    auto& gen0 = (*this).BreachRolesKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*this).NodeName = TEXT("Squad Breach Take Pos");
 }
 

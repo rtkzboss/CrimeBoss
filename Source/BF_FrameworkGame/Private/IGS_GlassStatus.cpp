@@ -2,7 +2,6 @@
 
 FIGS_GlassStatus::FIGS_GlassStatus() {
     (*this).State = EIGS_TemperedGlassStatus::Normal;
-    auto& gen3079 = (*this).PreviousHitPoints;
-    gen3079.Empty();
+    (*this).PreviousHitPoints.Empty();
 }
 

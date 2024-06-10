@@ -1,6 +1,7 @@
 #include "META_BaseObject.h"
 
 UMETA_BaseObject::UMETA_BaseObject() {
+    (*this).Icon = nullptr;
 }
 
 void UMETA_BaseObject::SetTagID(FGameplayTag inTag) {

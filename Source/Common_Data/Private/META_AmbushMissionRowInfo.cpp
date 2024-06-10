@@ -15,6 +15,8 @@
 FMETA_AmbushMissionRowInfo::FMETA_AmbushMissionRowInfo() {
     (*this).Name = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
+    (*this).Picture = nullptr;
+    (*this).MapIconOverride = nullptr;
     (*this).FPSMissionInfo.FPSMissionID = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).FPSMissionInfo.Scenario, 0)) = NAME_None;
     (*this).FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
@@ -36,10 +38,8 @@ FMETA_AmbushMissionRowInfo::FMETA_AmbushMissionRowInfo() {
     (*this).FPSMissionInfo.bForceHeat = false;
     (*this).FPSMissionInfo.bMinimalHeatOnly = false;
     (*this).FPSMissionInfo.Heat = EMETA_Heat::Medium;
-    auto& gen915 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen915.Empty();
-    auto& gen916 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen916.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
     (*this).FPSMissionInfo.TotalLootbagCount = -1;
     (*this).FPSMissionInfo.ForcedDetectivesCount = 0;
     (*this).FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;

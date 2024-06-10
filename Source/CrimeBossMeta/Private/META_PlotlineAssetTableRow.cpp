@@ -7,6 +7,7 @@ FMETA_PlotlineAssetTableRow::FMETA_PlotlineAssetTableRow() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).NextTier, 0)) = NAME_None;
     (*this).AssetName = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
+    (*this).Image = nullptr;
     (*this).Score = 0;
     (*this).BossPointMultiplier = 1.000000000e+00f;
     (*this).bCanBeLost = false;

@@ -2,8 +2,7 @@
 
 FIGS_AnimNode_BoneInfoDebug::FIGS_AnimNode_BoneInfoDebug() {
     (*this).InputPose.LinkID = -1;
-    auto& gen2009 = (*this).Bones;
-    gen2009.Empty();
+    (*this).Bones.Empty();
     (*this).DebugBoneAxisType = EIGS_DebugBoneAxisTypes::XYZ;
     (*this).DisplayBoneInfo = false;
     (*this).DisplayTransformSpace = EIGS_DebugBoneTextTransformSpaceFormat::WorldSpace;

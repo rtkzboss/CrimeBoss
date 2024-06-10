@@ -6,8 +6,7 @@ FMETA_MoneyMakingGoalSave::FMETA_MoneyMakingGoalSave() {
     (*this).Task.ID = 0;
     (*this).Task.CurrentValue = 0;
     (*this).Task.Status = EMETA_TaskStatus::None;
-    auto& gen2212 = (*this).Missions;
-    gen2212.Empty();
+    (*this).Missions.Empty();
     (*this).MonetaryValue = 0;
     (*this).Result = EMETA_GoalStatus::None;
 }

@@ -1,6 +1,7 @@
 #include "IGS_ThirdPersonCarryablesAnimDatabase.h"
 
 FIGS_ThirdPersonCarryablesAnimDatabase::FIGS_ThirdPersonCarryablesAnimDatabase() {
+    (*this).ID = nullptr;
     (*this).WeaponGripStand = nullptr;
     (*this).WeaponGripCrouch = nullptr;
     (*this).WeaponGripRun = nullptr;

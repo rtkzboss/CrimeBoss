@@ -6,6 +6,7 @@
 
 AIGS_StaticMeshInventoryItemPickup::AIGS_StaticMeshInventoryItemPickup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).PickupStaticMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RootComp"));
+    (*this).DefaultMesh = nullptr;
     (*this).bIsShineEnabled = true;
     (*this).bTakeMeshFromDatabase = true;
     (*this).PickupMeshComp = (UPrimitiveComponent*)PickupStaticMeshComp;

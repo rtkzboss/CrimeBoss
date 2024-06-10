@@ -5,5 +5,6 @@ FIntegerParameterUIData::FIntegerParameterUIData() {
     (*this).ParamUIMetadata.ObjectFriendlyName = TEXT("");
     (*this).ParamUIMetadata.UISectionName = TEXT("");
     (*this).ParamUIMetadata.UIOrder = 0;
+    (*this).ParamUIMetadata.UIThumbnail = nullptr;
 }
 

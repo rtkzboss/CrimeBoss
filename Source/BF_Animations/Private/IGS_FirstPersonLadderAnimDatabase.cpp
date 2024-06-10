@@ -1,6 +1,7 @@
 #include "IGS_FirstPersonLadderAnimDatabase.h"
 
 FIGS_FirstPersonLadderAnimDatabase::FIGS_FirstPersonLadderAnimDatabase() {
+    (*this).ID = nullptr;
     (*this).Locomotion.IdleWalkBlendSpace = nullptr;
     (*this).Locomotion.JumpStart = nullptr;
     (*this).Locomotion.JumpLoop = nullptr;

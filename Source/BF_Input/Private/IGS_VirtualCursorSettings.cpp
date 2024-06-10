@@ -1,9 +1,9 @@
 #include "IGS_VirtualCursorSettings.h"
 
 UIGS_VirtualCursorSettings::UIGS_VirtualCursorSettings() {
-    auto& gen246 = (*this).VirtualCursorAccelerationCurve.EditorCurveData.Keys;
-    gen246.Empty();
-    gen246.AddDefaulted(2);
+    auto& gen0 = (*this).VirtualCursorAccelerationCurve.EditorCurveData.Keys;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
     (*this).VirtualCursorAccelerationCurve.EditorCurveData.DefaultValue = 3.402823466e+38f;
     (*this).VirtualCursorAccelerationCurve.EditorCurveData.PreInfinityExtrap = RCCE_Constant;
     (*this).VirtualCursorAccelerationCurve.EditorCurveData.PostInfinityExtrap = RCCE_Constant;

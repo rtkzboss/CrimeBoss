@@ -3,15 +3,15 @@
 
 UBTTask_MoveToAlertingCharacter::UBTTask_MoveToAlertingCharacter() {
     (*this).LOSStoppingDistance = 3.500000000e+02f;
-    auto& gen452 = (*this).LookPosKey.AllowedTypes;
-    gen452.Empty();
-    gen452.AddDefaulted(1);
-    auto& gen453 = (*this).AcceptableRadiusKey.AllowedTypes;
-    gen453.Empty();
-    gen453.AddDefaulted(1);
-    auto& gen454 = (*this).BlackboardKey.AllowedTypes;
-    gen454.Empty();
-    gen454.AddDefaulted(2);
+    auto& gen0 = (*this).LookPosKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
+    auto& gen1 = (*this).AcceptableRadiusKey.AllowedTypes;
+    gen1.Empty();
+    gen1.AddDefaulted(1);
+    auto& gen2 = (*this).BlackboardKey.AllowedTypes;
+    gen2.Empty();
+    gen2.AddDefaulted(2);
     (*this).NodeName = TEXT("Move To Alerting Character");
 }
 

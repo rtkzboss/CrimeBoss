@@ -1,9 +1,6 @@
 #include "CustomizableObjectInstance.h"
-#include "CustomizableInstancePrivateData.h"
 
 UCustomizableObjectInstance::UCustomizableObjectInstance() {
-    static ConstructorHelpers::FObjectFinder<UCustomizableInstancePrivateData> gen195(TEXT("/Engine/Transient.CustomizableInstancePrivateData_2147482642"));
-    (*this).PrivateData = gen195.Object;
 }
 
 void UCustomizableObjectInstance::UpdateSkeletalMeshAsync(bool bIgnoreCloseDist, bool bForceHighPriority) {

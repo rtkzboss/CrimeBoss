@@ -7,6 +7,8 @@ UIGS_PingableComponent::UIGS_PingableComponent(const FObjectInitializer& ObjectI
     (*this).bShowOutline = true;
     (*this).PingDuration = -1.000000000e+00f;
     (*this).mR_bCanBePinged = true;
+    (*this).PingedAkAudioEvent = FSoftObjectPath(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Events/Default_Work_Unit/WU_GUI/Ping/AKE_Ping_Highlight_Generic.AKE_Ping_Highlight_Generic"), TEXT(""));
+    (*this).PingedDangerousAkAudioEvent = FSoftObjectPath(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Events/Default_Work_Unit/WU_GUI/Ping/AKE_Ping_Highlight_Dangerous.AKE_Ping_Highlight_Dangerous"), TEXT(""));
 }
 
 void UIGS_PingableComponent::SetOutlineState(EIGS_CameraOutlineState inType, bool inEnabled) {

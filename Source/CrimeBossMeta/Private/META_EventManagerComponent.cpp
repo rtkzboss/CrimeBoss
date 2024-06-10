@@ -2,6 +2,7 @@
 #include "ComponentInstanceDataCache.h"
 
 UMETA_EventManagerComponent::UMETA_EventManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).LocalRemovedGraph = nullptr;
 }
 
 bool UMETA_EventManagerComponent::WasGraphStarted(const FMETA_GraphStruct& inGraphData) {

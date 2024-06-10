@@ -6,6 +6,8 @@ UMETA_PlotlineSelection::UMETA_PlotlineSelection() {
     (*this).FinalScoreMultiplier = 1.000000000e+00f;
     (*this).AnyNextPlotlineDays.Min = 2;
     (*this).AnyNextPlotlineDays.Max = 4;
+    (*this).CrewRandEventsGraph = nullptr;
+    (*this).SpecialCrewEventsGraph = nullptr;
 }
 
 bool UMETA_PlotlineSelection::IsBossBonusIgnored(EMETA_BonusType inBonusType) const {

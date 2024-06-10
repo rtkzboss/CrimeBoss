@@ -1,6 +1,7 @@
 #include "IGS_SentryEnemyHolder.h"
 
 FIGS_SentryEnemyHolder::FIGS_SentryEnemyHolder() {
+    (*this).Enemy = nullptr;
     (*this).SenseHolder.LastKnowLocation.X = 3.402823466e+38f;
     (*this).SenseHolder.LastKnowLocation.Y = 3.402823466e+38f;
     (*this).SenseHolder.LastKnowLocation.Z = 3.402823466e+38f;

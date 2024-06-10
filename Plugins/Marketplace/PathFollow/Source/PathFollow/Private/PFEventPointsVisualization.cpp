@@ -9,7 +9,7 @@ FPFEventPointsVisualization::FPFEventPointsVisualization() {
     (*this).EventPointsColor.R = 0;
     (*this).EventPointsColor.A = 255;
     (*this).EventPointHitProxySize = 2.000000000e+01f;
-    static ConstructorHelpers::FObjectFinder<UTexture2D> gen1211(TEXT("/PathFollow/event_sprite.event_sprite"));
-    (*this)._EventPointSpriteTexture = gen1211.Object;
+    static ConstructorHelpers::FObjectFinder<UTexture2D> gen0(TEXT("/PathFollow/event_sprite.event_sprite"));
+    (*this)._EventPointSpriteTexture = gen0.Object;
 }
 

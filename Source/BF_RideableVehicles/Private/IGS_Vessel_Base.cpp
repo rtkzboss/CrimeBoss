@@ -30,9 +30,9 @@ AIGS_Vessel_Base::AIGS_Vessel_Base(const FObjectInitializer& ObjectInitializer) 
     (*this).ParticleSpeedTrigger = 2.000000000e+02f;
     (*this).EngineInitialScale = 1.000000000e+00f;
     (*this).SideBoardInitialScale = 1.000000000e+00f;
-    auto& gen646 = (*this).PontoonWaterStatus;
-    gen646.Empty();
-    gen646.AddDefaulted(2);
+    auto& gen0 = (*this).PontoonWaterStatus;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
     (*this).PlayerBlockBoxComponent->SetupAttachment((*this).RootComponent);
     (*this).LeftEngineParticleEffect->SetupAttachment((*this).RootComponent);
     (*this).RightEngineParticleEffect->SetupAttachment((*this).RootComponent);

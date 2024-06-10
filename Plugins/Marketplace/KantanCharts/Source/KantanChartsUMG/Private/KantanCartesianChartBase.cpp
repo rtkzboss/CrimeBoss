@@ -35,8 +35,8 @@ UKantanCartesianChartBase::UKantanCartesianChartBase() {
     (*this).YAxisCfg.LeftBottomAxis.bShowLabels = true;
     (*this).AxisTitlePadding.Top = 4.000000000e+00f;
     (*this).AxisTitlePadding.Bottom = 4.000000000e+00f;
-    static ConstructorHelpers::FObjectFinder<UKantanSeriesStyleSet> gen78(TEXT("/KantanCharts/Style/SeriesStyles/DefaultSeriesStyleSet.DefaultSeriesStyleSet"));
-    (*this).SeriesStyleSet = gen78.Object;
+    static ConstructorHelpers::FObjectFinder<UKantanSeriesStyleSet> gen0(TEXT("/KantanCharts/Style/SeriesStyles/DefaultSeriesStyleSet.DefaultSeriesStyleSet"));
+    (*this).SeriesStyleSet = gen0.Object;
     (*this).bAntiAlias = true;
 }
 

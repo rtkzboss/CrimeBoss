@@ -25,7 +25,6 @@ FHoudiniAssetBlueprintInstanceData::FHoudiniAssetBlueprintInstanceData() {
     (*this).HapiGUID.D = 0;
     (*this).bRegisteredComponentTemplate = false;
     (*this).SourceName = TEXT("");
-    auto& gen1595 = (*this).Inputs;
-    gen1595.Empty();
+    (*this).Inputs.Empty();
 }
 

@@ -16,8 +16,8 @@ AIGS_EntranceBase::AIGS_EntranceBase(const FObjectInitializer& ObjectInitializer
     (*this).bFullyProgressed = true;
     (*this).NetDormancy = DORM_Initial;
     (*this).RootComponent = (USceneComponent*)EntranceRootComponent;
-    (*this).FrontBreachingPoints->SetupAttachment((*this).EntranceRootComponent);
     (*this).BackBreachingPoints->SetupAttachment((*this).EntranceRootComponent);
+    (*this).FrontBreachingPoints->SetupAttachment((*this).EntranceRootComponent);
 }
 
 void AIGS_EntranceBase::SetOpenState(bool inOpen) {

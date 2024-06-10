@@ -2,8 +2,7 @@
 
 FMETA_PreviousMissionData::FMETA_PreviousMissionData() {
     (*this).MissionResult = EMETA_JobResult::Success;
-    auto& gen1907 = (*this).Loot;
-    gen1907.Empty();
+    (*this).Loot.Empty();
     (*this).MoneyCollected = 0;
     (*this).CivilCasualties = 0;
     (*this).PoliceCasualties = 0;

@@ -8,9 +8,9 @@
 UIGS_ChokeComponent::UIGS_ChokeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).AreaClass = UIGS_NavArea_Choke::StaticClass();
     (*this).bDynamicObstacle = true;
-    auto& gen257 = (*this).ComponentTags;
-    gen257.Empty();
-    gen257.AddDefaulted(1);
+    auto& gen0 = (*this).ComponentTags;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
 }
 
 

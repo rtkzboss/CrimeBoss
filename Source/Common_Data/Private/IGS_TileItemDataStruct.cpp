@@ -3,6 +3,7 @@
 FIGS_TileItemDataStruct::FIGS_TileItemDataStruct() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ItemId, 0)) = NAME_None;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).EntitlementTag, 0)) = NAME_None;
+    (*this).Image = nullptr;
     (*this).Name = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
     (*this).Price = 0;

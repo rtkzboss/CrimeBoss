@@ -5,9 +5,9 @@ FParameterUIData::FParameterUIData() {
     (*this).ParamUIMetadata.ObjectFriendlyName = TEXT("");
     (*this).ParamUIMetadata.UISectionName = TEXT("");
     (*this).ParamUIMetadata.UIOrder = 0;
+    (*this).ParamUIMetadata.UIThumbnail = nullptr;
     (*this).Type = EMutableParameterType::None;
-    auto& gen1588 = (*this).ArrayIntegerParameterOption;
-    gen1588.Empty();
+    (*this).ArrayIntegerParameterOption.Empty();
     (*this).IntegerParameterGroupType = ECustomizableObjectGroupType::COGT_ONE_OR_NONE;
     (*this).bDontCompressRuntimeTextures = false;
 }

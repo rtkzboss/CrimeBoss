@@ -7,16 +7,11 @@ FIGS_Quick_ChainResult::FIGS_Quick_ChainResult() {
     (*this).Score = 0;
     (*this).MoneyRewardTotal = 0;
     (*this).RespectRewardAfterLastMission = 0;
-    auto& gen2400 = (*this).WeaponsReward;
-    gen2400.Empty();
-    auto& gen2401 = (*this).WeaponTagsReward;
-    gen2401.Empty();
-    auto& gen2402 = (*this).QuickMissionResults;
-    gen2402.Empty();
-    auto& gen2403 = (*this).PlayerHeisters;
-    gen2403.Empty();
-    auto& gen2404 = (*this).RemainingHeisters;
-    gen2404.Empty();
+    (*this).WeaponsReward.Empty();
+    (*this).WeaponTagsReward.Empty();
+    (*this).QuickMissionResults.Empty();
+    (*this).PlayerHeisters.Empty();
+    (*this).RemainingHeisters.Empty();
     (*this).Completed = false;
 }
 

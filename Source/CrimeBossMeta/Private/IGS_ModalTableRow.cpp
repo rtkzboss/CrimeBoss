@@ -6,5 +6,6 @@ FIGS_ModalTableRow::FIGS_ModalTableRow() {
     (*this).AcceptButtonText = FText::FromString(TEXT(""));
     (*this).CancelButtonText = FText::FromString(TEXT(""));
     (*this).ExtraOptionButtonText = FText::FromString(TEXT(""));
+    (*this).Image = nullptr;
 }
 

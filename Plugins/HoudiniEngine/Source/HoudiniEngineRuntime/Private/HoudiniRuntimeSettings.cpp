@@ -62,9 +62,9 @@ UHoudiniRuntimeSettings::UHoudiniRuntimeSettings() {
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0)).GameTraceChannel16 = ECR_Block;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0)).GameTraceChannel17 = ECR_Block;
     (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0)).GameTraceChannel18 = ECR_Block;
-    auto& gen199 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0));
-    gen199.Empty();
-    gen199.AddDefaulted(3);
+    auto& gen0 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).DefaultBodyInstance, 0)), 0));
+    gen0.Empty();
+    gen0.AddDefaulted(3);
     (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("MassInKgOverride")->ContainerPtrToValuePtr<float>(&(*this).DefaultBodyInstance, 0)) = 1.000000000e+02f;
     (*this).DefaultBodyInstance.LinearDamping = 9.999999776e-03f;
     (*this).DefaultBodyInstance.MassScale = 1.000000000e+00f;

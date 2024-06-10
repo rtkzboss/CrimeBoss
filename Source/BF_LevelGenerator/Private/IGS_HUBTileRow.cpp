@@ -7,7 +7,6 @@ FIGS_HUBTileRow::FIGS_HUBTileRow() {
     (*this).DistrictType = 0;
     (*this).ArtDA.BuildConfigurationDataAsset = nullptr;
     (*this).ArtDA.VariantIndex = 0;
-    auto& gen1987 = (*this).Supports;
-    gen1987.Empty();
+    (*this).Supports.Empty();
 }
 

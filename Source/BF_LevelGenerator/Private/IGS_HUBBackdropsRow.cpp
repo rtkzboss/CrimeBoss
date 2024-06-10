@@ -7,7 +7,6 @@ FIGS_HUBBackdropsRow::FIGS_HUBBackdropsRow() {
     (*this).DistrictType = EIGS_HubDistrict::Downtown;
     (*this).DA_Art.BuildConfigurationDataAsset = nullptr;
     (*this).DA_Art.VariantIndex = 0;
-    auto& gen1986 = (*this).Scenarios;
-    gen1986.Empty();
+    (*this).Scenarios.Empty();
 }
 

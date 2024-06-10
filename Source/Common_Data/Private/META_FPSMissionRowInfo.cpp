@@ -12,6 +12,8 @@
 
 FMETA_FPSMissionRowInfo::FMETA_FPSMissionRowInfo() {
     (*this).MissionSubtype = EMETA_FPSMissionSubtype::Story;
+    (*this).Picture = nullptr;
+    (*this).MapIconOverride = nullptr;
     (*this).Name = FText::FromString(TEXT(""));
     (*this).Objective = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
@@ -20,14 +22,10 @@ FMETA_FPSMissionRowInfo::FMETA_FPSMissionRowInfo() {
     (*this).IntelSoldierMultiplier = 1.000000000e+00f;
     (*this).MinCrewSize = 1;
     (*this).MaxCrewSize = 4;
-    auto& gen924 = (*this).WeaponsRequired;
-    gen924.Empty();
-    auto& gen925 = (*this).CharactersRequired;
-    gen925.Empty();
-    auto& gen926 = (*this).CharactersRequiredButNotOwned;
-    gen926.Empty();
-    auto& gen927 = (*this).ResultsWhenJobIsNotRemovedFromTheMap;
-    gen927.Empty();
+    (*this).WeaponsRequired.Empty();
+    (*this).CharactersRequired.Empty();
+    (*this).CharactersRequiredButNotOwned.Empty();
+    (*this).ResultsWhenJobIsNotRemovedFromTheMap.Empty();
     (*this).ReturnedDataProcessingMode = EMETA_ReturnedDataProcessingMode::AcceptLoot;
     (*this).LootPercentageFromSuccess = 0;
     (*this).TurfActionAfterSuccess = EMETA_TurfActionAfterSuccess::None;
@@ -53,10 +51,8 @@ FMETA_FPSMissionRowInfo::FMETA_FPSMissionRowInfo() {
     (*this).FPSMissionInfo.bForceHeat = false;
     (*this).FPSMissionInfo.bMinimalHeatOnly = false;
     (*this).FPSMissionInfo.Heat = EMETA_Heat::Medium;
-    auto& gen928 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen928.Empty();
-    auto& gen929 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0));
-    gen929.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).FPSMissionInfo.SupportedLoot, 0)).Empty();
     (*this).FPSMissionInfo.TotalLootbagCount = -1;
     (*this).FPSMissionInfo.ForcedDetectivesCount = 0;
     (*this).FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;
@@ -64,13 +60,9 @@ FMETA_FPSMissionRowInfo::FMETA_FPSMissionRowInfo() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ObjectivesPreset, 0)) = NAME_None;
     (*this).UnlockRespect = EMETA_RespectLvl::Low;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).UnlockTag, 0)) = NAME_None;
-    auto& gen930 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0));
-    gen930.Empty();
-    auto& gen931 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0));
-    gen931.Empty();
-    auto& gen932 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0));
-    gen932.Empty();
-    auto& gen933 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0));
-    gen933.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).LootType, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionTypeTags, 0)).Empty();
 }
 

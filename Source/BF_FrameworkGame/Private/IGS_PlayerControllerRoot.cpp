@@ -13,6 +13,7 @@
 #include "IGS_SubControllerVehicle.h"
 
 AIGS_PlayerControllerRoot::AIGS_PlayerControllerRoot(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).DefaultHUDClass = nullptr;
     (*this).bAllowSwitchFireModeInSprint = true;
     (*this).bAllowChangeSlotInSprint = true;
     (*this).bToggleCrouch = true;

@@ -3,6 +3,7 @@
 
 UIGS_LevelBlockingBoundsSettings::UIGS_LevelBlockingBoundsSettings() {
     (*this).NoHeisterAreaClass = UNavArea_Obstacle::StaticClass();
+    (*this).OutOfBoundsWidget = nullptr;
 }
 
 

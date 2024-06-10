@@ -10,10 +10,10 @@
 AIGS_GrenadeProjectileBase::AIGS_GrenadeProjectileBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).ExplosionLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("ExplosionLight"));
     (*this).GrenadeIndicatorWidget = CreateDefaultSubobject<UIGS_WorldSpaceWidgetBase>(TEXT("Grenade Indicator Widget"));
-    static ConstructorHelpers::FObjectFinder<UAkSwitchValue> gen602(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Switches/Default_Work_Unit/WU_Environment/SwitchGrp_EnviroSpace/SwitchGrp_EnviroSpace-Switch_Indoors.SwitchGrp_EnviroSpace-Switch_Indoors"));
-    (*this).IndoorsAkSwitch = gen602.Object;
-    static ConstructorHelpers::FObjectFinder<UAkSwitchValue> gen603(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Switches/Default_Work_Unit/WU_Environment/SwitchGrp_EnviroSpace/SwitchGrp_EnviroSpace-Switch_Outdoors.SwitchGrp_EnviroSpace-Switch_Outdoors"));
-    (*this).OutdoorsAkSwitch = gen603.Object;
+    static ConstructorHelpers::FObjectFinder<UAkSwitchValue> gen0(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Switches/Default_Work_Unit/WU_Environment/SwitchGrp_EnviroSpace/SwitchGrp_EnviroSpace-Switch_Indoors.SwitchGrp_EnviroSpace-Switch_Indoors"));
+    (*this).IndoorsAkSwitch = gen0.Object;
+    static ConstructorHelpers::FObjectFinder<UAkSwitchValue> gen1(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Switches/Default_Work_Unit/WU_Environment/SwitchGrp_EnviroSpace/SwitchGrp_EnviroSpace-Switch_Outdoors.SwitchGrp_EnviroSpace-Switch_Outdoors"));
+    (*this).OutdoorsAkSwitch = gen1.Object;
     (*this).AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
     (*this).IndicatorAppearTime = 3.330000043e-01f;
     (*this).LightFlashTime = 2.000000030e-01f;

@@ -1,6 +1,7 @@
 #include "IGS_EnemyHolder.h"
 
 FIGS_EnemyHolder::FIGS_EnemyHolder() {
+    (*this).Enemy = nullptr;
     (*this).SenseHolder.LastSeenLocation.X = 3.402823466e+38f;
     (*this).SenseHolder.LastSeenLocation.Y = 3.402823466e+38f;
     (*this).SenseHolder.LastSeenLocation.Z = 3.402823466e+38f;

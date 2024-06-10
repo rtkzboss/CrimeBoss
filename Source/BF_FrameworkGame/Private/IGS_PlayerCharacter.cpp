@@ -52,6 +52,7 @@ AIGS_PlayerCharacter::AIGS_PlayerCharacter(const FObjectInitializer& ObjectIniti
     (*this).bCanSlide = true;
     (*this).bCanUseUnarmedMelee = true;
     (*this).Camera = CreateDefaultSubobject<UIGS_PlayerCameraComponent>(TEXT("Camera"));
+    (*this).DefaultArmsAsset = FSoftObjectPath(TEXT("/Game/00_Main/Core/Player/Arms/BP_Arms_Fallback.BP_Arms_Fallback_C"), TEXT(""));
     (*this).PostProcessManagerComponent = CreateDefaultSubobject<UIGS_PostProcessManagerComponent>(TEXT("PostProcessManagerComponent"));
     (*this).PlayerEffectsComponent = CreateDefaultSubobject<UIGS_PlayerEffectsComponent>(TEXT("PlayerEffectsComponent"));
     (*this).SuppressionHandlerComponent = CreateDefaultSubobject<UIGS_PlayerSuppressionHandlerComponent>(TEXT("SuppressionHandlerCapsuleComponent"));

@@ -13,8 +13,8 @@ UIGS_DecalContactShadowComponent::UIGS_DecalContactShadowComponent(const FObject
     (*this).FemaleHeelsSettings.Radius = 1.350000000e+01f;
     (*this).FemaleHeelsSettings.WidthScale = 5.000000000e-01f;
     (*this).FemaleHeelsSettings.Offset = -2.250000000e+00f;
-    static ConstructorHelpers::FObjectFinder<UMaterial> gen597(TEXT("/Game/00_Main/MaterialLibrary/Utilities/M_DecalShadow.M_DecalShadow"));
-    (*this).ShadowDecalMaterial = gen597.Object;
+    static ConstructorHelpers::FObjectFinder<UMaterial> gen0(TEXT("/Game/00_Main/MaterialLibrary/Utilities/M_DecalShadow.M_DecalShadow"));
+    (*this).ShadowDecalMaterial = gen0.Object;
 }
 
 void UIGS_DecalContactShadowComponent::UpdateShadowRotation() {

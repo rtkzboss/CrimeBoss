@@ -5,9 +5,10 @@ FIGS_WieldableReplicatedData::FIGS_WieldableReplicatedData() {
     (*this).TableIndex = -1;
     (*this).Slot = EIGS_WieldableSlot::S_UNKNOWN;
     (*this).ItemType = EIGS_ItemType::Item_UNKNOWN;
+    (*this).WeaponSkin = nullptr;
     (*this).WeaponDefinition = nullptr;
-    auto& gen3394 = (*this).Mods;
-    gen3394.Empty();
+    (*this).DefaultWeaponSkin = nullptr;
+    (*this).Mods.Empty();
     (*this).UniversalData.bUseDefaultValues = true;
     (*this).UniversalData.bUseCustomName = false;
     (*this).UniversalData.UniversalBool_1 = false;

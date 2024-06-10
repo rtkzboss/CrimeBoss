@@ -10,7 +10,9 @@ AIGS_SquadSwat::AIGS_SquadSwat(const FObjectInitializer& ObjectInitializer) : Su
     (*this).RoomPathfindingComponent = CreateDefaultSubobject<UIGS_RoomPathfindingComponent>(TEXT("RoomPathfindingComponent"));
     (*this).SpeedSynchronizationComponent = CreateDefaultSubobject<UIGS_SquadSpeedSynchronizationComponent>(TEXT("SpeedSynchronizationComponent"));
     (*this).SquadAggroComponent = CreateDefaultSubobject<UIGS_SquadAggroComponent>(TEXT("SquadAggroComponent"));
-    (*this).DebugColor.B = 211;
+    (*this).DebugColor.B = 102;
+    (*this).DebugColor.G = 255;
+    (*this).DebugColor.R = 0;
     (*this).PrimaryActorTick.bCanEverTick = true;
     (*this).PrimaryActorTick.bStartWithTickEnabled = false;
     (*this).PrimaryActorTick.TickInterval = 2.000000030e-01f;

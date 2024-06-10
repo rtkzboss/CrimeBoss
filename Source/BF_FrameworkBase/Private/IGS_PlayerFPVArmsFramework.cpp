@@ -6,8 +6,8 @@
 #include "Components/SkeletalMeshComponent.h"
 
 AIGS_PlayerFPVArmsFramework::AIGS_PlayerFPVArmsFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> gen259(TEXT("/Game/00_Main/MaterialLibrary/Common/MPC_GlobalsCharactersWeapons.MPC_GlobalsCharactersWeapons"));
-    (*this).WieldableMPC = gen259.Object;
+    static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> gen0(TEXT("/Game/00_Main/MaterialLibrary/Common/MPC_GlobalsCharactersWeapons.MPC_GlobalsCharactersWeapons"));
+    (*this).WieldableMPC = gen0.Object;
     (*this).ArmsSkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ArmsSkeletalMesh"));
     (*this).ArmsRootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("ArmsRoot"));
     (*this).PrimaryActorTick.bCanEverTick = true;

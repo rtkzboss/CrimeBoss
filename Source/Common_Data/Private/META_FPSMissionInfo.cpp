@@ -22,10 +22,8 @@ FMETA_FPSMissionInfo::FMETA_FPSMissionInfo() {
     (*this).bForceHeat = false;
     (*this).bMinimalHeatOnly = false;
     (*this).Heat = EMETA_Heat::Medium;
-    auto& gen911 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SupportedLoot, 0));
-    gen911.Empty();
-    auto& gen912 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SupportedLoot, 0));
-    gen912.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SupportedLoot, 0)).Empty();
     (*this).TotalLootbagCount = -1;
     (*this).ForcedDetectivesCount = 0;
     (*this).StealthMode = EMETA_StealthMode::NotAvailable;

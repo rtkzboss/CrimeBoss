@@ -2,7 +2,6 @@
 
 FCustomizableObjectPopulationCharacteristic::FCustomizableObjectPopulationCharacteristic() {
     (*this).ParameterName = TEXT("");
-    auto& gen1594 = (*this).Constraints;
-    gen1594.Empty();
+    (*this).Constraints.Empty();
 }
 

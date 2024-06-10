@@ -22,12 +22,9 @@ FIGS_Meta2FPS_Data::FIGS_Meta2FPS_Data() {
     (*this).ObjectiveValue = 0;
     (*this).TotalMissionValue = 0;
     (*this).TotalLootbagCount = -1;
-    auto& gen2278 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0));
-    gen2278.Empty();
-    auto& gen2279 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0));
-    gen2279.Empty();
-    auto& gen2280 = (*this).SpecialLoot.Loot;
-    gen2280.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0)).Empty();
+    (*this).SpecialLoot.Loot.Empty();
     (*this).SpecialLoot.Money = 0;
     (*this).SpecialLoot.bIsFilled = false;
     (*this).Respect = EMETA_RespectLvl::Connected;
@@ -42,8 +39,7 @@ FIGS_Meta2FPS_Data::FIGS_Meta2FPS_Data() {
     (*this).AllyVariation = EIGS_HeistersBackupVariationType::US_None;
     (*this).AllyTier = EIGS_AITiers::AT_Tier2;
     (*this).ExpectedPlayerCount = -1;
-    auto& gen2281 = (*this).MetaBonuses.ArmyPerkData;
-    gen2281.Empty();
+    (*this).MetaBonuses.ArmyPerkData.Empty();
     (*this).ObjectivePercentage = 50;
     (*this).NeedObjectiveCompletion = false;
     (*this).bDownedCharctersSurvive = false;

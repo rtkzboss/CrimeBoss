@@ -2,8 +2,8 @@
 #include "IGS_AISpawnerData.h"
 
 UIGS_AISpawner::UIGS_AISpawner() {
-    static ConstructorHelpers::FObjectFinder<UIGS_AISpawnerData> gen571(TEXT("/Game/00_Main/Core/AI/Spawning/DA_AISpawnerData.DA_AISpawnerData"));
-    (*this).AISpawnerData = gen571.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_AISpawnerData> gen0(TEXT("/Game/00_Main/Core/AI/Spawning/DA_AISpawnerData.DA_AISpawnerData"));
+    (*this).AISpawnerData = gen0.Object;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).NoneSpawnAnimTag, 0)) = TEXT("Anim.Spawn.None");
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).StoryMissionTag, 0)) = TEXT("Mission.Story");
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).UnknownMissionTag, 0)) = TEXT("Mission.Unknown");

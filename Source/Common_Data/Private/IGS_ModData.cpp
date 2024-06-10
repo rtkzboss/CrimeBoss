@@ -6,6 +6,7 @@
 FIGS_ModData::FIGS_ModData() {
     (*this).CompatibleWeapon = nullptr;
     (*this).ModType = EIGS_ModType::Mod_VALID;
+    (*this).ModMesh = nullptr;
     (*this).CommonModData.HolsterTimeMultiplier = 1.000000000e+00f;
     (*this).CommonModData.ADSTimeMultiplier = 1.000000000e+00f;
     (*this).CommonModData.HipFireSpreadMultiplier = 1.000000000e+00f;
@@ -20,13 +21,18 @@ FIGS_ModData::FIGS_ModData() {
     (*this).CommonModData.MaxRangeMultiplier = 1.000000000e+00f;
     (*this).CommonModData.RPMMultiplier = 1.000000000e+00f;
     (*this).BarrelModData.IsSuppressor = false;
+    (*this).BarrelModData.MuzzleFlashParticle = nullptr;
+    (*this).BarrelModData.MuzzleFlashTortillaParticle = nullptr;
     (*this).BarrelModData.MuzzleFlashStimuliMultiplier = 1.000000000e+00f;
     (*this).BarrelModData.ShotSoundStimuliMultiplier = 1.000000000e+00f;
     (*this).ScopeModData.IsDynamicScope = false;
+    (*this).ScopeModData.DynamicScopeMesh = nullptr;
+    (*this).ScopeModData.ReticleMaterial = nullptr;
+    (*this).ScopeModData.ReticleTortillaMaterial = nullptr;
     (*this).ScopeModData.ScopeType = EIGS_ScopeType::Scope_Normal;
-    auto& gen1955 = (*this).ScopeModData.ScopeZoom;
-    gen1955.Empty();
-    gen1955.AddDefaulted(1);
+    auto& gen0 = (*this).ScopeModData.ScopeZoom;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*this).ScopeModData.WeaponTortillaOffset.X = 0.000000000e+00f;
     (*this).ScopeModData.WeaponTortillaOffset.Y = 0.000000000e+00f;
     (*this).ScopeModData.WeaponTortillaOffset.Z = 0.000000000e+00f;

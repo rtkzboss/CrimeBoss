@@ -13,6 +13,9 @@ FIGS_BashResultNetwork::FIGS_BashResultNetwork() {
     (*this).HitResult.ImpactNormal.X = 0.000000000e+00f;
     (*this).HitResult.ImpactNormal.Y = 0.000000000e+00f;
     (*this).HitResult.ImpactNormal.Z = 0.000000000e+00f;
+    (*this).HitResult.Actor = nullptr;
+    (*this).HitResult.Component = nullptr;
+    (*this).HitResult.PhysMaterial = nullptr;
     (*this).HitResult.BoneName = NAME_None;
     (*this).HitResult.Distance = 0.000000000e+00f;
     (*this).HitResult.bBlockingHit = false;

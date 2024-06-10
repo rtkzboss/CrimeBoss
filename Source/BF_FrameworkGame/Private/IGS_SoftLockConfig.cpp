@@ -8,9 +8,9 @@ FIGS_SoftLockConfig::FIGS_SoftLockConfig() {
     (*this).StickInputDeadzoneForSoftLock = 1.000000015e-01f;
     (*this).StrengthDecayStartPitch = 7.000000000e+01f;
     (*this).bZonesScalingEnabled = false;
-    auto& gen2416 = (*this).ZonesScalingConfig.ZonesScalingCurve.EditorCurveData.Keys;
-    gen2416.Empty();
-    gen2416.AddDefaulted(2);
+    auto& gen0 = (*this).ZonesScalingConfig.ZonesScalingCurve.EditorCurveData.Keys;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
     (*this).ZonesScalingConfig.ZonesScalingCurve.EditorCurveData.DefaultValue = 3.402823466e+38f;
     (*this).ZonesScalingConfig.ZonesScalingCurve.EditorCurveData.PreInfinityExtrap = RCCE_Constant;
     (*this).ZonesScalingConfig.ZonesScalingCurve.EditorCurveData.PostInfinityExtrap = RCCE_Constant;

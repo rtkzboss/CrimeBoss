@@ -12,7 +12,6 @@ FMETA_CrewStatistic::FMETA_CrewStatistic() {
     (*this).ArrestedHeisters = 0;
     (*this).MissingUniqueHeisters = 0;
     (*this).MissingHeisters = 0;
-    auto& gen1725 = (*this).HeistersStatisticData;
-    gen1725.Empty();
+    (*this).HeistersStatisticData.Empty();
 }
 

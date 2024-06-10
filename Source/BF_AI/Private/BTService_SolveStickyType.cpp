@@ -1,13 +1,13 @@
 #include "BTService_SolveStickyType.h"
 
 UBTService_SolveStickyType::UBTService_SolveStickyType() {
-    auto& gen391 = (*this).StickyTypeKey.AllowedTypes;
-    gen391.Empty();
-    gen391.AddDefaulted(1);
+    auto& gen0 = (*this).StickyTypeKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).StickyTypeKey, 0)) = 255;
-    auto& gen392 = (*this).OutStickyCharacterKey.AllowedTypes;
-    gen392.Empty();
-    gen392.AddDefaulted(1);
+    auto& gen1 = (*this).OutStickyCharacterKey.AllowedTypes;
+    gen1.Empty();
+    gen1.AddDefaulted(1);
     (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).OutStickyCharacterKey, 0)) = 255;
     (*this).AllowStickyMove = true;
     (*this).StickyMoveChance = 7.500000000e-01f;

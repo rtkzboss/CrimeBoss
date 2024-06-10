@@ -13,8 +13,8 @@ AIGS_CharacterPaperDoll::AIGS_CharacterPaperDoll(const FObjectInitializer& Objec
     (*this).HeadComponentReference.ComponentProperty = TEXT("head");
     (*this).BodyComponentReference.ComponentProperty = TEXT("Body");
     (*this).RootComponent = (USceneComponent*)RootSceneComponent;
-    (*this).BaseMesh->SetupAttachment((*this).RootSceneComponent);
     (*this).AkComponent->SetupAttachment((*this).BaseMesh);
+    (*this).BaseMesh->SetupAttachment((*this).RootSceneComponent);
 }
 
 

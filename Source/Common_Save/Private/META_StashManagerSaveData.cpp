@@ -1,8 +1,7 @@
 #include "META_StashManagerSaveData.h"
 
 FMETA_StashManagerSaveData::FMETA_StashManagerSaveData() {
-    auto& gen2219 = (*this).Equipment;
-    gen2219.Empty();
+    (*this).Equipment.Empty();
     (*this).PlayerRespect = EMETA_RespectLvl::Low;
     (*this).Army = 0;
     (*this).AvailableArmy = 0;

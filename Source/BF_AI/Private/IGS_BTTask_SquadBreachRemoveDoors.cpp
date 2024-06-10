@@ -1,9 +1,9 @@
 #include "IGS_BTTask_SquadBreachRemoveDoors.h"
 
 UIGS_BTTask_SquadBreachRemoveDoors::UIGS_BTTask_SquadBreachRemoveDoors() {
-    auto& gen531 = (*this).BreachRolesKey.AllowedTypes;
-    gen531.Empty();
-    gen531.AddDefaulted(1);
+    auto& gen0 = (*this).BreachRolesKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
     (*this).NodeName = TEXT("Squad Breach Remove Doors");
 }
 

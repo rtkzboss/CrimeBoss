@@ -2,8 +2,8 @@
 
 FIGS_DsVibrationTrigger2::FIGS_DsVibrationTrigger2() {
     (*this).Frequency = 0;
-    auto& gen2001 = (*this).Amplitudes;
-    gen2001.Empty();
-    gen2001.AddDefaulted(10);
+    auto& gen0 = (*this).Amplitudes;
+    gen0.Empty();
+    gen0.AddDefaulted(10);
 }
 

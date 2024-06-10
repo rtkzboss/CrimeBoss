@@ -18,8 +18,8 @@ AIGS_AIEnemyGroupSpawner::AIGS_AIEnemyGroupSpawner(const FObjectInitializer& Obj
     (*TBaseStructure<FInt32RangeBound>::Get()->FindPropertyByName("Type")->ContainerPtrToValuePtr<TEnumAsByte<ERangeBoundTypes::Type>>(&(*TBaseStructure<FInt32Range>::Get()->FindPropertyByName("LowerBound")->ContainerPtrToValuePtr<FInt32RangeBound>(&(*this).HardAmount, 0)), 0)) = ERangeBoundTypes::Open;
     (*TBaseStructure<FInt32RangeBound>::Get()->FindPropertyByName("Type")->ContainerPtrToValuePtr<TEnumAsByte<ERangeBoundTypes::Type>>(&(*TBaseStructure<FInt32Range>::Get()->FindPropertyByName("UpperBound")->ContainerPtrToValuePtr<FInt32RangeBound>(&(*this).HardAmount, 0)), 0)) = ERangeBoundTypes::Open;
     (*this).CoolDownTime = 4.000000000e+00f;
-    static ConstructorHelpers::FObjectFinder<UIGS_AISpawnerData> gen564(TEXT("/Game/00_Main/Core/AI/Spawning/DA_AISpawnerData.DA_AISpawnerData"));
-    (*this).AISpawnerData = gen564.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_AISpawnerData> gen0(TEXT("/Game/00_Main/Core/AI/Spawning/DA_AISpawnerData.DA_AISpawnerData"));
+    (*this).AISpawnerData = gen0.Object;
     (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
 }
 

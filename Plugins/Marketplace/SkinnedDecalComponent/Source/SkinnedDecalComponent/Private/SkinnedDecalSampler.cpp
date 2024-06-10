@@ -10,8 +10,8 @@ USkinnedDecalSampler::USkinnedDecalSampler(const FObjectInitializer& ObjectIniti
     (*this).MaxDecals = 100;
     (*this).MinDecalDistance = 1.000000000e+01f;
     (*this).TranslucentBlend = true;
-    static ConstructorHelpers::FObjectFinder<UMaterial> gen203(TEXT("/SkinnedDecalComponent/SkinnedDecalTranslucentBlendMat.SkinnedDecalTranslucentBlendMat"));
-    (*this).TranslucentBlendMaterial = gen203.Object;
+    static ConstructorHelpers::FObjectFinder<UMaterial> gen0(TEXT("/SkinnedDecalComponent/SkinnedDecalTranslucentBlendMat.SkinnedDecalTranslucentBlendMat"));
+    (*this).TranslucentBlendMaterial = gen0.Object;
 }
 
 void USkinnedDecalSampler::UpdateInstance(USkinnedDecalInstance* Instance) {

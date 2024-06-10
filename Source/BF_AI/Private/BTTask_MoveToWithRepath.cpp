@@ -4,15 +4,15 @@
 UBTTask_MoveToWithRepath::UBTTask_MoveToWithRepath() {
     (*this).RefreshTimeMin = 1.100000024e+00f;
     (*this).RefreshTimeMax = 1.299999952e+00f;
-    auto& gen427 = (*this).LookPosKey.AllowedTypes;
-    gen427.Empty();
-    gen427.AddDefaulted(1);
-    auto& gen428 = (*this).AcceptableRadiusKey.AllowedTypes;
-    gen428.Empty();
-    gen428.AddDefaulted(1);
-    auto& gen429 = (*this).BlackboardKey.AllowedTypes;
-    gen429.Empty();
-    gen429.AddDefaulted(2);
+    auto& gen0 = (*this).LookPosKey.AllowedTypes;
+    gen0.Empty();
+    gen0.AddDefaulted(1);
+    auto& gen1 = (*this).AcceptableRadiusKey.AllowedTypes;
+    gen1.Empty();
+    gen1.AddDefaulted(1);
+    auto& gen2 = (*this).BlackboardKey.AllowedTypes;
+    gen2.Empty();
+    gen2.AddDefaulted(2);
     (*this).NodeName = TEXT("Move To With Repath");
 }
 

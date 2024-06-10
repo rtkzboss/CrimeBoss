@@ -7,6 +7,8 @@
 
 FIGS_ThrowableTableRow::FIGS_ThrowableTableRow() {
     (*this).ID = nullptr;
+    (*this).Data.Projectile = nullptr;
+    (*this).Data.Equipment = nullptr;
     (*this).Data.GrenadeData.OverlapsOnExplosion = true;
     (*this).Data.GrenadeData.bLineTraceOnOverlap = false;
     (*this).Data.GrenadeData.LineTraceZOffset = 1.000000000e+02f;
@@ -51,6 +53,7 @@ FIGS_ThrowableTableRow::FIGS_ThrowableTableRow() {
     (*this).Data.ThrowRotationAxis.X = 1.000000000e+00f;
     (*this).Data.ThrowRotationAxis.Y = 1.000000000e+00f;
     (*this).Data.ThrowRotationAxis.Z = 1.000000000e+00f;
+    (*this).Data.WieldableClass = nullptr;
     (*this).Data.WieldableTortillaBaseFOV = 4.500000000e+01f;
     (*this).Data.WieldableTortillaAimFOV = 4.500000000e+01f;
     (*this).Data.HolsterTimeInSeconds = 5.000000000e-01f;
@@ -58,28 +61,28 @@ FIGS_ThrowableTableRow::FIGS_ThrowableTableRow() {
     (*this).Data.Class = EIGS_WieldableClass::C_Generic;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.ClassTag, 0)) = TEXT("Item.Wieldable");
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.WieldingOffence, 0)) = TEXT("Offence.Player.Wielding.Weapon");
+    (*this).Data.DefaultSkin = nullptr;
     (*this).Data.ItemType = EIGS_ItemType::Item_Throwable;
     (*this).Data.Name = FText::FromString(TEXT("None"));
     (*this).Data.bShouldMove = true;
+    (*this).Data.Image = nullptr;
+    (*this).Data.PickupMesh = nullptr;
+    (*this).Data.PickupMeshSkeletal = nullptr;
+    (*this).Data.ItemPickUpAudioEvent = nullptr;
+    (*this).Data.ItemThrowAudioEvent = nullptr;
     (*this).Data.HitImpactID = nullptr;
     (*this).Data.HitImpactMass = 1.000000000e+00f;
     (*this).Data.Quality = EMETA_ItemQuality::MinGenerate;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.ItemOffence, 0)) = TEXT("Offence.Actor.Item.Weapon");
-    auto& gen1964 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.GrantedTags, 0));
-    gen1964.Empty();
-    auto& gen1965 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.GrantedTags, 0));
-    gen1965.Empty();
-    auto& gen1966 = (*this).Data.GrantedAbilities;
-    gen1966.Empty();
-    auto& gen1967 = (*this).Data.AppliedEffects;
-    gen1967.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.GrantedTags, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.GrantedTags, 0)).Empty();
+    (*this).Data.GrantedAbilities.Empty();
+    (*this).Data.AppliedEffects.Empty();
     (*this).Data.ItemPropertyFlags = 1;
     (*this).Data.MonetaryValue = 0;
     (*this).Data.ModelScaleFPV = 1.000000000e+00f;
     (*this).Data.ModelScale3PV = 1.000000000e+00f;
-    auto& gen1968 = (*this).Data.AdditionalPreloadClasses;
-    gen1968.Empty();
-    auto& gen1969 = (*this).Data.AdditionalPreloadObjects;
-    gen1969.Empty();
+    (*this).Data.AdditionalPreloadClasses.Empty();
+    (*this).Data.AdditionalPreloadObjects.Empty();
 }
 

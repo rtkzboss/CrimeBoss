@@ -7,6 +7,8 @@ UMETA_GraphsData::UMETA_GraphsData() {
     (*this).SecondPlotlineDays.Max = 6;
     (*this).AnyNextPlotlineDays.Min = 2;
     (*this).AnyNextPlotlineDays.Max = 4;
+    (*this).CrewRandEventsGraph = nullptr;
+    (*this).SpecialCrewEventsGraph = nullptr;
 }
 
 TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, EMETA_GraphStatus> UMETA_GraphsData::GetStartedGraphs(const TArray<EIGS_CharacterID>& inAvailableUniqueCharacters) {

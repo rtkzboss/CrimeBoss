@@ -3,10 +3,10 @@
 #include "IGS_InputActionMapDataAsset.h"
 
 UIGS_InputBindSettings::UIGS_InputBindSettings() {
-    static ConstructorHelpers::FObjectFinder<UIGS_InputActionMapDataAsset> gen239(TEXT("/Game/00_Main/Input/InputTables/DA_InputActionMap.DA_InputActionMap"));
-    (*this).InputActionMapDataAsset = gen239.Object;
-    static ConstructorHelpers::FObjectFinder<UIGS_InputActionDefaultKeysDataAsset> gen240(TEXT("/Game/00_Main/Input/InputTables/DA_DefaultInputKeys.DA_DefaultInputKeys"));
-    (*this).InputActionDefaultKeysAsset = gen240.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_InputActionMapDataAsset> gen0(TEXT("/Game/00_Main/Input/InputTables/DA_InputActionMap.DA_InputActionMap"));
+    (*this).InputActionMapDataAsset = gen0.Object;
+    static ConstructorHelpers::FObjectFinder<UIGS_InputActionDefaultKeysDataAsset> gen1(TEXT("/Game/00_Main/Input/InputTables/DA_DefaultInputKeys.DA_DefaultInputKeys"));
+    (*this).InputActionDefaultKeysAsset = gen1.Object;
     (*this).bSettingsValid = true;
 }
 

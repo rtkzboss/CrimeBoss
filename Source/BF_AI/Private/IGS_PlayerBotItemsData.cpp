@@ -15,7 +15,6 @@ FIGS_PlayerBotItemsData::FIGS_PlayerBotItemsData() {
     (*this).DefaultSettings.AffterFireCooldownCover.Max = 3.000000000e+00f;
     (*this).DefaultSettings.CoverStickiness = 5.000000000e-01f;
     (*this).DefaultSettings.ReactionIntensity = 8.000000119e-01f;
-    auto& gen2105 = (*this).OverridetSettings;
-    gen2105.Empty();
+    (*this).OverridetSettings.Empty();
 }
 

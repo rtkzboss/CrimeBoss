@@ -7,9 +7,9 @@
 UMETA_BossCharacter::UMETA_BossCharacter() {
     (*this).m_CharacterInfo.ID = EIGS_CharacterID::Char_Boss_End;
     (*this).m_CharacterInfo.Data.State = EMETA_CharacterState::Available;
-    auto& gen237 = (*this).m_CharacterInfo.Data.Perks;
-    gen237.Empty();
-    gen237.AddDefaulted(4);
+    auto& gen0 = (*this).m_CharacterInfo.Data.Perks;
+    gen0.Empty();
+    gen0.AddDefaulted(4);
 }
 
 void UMETA_BossCharacter::SetPerkInSlot(int32 inSlot, FGameplayTag inTagID) {

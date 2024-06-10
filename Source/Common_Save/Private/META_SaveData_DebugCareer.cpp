@@ -2,13 +2,10 @@
 
 FMETA_SaveData_DebugCareer::FMETA_SaveData_DebugCareer() {
     (*this).bIsFilled = false;
-    auto& gen2283 = (*this).Plotlines;
-    gen2283.Empty();
+    (*this).Plotlines.Empty();
     (*this).DisablePlotlines = false;
-    auto& gen2284 = (*this).CrewIds;
-    gen2284.Empty();
-    auto& gen2285 = (*this).CrewQualities;
-    gen2285.Empty();
+    (*this).CrewIds.Empty();
+    (*this).CrewQualities.Empty();
     (*this).Day = 0;
     (*this).Cash = 0;
     (*this).Respect = EMETA_RespectLvl::Low;

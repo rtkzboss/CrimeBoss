@@ -26,9 +26,9 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     (*this).MagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MagazineModMesh"));
     (*this).SecondMagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SecondMagazineModMesh"));
     (*this).StockModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StockModMesh"));
-    auto& gen591 = (*this).WeaponModsArray;
-    gen591.Empty();
-    gen591.AddDefaulted(8);
+    auto& gen0 = (*this).WeaponModsArray;
+    gen0.Empty();
+    gen0.AddDefaulted(8);
     (*this).LaserArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("LaserArrow"));
     (*this).FlashSpotLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("FlashSpotLight"));
     (*this).FlashPointLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("FlashPointLight"));

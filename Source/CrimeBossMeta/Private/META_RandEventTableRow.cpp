@@ -25,7 +25,6 @@ FMETA_RandEventTableRow::FMETA_RandEventTableRow() {
     (*this).PriceMultiplier.Min = 0.000000000e+00f;
     (*this).PriceMultiplier.Max = 0.000000000e+00f;
     (*this).bCanBeSelectedEvenIfPlayerHasNotEnoughMoney = false;
-    auto& gen3450 = (*this).Rewards;
-    gen3450.Empty();
+    (*this).Rewards.Empty();
 }
 
