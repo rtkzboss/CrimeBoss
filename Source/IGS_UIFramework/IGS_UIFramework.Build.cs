@@ -5,7 +5,11 @@ public class IGS_UIFramework : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "InputCore",
+            "UMG",
+        });
         PublicDependencyModuleNames.AddRange(new string[] {
             "BF_Input",
             "CommonUI",

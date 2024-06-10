@@ -5,7 +5,7 @@
 #include "Layout/Clipping.h"
 #include "Components/SlateWrapperTypes.h"
 
-UIGS_MenuTileView::UIGS_MenuTileView() {
+UIGS_MenuTileView::UIGS_MenuTileView(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
 
 

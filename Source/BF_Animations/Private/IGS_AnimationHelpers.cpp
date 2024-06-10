@@ -6,14 +6,14 @@ UIGS_AnimationHelpers::UIGS_AnimationHelpers() {
 void UIGS_AnimationHelpers::StopAllMontages(UAnimInstance* inAnimInstance, float inBlendOut) {
 }
 
-UIGS_PlayerAnimInstance* UIGS_AnimationHelpers::GetPlayerAnimInstance(const AIGS_GameCharacterFramework*& inCharacter) {
+UIGS_PlayerAnimInstance* UIGS_AnimationHelpers::GetPlayerAnimInstance(AIGS_GameCharacterFramework*& inCharacter) {
     return NULL;
 }
 
-void UIGS_AnimationHelpers::GetMeleePushMontages(const AIGS_GameCharacterFramework*& inCharacter, UAnimMontage*& outCharacterFPP, UAnimMontage*& outCharacterTPP, UAnimMontage*& outWeaponFPP) {
+void UIGS_AnimationHelpers::GetMeleePushMontages(AIGS_GameCharacterFramework*& inCharacter, UAnimMontage*& outCharacterFPP, UAnimMontage*& outCharacterTPP, UAnimMontage*& outWeaponFPP) {
 }
 
-UIGS_UArmsAniminstance* UIGS_AnimationHelpers::GetArmsAnimInstance(const AIGS_GameCharacterFramework*& inCharacter) {
+UIGS_UArmsAniminstance* UIGS_AnimationHelpers::GetArmsAnimInstance(AIGS_GameCharacterFramework*& inCharacter) {
     return NULL;
 }
 
