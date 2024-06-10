@@ -4,7 +4,7 @@ UIGS_TogglesSettings::UIGS_TogglesSettings() {
     this->bSettingsValid = true;
     this->bSprintToggleable = true;
     this->bCrouchToggleable = true;
-    this->bAimToggleable = true;
+    this->bAimToggleable = false;
     this->bSprintInterruptsReload = false;
     this->bMagCheckInSprintAllowed = false;
 }

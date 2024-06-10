@@ -12,8 +12,8 @@ AIGS_LevelBlockingBounds::AIGS_LevelBlockingBounds(const FObjectInitializer& Obj
     this->PostProcessComponent = CreateDefaultSubobject<UPostProcessComponent>(TEXT("PostProcessComponent"));
     const FProperty* p_BoxCollisionComponent_Parent = GetClass()->FindPropertyByName("BoxCollisionComponent");
     this->DontRegisterToNavigation = false;
-    this->BlockerComponent->SetupAttachment(RootComponent);
     this->PostProcessComponent->SetupAttachment(*p_BoxCollisionComponent_Parent->ContainerPtrToValuePtr<UIGS_CustomBoxComponent*>(this));
+    this->BlockerComponent->SetupAttachment(RootComponent);
 }
 
 void AIGS_LevelBlockingBounds::SetBlockerSize(float inBlockerSize) {

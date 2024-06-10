@@ -18,8 +18,8 @@ AIGS_EntranceBase::AIGS_EntranceBase(const FObjectInitializer& ObjectInitializer
     this->bOpen = false;
     this->bFullyProgressed = true;
     this->NavigationBlock = NULL;
-    this->FrontBreachingPoints->SetupAttachment(RootComponent);
     this->BackBreachingPoints->SetupAttachment(RootComponent);
+    this->FrontBreachingPoints->SetupAttachment(RootComponent);
 }
 
 void AIGS_EntranceBase::SetOpenState(bool inOpen) {

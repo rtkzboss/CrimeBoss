@@ -63,6 +63,7 @@ AIGS_DynamicWallBase::AIGS_DynamicWallBase(const FObjectInitializer& ObjectIniti
     this->MaterialVariant = 0;
     this->navAreaClass = NULL;
     this->CoverPointClass = AIGS_CoverPointBase::StaticClass();
+    this->WallBottomTrimMesh->SetupAttachment(RootComponent);
     this->WallLeftCornerMesh->SetupAttachment(RootComponent);
     this->WallRightCornerMesh->SetupAttachment(RootComponent);
     this->WallTopLeftTrimCornerMesh->SetupAttachment(RootComponent);
@@ -71,7 +72,6 @@ AIGS_DynamicWallBase::AIGS_DynamicWallBase(const FObjectInitializer& ObjectIniti
     this->WallBottomRightTrimCornerMesh->SetupAttachment(RootComponent);
     this->WallMesh->SetupAttachment(RootComponent);
     this->WallTopTrimMesh->SetupAttachment(RootComponent);
-    this->WallBottomTrimMesh->SetupAttachment(RootComponent);
 }
 
 void AIGS_DynamicWallBase::OnGenerationFinished(ANavigationData* inNavData) {

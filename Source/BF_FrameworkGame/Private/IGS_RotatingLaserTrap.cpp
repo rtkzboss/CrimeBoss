@@ -9,8 +9,8 @@ AIGS_RotatingLaserTrap::AIGS_RotatingLaserTrap(const FObjectInitializer& ObjectI
     this->RotationEndPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("RotationEndPoint"));
     this->Reverse = false;
     this->Looping = true;
-    this->RotationEndPoint->SetupAttachment(RootComponent);
     this->RotationStartPoint->SetupAttachment(RootComponent);
+    this->RotationEndPoint->SetupAttachment(RootComponent);
 }
 
 void AIGS_RotatingLaserTrap::TickTimelineUpdate(float InValue) {

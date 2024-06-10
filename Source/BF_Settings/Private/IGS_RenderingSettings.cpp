@@ -16,7 +16,7 @@ UIGS_RenderingSettings::UIGS_RenderingSettings() {
     this->FoliageQualityValue = 3;
     this->MotionBlurScaleFPV = 1.00f;
     this->MotionBlurScale3PV = 1.00f;
-    this->BaseCameraFOVHorizontal = 120.00f;
+    this->BaseCameraFOVHorizontal = 90.00f;
     this->bWasFirstTimeBenchmarked = false;
     this->bWasFirstTimeMainMenuInitialized = false;
     this->DLSSMode = 1;
@@ -26,8 +26,8 @@ UIGS_RenderingSettings::UIGS_RenderingSettings() {
     this->bDLAAenabled = false;
     this->ChosenDisplay = 1;
     this->MotionBlurEnabled = false;
-    this->FramerateLimitInGame = 239;
-    this->FramerateLimitInMenu = 239;
+    this->FramerateLimitInGame = 1000;
+    this->FramerateLimitInMenu = 1000;
     this->FramerateLimitOutOfFocus = 30;
     this->bCanChangeMonitorPositions = true;
     this->bQualityModeForConsoles = false;
