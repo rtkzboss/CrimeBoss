@@ -5,7 +5,10 @@ public class PowerIKRuntime : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "RigVM",
+        });
         PublicDependencyModuleNames.AddRange(new string[] {
             "AnimGraphRuntime",
             "ControlRig",

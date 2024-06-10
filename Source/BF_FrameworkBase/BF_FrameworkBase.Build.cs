@@ -5,7 +5,11 @@ public class BF_FrameworkBase : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "InputCore",
+            "OnlineSubsystem",
+        });
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AdvancedSessions",
