@@ -1,10 +1,10 @@
 #include "IGS_BTTask_SquadBreachRemoveDoors.h"
 
 UIGS_BTTask_SquadBreachRemoveDoors::UIGS_BTTask_SquadBreachRemoveDoors() {
-    this->NodeName = TEXT("Squad Breach Remove Doors");
-    this->ContextActionCharacter = NULL;
-    this->ContextActionCommand = NULL;
-    this->BreachObject = NULL;
+    auto& gen531 = (*this).BreachRolesKey.AllowedTypes;
+    gen531.Empty();
+    gen531.AddDefaulted(1);
+    (*this).NodeName = TEXT("Squad Breach Remove Doors");
 }
 
 bool UIGS_BTTask_SquadBreachRemoveDoors::IsObstacleCleared(UIGS_AICommandBreachRemoveObstacle* Command) {

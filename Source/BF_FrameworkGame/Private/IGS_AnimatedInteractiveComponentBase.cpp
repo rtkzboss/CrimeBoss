@@ -1,28 +1,25 @@
 #include "IGS_AnimatedInteractiveComponentBase.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_AnimatedInteractiveComponentBase::UIGS_AnimatedInteractiveComponentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->R_Progress = 0.00f;
-    this->StartPointComponent = NULL;
-    this->CurrentPlayerCharInstigator = NULL;
-    this->PlayerMovement = NULL;
-    this->bAnimationOnly = false;
-    this->bStartAnimationImmediately = true;
-    this->bBlockInputUntilAbilityEnd = true;
-    this->bMoveToExactPositionAndRotation = true;
-    this->RotationInterpSpeed = 10.00f;
-    this->MoveInterpSpeed = 100.00f;
-    this->DistanceFromPoint = 150.00f;
-    this->TolerableThreshold = 100.00f;
-    this->FailsafeTime = 2.00f;
-    this->bDisablePhysicsDuringLerping = false;
-    this->bKeepDisabledPhysicsUntilAbilityEnd = false;
-    this->bSetFlyingWhenLerping = true;
-    this->bRotateOnly = false;
-    this->bRotatePitch = true;
-    this->bMoveWithInteraction = false;
-    this->bActAsNormalInteraction = false;
-    this->bShouldMovePayload = false;
+    (*this).bStartAnimationImmediately = true;
+    (*this).bBlockInputUntilAbilityEnd = true;
+    (*this).bMoveToExactPositionAndRotation = true;
+    (*this).RotationInterpSpeed = 1.000000000e+01f;
+    (*this).MoveInterpSpeed = 1.000000000e+02f;
+    (*this).DistanceFromPoint = 1.500000000e+02f;
+    (*this).TolerableThreshold = 1.000000000e+02f;
+    (*this).FailsafeTime = 2.000000000e+00f;
+    (*this).bSetFlyingWhenLerping = true;
+    (*this).bRotatePitch = true;
+    auto& gen573 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).InputTagsToApply, 0));
+    gen573.Empty();
+    gen573.AddDefaulted(6);
+    auto& gen574 = (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).InputTagsToApply, 0));
+    gen574.Empty();
+    gen574.AddDefaulted(3);
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_AnimatedInteractiveComponentBase::StopAnimation(AIGS_GameCharacterFramework* inInstigator) {

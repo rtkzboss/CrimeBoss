@@ -1,38 +1,28 @@
 #include "IGS_VehicleBoat.h"
 #include "IGS_AIBoatSpawnComponent.h"
 #include "Components/ChildActorComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "BuoyancyComponent.h"
+#include "EIGS_VehicleSplineGroup.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_VehicleBoat::AIGS_VehicleBoat(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->UseCustomDestination = false;
-    this->bStartParking = false;
-    this->bStartedDriving = false;
-    this->StartNavAreaClass = NULL;
-    this->Buoyancy = CreateDefaultSubobject<UBuoyancyComponent>(TEXT("Buoyancy"));
-    this->VehicleCollisionBox = NULL;
-    this->PlayerResetTrigger = CreateDefaultSubobject<UChildActorComponent>(TEXT("PlayerResetTrigger"));
-    this->AIBoatSpawnerComponent = CreateDefaultSubobject<UIGS_AIBoatSpawnComponent>(TEXT("AIBoatSpawnerComponent"));
-    this->bPassengersGetOutAfterDriveFinished = true;
-    this->bCheckForCollision = false;
-    this->TimeToStop = 5.00f;
-    this->mR_bDrivingOnServer = false;
-    this->mR_bArrivedAtDestination = false;
-    this->defaultSpeed = 0.00f;
-    this->followDistance = 1000.00f;
-    this->rotationSlowFactor = 100.00f;
-    this->waveSlowFactor = 120.00f;
-    this->RotationSpeed = 10.00f;
-    this->EscapeDriveSpeed = 1000.00f;
-    this->BuoyancyAmplitude = 10.00f;
-    this->BoatForwardMultiplier = 0.01f;
-    this->WaveMaxAmplitude1 = 0.01f;
-    this->WaveMaxAmplitude2 = 0.03f;
-    this->NavModifier = NULL;
-    this->bUseGravity = true;
-    this->ActorClass = NULL;
-    this->bIsDrowning = false;
-    this->bCorrectlyParkedInWater = false;
+    (*this).Buoyancy = CreateDefaultSubobject<UBuoyancyComponent>(TEXT("Buoyancy"));
+    (*this).PlayerResetTrigger = CreateDefaultSubobject<UChildActorComponent>(TEXT("PlayerResetTrigger"));
+    (*this).AIBoatSpawnerComponent = CreateDefaultSubobject<UIGS_AIBoatSpawnComponent>(TEXT("AIBoatSpawnerComponent"));
+    (*this).bPassengersGetOutAfterDriveFinished = true;
+    (*this).TimeToStop = 5.000000000e+00f;
+    (*this).followDistance = 1.000000000e+03f;
+    (*this).rotationSlowFactor = 1.000000000e+02f;
+    (*this).waveSlowFactor = 1.200000000e+02f;
+    (*this).RotationSpeed = 1.000000000e+01f;
+    (*this).EscapeDriveSpeed = 1.000000000e+03f;
+    (*this).BuoyancyAmplitude = 1.000000000e+01f;
+    (*this).BoatForwardMultiplier = 1.499999966e-02f;
+    (*this).WaveMaxAmplitude1 = 9.999999776e-03f;
+    (*this).WaveMaxAmplitude2 = 2.500000037e-02f;
+    (*this).bUseGravity = true;
 }
 
 void AIGS_VehicleBoat::StartDrive_BP(TArray<UIGS_TrafficPathComponent*> InPath) {

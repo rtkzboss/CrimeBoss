@@ -1,12 +1,7 @@
 #include "IGS_SaveManager.h"
 
 UIGS_SaveManager::UIGS_SaveManager() {
-    this->CareerSlotName = TEXT("SaveName");
-    this->CachedAccountSave = NULL;
-    this->CachedQuickplaySave = NULL;
-    this->CachedCareerSave = NULL;
-    this->CachedCareerDebugSave = NULL;
-    this->WeaponCheatSelectionDebugSave = NULL;
+    (*this).CareerSlotName = TEXT("SaveName");
 }
 
 bool UIGS_SaveManager::ShouldUnlockVeteranRewards() const {

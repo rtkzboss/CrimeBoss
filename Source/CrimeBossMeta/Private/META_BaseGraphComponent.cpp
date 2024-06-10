@@ -1,9 +1,6 @@
 #include "META_BaseGraphComponent.h"
 
 UMETA_BaseGraphComponent::UMETA_BaseGraphComponent() {
-    this->OwnerNode = NULL;
-    this->GameMode = NULL;
-    this->bAlreadyActivated = false;
 }
 
 void UMETA_BaseGraphComponent::StartSetUp_Implementation(AMETA_BaseGameMode* inGameMode, UGenericGraphNode* inOwnerNode) {

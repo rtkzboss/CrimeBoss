@@ -1,4 +1,5 @@
 #include "IGS_HeatManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_HeatManagerBaseComponent::UIGS_HeatManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

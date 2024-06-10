@@ -1,17 +1,13 @@
 #include "IGS_TaskWidgetBase.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_TaskWidgetBase::UIGS_TaskWidgetBase() {
-    this->ID = -1;
-    this->TaskState = EIGS_ObjectiveState::Active;
-    this->CountLeft = 0;
-    this->CountTotal = 0;
-    this->bTimerTask = false;
-    this->bPaused = false;
-    this->bValueTask = false;
-    this->StartTimestamp = 0.00f;
-    this->Duration = 0.00f;
-    this->FontSize = 12;
-    this->m_ObjectiveManager = NULL;
+    (*this).ID = -1;
+    (*this).FontSize = 12;
 }
 
 

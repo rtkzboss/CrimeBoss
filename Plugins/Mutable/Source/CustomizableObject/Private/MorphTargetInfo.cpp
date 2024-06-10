@@ -1,6 +1,7 @@
 #include "MorphTargetInfo.h"
 
 FMorphTargetInfo::FMorphTargetInfo() {
-    this->LodNum = 0;
+    (*this).Name = NAME_None;
+    (*this).LodNum = 0;
 }
 

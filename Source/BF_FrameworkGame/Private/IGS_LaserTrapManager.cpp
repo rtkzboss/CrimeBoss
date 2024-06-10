@@ -1,7 +1,9 @@
 #include "IGS_LaserTrapManager.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_LaserTrapManager::AIGS_LaserTrapManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsStimuliForAI = true;
+    (*this).bIsStimuliForAI = true;
 }
 
 void AIGS_LaserTrapManager::SetLasersEnabled(bool inState) {

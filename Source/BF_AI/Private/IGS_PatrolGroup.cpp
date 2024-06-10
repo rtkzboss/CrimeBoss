@@ -1,4 +1,8 @@
 #include "IGS_PatrolGroup.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_ScenarioDifficulty.h"
+#include "EIGS_TeamSideEnum.h"
 
 AIGS_PatrolGroup::AIGS_PatrolGroup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

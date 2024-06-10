@@ -1,14 +1,10 @@
 #include "IGS_GameStateFramework.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_GameStateFramework::AIGS_GameStateFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->mR_PlayersImmortality = false;
-    this->PocketLootValue = 0.00f;
-    this->BaggedLootValue = 0.00f;
-    this->LootBagCount = 0;
-    this->SecuredLootBagCount = 0;
-    this->m_bIsEndMission = false;
 }
 
 void AIGS_GameStateFramework::SetIsEndMission(const bool inEndMission) {

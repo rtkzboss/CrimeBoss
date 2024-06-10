@@ -1,8 +1,7 @@
 #include "IGS_BossBackgroundManager.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_BossBackgroundManager::UIGS_BossBackgroundManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_DataTable = NULL;
-    this->m_BackgroundChangeInProgress = false;
 }
 
 void UIGS_BossBackgroundManager::UnloadIncorrectLevel(FName inLevelToUnload) {

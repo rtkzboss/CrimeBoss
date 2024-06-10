@@ -1,16 +1,17 @@
 #include "SkinnedDecalSampler.h"
+#include "ComponentInstanceDataCache.h"
+#include "Materials/Material.h"
 
 USkinnedDecalSampler::USkinnedDecalSampler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Mesh = NULL;
-    this->LayerIndex = -1;
-    this->Association = GlobalParameter;
-    this->AdditionalData = SpawnTime;
-    this->LastDecalIndex = -1;
-    this->MaxDecals = 100;
-    this->MinDecalDistance = 10.00f;
-    this->TranslucentBlend = true;
-    this->TranslucentBlendMaterialDynamic = NULL;
-    this->DataTarget = NULL;
+    (*this).LayerIndex = -1;
+    (*this).Association = GlobalParameter;
+    (*this).AdditionalData = SpawnTime;
+    (*this).LastDecalIndex = -1;
+    (*this).MaxDecals = 100;
+    (*this).MinDecalDistance = 1.000000000e+01f;
+    (*this).TranslucentBlend = true;
+    static ConstructorHelpers::FObjectFinder<UMaterial> gen203(TEXT("/SkinnedDecalComponent/SkinnedDecalTranslucentBlendMat.SkinnedDecalTranslucentBlendMat"));
+    (*this).TranslucentBlendMaterial = gen203.Object;
 }
 
 void USkinnedDecalSampler::UpdateInstance(USkinnedDecalInstance* Instance) {

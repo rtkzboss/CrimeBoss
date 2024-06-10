@@ -2,6 +2,13 @@
 #include "IGS_CharacterWieldablesHolderComponent.h"
 #include "IGS_SignificanceComponent.h"
 #include "Components/ArrowComponent.h"
+#include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_CharacterID.h"
+#include "EIGS_TeamSideEnum.h"
+#include "EIGS_UnitSpecialization.h"
 #include "IGS_AimAssistTargetComponent.h"
 #include "IGS_AnimBudgetAllocatorComponent.h"
 #include "IGS_CharacterPressureWatcherComponent.h"
@@ -12,39 +19,31 @@
 #include "Net/UnrealNetwork.h"
 
 AIGS_IntelligentGameCharacter::AIGS_IntelligentGameCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UIGS_DamageHandlerComponent>(TEXT("DamageHandlerComponent2"))) {
-    this->CurrentWieldable = NULL;
-    this->SignificanceComponent = CreateDefaultSubobject<UIGS_SignificanceComponent>(TEXT("SignificanceComponent"));
-    this->GunDownAbility = NULL;
-    this->CharacterWieldablesHolderComponent = CreateDefaultSubobject<UIGS_CharacterWieldablesHolderComponent>(TEXT("CharacterWieldablesHolderComponent"));
-    this->bIsAiming = false;
-    this->bIsValidForAimAssist = true;
-    this->ExplorationZoomMagnification = 1.25f;
-    this->ExplorationZoomInSpeedMult = 1.00f;
-    this->ExplorationZoomOutSpeedMult = 1.00f;
-    this->LookAtMaxAngleDeg = 90.00f;
-    this->DoNotReduceWeaponPickupDamageForTeamSides = 1;
-    this->bUseAnimationForVisionCone = false;
-    this->HeadBoneName = TEXT("head");
-    this->ChestBoneName = TEXT("spine_03");
-    this->AimDummySocketName = TEXT("AimRSocket");
-    this->DeathAkEvent = NULL;
-    this->FootstepEventBaseComponent = CreateDefaultSubobject<UIGS_FootstepsEventBasedComponent>(TEXT("FootstepEventBaseComponent"));
-    this->LootBagComponent = NULL;
-    this->FallDamageComponent = CreateDefaultSubobject<UIGS_FallDamageComponent>(TEXT("FallDamageComponent"));
-    this->ShootablePartsHandlerComponent = NULL;
-    this->ZiptieComponent = NULL;
-    this->SniperAimComponent = NULL;
-    this->AimAtArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("AimAtDirection"));
-    this->LookAtArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("LookAtDirection"));
-    this->PawnDirArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("PawnDirection"));
-    this->AnimBudgetAllocatorComponent = CreateDefaultSubobject<UIGS_AnimBudgetAllocatorComponent>(TEXT("AnimBudgetAllocatorComponent"));
-    this->DecalContactShadowComponent = CreateDefaultSubobject<UIGS_DecalContactShadowComponent>(TEXT("DecalContactShadowComponent"));
-    this->PressureWatcherComponent = CreateDefaultSubobject<UIGS_CharacterPressureWatcherComponent>(TEXT("PressureWatcherComponent"));
-    this->AimAssistTargetComponent = CreateDefaultSubobject<UIGS_AimAssistTargetComponent>(TEXT("AimAssistTargetComponent"));
-    this->mR_NextRandomAnimationSeed = -1;
-    this->AimAtArrowComp->SetupAttachment(RootComponent);
-    this->LookAtArrowComp->SetupAttachment(RootComponent);
-    this->PawnDirArrowComp->SetupAttachment(RootComponent);
+    (*this).SignificanceComponent = CreateDefaultSubobject<UIGS_SignificanceComponent>(TEXT("SignificanceComponent"));
+    (*this).CharacterWieldablesHolderComponent = CreateDefaultSubobject<UIGS_CharacterWieldablesHolderComponent>(TEXT("CharacterWieldablesHolderComponent"));
+    (*this).bIsValidForAimAssist = true;
+    (*this).ExplorationZoomMagnification = 1.250000000e+00f;
+    (*this).ExplorationZoomInSpeedMult = 1.000000000e+00f;
+    (*this).ExplorationZoomOutSpeedMult = 1.000000000e+00f;
+    (*this).LookAtMaxAngleDeg = 9.000000000e+01f;
+    (*this).DoNotReduceWeaponPickupDamageForTeamSides = 1;
+    (*this).HeadBoneName = TEXT("head");
+    (*this).ChestBoneName = TEXT("spine_03");
+    (*this).AimDummySocketName = TEXT("AimRSocket");
+    (*this).FootstepEventBaseComponent = CreateDefaultSubobject<UIGS_FootstepsEventBasedComponent>(TEXT("FootstepEventBaseComponent"));
+    (*this).FallDamageComponent = CreateDefaultSubobject<UIGS_FallDamageComponent>(TEXT("FallDamageComponent"));
+    (*this).AimAtArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("AimAtDirection"));
+    (*this).LookAtArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("LookAtDirection"));
+    (*this).PawnDirArrowComp = CreateDefaultSubobject<UArrowComponent>(TEXT("PawnDirection"));
+    (*this).AnimBudgetAllocatorComponent = CreateDefaultSubobject<UIGS_AnimBudgetAllocatorComponent>(TEXT("AnimBudgetAllocatorComponent"));
+    (*this).DecalContactShadowComponent = CreateDefaultSubobject<UIGS_DecalContactShadowComponent>(TEXT("DecalContactShadowComponent"));
+    (*this).PressureWatcherComponent = CreateDefaultSubobject<UIGS_CharacterPressureWatcherComponent>(TEXT("PressureWatcherComponent"));
+    (*this).AimAssistTargetComponent = CreateDefaultSubobject<UIGS_AimAssistTargetComponent>(TEXT("AimAssistTargetComponent"));
+    (*this).HeadComponentReference.ComponentProperty = TEXT("head");
+    (*this).mR_NextRandomAnimationSeed = -1;
+    (*this).AimAtArrowComp->SetupAttachment((*this).RootComponent);
+    (*this).LookAtArrowComp->SetupAttachment((*this).RootComponent);
+    (*this).PawnDirArrowComp->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_IntelligentGameCharacter::ThrowAwayBag() const {

@@ -1,30 +1,23 @@
 #include "IGS_VehicleBase.h"
 #include "AkComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "IGS_VehiclePathFollowerComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_VehicleBase::AIGS_VehicleBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("VehicleSkeletalMesh"));
-    this->isEscaping = false;
-    this->bIsEscapeVehicle = false;
-    this->PassengersGetOutAfterDriveFinished = true;
-    this->bSpawnCustomPassengers = false;
-    this->bStartIdleOnBeginPlay = true;
-    this->DriveAkEvent = NULL;
-    this->BrakeAkEvent = NULL;
-    this->IdleAkEvent = NULL;
-    this->VehicleTypeAkSwitchValue = NULL;
-    this->AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
-    this->VehicleMesh = (USkeletalMeshComponent*)RootComponent;
-    this->FollowerComponent = CreateDefaultSubobject<UIGS_VehiclePathFollowerComponent>(TEXT("FollowComponent"));
-    this->m_VehilceGroup = EIGS_VehicleSplineGroup::None;
-    this->bIsDriving = false;
-    this->m_IsLeaving = false;
-    this->Destination = NULL;
-    this->bCanSpawnPassengers = true;
-    this->PassengerCount = 0;
-    this->AkAudioComponent->SetupAttachment(RootComponent);
+    (*this).PassengersGetOutAfterDriveFinished = true;
+    (*this).Speed.Min = 1.500000000e+03f;
+    (*this).Speed.Max = 2.000000000e+03f;
+    (*this).bStartIdleOnBeginPlay = true;
+    (*this).AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
+    (*this).VehicleMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("VehicleSkeletalMesh"));
+    (*this).FollowerComponent = CreateDefaultSubobject<UIGS_VehiclePathFollowerComponent>(TEXT("FollowComponent"));
+    (*this).bCanSpawnPassengers = true;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).RootComponent = (USceneComponent*)VehicleMesh;
+    (*this).AkAudioComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_VehicleBase::UpdateEscapeInteractions(bool inIsObjectiveCompleted, float inHoldTime) {

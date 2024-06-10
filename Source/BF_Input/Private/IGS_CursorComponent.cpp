@@ -1,9 +1,9 @@
 #include "IGS_CursorComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_CursorComponent::UIGS_CursorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->VirtualSoftwareCursorWidget = NULL;
-    this->NativeSoftwareCursorWidget = NULL;
-    this->bUsingVirtualCursor = false;
+    (*this).PrimaryComponentTick.bTickEvenWhenPaused = true;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_CursorComponent::UseVirtualCursor() {

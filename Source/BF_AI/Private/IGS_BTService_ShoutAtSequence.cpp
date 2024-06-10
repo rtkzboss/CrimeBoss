@@ -1,7 +1,11 @@
 #include "IGS_BTService_ShoutAtSequence.h"
 
 UIGS_BTService_ShoutAtSequence::UIGS_BTService_ShoutAtSequence() {
-    this->NodeName = TEXT("Shout At Sequence");
+    auto& gen386 = (*this).CharacterToShoutKey.AllowedTypes;
+    gen386.Empty();
+    gen386.AddDefaulted(1);
+    (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).CharacterToShoutKey, 0)) = 255;
+    (*this).NodeName = TEXT("Shout At Sequence");
 }
 
 

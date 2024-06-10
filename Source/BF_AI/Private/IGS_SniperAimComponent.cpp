@@ -1,8 +1,18 @@
 #include "IGS_SniperAimComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_SniperAimComponent::UIGS_SniperAimComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->mR_IsLocked = false;
+    (*this).HorizontalOffset.Min = -1.200000000e+01f;
+    (*this).HorizontalOffset.Max = 1.200000000e+01f;
+    (*this).VerticalOffset.Min = -5.000000000e+00f;
+    (*this).VerticalOffset.Max = 7.000000000e+00f;
+    (*this).HorizontalSpeed.Min = 1.400000000e+01f;
+    (*this).HorizontalSpeed.Max = 1.800000000e+01f;
+    (*this).VerticalSpeed.Min = 4.000000000e+00f;
+    (*this).VerticalSpeed.Max = 6.000000000e+00f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
 }
 
 void UIGS_SniperAimComponent::OnWieldableChanged(EIGS_WieldableSlot inSlotType, AIGS_WieldableBase* inWieldableBase, UIGS_WieldableInventoryObjectBase* inInventoryObject) {

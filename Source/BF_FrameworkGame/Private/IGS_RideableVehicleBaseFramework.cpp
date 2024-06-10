@@ -1,4 +1,7 @@
 #include "IGS_RideableVehicleBaseFramework.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_RideableVehicleBaseFramework::AIGS_RideableVehicleBaseFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

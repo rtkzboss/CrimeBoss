@@ -1,21 +1,23 @@
 #include "IGS_InteractableDefendPointBase.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "IGS_InteractiveComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_InteractableDefendPointBase::AIGS_InteractableDefendPointBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
-    this->DefendInteraction = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Defend Interaction"));
-    this->RootComp = (USceneComponent*)RootComponent;
-    this->LeaveTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Defend Trigger"));
-    this->DefendTime = 10.00f;
-    this->bIsTimed = true;
-    this->ResetCountdown = 10.00f;
-    this->DelayAfterAllPlayersOut = 10.00f;
-    this->mR_bPinged = true;
-    this->DefendInteraction->SetupAttachment(RootComponent);
-    this->LeaveTrigger->SetupAttachment(RootComponent);
+    (*this).DefendInteraction = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Defend Interaction"));
+    (*this).RootComp = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
+    (*this).LeaveTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Defend Trigger"));
+    (*this).DefendTime = 1.000000000e+01f;
+    (*this).bIsTimed = true;
+    (*this).ResetCountdown = 1.000000000e+01f;
+    (*this).DelayAfterAllPlayersOut = 1.000000000e+01f;
+    (*this).mR_bPinged = true;
+    (*this).RootComponent = (USceneComponent*)RootComp;
+    (*this).DefendInteraction->SetupAttachment((*this).RootComponent);
+    (*this).LeaveTrigger->SetupAttachment((*this).RootComp);
 }
 
 void AIGS_InteractableDefendPointBase::SetPinged(bool inPinged) {

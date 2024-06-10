@@ -1,8 +1,7 @@
 #include "IGS_FinanceManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_FinanceManagerBaseComponent::UIGS_FinanceManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsManagerDataDirty = false;
-    this->bIsManagerInitialized = false;
 }
 
 void UIGS_FinanceManagerBaseComponent::IsPlayerInBankruptState_Implementation(bool& outResult, int32& outDaysLeftForRehabilitation) {

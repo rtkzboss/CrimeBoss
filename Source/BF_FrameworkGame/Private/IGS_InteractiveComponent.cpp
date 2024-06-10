@@ -1,42 +1,23 @@
 #include "IGS_InteractiveComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_InteractiveComponent::UIGS_InteractiveComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SingleUse = false;
-    this->bAutoPickup = false;
-    this->bIsEnabled = true;
-    this->bCanBeEnabled = true;
-    this->bIsHoldable = false;
-    this->bServerFirst = false;
-    this->bHolsterWhenHolding = true;
-    this->TimerHoldTime = 0.50f;
-    this->NeededItem = NULL;
-    this->InteractionPriority = 0;
-    this->OutlineDistance = 250.00f;
-    this->InteractionDistance = 150.00f;
-    this->HUDDistance = 500.00f;
-    this->InteractionDistanceOnly2D = false;
-    this->InteractionBottomZTreshold = 100.00f;
-    this->InteractionDotThreshold = 0.75f;
-    this->bUseRootForOutline = true;
-    this->bShowOutline = true;
-    this->bOverrideMasterOutline = true;
-    this->bReleaseLookInputAfterUse = true;
-    this->bFrontFacingOnly = false;
-    this->bIgnoreLocally = false;
-    this->bUncrouchBeforeUse = false;
-    this->bIsUsableWithCarryable = false;
-    this->bIsCarryableInteraction = false;
-    this->SuspicionTagsKeepTime = -1.00f;
-    this->bManuallyRemoveTags = false;
-    this->R_bIsSuspicious = false;
-    this->R_bIsBeingUsed = false;
-    this->R_CurrentlyUsingInstigator = NULL;
-    this->bIsEscapeInteraction = false;
-    this->bIsObjectiveCompleted = false;
-    this->mR_WasUsed = false;
-    this->m_OutlineComponent = NULL;
+    (*this).bIsEnabled = true;
+    (*this).bCanBeEnabled = true;
+    (*this).bHolsterWhenHolding = true;
+    (*this).TimerHoldTime = 5.000000000e-01f;
+    (*this).OutlineDistance = 2.500000000e+02f;
+    (*this).InteractionDistance = 1.500000000e+02f;
+    (*this).HUDDistance = 5.000000000e+02f;
+    (*this).InteractionBottomZTreshold = 1.000000000e+02f;
+    (*this).InteractionDotThreshold = 7.500000000e-01f;
+    (*this).bUseRootForOutline = true;
+    (*this).bShowOutline = true;
+    (*this).bOverrideMasterOutline = true;
+    (*this).bReleaseLookInputAfterUse = true;
+    (*this).SuspicionTagsKeepTime = -1.000000000e+00f;
 }
 
 void UIGS_InteractiveComponent::Use(AIGS_GameCharacterFramework* inInstigator) {

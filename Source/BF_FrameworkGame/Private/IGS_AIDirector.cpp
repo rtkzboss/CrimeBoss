@@ -11,19 +11,16 @@
 #include "IGS_TrafficManager.h"
 
 UIGS_AIDirector::UIGS_AIDirector() {
-    this->m_WaveManager = NULL;
-    this->m_AISpawner = CreateDefaultSubobject<UIGS_AISpawner>(TEXT("AI Spawner"));
-    this->m_PressureManager = CreateDefaultSubobject<UIGS_PressureManager>(TEXT("Pressure Manager"));
-    this->m_AIEventsDispatcher = CreateDefaultSubobject<UIGS_AIEventsDispatcher>(TEXT("AI Event Dispatcher"));
-    this->m_AmbientLifeManager = CreateDefaultSubobject<UIGS_AmbientLifeManager>(TEXT("Ambient Life Manager"));
-    this->m_DefendManager = CreateDefaultSubobject<UIGS_DefendManager>(TEXT("Defend Manager"));
-    this->m_DetectionManager = CreateDefaultSubobject<UIGS_DetectionManager>(TEXT("Detection Manager"));
-    this->m_MountedWeaponManager = CreateDefaultSubobject<UIGS_MountedWeaponManager>(TEXT("Mounted Weapon Manager"));
-    this->m_AIPointsManager = CreateDefaultSubobject<UIGS_AIPointManager>(TEXT("AIPoint Manager"));
-    this->m_TrafficManager = CreateDefaultSubobject<UIGS_TrafficManager>(TEXT("Traffic Manager"));
-    this->m_AIDifficultyManager = CreateDefaultSubobject<UIGS_AIDifficultyManager>(TEXT("AI Difficulty Manager"));
-    this->m_GeneralListener = NULL;
-    this->MatchStartedForAI = false;
+    (*this).m_AISpawner = CreateDefaultSubobject<UIGS_AISpawner>(TEXT("AI Spawner"));
+    (*this).m_PressureManager = CreateDefaultSubobject<UIGS_PressureManager>(TEXT("Pressure Manager"));
+    (*this).m_AIEventsDispatcher = CreateDefaultSubobject<UIGS_AIEventsDispatcher>(TEXT("AI Event Dispatcher"));
+    (*this).m_AmbientLifeManager = CreateDefaultSubobject<UIGS_AmbientLifeManager>(TEXT("Ambient Life Manager"));
+    (*this).m_DefendManager = CreateDefaultSubobject<UIGS_DefendManager>(TEXT("Defend Manager"));
+    (*this).m_DetectionManager = CreateDefaultSubobject<UIGS_DetectionManager>(TEXT("Detection Manager"));
+    (*this).m_MountedWeaponManager = CreateDefaultSubobject<UIGS_MountedWeaponManager>(TEXT("Mounted Weapon Manager"));
+    (*this).m_AIPointsManager = CreateDefaultSubobject<UIGS_AIPointManager>(TEXT("AIPoint Manager"));
+    (*this).m_TrafficManager = CreateDefaultSubobject<UIGS_TrafficManager>(TEXT("Traffic Manager"));
+    (*this).m_AIDifficultyManager = CreateDefaultSubobject<UIGS_AIDifficultyManager>(TEXT("AI Difficulty Manager"));
 }
 
 void UIGS_AIDirector::SetGlobalAggro(AActor* inActor, float InFloat, const AActor* inInstigator) {

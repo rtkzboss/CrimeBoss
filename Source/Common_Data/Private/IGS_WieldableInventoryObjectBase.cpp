@@ -1,4 +1,5 @@
 #include "IGS_WieldableInventoryObjectBase.h"
+#include "EIGS_ItemType.h"
 
 UIGS_WieldableInventoryObjectBase::UIGS_WieldableInventoryObjectBase() {
 }

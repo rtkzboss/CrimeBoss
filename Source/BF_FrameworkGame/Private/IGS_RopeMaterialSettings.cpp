@@ -1,6 +1,7 @@
 #include "IGS_RopeMaterialSettings.h"
 
 FIGS_RopeMaterialSettings::FIGS_RopeMaterialSettings() {
-    this->MaterialTilingU = 0.00f;
+    (*this).ParNameTilingU = TEXT("T_TilingU");
+    (*this).MaterialTilingU = 5.000000000e+01f;
 }
 

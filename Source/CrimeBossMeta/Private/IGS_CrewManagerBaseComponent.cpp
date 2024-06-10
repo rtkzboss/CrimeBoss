@@ -1,9 +1,8 @@
 #include "IGS_CrewManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_CrewManagerBaseComponent::UIGS_CrewManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsManagerDataDirty = false;
-    this->bIsManagerInitialized = false;
 }
 
 bool UIGS_CrewManagerBaseComponent::SwitchWeaponsBetweenHeisters_Implementation(UMETA_Character* CharacterA, UMETA_Character* CharacterB, UMETA_Weapon* weaponObject) {

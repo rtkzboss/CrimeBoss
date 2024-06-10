@@ -1,5 +1,7 @@
 #include "IGS_AIControllerBase.h"
 #include "Perception/AIPerceptionComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "IGS_AIDataComponent.h"
 #include "IGS_AIGeneralReactionsManager.h"
 #include "IGS_AIMemoryComponent.h"
@@ -8,21 +10,14 @@
 #include "IGS_ScriptableBehaviorComponent.h"
 
 AIGS_AIControllerBase::AIGS_AIControllerBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AIPerceptionComponent"));
-    this->TeamSide = EIGS_TeamSideEnum::TS_Unknown;
-    this->PerceptionHandlerComponent = CreateDefaultSubobject<UIGS_AIPerceptionHandlerComponent>(TEXT("AIPerceptionHandlerComponent"));
-    this->AggroHandlerComponent = NULL;
-    this->MemoryComponent = CreateDefaultSubobject<UIGS_AIMemoryComponent>(TEXT("AIMemoryComponent"));
-    this->ThreatComponent = NULL;
-    this->InjuryComponent = CreateDefaultSubobject<UIGS_InjuryComponentAI>(TEXT("AIInjuryComponenet"));
-    this->SettingsComponent = NULL;
-    this->ScriptableBehaviorComponent = CreateDefaultSubobject<UIGS_ScriptableBehaviorComponent>(TEXT("Scriptable Behavior"));
-    this->AIDataComponent = CreateDefaultSubobject<UIGS_AIDataComponent>(TEXT("AIDataComponent"));
-    this->GeneralReactionsManagerComponent = CreateDefaultSubobject<UIGS_AIGeneralReactionsManager>(TEXT("AIReactionManagerComponent"));
-    this->PossedPawn = NULL;
-    this->PrimaryWeapon = NULL;
-    this->SecondaryWeapon = NULL;
-    this->MeleeWeapon = NULL;
+    (*this).TeamSide = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).PerceptionHandlerComponent = CreateDefaultSubobject<UIGS_AIPerceptionHandlerComponent>(TEXT("AIPerceptionHandlerComponent"));
+    (*this).MemoryComponent = CreateDefaultSubobject<UIGS_AIMemoryComponent>(TEXT("AIMemoryComponent"));
+    (*this).InjuryComponent = CreateDefaultSubobject<UIGS_InjuryComponentAI>(TEXT("AIInjuryComponenet"));
+    (*this).ScriptableBehaviorComponent = CreateDefaultSubobject<UIGS_ScriptableBehaviorComponent>(TEXT("Scriptable Behavior"));
+    (*this).AIDataComponent = CreateDefaultSubobject<UIGS_AIDataComponent>(TEXT("AIDataComponent"));
+    (*this).GeneralReactionsManagerComponent = CreateDefaultSubobject<UIGS_AIGeneralReactionsManager>(TEXT("AIReactionManagerComponent"));
+    (*this).PerceptionComponent = CreateDefaultSubobject<UAIPerceptionComponent>(TEXT("AIPerceptionComponent"));
 }
 
 void AIGS_AIControllerBase::SetSOScope(uint8 scope) {

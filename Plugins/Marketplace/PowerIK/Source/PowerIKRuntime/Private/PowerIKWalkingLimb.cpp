@@ -1,11 +1,15 @@
 #include "PowerIKWalkingLimb.h"
 
 FPowerIKWalkingLimb::FPowerIKWalkingLimb() {
-    this->LimbMaxLengthMultiplier = 0.00f;
-    this->StepLengthMultiplier = 0.00f;
-    this->StepDuration = 0.00f;
-    this->StepHeight = 0.00f;
-    this->RotateFootToGround = 0.00f;
-    this->FootCollisionRadius = 0.00f;
+    (*this).StartBone = NAME_None;
+    (*this).EndBone = NAME_None;
+    (*this).LimbMaxLengthMultiplier = 8.999999762e-01f;
+    (*this).StepLengthMultiplier = 1.000000000e+00f;
+    (*this).StepDuration = 5.000000000e-01f;
+    (*this).StepHeight = 3.000000000e+01f;
+    auto& gen1652 = (*this).RelatedLimbs;
+    gen1652.Empty();
+    (*this).RotateFootToGround = 8.999999762e-01f;
+    (*this).FootCollisionRadius = 1.000000000e+01f;
 }
 

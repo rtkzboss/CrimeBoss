@@ -1,9 +1,11 @@
 #include "IGS_SecuredLootInfoWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_SecuredLootInfoWidget::UIGS_SecuredLootInfoWidget() {
-    this->SecuredLootValue = 0.00f;
-    this->SoftCollectedLootValue = 0.00f;
-    this->GoalValue = 0.00f;
 }
 
 

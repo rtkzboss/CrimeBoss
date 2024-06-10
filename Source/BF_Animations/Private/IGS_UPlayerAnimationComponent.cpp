@@ -1,40 +1,17 @@
 #include "IGS_UPlayerAnimationComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "PhysicsEngine/PhysicalAnimationComponent.h"
 
 UIGS_UPlayerAnimationComponent::UIGS_UPlayerAnimationComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->UnarmedArmsAnimClass = NULL;
-    this->UnarmedCharacterClass = NULL;
-    this->CombatTimerAlpha = 1.00f;
-    this->UnarmedUnholsterTime = 0.50f;
-    this->SkipAnimationHolsterTime = 0.50f;
-    this->FirstPersonAnimations = NULL;
-    this->FirstPersonThrowablesAnimations = NULL;
-    this->FirstPersonCarryableItemsAnimations = NULL;
-    this->FirstPersonMeleeDatabase = NULL;
-    this->ThirdPersonAnimations = NULL;
-    this->ThirdPersonMeleeAnimDatabase = NULL;
-    this->ThirdPersonThrowablesDatabase = NULL;
-    this->ThirdPersonCarryablesDatabase = NULL;
-    this->PatrolAnimations = NULL;
-    this->ReactionAnimations = NULL;
-    this->MeleePushAnimations = NULL;
-    this->CombatAnimations = NULL;
-    this->PlayerDeathAnimationsData = NULL;
-    this->AvoidanceAnimationsTable = NULL;
-    this->DownStateDatabase = NULL;
-    this->SpawnAnimsTable = NULL;
-    this->CarAnimsTable = NULL;
-    this->BreachingDatabase = NULL;
-    this->SmartLink_OpenDoor = NULL;
-    this->SmartLink_Jump_OverObstacle = NULL;
-    this->AimInSpeed = 15.00f;
-    this->AimOutSpeed = 12.00f;
-    this->m_Physical_animation = CreateDefaultSubobject<UPhysicalAnimationComponent>(TEXT("Physics_Animation"));
-    this->FirstEquip = true;
-    this->IsUsingSetableAnimClass = false;
-    this->IsUsingTPPSetableAnimClass = false;
-    this->SlideTransitionEndDuration = 0.10f;
-    this->m_WieldableBase = NULL;
+    (*this).CombatTimerAlpha = 1.000000000e+00f;
+    (*this).UnarmedUnholsterTime = 5.000000000e-01f;
+    (*this).SkipAnimationHolsterTime = 5.000000000e-01f;
+    (*this).AimInSpeed = 1.500000000e+01f;
+    (*this).AimOutSpeed = 1.200000000e+01f;
+    (*this).m_Physical_animation = CreateDefaultSubobject<UPhysicalAnimationComponent>(TEXT("Physics_Animation"));
+    (*this).FirstEquip = true;
+    (*this).SlideTransitionEndDuration = 1.000000015e-01f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_UPlayerAnimationComponent::OnWeaponChange() const {

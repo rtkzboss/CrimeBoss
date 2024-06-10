@@ -1,4 +1,7 @@
 #include "META_TradeDealSell.h"
+#include "EIGS_UserDifficulty.h"
+#include "EMETA_JobResult.h"
+#include "EMETA_LobbyVisibilityType.h"
 
 UMETA_TradeDealSell::UMETA_TradeDealSell() {
 }

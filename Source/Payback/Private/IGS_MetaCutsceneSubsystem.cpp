@@ -1,10 +1,6 @@
 #include "IGS_MetaCutsceneSubsystem.h"
 
 UIGS_MetaCutsceneSubsystem::UIGS_MetaCutsceneSubsystem() {
-    this->Data = NULL;
-    this->CutsceneData = NULL;
-    this->EnviromentLevel = NULL;
-    this->SetupLevel = NULL;
 }
 
 void UIGS_MetaCutsceneSubsystem::StartCutscene() {

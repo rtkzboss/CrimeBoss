@@ -1,17 +1,14 @@
 #include "META_MainWidget.h"
+#include "EScreenInputMode.h"
+#include "EScreenInputPass.h"
+#include "EScreenModifier.h"
+#include "EScreenZOrder.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UMETA_MainWidget::UMETA_MainWidget() {
-    this->UIEventsManagerComponent = NULL;
-    this->CrewManager = NULL;
-    this->BlackmarketManager = NULL;
-    this->FinanceManager = NULL;
-    this->GoalsManager = NULL;
-    this->JobsManager = NULL;
-    this->StashManager = NULL;
-    this->DailyManager = NULL;
-    this->LevelActorsManagerComponent = NULL;
-    this->MetaGameMode = NULL;
-    this->MetaGameState = NULL;
 }
 
 

@@ -1,4 +1,5 @@
 #include "AkAudioInputComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkAudioInputComponent::UAkAudioInputComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

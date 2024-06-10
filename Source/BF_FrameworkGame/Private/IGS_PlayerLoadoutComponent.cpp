@@ -1,7 +1,7 @@
 #include "IGS_PlayerLoadoutComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PlayerLoadoutComponent::UIGS_PlayerLoadoutComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SubtractChargeGE = NULL;
 }
 
 void UIGS_PlayerLoadoutComponent::Server_OverrideAbility1Charges_Implementation(const int32 inCharges) {

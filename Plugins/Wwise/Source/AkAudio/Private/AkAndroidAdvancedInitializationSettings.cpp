@@ -1,7 +1,7 @@
 #include "AkAndroidAdvancedInitializationSettings.h"
 
 FAkAndroidAdvancedInitializationSettings::FAkAndroidAdvancedInitializationSettings() {
-    this->AudioAPI = 0;
-    this->RoundFrameSizeToHardwareSize = false;
+    (*this).AudioAPI = 3;
+    (*this).RoundFrameSizeToHardwareSize = true;
 }
 

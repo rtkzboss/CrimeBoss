@@ -1,4 +1,5 @@
 #include "IGS_MoneyMakingOportunitiesBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_MoneyMakingOportunitiesBaseComponent::UIGS_MoneyMakingOportunitiesBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

@@ -1,10 +1,8 @@
 #include "IGS_InteractiveWireBox2.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_InteractiveWireBox2::AIGS_InteractiveWireBox2(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LightsTimeline = NULL;
-    this->LightFailMaterial = NULL;
-    this->AkAudioComponent = NULL;
-    this->CutSuccessAkEvent = NULL;
 }
 
 void AIGS_InteractiveWireBox2::SetLightsColors() {

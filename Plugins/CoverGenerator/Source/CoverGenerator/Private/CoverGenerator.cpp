@@ -1,37 +1,26 @@
 #include "CoverGenerator.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 
 ACoverGenerator::ACoverGenerator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootSceneComponent"));
-    this->ForceRefresh = false;
-    this->bUseCoverZones = false;
-    this->bRegenerateAtBeginPlay = false;
-    this->bRegenerateAtNavigationRebuilt = false;
-    this->SegmentLength = 5.00f;
-    this->CharWidth = 40.00f;
-    this->CharHeight = 180.00f;
-    this->StepDistTrace = 20.00f;
-    this->TraceLength = 150.00f;
-    this->MinSpaceBetweenValidPoints = 50.00f;
-    this->SphereSize = 5.00f;
-    this->WidthMaxAgent = 80.00f;
-    this->HeightMinCrouching = 60.00f;
-    this->HeightMaxCrouching = 80.00f;
-    this->HeightMaxStanding = 180.00f;
-    this->OffsetWhenLeaningSides = 65.00f;
-    this->OffsetWhenLeaningUp = 15.00f;
-    this->OffsetWhenStandingUp = 35.00f;
-    this->OffsetFrontAim = 200.00f;
-    this->bDraw1AllSegmentPointsTested = false;
-    this->bDraw2SegmentPointsWithinBounds = false;
-    this->bDraw3SimpleCoverGeometryTest = false;
-    this->bDraw4SecondPassTracesSides = false;
-    this->bDraw4SecondPassTracesSidesFrontAndBottom = false;
-    this->DebugDrawAllPoints = false;
-    this->DebugDrawAllBusyPoints = false;
-    this->DebugDisplayLog = false;
-    this->DebugDistance = 25000.00f;
-    this->bDrawOctreeBounds = false;
+    (*this).SegmentLength = 5.000000000e+00f;
+    (*this).CharWidth = 4.000000000e+01f;
+    (*this).CharHeight = 1.800000000e+02f;
+    (*this).StepDistTrace = 2.000000000e+01f;
+    (*this).TraceLength = 1.500000000e+02f;
+    (*this).MinSpaceBetweenValidPoints = 5.000000000e+01f;
+    (*this).SphereSize = 5.000000000e+00f;
+    (*this).WidthMaxAgent = 8.000000000e+01f;
+    (*this).HeightMinCrouching = 6.000000000e+01f;
+    (*this).HeightMaxCrouching = 8.000000000e+01f;
+    (*this).HeightMaxStanding = 1.800000000e+02f;
+    (*this).OffsetWhenLeaningSides = 6.500000000e+01f;
+    (*this).OffsetWhenLeaningUp = 1.500000000e+01f;
+    (*this).OffsetWhenStandingUp = 3.500000000e+01f;
+    (*this).OffsetFrontAim = 2.000000000e+02f;
+    (*this).DebugDistance = 2.500000000e+04f;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootSceneComponent"));
 }
 
 void ACoverGenerator::ReleaseCover(UCoverPoint* CoverPoint) {

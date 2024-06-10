@@ -1,8 +1,11 @@
 #include "IGS_BTService_EvaluateBags.h"
 
 UIGS_BTService_EvaluateBags::UIGS_BTService_EvaluateBags() {
-    this->NodeName = TEXT("Evaluate Pickup Bag");
-    this->QueryTemplate = NULL;
+    auto& gen332 = (*this).BestBagKey.AllowedTypes;
+    gen332.Empty();
+    gen332.AddDefaulted(1);
+    (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).BestBagKey, 0)) = 255;
+    (*this).NodeName = TEXT("Evaluate Pickup Bag");
 }
 
 

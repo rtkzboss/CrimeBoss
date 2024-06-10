@@ -1,4 +1,10 @@
 #include "SimpleBarChart.h"
+#include "EKantanBarChartOrientation.h"
+#include "EKantanBarLabelPosition.h"
+#include "EKantanBarValueExtents.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
 
 USimpleBarChart::USimpleBarChart() {
 }

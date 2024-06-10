@@ -1,4 +1,6 @@
 #include "IGS_InteractionSubTileActor.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_InteractionSubTileActor::AIGS_InteractionSubTileActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

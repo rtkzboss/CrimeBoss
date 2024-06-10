@@ -1,11 +1,11 @@
 #include "AkPortalComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkPortalComponent::UAkPortalComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bUseAttachParentBound = true;
-    this->bDynamic = false;
-    this->InitialState = AkAcousticPortalState::Open;
-    this->ObstructionRefreshInterval = 0.00f;
-    this->ObstructionCollisionChannel = ECC_GameTraceChannel8;
+    (*this).InitialState = AkAcousticPortalState::Open;
+    (*this).ObstructionCollisionChannel = ECC_GameTraceChannel8;
+    (*this).bUseAttachParentBound = true;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 bool UAkPortalComponent::PortalPlacementValid() const {

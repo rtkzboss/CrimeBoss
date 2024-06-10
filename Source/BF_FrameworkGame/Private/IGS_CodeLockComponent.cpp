@@ -1,14 +1,11 @@
 #include "IGS_CodeLockComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_CodeLockComponent::UIGS_CodeLockComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Code = 0;
-    this->MinCylinderValue = 1;
-    this->MaxCylinderValue = 7;
-    this->R_IsLocked = true;
-    this->R_bIsOccupied = false;
-    this->m_DigitCount = 0;
-    this->m_OldOwner = NULL;
+    (*this).MinCylinderValue = 1;
+    (*this).MaxCylinderValue = 7;
+    (*this).R_IsLocked = true;
 }
 
 void UIGS_CodeLockComponent::SetInstigator(AIGS_GameCharacterFramework* inInstigator) {

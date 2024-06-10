@@ -1,27 +1,9 @@
 #include "IGS_OutlineComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_OutlineComponent::UIGS_OutlineComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentOutlineState = EIGS_CameraOutlineState::None;
-    this->LocalOverrideOutlineState = EIGS_CameraOutlineState::None;
-    this->bUseRootForOutline = true;
-    this->bShineWhenInactive = false;
-    this->bSolidInteractiveOutline = false;
-    this->bBlinkingInteractiveOutline = false;
-    this->bPingOutline = false;
-    this->bEnemyDetectingOutline = false;
-    this->bEnemyPingOutline = false;
-    this->bObjectiveOutline = false;
-    this->bHeisterOutline = false;
-    this->bHeister2Outline = false;
-    this->bHeister3Outline = false;
-    this->bHeister4Outline = false;
-    this->bBackupHeisterOutline = false;
-    this->bHighlightOutline = false;
-    this->bIsShineEnabled = false;
-    this->bIsSmartPinged = false;
-    this->bRobotHighlighted = false;
-    this->bVanHighlighted = false;
+    (*this).bUseRootForOutline = true;
 }
 
 void UIGS_OutlineComponent::SetOutlineCategoryState(EIGS_CameraOutlineState inCategory, bool inEnabled) {

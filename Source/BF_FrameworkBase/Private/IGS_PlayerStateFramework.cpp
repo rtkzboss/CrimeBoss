@@ -1,4 +1,6 @@
 #include "IGS_PlayerStateFramework.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_PlayerStateFramework::AIGS_PlayerStateFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

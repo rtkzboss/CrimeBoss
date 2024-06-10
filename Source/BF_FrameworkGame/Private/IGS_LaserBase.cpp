@@ -1,12 +1,13 @@
 #include "IGS_LaserBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 
 AIGS_LaserBase::AIGS_LaserBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
-    this->Indestructible = false;
-    this->DestroyingReportsToHQ = true;
-    this->DestroyingIsSuspicious = true;
-    this->DisablingIsSuspicious = true;
+    (*this).DestroyingReportsToHQ = true;
+    (*this).DestroyingIsSuspicious = true;
+    (*this).DisablingIsSuspicious = true;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
 }
 
 

@@ -1,8 +1,9 @@
 #include "IGS_SpatialAudioVolume.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_SpatialAudioVolume::AIGS_SpatialAudioVolume(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AkEnviroSpace = EIGS_AkEnvironmentSpace::Indoors;
-    this->CopyTransmissionLossToSurfaces = true;
+    (*this).CopyTransmissionLossToSurfaces = true;
 }
 
 void AIGS_SpatialAudioVolume::OnOverlapEnd(AActor* inOverlappedActor, AActor* inOtherActor) {

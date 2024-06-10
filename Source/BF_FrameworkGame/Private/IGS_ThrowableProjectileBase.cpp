@@ -1,27 +1,23 @@
 #include "IGS_ThrowableProjectileBase.h"
+#include "GameFramework/Actor.h"
 #include "Components/CapsuleComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_ThrowableProjectileBase::AIGS_ThrowableProjectileBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->RootComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleCollisionComponent"));
-    this->CapsuleCollision = (UCapsuleComponent*)RootComponent;
-    this->ThrowableMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ThrowableMeshComponent"));
-    this->ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
-    this->bDamageOnBounce = false;
-    this->mR_TimeHeldInHand = 0.00f;
-    this->mR_ThrowableObjectClass = NULL;
-    this->mR_IsCollisionEnabled = false;
-    this->bMakeImpactNoise = true;
-    this->mR_bStoppedMoving = false;
-    this->mR_bHasHit = false;
-    this->mR_bThrowedByAI = false;
-    this->ThrowableMesh->SetupAttachment(RootComponent);
+    (*this).CapsuleCollision = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleCollisionComponent"));
+    (*this).ThrowableMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("ThrowableMeshComponent"));
+    (*this).ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
+    (*this).bMakeImpactNoise = true;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).RootComponent = (USceneComponent*)CapsuleCollision;
+    (*this).ThrowableMesh->SetupAttachment((*this).CapsuleCollision);
 }
 
 bool AIGS_ThrowableProjectileBase::WasThrownByAI() const {

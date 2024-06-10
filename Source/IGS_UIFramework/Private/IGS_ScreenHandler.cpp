@@ -2,7 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_ScreenHandler::UIGS_ScreenHandler() {
-    this->m_InputDeviceManager = NULL;
 }
 
 void UIGS_ScreenHandler::UnregisterScreen(const UIGS_Screen* inScreen) {

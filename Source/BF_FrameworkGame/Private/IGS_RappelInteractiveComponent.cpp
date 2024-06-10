@@ -1,4 +1,5 @@
 #include "IGS_RappelInteractiveComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_RappelInteractiveComponent::UIGS_RappelInteractiveComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

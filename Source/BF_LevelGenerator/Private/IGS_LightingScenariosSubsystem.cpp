@@ -1,10 +1,7 @@
 #include "IGS_LightingScenariosSubsystem.h"
 
 UIGS_LightingScenariosSubsystem::UIGS_LightingScenariosSubsystem() {
-    this->LightingScenario = EIGS_LightingScenarioType::Midday;
-    this->bUseLightScenarios = false;
-    this->bForceMovableSkylight = true;
-    this->m_RootLevelScenarioStreaming = NULL;
+    (*this).bForceMovableSkylight = true;
 }
 
 void UIGS_LightingScenariosSubsystem::SetUseLightScenarios(bool inUseLightScenarios) {

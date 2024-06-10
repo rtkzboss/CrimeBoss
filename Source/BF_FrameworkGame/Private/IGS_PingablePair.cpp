@@ -1,7 +1,7 @@
 #include "IGS_PingablePair.h"
 
 FIGS_PingablePair::FIGS_PingablePair() {
-    this->Pingable = NULL;
-    this->PingableComponent = NULL;
+    (*this).Pingable = nullptr;
+    (*this).PingableComponent = nullptr;
 }
 

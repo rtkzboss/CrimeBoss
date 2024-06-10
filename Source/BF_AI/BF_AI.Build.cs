@@ -9,7 +9,6 @@ public class BF_AI : ModuleRules {
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AkAudio",
-            "AnimationBudgetAllocator",
             "BF_Covers",
             "BF_FrameworkBase",
             "BF_FrameworkGame",
@@ -30,6 +29,7 @@ public class BF_AI : ModuleRules {
             "PathFollow",
             "PaybackDefinitions",
             "PhysXVehicles",
+            "PhysicsCore",
             "Water",
         });
     }

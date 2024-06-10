@@ -1,4 +1,5 @@
 #include "IGS_AISense_Danger.h"
+#include "Perception/AIPerceptionTypes.h"
 
 UIGS_AISense_Danger::UIGS_AISense_Danger() {
 }

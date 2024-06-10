@@ -1,7 +1,6 @@
 #include "IGS_LevelGeneratorSubsystem.h"
 
 UIGS_LevelGeneratorSubsystem::UIGS_LevelGeneratorSubsystem() {
-    this->bIsBuildingFinished = false;
 }
 
 UIGS_LevelGeneratorSubsystem* UIGS_LevelGeneratorSubsystem::Instance(const UObject* inWorldContextObject) {

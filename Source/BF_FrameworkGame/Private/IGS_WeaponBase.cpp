@@ -1,5 +1,7 @@
 #include "IGS_WeaponBase.h"
 #include "Components/ArrowComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "Components/PointLightComponent.h"
 #include "Components/SceneComponent.h"
@@ -16,59 +18,57 @@
 #include "IGS_WeaponVisibilityHandler.h"
 
 AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SightModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SightModMesh"));
-    this->DynamicScopeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DynamicScopeModMesh"));
-    this->VisibilityModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisibilityModMesh"));
-    this->BarrelModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BarrelModMesh"));
-    this->GripModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GripModMesh"));
-    this->MagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MagazineModMesh"));
-    this->SecondMagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SecondMagazineModMesh"));
-    this->StockModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StockModMesh"));
-    this->WeaponModsArray.AddDefaulted(8);
-    this->LaserArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("LaserArrow"));
-    this->FlashSpotLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("FlashSpotLight"));
-    this->FlashPointLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("FlashPointLight"));
-    this->MuzzleFlashHandlerComponent = CreateDefaultSubobject<UIGS_MuzzleFlashHandlerComponent>(TEXT("Muzzle Flash Handler Component"));
-    this->MuzzleFlashRootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Muzzle Flash Root"));
-    this->MuzzleFlashParticleComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Muzzle Flash Particle"));
-    this->MuzzleFlashParticleComponentCascade = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Muzzle Flash Cascade Particle"));
-    this->BarrelSmokeParticleComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Barell Smoke Particle"));
-    this->MuzzleFlashLight3PV = CreateDefaultSubobject<UPointLightComponent>(TEXT("Muzzle Flash Light 3PV"));
-    this->MuzzleFlashLightFPV = CreateDefaultSubobject<UPointLightComponent>(TEXT("Muzzle Flash Light FPV"));
-    this->MuzzleFlashLightFPVSecondary = CreateDefaultSubobject<UPointLightComponent>(TEXT("Muzzle Flash Light FPV Secondary"));
-    this->bDisableAim = false;
-    this->bAlwaysShootsForward = false;
-    this->ShouldUseSniperScope = false;
-    this->CanReloadInADS = true;
-    this->ReloadAfterLastBulletDelay = 0.20f;
-    this->WeaponAccuracy = CreateDefaultSubobject<UIGS_WeaponAccuracyComponent>(TEXT("WeaponAccuracy"));
-    this->WeaponRecoil = CreateDefaultSubobject<UIGS_WeaponRecoilComponent>(TEXT("WeaponRecoil"));
-    this->WeaponModsHandler = CreateDefaultSubobject<UIGS_WeaponModsHandler>(TEXT("WeaponModsHandler"));
-    this->WeaponSkinHandler = CreateDefaultSubobject<UIGS_WeaponSkinHandler>(TEXT("WeaponSkinHandler"));
-    this->WeaponVisibilityHandler = CreateDefaultSubobject<UIGS_WeaponVisibilityHandler>(TEXT("WeaponVisibilityHandler"));
-    this->WeaponDynamicScopeHandler = CreateDefaultSubobject<UIGS_WeaponDynamicScopeHandler>(TEXT("WeaponDynamicScopeHandler"));
-    this->ReloaderBase = NULL;
-    this->PrimaryShooter = EIGS_WeaponAttackType::AT_UNKNOWN;
-    this->Basher = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Basher"));
-    this->VirtualSightSocketName = TEXT("VirtualSight");
-    this->SightModMesh->SetupAttachment(RootComponent);
-    this->DynamicScopeMesh->SetupAttachment(RootComponent);
-    this->VisibilityModMesh->SetupAttachment(RootComponent);
-    this->BarrelModMesh->SetupAttachment(RootComponent);
-    this->GripModMesh->SetupAttachment(RootComponent);
-    this->MagazineModMesh->SetupAttachment(RootComponent);
-    this->SecondMagazineModMesh->SetupAttachment(RootComponent);
-    this->StockModMesh->SetupAttachment(RootComponent);
-    this->LaserArrow->SetupAttachment(RootComponent);
-    this->FlashSpotLight->SetupAttachment(RootComponent);
-    this->FlashPointLight->SetupAttachment(FlashSpotLight);
-    this->MuzzleFlashRootComponent->SetupAttachment(RootComponent);
-    this->MuzzleFlashParticleComponent->SetupAttachment(MuzzleFlashRootComponent);
-    this->MuzzleFlashParticleComponentCascade->SetupAttachment(MuzzleFlashRootComponent);
-    this->BarrelSmokeParticleComponent->SetupAttachment(MuzzleFlashRootComponent);
-    this->MuzzleFlashLight3PV->SetupAttachment(MuzzleFlashRootComponent);
-    this->MuzzleFlashLightFPV->SetupAttachment(MuzzleFlashRootComponent);
-    this->MuzzleFlashLightFPVSecondary->SetupAttachment(RootComponent);
+    (*this).SightModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SightModMesh"));
+    (*this).DynamicScopeMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("DynamicScopeModMesh"));
+    (*this).VisibilityModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisibilityModMesh"));
+    (*this).BarrelModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BarrelModMesh"));
+    (*this).GripModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("GripModMesh"));
+    (*this).MagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MagazineModMesh"));
+    (*this).SecondMagazineModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SecondMagazineModMesh"));
+    (*this).StockModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StockModMesh"));
+    auto& gen591 = (*this).WeaponModsArray;
+    gen591.Empty();
+    gen591.AddDefaulted(8);
+    (*this).LaserArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("LaserArrow"));
+    (*this).FlashSpotLight = CreateDefaultSubobject<USpotLightComponent>(TEXT("FlashSpotLight"));
+    (*this).FlashPointLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("FlashPointLight"));
+    (*this).MuzzleFlashHandlerComponent = CreateDefaultSubobject<UIGS_MuzzleFlashHandlerComponent>(TEXT("Muzzle Flash Handler Component"));
+    (*this).MuzzleFlashRootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Muzzle Flash Root"));
+    (*this).MuzzleFlashParticleComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Muzzle Flash Particle"));
+    (*this).MuzzleFlashParticleComponentCascade = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Muzzle Flash Cascade Particle"));
+    (*this).BarrelSmokeParticleComponent = CreateDefaultSubobject<UNiagaraComponent>(TEXT("Barell Smoke Particle"));
+    (*this).MuzzleFlashLight3PV = CreateDefaultSubobject<UPointLightComponent>(TEXT("Muzzle Flash Light 3PV"));
+    (*this).MuzzleFlashLightFPV = CreateDefaultSubobject<UPointLightComponent>(TEXT("Muzzle Flash Light FPV"));
+    (*this).MuzzleFlashLightFPVSecondary = CreateDefaultSubobject<UPointLightComponent>(TEXT("Muzzle Flash Light FPV Secondary"));
+    (*this).CanReloadInADS = true;
+    (*this).ReloadAfterLastBulletDelay = 2.000000030e-01f;
+    (*this).WeaponAccuracy = CreateDefaultSubobject<UIGS_WeaponAccuracyComponent>(TEXT("WeaponAccuracy"));
+    (*this).WeaponRecoil = CreateDefaultSubobject<UIGS_WeaponRecoilComponent>(TEXT("WeaponRecoil"));
+    (*this).WeaponModsHandler = CreateDefaultSubobject<UIGS_WeaponModsHandler>(TEXT("WeaponModsHandler"));
+    (*this).WeaponSkinHandler = CreateDefaultSubobject<UIGS_WeaponSkinHandler>(TEXT("WeaponSkinHandler"));
+    (*this).WeaponVisibilityHandler = CreateDefaultSubobject<UIGS_WeaponVisibilityHandler>(TEXT("WeaponVisibilityHandler"));
+    (*this).WeaponDynamicScopeHandler = CreateDefaultSubobject<UIGS_WeaponDynamicScopeHandler>(TEXT("WeaponDynamicScopeHandler"));
+    (*this).PrimaryShooter = EIGS_WeaponAttackType::AT_UNKNOWN;
+    (*this).Basher = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Basher"));
+    (*this).VirtualSightSocketName = TEXT("VirtualSight");
+    (*this).SightModMesh->SetupAttachment((*this).RootComponent);
+    (*this).DynamicScopeMesh->SetupAttachment((*this).RootComponent);
+    (*this).VisibilityModMesh->SetupAttachment((*this).RootComponent);
+    (*this).BarrelModMesh->SetupAttachment((*this).RootComponent);
+    (*this).GripModMesh->SetupAttachment((*this).RootComponent);
+    (*this).MagazineModMesh->SetupAttachment((*this).RootComponent);
+    (*this).SecondMagazineModMesh->SetupAttachment((*this).RootComponent);
+    (*this).StockModMesh->SetupAttachment((*this).RootComponent);
+    (*this).LaserArrow->SetupAttachment((*this).RootComponent);
+    (*this).FlashSpotLight->SetupAttachment((*this).RootComponent);
+    (*this).FlashPointLight->SetupAttachment((*this).FlashSpotLight);
+    (*this).MuzzleFlashRootComponent->SetupAttachment((*this).RootComponent);
+    (*this).MuzzleFlashParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashParticleComponentCascade->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).BarrelSmokeParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashLight3PV->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashLightFPV->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashLightFPVSecondary->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_WeaponBase::StopAttack() {

@@ -13,8 +13,8 @@ UCLASS(Abstract, Blueprintable)
 class BF_AI_API AIGS_PatrolGroup : public AIGS_WaypointBase {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<AIGS_PatrolPoint*> PatrolPoints;
+    UPROPERTY()
+    TArray<AIGS_PatrolPoint*> PatrolPoints_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AIGS_WaypointFramework*> Waypoints;

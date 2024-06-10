@@ -1,18 +1,7 @@
 #include "IGS_GUIController.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_GUIController::UIGS_GUIController(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WidgetSystemMenuClass = NULL;
-    this->WidgetUnlockRadialMenuClass = NULL;
-    this->WidgetBotSelectionClass = NULL;
-    this->WidgetPingClass = NULL;
-    this->WidgetTextChatClass = NULL;
-    this->WidgetUnlockMenu = NULL;
-    this->WidgetBotSelectionMenu = NULL;
-    this->WidgetPingMenu = NULL;
-    this->bIsGUIOpen = false;
-    this->bIsTextChatOpen = false;
-    this->bIsPendingClose = false;
-    this->m_GameScreenHandler = NULL;
 }
 
 void UIGS_GUIController::ToggleTextChatMenu() {

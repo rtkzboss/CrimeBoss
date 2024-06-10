@@ -1,26 +1,22 @@
 #include "PaybackGameModeBase.h"
 #include "GameMetaTransferComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "PaybackGameStateBase.h"
 #include "PaybackPlayerSwapper.h"
 
 APaybackGameModeBase::APaybackGameModeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->GameStateClass = APaybackGameStateBase::StaticClass();
-    this->GuardsCount = 6;
-    this->MatchState = TEXT("EnteringMap");
-    this->bDelayedStart = false;
-    this->NumSpectators = 0;
-    this->NumPlayers = 0;
-    this->BotControllerClass = NULL;
-    this->BotPawnClass = NULL;
-    this->QuickPlayBotCount = 3;
-    this->SpawnUniqueBotIDsInQuickPlay = true;
-    this->numBots = 0;
-    this->MinRespawnDelay = 1.00f;
-    this->NumTravelingPlayers = 0;
-    this->InactivePlayerStateLifeSpan = 300.00f;
-    this->MaxInactivePlayers = 16;
-    this->m_PlayerSwapper = CreateDefaultSubobject<UPaybackPlayerSwapper>(TEXT("Player Swapper"));
-    this->MetaTransferComponent = CreateDefaultSubobject<UGameMetaTransferComponent>(TEXT("MetaTransferComponent"));
+    (*this).GuardsCount = 6;
+    (*this).MatchState = TEXT("EnteringMap");
+    (*this).QuickPlayBotCount = 3;
+    (*this).SpawnUniqueBotIDsInQuickPlay = true;
+    (*this).MinRespawnDelay = 1.000000000e+00f;
+    (*this).InactivePlayerStateLifeSpan = 3.000000000e+02f;
+    (*this).MaxInactivePlayers = 16;
+    (*this).m_PlayerSwapper = CreateDefaultSubobject<UPaybackPlayerSwapper>(TEXT("Player Swapper"));
+    (*this).MetaTransferComponent = CreateDefaultSubobject<UGameMetaTransferComponent>(TEXT("MetaTransferComponent"));
+    (*this).GameStateClass = APaybackGameStateBase::StaticClass();
+    (*this).PrimaryActorTick.bCanEverTick = true;
 }
 
 void APaybackGameModeBase::SwitchToPlayerSpectating(AIGS_PlayerControllerRoot* inSpectatingController) {

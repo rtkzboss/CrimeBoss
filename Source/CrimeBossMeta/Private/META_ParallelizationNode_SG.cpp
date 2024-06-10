@@ -2,7 +2,7 @@
 #include "EMETA_NodeType.h"
 
 UMETA_ParallelizationNode_SG::UMETA_ParallelizationNode_SG() {
-    this->Type = EMETA_NodeType::ParallelizationNode;
+    (*this).Type = EMETA_NodeType::ParallelizationNode;
 }
 
 

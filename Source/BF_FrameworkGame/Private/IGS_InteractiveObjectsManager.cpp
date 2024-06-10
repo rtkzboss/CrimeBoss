@@ -1,7 +1,6 @@
 #include "IGS_InteractiveObjectsManager.h"
 
 UIGS_InteractiveObjectsManager::UIGS_InteractiveObjectsManager() {
-    this->bAlreadyReset = false;
 }
 
 void UIGS_InteractiveObjectsManager::UnregisterInteractiveComponent(UIGS_InteractiveComponent* InComponent) {

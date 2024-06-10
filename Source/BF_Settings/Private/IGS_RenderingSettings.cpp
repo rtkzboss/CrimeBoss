@@ -1,36 +1,27 @@
 #include "IGS_RenderingSettings.h"
 
 UIGS_RenderingSettings::UIGS_RenderingSettings() {
-    this->bSettingsValid = true;
-    this->FullscreenModeValue = 1;
-    this->ResolutionValue = 25;
-    this->VSyncEnabledValue = false;
-    this->ResolutionScaleValue = 100.00f;
-    this->ProfileValue = 6;
-    this->ViewDistanceQualityValue = 3;
-    this->AntiAliasingQualityValue = 3;
-    this->PostProcessingQualityValue = 3;
-    this->ShadowQualityValue = 3;
-    this->TextureQualityValue = 3;
-    this->VisualEffectQualityValue = 3;
-    this->FoliageQualityValue = 3;
-    this->MotionBlurScaleFPV = 1.00f;
-    this->MotionBlurScale3PV = 1.00f;
-    this->BaseCameraFOVHorizontal = 90.00f;
-    this->bWasFirstTimeBenchmarked = false;
-    this->bWasFirstTimeMainMenuInitialized = false;
-    this->DLSSMode = 1;
-    this->XeSSmode = 0;
-    this->FSRmode = 0;
-    this->ReflexMode = 0;
-    this->bDLAAenabled = false;
-    this->ChosenDisplay = 1;
-    this->MotionBlurEnabled = false;
-    this->FramerateLimitInGame = 1000;
-    this->FramerateLimitInMenu = 1000;
-    this->FramerateLimitOutOfFocus = 30;
-    this->bCanChangeMonitorPositions = true;
-    this->bQualityModeForConsoles = false;
+    (*this).FullscreenModeValue = 1;
+    (*this).ResolutionValue = 25;
+    (*this).ResolutionScaleValue = 1.000000000e+02f;
+    (*this).ProfileValue = 6;
+    (*this).ViewDistanceQualityValue = 3;
+    (*this).AntiAliasingQualityValue = 3;
+    (*this).PostProcessingQualityValue = 3;
+    (*this).ShadowQualityValue = 3;
+    (*this).TextureQualityValue = 3;
+    (*this).VisualEffectQualityValue = 3;
+    (*this).FoliageQualityValue = 3;
+    (*this).MotionBlurScaleFPV = 1.000000000e+00f;
+    (*this).MotionBlurScale3PV = 1.000000000e+00f;
+    (*this).BaseCameraFOVHorizontal = 9.000000000e+01f;
+    (*this).DLSSMode = 1;
+    (*this).ChosenDisplay = 1;
+    (*this).FramerateLimitInGame = 1000;
+    (*this).FramerateLimitInMenu = 1000;
+    (*this).FramerateLimitOutOfFocus = 30;
+    (*this).bCanChangeMonitorPositions = true;
+    (*this).bSettingsValid = true;
 }
 
 float UIGS_RenderingSettings::VerticalFOVToActualHorizontalFOV(float inVerticalFOV, FVector2D inViewportSize) {

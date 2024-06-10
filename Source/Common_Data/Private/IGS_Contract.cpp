@@ -1,7 +1,13 @@
 #include "IGS_Contract.h"
 
 FIGS_Contract::FIGS_Contract() {
-    this->ID = NULL;
-    this->Price = 0.00f;
+    (*this).ID = nullptr;
+    (*this).Name = FText::FromString(TEXT(""));
+    (*this).Description = FText::FromString(TEXT(""));
+    (*this).Price = 0.000000000e+00f;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).UnlockCriteriaTag, 0)) = NAME_None;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).EntitlementTag, 0)) = NAME_None;
+    auto& gen1803 = (*this).Missions;
+    gen1803.Empty();
 }
 

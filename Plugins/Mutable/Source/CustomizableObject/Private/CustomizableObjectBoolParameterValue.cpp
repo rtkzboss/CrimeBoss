@@ -1,6 +1,8 @@
 #include "CustomizableObjectBoolParameterValue.h"
 
 FCustomizableObjectBoolParameterValue::FCustomizableObjectBoolParameterValue() {
-    this->ParameterValue = false;
+    (*this).ParameterName = TEXT("");
+    (*this).ParameterValue = true;
+    (*this).Uid = TEXT("");
 }
 

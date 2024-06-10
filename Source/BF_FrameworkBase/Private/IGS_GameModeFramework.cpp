@@ -1,4 +1,6 @@
 #include "IGS_GameModeFramework.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_GameModeFramework::AIGS_GameModeFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

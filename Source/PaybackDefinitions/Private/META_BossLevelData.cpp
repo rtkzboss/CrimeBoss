@@ -2,18 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_BossLevelData::UMETA_BossLevelData() {
-    this->BossPointsPerAsset = 0;
-    this->BossPointsPerSuccessfulFPSMissionByBoss = 0;
-    this->BossPointsPerSuccessfulFPSMission = 0;
-    this->BossPointsPerSuccessfulBigHeist = 0;
-    this->BossPointsPerSuccessfulTWAttackNeutral = 0;
-    this->BossPointsPerSuccessfulTWAttackRival = 0;
-    this->BossPointsPerSuccessfulTWDefence = 0;
-    this->BossPointsPer10000Score = 0;
-    this->BossPointsPerWaveMaxPoints = 0;
-    this->BossPointsPerWaveMaxPercentAwardPerKill = 0.00f;
-    this->BossPointsPerWaveMaxPercentAwardPerSecond = 0.00f;
-    this->BonusesTable = NULL;
 }
 
 TArray<FMETA_AdditionalHeisters> UMETA_BossLevelData::GetStartingHeisters() const {

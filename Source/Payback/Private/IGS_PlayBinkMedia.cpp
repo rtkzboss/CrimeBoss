@@ -1,8 +1,6 @@
 #include "IGS_PlayBinkMedia.h"
 
 UIGS_PlayBinkMedia::UIGS_PlayBinkMedia() {
-    this->BinkMediaWidget = NULL;
-    this->m_ScreenHandler = NULL;
 }
 
 void UIGS_PlayBinkMedia::StopMovie() {

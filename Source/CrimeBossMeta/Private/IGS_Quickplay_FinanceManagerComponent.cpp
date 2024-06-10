@@ -1,7 +1,7 @@
 #include "IGS_Quickplay_FinanceManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_Quickplay_FinanceManagerComponent::UIGS_Quickplay_FinanceManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Balance = 0;
 }
 
 void UIGS_Quickplay_FinanceManagerComponent::SetBalance(int32 InValue) {

@@ -1,8 +1,10 @@
 #include "IGS_ScanLookAtTriggerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ScanLookAtTriggerComponent::UIGS_ScanLookAtTriggerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ScreenPercentage = 0.80f;
-    this->bIsScanEnabled = true;
+    (*this).ScreenPercentage = 8.000000119e-01f;
+    (*this).bIsScanEnabled = true;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_ScanLookAtTriggerComponent::SetScanEnabled(bool inState) {

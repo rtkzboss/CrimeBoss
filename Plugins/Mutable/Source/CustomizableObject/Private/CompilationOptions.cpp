@@ -1,9 +1,9 @@
 #include "CompilationOptions.h"
 
 FCompilationOptions::FCompilationOptions() {
-    this->bTextureCompression = false;
-    this->OptimizationLevel = 0;
-    this->bUseParallelCompilation = false;
-    this->bUseDiskCompilation = false;
+    (*this).bTextureCompression = true;
+    (*this).OptimizationLevel = 1;
+    (*this).bUseParallelCompilation = true;
+    (*this).bUseDiskCompilation = false;
 }
 

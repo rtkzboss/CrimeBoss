@@ -1,8 +1,14 @@
 #include "PaybackSniperCharacter.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_CharacterID.h"
+#include "EIGS_TeamSideEnum.h"
+#include "EIGS_UnitSpecialization.h"
 #include "Net/UnrealNetwork.h"
 
 APaybackSniperCharacter::APaybackSniperCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WeaponVisibilityType = EIGS_WeaponVisibilityType::VT_Laser;
+    (*this).WeaponVisibilityType = EIGS_WeaponVisibilityType::VT_Laser;
 }
 
 void APaybackSniperCharacter::OnRep_WeaponVisibilityType() const {

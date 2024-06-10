@@ -1,4 +1,5 @@
 #include "META_LevelActorsManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UMETA_LevelActorsManagerComponent::UMETA_LevelActorsManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

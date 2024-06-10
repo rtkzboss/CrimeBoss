@@ -4,43 +4,34 @@
 #include "IGS_InteractiveComponent.h"
 #include "Components/BoxComponent.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_RideableVehicle_Base::AIGS_RideableVehicle_Base(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bAlwaysRelevant = true;
-    this->RootComponent = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
-    this->NudgeCurve = NULL;
-    this->SpeedometerWidgetClass = NULL;
-    this->MaxKilometersPerHour = 30.00f;
-    this->RotationNormalizationFactor = 12.25f;
-    this->CanInteract = true;
-    this->LocationSyncLerpForce = 0.10f;
-    this->RotationSyncLerpForce = 0.10f;
-    this->ThrottleTiming = 0.00f;
-    this->ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("Object Status"));
-    this->EngineDestroyEffect = NULL;
-    this->DestroyEffect = NULL;
-    this->EngineOffOnHealthPercent = 0.30f;
-    this->bIsEngineDestroyed = false;
-    this->AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
-    this->VehicleTypeAkSwitch = NULL;
-    this->HornStartAkEvent = NULL;
-    this->HornStopAkEvent = NULL;
-    this->InteractiveComponent = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Interactive"));
-    this->FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-    this->EntryTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Entry Trigger"));
-    this->BaseMass = 1000.00f;
-    this->NumFreeBags = 0;
-    this->BagWeight = 50.00f;
-    this->BagInteractionDistance = 400.00f;
-    this->Mesh = (USkeletalMeshComponent*)RootComponent;
-    this->m_Speedometer = NULL;
-    this->m_Driver = NULL;
-    this->InteractiveComponent->SetupAttachment(RootComponent);
-    this->FirstPersonCameraComponent->SetupAttachment(RootComponent);
-    this->EntryTrigger->SetupAttachment(RootComponent);
-    this->AkComponent->SetupAttachment(RootComponent);
+    (*this).MaxKilometersPerHour = 3.000000000e+01f;
+    (*this).RotationNormalizationFactor = 1.225000000e+01f;
+    (*this).CanInteract = true;
+    (*this).LocationSyncLerpForce = 1.000000015e-01f;
+    (*this).RotationSyncLerpForce = 1.000000015e-01f;
+    (*this).ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("Object Status"));
+    (*this).EngineOffOnHealthPercent = 3.000000119e-01f;
+    (*this).AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
+    (*this).InteractiveComponent = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Interactive"));
+    (*this).FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
+    (*this).EntryTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Entry Trigger"));
+    (*this).BaseMass = 1.000000000e+03f;
+    (*this).BagWeight = 5.000000000e+01f;
+    (*this).BagInteractionDistance = 4.000000000e+02f;
+    (*this).Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
+    (*this).bAlwaysRelevant = true;
+    (*this).RootComponent = (USceneComponent*)Mesh;
+    (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
+    (*this).FirstPersonCameraComponent->SetupAttachment((*this).RootComponent);
+    (*this).EntryTrigger->SetupAttachment((*this).RootComponent);
+    (*this).AkComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_RideableVehicle_Base::VehicleDestroy(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo) {

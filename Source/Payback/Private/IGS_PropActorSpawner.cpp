@@ -1,8 +1,8 @@
 #include "IGS_PropActorSpawner.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PropActorSpawner::UIGS_PropActorSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Mobility = EComponentMobility::Stationary;
-    this->m_SpawnedActor = NULL;
+    (*this).Mobility = EComponentMobility::Stationary;
 }
 
 bool UIGS_PropActorSpawner::IsSpawned() const {

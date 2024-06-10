@@ -1,8 +1,8 @@
 #include "IGS_AILoadout.h"
 
 FIGS_AILoadout::FIGS_AILoadout() {
-    this->PrimaryWeapon = NULL;
-    this->SecondaryWeapon = NULL;
-    this->MeleeWeapon = NULL;
+    (*this).PrimaryWeapon = nullptr;
+    (*this).SecondaryWeapon = nullptr;
+    (*this).MeleeWeapon = nullptr;
 }
 

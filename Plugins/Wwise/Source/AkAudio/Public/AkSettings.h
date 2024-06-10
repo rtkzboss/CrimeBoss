@@ -27,8 +27,8 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FDirectoryPath WwiseSoundDataFolder;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bAutoConnectToWAAPI;
+    UPROPERTY(Config)
+    bool bAutoConnectToWAAPI_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TEnumAsByte<ECollisionChannel> DefaultOcclusionCollisionChannel;
@@ -81,8 +81,8 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseEventBasedPackaging;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool EnableAutomaticAssetSynchronization;
+    UPROPERTY(Config)
+    bool EnableAutomaticAssetSynchronization_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString CommandletCommitMessage;
@@ -93,8 +93,8 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool AskedToUseNewAssetManagement;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bEnableMultiCoreRendering;
+    UPROPERTY(Config)
+    bool bEnableMultiCoreRendering_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool MigratedEnableMultiCoreRendering;
@@ -102,11 +102,11 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool FixupRedirectorsDuringMigration;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FDirectoryPath WwiseWindowsInstallationPath;
+    UPROPERTY(Config)
+    FDirectoryPath WwiseWindowsInstallationPath_DEPRECATED;
     
-    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FFilePath WwiseMacInstallationPath;
+    UPROPERTY(Config)
+    FFilePath WwiseMacInstallationPath_DEPRECATED;
     
     UAkSettings();
 

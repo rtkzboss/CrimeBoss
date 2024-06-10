@@ -1,22 +1,18 @@
 #include "IGS_MusicPlayer.h"
 #include "AkComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/StaticMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_MusicPlayer::AIGS_MusicPlayer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
-    this->PlayerMesh = (UStaticMeshComponent*)RootComponent;
-    this->AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
-    this->StartSongAkEvent = NULL;
-    this->StopSongAkEvent = NULL;
-    this->StreamerModeAkEvent = NULL;
-    this->IsDestroyable = false;
-    this->PlayOnStart = true;
-    this->StopScenicMusicOnStart = true;
-    this->StopWhenAlarm = true;
-    this->PlayerTypeSwitch = NULL;
-    this->mR_bIsDestroyed = false;
-    this->AkComponent->SetupAttachment(RootComponent);
+    (*this).PlayerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
+    (*this).AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
+    (*this).PlayOnStart = true;
+    (*this).StopScenicMusicOnStart = true;
+    (*this).StopWhenAlarm = true;
+    (*this).RootComponent = (USceneComponent*)PlayerMesh;
+    (*this).AkComponent->SetupAttachment((*this).PlayerMesh);
 }
 
 void AIGS_MusicPlayer::StopMusic() {

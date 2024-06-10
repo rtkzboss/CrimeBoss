@@ -10,6 +10,7 @@ public class ConstructionSystemRuntime : ModuleRules {
             "Core",
             "CoreUObject",
             "Engine",
+            "PhysicsCore",
             "PrefabricatorRuntime",
             "UMG",
         });

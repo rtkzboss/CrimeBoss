@@ -1,8 +1,8 @@
 #include "IGS_SnipePointData.h"
 
 FIGS_SnipePointData::FIGS_SnipePointData() {
-    this->SnipePoint = NULL;
-    this->AimAtSpeed = 0.00f;
-    this->WaitTime = 0.00f;
+    (*this).SnipePoint = nullptr;
+    (*this).AimAtSpeed = 2.000000000e+02f;
+    (*this).WaitTime = 3.000000000e+00f;
 }
 

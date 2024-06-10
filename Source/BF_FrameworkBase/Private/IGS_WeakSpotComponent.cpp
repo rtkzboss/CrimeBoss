@@ -1,4 +1,5 @@
 #include "IGS_WeakSpotComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_WeakSpotComponent::UIGS_WeakSpotComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

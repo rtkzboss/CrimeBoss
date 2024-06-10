@@ -1,11 +1,11 @@
 #include "IGS_ProgressCircleWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_ProgressCircleWidget::UIGS_ProgressCircleWidget() {
-    this->PlayerPawn = NULL;
-    this->PlayerController = NULL;
-    this->m_ReloadDuration = 0.00f;
-    this->m_ActiveWeapon = NULL;
-    this->m_ActiveWeaponReloader = NULL;
 }
 
 

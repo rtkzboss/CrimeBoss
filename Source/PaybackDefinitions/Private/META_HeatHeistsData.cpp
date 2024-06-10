@@ -1,16 +1,16 @@
 #include "META_HeatHeistsData.h"
 
 FMETA_HeatHeistsData::FMETA_HeatHeistsData() {
-    this->MissionDoneInStealth = 0;
-    this->MissionFailed = 0;
-    this->MissionDoneWith1Star = 0;
-    this->MissionDoneWith2Stars = 0;
-    this->MissionDoneWith3Stars = 0;
-    this->ForEvery5PoliceCasualities = 0;
-    this->PerCivilianCasualty = 0;
-    this->MakingTheTruceWithEnemyGang = 0;
-    this->NoTurfAttackAttamepWhenDayEnds = 0;
-    this->AnyTurfAttackAttempt = 0;
-    this->DetectiveKilled = 0;
+    (*this).MissionDoneInStealth = -5;
+    (*this).MissionFailed = 10;
+    (*this).MissionDoneWith1Star = 5;
+    (*this).MissionDoneWith2Stars = 0;
+    (*this).MissionDoneWith3Stars = -5;
+    (*this).ForEvery5PoliceCasualities = 1;
+    (*this).PerCivilianCasualty = 5;
+    (*this).MakingTheTruceWithEnemyGang = -40;
+    (*this).NoTurfAttackAttamepWhenDayEnds = -40;
+    (*this).AnyTurfAttackAttempt = -10;
+    (*this).DetectiveKilled = 50;
 }
 

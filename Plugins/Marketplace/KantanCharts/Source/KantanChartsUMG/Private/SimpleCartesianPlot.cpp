@@ -1,4 +1,8 @@
 #include "SimpleCartesianPlot.h"
+#include "EKantanDataPointSize.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
 
 USimpleCartesianPlot::USimpleCartesianPlot() {
 }

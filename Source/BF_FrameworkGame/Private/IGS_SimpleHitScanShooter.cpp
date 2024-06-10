@@ -1,11 +1,9 @@
 #include "IGS_SimpleHitScanShooter.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_SimpleHitScanShooter::UIGS_SimpleHitScanShooter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TraceChannel = TraceTypeQuery3;
-    this->DrawDebugTrace = EDrawDebugTrace::None;
-    this->DamageType = NULL;
-    this->ShotImpactType = NULL;
-    this->ImpactAILoudness = 1.00f;
+    (*this).TraceChannel = TraceTypeQuery3;
+    (*this).ImpactAILoudness = 1.000000000e+00f;
 }
 
 void UIGS_SimpleHitScanShooter::Multicast_HandleMiss_Implementation(const FTransform& inShotTransform, const FHitResult& inFinalHit) {

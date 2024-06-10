@@ -1,12 +1,16 @@
 #include "IGS_SquadBase.h"
 #include "BehaviorTree/BehaviorTreeComponent.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_SquadBase::AIGS_SquadBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BehaviorTree = NULL;
-    this->BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorTreeComponent"));
-    this->BlackboardComponent = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComponent"));
-    this->TeamSide = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).BehaviorTreeComponent = CreateDefaultSubobject<UBehaviorTreeComponent>(TEXT("BehaviorTreeComponent"));
+    (*this).BlackboardComponent = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComponent"));
+    (*this).TeamSide = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).DebugColor.B = 137;
+    (*this).DebugColor.G = 255;
+    (*this).DebugColor.A = 255;
 }
 
 void AIGS_SquadBase::Notify(EIGS_AINotif Type, AIGS_GameCharacterFramework* caller, AIGS_GameCharacterFramework* Target, FVector Pos, FVector dir) const {

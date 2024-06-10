@@ -1,9 +1,6 @@
 #include "IGS_LoadingScreenManager.h"
 
 UIGS_LoadingScreenManager::UIGS_LoadingScreenManager() {
-    this->Data = NULL;
-    this->BackgroundTexture = NULL;
-    this->ThrobberBrush = NULL;
 }
 
 void UIGS_LoadingScreenManager::SetLoadingScreenSetupType(UObject* inWCO, FGameplayTag inTag) {

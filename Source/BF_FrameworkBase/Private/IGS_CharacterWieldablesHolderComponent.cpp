@@ -1,21 +1,23 @@
 #include "IGS_CharacterWieldablesHolderComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_CharacterWieldablesHolderComponent::UIGS_CharacterWieldablesHolderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bForceHideWeapon = false;
-    this->CanBeUnholstered = true;
-    this->InitialSlot = EIGS_WieldableSlot::S_Unarmed;
-    this->CurrentWieldableActor = NULL;
-    this->CurrentSlotType = EIGS_WieldableSlot::S_Unarmed;
-    this->LastSlotType = EIGS_WieldableSlot::S_Unarmed;
-    this->bIsUnarmed = true;
-    this->CurrentWieldableClass = EIGS_WieldableClass::C_Generic;
-    this->WieldableSlots.AddDefaulted(6);
-    this->bIsFirstPerson = false;
-    this->bIsLocallyControlled = false;
-    this->bHasCustomSlotFiltering = false;
-    this->ReduceWeaponDamageForTeamSides = 1;
-    this->ReducedWeaponDamageEffect = NULL;
+    (*this).CanBeUnholstered = true;
+    (*this).InitialSlot = EIGS_WieldableSlot::S_Unarmed;
+    (*this).CurrentSlotType = EIGS_WieldableSlot::S_Unarmed;
+    (*this).LastSlotType = EIGS_WieldableSlot::S_Unarmed;
+    (*this).bIsUnarmed = true;
+    auto& gen254 = (*this).WieldableSlots;
+    gen254.Empty();
+    gen254.AddDefaulted(6);
+    (*this).ReduceWeaponDamageForTeamSides = 1;
+    auto& gen255 = (*TBaseStructure<FGameplayTagQuery>::Get()->FindPropertyByName("TagDictionary")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AllowedWieldables, 0));
+    gen255.Empty();
+    gen255.AddDefaulted(1);
+    auto& gen256 = (*TBaseStructure<FGameplayTagQuery>::Get()->FindPropertyByName("QueryTokenStream")->ContainerPtrToValuePtr<TArray<uint8>>(&(*this).AllowedWieldables, 0));
+    gen256.Empty();
+    gen256.AddDefaulted(5);
 }
 
 bool UIGS_CharacterWieldablesHolderComponent::WieldItem(UIGS_WieldableInventoryObjectBase* inInventoryObject) {

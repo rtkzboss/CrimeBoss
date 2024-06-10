@@ -1,10 +1,11 @@
 #include "PrefabActor.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "PrefabComponent.h"
 
 APrefabActor::APrefabActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<UPrefabComponent>(TEXT("PrefabComponent"));
-    this->PrefabComponent = (UPrefabComponent*)RootComponent;
-    this->Seed = 0;
+    (*this).PrefabComponent = CreateDefaultSubobject<UPrefabComponent>(TEXT("PrefabComponent"));
+    (*this).RootComponent = (USceneComponent*)PrefabComponent;
 }
 
 void APrefabActor::SavePrefab() {

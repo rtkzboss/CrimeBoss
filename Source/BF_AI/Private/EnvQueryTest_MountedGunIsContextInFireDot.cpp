@@ -1,10 +1,10 @@
 #include "EnvQueryTest_MountedGunIsContextInFireDot.h"
+#include "EnvironmentQuery/EnvQueryTest.h"
 
 UEnvQueryTest_MountedGunIsContextInFireDot::UEnvQueryTest_MountedGunIsContextInFireDot() {
-    this->FilterType = EEnvTestFilterType::Match;
-    this->ScoringEquation = EEnvTestScoreEquation::Constant;
-    this->Context = NULL;
-    this->RotationBoundsMutlipier = 0.80f;
+    (*this).RotationBoundsMutlipier = 8.000000119e-01f;
+    (*this).FilterType = EEnvTestFilterType::Match;
+    (*this).ScoringEquation = EEnvTestScoreEquation::Constant;
 }
 
 

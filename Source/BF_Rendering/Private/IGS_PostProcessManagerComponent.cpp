@@ -1,7 +1,8 @@
 #include "IGS_PostProcessManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PostProcessManagerComponent::UIGS_PostProcessManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Camera = NULL;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_PostProcessManagerComponent::SetPostProcessWeight(const TScriptInterface<IBlendableInterface>& PostProcess, float inWeight) {

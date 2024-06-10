@@ -1,12 +1,12 @@
 #include "IGS_PostProcessVolumeBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_PostProcessVolumeBase::AIGS_PostProcessVolumeBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bColored = false;
-    this->Priority = 0.00f;
-    this->BlendRadius = 0.00f;
-    this->BlendWeight = 0.00f;
-    this->bEnabled = false;
-    this->bUnbound = false;
+    (*this).BrushColor.B = 228;
+    (*this).BrushColor.G = 7;
+    (*this).BrushColor.R = 169;
+    (*this).bColored = false;
 }
 
 

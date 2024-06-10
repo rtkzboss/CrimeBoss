@@ -1,8 +1,6 @@
 #include "META_ObjectiveDatabase.h"
 
 UMETA_ObjectiveDatabase::UMETA_ObjectiveDatabase() {
-    this->m_ObjectiveDatabase = NULL;
-    this->m_ObjectivePresetsDatabase = NULL;
 }
 
 void UMETA_ObjectiveDatabase::SetObjectiveByID(FGameplayTag inObjectiveID, FMETA_ObjectiveRewardData inObjectiveReward, UMETA_BaseFPSMission* inMission) {

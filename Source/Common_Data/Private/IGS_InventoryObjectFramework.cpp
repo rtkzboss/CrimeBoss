@@ -1,8 +1,7 @@
 #include "IGS_InventoryObjectFramework.h"
 
 UIGS_InventoryObjectFramework::UIGS_InventoryObjectFramework() {
-    this->ItemType = EIGS_ItemType::Item_UNKNOWN;
-    this->bUseCustomName = false;
+    (*this).ItemType = EIGS_ItemType::Item_UNKNOWN;
 }
 
 void UIGS_InventoryObjectFramework::TransferData(UIGS_InventoryObjectFramework* inOtherItem) {

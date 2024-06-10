@@ -1,21 +1,12 @@
 #include "IGS_HoseSegmentBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_HoseSegmentBase::AIGS_HoseSegmentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SegmentMesh = NULL;
-    this->AllowStretch = false;
-    this->InteractionText = TEXT("<HOSE SEGMENT>");
-    this->BoxOnTheWall = NULL;
-    this->WaterCannonClass = NULL;
-    this->WaterHose = NULL;
-    this->HighlightMaterial = NULL;
-    this->OverrideTurretMaterials = false;
-    this->OverrideHosetMaterials = false;
-    this->NumberOfPlaceOption = 1;
-    this->OldWaterCannonClass = NULL;
-    this->InteractiveComponent = NULL;
-    this->SegmentLength = 100.00f;
-    this->mR_ViewState = WaterHoseState::Hidden;
+    (*this).InteractionText = TEXT("<HOSE SEGMENT>");
+    (*this).NumberOfPlaceOption = 1;
+    (*this).SegmentLength = 1.000000000e+02f;
 }
 
 void AIGS_HoseSegmentBase::StartInteraction_SERVER_Implementation() {

@@ -1,17 +1,19 @@
 #include "IGS_AmmoBoxBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/StaticMeshComponent.h"
+#include "EIGS_TeamSideEnum.h"
 #include "IGS_InteractiveComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_AmmoBoxBase::AIGS_AmmoBoxBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RootComp"));
-    this->SceneRoot = (USceneComponent*)RootComponent;
-    this->PickupMeshComp = (UPrimitiveComponent*)RootComponent;
-    this->PickupSoundAkEvent = NULL;
-    this->InteractiveComponent = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Pickup Interaction"));
-    this->InitialBoxID = EIGS_AmmoBoxItem::BaseLarge;
-    this->mR_BoxID = EIGS_AmmoBoxItem::BaseLarge;
-    this->InteractiveComponent->SetupAttachment(RootComponent);
+    (*this).InteractiveComponent = CreateDefaultSubobject<UIGS_InteractiveComponent>(TEXT("Pickup Interaction"));
+    (*this).InitialBoxID = EIGS_AmmoBoxItem::BaseLarge;
+    (*this).mR_BoxID = EIGS_AmmoBoxItem::BaseLarge;
+    (*this).PickupMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("RootComp"));
+    (*this).SceneRoot = (USceneComponent*)PickupMeshComp;
+    (*this).RootComponent = (USceneComponent*)PickupMeshComp;
+    (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_AmmoBoxBase::SetBox(EIGS_AmmoBoxItem inBoxID) {

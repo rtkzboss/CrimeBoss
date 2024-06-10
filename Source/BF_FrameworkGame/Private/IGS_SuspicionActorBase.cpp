@@ -1,20 +1,21 @@
 #include "IGS_SuspicionActorBase.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "IGS_SuspicionComponent.h"
 
 AIGS_SuspicionActorBase::AIGS_SuspicionActorBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComp"));
-    this->SuspicionComponent = CreateDefaultSubobject<UIGS_SuspicionComponent>(TEXT("SuspicionComponent"));
-    this->Root = CreateDefaultSubobject<UBoxComponent>(TEXT("RootComponent"));
-    this->SceneRoot = (USceneComponent*)RootComponent;
-    this->TeamSide = EIGS_TeamSideEnum::TS_StimuliEvent;
-    this->LifetimeStartTime = -1.00f;
-    this->LifeTime = -1.00f;
-    this->NoticedLifetime = -1.00f;
-    this->Eternal = false;
-    this->IsValidForAmbient = true;
-    this->Root->SetupAttachment(RootComponent);
+    (*this).SuspicionComponent = CreateDefaultSubobject<UIGS_SuspicionComponent>(TEXT("SuspicionComponent"));
+    (*this).Root = CreateDefaultSubobject<UBoxComponent>(TEXT("RootComponent"));
+    (*this).SceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("RootComp"));
+    (*this).TeamSide = EIGS_TeamSideEnum::TS_StimuliEvent;
+    (*this).LifetimeStartTime = -1.000000000e+00f;
+    (*this).LifeTime = -1.000000000e+00f;
+    (*this).NoticedLifetime = -1.000000000e+00f;
+    (*this).IsValidForAmbient = true;
+    (*this).RootComponent = (USceneComponent*)SceneRoot;
+    (*this).Root->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_SuspicionActorBase::SetTeamID(EIGS_TeamSideEnum inTeamID) {

@@ -1,10 +1,12 @@
 #include "IGS_WidgetBotRadialSlice.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetBotRadialSlice::UIGS_WidgetBotRadialSlice() {
-    this->BotPawn = NULL;
-    this->bIsDefending = true;
-    this->SlotBind = -1;
-    this->bSwitchable = false;
+    (*this).bIsDefending = true;
+    (*this).SlotBind = -1;
 }
 
 

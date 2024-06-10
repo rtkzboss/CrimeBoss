@@ -1,11 +1,10 @@
 #include "IGS_ProjectileBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_ProjectileBase::AIGS_ProjectileBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DrawDebugTrace = EDrawDebugTrace::None;
-    this->TraceChannel = TraceTypeQuery3;
-    this->DamageType = NULL;
-    this->ShotImpactType = NULL;
+    (*this).TraceChannel = TraceTypeQuery3;
 }
 
 void AIGS_ProjectileBase::SetWeaponObject(UIGS_WeaponInventoryObject* inWeaponObject) {

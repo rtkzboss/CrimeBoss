@@ -1,19 +1,17 @@
 #include "IGS_GameStateGame.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "IGS_GlobalInventory.h"
 #include "IGS_PlayerIntelManager.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_GameStateGame::AIGS_GameStateGame(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->R_HasEveryoneLoadedLevel = false;
-    this->R_StartedPlayingMatch = false;
-    this->bHasEscapeVehicle = false;
-    this->DeathCamLastDeadTime = 5.00f;
-    this->FailsafeMissionEndTime = 10.00f;
-    this->GlobalInventory = CreateDefaultSubobject<UIGS_GlobalInventory>(TEXT("GlobalInventory"));
-    this->IntelManager = CreateDefaultSubobject<UIGS_PlayerIntelManager>(TEXT("IntelManager"));
-    this->PickupsManager = NULL;
-    this->CopsArriveTimerEnd = -1.00f;
+    (*this).DeathCamLastDeadTime = 5.000000000e+00f;
+    (*this).FailsafeMissionEndTime = 1.000000000e+01f;
+    (*this).GlobalInventory = CreateDefaultSubobject<UIGS_GlobalInventory>(TEXT("GlobalInventory"));
+    (*this).IntelManager = CreateDefaultSubobject<UIGS_PlayerIntelManager>(TEXT("IntelManager"));
+    (*this).CopsArriveTimerEnd = -1.000000000e+00f;
 }
 
 void AIGS_GameStateGame::SwitchStartupSource(EIGS_MissionStartupSource& outBranches) {

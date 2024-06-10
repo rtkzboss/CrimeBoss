@@ -1,8 +1,6 @@
 #include "IGS_UnlockManager.h"
 
 UIGS_UnlockManager::UIGS_UnlockManager() {
-    this->UnlockManagerData = NULL;
-    this->IsInited = false;
 }
 
 void UIGS_UnlockManager::UnlockItemByID(FGameplayTag inTagID) {

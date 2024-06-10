@@ -1,12 +1,13 @@
 #include "IGS_PlanningBoardItem.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 
 AIGS_PlanningBoardItem::AIGS_PlanningBoardItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-    this->StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Collider"));
-    this->Status = EMETA_PlanningBoardItemStatus::None;
-    this->StaticMeshComponent->SetupAttachment(RootComponent);
+    (*this).StaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Collider"));
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    (*this).StaticMeshComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_PlanningBoardItem::SetStatus(EMETA_PlanningBoardItemStatus NewStatus) {

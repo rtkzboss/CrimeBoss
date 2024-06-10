@@ -1,9 +1,10 @@
 #include "IGS_ProgressGadgetBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_TeamSideEnum.h"
 
 AIGS_ProgressGadgetBase::AIGS_ProgressGadgetBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bManualDisruptLocation = false;
-    this->GadgetSubtype = EIGS_ProgressGadgetSubtype::Type_Default;
-    this->CanByDisrubtedByAI = false;
+    (*this).PrimaryActorTick.bCanEverTick = true;
 }
 
 void AIGS_ProgressGadgetBase::WaitForNavmeshAndValidate(ANavigationData* inNavData) {

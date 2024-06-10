@@ -2,7 +2,7 @@
 #include "EnvironmentQuery/Items/EnvQueryItemType_Actor.h"
 
 UIGS_EnvQueryGenerator_BotLimboIdlePoints::UIGS_EnvQueryGenerator_BotLimboIdlePoints() {
-    this->ItemType = UEnvQueryItemType_Actor::StaticClass();
+    (*this).ItemType = UEnvQueryItemType_Actor::StaticClass();
 }
 
 

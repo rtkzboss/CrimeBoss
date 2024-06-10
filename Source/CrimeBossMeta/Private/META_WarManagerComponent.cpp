@@ -1,11 +1,10 @@
 #include "META_WarManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UMETA_WarManagerComponent::UMETA_WarManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->NeutralDaysThresholdFromAttack = 10;
-    this->UnfriendlyDaysThresholdFromAttack = 3;
-    this->TodayAttemptsToAttackTurf = 0;
-    this->CountOfDaysForMoreAttack = 0;
-    this->CurrentLastTileConfigIndex = 0;
+    (*this).NeutralDaysThresholdFromAttack = 10;
+    (*this).UnfriendlyDaysThresholdFromAttack = 3;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UMETA_WarManagerComponent::SyncArmyTierChangingConditionsWithInitial(TArray<FMETA_ConditionForArmyTierChanging>& inInitialConditions) {

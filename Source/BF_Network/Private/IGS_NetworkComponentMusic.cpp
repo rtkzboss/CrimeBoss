@@ -1,9 +1,9 @@
 #include "IGS_NetworkComponentMusic.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_NetworkComponentMusic::UIGS_NetworkComponentMusic(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->mR_MusicMissionState = EIGS_MusicMissionState::None;
-    this->mR_MusicPackIndex = -1;
+    (*this).mR_MusicPackIndex = -1;
 }
 
 void UIGS_NetworkComponentMusic::OnRep_MusicPackIndex() const {

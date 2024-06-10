@@ -10,23 +10,23 @@ UCLASS(Blueprintable)
 class AKAUDIO_API AAkReverbVolume : public AVolume {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool bEnabled;
+    UPROPERTY()
+    bool bEnabled_DEPRECATED;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAuxBus* AuxBus;
+    UPROPERTY()
+    UAkAuxBus* AuxBus_DEPRECATED;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FString AuxBusName;
+    UPROPERTY()
+    FString AuxBusName_DEPRECATED;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float SendLevel;
+    UPROPERTY()
+    float SendLevel_DEPRECATED;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float FadeRate;
+    UPROPERTY()
+    float FadeRate_DEPRECATED;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float Priority;
+    UPROPERTY()
+    float Priority_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAkLateReverbComponent* LateReverbComponent;

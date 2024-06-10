@@ -1,36 +1,35 @@
 #include "IGS_Pier.h"
 #include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_Pier::AIGS_Pier(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
-    this->IsDocking = false;
-    this->CurrentVessel = NULL;
-    this->Root = (USceneComponent*)RootComponent;
-    this->SafeArea = CreateDefaultSubobject<UBoxComponent>(TEXT("Safe Area"));
-    this->Bridge = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Bridge"));
-    this->DockZone = CreateDefaultSubobject<UBoxComponent>(TEXT("Dock Zone"));
-    this->FirstPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("First Player Position"));
-    this->SecondPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Second Player Position"));
-    this->ThirdPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Third Player Position"));
-    this->FourthPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Fourth Player Position"));
-    this->RightDockArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Right Dock Arrow"));
-    this->LeftDockArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Left Dock Arrow"));
-    this->ThirdPlayerPosition->SetupAttachment(RootComponent);
-    this->FourthPlayerPosition->SetupAttachment(RootComponent);
-    this->RightDockArrow->SetupAttachment(RootComponent);
-    this->LeftDockArrow->SetupAttachment(RootComponent);
-    this->SafeArea->SetupAttachment(RootComponent);
-    this->Bridge->SetupAttachment(RootComponent);
-    this->DockZone->SetupAttachment(RootComponent);
-    this->FirstPlayerPosition->SetupAttachment(RootComponent);
-    this->SecondPlayerPosition->SetupAttachment(RootComponent);
+    (*this).Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root Component"));
+    (*this).SafeArea = CreateDefaultSubobject<UBoxComponent>(TEXT("Safe Area"));
+    (*this).Bridge = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Bridge"));
+    (*this).DockZone = CreateDefaultSubobject<UBoxComponent>(TEXT("Dock Zone"));
+    (*this).FirstPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("First Player Position"));
+    (*this).SecondPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Second Player Position"));
+    (*this).ThirdPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Third Player Position"));
+    (*this).FourthPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Fourth Player Position"));
+    (*this).RightDockArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Right Dock Arrow"));
+    (*this).LeftDockArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Left Dock Arrow"));
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).RootComponent = (USceneComponent*)Root;
+    (*this).SecondPlayerPosition->SetupAttachment((*this).Root);
+    (*this).ThirdPlayerPosition->SetupAttachment((*this).Root);
+    (*this).FourthPlayerPosition->SetupAttachment((*this).Root);
+    (*this).RightDockArrow->SetupAttachment((*this).Root);
+    (*this).LeftDockArrow->SetupAttachment((*this).Root);
+    (*this).SafeArea->SetupAttachment((*this).Root);
+    (*this).Bridge->SetupAttachment((*this).Root);
+    (*this).DockZone->SetupAttachment((*this).Root);
+    (*this).FirstPlayerPosition->SetupAttachment((*this).Root);
 }
 
 void AIGS_Pier::VesselExited_Implementation(AIGS_Vessel_Base* inVessel) {

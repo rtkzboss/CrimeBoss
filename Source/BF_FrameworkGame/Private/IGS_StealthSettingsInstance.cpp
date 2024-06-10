@@ -1,7 +1,6 @@
 #include "IGS_StealthSettingsInstance.h"
 
 UIGS_StealthSettingsInstance::UIGS_StealthSettingsInstance() {
-    this->StealthSettings = NULL;
 }
 
 float UIGS_StealthSettingsInstance::GetVisionHalfAngleDegGuard() const {

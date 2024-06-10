@@ -12,6 +12,7 @@ public class BF_Input : ModuleRules {
             "DeveloperSettings",
             "Engine",
             "InputCore",
+            "SlateCore",
             "UMG",
         });
     }

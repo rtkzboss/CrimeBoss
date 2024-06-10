@@ -1,6 +1,8 @@
 #include "IGS_AILookAtComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_AILookAtComponent::UIGS_AILookAtComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_AILookAtComponent::SetLookAtWeight(float HorizontalWeight, float VerticalWeight, float Smoothness) {

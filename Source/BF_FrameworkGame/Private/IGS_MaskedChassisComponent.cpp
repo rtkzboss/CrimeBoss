@@ -1,45 +1,43 @@
 #include "IGS_MaskedChassisComponent.h"
+#include "PhysicsEngine/BodyInstance.h"
+#include "PhysicsEngine/BodyInstance.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_MaskedChassisComponent::UIGS_MaskedChassisComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bBreakableEnabled = true;
-    this->RearViewMirrorUVSection = 0;
-    this->LeftSideMirrorUVSection = 0;
-    this->RightSideMirrorUVSection = 0;
-    this->RearViewMirrorAttachedToSection = -1;
-    this->RearViewMirrorShaderSlot = 4;
-    this->LeftSideMirrorShaderSlot = 5;
-    this->RightSideMirrorShaderSlot = 6;
-    this->LeftRearViewMirrorDebris = NULL;
-    this->LeftRearViewMirrorSocket = TEXT("DoorLeft_RearView");
-    this->RightRearViewMirrorDebris = NULL;
-    this->RightRearViewMirrorSocket = TEXT("DoorRight_RearView");
-    this->RearViewMirrorDebris = NULL;
-    this->RearViewMirrorSocket = TEXT("RearViewMirror");
-    this->SwingOnPunctureCurve = NULL;
-    this->bUseRadialImpactAnims = true;
-    this->RadialImpactAnimFront = NULL;
-    this->RadialImpactAnimFrontLeft = NULL;
-    this->RadialImpactAnimLeft = NULL;
-    this->RadialImpactAnimRearLeft = NULL;
-    this->RadialImpactAnimRear = NULL;
-    this->RadialImpactAnimRearRight = NULL;
-    this->RadialImpactAnimRight = NULL;
-    this->RadialImpactAnimFrontRight = NULL;
-    this->InRadialDamageMin = 100.00f;
-    this->InRadialDamageMax = 1000.00f;
-    this->OutRadialDamageMultiplierMin = 0.50f;
-    this->OutRadialDamageMultiplierMax = 2.00f;
-    this->bDisableCarAlarm = false;
-    this->CarAlarm = NULL;
-    this->OwnerRef = NULL;
-    this->mR_bRearViewMirror = false;
-    this->mR_bDoorLeftRearView = false;
-    this->mR_bDoorRightRearView = false;
-    this->RadialHitPosition = EIGS_RadialImpactChassis::Hit_None;
-    this->RadialDamageMultiplier = 0.00f;
-    this->bCarAlarmTriggered = false;
+    (*this).bBreakableEnabled = true;
+    (*this).RearViewMirrorAttachedToSection = -1;
+    (*this).RearViewMirrorShaderSlot = 4;
+    (*this).LeftSideMirrorShaderSlot = 5;
+    (*this).RightSideMirrorShaderSlot = 6;
+    (*this).LeftRearViewMirrorSocket = TEXT("DoorLeft_RearView");
+    (*this).RightRearViewMirrorSocket = TEXT("DoorRight_RearView");
+    (*this).RearViewMirrorSocket = TEXT("RearViewMirror");
+    (*this).bUseRadialImpactAnims = true;
+    (*this).InRadialDamageMin = 1.000000000e+02f;
+    (*this).InRadialDamageMax = 1.000000000e+03f;
+    (*this).OutRadialDamageMultiplierMin = 5.000000000e-01f;
+    (*this).OutRadialDamageMultiplierMax = 2.000000000e+00f;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("ObjectType")->ContainerPtrToValuePtr<TEnumAsByte<ECollisionChannel>>(&(*this).BodyInstance, 0)) = ECC_Vehicle;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionProfileName")->ContainerPtrToValuePtr<FName>(&(*this).BodyInstance, 0)) = TEXT("Vehicle");
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).WorldStatic = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).WorldDynamic = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).Vehicle = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).Destructible = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel10 = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel12 = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel14 = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel16 = ECR_Ignore;
+    auto& gen590 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0));
+    gen590.Empty();
+    gen590.AddDefaulted(9);
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
 }
 
 void UIGS_MaskedChassisComponent::TriggerCarAlarm() {

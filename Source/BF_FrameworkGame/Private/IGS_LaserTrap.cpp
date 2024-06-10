@@ -2,6 +2,8 @@
 #include "AkComponent.h"
 #include "Components/ArrowComponent.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "Components/PointLightComponent.h"
 #include "Components/SceneComponent.h"
@@ -10,36 +12,28 @@
 #include "Net/UnrealNetwork.h"
 
 AIGS_LaserTrap::AIGS_LaserTrap(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->RootObject = (USceneComponent*)RootComponent;
-    this->BeamOrigin = CreateDefaultSubobject<USceneComponent>(TEXT("BeamOrigin"));
-    this->BeamDetectionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("BeamDetection"));
-    this->BeamDirectionArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("BeamDirection"));
-    this->BeamEmitter = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("BeamEmitter"));
-    this->LaserMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserMesh"));
-    this->StatusLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("StatusLight"));
-    this->AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
-    this->LaserOnAkEvent = NULL;
-    this->LaserOffAkEvent = NULL;
-    this->LaserChargingAkEvent = NULL;
-    this->LaserDetectionAkEvent = NULL;
-    this->LaserChargingAkRtpc = NULL;
-    this->LaserMeshOffMaterial = NULL;
-    this->LaserMeshOnMaterial = NULL;
-    this->LightIntensityCurve = NULL;
-    this->LightTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("LightTimeline"));
-    this->StartTime = 0.20f;
-    this->ChargeTime = 0.30f;
-    this->EnableFromStart = true;
-    this->mR_bIsEnabled = false;
-    this->mR_bIsBeamEnabled = false;
-    this->BeamDetectionBox->SetupAttachment(BeamOrigin);
-    this->BeamDirectionArrow->SetupAttachment(RootComponent);
-    this->BeamEmitter->SetupAttachment(RootComponent);
-    this->LaserMesh->SetupAttachment(RootComponent);
-    this->StatusLight->SetupAttachment(RootComponent);
-    this->AkAudioComponent->SetupAttachment(RootComponent);
-    this->BeamOrigin->SetupAttachment(RootComponent);
+    (*this).RootObject = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    (*this).BeamOrigin = CreateDefaultSubobject<USceneComponent>(TEXT("BeamOrigin"));
+    (*this).BeamDetectionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("BeamDetection"));
+    (*this).BeamDirectionArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("BeamDirection"));
+    (*this).BeamEmitter = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("BeamEmitter"));
+    (*this).LaserMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("LaserMesh"));
+    (*this).StatusLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("StatusLight"));
+    (*this).AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
+    (*this).LightTimeline = CreateDefaultSubobject<UTimelineComponent>(TEXT("LightTimeline"));
+    (*this).StartTime = 2.000000030e-01f;
+    (*this).ChargeTime = 3.000000119e-01f;
+    (*this).EnableFromStart = true;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).PrimaryActorTick.TickInterval = 5.000000000e-01f;
+    (*this).RootComponent = (USceneComponent*)RootObject;
+    (*this).BeamOrigin->SetupAttachment((*this).RootObject);
+    (*this).BeamDetectionBox->SetupAttachment((*this).BeamOrigin);
+    (*this).BeamDirectionArrow->SetupAttachment((*this).RootObject);
+    (*this).BeamEmitter->SetupAttachment((*this).RootObject);
+    (*this).LaserMesh->SetupAttachment((*this).RootObject);
+    (*this).StatusLight->SetupAttachment((*this).RootObject);
+    (*this).AkAudioComponent->SetupAttachment((*this).RootObject);
 }
 
 void AIGS_LaserTrap::SetEnabled(bool inState, bool inIgnoreChargeTime) {

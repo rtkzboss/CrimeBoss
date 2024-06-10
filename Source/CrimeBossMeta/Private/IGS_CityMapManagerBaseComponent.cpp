@@ -1,4 +1,5 @@
 #include "IGS_CityMapManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_CityMapManagerBaseComponent::UIGS_CityMapManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

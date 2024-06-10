@@ -1,8 +1,6 @@
 #include "META_PlotlineAsset.h"
 
 UMETA_PlotlineAsset::UMETA_PlotlineAsset() {
-    this->m_Price = 0;
-    this->m_AdditionalPricePercent = 0.00f;
 }
 
 void UMETA_PlotlineAsset::SetInfo(UObject* inWCO, const FGameplayTag& inPlotlineAssetId) {

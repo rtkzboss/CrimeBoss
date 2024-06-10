@@ -1,21 +1,9 @@
 #include "META_BlackmarketManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_BlackmarketManagerComponent::UMETA_BlackmarketManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->GenericPrevID = 0;
-    this->DayWhenHeistersMarketBecameAvailable = 0;
-    this->DayWhenWeaponsMarketBecameAvailable = 0;
-    this->AmountOfBoughtCheapHeisters = 0;
-    this->RefreshWeaponsPoolCounter = 0;
-    this->RefreshHeistersPoolCounter = 0;
-    this->RefreshWeaponsPoolStartPrice = 0;
-    this->RefreshHeistersPoolStartPrice = 0;
-    this->BaseDayForLootEvents = 0;
-    this->BaseDayForWeaponEvents = 0;
-    this->BaseDayForHireArmyEvent = 0;
-    this->AmountOfGeneratedSoldiers = 0;
-    this->IsHireArmyEventClamped = false;
-    this->BaseDayForEquipmentEvent = 0;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UMETA_BlackmarketManagerComponent::ProcessWeaponEvent() {

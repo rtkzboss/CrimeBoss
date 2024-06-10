@@ -1,8 +1,8 @@
 #include "META_TaskNotification.h"
+#include "EMETA_NotificationEffect.h"
+#include "EMETA_NotificationType.h"
 
 UMETA_TaskNotification::UMETA_TaskNotification() {
-    this->m_Goal = NULL;
-    this->m_Task = NULL;
 }
 
 void UMETA_TaskNotification::SetTaskAndGoal(UMETA_TaskCondition* inTask, UMETA_BaseGoal* inGoal) {

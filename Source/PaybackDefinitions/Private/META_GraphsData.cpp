@@ -1,6 +1,12 @@
 #include "META_GraphsData.h"
 
 UMETA_GraphsData::UMETA_GraphsData() {
+    (*this).FirstPlotlineDays.Min = 1;
+    (*this).FirstPlotlineDays.Max = 3;
+    (*this).SecondPlotlineDays.Min = 3;
+    (*this).SecondPlotlineDays.Max = 6;
+    (*this).AnyNextPlotlineDays.Min = 2;
+    (*this).AnyNextPlotlineDays.Max = 4;
 }
 
 TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, EMETA_GraphStatus> UMETA_GraphsData::GetStartedGraphs(const TArray<EIGS_CharacterID>& inAvailableUniqueCharacters) {

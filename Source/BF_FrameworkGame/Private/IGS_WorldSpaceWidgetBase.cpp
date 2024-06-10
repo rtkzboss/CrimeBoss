@@ -1,14 +1,10 @@
 #include "IGS_WorldSpaceWidgetBase.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_WorldSpaceWidgetBase::UIGS_WorldSpaceWidgetBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bForceHidden = false;
-    this->bAutoActivateWidget = true;
-    this->WorldWidgetOwner = NULL;
-    this->WidgetType = EIGS_WorldWidgetType::Widget_Hidden;
-    this->HeisterNumber = 0;
-    this->Progress = -1.00f;
-    this->ProgressWidgetSubtype = EIGS_ProgressGadgetSubtype::Type_Default;
+    (*this).bAutoActivateWidget = true;
+    (*this).Progress = -1.000000000e+00f;
 }
 
 void UIGS_WorldSpaceWidgetBase::SetWorldSpaceWidgetVisibility(bool InVisibility) {

@@ -2,8 +2,7 @@
 #include "IGS_PersistentMusicAkComponent.h"
 
 UIGS_MusicSubsystem::UIGS_MusicSubsystem() {
-    this->PersistentMusicAkComponent = CreateDefaultSubobject<UIGS_PersistentMusicAkComponent>(TEXT("PersistentMusicAkComp"));
-    this->Data = NULL;
+    (*this).PersistentMusicAkComponent = CreateDefaultSubobject<UIGS_PersistentMusicAkComponent>(TEXT("PersistentMusicAkComp"));
 }
 
 void UIGS_MusicSubsystem::SetStoryMissionMusicState(EIGS_MusicStoryMissionState inState) {

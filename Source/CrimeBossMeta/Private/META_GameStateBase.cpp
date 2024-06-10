@@ -1,14 +1,11 @@
 #include "META_GameStateBase.h"
 #include "IGS_SubtitleManager.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AMETA_GameStateBase::AMETA_GameStateBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MetaGameMode = NULL;
-    this->SubtitleManager = CreateDefaultSubobject<UIGS_SubtitleManager>(TEXT("Subtitle Manager"));
-    this->CommonMetaData = NULL;
-    this->EconomyMetaData = NULL;
-    this->bInitialized = false;
-    this->m_CurrentSequenceItemIndex = 0;
+    (*this).SubtitleManager = CreateDefaultSubobject<UIGS_SubtitleManager>(TEXT("Subtitle Manager"));
 }
 
 void AMETA_GameStateBase::StartSequence(FGameplayTag inSequenceTag) {

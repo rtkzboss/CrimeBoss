@@ -1,7 +1,11 @@
 #include "IGS_BTService_SetWaitLookAt.h"
 
 UIGS_BTService_SetWaitLookAt::UIGS_BTService_SetWaitLookAt() {
-    this->NodeName = TEXT("Set Wait Look At");
+    auto& gen385 = (*this).OutLookPos.AllowedTypes;
+    gen385.Empty();
+    gen385.AddDefaulted(1);
+    (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).OutLookPos, 0)) = 255;
+    (*this).NodeName = TEXT("Set Wait Look At");
 }
 
 

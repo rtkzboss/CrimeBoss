@@ -1,15 +1,15 @@
 #include "IGS_WeaponAttackDefinition.h"
 
 FIGS_WeaponAttackDefinition::FIGS_WeaponAttackDefinition() {
-    this->ProjectileClass = NULL;
-    this->BaseDamage = 0.00f;
-    this->EffectiveRange = 0.00f;
-    this->MaxRange = 0.00f;
-    this->MinDamageMultiplier = 0.00f;
-    this->RoundsPerMinute = 0.00f;
-    this->SemiAutoDelay = 0.00f;
-    this->BurstDelay = 0.00f;
-    this->ProjectilesPerShot = 0;
-    this->ShooterTypes = 0;
+    (*this).ProjectileClass = nullptr;
+    (*this).BaseDamage = 1.000000000e+02f;
+    (*this).EffectiveRange = 3.000000000e+04f;
+    (*this).MaxRange = 5.000000000e+04f;
+    (*this).MinDamageMultiplier = 5.000000000e-01f;
+    (*this).RoundsPerMinute = 6.000000000e+02f;
+    (*this).SemiAutoDelay = 1.000000015e-01f;
+    (*this).BurstDelay = 2.000000030e-01f;
+    (*this).ProjectilesPerShot = 1;
+    (*this).ShooterTypes = 0;
 }
 

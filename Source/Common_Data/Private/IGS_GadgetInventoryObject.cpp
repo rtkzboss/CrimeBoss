@@ -2,7 +2,7 @@
 #include "EIGS_ItemType.h"
 
 UIGS_GadgetInventoryObject::UIGS_GadgetInventoryObject() {
-    this->ItemType = EIGS_ItemType::Item_Gadget;
+    (*this).ItemType = EIGS_ItemType::Item_Gadget;
 }
 
 

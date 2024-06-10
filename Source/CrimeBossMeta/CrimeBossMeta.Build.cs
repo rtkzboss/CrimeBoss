@@ -24,6 +24,7 @@ public class CrimeBossMeta : ModuleRules {
             "GenericGraphRuntime",
             "IGS_UIFramework",
             "PaybackDefinitions",
+            "SlateCore",
             "UMG",
         });
     }

@@ -1,7 +1,7 @@
 #include "IGS_StrafeRecord.h"
 
 FIGS_StrafeRecord::FIGS_StrafeRecord() {
-    this->Target = NULL;
-    this->Time = 0.00f;
+    (*this).Target = nullptr;
+    (*this).Time = 0.000000000e+00f;
 }
 

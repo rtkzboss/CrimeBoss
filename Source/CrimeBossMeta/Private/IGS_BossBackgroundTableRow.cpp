@@ -1,6 +1,7 @@
 #include "IGS_BossBackgroundTableRow.h"
 
 FIGS_BossBackgroundTableRow::FIGS_BossBackgroundTableRow() {
-    this->ActiveFromTreshold = 0;
+    (*this).SubLevelName = NAME_None;
+    (*this).ActiveFromTreshold = 0;
 }
 

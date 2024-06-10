@@ -1,6 +1,6 @@
 #include "HoudiniGenericAttributeChangedProperty.h"
 
 FHoudiniGenericAttributeChangedProperty::FHoudiniGenericAttributeChangedProperty() {
-    this->Object = NULL;
+    (*this).Object = nullptr;
 }
 

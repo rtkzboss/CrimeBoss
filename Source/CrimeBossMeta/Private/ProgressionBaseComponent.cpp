@@ -1,10 +1,7 @@
 #include "ProgressionBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UProgressionBaseComponent::UProgressionBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_SaveGameAccount = NULL;
-    this->m_SaveManager = NULL;
-    this->m_ProgressionManager = NULL;
-    this->m_UnlockManager = NULL;
 }
 
 void UProgressionBaseComponent::UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo) {

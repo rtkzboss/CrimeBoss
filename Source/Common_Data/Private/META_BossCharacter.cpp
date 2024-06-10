@@ -1,6 +1,15 @@
 #include "META_BossCharacter.h"
+#include "EIGS_CharacterID.h"
+#include "EMETA_CharacterMood.h"
+#include "EMETA_CharacterState.h"
+#include "EMETA_ItemQuality.h"
 
 UMETA_BossCharacter::UMETA_BossCharacter() {
+    (*this).m_CharacterInfo.ID = EIGS_CharacterID::Char_Boss_End;
+    (*this).m_CharacterInfo.Data.State = EMETA_CharacterState::Available;
+    auto& gen237 = (*this).m_CharacterInfo.Data.Perks;
+    gen237.Empty();
+    gen237.AddDefaulted(4);
 }
 
 void UMETA_BossCharacter::SetPerkInSlot(int32 inSlot, FGameplayTag inTagID) {

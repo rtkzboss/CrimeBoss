@@ -1,8 +1,10 @@
 #include "IGS_AnimatedWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_AnimatedWidget::UIGS_AnimatedWidget() {
-    this->AnimationData = NULL;
-    this->IsPlayingWidgetAnimation = false;
 }
 
 void UIGS_AnimatedWidget::SkipAnimationBP() {

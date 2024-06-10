@@ -1,8 +1,8 @@
 #include "IGS_DownStateHandlerComponentFramework.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_DownStateHandlerComponentFramework::UIGS_DownStateHandlerComponentFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->UseDownState = false;
 }
 
 void UIGS_DownStateHandlerComponentFramework::Revive(APawn* healer) {

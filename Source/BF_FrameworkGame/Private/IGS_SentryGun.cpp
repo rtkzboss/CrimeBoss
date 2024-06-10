@@ -1,14 +1,16 @@
 #include "IGS_SentryGun.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_TeamSideEnum.h"
+#include "EIGS_WalkieTalkieStatus.h"
+#include "EIGS_DetectorState.h"
+#include "EIGS_RotationType.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_SentryGun::AIGS_SentryGun(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsInvulnerable = false;
-    this->DownTime = 5.00f;
-    this->WeaponObjectClass = NULL;
-    this->Shooter = NULL;
-    this->AkComponent = NULL;
-    this->weaponObject = NULL;
-    this->ShootAngleDegrees = 15.00f;
+    (*this).DownTime = 5.000000000e+00f;
+    (*this).ShootAngleDegrees = 1.500000000e+01f;
 }
 
 void AIGS_SentryGun::SetSentryCanShoot(bool inEnabled) {

@@ -2,20 +2,10 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_EconomyData::UMETA_EconomyData() {
-    this->ChanceForTileIncomeToBeLoot = 0;
-    this->FrequencyOfIncomeValueRecompute = 0;
-    this->RewardValueReductionMultiplierForRepeatedCapture = 1.00f;
-    this->PlanningCostMultiplierForLastTurfWeakening = 1.00f;
-    this->DaysForRehabilitationAfterBankruptValue = 5;
-    this->BankruptValue = -100000;
-    this->NumberOfBuyableAssets = 0;
-    this->BM_LootEventCooldown = 0;
-    this->BM_LootProposalsAmount = 0;
-    this->BM_LootEventSelectionExpiration = 0;
-    this->WarehouseAttackCooldown = 0;
-    this->StartingChance = 0;
-    this->DailyChanceIncrease = 0;
-    this->MinAmountOfEachLootCanBeStolen = 0;
+    (*this).RewardValueReductionMultiplierForRepeatedCapture = 1.000000000e+00f;
+    (*this).PlanningCostMultiplierForLastTurfWeakening = 1.000000000e+00f;
+    (*this).DaysForRehabilitationAfterBankruptValue = 5;
+    (*this).BankruptValue = -100000;
 }
 
 void UMETA_EconomyData::RandomizePerksByIDAndLevel(const UObject* inWCO, EIGS_CharacterID inID, int32 inHeisterLevel, const TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>>& inForbiddenPerks, const TArray<FMETA_PerkData>& inCurrentPerks, TArray<FMETA_PerkData>& outRandomizedPerks, bool bIsPromotion) {

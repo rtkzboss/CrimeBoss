@@ -1,8 +1,7 @@
 #include "META_MissionMapEvent.h"
 
 UMETA_MissionMapEvent::UMETA_MissionMapEvent() {
-    this->m_Mission = NULL;
-    this->m_IsNew = true;
+    (*this).m_IsNew = true;
 }
 
 void UMETA_MissionMapEvent::Init(UMETA_BaseMission* inMission, FGameplayTag inTileTag, bool inIsNew) {

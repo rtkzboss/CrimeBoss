@@ -1,4 +1,5 @@
 #include "IGS_EventManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_EventManagerBaseComponent::UIGS_EventManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

@@ -1,10 +1,8 @@
 #include "META_RandEventManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_RandEventManagerComponent::UMETA_RandEventManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CutscenesStartedCounter = 0;
-    this->CutscenesFinishedCounter = 0;
-    this->CooldownCounterForFuneralOfGenericHeisters = 0;
 }
 
 bool UMETA_RandEventManagerComponent::ShouldStateChangeBeNoted_Implementation(FMETA_HeisterStateChangeNote inNote) const {

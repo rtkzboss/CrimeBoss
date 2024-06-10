@@ -1,10 +1,7 @@
 #include "IGS_BTTask_SquadBreachRemoveGate.h"
 
 UIGS_BTTask_SquadBreachRemoveGate::UIGS_BTTask_SquadBreachRemoveGate() {
-    this->NodeName = TEXT("Squad Breach Remove Gate");
-    this->ContextActionCharacter = NULL;
-    this->ContextActionCommand = NULL;
-    this->BreachObject = NULL;
+    (*this).NodeName = TEXT("Squad Breach Remove Gate");
 }
 
 bool UIGS_BTTask_SquadBreachRemoveGate::IsObstacleCleared(UIGS_AICommandBreachRemoveObstacle* Command) {

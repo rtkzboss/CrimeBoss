@@ -1,11 +1,6 @@
 #include "HoudiniStaticMesh.h"
 
 UHoudiniStaticMesh::UHoudiniStaticMesh() {
-    this->bHasNormals = false;
-    this->bHasTangents = false;
-    this->bHasColors = false;
-    this->NumUVLayers = 0;
-    this->bHasPerFaceMaterials = false;
 }
 
 void UHoudiniStaticMesh::SetVertexPosition(uint32 InVertexIndex, const FVector& InPosition) {

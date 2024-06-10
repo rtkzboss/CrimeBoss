@@ -1,7 +1,8 @@
 #include "META_GoalNotification.h"
+#include "EMETA_NotificationEffect.h"
+#include "EMETA_NotificationType.h"
 
 UMETA_GoalNotification::UMETA_GoalNotification() {
-    this->m_Goal = NULL;
 }
 
 void UMETA_GoalNotification::SetGoal(UMETA_BaseGoal* inGoal) {

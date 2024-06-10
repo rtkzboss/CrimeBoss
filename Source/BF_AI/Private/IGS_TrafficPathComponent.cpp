@@ -1,13 +1,12 @@
 #include "IGS_TrafficPathComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 
 UIGS_TrafficPathComponent::UIGS_TrafficPathComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->VehicleGroups = 0;
-    this->IsOverride = false;
-    this->IsBidirectional = false;
-    this->IsEdge = false;
-    this->ForbiddenArea = false;
-    this->ShowCustomColors = true;
-    this->Weight = 1.00f;
+    (*this).ShowCustomColors = true;
+    (*this).Weight = 1.000000000e+00f;
 }
 
 bool UIGS_TrafficPathComponent::IsEnabled() const {

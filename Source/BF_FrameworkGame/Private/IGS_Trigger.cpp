@@ -1,19 +1,18 @@
 #include "IGS_Trigger.h"
+#include "PhysicsEngine/BodyInstance.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Chaos/ChaosEngineInterface.h"
+#include "EIGS_BoxSphereShape.h"
 
 AIGS_Trigger::AIGS_Trigger(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TriggerExecuteOn = EIGS_TriggerExecuteOn::EIGS_BeginOverlap;
-    this->TriggerLimit = 0;
-    this->TriggerOnBotRepossess = true;
-    this->bNotifyLeftOnDeath = true;
-    this->bDestroyOnDeactivate = false;
-    this->RetriggerDelay = 0.00f;
-    this->bTriggerDebug = false;
-    this->bUseTriggerDebugOptions = true;
-    this->TriggerDeadOrAlive = EIGS_TriggerDeadOrAlive::DOA_Alive;
-    this->bTriggerOnlyOnServer = false;
-    this->TriggerCount = 0;
-    this->SpriteEnabled = NULL;
-    this->SpriteDisabled = NULL;
+    (*this).TriggerOnBotRepossess = true;
+    (*this).bNotifyLeftOnDeath = true;
+    (*this).bUseTriggerDebugOptions = true;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionProfileName")->ContainerPtrToValuePtr<FName>(&(*this).BodyInstance, 0)) = TEXT("Trigger");
+    (*this).Color.B = 0;
+    (*this).Color.G = 128;
+    (*this).Color.R = 255;
 }
 
 void AIGS_Trigger::ResetCount() {

@@ -1,9 +1,9 @@
 #include "IGS_ReviveRecord.h"
 
 FIGS_ReviveRecord::FIGS_ReviveRecord() {
-    this->InjuredCharacter = NULL;
-    this->BeingRevivedCommand = NULL;
-    this->RevivingCharacter = NULL;
-    this->ReviveingCommand = NULL;
+    (*this).InjuredCharacter = nullptr;
+    (*this).BeingRevivedCommand = nullptr;
+    (*this).RevivingCharacter = nullptr;
+    (*this).ReviveingCommand = nullptr;
 }
 

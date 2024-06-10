@@ -1,8 +1,12 @@
 #include "IGS_UseTextWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_UseTextWidget::UIGS_UseTextWidget() {
-    this->m_CurrentInteraction = NULL;
 }
 
 

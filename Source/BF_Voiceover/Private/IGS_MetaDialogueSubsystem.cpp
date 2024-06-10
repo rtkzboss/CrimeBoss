@@ -1,10 +1,6 @@
 #include "IGS_MetaDialogueSubsystem.h"
 
 UIGS_MetaDialogueSubsystem::UIGS_MetaDialogueSubsystem() {
-    this->Data = NULL;
-    this->SubtitleManager = NULL;
-    this->AkActor = NULL;
-    this->PlayMetaDialogueAkEvent = NULL;
 }
 
 void UIGS_MetaDialogueSubsystem::TriggerNextLine() {

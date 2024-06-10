@@ -1,4 +1,5 @@
 #include "IGS_GoalManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_GoalManagerBaseComponent::UIGS_GoalManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

@@ -2,9 +2,8 @@
 #include "EIGS_ItemType.h"
 
 UIGS_CarryableInventoryObject::UIGS_CarryableInventoryObject() {
-    this->ItemType = EIGS_ItemType::Item_Carryable;
-    this->CurrentHealth = 0.00f;
-    this->BaseHealth = 300.00f;
+    (*this).BaseHealth = 3.000000000e+02f;
+    (*this).ItemType = EIGS_ItemType::Item_Carryable;
 }
 
 float UIGS_CarryableInventoryObject::GetRelativeHealth() {

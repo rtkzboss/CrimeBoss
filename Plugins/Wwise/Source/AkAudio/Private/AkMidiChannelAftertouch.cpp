@@ -1,6 +1,7 @@
 #include "AkMidiChannelAftertouch.h"
+#include "EAkMidiEventType.h"
 
 FAkMidiChannelAftertouch::FAkMidiChannelAftertouch() {
-    this->Value = 0;
+    (*this).Value = 0;
 }
 

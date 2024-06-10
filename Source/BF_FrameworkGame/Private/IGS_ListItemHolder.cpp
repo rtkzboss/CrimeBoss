@@ -1,7 +1,7 @@
 #include "IGS_ListItemHolder.h"
 
 FIGS_ListItemHolder::FIGS_ListItemHolder() {
-    this->InventoryItem = NULL;
-    this->ListItemID = 0;
+    (*this).InventoryItem = nullptr;
+    (*this).ListItemID = -1;
 }
 

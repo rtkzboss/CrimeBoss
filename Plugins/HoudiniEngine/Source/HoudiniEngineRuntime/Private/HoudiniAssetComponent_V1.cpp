@@ -1,15 +1,10 @@
 #include "HoudiniAssetComponent_V1.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 
 UHoudiniAssetComponent_V1::UHoudiniAssetComponent_V1(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bGeneratedDoubleSidedGeometry = false;
-    this->GeneratedPhysMaterial = NULL;
-    this->GeneratedCollisionTraceFlag = CTF_UseDefault;
-    this->GeneratedLightMapResolution = 0;
-    this->GeneratedDistanceFieldResolutionScale = 0.00f;
-    this->GeneratedLightMapCoordinateIndex = 0;
-    this->bGeneratedUseMaximumStreamingTexelRatio = false;
-    this->GeneratedStreamingDistanceMultiplier = 0.00f;
-    this->GeneratedFoliageDefaultSettings = NULL;
 }
 
 

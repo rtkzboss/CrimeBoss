@@ -1,12 +1,11 @@
 #include "IGS_VulnerableActor.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_VulnerableActor::AIGS_VulnerableActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentHealth = 100.00f;
-    this->RelativeHealth = 1.00f;
-    this->bBroken = false;
-    this->VulnerableDamageType = NULL;
-    this->CurrentInstigator = NULL;
-    this->MaxHealth = 100.00f;
+    (*this).CurrentHealth = 1.000000000e+02f;
+    (*this).RelativeHealth = 1.000000000e+00f;
+    (*this).MaxHealth = 1.000000000e+02f;
 }
 
 void AIGS_VulnerableActor::ResetVulnerableComponent() {

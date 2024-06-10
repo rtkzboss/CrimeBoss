@@ -1,7 +1,11 @@
 #include "IGS_GASComponentBase.h"
+#include "ComponentInstanceDataCache.h"
+#include "IGS_GASDefaultAttributesDataAsset.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_GASComponentBase::UIGS_GASComponentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    static ConstructorHelpers::FObjectFinder<UIGS_GASDefaultAttributesDataAsset> gen250(TEXT("/Game/00_Main/GameplayAbilitySystem/Attributes/DA_DefaultCharacterAttributes.DA_DefaultCharacterAttributes"));
+    (*this).DefaultAttributesDataAsset = gen250.Object;
 }
 
 void UIGS_GASComponentBase::TryCancelAbilityByClass(TSubclassOf<UGameplayAbility> InAbilityToActivate) {

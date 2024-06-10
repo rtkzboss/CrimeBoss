@@ -1,14 +1,11 @@
 #include "IGS_FootstepsBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_FootstepsBaseComponent::UIGS_FootstepsBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bMakesNoise = false;
-    this->LandingNoiseRange = 1600.00f;
-    this->JumpingNoiseRange = 0.00f;
-    this->WalkingNoiseRange = 800.00f;
-    this->RunningNoiseRange = 800.00f;
-    this->SprintingNoiseRange = 1450.00f;
-    this->CrouchingNoiseRange = 0.00f;
-    this->ImpactID = NULL;
+    (*this).LandingNoiseRange = 1.600000000e+03f;
+    (*this).WalkingNoiseRange = 8.000000000e+02f;
+    (*this).RunningNoiseRange = 8.000000000e+02f;
+    (*this).SprintingNoiseRange = 1.450000000e+03f;
 }
 
 

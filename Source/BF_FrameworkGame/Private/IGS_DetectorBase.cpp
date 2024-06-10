@@ -1,35 +1,29 @@
 #include "IGS_DetectorBase.h"
 #include "IGS_ObjectStatus.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
 #include "DetectorRotation.h"
 #include "IGS_DamageHandlerComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_DetectorBase::AIGS_DetectorBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
-    this->DefaultController = NULL;
-    this->SquadID = 118999881;
-    this->bDisableOnAlarm = true;
-    this->BeforeReenablingEventTime = 1.00f;
-    this->TeamSide = EIGS_TeamSideEnum::TS_Security;
-    this->RotationType = EIGS_RotationType::Clamped;
-    this->RotationPoint = NULL;
-    this->DetectionConeOrigin = NULL;
-    this->DetectorRotation = CreateDefaultSubobject<UDetectorRotation>(TEXT("DetectorRotation"));
-    this->ShouldMoveWhenNoTarget = true;
-    this->ShouldRotateToHiddenTarget = false;
-    this->ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("ObjectStatus"));
-    this->DamageHandlerComponent = CreateDefaultSubobject<UIGS_DamageHandlerComponent>(TEXT("DamageHandlerComponent"));
-    this->TotalHorizontalRotationAngleDegrees = 120.00f;
-    this->TotalVerticalRotationAngleDegrees = 0.00f;
-    this->FullRotationSpeed = 50.00f;
-    this->FollowRotationSpeed = 50.00f;
-    this->PatrollingRotationSpeed = 15.00f;
-    this->ControlledRotationSpeed = 35.00f;
-    this->DetectorState = EIGS_DetectorState::Patrolling;
-    this->mR_TargetDetection = 0.00f;
-    this->mR_WalkieTalkieStatus = EIGS_WalkieTalkieStatus::WalkieTalkie_None;
-    this->mR_Target = NULL;
+    (*this).SquadID = 118999881;
+    (*this).bDisableOnAlarm = true;
+    (*this).BeforeReenablingEventTime = 1.000000000e+00f;
+    (*this).TeamSide = EIGS_TeamSideEnum::TS_Security;
+    (*this).DetectorRotation = CreateDefaultSubobject<UDetectorRotation>(TEXT("DetectorRotation"));
+    (*this).ShouldMoveWhenNoTarget = true;
+    (*this).TimeToLoseTarget.X = 1.000000000e+00f;
+    (*this).TimeToLoseTarget.Y = 2.000000000e+00f;
+    (*this).ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("ObjectStatus"));
+    (*this).DamageHandlerComponent = CreateDefaultSubobject<UIGS_DamageHandlerComponent>(TEXT("DamageHandlerComponent"));
+    (*this).TotalHorizontalRotationAngleDegrees = 1.200000000e+02f;
+    (*this).FullRotationSpeed = 5.000000000e+01f;
+    (*this).FollowRotationSpeed = 5.000000000e+01f;
+    (*this).PatrollingRotationSpeed = 1.500000000e+01f;
+    (*this).ControlledRotationSpeed = 3.500000000e+01f;
+    (*this).AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 }
 
 void AIGS_DetectorBase::SetTeamSideID(EIGS_TeamSideEnum inNewID) {

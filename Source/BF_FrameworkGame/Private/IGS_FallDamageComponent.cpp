@@ -1,12 +1,16 @@
 #include "IGS_FallDamageComponent.h"
+#include "Curves/CurveFloat.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_FallDamageComponent::UIGS_FallDamageComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bAddMaxStepHeightToFellHeight = true;
-    this->InstaDeathDamage = 1000001.00f;
-    this->StartedFallingZ = 340282346638528859811704183484516925440.00f;
-    this->bIsFalling = false;
-    this->bNextFallIsIgnored = false;
-    this->bFallDamagedEnabled = true;
+    (*this).bAddMaxStepHeightToFellHeight = true;
+    (*this).InstaDeathDamage = 1.000001000e+06f;
+    (*this).StartedFallingZ = 3.402823466e+38f;
+    (*this).bFallDamagedEnabled = true;
+    static ConstructorHelpers::FObjectFinder<UCurveFloat> gen599(TEXT("/Game/00_Main/Core/Tables/Curve_FallDamage_Float.Curve_FallDamage_Float"));
+    (*this).FallDamageCurve = gen599.Object;
+    static ConstructorHelpers::FObjectFinder<UClass> gen600(TEXT("/Game/00_Main/Core/DamageTypes/BP_DT_FallDamage.BP_DT_FallDamage_C"));
+    (*this).FallDamageType = gen600.Object;
 }
 
 void UIGS_FallDamageComponent::SetFallDamageEnabled(bool inEnabled) {

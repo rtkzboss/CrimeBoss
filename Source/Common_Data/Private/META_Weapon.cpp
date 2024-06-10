@@ -2,14 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_Weapon::UMETA_Weapon() {
-    this->IsUnseenInShop = false;
-    this->m_Price = 0;
-    this->m_AdditionalPercentageOfWeaponPrice = 0;
-    this->m_AdditionalPercentageOfWeaponPriceFromMods = 0;
-    this->m_Character = NULL;
-    this->m_SuccessfulMissions = 0;
-    this->m_TargetQualityToUpdateWeapon = EMETA_ItemQuality::None;
-    this->m_DaysInShop = 0;
 }
 
 void UMETA_Weapon::SetWeaponSkin(FGameplayTag inSkinTag) {

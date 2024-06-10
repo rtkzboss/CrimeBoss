@@ -1,9 +1,8 @@
 #include "IGS_StashManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_StashManagerBaseComponent::UIGS_StashManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsManagerDataDirty = false;
-    this->bIsManagerInitialized = false;
 }
 
 bool UIGS_StashManagerBaseComponent::UpgradeWeapon_Implementation(UMETA_Weapon* inWeapon, TSubclassOf<UMETA_WeaponInventoryObject> inTargetWeapon) {

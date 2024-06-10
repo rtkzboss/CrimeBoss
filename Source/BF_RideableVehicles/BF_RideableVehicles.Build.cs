@@ -15,6 +15,7 @@ public class BF_RideableVehicles : ModuleRules {
             "Engine",
             "PhysXVehicles",
             "PhysicsCore",
+            "SlateCore",
             "UMG",
             "Water",
         });

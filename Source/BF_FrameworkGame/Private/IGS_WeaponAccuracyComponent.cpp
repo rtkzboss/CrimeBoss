@@ -1,12 +1,9 @@
 #include "IGS_WeaponAccuracyComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_WeaponAccuracyComponent::UIGS_WeaponAccuracyComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CombinedHalfAngleInRadians = 0.00f;
-    this->SpreadHalfAngleInRadians = 0.00f;
-    this->MovementMultiplier = 1.00f;
-    this->bIsAiming = false;
-    this->bIsVR = false;
-    this->bIsDrawingDebug = false;
+    (*this).MovementMultiplier = 1.000000000e+00f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 float UIGS_WeaponAccuracyComponent::GetCurrentSpreadConeHalfAngleInRadians() const {

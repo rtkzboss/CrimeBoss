@@ -1,7 +1,7 @@
 #include "META_BaseCallback.h"
 
 UMETA_BaseCallback::UMETA_BaseCallback() {
-    this->bNeedForceExecuteAfterCallbackTrigger = true;
+    (*this).bNeedForceExecuteAfterCallbackTrigger = true;
 }
 
 void UMETA_BaseCallback::UpdateNextNodes_Implementation(const TArray<UGenericGraphNode*>& inChildrenNodes, int32 inOldConnectionsCount) {

@@ -1,8 +1,7 @@
 #include "IGS_NetworkComponentDialogue.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_NetworkComponentDialogue::UIGS_NetworkComponentDialogue(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->OverrideCharacterAkSwitch = NULL;
-    this->ComponentData = NULL;
 }
 
 void UIGS_NetworkComponentDialogue::StopVoice(const FIGS_PlayVariationData& inPlayVariationData) {

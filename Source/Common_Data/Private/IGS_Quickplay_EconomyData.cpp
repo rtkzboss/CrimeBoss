@@ -2,11 +2,11 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_Quickplay_EconomyData::UIGS_Quickplay_EconomyData() {
-    this->StartingCash = 10000;
-    this->ProgressResetCompensationMoney = 100000;
-    this->CompleteChainMoneyRewardMultiplier = 1.00f;
-    this->BaseItemCost = 10000;
-    this->DigitsWithoutRounding = 3;
+    (*this).StartingCash = 10000;
+    (*this).ProgressResetCompensationMoney = 100000;
+    (*this).CompleteChainMoneyRewardMultiplier = 1.000000000e+00f;
+    (*this).BaseItemCost = 10000;
+    (*this).DigitsWithoutRounding = 3;
 }
 
 int32 UIGS_Quickplay_EconomyData::GetStartingCash() const {

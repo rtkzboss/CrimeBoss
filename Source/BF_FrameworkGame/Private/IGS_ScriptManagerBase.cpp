@@ -1,9 +1,9 @@
 #include "IGS_ScriptManagerBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_ScriptManagerBase::AIGS_ScriptManagerBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ScriptSeed = -1;
-    this->bFinished = false;
-    this->m_RandomStreamHolder = NULL;
+    (*this).ScriptSeed = -1;
 }
 
 void AIGS_ScriptManagerBase::SetManagerFinished() {

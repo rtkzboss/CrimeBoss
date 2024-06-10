@@ -1,4 +1,5 @@
 #include "IGS_DailyManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_DailyManagerBaseComponent::UIGS_DailyManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

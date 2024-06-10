@@ -1,4 +1,5 @@
 #include "IGS_SubtitleManager.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_SubtitleManager::UIGS_SubtitleManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

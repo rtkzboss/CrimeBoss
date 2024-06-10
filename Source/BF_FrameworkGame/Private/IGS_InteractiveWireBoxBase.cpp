@@ -1,4 +1,6 @@
 #include "IGS_InteractiveWireBoxBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_InteractiveWireBoxBase::AIGS_InteractiveWireBoxBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

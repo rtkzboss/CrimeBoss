@@ -1,4 +1,7 @@
 #include "META_Trade.h"
+#include "EIGS_UserDifficulty.h"
+#include "EMETA_JobResult.h"
+#include "EMETA_LobbyVisibilityType.h"
 
 UMETA_Trade::UMETA_Trade() {
 }

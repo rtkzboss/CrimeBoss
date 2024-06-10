@@ -1,4 +1,5 @@
 #include "IGS_ContractsManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_ContractsManagerComponent::UIGS_ContractsManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

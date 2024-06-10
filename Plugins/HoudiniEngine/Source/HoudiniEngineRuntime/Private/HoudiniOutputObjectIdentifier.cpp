@@ -1,10 +1,12 @@
 #include "HoudiniOutputObjectIdentifier.h"
 
 FHoudiniOutputObjectIdentifier::FHoudiniOutputObjectIdentifier() {
-    this->ObjectId = 0;
-    this->GeoId = 0;
-    this->PartId = 0;
-    this->PrimitiveIndex = 0;
-    this->PointIndex = 0;
+    (*this).ObjectId = -1;
+    (*this).GeoId = -1;
+    (*this).PartId = -1;
+    (*this).SplitIdentifier = TEXT("");
+    (*this).PartName = TEXT("");
+    (*this).PrimitiveIndex = -1;
+    (*this).PointIndex = -1;
 }
 

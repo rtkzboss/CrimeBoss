@@ -1,11 +1,11 @@
 #include "PCSnapConstraintFloor.h"
 
 FPCSnapConstraintFloor::FPCSnapConstraintFloor() {
-    this->AttachX = false;
-    this->AttachXNegative = false;
-    this->AttachY = false;
-    this->AttachYNegative = false;
-    this->AttachZ = false;
-    this->AttachZNegative = false;
+    (*this).AttachX = true;
+    (*this).AttachXNegative = true;
+    (*this).AttachY = true;
+    (*this).AttachYNegative = true;
+    (*this).AttachZ = true;
+    (*this).AttachZNegative = true;
 }
 

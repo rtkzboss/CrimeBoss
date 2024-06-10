@@ -1,7 +1,9 @@
 #include "IGS_PlayerEffectsComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PlayerEffectsComponent::UIGS_PlayerEffectsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->FlashEffectivityMultiplierAttribute = 1.00f;
+    (*this).FlashEffectivityMultiplierAttribute = 1.000000000e+00f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_PlayerEffectsComponent::StopDrillSparks() {

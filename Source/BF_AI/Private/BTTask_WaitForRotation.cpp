@@ -1,9 +1,9 @@
 #include "BTTask_WaitForRotation.h"
 
 UBTTask_WaitForRotation::UBTTask_WaitForRotation() {
-    this->NodeName = TEXT("Wait For Rotation");
-    this->MinAngle = 45.00f;
-    this->Timeout = 1.00f;
+    (*this).MinAngle = 4.500000000e+01f;
+    (*this).Timeout = 1.000000000e+00f;
+    (*this).NodeName = TEXT("Wait For Rotation");
 }
 
 

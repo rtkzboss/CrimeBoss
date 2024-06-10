@@ -1,6 +1,8 @@
 #include "IGS_GlassStatus.h"
 
 FIGS_GlassStatus::FIGS_GlassStatus() {
-    this->State = EIGS_TemperedGlassStatus::Normal;
+    (*this).State = EIGS_TemperedGlassStatus::Normal;
+    auto& gen3079 = (*this).PreviousHitPoints;
+    gen3079.Empty();
 }
 

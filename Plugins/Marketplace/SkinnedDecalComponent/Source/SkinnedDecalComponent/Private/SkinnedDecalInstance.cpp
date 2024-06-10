@@ -1,9 +1,8 @@
 #include "SkinnedDecalInstance.h"
+#include "ComponentInstanceDataCache.h"
 
 USkinnedDecalInstance::USkinnedDecalInstance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Index = 0;
-    this->SubUV = 0;
-    this->Size = 10.00f;
+    (*this).Size = 1.000000000e+01f;
 }
 
 void USkinnedDecalInstance::UpdateDecal() {

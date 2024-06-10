@@ -1,10 +1,8 @@
 #include "IGS_PlayerJoinManager.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_PlayerJoinManager::UIGS_PlayerJoinManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->HasEveryoneLoadedLevel = false;
-    this->m_OldPlayer = NULL;
-    this->m_OldBot = NULL;
 }
 
 void UIGS_PlayerJoinManager::OnRep_JoinedPlayers() const {

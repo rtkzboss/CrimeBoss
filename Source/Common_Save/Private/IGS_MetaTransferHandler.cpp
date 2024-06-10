@@ -1,7 +1,7 @@
 #include "IGS_MetaTransferHandler.h"
 
 UIGS_MetaTransferHandler::UIGS_MetaTransferHandler() {
-    this->bCollectOnlySecuredLoot = true;
+    (*this).bCollectOnlySecuredLoot = true;
 }
 
 void UIGS_MetaTransferHandler::SetMissionScenarioOverride(const UObject* inWCO, FGameplayTag inMissionScenario) {

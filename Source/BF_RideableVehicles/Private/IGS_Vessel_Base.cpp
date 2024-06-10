@@ -1,45 +1,44 @@
 #include "IGS_Vessel_Base.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "BuoyancyComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_Vessel_Base::AIGS_Vessel_Base(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PontoonRadius = 75.00f;
-    this->MirrorPontoons = true;
-    this->MaxAcceleration = 600.00f;
-    this->SteerForce = 250.00f;
-    this->SwingForceOverSpeed = NULL;
-    this->BuoyancyCoefficientOverSpeed = NULL;
-    this->MovementForceMultiplierSimpleImpulse = 1.00f;
-    this->SwingSpeedMultiplierSimpleImpulse = 0.12f;
-    this->BankingForceMultiplierSimpleImpulse = 0.10f;
-    this->TiltBackForceMultiplierSimpleImpulse = 0.05f;
-    this->InJumpGravityMultiplierSimpleImpulse = 3.00f;
-    this->FrontPartPontoonIndex = 0;
-    this->EngineBladesPontoonIndex = 1;
-    this->PlayerBlockBoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("PlayerBlockBoxComponent"));
-    this->LeftEngineParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("EngineParticleEffect"));
-    this->RightEngineParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("EngineParticleEffectSecond"));
-    this->LeftBoardParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("LeftBoardParticleEffect"));
-    this->CenterBoardParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("CenterBoardParticleEffect"));
-    this->RightBoardParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("RightBoardParticleEffect"));
-    this->Buoyancy = CreateDefaultSubobject<UBuoyancyComponent>(TEXT("Buoyancy"));
-    this->Steer = 0.00f;
-    this->Throttle = 0.00f;
-    this->FPSCoeficient = 0.04f;
-    this->CurrentForce = 0.00f;
-    this->ParticleParamName = TEXT("Intensity");
-    this->ParticleSpeedTrigger = 200.00f;
-    this->EngineInitialScale = 1.00f;
-    this->SideBoardInitialScale = 1.00f;
-    this->PontoonWaterStatus.AddDefaulted(2);
-    this->PlayerBlockBoxComponent->SetupAttachment(RootComponent);
-    this->LeftEngineParticleEffect->SetupAttachment(RootComponent);
-    this->RightEngineParticleEffect->SetupAttachment(RootComponent);
-    this->LeftBoardParticleEffect->SetupAttachment(RootComponent);
-    this->CenterBoardParticleEffect->SetupAttachment(RootComponent);
-    this->RightBoardParticleEffect->SetupAttachment(RootComponent);
+    (*this).PontoonRadius = 7.500000000e+01f;
+    (*this).MirrorPontoons = true;
+    (*this).MaxAcceleration = 6.000000000e+02f;
+    (*this).SteerForce = 2.500000000e+02f;
+    (*this).MovementForceMultiplierSimpleImpulse = 1.000000000e+00f;
+    (*this).SwingSpeedMultiplierSimpleImpulse = 1.199999973e-01f;
+    (*this).BankingForceMultiplierSimpleImpulse = 1.000000015e-01f;
+    (*this).TiltBackForceMultiplierSimpleImpulse = 5.000000075e-02f;
+    (*this).InJumpGravityMultiplierSimpleImpulse = 3.000000000e+00f;
+    (*this).EngineBladesPontoonIndex = 1;
+    (*this).PlayerBlockBoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("PlayerBlockBoxComponent"));
+    (*this).LeftEngineParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("EngineParticleEffect"));
+    (*this).RightEngineParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("EngineParticleEffectSecond"));
+    (*this).LeftBoardParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("LeftBoardParticleEffect"));
+    (*this).CenterBoardParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("CenterBoardParticleEffect"));
+    (*this).RightBoardParticleEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("RightBoardParticleEffect"));
+    (*this).Buoyancy = CreateDefaultSubobject<UBuoyancyComponent>(TEXT("Buoyancy"));
+    (*this).FPSCoeficient = 3.700000048e-02f;
+    (*this).ParticleParamName = TEXT("Intensity");
+    (*this).ParticleSpeedTrigger = 2.000000000e+02f;
+    (*this).EngineInitialScale = 1.000000000e+00f;
+    (*this).SideBoardInitialScale = 1.000000000e+00f;
+    auto& gen646 = (*this).PontoonWaterStatus;
+    gen646.Empty();
+    gen646.AddDefaulted(2);
+    (*this).PlayerBlockBoxComponent->SetupAttachment((*this).RootComponent);
+    (*this).LeftEngineParticleEffect->SetupAttachment((*this).RootComponent);
+    (*this).RightEngineParticleEffect->SetupAttachment((*this).RootComponent);
+    (*this).LeftBoardParticleEffect->SetupAttachment((*this).RootComponent);
+    (*this).CenterBoardParticleEffect->SetupAttachment((*this).RootComponent);
+    (*this).RightBoardParticleEffect->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_Vessel_Base::SyncControls_SERVER_Implementation(float inSteering, float inThrottle) {

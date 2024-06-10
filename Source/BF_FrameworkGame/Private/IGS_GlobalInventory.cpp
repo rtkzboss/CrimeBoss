@@ -1,4 +1,5 @@
 #include "IGS_GlobalInventory.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 

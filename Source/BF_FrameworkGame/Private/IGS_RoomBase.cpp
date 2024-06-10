@@ -1,19 +1,12 @@
 #include "IGS_RoomBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 
 AIGS_RoomBase::AIGS_RoomBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
-    this->bGatherNeighborRooms = false;
-    this->bDebugPolyHighlight = false;
-    this->VariantNumber = 0;
-    this->RoomType = EIGS_RoomType::Lobby;
-    this->RoomSecurityType = EIGS_RoomSecurityType::Outside;
-    this->OuterTier = EIGS_SecurityTier::Tier0;
-    this->OwnerTeamSide = EIGS_TeamSideEnum::TS_Unknown;
-    this->bIsEdgeRoom = false;
-    this->UniqueRoom = false;
-    this->bGatheredPolys = false;
-    this->RoomPolyCount = 0;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Tag, 0)) = TEXT("Room.Area.Unknown");
+    (*this).OwnerTeamSide = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComponent"));
 }
 
 void AIGS_RoomBase::PlayerTriggerEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex) {

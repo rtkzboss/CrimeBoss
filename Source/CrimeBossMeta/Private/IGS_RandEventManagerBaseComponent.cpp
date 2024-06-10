@@ -1,4 +1,5 @@
 #include "IGS_RandEventManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_RandEventManagerBaseComponent::UIGS_RandEventManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

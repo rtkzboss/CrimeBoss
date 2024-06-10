@@ -1,4 +1,5 @@
 #include "IGS_LootBagInteractiveComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_LootBagInteractiveComponent::UIGS_LootBagInteractiveComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

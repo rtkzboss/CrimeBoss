@@ -1,13 +1,9 @@
 #include "IGS_LootHolderBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_LootHolderBase::AIGS_LootHolderBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LootCollection = NULL;
-    this->AttachableComponent = NULL;
-    this->OpenManually = false;
-    this->InteractOpenDelay = 0.00f;
-    this->MaxAIAttempts = 2;
-    this->AIStealthLooting = EIGS_AIStealthLootBehavior::Always;
-    this->BreakToOpen = false;
+    (*this).MaxAIAttempts = 2;
 }
 
 bool AIGS_LootHolderBase::ShouldBotBreakToOpen() const {

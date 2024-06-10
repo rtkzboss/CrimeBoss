@@ -1,25 +1,15 @@
 #include "IGS_AimAssistComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_AimAssistComponent::UIGS_AimAssistComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bEnableSlowdown = true;
-    this->bEnableSoftLock = false;
-    this->bEnableBulletBending = false;
-    this->bEnableScaling = false;
-    this->bScalingByResolution = true;
-    this->BaseResolutionForScaling = 1080.00f;
-    this->bScalingByFOV = true;
-    this->BaseFOVForScaling = 90.00f;
-    this->bDrawCircles = false;
-    this->bDrawCirclesOnlyWithValidTarget = false;
-    this->bDrawCrosshair = false;
-    this->bDebugOverlayBox = false;
-    this->bShowValidTargetSockets = false;
-    this->bDebugTargetTraces = false;
-    this->MouseAimAssistDataAsset = NULL;
-    this->ControllerAimAssistDataAsset = NULL;
-    this->CurrentAimAssistDataAsset = NULL;
-    this->ObstacleCheckTraceType = TraceTypeQuery3;
-    this->InputDeviceChangedToGamepadDelay = 0.20f;
+    (*this).bEnableSlowdown = true;
+    (*this).bScalingByResolution = true;
+    (*this).BaseResolutionForScaling = 1.080000000e+03f;
+    (*this).bScalingByFOV = true;
+    (*this).BaseFOVForScaling = 9.000000000e+01f;
+    (*this).ObstacleCheckTraceType = TraceTypeQuery3;
+    (*this).InputDeviceChangedToGamepadDelay = 2.000000030e-01f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_AimAssistComponent::OnTargetDestroyed(AActor* inDestroyedActor) {

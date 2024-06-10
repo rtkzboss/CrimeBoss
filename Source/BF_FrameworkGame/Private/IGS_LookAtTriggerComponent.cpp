@@ -1,14 +1,13 @@
 #include "IGS_LookAtTriggerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_LookAtTriggerComponent::UIGS_LookAtTriggerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TriggerDistance = 150.00f;
-    this->LookAtTime = 5.00f;
-    this->bOnlyFrontFacing = false;
-    this->bSingleUse = true;
-    this->bIsEnabled = true;
-    this->mR_bIsEnabledRuntime = true;
-    this->mR_bIsTriggered = false;
+    (*this).TriggerDistance = 1.500000000e+02f;
+    (*this).LookAtTime = 5.000000000e+00f;
+    (*this).bSingleUse = true;
+    (*this).bIsEnabled = true;
+    (*this).mR_bIsEnabledRuntime = true;
 }
 
 void UIGS_LookAtTriggerComponent::SetEnabled(bool inEnabled) {

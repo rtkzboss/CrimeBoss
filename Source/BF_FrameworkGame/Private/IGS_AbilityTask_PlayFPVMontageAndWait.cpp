@@ -1,10 +1,9 @@
 #include "IGS_AbilityTask_PlayFPVMontageAndWait.h"
+#include "GameplayTask.h"
 
 UIGS_AbilityTask_PlayFPVMontageAndWait::UIGS_AbilityTask_PlayFPVMontageAndWait() {
-    this->MontageToPlay = NULL;
-    this->Rate = 1.00f;
-    this->StartTimeSeconds = 0.00f;
-    this->bStopWhenAbilityEnds = true;
+    (*this).Rate = 1.000000000e+00f;
+    (*this).bStopWhenAbilityEnds = true;
 }
 
 void UIGS_AbilityTask_PlayFPVMontageAndWait::OnMontageInterrupted() {

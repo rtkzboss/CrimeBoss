@@ -1,4 +1,5 @@
 #include "IGS_PlayerCommandComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PlayerCommandComponent::UIGS_PlayerCommandComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

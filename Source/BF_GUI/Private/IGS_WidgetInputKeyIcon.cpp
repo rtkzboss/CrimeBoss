@@ -1,9 +1,11 @@
 #include "IGS_WidgetInputKeyIcon.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetInputKeyIcon::UIGS_WidgetInputKeyIcon() : UUserWidget(FObjectInitializer::Get()) {
-    this->InputActionToShow = EIGS_InputAction::IA_UNKNOWN;
-    this->CharacterText = NULL;
-    this->PreviewInputDevice = EIGS_InputDevice::ID_KeyboardAndMouse;
+    (*this).InputActionToShow = EIGS_InputAction::IA_UNKNOWN;
 }
 
 void UIGS_WidgetInputKeyIcon::SetInputActionToShow(EIGS_InputAction InAction) {

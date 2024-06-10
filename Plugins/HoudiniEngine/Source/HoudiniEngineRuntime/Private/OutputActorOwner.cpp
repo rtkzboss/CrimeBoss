@@ -1,6 +1,6 @@
 #include "OutputActorOwner.h"
 
 FOutputActorOwner::FOutputActorOwner() {
-    this->OutputActor = NULL;
+    (*this).OutputActor = nullptr;
 }
 

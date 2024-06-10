@@ -93,8 +93,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer InitialSpawnTags;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool SpawnAsDead;
+    UPROPERTY()
+    bool SpawnAsDead_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool PostponeAILogicAfterStartedPlayingMatch;

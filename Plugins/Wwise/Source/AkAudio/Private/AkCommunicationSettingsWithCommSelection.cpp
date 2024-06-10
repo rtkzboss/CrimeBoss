@@ -1,6 +1,6 @@
 #include "AkCommunicationSettingsWithCommSelection.h"
 
 FAkCommunicationSettingsWithCommSelection::FAkCommunicationSettingsWithCommSelection() {
-    this->CommunicationSystem = EAkCommSystem::Socket;
+    (*this).CommunicationSystem = EAkCommSystem::Socket;
 }
 

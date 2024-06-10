@@ -1,8 +1,7 @@
 #include "PaybackPlayerSwapper.h"
+#include "ComponentInstanceDataCache.h"
 
 UPaybackPlayerSwapper::UPaybackPlayerSwapper(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PlayerSwapActorTemplate = NULL;
-    this->ActivePlayerIndex = 0;
 }
 
 int32 UPaybackPlayerSwapper::GetNextViableBotNumber(UObject* inWCO, int32 inCurrentHeisterNumber, bool& outSuccess) {

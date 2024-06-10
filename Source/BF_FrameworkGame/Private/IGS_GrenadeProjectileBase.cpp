@@ -1,26 +1,27 @@
 #include "IGS_GrenadeProjectileBase.h"
 #include "AkComponent.h"
+#include "AkSwitchValue.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/PointLightComponent.h"
 #include "IGS_WorldSpaceWidgetBase.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_GrenadeProjectileBase::AIGS_GrenadeProjectileBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ExplosionLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("ExplosionLight"));
-    this->GrenadeParticle = NULL;
-    this->NiagaraGrenadeParticle = NULL;
-    this->GrenadeIndicatorWidget = CreateDefaultSubobject<UIGS_WorldSpaceWidgetBase>(TEXT("Grenade Indicator Widget"));
-    this->ExplosionSoundAkEvent = NULL;
-    this->AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
-    this->IndicatorWidgetTypePlayer = EIGS_WorldWidgetType::Widget_Hidden;
-    this->IndicatorWidgetTypeAI = EIGS_WorldWidgetType::Widget_Hidden;
-    this->IndicatorAppearTime = 0.33f;
-    this->LightFlashTime = 0.20f;
-    this->ImpactDistance = 150.00f;
-    this->bMakeNoiseAndEvent = true;
-    this->mR_bIsExploded = false;
-    this->GrenadeIndicatorWidget->SetupAttachment(ThrowableMesh);
-    this->AkComponent->SetupAttachment(ThrowableMesh);
-    this->ExplosionLight->SetupAttachment(ThrowableMesh);
+    (*this).ExplosionLight = CreateDefaultSubobject<UPointLightComponent>(TEXT("ExplosionLight"));
+    (*this).GrenadeIndicatorWidget = CreateDefaultSubobject<UIGS_WorldSpaceWidgetBase>(TEXT("Grenade Indicator Widget"));
+    static ConstructorHelpers::FObjectFinder<UAkSwitchValue> gen602(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Switches/Default_Work_Unit/WU_Environment/SwitchGrp_EnviroSpace/SwitchGrp_EnviroSpace-Switch_Indoors.SwitchGrp_EnviroSpace-Switch_Indoors"));
+    (*this).IndoorsAkSwitch = gen602.Object;
+    static ConstructorHelpers::FObjectFinder<UAkSwitchValue> gen603(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Switches/Default_Work_Unit/WU_Environment/SwitchGrp_EnviroSpace/SwitchGrp_EnviroSpace-Switch_Outdoors.SwitchGrp_EnviroSpace-Switch_Outdoors"));
+    (*this).OutdoorsAkSwitch = gen603.Object;
+    (*this).AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkComponent"));
+    (*this).IndicatorAppearTime = 3.330000043e-01f;
+    (*this).LightFlashTime = 2.000000030e-01f;
+    (*this).ImpactDistance = 1.500000000e+02f;
+    (*this).bMakeNoiseAndEvent = true;
+    (*this).GrenadeIndicatorWidget->SetupAttachment((*this).ThrowableMesh);
+    (*this).AkComponent->SetupAttachment((*this).ThrowableMesh);
+    (*this).ExplosionLight->SetupAttachment((*this).ThrowableMesh);
 }
 
 void AIGS_GrenadeProjectileBase::SetIndicatorIconWidget() const {

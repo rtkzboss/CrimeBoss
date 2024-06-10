@@ -1,13 +1,9 @@
 #include "IGS_LootBagComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_LootBagComponent::UIGS_LootBagComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bCanTakeThrownLootBag = true;
-    this->bIsEnabled = false;
-    this->NewBagCreatedAkEvent = NULL;
-    this->HasMaxBagsGameplayEffect = NULL;
-    this->CurrentBagsCount = 0;
-    this->m_isTransferingBag = false;
+    (*this).bCanTakeThrownLootBag = true;
 }
 
 void UIGS_LootBagComponent::Server_StashPocketLoot_Implementation() {

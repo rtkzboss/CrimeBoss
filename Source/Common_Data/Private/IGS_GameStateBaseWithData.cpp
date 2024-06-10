@@ -1,8 +1,9 @@
 #include "IGS_GameStateBaseWithData.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_GameStateBaseWithData::AIGS_GameStateBaseWithData(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->IsGameStateDataReady = false;
 }
 
 void AIGS_GameStateBaseWithData::SetSpecificLootTypes(FGameplayTagContainer inSpecificLootTypes) {

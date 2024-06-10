@@ -1,7 +1,8 @@
 #include "META_MediaManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UMETA_MediaManagerComponent::UMETA_MediaManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DialogueSettings = NULL;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UMETA_MediaManagerComponent::SubtractDaysForDelayedCutscenes() {

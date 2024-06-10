@@ -1,19 +1,13 @@
 #include "IGS_PickupActorInventoryItem.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_TeamSideEnum.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_PickupActorInventoryItem::AIGS_PickupActorInventoryItem(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->InteractiveComponent = NULL;
-    this->OutlineComponent = NULL;
-    this->LoadedWeaponSkin = NULL;
-    this->LoadedWeaponSpecificSkin = NULL;
-    this->R_ItemClassToAdd = NULL;
-    this->R_GlobalItemCount = 1;
-    this->R_bCustomStackCount = false;
-    this->R_EquipmentCount = 1;
-    this->mR_bWasDropped = false;
-    this->m_bIsGlobalItem = false;
-    this->m_bIsEquipment = false;
+    (*this).R_GlobalItemCount = 1;
+    (*this).R_EquipmentCount = 1;
 }
 
 void AIGS_PickupActorInventoryItem::Setup(const TSubclassOf<UIGS_InventoryObjectFramework>& inItemClass) {

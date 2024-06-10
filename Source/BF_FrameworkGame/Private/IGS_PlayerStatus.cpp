@@ -1,13 +1,14 @@
 #include "IGS_PlayerStatus.h"
+#include "EIGS_HealthState.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PlayerStatus::UIGS_PlayerStatus(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bHealthRegenAllowed = true;
-    this->HealthMultiplierAttribute = 1.00f;
-    this->HealthRegenDelayAttribute = 1.00f;
-    this->bAutoregenMaxOverriden = false;
-    this->AutoregenMaxOverride = 0.00f;
-    this->RegenerationStartAkEvent = NULL;
-    this->RegenerationFinishedAkEvent = NULL;
+    (*this).HealthRegenDelay.Value = 5.000000000e+00f;
+    (*this).HealthRegenHPS.Value = 1.000000000e+02f;
+    (*this).HealthRegenTickRateInSeconds.Value = 5.000000075e-02f;
+    (*this).bHealthRegenAllowed = true;
+    (*this).HealthMultiplierAttribute = 1.000000000e+00f;
+    (*this).HealthRegenDelayAttribute = 1.000000000e+00f;
 }
 
 void UIGS_PlayerStatus::SetRegenerationBlocked(bool inIsBlocked) {

@@ -1,8 +1,7 @@
 #include "IGS_BlackmarketManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_BlackmarketManagerBaseComponent::UIGS_BlackmarketManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsManagerDataDirty = false;
-    this->bIsManagerInitialized = false;
 }
 
 bool UIGS_BlackmarketManagerBaseComponent::IsManagerInitialized() const {

@@ -13,7 +13,7 @@ public:
     AIGS_GameCharacterFramework* Character;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FVector position;
+    FVector Position;
     
     FIGS_InspectRecord();
 };

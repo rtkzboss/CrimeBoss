@@ -2,8 +2,9 @@
 #include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 
 UEnvQueryGenerator_CombatCirlcle::UEnvQueryGenerator_CombatCirlcle() {
-    this->GenerateAround = UEnvQueryContext_Querier::StaticClass();
-    this->TraceChannel = TraceTypeQuery1;
+    (*this).Radius.DefaultValue = 5.000000000e+02f;
+    (*this).SpaceBetweenFront.DefaultValue = 1.500000000e+02f;
+    (*this).GenerateAround = UEnvQueryContext_Querier::StaticClass();
 }
 
 

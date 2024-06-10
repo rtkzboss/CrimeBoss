@@ -1,9 +1,9 @@
 #include "HoudiniInstancedActorComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UHoudiniInstancedActorComponent::UHoudiniInstancedActorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bCanEverAffectNavigation = true;
-    this->Mobility = EComponentMobility::Static;
-    this->InstancedObject = NULL;
+    (*this).Mobility = EComponentMobility::Static;
+    (*this).bCanEverAffectNavigation = true;
 }
 
 

@@ -1,10 +1,13 @@
 #include "IGS_DefendPointBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_ScenarioDifficulty.h"
 
 AIGS_DefendPointBase::AIGS_DefendPointBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DefendShape = NULL;
-    this->OverrideCapacity = -1;
-    this->UseOnlyManualCovers = false;
-    this->RotationType = EIGS_DefendPointRotationType::TS_AllignWithForward;
+    (*this).OverrideCapacity = -1;
+    (*this).RotationType = EIGS_DefendPointRotationType::TS_AllignWithForward;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).PrimaryActorTick.TickInterval = 3.000000119e-01f;
 }
 
 void AIGS_DefendPointBase::SetDefendRotationPoint(FVector Pos) {

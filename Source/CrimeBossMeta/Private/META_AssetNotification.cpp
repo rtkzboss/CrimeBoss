@@ -1,7 +1,8 @@
 #include "META_AssetNotification.h"
+#include "EMETA_NotificationEffect.h"
+#include "EMETA_NotificationType.h"
 
 UMETA_AssetNotification::UMETA_AssetNotification() {
-    this->m_Asset = NULL;
 }
 
 void UMETA_AssetNotification::SetAsset(UMETA_PlotlineAsset* InAsset) {

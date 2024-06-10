@@ -1,16 +1,16 @@
 #include "AkSpatialAudioSettings.h"
 
 FAkSpatialAudioSettings::FAkSpatialAudioSettings() {
-    this->MaxSoundPropagationDepth = 0;
-    this->MovementThreshold = 0.00f;
-    this->NumberOfPrimaryRays = 0;
-    this->ReflectionOrder = 0;
-    this->MaximumPathLength = 0.00f;
-    this->CPULimitPercentage = 0.00f;
-    this->EnableDiffractionOnReflections = false;
-    this->EnableGeometricDiffractionAndTransmission = false;
-    this->CalcEmitterVirtualPosition = false;
-    this->UseObstruction = false;
-    this->UseOcclusion = false;
+    (*this).MaxSoundPropagationDepth = 8;
+    (*this).MovementThreshold = 1.000000000e+01f;
+    (*this).NumberOfPrimaryRays = 100;
+    (*this).ReflectionOrder = 1;
+    (*this).MaximumPathLength = 1.000000000e+04f;
+    (*this).CPULimitPercentage = 0.000000000e+00f;
+    (*this).EnableDiffractionOnReflections = true;
+    (*this).EnableGeometricDiffractionAndTransmission = true;
+    (*this).CalcEmitterVirtualPosition = true;
+    (*this).UseObstruction = true;
+    (*this).UseOcclusion = true;
 }
 

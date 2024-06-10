@@ -1,9 +1,8 @@
 #include "IGS_InteractionTileComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_InteractionTileComponent::UIGS_InteractionTileComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SubTileChildActor = NULL;
-    this->SubTileActorClass = NULL;
 }
 
 void UIGS_InteractionTileComponent::Show() {

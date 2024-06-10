@@ -1,7 +1,7 @@
 #include "IGS_ReloaderBase.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ReloaderBase::UIGS_ReloaderBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsInterruptible = false;
 }
 
 void UIGS_ReloaderBase::Reload() {

@@ -1,17 +1,14 @@
 #include "IGS_ControllerSettings.h"
 
 UIGS_ControllerSettings::UIGS_ControllerSettings() {
-    this->bSettingsValid = true;
-    this->ControllerSensitivity = 1.00f;
-    this->InvertedVerticalLook = false;
-    this->LeftDeadzone = 0.10f;
-    this->RightDeadzone = 0.10f;
-    this->ADSMultiplier = 1.00f;
-    this->AimAssistMultiplier = 1.00f;
-    this->bUseLinearControllerCurve = false;
-    this->VibrationIntensity = 2;
-    this->bShouldPrioritizeUseInsteadOfReload = true;
-    this->bSwapPingWithDropItemControls = false;
+    (*this).ControllerSensitivity = 1.000000000e+00f;
+    (*this).LeftDeadzone = 1.000000015e-01f;
+    (*this).RightDeadzone = 1.000000015e-01f;
+    (*this).ADSMultiplier = 1.000000000e+00f;
+    (*this).AimAssistMultiplier = 1.000000000e+00f;
+    (*this).VibrationIntensity = 2;
+    (*this).bShouldPrioritizeUseInsteadOfReload = true;
+    (*this).bSettingsValid = true;
 }
 
 UIGS_ControllerSettings* UIGS_ControllerSettings::Instance() {

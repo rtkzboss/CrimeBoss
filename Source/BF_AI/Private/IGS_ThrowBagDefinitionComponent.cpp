@@ -1,7 +1,11 @@
 #include "IGS_ThrowBagDefinitionComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ThrowBagDefinitionComponent::UIGS_ThrowBagDefinitionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_IsThrowingAllowed = true;
+    (*this).m_IsThrowingAllowed = true;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
+    (*this).PrimaryComponentTick.TickInterval = 5.000000000e-01f;
 }
 
 void UIGS_ThrowBagDefinitionComponent::RequestThrowStart(AIGS_GameCharacterFramework* inCharacter, bool inPlayerThrown) {

@@ -1,9 +1,9 @@
 #include "IGS_WeaponAmmoDefinition.h"
 
 FIGS_WeaponAmmoDefinition::FIGS_WeaponAmmoDefinition() {
-    this->AmmoObject = NULL;
-    this->MagazineCapacity = 0;
-    this->ReserveCapacity = 0;
-    this->AmmoCostPerShot = 0;
+    (*this).AmmoObject = nullptr;
+    (*this).MagazineCapacity = 30;
+    (*this).ReserveCapacity = 300;
+    (*this).AmmoCostPerShot = 1;
 }
 

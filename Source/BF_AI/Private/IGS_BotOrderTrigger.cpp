@@ -1,8 +1,13 @@
 #include "IGS_BotOrderTrigger.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_BotOrderTrigger::AIGS_BotOrderTrigger(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->InitialDelay = 5.00f;
-    this->Cooldown = 15.00f;
+    (*this).InitialDelay = 5.000000000e+00f;
+    (*this).Cooldown = 1.500000000e+01f;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).PrimaryActorTick.bStartWithTickEnabled = false;
+    (*this).PrimaryActorTick.TickInterval = 5.000000000e-01f;
 }
 
 

@@ -1,8 +1,6 @@
 #include "IGS_LevelTransitionManager.h"
 
 UIGS_LevelTransitionManager::UIGS_LevelTransitionManager() {
-    this->CurrentState = EIGS_LevelTransitionType::LT_Unknown;
-    this->Data = NULL;
 }
 
 void UIGS_LevelTransitionManager::StopAttemptLoadingLevel() {

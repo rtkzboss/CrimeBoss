@@ -1,7 +1,7 @@
 #include "IGS_TextChatManager.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_TextChatManager::UIGS_TextChatManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bChatOpen = false;
 }
 
 void UIGS_TextChatManager::Server_SendTextChatMessage_Implementation(const FText& inMessage, const FString& inPlayerName, const FString& inUserId, int32 inHeisterNum, const TArray<FString>& inSenderBlockedUsersList) {

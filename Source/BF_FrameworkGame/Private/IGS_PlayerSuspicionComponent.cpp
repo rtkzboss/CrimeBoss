@@ -1,4 +1,5 @@
 #include "IGS_PlayerSuspicionComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PlayerSuspicionComponent::UIGS_PlayerSuspicionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

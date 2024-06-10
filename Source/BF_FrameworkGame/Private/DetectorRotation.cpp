@@ -1,14 +1,8 @@
 #include "DetectorRotation.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UDetectorRotation::UDetectorRotation(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RotationPoint = NULL;
-    this->FullRotationSpeed = 0.00f;
-    this->FollowRotationSpeed = 0.00f;
-    this->PatrollingRotationSpeed = 0.00f;
-    this->ControlledRotationSpeed = 0.00f;
-    this->TotalHorizontalRotationAngleDegrees = 0.00f;
-    this->TotalVerticalRotationAngleDegrees = 0.00f;
 }
 
 void UDetectorRotation::UpdateRotationPointByDelta(float inHorizontalDeltaRotation, float inVerticalDeltaRotation) {

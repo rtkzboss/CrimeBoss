@@ -1,15 +1,16 @@
 #include "IGS_PlayerCameraComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_PlayerCameraComponent::UIGS_PlayerCameraComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentEyeHeightTargetType = EIGS_EyeHeightTargetType::EHT_Unknown;
-    this->CurrentEyeHeightTarget = 77.00f;
-    this->CurrentInterpSpeed = 10.00f;
-    this->CameraBoneWrongAxisFix = false;
-    this->CameraLadderTopEndInterpSpeed = 15.00f;
-    this->CameraLadderRootMotionInterpSpeed = 15.00f;
-    this->FOVInterpolationEndTolerance = 0.00f;
-    this->CameraBoneAttachment = TEXT("camera_root");
+    (*this).CurrentEyeHeightTarget = 7.700000000e+01f;
+    (*this).CurrentInterpSpeed = 1.000000000e+01f;
+    (*this).CameraLadderTopEndInterpSpeed = 1.500000000e+01f;
+    (*this).CameraLadderRootMotionInterpSpeed = 1.500000000e+01f;
+    (*this).FOVInterpolationEndTolerance = 4.999999888e-03f;
+    (*this).CameraBoneAttachment = TEXT("camera_root");
+    (*this).PrimaryComponentTick.TickGroup = TG_PrePhysics;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_PlayerCameraComponent::StopCameraShake(const FGameplayTag inCameraShakeTag) {

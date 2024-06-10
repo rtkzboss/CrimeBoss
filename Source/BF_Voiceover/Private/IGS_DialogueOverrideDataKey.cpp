@@ -1,6 +1,7 @@
 #include "IGS_DialogueOverrideDataKey.h"
 
 FIGS_DialogueOverrideDataKey::FIGS_DialogueOverrideDataKey() {
-    this->LineOrder = 0;
+    (*this).DialogueID = FText::FromString(TEXT(""));
+    (*this).LineOrder = 0;
 }
 

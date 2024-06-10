@@ -1,13 +1,7 @@
 #include "META_EventManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UMETA_EventManagerComponent::UMETA_EventManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EventTime = EMETA_EventTime::DayStart;
-    this->bPoolFrozen = false;
-    this->bDataLoaded = false;
-    this->bShouldCallEndDay = false;
-    this->bEndDayIsRunning = false;
-    this->AreGraphsInProcessing = false;
-    this->RequestForGraphsReprocess = false;
 }
 
 bool UMETA_EventManagerComponent::WasGraphStarted(const FMETA_GraphStruct& inGraphData) {

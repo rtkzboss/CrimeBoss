@@ -1,8 +1,10 @@
 #include "IGS_WidgetCountdownLabel.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetCountdownLabel::UIGS_WidgetCountdownLabel() {
-    this->RemainingSeconds = 0;
-    this->AllowNegativeSeconds = false;
 }
 
 void UIGS_WidgetCountdownLabel::StopCountdown() {

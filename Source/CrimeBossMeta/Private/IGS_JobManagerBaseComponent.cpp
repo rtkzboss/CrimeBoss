@@ -1,4 +1,5 @@
 #include "IGS_JobManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_JobManagerBaseComponent::UIGS_JobManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

@@ -1,12 +1,10 @@
 #include "AkGeometryComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkGeometryComponent::UAkGeometryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MeshType = AkMeshType::CollisionMesh;
-    this->LOD = 0;
-    this->WeldingThreshold = 0.00f;
-    this->bEnableDiffraction = true;
-    this->bEnableDiffractionOnBoundaryEdges = false;
-    this->AssociatedRoom = NULL;
+    (*this).MeshType = AkMeshType::CollisionMesh;
+    (*this).WeldingThreshold = 1.000000047e-03f;
+    (*this).bEnableDiffraction = true;
 }
 
 void UAkGeometryComponent::UpdateGeometry() {

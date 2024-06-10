@@ -1,6 +1,6 @@
 #include "PrefabricatorAssetCollectionItem.h"
 
 FPrefabricatorAssetCollectionItem::FPrefabricatorAssetCollectionItem() {
-    this->Weight = 0.00f;
+    (*this).Weight = 1.000000000e+00f;
 }
 

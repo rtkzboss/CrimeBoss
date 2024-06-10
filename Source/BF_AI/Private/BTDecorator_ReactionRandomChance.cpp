@@ -1,9 +1,9 @@
 #include "BTDecorator_ReactionRandomChance.h"
 
 UBTDecorator_ReactionRandomChance::UBTDecorator_ReactionRandomChance() {
-    this->NodeName = TEXT("Reaction Random Chance");
-    this->HighIntensityChance = 0.90f;
-    this->LowIntensityChance = 0.50f;
+    (*this).HighIntensityChance = 8.999999762e-01f;
+    (*this).LowIntensityChance = 5.000000000e-01f;
+    (*this).NodeName = TEXT("Reaction Random Chance");
 }
 
 

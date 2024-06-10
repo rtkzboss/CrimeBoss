@@ -1,10 +1,10 @@
 #include "IGS_SuspicionComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_SuspicionComponent::UIGS_SuspicionComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bDisablePerceptionOnOffenceReported = true;
-    this->NoticedWantsReactionRearmDelay = 5.00f;
-    this->bOverrideTeamSide = false;
-    this->TeamSideOverride = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).bDisablePerceptionOnOffenceReported = true;
+    (*this).NoticedWantsReactionRearmDelay = 5.000000000e+00f;
+    (*this).TeamSideOverride = EIGS_TeamSideEnum::TS_Unknown;
 }
 
 void UIGS_SuspicionComponent::SetOwner(AIGS_GameCharacterFramework* inNewOwner) {

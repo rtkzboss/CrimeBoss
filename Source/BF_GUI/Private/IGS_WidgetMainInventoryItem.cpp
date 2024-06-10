@@ -1,10 +1,10 @@
 #include "IGS_WidgetMainInventoryItem.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetMainInventoryItem::UIGS_WidgetMainInventoryItem() : UUserWidget(FObjectInitializer::Get()) {
-    this->ItemSlotID = 0;
-    this->ItemImage = NULL;
-    this->WieldedText = NULL;
-    this->StackSizeText = NULL;
 }
 
 void UIGS_WidgetMainInventoryItem::TemporaryOnClickItem() {

@@ -1,17 +1,14 @@
 #include "IGS_GenericButton.h"
+#include "Input/CommonInputMode.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_GenericButton::UIGS_GenericButton() {
-    this->HoldTime = 1.00f;
-    this->HoldTicksPerSecond = 60;
-    this->IsHoldable = false;
-    this->HasContent = false;
-    this->BoundInputAction = EIGS_InputAction::IA_UNKNOWN;
-    this->HoldBorder = NULL;
-    this->ProgressMaterial = NULL;
-    this->Progress = NULL;
-    this->ContentSlot = NULL;
-    this->ButtonText = NULL;
-    this->InputKeyIcon = NULL;
+    (*this).HoldTime = 1.000000000e+00f;
+    (*this).HoldTicksPerSecond = 60;
+    (*this).BoundInputAction = EIGS_InputAction::IA_UNKNOWN;
 }
 
 void UIGS_GenericButton::SimulateClick() {

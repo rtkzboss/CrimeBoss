@@ -1,28 +1,12 @@
 #include "IGS_SecurityCameraViewer.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_SecurityCameraViewer::AIGS_SecurityCameraViewer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->mR_AllCamerasDisabled = false;
-    this->bAllowFreezing = false;
-    this->mR_AllowDisablingCameras = true;
-    this->PossedPawn = NULL;
-    this->bSetListenerOnPossessed = true;
-    this->EnterAkState = NULL;
-    this->ExitAkState = NULL;
-    this->SecurityCameraPlayerController = NULL;
-    this->PlayerController = NULL;
-    this->InteractiveComponent = NULL;
-    this->MonitorMesh = NULL;
-    this->AkAudioListener = NULL;
-    this->EnterCameraAkEvent = NULL;
-    this->ExitCameraAkEvent = NULL;
-    this->ServoStartAkAudioEvent = NULL;
-    this->ServoStopAkAudioEvent = NULL;
-    this->ChangeCameraAkAudioEvent = NULL;
-    this->AkStateMountNormal = NULL;
-    this->AkStateMountSecurityCamera = NULL;
-    this->AkStateMountSecurityCameraNoSignal = NULL;
-    this->DefaultController = NULL;
+    (*this).mR_AllowDisablingCameras = true;
+    (*this).bSetListenerOnPossessed = true;
 }
 
 void AIGS_SecurityCameraViewer::UseCameraViewer(AIGS_GameCharacterFramework* inInstigator) {

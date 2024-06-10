@@ -1,5 +1,8 @@
 #include "IGS_PlayerControllerRoot.h"
 #include "IGS_InputDeviceDetectorComponent.h"
+#include "GameFramework/Controller.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SphereComponent.h"
 #include "ActiveSubControllerHandler.h"
 #include "IGS_AimAssistComponent.h"
@@ -10,41 +13,26 @@
 #include "IGS_SubControllerVehicle.h"
 
 AIGS_PlayerControllerRoot::AIGS_PlayerControllerRoot(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bAttachToPawn = true;
-    this->ClickEventKeys.AddDefaulted(1);
-    this->bEntranceUnlockMenuOpen = false;
-    this->bIsCurrentlySwappingPawns = false;
-    this->bInvertLook = false;
-    this->bAllowShootingInSprint = false;
-    this->bAllowAimingInSprint = false;
-    this->bAllowReloadingInSprint = false;
-    this->bAllowSwitchFireModeInSprint = true;
-    this->bAllowChangeSlotInSprint = true;
-    this->bToggleSprint = false;
-    this->bToggleCrouch = true;
-    this->bToggleAim = false;
-    this->bSprintInterruptsReload = false;
-    this->bMagCheckInSprintAllowed = false;
-    this->bGamepadPrioritizeUseInsteadOfReload = true;
-    this->HoldTimeInSeconds = 0.20f;
-    this->StartHeistHoldTimeInSeconds = 2.00f;
-    this->DoublePingThresholdInSeconds = 0.00f;
-    this->ContextualDoublePingThresholdInSeconds = 0.25f;
-    this->PingCooldownInSeconds = 0.10f;
-    this->ActiveSubControllerHandler = CreateDefaultSubobject<UActiveSubControllerHandler>(TEXT("ActiveSubControllerHandler"));
-    this->SubControllerHuman = CreateDefaultSubobject<UIGS_SubControllerHuman>(TEXT("SubControllerHuman"));
-    this->SubControllerMountable = CreateDefaultSubobject<UIGS_SubControllerMountable>(TEXT("SubControllerMountable"));
-    this->SubControllerVehicle = CreateDefaultSubobject<UIGS_SubControllerVehicle>(TEXT("SubControllerVehicle"));
-    this->m_ActiveSubController = NULL;
-    this->m_StreamingVolumeCollision = CreateDefaultSubobject<USphereComponent>(TEXT("StreamingVolumeInstigator Sphere Collisions"));
-    this->m_InputDeviceDetectorComponent = CreateDefaultSubobject<UIGS_InputDeviceDetectorComponent>(TEXT("InputDeviceDetectorComponent"));
-    this->PlayerDataComponent = CreateDefaultSubobject<UIGS_PlayerDataComponent>(TEXT("PlayerDataComponent"));
-    this->PlayerBotOrderComponent = CreateDefaultSubobject<UIGS_PlayerBotOrderComponent>(TEXT("PlayerBotOrderComponent"));
-    this->CurrentPlayerCharacter = NULL;
-    this->CurrentlySpectatedPlayer = NULL;
-    this->m_AimAssistComponent = CreateDefaultSubobject<UIGS_AimAssistComponent>(TEXT("AimAssistComponent"));
-    this->m_GivingUpTime = 2.00f;
-    this->m_StreamingVolumeCollision->SetupAttachment(RootComponent);
+    (*this).bAllowSwitchFireModeInSprint = true;
+    (*this).bAllowChangeSlotInSprint = true;
+    (*this).bToggleCrouch = true;
+    (*this).bGamepadPrioritizeUseInsteadOfReload = true;
+    (*this).HoldTimeInSeconds = 2.000000030e-01f;
+    (*this).StartHeistHoldTimeInSeconds = 2.000000000e+00f;
+    (*this).ContextualDoublePingThresholdInSeconds = 2.500000000e-01f;
+    (*this).PingCooldownInSeconds = 1.000000015e-01f;
+    (*this).ActiveSubControllerHandler = CreateDefaultSubobject<UActiveSubControllerHandler>(TEXT("ActiveSubControllerHandler"));
+    (*this).SubControllerHuman = CreateDefaultSubobject<UIGS_SubControllerHuman>(TEXT("SubControllerHuman"));
+    (*this).SubControllerMountable = CreateDefaultSubobject<UIGS_SubControllerMountable>(TEXT("SubControllerMountable"));
+    (*this).SubControllerVehicle = CreateDefaultSubobject<UIGS_SubControllerVehicle>(TEXT("SubControllerVehicle"));
+    (*this).m_StreamingVolumeCollision = CreateDefaultSubobject<USphereComponent>(TEXT("StreamingVolumeInstigator Sphere Collisions"));
+    (*this).m_InputDeviceDetectorComponent = CreateDefaultSubobject<UIGS_InputDeviceDetectorComponent>(TEXT("InputDeviceDetectorComponent"));
+    (*this).PlayerDataComponent = CreateDefaultSubobject<UIGS_PlayerDataComponent>(TEXT("PlayerDataComponent"));
+    (*this).PlayerBotOrderComponent = CreateDefaultSubobject<UIGS_PlayerBotOrderComponent>(TEXT("PlayerBotOrderComponent"));
+    (*this).m_AimAssistComponent = CreateDefaultSubobject<UIGS_AimAssistComponent>(TEXT("AimAssistComponent"));
+    (*this).m_GivingUpTime = 2.000000000e+00f;
+    (*this).bAttachToPawn = true;
+    (*this).m_StreamingVolumeCollision->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_PlayerControllerRoot::TryPossessSpectatedBot() {

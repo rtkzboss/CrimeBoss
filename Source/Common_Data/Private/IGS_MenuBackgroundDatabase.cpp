@@ -1,8 +1,6 @@
 #include "IGS_MenuBackgroundDatabase.h"
 
 UIGS_MenuBackgroundDatabase::UIGS_MenuBackgroundDatabase() {
-    this->AkStatesDataAsset = NULL;
-    this->isDebugEnabled = false;
 }
 
 TArray<FText> UIGS_MenuBackgroundDatabase::GetSelectableMenuBackgroundsNames() const {

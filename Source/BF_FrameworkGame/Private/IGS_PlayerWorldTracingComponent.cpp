@@ -1,14 +1,17 @@
 #include "IGS_PlayerWorldTracingComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PlayerWorldTracingComponent::UIGS_PlayerWorldTracingComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TrackingDistance = 10000.00f;
-    this->DistanceToLean = 100.00f;
-    this->LeanSphereCheckRadius = 50.00f;
-    this->LeanSideCheckOffset = 30.00f;
-    this->LeanUpCheckOffset = 30.00f;
-    this->CapsuleZSizeAdd = 5.00f;
-    this->CapsuleCheckZOffsetUp = 5.00f;
-    this->MantleDownSweepOffsetMult = 1.90f;
+    (*this).TrackingDistance = 1.000000000e+04f;
+    (*this).DistanceToLean = 1.000000000e+02f;
+    (*this).LeanSphereCheckRadius = 5.000000000e+01f;
+    (*this).LeanSideCheckOffset = 3.000000000e+01f;
+    (*this).LeanUpCheckOffset = 3.000000000e+01f;
+    (*this).CapsuleZSizeAdd = 5.000000000e+00f;
+    (*this).CapsuleCheckZOffsetUp = 5.000000000e+00f;
+    (*this).MantleDownSweepOffsetMult = 1.899999976e+00f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
 }
 
 bool UIGS_PlayerWorldTracingComponent::IsAimingAtFriendly(bool inNeedsAlive) const {

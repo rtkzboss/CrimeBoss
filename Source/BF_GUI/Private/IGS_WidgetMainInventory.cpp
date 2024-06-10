@@ -1,14 +1,10 @@
 #include "IGS_WidgetMainInventory.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetMainInventory::UIGS_WidgetMainInventory() : UUserWidget(FObjectInitializer::Get()) {
-    this->WeaponsScrollBox = NULL;
-    this->GadgetsScrollBox = NULL;
-    this->ItemsScrollBox = NULL;
-    this->LootScrollBox = NULL;
-    this->WidgetMainInventoryItemClass = NULL;
-    this->WidgetDragItemClass = NULL;
-    this->OwningInventory = NULL;
-    this->InventoryCategorySwitcher = NULL;
 }
 
 void UIGS_WidgetMainInventory::Setup(UIGS_ListInventory* inOwningContainer) {

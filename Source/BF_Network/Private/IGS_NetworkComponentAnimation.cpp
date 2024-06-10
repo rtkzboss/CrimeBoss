@@ -1,4 +1,5 @@
 #include "IGS_NetworkComponentAnimation.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_NetworkComponentAnimation::UIGS_NetworkComponentAnimation(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

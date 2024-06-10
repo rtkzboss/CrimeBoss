@@ -1,4 +1,5 @@
 #include "IGS_LockpickInteractiveComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_LockpickInteractiveComponent::UIGS_LockpickInteractiveComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

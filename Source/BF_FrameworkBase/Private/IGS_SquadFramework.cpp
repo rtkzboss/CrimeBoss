@@ -1,9 +1,11 @@
 #include "IGS_SquadFramework.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_SquadFramework::AIGS_SquadFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bOnlyRelevantToOwner = true;
-    this->bNetLoadOnClient = false;
-    this->SquadID = -1;
+    (*this).SquadID = -1;
+    (*this).bOnlyRelevantToOwner = true;
+    (*this).bNetLoadOnClient = false;
 }
 
 void AIGS_SquadFramework::SetTeamSide(const EIGS_TeamSideEnum inTeamSide) {

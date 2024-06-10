@@ -1,7 +1,7 @@
 #include "AkXboxOneAdvancedInitializationSettings.h"
 
 FAkXboxOneAdvancedInitializationSettings::FAkXboxOneAdvancedInitializationSettings() {
-    this->MaximumNumberOfXMAVoices = 0;
-    this->UseHardwareCodecLowLatencyMode = false;
+    (*this).MaximumNumberOfXMAVoices = 128;
+    (*this).UseHardwareCodecLowLatencyMode = false;
 }
 

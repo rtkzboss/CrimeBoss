@@ -1,9 +1,13 @@
 #include "IGS_PlayerCharacter.h"
-#include "SkeletalMeshComponentBudgeted.h"
 #include "IGS_CampThreatMeterComponent.h"
 #include "IGS_PostProcessManagerComponent.h"
+#include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Engine/EngineTypes.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "EIGS_CharacterID.h"
+#include "EIGS_UnitSpecialization.h"
 #include "IGS_BasherComponent.h"
 #include "IGS_CarryableInteractiveComponent.h"
 #include "IGS_DownStateHandlerComponent.h"
@@ -31,68 +35,46 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-AIGS_PlayerCharacter::AIGS_PlayerCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UIGS_PlayerCharacterMovementComponent>(TEXT("CharMoveComp")).SetDefaultSubobjectClass<UIGS_PlayerStatus>(TEXT("Object Status")).SetDefaultSubobjectClass<UIGS_PlayerDamageHandlerComponent>(TEXT("DamageHandlerComponent2")).SetDefaultSubobjectClass<UIGS_PlayerGASComponent>(TEXT("GASComponent")).SetDefaultSubobjectClass<UIGS_GASAttributeSetPlayer>(TEXT("GASAttributeSet")).SetDefaultSubobjectClass<UIGS_FootstepsPlayerComponent>(TEXT("FootstepEventBaseComponent"))) {
-    this->AutoPossessAI = EAutoPossessAI::Disabled;
-    this->AIControllerClass = NULL;
-    this->DownStateHandlerComponent = CreateDefaultSubobject<UIGS_DownStateHandlerComponent>(TEXT("DownStateHandlerComponent"));
-    this->bRegisterOnBeginPlay = false;
-    this->bIsValidForAimAssist = false;
-    this->LootBagComponent = CreateDefaultSubobject<UIGS_LootBagComponent>(TEXT("LootBagComponent"));
-    this->UseComponent = CreateDefaultSubobject<UIGS_UseComponent>(TEXT("Use Component"));
-    this->PingComponent = CreateDefaultSubobject<UIGS_PlayerPingComponent>(TEXT("Ping Component"));
-    this->ReviveComponent = CreateDefaultSubobject<UIGS_ReviveComponent>(TEXT("Revive Component"));
-    const FProperty* p_Mesh_Parent = GetClass()->FindPropertyByName("Mesh");
-    this->PlayerSuspicionComponent = CreateDefaultSubobject<UIGS_PlayerSuspicionComponent>(TEXT("Player Suspicion Component"));
-    this->SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComponent"));
-    this->PlayerCommandComponent = CreateDefaultSubobject<UIGS_PlayerCommandComponent>(TEXT("PlayerCommandComponent"));
-    this->PlayerWorldTracingComponent = CreateDefaultSubobject<UIGS_PlayerWorldTracingComponent>(TEXT("AimPoint Updater Component"));
-    this->UnarmedMeleeBasherComponent = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Unarmed Melee Basher Component"));
-    this->EthnicityVoices = NULL;
-    this->DefaultUnarmedMeleeItemClass = NULL;
-    this->DefaultUnarmedMeleeAbility = NULL;
-    this->DefaultAimingChangePercent = 0.80f;
-    this->VisibilityCrouchMultiplier = 0.50f;
-    this->Child3PVCameraActor = NULL;
-    this->PlayerInventory = CreateDefaultSubobject<UIGS_ListInventory>(TEXT("Player Character List Inventory"));
-    this->DeathCamUnskippableTime = 1.00f;
-    this->DeathCamMaximumTime = 15.00f;
-    this->bIsSomeoneSpectating = false;
-    this->bIsInDeathCam = false;
-    this->bDeathCamSkippable = false;
-    this->bIsInSpectatingCam = false;
-    this->R_Yaw = 0;
-    this->bCanSlide = true;
-    this->bCanUseUnarmedMelee = true;
-    this->m_IsPendingCarryable = false;
-    this->CachedLootBagCount = 0;
-    this->Camera = CreateDefaultSubobject<UIGS_PlayerCameraComponent>(TEXT("Camera"));
-    this->m_ArmsActor = NULL;
-    this->PostProcessManagerComponent = CreateDefaultSubobject<UIGS_PostProcessManagerComponent>(TEXT("PostProcessManagerComponent"));
-    this->PlayerEffectsComponent = CreateDefaultSubobject<UIGS_PlayerEffectsComponent>(TEXT("PlayerEffectsComponent"));
-    this->SuppressionHandlerComponent = CreateDefaultSubobject<UIGS_PlayerSuppressionHandlerComponent>(TEXT("SuppressionHandlerCapsuleComponent"));
-    this->PlayerIgnoreCollisionComponent = CreateDefaultSubobject<UIGS_PlayerIgnoreCollisionComponent>(TEXT("PlayerWithPlayerCollisionHandlerComponent"));
-    this->PlayerLoadoutComponent = CreateDefaultSubobject<UIGS_PlayerLoadoutComponent>(TEXT("PlayerLoadoutComponent"));
-    this->PlayerMetaTransferComponent = CreateDefaultSubobject<UIGS_PlayerMetaTransferComponent>(TEXT("PlayerMetaTransferComponent"));
-    this->CampThreatMeterComponent = CreateDefaultSubobject<UIGS_CampThreatMeterComponent>(TEXT("CampThreatMeterComponent"));
-    this->LootBagInteractiveComponent = CreateDefaultSubobject<UIGS_LootBagInteractiveComponent>(TEXT("LootBagInteractiveComponent"));
-    this->CarryableInteractiveComponent = CreateDefaultSubobject<UIGS_CarryableInteractiveComponent>(TEXT("CarryableInteractiveComponent"));
-    this->FallAkAudioEvent = NULL;
-    this->FallDeathAkAudioEvent = NULL;
-    this->ZiptieMountAkAudioEvent = NULL;
-    this->ZiptieDismountAkAudioEvent = NULL;
-    this->RappelMountAkAudioEvent = NULL;
-    this->RappelDismountAkAudioEvent = NULL;
-    this->RappelSlowDownAkAudioEvent = NULL;
-    this->NotOutOfBoundsAkState = NULL;
-    this->OutOfBoundsAkState = NULL;
-    this->PersonPrespectiveFPPAkSwitch = NULL;
-    this->PersonPrespectiveTPPAkSwitch = NULL;
-    this->Camera->SetupAttachment(RootComponent);
-    this->SuppressionHandlerComponent->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
-    this->LootBagInteractiveComponent->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
-    this->CarryableInteractiveComponent->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
-    this->ReviveComponent->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
-    this->SpringArmComponent->SetupAttachment(RootComponent);
+AIGS_PlayerCharacter::AIGS_PlayerCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UIGS_FootstepsPlayerComponent>(TEXT("FootstepEventBaseComponent")).SetDefaultSubobjectClass<UIGS_PlayerStatus>(TEXT("Object Status")).SetDefaultSubobjectClass<UIGS_PlayerDamageHandlerComponent>(TEXT("DamageHandlerComponent2")).SetDefaultSubobjectClass<UIGS_PlayerGASComponent>(TEXT("GASComponent")).SetDefaultSubobjectClass<UIGS_GASAttributeSetPlayer>(TEXT("GASAttributeSet")).SetDefaultSubobjectClass<UIGS_PlayerCharacterMovementComponent>(TEXT("CharMoveComp"))) {
+    (*this).UseComponent = CreateDefaultSubobject<UIGS_UseComponent>(TEXT("Use Component"));
+    (*this).PingComponent = CreateDefaultSubobject<UIGS_PlayerPingComponent>(TEXT("Ping Component"));
+    (*this).ReviveComponent = CreateDefaultSubobject<UIGS_ReviveComponent>(TEXT("Revive Component"));
+    (*this).PlayerSuspicionComponent = CreateDefaultSubobject<UIGS_PlayerSuspicionComponent>(TEXT("Player Suspicion Component"));
+    (*this).SpringArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComponent"));
+    (*this).PlayerCommandComponent = CreateDefaultSubobject<UIGS_PlayerCommandComponent>(TEXT("PlayerCommandComponent"));
+    (*this).PlayerWorldTracingComponent = CreateDefaultSubobject<UIGS_PlayerWorldTracingComponent>(TEXT("AimPoint Updater Component"));
+    (*this).UnarmedMeleeBasherComponent = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Unarmed Melee Basher Component"));
+    (*this).DefaultAimingChangePercent = 8.000000119e-01f;
+    (*this).VisibilityCrouchMultiplier = 5.000000000e-01f;
+    (*this).PlayerInventory = CreateDefaultSubobject<UIGS_ListInventory>(TEXT("Player Character List Inventory"));
+    (*this).DeathCamUnskippableTime = 1.000000000e+00f;
+    (*this).DeathCamMaximumTime = 1.500000000e+01f;
+    (*this).bCanSlide = true;
+    (*this).bCanUseUnarmedMelee = true;
+    (*this).Camera = CreateDefaultSubobject<UIGS_PlayerCameraComponent>(TEXT("Camera"));
+    (*this).PostProcessManagerComponent = CreateDefaultSubobject<UIGS_PostProcessManagerComponent>(TEXT("PostProcessManagerComponent"));
+    (*this).PlayerEffectsComponent = CreateDefaultSubobject<UIGS_PlayerEffectsComponent>(TEXT("PlayerEffectsComponent"));
+    (*this).SuppressionHandlerComponent = CreateDefaultSubobject<UIGS_PlayerSuppressionHandlerComponent>(TEXT("SuppressionHandlerCapsuleComponent"));
+    (*this).PlayerIgnoreCollisionComponent = CreateDefaultSubobject<UIGS_PlayerIgnoreCollisionComponent>(TEXT("PlayerWithPlayerCollisionHandlerComponent"));
+    (*this).PlayerLoadoutComponent = CreateDefaultSubobject<UIGS_PlayerLoadoutComponent>(TEXT("PlayerLoadoutComponent"));
+    (*this).PlayerMetaTransferComponent = CreateDefaultSubobject<UIGS_PlayerMetaTransferComponent>(TEXT("PlayerMetaTransferComponent"));
+    (*this).CampThreatMeterComponent = CreateDefaultSubobject<UIGS_CampThreatMeterComponent>(TEXT("CampThreatMeterComponent"));
+    (*this).LootBagInteractiveComponent = CreateDefaultSubobject<UIGS_LootBagInteractiveComponent>(TEXT("LootBagInteractiveComponent"));
+    (*this).CarryableInteractiveComponent = CreateDefaultSubobject<UIGS_CarryableInteractiveComponent>(TEXT("CarryableInteractiveComponent"));
+    (*this).bIsValidForAimAssist = false;
+    (*this).LootBagComponent = CreateDefaultSubobject<UIGS_LootBagComponent>(TEXT("LootBagComponent"));
+    (*this).bRegisterOnBeginPlay = false;
+    (*this).DownStateHandlerComponent = CreateDefaultSubobject<UIGS_DownStateHandlerComponent>(TEXT("DownStateHandlerComponent"));
+    (*this).SquadID = 238028913;
+    (*this).CrouchedEyeHeight = 4.800000000e+01f;
+    (*this).AutoPossessAI = EAutoPossessAI::Disabled;
+    (*this).AIControllerClass = nullptr;
+    (*this).Camera->SetupAttachment((*this).RootComponent);
+    (*this).SuppressionHandlerComponent->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
+    (*this).LootBagInteractiveComponent->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
+    (*this).CarryableInteractiveComponent->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
+    (*this).ReviveComponent->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
+    (*this).SpringArmComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_PlayerCharacter::Use(bool inIsHolding) {

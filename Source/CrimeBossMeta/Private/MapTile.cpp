@@ -2,30 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UMapTile::UMapTile() {
-    this->TurfWarObject = NULL;
-    this->isHighlighted = false;
-    this->isSelected = false;
-    this->isIconSelected = false;
-    this->isBossEliminationRewardsExist = false;
-    this->m_Gang = EMETA_Gang::None;
-    this->m_ConquestState = EMETA_Gang::None;
-    this->m_Type = EMETA_TileType::Empty;
-    this->m_DistrictType = EIGS_HubDistrict::Downtown;
-    this->m_BackdropType = EIGS_HubBackdropTypes::AllRandom;
-    this->m_GangSpawnArea = EMETA_GangSpawnArea::None;
-    this->m_MinAmountOfSoldiersForAttack = 0;
-    this->m_MinAmountOfSoldiersForDefence = 0;
-    this->m_CurrentStrength = 0;
-    this->m_WeaknessLowerTier = false;
-    this->m_CurrentWeakness = 0;
-    this->m_WeaknessExpireDays = 0;
-    this->m_CounterOfCapturesByPlayer = 0;
-    this->m_Wealth = EMETA_TileWealth::Poor;
-    this->m_IncomeMultiplier = 0.00f;
-    this->m_CountdownForAttackAfterLost = 0;
-    this->m_IncomeValue = 0;
-    this->m_OutIncomeValue = 0;
-    this->m_DisplayMode = EMETA_MapDisplayMode::Missions;
 }
 
 void UMapTile::ToggleTurfIconSelected(bool inSelected) {

@@ -1,9 +1,9 @@
 #include "IGS_Elevator.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_Elevator::AIGS_Elevator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ElevatorCable = NULL;
-    this->CurrentFloor = 0;
-    this->IsMoving = false;
+    (*this).PrimaryActorTick.bCanEverTick = true;
 }
 
 

@@ -1,9 +1,15 @@
 #include "IGS_BaseMenuWidget.h"
+#include "EScreenInputMode.h"
+#include "EScreenInputPass.h"
+#include "EScreenModifier.h"
+#include "EScreenZOrder.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_BaseMenuWidget::UIGS_BaseMenuWidget() {
-    this->IsForceHidden = false;
-    this->OpenScreenDelayAfterInitialization = 0.50f;
-    this->m_GameScreenHandler = NULL;
+    (*this).OpenScreenDelayAfterInitialization = 5.000000000e-01f;
 }
 
 void UIGS_BaseMenuWidget::SwitchToScreen(FGameplayTag inScreenTag) {

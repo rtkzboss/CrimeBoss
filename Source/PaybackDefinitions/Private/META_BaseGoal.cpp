@@ -2,8 +2,7 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_BaseGoal::UMETA_BaseGoal() {
-    this->Type = EMETA_GoalType::INVALID;
-    this->Priority = EMETA_GoalPriority::Medium;
+    (*this).Priority = EMETA_GoalPriority::Medium;
 }
 
 void UMETA_BaseGoal::SetVisitedNodeIDs(TSet<int32> inNodeIDs) {

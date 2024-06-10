@@ -10,6 +10,7 @@ public class UIParticleSystem : ModuleRules {
             "Core",
             "CoreUObject",
             "Engine",
+            "SlateCore",
             "UMG",
         });
     }

@@ -1,12 +1,10 @@
 #include "IGS_PlayerStateGame.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_PlayerStateGame::AIGS_PlayerStateGame(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->IsJustLevelLoaded = false;
-    this->IsLevelLoaded = false;
-    this->bIsReady = false;
-    this->HeisterNumber = -1;
-    this->m_OwningController = NULL;
+    (*this).HeisterNumber = -1;
 }
 
 bool AIGS_PlayerStateGame::ShouldUsePlayerStateLoadout() {

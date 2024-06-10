@@ -2,10 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_Equipment::UMETA_Equipment() {
-    this->IsUnseenInShop = false;
-    this->m_Price = 0;
-    this->m_AdditionalPercentageOfEquipmentPrice = 0;
-    this->m_Character = NULL;
 }
 
 void UMETA_Equipment::SetSaveData(FMETA_EquipmentSaveData inSaveData) {

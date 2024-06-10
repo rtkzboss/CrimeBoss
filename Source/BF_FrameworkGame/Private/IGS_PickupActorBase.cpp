@@ -1,21 +1,20 @@
 #include "IGS_PickupActorBase.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_TeamSideEnum.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_PickupActorBase::AIGS_PickupActorBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->RootComponent = NULL;
-    this->SceneRoot = NULL;
-    this->bShouldMove = false;
-    this->bRegistersToPickupsManager = true;
-    this->SquaredVelocityForInAirNeeded = 4000.00f;
-    this->IsPickableByAI = false;
-    this->PickupMeshComp = NULL;
-    this->DisableInteractionOnThrowTime = 0.50f;
-    this->mR_bWasThrown = false;
-    this->DefaultThrownAkEvent = NULL;
-    this->DefaultPickupAkEvent = NULL;
+    (*this).bRegistersToPickupsManager = true;
+    (*this).SquaredVelocityForInAirNeeded = 4.000000000e+03f;
+    (*this).DisableInteractionOnThrowTime = 5.000000000e-01f;
+    (*this).SceneRoot = nullptr;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).PrimaryActorTick.bStartWithTickEnabled = false;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).RootComponent = nullptr;
 }
 
 void AIGS_PickupActorBase::WakePhysics(bool inThrownPhysics) {

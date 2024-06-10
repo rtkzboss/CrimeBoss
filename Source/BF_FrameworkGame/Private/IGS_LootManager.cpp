@@ -1,25 +1,10 @@
 #include "IGS_LootManager.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_LootManager::UIGS_LootManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TotalValueSpawned = 0.00f;
-    this->TotalLootValueSpawned = 0.00f;
-    this->TotalMoneyValueSpawned = 0.00f;
-    this->TotalObjectiveValueSpawned = 0.00f;
-    this->NeededObjectiveWeight = 0.00f;
-    this->AllSpawnedLootWeight = 0.00f;
-    this->SecuredLootValue = 0.00f;
-    this->SecuredOldLootValue = 0.00f;
-    this->SecuredLootWeight = 0.00f;
-    this->SecuredBonusLootValue = 0.00f;
-    this->SecuredOldBonusLootValue = 0.00f;
-    this->BonusWeightFromRequiredLoot = 0.00f;
-    this->SecuredObjectiveLootWeight = 0.00f;
-    this->SecuredBonusLootWeight = 0.00f;
-    this->bDisableLootVoiceLines = false;
-    this->LootWeightMultiplier = 1.00f;
-    this->bHasShownError = false;
+    (*this).LootWeightMultiplier = 1.000000000e+00f;
 }
 
 float UIGS_LootManager::UpdateLootWeightMultiplier(UObject* inWCO) {

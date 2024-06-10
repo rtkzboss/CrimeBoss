@@ -1,7 +1,8 @@
 #include "IGS_NavigationSystem.h"
+#include "AI/Navigation/NavigationTypes.h"
+#include "AI/NavigationSystemBase.h"
 
 UIGS_NavigationSystem::UIGS_NavigationSystem() {
-    this->SupportedAgents.AddDefaulted(2);
 }
 
 void UIGS_NavigationSystem::UnPauseNavigationAutoUpdate(const UObject* WorldContextObject) {

@@ -1,7 +1,11 @@
 #include "IGS_BTTask_Subdue.h"
 
 UIGS_BTTask_Subdue::UIGS_BTTask_Subdue() {
-    this->NodeName = TEXT("Subdue");
+    auto& gen543 = (*this).CharToSubdueKey.AllowedTypes;
+    gen543.Empty();
+    gen543.AddDefaulted(1);
+    (*TBaseStructure<FBlackboardKeySelector>::Get()->FindPropertyByName("SelectedKeyID")->ContainerPtrToValuePtr<uint8>(&(*this).CharToSubdueKey, 0)) = 255;
+    (*this).NodeName = TEXT("Subdue");
 }
 
 

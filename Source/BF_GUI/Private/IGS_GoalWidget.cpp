@@ -1,14 +1,12 @@
 #include "IGS_GoalWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_GoalWidget::UIGS_GoalWidget() {
-    this->ObjectiveOverlay = NULL;
-    this->ActiveObjectiveWidget = NULL;
-    this->ActiveSimpleObjectiveWidget = NULL;
-    this->ActiveObjectiveID = -1;
-    this->ObjectiveWidgetClass = NULL;
-    this->SimpleObjectiveWidgetHolderClass = NULL;
-    this->SimpleObjectiveWidgetClass = NULL;
-    this->m_ObjectiveManager = NULL;
+    (*this).ActiveObjectiveID = -1;
 }
 
 void UIGS_GoalWidget::SpawnObjectiveWidget(int32 inID) {

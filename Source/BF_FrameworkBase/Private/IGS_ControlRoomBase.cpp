@@ -1,4 +1,6 @@
 #include "IGS_ControlRoomBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_ControlRoomBase::AIGS_ControlRoomBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

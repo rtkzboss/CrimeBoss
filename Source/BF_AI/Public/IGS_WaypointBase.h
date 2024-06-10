@@ -36,8 +36,8 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool FiltersByTeamSide;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    EIGS_TeamSideEnum ValidForEnemySide;
+    UPROPERTY()
+    EIGS_TeamSideEnum ValidForEnemySide_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ValidTeamSides;

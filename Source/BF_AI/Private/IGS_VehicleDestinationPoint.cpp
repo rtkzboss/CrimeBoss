@@ -1,15 +1,12 @@
 #include "IGS_VehicleDestinationPoint.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_VehicleDestinationPoint::AIGS_VehicleDestinationPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->bStartupOnly = false;
-    this->IsActive = true;
-    this->Hidden = false;
-    this->VehicleGroups = 0;
-    this->PossiblePath = NULL;
-    this->VehicleVisual = NULL;
+    (*this).IsActive = true;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 }
 
 void AIGS_VehicleDestinationPoint::TriggerSpecificPassengersCarArrival(EIGS_VehicleSpawnGroup vehicleGroup, FIGS_NoSpawnPointDefinition inCustomPassengers, AIGS_VehicleBase*& outSpawnedCar) {

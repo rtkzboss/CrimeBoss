@@ -2,7 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_WeaponDatabase::UIGS_WeaponDatabase() {
-    this->PerClassWeaponSettings = NULL;
 }
 
 FIGS_WeaponTableRow UIGS_WeaponDatabase::GetWeaponDataByTag(UObject* inWCO, FGameplayTag inTag, bool& outSucceeded) {

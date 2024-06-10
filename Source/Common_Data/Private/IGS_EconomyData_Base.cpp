@@ -2,31 +2,16 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_EconomyData_Base::UIGS_EconomyData_Base() {
-    this->ChanceRegenerateAllPerksIfTheyAreNegative = 0;
-    this->DefaultMoneyMakingScenariosProbabilities = 0;
-    this->StoryMissionRewardMultiplier = 1.50f;
-    this->FailNassaraExpenses = 0;
-    this->NassaraExpensesFor1stStar = 0;
-    this->NassaraExpensesFor2stStar = 0;
-    this->NassaraExpensesFor3stStar = 0;
-    this->WeaponCoefficientPriceForHeister = 1.00f;
-    this->EquipmentCoefficientPriceForHeister = 1.00f;
-    this->HeisterMarketAvailableInDays = 1;
-    this->HeisterMarketCooldownInDays = 0;
-    this->PriceMultiplierForFirstGeneration = 1.00f;
-    this->HeistersAmountOverrideInFirstGeneration = 0;
-    this->HeistersPoolRefreshCostMultiplier = 0.00f;
-    this->HeistersPoolRefreshStartPriceMultiplier = 1.00f;
-    this->WeaponMarketAvailableInDays = 1;
-    this->WeaponMarketCooldownInDays = 0;
-    this->WeaponsPoolRefreshStartPriceMultiplier = 1.00f;
-    this->WeaponsPoolRefreshCostMultiplier = 0.00f;
-    this->NumberOfHPSegmentsForAutomaticRecovery = 0.40f;
-    this->MultiplierForHealing = 1.00f;
-    this->HealCostMultiplierForUniqueCharacter = 0.00f;
-    this->CostModifierForInstantHealing = 0.00f;
-    this->DurationOfHealing = 0;
-    this->CommonData = NULL;
+    (*this).StoryMissionRewardMultiplier = 1.500000000e+00f;
+    (*this).WeaponCoefficientPriceForHeister = 1.000000000e+00f;
+    (*this).EquipmentCoefficientPriceForHeister = 1.000000000e+00f;
+    (*this).HeisterMarketAvailableInDays = 1;
+    (*this).PriceMultiplierForFirstGeneration = 1.000000000e+00f;
+    (*this).HeistersPoolRefreshStartPriceMultiplier = 1.000000000e+00f;
+    (*this).WeaponMarketAvailableInDays = 1;
+    (*this).WeaponsPoolRefreshStartPriceMultiplier = 1.000000000e+00f;
+    (*this).NumberOfHPSegmentsForAutomaticRecovery = 4.000000060e-01f;
+    (*this).MultiplierForHealing = 1.000000000e+00f;
 }
 
 void UIGS_EconomyData_Base::UpdateWeaponsCachedData(const UObject* inWCO) {

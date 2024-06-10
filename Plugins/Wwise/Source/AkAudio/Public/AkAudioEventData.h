@@ -24,8 +24,8 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float MaximumDuration;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<FString, UAkAssetDataSwitchContainer*> LocalizedMedia;
+    UPROPERTY()
+    TMap<FString, UAkAssetDataSwitchContainer*> LocalizedMedia_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<UAkAudioEvent*> PostedEvents;

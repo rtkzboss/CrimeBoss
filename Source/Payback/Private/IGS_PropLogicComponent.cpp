@@ -1,8 +1,7 @@
 #include "IGS_PropLogicComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_PropLogicComponent::UIGS_PropLogicComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_Parent = NULL;
-    this->m_IsGenerated = false;
 }
 
 TArray<UIGS_PropMeshSpawner*> UIGS_PropLogicComponent::GetPropMeshSpawners() const {

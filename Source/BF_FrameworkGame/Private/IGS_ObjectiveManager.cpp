@@ -1,13 +1,8 @@
 #include "IGS_ObjectiveManager.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_ObjectiveManager::UIGS_ObjectiveManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bShowCustomObjective = false;
-    this->bShowCustomObjectiveProgressBar = false;
-    this->CurrentCustomObjectiveValue = 0;
-    this->GoalCustomObjectiveValue = 0;
-    this->ObjectiveFinishedAkEvent = NULL;
-    this->ObjectiveAddedAkEvent = NULL;
 }
 
 void UIGS_ObjectiveManager::UnpauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask) {

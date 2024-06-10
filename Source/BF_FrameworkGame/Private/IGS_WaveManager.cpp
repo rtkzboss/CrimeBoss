@@ -1,33 +1,15 @@
 #include "IGS_WaveManager.h"
+#include "ComponentInstanceDataCache.h"
+#include "IGS_WaveManagerData.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_WaveManager::UIGS_WaveManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentPhase = EIGS_PressurePhase::PP_Unknown;
-    this->CurrentTactic = EIGS_StormTacticType::STT_None;
-    this->NextPhaseTime = 0.00f;
-    this->AssaultEndingSoonTime = 0.00f;
-    this->AssaultDurationAddon = 0.00f;
-    this->InitControlCheckTime = -1.00f;
-    this->NextWaveTime = 0.00f;
-    this->WaveDelay = 0.00f;
-    this->WaveTimeAddon = 0.00f;
-    this->WaveTimeCoefAddon = 0.00f;
-    this->LastTeamSideEnum = EIGS_TeamSideEnum::TS_Unknown;
-    this->IsAssaultEndingSoon = false;
-    this->CurrentWaveNumber = 0;
-    this->CurrentSquadNumber = 0;
-    this->SpawnedTotal = 0;
-    this->AliveTotal = 0;
-    this->DeadTotal = 0;
-    this->SpawnedInWave = 0;
-    this->AliveInWave = 0;
-    this->DeadInWave = 0;
-    this->HeistersTotal = 0;
-    this->DeadHeistersTotal = 0;
-    this->CarsTotal = 0;
-    this->CarsOverall = 0;
-    this->StormIntensity = 0;
-    this->IsGangsterOnly = false;
+    static ConstructorHelpers::FObjectFinder<UIGS_WaveManagerData> gen634(TEXT("/Game/00_Main/Core/GameModes/DA_WaveManagerData.DA_WaveManagerData"));
+    (*this).WaveManagerData = gen634.Object;
+    (*this).CurrentPhase = EIGS_PressurePhase::PP_Unknown;
+    (*this).InitControlCheckTime = -1.000000000e+00f;
+    (*this).LastTeamSideEnum = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_WaveManager::SetUpWaveManagerWavesDirections(int32 inWavesDirections) {

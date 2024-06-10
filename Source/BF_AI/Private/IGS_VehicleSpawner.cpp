@@ -1,14 +1,13 @@
 #include "IGS_VehicleSpawner.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Templates/SubclassOf.h"
 
 AIGS_VehicleSpawner::AIGS_VehicleSpawner(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->bStartupOnly = false;
-    this->VehicleGroups = 0;
-    this->Path = NULL;
-    this->MaxSpawnsCount = -1;
-    this->bEnabled = true;
+    (*this).MaxSpawnsCount = -1;
+    (*this).bEnabled = true;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 }
 
 AIGS_VehicleBase* AIGS_VehicleSpawner::SpawnVehicleOnPath(TSoftClassPtr<AIGS_VehicleBase> invehicleToSpawn, TArray<UIGS_TrafficPathComponent*> InPath) {

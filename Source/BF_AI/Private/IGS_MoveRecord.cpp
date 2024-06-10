@@ -1,7 +1,7 @@
 #include "IGS_MoveRecord.h"
 
 FIGS_MoveRecord::FIGS_MoveRecord() {
-    this->Squad = NULL;
-    this->NextAllowMoveTime = 0.00f;
+    (*this).Squad = nullptr;
+    (*this).NextAllowMoveTime = 0.000000000e+00f;
 }
 

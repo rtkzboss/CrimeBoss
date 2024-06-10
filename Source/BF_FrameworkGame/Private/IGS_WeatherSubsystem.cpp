@@ -1,7 +1,9 @@
 #include "IGS_WeatherSubsystem.h"
+#include "Materials/MaterialParameterCollection.h"
 
 UIGS_WeatherSubsystem::UIGS_WeatherSubsystem() {
-    this->WeatherMPCInstance = NULL;
+    static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> gen640(TEXT("/Game/00_Main/MaterialLibrary/Enviro/Weather/MPC_Weather.MPC_Weather"));
+    (*this).WeatherMPC = gen640.Object;
 }
 
 void UIGS_WeatherSubsystem::UpdateWeather() {

@@ -3,10 +3,9 @@
 #include "META_BaseNode_SG.h"
 
 UMETA_StoryGraph::UMETA_StoryGraph() {
-    this->Name = TEXT("Story Graph");
-    this->NodeType = UMETA_BaseNode_SG::StaticClass();
-    this->EdgeType = UMETA_BaseEdge_SG::StaticClass();
-    this->Type = EMETA_RandEventCategory::None;
+    (*this).Name = TEXT("Story Graph");
+    (*this).NodeType = UMETA_BaseNode_SG::StaticClass();
+    (*this).EdgeType = UMETA_BaseEdge_SG::StaticClass();
 }
 
 void UMETA_StoryGraph::ResetGraph_Implementation() {

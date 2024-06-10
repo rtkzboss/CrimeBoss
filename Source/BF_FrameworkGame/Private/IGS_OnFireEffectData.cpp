@@ -1,6 +1,8 @@
 #include "IGS_OnFireEffectData.h"
 
 FIGS_OnFireEffectData::FIGS_OnFireEffectData() {
-    this->EffectDuration = 0.00f;
+    auto& gen3083 = (*this).EffectPostProcesses;
+    gen3083.Empty();
+    (*this).EffectDuration = 1.000000000e+00f;
 }
 

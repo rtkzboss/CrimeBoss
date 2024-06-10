@@ -1,9 +1,9 @@
 #include "IGS_ListInventory.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_ListInventory::UIGS_ListInventory(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsReady = false;
-    this->MaxBagCount = 2;
+    (*this).MaxBagCount = 2;
 }
 
 float UIGS_ListInventory::GetPocketLootWeight() {

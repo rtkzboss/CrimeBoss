@@ -1,8 +1,8 @@
 #include "KantanBarChartStyle.h"
 
 FKantanBarChartStyle::FKantanBarChartStyle() {
-    this->BarOpacity = 0.00f;
-    this->BarOutlineOpacity = 0.00f;
-    this->BarOutlineThickness = 0.00f;
+    (*this).BarOpacity = 1.000000000e+00f;
+    (*this).BarOutlineOpacity = 1.000000000e+00f;
+    (*this).BarOutlineThickness = 1.000000000e+00f;
 }
 

@@ -1,11 +1,11 @@
 #include "META_BaseGameMode.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "META_PlanningBoardManagerComponent.h"
 
 AMETA_BaseGameMode::AMETA_BaseGameMode(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MenuState = EMETA_MenuState::MS_StartUp;
-    this->MainWidget = NULL;
-    this->bGamemodeComponentsInitialized = false;
-    this->PlanningBoardManagerComponent = CreateDefaultSubobject<UMETA_PlanningBoardManagerComponent>(TEXT("PlanningBoardComponent"));
+    (*this).MenuState = EMETA_MenuState::MS_StartUp;
+    (*this).PlanningBoardManagerComponent = CreateDefaultSubobject<UMETA_PlanningBoardManagerComponent>(TEXT("PlanningBoardComponent"));
 }
 
 bool AMETA_BaseGameMode::ShouldLoadMetaDebugSave() {

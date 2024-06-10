@@ -2,7 +2,7 @@
 #include "EIGS_ItemType.h"
 
 UIGS_AmmoInventoryObject::UIGS_AmmoInventoryObject() {
-    this->ItemType = EIGS_ItemType::Item_Ammo;
+    (*this).ItemType = EIGS_ItemType::Item_Ammo;
 }
 
 int32 UIGS_AmmoInventoryObject::TakeAmmoForWeapon(int32 inCount, UIGS_WeaponInventoryObject* inWeapon) {

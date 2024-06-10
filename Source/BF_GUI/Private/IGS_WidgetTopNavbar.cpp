@@ -1,7 +1,10 @@
 #include "IGS_WidgetTopNavbar.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetTopNavbar::UIGS_WidgetTopNavbar() {
-    this->TabsOnly = NULL;
 }
 
 void UIGS_WidgetTopNavbar::SelectTab(const UIGS_TabButton* inTab) {

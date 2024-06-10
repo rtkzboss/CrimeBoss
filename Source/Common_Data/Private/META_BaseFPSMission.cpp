@@ -1,8 +1,10 @@
 #include "META_BaseFPSMission.h"
+#include "EIGS_UserDifficulty.h"
+#include "EMETA_JobResult.h"
+#include "EMETA_LobbyVisibilityType.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_BaseFPSMission::UMETA_BaseFPSMission() {
-    this->m_StealthCompletionFlag = false;
 }
 
 void UMETA_BaseFPSMission::SetWantedBadges(int32 inWantedBadges) {

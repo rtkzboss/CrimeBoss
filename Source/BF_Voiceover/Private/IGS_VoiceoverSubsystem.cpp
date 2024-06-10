@@ -1,7 +1,6 @@
 #include "IGS_VoiceoverSubsystem.h"
 
 UIGS_VoiceoverSubsystem::UIGS_VoiceoverSubsystem() {
-    this->Data = NULL;
 }
 
 void UIGS_VoiceoverSubsystem::SetSecondPlanner(FIGS_DialogueGroupCharacterHolder inCharacterHolder) {

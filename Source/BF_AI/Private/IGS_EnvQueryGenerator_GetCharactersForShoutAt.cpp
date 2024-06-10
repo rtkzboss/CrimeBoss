@@ -2,9 +2,9 @@
 #include "EnvironmentQuery/Items/EnvQueryItemType_Actor.h"
 
 UIGS_EnvQueryGenerator_GetCharactersForShoutAt::UIGS_EnvQueryGenerator_GetCharactersForShoutAt() {
-    this->ItemType = UEnvQueryItemType_Actor::StaticClass();
-    this->DistanceCalm = 400.00f;
-    this->DistanceDetecting = 1200.00f;
+    (*this).DistanceCalm = 4.000000000e+02f;
+    (*this).DistanceDetecting = 1.200000000e+03f;
+    (*this).ItemType = UEnvQueryItemType_Actor::StaticClass();
 }
 
 

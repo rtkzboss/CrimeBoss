@@ -2,7 +2,7 @@
 #include "EHoudiniParameterType.h"
 
 UHoudiniParameterToggle::UHoudiniParameterToggle() {
-    this->ParmType = EHoudiniParameterType::Toggle;
+    (*this).ParmType = EHoudiniParameterType::Toggle;
 }
 
 

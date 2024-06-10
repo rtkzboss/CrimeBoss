@@ -1,8 +1,11 @@
 #include "IGS_InteractiveWireBox.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_InteractiveWireBox::AIGS_InteractiveWireBox(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LightsTimeline = NULL;
+    (*this).StatusFailColor.R = 255;
+    (*this).StatusFailColor.A = 255;
 }
 
 void AIGS_InteractiveWireBox::SetWireLightState(int32 inWireIndex, bool inState) {

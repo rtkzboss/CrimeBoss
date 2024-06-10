@@ -10,8 +10,8 @@ UCLASS(Blueprintable)
 class AKAUDIO_API AAkAmbientSound : public AActor {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UAkAudioEvent* AkAudioEvent;
+    UPROPERTY()
+    UAkAudioEvent* AkAudioEvent_DEPRECATED;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UAkComponent* AkComponent;

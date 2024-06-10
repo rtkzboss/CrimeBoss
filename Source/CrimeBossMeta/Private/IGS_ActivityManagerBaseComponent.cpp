@@ -1,4 +1,5 @@
 #include "IGS_ActivityManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ActivityManagerBaseComponent::UIGS_ActivityManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

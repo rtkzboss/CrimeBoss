@@ -1,8 +1,8 @@
 #include "IGS_DsWeaponTrigger.h"
 
 FIGS_DsWeaponTrigger::FIGS_DsWeaponTrigger() {
-    this->StartPosition = 0;
-    this->EndPosition = 0;
-    this->Strength = 0;
+    (*this).StartPosition = 2;
+    (*this).EndPosition = 7;
+    (*this).Strength = 0;
 }
 

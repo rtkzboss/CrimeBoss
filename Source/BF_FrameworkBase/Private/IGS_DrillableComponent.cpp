@@ -1,13 +1,12 @@
 #include "IGS_DrillableComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_DrillableComponent::UIGS_DrillableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentHealth = 100.00f;
-    this->RelativeHealth = 1.00f;
-    this->bDrilled = false;
-    this->CurrentInstigator = NULL;
-    this->MaxHealth = 100.00f;
-    this->FailThreshold = 0.20f;
+    (*this).CurrentHealth = 1.000000000e+02f;
+    (*this).RelativeHealth = 1.000000000e+00f;
+    (*this).MaxHealth = 1.000000000e+02f;
+    (*this).FailThreshold = 2.000000030e-01f;
 }
 
 void UIGS_DrillableComponent::SetDrilledState_Implementation(bool inDrilled) {

@@ -1,10 +1,8 @@
 #include "ConstructionSystemBuildTool.h"
 
 UConstructionSystemBuildTool::UConstructionSystemBuildTool() {
-    this->TraceDistance = 4000.00f;
-    this->CursorRotationStepAngle = 15.00f;
-    this->Cursor = NULL;
-    this->ActivePrefabAsset = NULL;
+    (*this).TraceDistance = 4.000000000e+03f;
+    (*this).CursorRotationStepAngle = 1.500000000e+01f;
 }
 
 void UConstructionSystemBuildTool::SetActivePrefab(UPrefabricatorAssetInterface* InActivePrefabAsset) {

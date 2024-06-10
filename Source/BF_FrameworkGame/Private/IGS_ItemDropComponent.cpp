@@ -1,15 +1,8 @@
 #include "IGS_ItemDropComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_ItemDropComponent::UIGS_ItemDropComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WalkieTalkieClass = NULL;
-    this->PickupActorTemplate = NULL;
-    this->SpawnWalkieTalkie = false;
-    this->bDropUponZipAndDeath = false;
-    this->PickupClasses = NULL;
-    this->GenerateAmmoBox = false;
-    this->CharacterOwner = NULL;
-    this->CharacterWieldablesHolderComponent = NULL;
 }
 
 void UIGS_ItemDropComponent::DropItem(TSubclassOf<UIGS_InventoryObjectFramework> inClass) const {

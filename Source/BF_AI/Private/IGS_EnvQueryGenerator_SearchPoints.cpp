@@ -2,9 +2,10 @@
 #include "EnvironmentQuery/Items/EnvQueryItemType_Actor.h"
 
 UIGS_EnvQueryGenerator_SearchPoints::UIGS_EnvQueryGenerator_SearchPoints() {
-    this->ItemType = UEnvQueryItemType_Actor::StaticClass();
-    this->Querier = NULL;
-    this->SearchPoints = NULL;
+    (*this).FilterLocked.DefaultValue = true;
+    (*this).FilterVisited.DefaultValue = true;
+    (*this).FilterVisitedTime.DefaultValue = 3.000000000e+01f;
+    (*this).ItemType = UEnvQueryItemType_Actor::StaticClass();
 }
 
 

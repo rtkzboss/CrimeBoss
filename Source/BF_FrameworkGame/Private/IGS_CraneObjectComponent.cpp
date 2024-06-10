@@ -1,9 +1,8 @@
 #include "IGS_CraneObjectComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_CraneObjectComponent::UIGS_CraneObjectComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MagnetPinPoint = NULL;
-    this->PlacePinPoint = NULL;
-    this->SweepComponent = NULL;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_CraneObjectComponent::SetOutlineState(EIGS_CameraOutlineState inState) {

@@ -1,42 +1,42 @@
 #include "IGS_GlassRegular.h"
 #include "IGS_BoxOverlappableComponent.h"
+#include "PhysicsEngine/BodyInstance.h"
 #include "Components/BoxComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
+#include "Components/SkinnedMeshComponent.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_GlassRegular::UIGS_GlassRegular(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bAutoActivate = false;
-    this->CastShadow = false;
-    this->bEnableUpdateRateOptimizations = true;
-    this->PhysicsTransformUpdateMode = EPhysicsTransformUpdateMode::ComponentTransformIsKinematic;
-    this->bUpdateOverlapsOnAnimationFinalize = false;
-    this->bNoSkeletonUpdate = true;
-    this->GlassPanelPreset = EIGS_GlassRegularPreset::Panel_200X135;
-    this->ScaleUniform = 1.00f;
-    this->ScaleY = 1.00f;
-    this->ScaleZ = 1.00f;
-    this->GlassShape = Rectangular;
-    this->MaterialOverride = NULL;
-    this->bCanGlassEverAffectNavigation = false;
-    this->BaseMesh = NULL;
-    this->RadialDamageImposter = NULL;
-    this->AkEventOnImpact = NULL;
-    this->VelocityDamageThreshold = 1500.00f;
-    this->MaxAngularImpulse = 10.00f;
-    this->TimeToDestroyGlassShards = 2.00f;
-    this->BreakNormalIntensity = 1.00f;
-    this->CellsNormalIntensity = 0.00f;
-    this->BreakOpacity = 0.50f;
-    this->BreakIntensity = 0.10f;
-    this->BulletBreakRadius = 10.00f;
-    this->BulletBreakHeight = 10.00f;
-    this->m_RamTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("RamTrigger"));
-    this->m_ChosenMeshIndex = 0;
-    this->m_PresetScale = 1.00f;
-    this->m_bFirstBreakLocal = false;
-    this->m_DummyCollision = CreateDefaultSubobject<UIGS_BoxOverlappableComponent>(TEXT("DummyCollision"));
-    this->m_RadialImposterRef = NULL;
-    this->m_OriginalAttachParent = NULL;
-    this->m_TimesBroken = 0;
+    (*this).GlassPanelPreset = EIGS_GlassRegularPreset::Panel_200X135;
+    (*this).ScaleUniform = 1.000000000e+00f;
+    (*this).ScaleY = 1.000000000e+00f;
+    (*this).ScaleZ = 1.000000000e+00f;
+    (*this).VelocityDamageThreshold = 1.500000000e+03f;
+    (*this).MaxAngularImpulse = 1.000000000e+01f;
+    (*this).TimeToDestroyGlassShards = 2.000000000e+00f;
+    (*this).BreakNormalIntensity = 1.000000000e+00f;
+    (*this).BreakOpacity = 5.000000000e-01f;
+    (*this).BreakIntensity = 1.000000015e-01f;
+    (*this).BulletBreakRadius = 1.000000000e+01f;
+    (*this).BulletBreakHeight = 1.000000000e+01f;
+    (*this).m_RamTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("RamTrigger"));
+    (*this).m_PresetScale = 1.000000000e+00f;
+    (*this).m_DummyCollision = CreateDefaultSubobject<UIGS_BoxOverlappableComponent>(TEXT("DummyCollision"));
+    (*this).PhysicsTransformUpdateMode = EPhysicsTransformUpdateMode::ComponentTransformIsKinematic;
+    (*this).bUpdateOverlapsOnAnimationFinalize = false;
+    (*this).bNoSkeletonUpdate = true;
+    (*this).bEnableUpdateRateOptimizations = true;
+    (*this).CastShadow = false;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("ObjectType")->ContainerPtrToValuePtr<TEnumAsByte<ECollisionChannel>>(&(*this).BodyInstance, 0)) = ECC_PhysicsBody;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionEnabled")->ContainerPtrToValuePtr<TEnumAsByte<ECollisionEnabled::Type>>(&(*this).BodyInstance, 0)) = ECollisionEnabled::QueryAndPhysics;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionProfileName")->ContainerPtrToValuePtr<FName>(&(*this).BodyInstance, 0)) = TEXT("BreakableGlassPhysicsOnly");
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
+    (*this).PrimaryComponentTick.TickInterval = 1.999999955e-02f;
+    (*this).bAutoActivate = false;
 }
 
 bool UIGS_GlassRegular::ShouldCreateImpact() const {

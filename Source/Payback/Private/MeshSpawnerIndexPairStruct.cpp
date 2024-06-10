@@ -1,7 +1,7 @@
 #include "MeshSpawnerIndexPairStruct.h"
 
 FMeshSpawnerIndexPairStruct::FMeshSpawnerIndexPairStruct() {
-    this->PropMeshSpawner = NULL;
-    this->Index = 0;
+    (*this).PropMeshSpawner = nullptr;
+    (*this).Index = 0;
 }
 

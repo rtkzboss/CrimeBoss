@@ -1,4 +1,7 @@
 #include "IGS_AIControllerGame.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_TeamSideEnum.h"
 #include "IGS_AIInitialSpawnDataComponent.h"
 #include "IGS_AreaOfOperationsComponent.h"
 #include "IGS_BehaviorTreeGameComponent.h"
@@ -7,22 +10,12 @@
 #include "IGS_NavLinkHandlerComponent.h"
 
 AIGS_AIControllerGame::AIGS_AIControllerGame(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<UIGS_ComplexPathFollowingComponent>(TEXT("PathFollowingComponent"))) {
-    this->bAvoidanceEnabled = false;
-    this->MinCornerOffset = 0.00f;
-    this->MaxCornerOffset = 60.00f;
-    this->DefaultBehaviourTree = NULL;
-    this->ShootBehaviourTree = NULL;
-    this->EscapeQueryTemplate = NULL;
-    this->AISuspiciousnessComponentOptional = NULL;
-    this->AIDetectionComponentOptional = NULL;
-    this->BlackboardGameComponent = CreateDefaultSubobject<UIGS_BlackboardGameComponent>(TEXT("BlackboardGameComponent"));
-    this->BehaviorTreeGameComponent = CreateDefaultSubobject<UIGS_BehaviorTreeGameComponent>(TEXT("BehaviorTreeGameComponent"));
-    this->AreaOfOperationsComponent = CreateDefaultSubobject<UIGS_AreaOfOperationsComponent>(TEXT("AreaOf Operations Component"));
-    this->NavLinkHandlerComponent = CreateDefaultSubobject<UIGS_NavLinkHandlerComponent>(TEXT("NavLink Handler Component"));
-    this->InitialSpawnDataComponent = CreateDefaultSubobject<UIGS_AIInitialSpawnDataComponent>(TEXT("Initial Spawn Data Component"));
-    this->m_AICommand = NULL;
-    this->m_SOCommand = NULL;
-    this->m_NavHelperGoal = NULL;
+    (*this).MaxCornerOffset = 6.000000000e+01f;
+    (*this).BlackboardGameComponent = CreateDefaultSubobject<UIGS_BlackboardGameComponent>(TEXT("BlackboardGameComponent"));
+    (*this).BehaviorTreeGameComponent = CreateDefaultSubobject<UIGS_BehaviorTreeGameComponent>(TEXT("BehaviorTreeGameComponent"));
+    (*this).AreaOfOperationsComponent = CreateDefaultSubobject<UIGS_AreaOfOperationsComponent>(TEXT("AreaOf Operations Component"));
+    (*this).NavLinkHandlerComponent = CreateDefaultSubobject<UIGS_NavLinkHandlerComponent>(TEXT("NavLink Handler Component"));
+    (*this).InitialSpawnDataComponent = CreateDefaultSubobject<UIGS_AIInitialSpawnDataComponent>(TEXT("Initial Spawn Data Component"));
 }
 
 void AIGS_AIControllerGame::SetScriptingPostponed(bool InValue) {

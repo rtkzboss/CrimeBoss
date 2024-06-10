@@ -1,7 +1,6 @@
 #include "CustomizableObjectPopulation.h"
 
 UCustomizableObjectPopulation::UCustomizableObjectPopulation() {
-    this->Generator = NULL;
 }
 
 void UCustomizableObjectPopulation::RegeneratePopulation(int32 Seed, TArray<UCustomizableObjectInstance*>& OutInstances, int32 NumInstancesToGenerate) const {

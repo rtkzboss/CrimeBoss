@@ -1,10 +1,14 @@
 #include "IGS_SquadHeisters.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_TeamSideEnum.h"
 #include "IGS_SquadHeistersEventWatchComponent.h"
 
 AIGS_SquadHeisters::AIGS_SquadHeisters(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LastAreaOfOperationsRoom = NULL;
-    this->NextSpreadUpdateTime = 0.00f;
-    this->SquadHeistersEventWatchComponent = CreateDefaultSubobject<UIGS_SquadHeistersEventWatchComponent>(TEXT("SquadHeistersEventWatchComponent"));
+    (*this).SquadHeistersEventWatchComponent = CreateDefaultSubobject<UIGS_SquadHeistersEventWatchComponent>(TEXT("SquadHeistersEventWatchComponent"));
+    (*this).DebugColor.B = 0;
+    (*this).DebugColor.R = 157;
+    (*this).PrimaryActorTick.bCanEverTick = true;
 }
 
 

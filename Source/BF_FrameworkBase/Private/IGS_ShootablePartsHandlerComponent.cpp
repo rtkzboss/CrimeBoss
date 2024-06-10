@@ -1,10 +1,10 @@
 #include "IGS_ShootablePartsHandlerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_ShootablePartsHandlerComponent::UIGS_ShootablePartsHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PartPhysMatOverride = NULL;
-    this->ShootOffVelocity = 1500.00f;
-    this->SpawnDistance = 50.00f;
+    (*this).ShootOffVelocity = 1.500000000e+03f;
+    (*this).SpawnDistance = 5.000000000e+01f;
 }
 
 void UIGS_ShootablePartsHandlerComponent::OnRep_VisibleComponents() {

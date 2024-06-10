@@ -1,8 +1,8 @@
 #include "META_CrewManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_CrewManagerComponent::UMETA_CrewManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RemainAmountOfCompletedMissionsBeforeUnlock = 0;
 }
 
 void UMETA_CrewManagerComponent::SetCharacterPlotlineCompleted(FGameplayTag inCharacter) {

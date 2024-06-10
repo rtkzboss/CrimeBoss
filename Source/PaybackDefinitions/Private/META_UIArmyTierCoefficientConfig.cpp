@@ -1,7 +1,7 @@
 #include "META_UIArmyTierCoefficientConfig.h"
 
 FMETA_UIArmyTierCoefficientConfig::FMETA_UIArmyTierCoefficientConfig() {
-    this->ArmyTiercoefficientBigger = 0;
-    this->ArmyTiercoefficientLower = 0;
+    (*this).ArmyTiercoefficientBigger = 25;
+    (*this).ArmyTiercoefficientLower = 20;
 }
 

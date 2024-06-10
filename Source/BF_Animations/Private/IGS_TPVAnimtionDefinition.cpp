@@ -1,12 +1,12 @@
 #include "IGS_TPVAnimtionDefinition.h"
 
 FIGS_TPVAnimtionDefinition::FIGS_TPVAnimtionDefinition() {
-    this->AttackType = EIGS_WeaponAttackType::AT_SemiAuto;
-    this->WeaponFireStandFront = NULL;
-    this->WeaponFireStandFrontInjured = NULL;
-    this->WeaponFire_WeaponActor = NULL;
-    this->IsMontageLooping = false;
-    this->ShooterChangeMontage = NULL;
-    this->AttackPlayRate = 0.00f;
+    (*this).AttackType = EIGS_WeaponAttackType::AT_UNKNOWN;
+    (*this).WeaponFireStandFront = nullptr;
+    (*this).WeaponFireStandFrontInjured = nullptr;
+    (*this).WeaponFire_WeaponActor = nullptr;
+    (*this).IsMontageLooping = false;
+    (*this).ShooterChangeMontage = nullptr;
+    (*this).AttackPlayRate = 1.000000000e+00f;
 }
 

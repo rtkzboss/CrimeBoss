@@ -1,4 +1,5 @@
 #include "IGS_Quickplay_BlackMarketManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_Quickplay_BlackMarketManagerComponent::UIGS_Quickplay_BlackMarketManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

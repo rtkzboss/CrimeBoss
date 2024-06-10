@@ -1,43 +1,20 @@
 #include "HoudiniInput.h"
 
 UHoudiniInput::UHoudiniInput() {
-    this->Type = EHoudiniInputType::Invalid;
-    this->PreviousType = EHoudiniInputType::Invalid;
-    this->AssetNodeId = -1;
-    this->InputNodeId = -1;
-    this->InputIndex = 0;
-    this->ParmId = -1;
-    this->bIsObjectPathParameter = false;
-    this->bHasChanged = false;
-    this->bNeedsToTriggerUpdate = false;
-    this->KeepWorldTransform = EHoudiniXformType::Auto;
-    this->bPackBeforeMerge = false;
-    this->bImportAsReference = false;
-    this->bImportAsReferenceRotScaleEnabled = false;
-    this->bExportLODs = false;
-    this->bExportSockets = false;
-    this->bExportColliders = false;
-    this->bCookOnCurveChanged = true;
-    this->GeometryInputObjects.AddDefaulted(1);
-    this->bStaticMeshChanged = false;
-    this->bInputAssetConnectedInHoudini = false;
-    this->DefaultCurveOffset = 0.00f;
-    this->bAddRotAndScaleAttributesOnCurves = false;
-    this->bUseLegacyInputCurves = true;
-    this->bLandscapeHasExportTypeChanged = false;
-    this->bIsWorldInputBoundSelector = false;
-    this->bWorldInputBoundSelectorAutoUpdate = false;
-    this->UnrealSplineResolution = 50.00f;
-    this->GeometryCollectionInputObjects.AddDefaulted(1);
-    this->bUpdateInputLandscape = false;
-    this->LandscapeExportType = EHoudiniLandscapeExportType::Heightfield;
-    this->bLandscapeExportSelectionOnly = false;
-    this->bLandscapeAutoSelectComponent = false;
-    this->bLandscapeExportMaterials = false;
-    this->bLandscapeExportLighting = false;
-    this->bLandscapeExportNormalizedUVs = false;
-    this->bLandscapeExportTileUVs = false;
-    this->bCanDeleteHoudiniNodes = true;
+    (*this).AssetNodeId = -1;
+    (*this).InputNodeId = -1;
+    (*this).ParmId = -1;
+    (*this).KeepWorldTransform = EHoudiniXformType::Auto;
+    (*this).bCookOnCurveChanged = true;
+    auto& gen197 = (*this).GeometryInputObjects;
+    gen197.Empty();
+    gen197.AddDefaulted(1);
+    (*this).bUseLegacyInputCurves = true;
+    (*this).UnrealSplineResolution = 5.000000000e+01f;
+    auto& gen198 = (*this).GeometryCollectionInputObjects;
+    gen198.Empty();
+    gen198.AddDefaulted(1);
+    (*this).bCanDeleteHoudiniNodes = true;
 }
 
 

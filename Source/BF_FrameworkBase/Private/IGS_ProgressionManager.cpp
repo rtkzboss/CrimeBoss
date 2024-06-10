@@ -1,14 +1,6 @@
 #include "IGS_ProgressionManager.h"
 
 UIGS_ProgressionManager::UIGS_ProgressionManager() {
-    this->CurrentLevel = 0;
-    this->CurrentPoints = 0.00f;
-    this->ProgressToNextLevel = 0.00f;
-    this->PreviousPoints = 0.00f;
-    this->PreviousLevel = 0;
-    this->PendingLevelUps = 0;
-    this->ProgressionManagerData = NULL;
-    this->m_ProgressionCurveTable = NULL;
 }
 
 FIGS_ProgressionResult UIGS_ProgressionManager::SetPoints(float inPoints, bool inSaveProgression, bool inNotify) {

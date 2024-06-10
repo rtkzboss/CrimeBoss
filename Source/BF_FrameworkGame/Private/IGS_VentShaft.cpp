@@ -1,25 +1,24 @@
 #include "IGS_VentShaft.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "IGS_VentShaftInteractiveComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_VentShaft::AIGS_VentShaft(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-    this->VentShaftEnterInteractiveComponent = CreateDefaultSubobject<UIGS_VentShaftInteractiveComponent>(TEXT("VentShaftEnterInteractiveComponent"));
-    this->VentShaftExitInteractiveComponent = CreateDefaultSubobject<UIGS_VentShaftInteractiveComponent>(TEXT("VentShaftExitInteractiveComponent"));
-    this->BoxBlocker = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxBlocker"));
-    this->BoxTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxTrigger"));
-    this->ChildActorComponent = NULL;
-    this->IsOpened = false;
-    this->VentShaftEnterInteractiveComponent->SetupAttachment(RootComponent);
-    this->VentShaftExitInteractiveComponent->SetupAttachment(RootComponent);
-    this->BoxBlocker->SetupAttachment(RootComponent);
-    this->BoxTrigger->SetupAttachment(RootComponent);
+    (*this).VentShaftEnterInteractiveComponent = CreateDefaultSubobject<UIGS_VentShaftInteractiveComponent>(TEXT("VentShaftEnterInteractiveComponent"));
+    (*this).VentShaftExitInteractiveComponent = CreateDefaultSubobject<UIGS_VentShaftInteractiveComponent>(TEXT("VentShaftExitInteractiveComponent"));
+    (*this).BoxBlocker = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxBlocker"));
+    (*this).BoxTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxTrigger"));
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).NetDormancy = DORM_Initial;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    (*this).VentShaftEnterInteractiveComponent->SetupAttachment((*this).RootComponent);
+    (*this).VentShaftExitInteractiveComponent->SetupAttachment((*this).RootComponent);
+    (*this).BoxBlocker->SetupAttachment((*this).RootComponent);
+    (*this).BoxTrigger->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_VentShaft::OnTriggerEndOverlap(UPrimitiveComponent* inOverlappedComponent, AActor* inOtherActor, UPrimitiveComponent* inOtherComp, int32 inOtherBodyIndex) {

@@ -13,6 +13,7 @@ public class BF_Debug : ModuleRules {
             "Engine",
             "PaybackDefinitions",
             "PhysicsCore",
+            "SlateCore",
             "UMG",
         });
     }

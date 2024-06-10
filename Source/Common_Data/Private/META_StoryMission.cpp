@@ -1,4 +1,7 @@
 #include "META_StoryMission.h"
+#include "EIGS_UserDifficulty.h"
+#include "EMETA_JobResult.h"
+#include "EMETA_LobbyVisibilityType.h"
 
 UMETA_StoryMission::UMETA_StoryMission() {
 }

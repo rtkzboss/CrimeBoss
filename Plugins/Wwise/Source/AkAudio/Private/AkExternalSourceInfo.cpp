@@ -1,8 +1,10 @@
 #include "AkExternalSourceInfo.h"
 
 FAkExternalSourceInfo::FAkExternalSourceInfo() {
-    this->CodecID = AkCodecId::None;
-    this->ExternalSourceAsset = NULL;
-    this->IsStreamed = false;
+    (*this).ExternalSrcName = TEXT("");
+    (*this).CodecID = AkCodecId::None;
+    (*this).Filename = TEXT("");
+    (*this).ExternalSourceAsset = nullptr;
+    (*this).IsStreamed = true;
 }
 

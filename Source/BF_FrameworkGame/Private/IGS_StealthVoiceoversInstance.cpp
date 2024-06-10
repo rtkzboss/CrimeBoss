@@ -1,7 +1,6 @@
 #include "IGS_StealthVoiceoversInstance.h"
 
 UIGS_StealthVoiceoversInstance::UIGS_StealthVoiceoversInstance() {
-    this->StealthVoiceovers = NULL;
 }
 
 float UIGS_StealthVoiceoversInstance::GetReactionVoiceoversDistanceMaxToPlayer() const {

@@ -1,32 +1,6 @@
 #include "META_ScoreData.h"
 
 UMETA_ScoreData::UMETA_ScoreData() {
-    this->MaxScoreWon = 0;
-    this->MinScoreWon = 0;
-    this->ScoreDecreasePerDayElapsedWon = 0;
-    this->MinDaysWon = 0;
-    this->MaxScoreLost = 0;
-    this->MinScoreLost = 0;
-    this->ScoreDecreasePerDayElapsedLost = 0;
-    this->MinDaysLost = 0;
-    this->ScorePer1PercentControlledTerritory = 0;
-    this->ScorePerEnemyLeader = 0;
-    this->ScorePerFinishedHeist = 0;
-    this->ScorePerVeteranPromotion = 0;
-    this->ScorePerElitePromotion = 0;
-    this->ScorePerDeadHeister = 0;
-    this->ScorePerMissingHeister = 0;
-    this->ScorePerDesertersHeister = 0;
-    this->ScorePerDayBankruptcy = 0;
-    this->ScorePerGoal = 0;
-    this->ScorePerCivilian = 0;
-    this->MaxScore = 0;
-    this->ScorePer1000ValueInCashOrLoot = 0;
-    this->ScoreFor0Stars = 0;
-    this->ScoreFor1Stars = 0;
-    this->ScoreFor2Stars = 0;
-    this->ScoreFor3Stars = 0;
-    this->MaxStarScoreLimit = 0;
 }
 
 int32 UMETA_ScoreData::GetScorePerVeteranPromotion() const {

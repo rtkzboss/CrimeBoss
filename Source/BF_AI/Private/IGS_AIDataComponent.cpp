@@ -1,19 +1,14 @@
 #include "IGS_AIDataComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_AIDataComponent::UIGS_AIDataComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->LastEnemyHitTime = -340282346638528859811704183484516925440.00f;
-    this->LastShootTime = -340282346638528859811704183484516925440.00f;
-    this->LastInjuredTime = -340282346638528859811704183484516925440.00f;
-    this->ForcedWeaponType = EIGS_SwitchWeaponTask_WeaponType::WT_Unknown;
-    this->GeneralReactionsEnabled = true;
-    this->HadSpreadIncreased = false;
-    this->LastMoveTime = -1.00f;
-    this->CanEscape = true;
-    this->CanUseMonsterCloset = false;
-    this->LastWaypoint = NULL;
-    this->CurrentWaypoint = NULL;
-    this->WaypointSpeed = EIGS_Speed::MS_Walk;
-    this->WayPointCrouch = false;
+    (*this).LastEnemyHitTime = -3.402823466e+38f;
+    (*this).LastShootTime = -3.402823466e+38f;
+    (*this).LastInjuredTime = -3.402823466e+38f;
+    (*this).ForcedWeaponType = EIGS_SwitchWeaponTask_WeaponType::WT_Unknown;
+    (*this).GeneralReactionsEnabled = true;
+    (*this).LastMoveTime = -1.000000000e+00f;
+    (*this).CanEscape = true;
 }
 
 FIGS_ShootingOverride UIGS_AIDataComponent::GetShootingOverride() const {

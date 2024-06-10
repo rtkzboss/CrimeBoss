@@ -1,19 +1,13 @@
 #include "IGS_LockpickMinigame.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_LockpickMinigame::AIGS_LockpickMinigame(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->AkComponent = NULL;
-    this->ButtonPressAkAudioEvent = NULL;
-    this->CurrentPinCount = 1;
-    this->m_InstigatorInputComponent = NULL;
-    this->Angle = 0.00f;
-    this->bSlightlyClose = false;
-    this->bVeryClose = false;
-    this->bStaggered = false;
-    this->CurrentRadius = 360.00f;
-    this->ClampRadiusPercentage = 0.50f;
+    (*this).CurrentPinCount = 1;
+    (*this).CurrentRadius = 3.600000000e+02f;
+    (*this).ClampRadiusPercentage = 5.000000000e-01f;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
 }
 
 void AIGS_LockpickMinigame::SuccessOnePick() {

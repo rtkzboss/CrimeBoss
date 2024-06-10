@@ -1,4 +1,6 @@
 #include "IGS_PlanningBoard.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_PlanningBoard::AIGS_PlanningBoard(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

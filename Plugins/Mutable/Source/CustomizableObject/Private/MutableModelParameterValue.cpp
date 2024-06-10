@@ -1,6 +1,7 @@
 #include "MutableModelParameterValue.h"
 
 FMutableModelParameterValue::FMutableModelParameterValue() {
-    this->Value = 0;
+    (*this).Name = TEXT("");
+    (*this).Value = 0;
 }
 

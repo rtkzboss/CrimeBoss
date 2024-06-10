@@ -3,10 +3,8 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_WeaponInventoryObject::UIGS_WeaponInventoryObject() {
-    this->ItemType = EIGS_ItemType::Item_Weapon;
-    this->WeaponDefinitionObject = NULL;
-    this->ShouldConsumeAmmo = true;
-    this->m_WeaponClassData = NULL;
+    (*this).ShouldConsumeAmmo = true;
+    (*this).ItemType = EIGS_ItemType::Item_Weapon;
 }
 
 int32 UIGS_WeaponInventoryObject::TakeAmmoFromMagazine(int32 inCount) {

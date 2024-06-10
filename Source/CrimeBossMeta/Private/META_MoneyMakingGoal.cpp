@@ -1,8 +1,9 @@
 #include "META_MoneyMakingGoal.h"
+#include "EMETA_GoalPriority.h"
 #include "EMETA_GoalType.h"
 
 UMETA_MoneyMakingGoal::UMETA_MoneyMakingGoal() {
-    this->Type = EMETA_GoalType::MoneyMaking;
+    (*this).Type = EMETA_GoalType::MoneyMaking;
 }
 
 void UMETA_MoneyMakingGoal::SetMonetaryValue(int32 inMonetaryValue) {

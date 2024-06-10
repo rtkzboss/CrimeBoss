@@ -1,10 +1,9 @@
 #include "IGS_TelephoneBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_TelephoneBase::AIGS_TelephoneBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bRinging = false;
-    this->bPublicTelephone = true;
-    this->ControlRoom = NULL;
-    this->m_StealthSettingsInstance = NULL;
+    (*this).bPublicTelephone = true;
 }
 
 

@@ -1,16 +1,17 @@
 #include "IGS_RotatingLaserTrap.h"
 #include "Components/ArrowComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 
 AIGS_RotatingLaserTrap::AIGS_RotatingLaserTrap(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("ExtraRootObject"));
-    this->ExtraRootObject = (USceneComponent*)RootComponent;
-    this->RotationStartPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("RotationStartPoint"));
-    this->RotationEndPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("RotationEndPoint"));
-    this->Reverse = false;
-    this->Looping = true;
-    this->RotationStartPoint->SetupAttachment(RootComponent);
-    this->RotationEndPoint->SetupAttachment(RootComponent);
+    (*this).ExtraRootObject = CreateDefaultSubobject<USceneComponent>(TEXT("ExtraRootObject"));
+    (*this).RotationStartPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("RotationStartPoint"));
+    (*this).RotationEndPoint = CreateDefaultSubobject<UArrowComponent>(TEXT("RotationEndPoint"));
+    (*this).Looping = true;
+    (*this).RootComponent = (USceneComponent*)ExtraRootObject;
+    (*this).RotationStartPoint->SetupAttachment((*this).ExtraRootObject);
+    (*this).RotationEndPoint->SetupAttachment((*this).ExtraRootObject);
 }
 
 void AIGS_RotatingLaserTrap::TickTimelineUpdate(float InValue) {

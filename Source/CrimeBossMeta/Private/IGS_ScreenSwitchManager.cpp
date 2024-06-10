@@ -1,7 +1,8 @@
 #include "IGS_ScreenSwitchManager.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ScreenSwitchManager::UIGS_ScreenSwitchManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->UIComponent = NULL;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_ScreenSwitchManager::TriggerAdditionalAction(UObject* inWCO) {

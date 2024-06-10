@@ -1,8 +1,8 @@
 #include "AkGameObject.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkGameObject::UAkGameObject(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AkAudioEvent = NULL;
-    this->bOptimizeAkComponent = true;
+    (*this).bOptimizeAkComponent = true;
 }
 
 void UAkGameObject::Stop() {

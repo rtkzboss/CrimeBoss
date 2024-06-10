@@ -1,6 +1,6 @@
 #include "IGS_DownStateEffectData.h"
 
 FIGS_DownStateEffectData::FIGS_DownStateEffectData() {
-    this->DownStateEffectDataAsset = NULL;
+    (*this).DownStateEffectDataAsset = nullptr;
 }
 

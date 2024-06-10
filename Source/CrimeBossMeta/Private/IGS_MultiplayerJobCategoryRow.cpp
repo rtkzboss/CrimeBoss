@@ -1,6 +1,8 @@
 #include "IGS_MultiplayerJobCategoryRow.h"
 
 FIGS_MultiplayerJobCategoryRow::FIGS_MultiplayerJobCategoryRow() {
-    this->CategoryItemsDataTable = NULL;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ID, 0)) = NAME_None;
+    (*this).Name = FText::FromString(TEXT(""));
+    (*this).CategoryItemsDataTable = nullptr;
 }
 

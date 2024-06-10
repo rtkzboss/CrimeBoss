@@ -1,7 +1,9 @@
 #include "TOPWorkResult.h"
 
 FTOPWorkResult::FTOPWorkResult() {
-    this->WorkItemIndex = 0;
-    this->WorkItemID = 0;
+    (*this).WorkItemIndex = -1;
+    (*this).WorkItemID = -1;
+    auto& gen1609 = (*this).ResultObjects;
+    gen1609.Empty();
 }
 

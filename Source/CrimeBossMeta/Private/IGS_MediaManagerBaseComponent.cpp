@@ -1,4 +1,5 @@
 #include "IGS_MediaManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_MediaManagerBaseComponent::UIGS_MediaManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

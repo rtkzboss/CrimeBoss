@@ -1,20 +1,7 @@
 #include "IGS_UWeaponAniminstance.h"
 
 UIGS_UWeaponAniminstance::UIGS_UWeaponAniminstance() {
-    this->IsAmmoInMagazine = false;
-    this->CharacterSpeed = 0.00f;
-    this->CharacterJump = false;
-    this->CharacterCrouch = false;
-    this->ReloadPlayRate = 1.00f;
-    this->LeaningDirection = EIGS_CharacterLeaningDirectionEnum::None;
-    this->m_AutomaticShooter = NULL;
-    this->m_WeaponBase = NULL;
-    this->m_ShooterBase = NULL;
-    this->m_ReloadBase = NULL;
-    this->m_SimpleReloader = NULL;
-    this->m_Character = NULL;
-    this->m_PlayerCharacter = NULL;
-    this->m_PlayerAnimInstance = NULL;
+    (*this).ReloadPlayRate = 1.000000000e+00f;
 }
 
 

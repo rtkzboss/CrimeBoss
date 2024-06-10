@@ -2,7 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_GameInstanceFramework::UIGS_GameInstanceFramework() {
-    this->bComesFromMission = false;
 }
 
 void UIGS_GameInstanceFramework::StartMissionInternal_Implementation(const UObject* inWCO, TSubclassOf<UIGS_BaseMissionObject> inMissionID) {

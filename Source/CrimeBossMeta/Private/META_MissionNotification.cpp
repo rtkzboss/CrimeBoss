@@ -1,7 +1,8 @@
 #include "META_MissionNotification.h"
+#include "EMETA_NotificationEffect.h"
+#include "EMETA_NotificationType.h"
 
 UMETA_MissionNotification::UMETA_MissionNotification() {
-    this->m_Mission = NULL;
 }
 
 void UMETA_MissionNotification::SetMission(UMETA_BaseMission* inMission) {

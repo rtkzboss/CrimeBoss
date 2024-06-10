@@ -12,6 +12,7 @@ public class BF_Covers : ModuleRules {
             "CoverGenerator",
             "Engine",
             "NavigationSystem",
+            "PhysicsCore",
         });
     }
 }

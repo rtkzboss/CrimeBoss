@@ -2,7 +2,7 @@
 #include "EHoudiniParameterType.h"
 
 UHoudiniParameterLabel::UHoudiniParameterLabel() {
-    this->ParmType = EHoudiniParameterType::Label;
+    (*this).ParmType = EHoudiniParameterType::Label;
 }
 
 

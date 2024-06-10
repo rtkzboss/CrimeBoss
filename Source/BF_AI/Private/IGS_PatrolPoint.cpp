@@ -1,14 +1,11 @@
 #include "IGS_PatrolPoint.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_ScenarioDifficulty.h"
+#include "EIGS_TeamSideEnum.h"
 
 AIGS_PatrolPoint::AIGS_PatrolPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MinWaitTime = 0.00f;
-    this->MaxWaitTime = 0.00f;
-    this->bHasDirection = false;
-    this->bRedirectPoint = false;
-    this->bCannotSkipPoint = false;
-    this->DirectionLookAtPosDistance = 1000.00f;
-    this->NextPoint = NULL;
-    this->NextPointCasted = NULL;
+    (*this).DirectionLookAtPosDistance = 1.000000000e+03f;
 }
 
 void AIGS_PatrolPoint::SetVisitorManully(AIGS_GameCharacterFramework* inGameCharacter) {

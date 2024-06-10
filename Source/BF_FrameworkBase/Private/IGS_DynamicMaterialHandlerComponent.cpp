@@ -1,4 +1,5 @@
 #include "IGS_DynamicMaterialHandlerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_DynamicMaterialHandlerComponent::UIGS_DynamicMaterialHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

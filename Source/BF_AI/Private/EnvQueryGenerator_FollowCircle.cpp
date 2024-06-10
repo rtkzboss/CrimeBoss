@@ -2,7 +2,7 @@
 #include "EnvironmentQuery/Contexts/EnvQueryContext_Querier.h"
 
 UEnvQueryGenerator_FollowCircle::UEnvQueryGenerator_FollowCircle() {
-    this->GenerateAround = UEnvQueryContext_Querier::StaticClass();
+    (*this).GenerateAround = UEnvQueryContext_Querier::StaticClass();
 }
 
 

@@ -1,10 +1,11 @@
 #include "IGS_HUDSubwidgetBase.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_HUDSubwidgetBase::UIGS_HUDSubwidgetBase() {
-    this->bShowWidget = 0;
-    this->bCurrentlyRelevant = 0;
-    this->VisibilityMode = EIGS_HUDVisibilityMode::HUD_RelevantOnly;
-    this->bHiddenOnStartup = false;
+    (*this).VisibilityMode = EIGS_HUDVisibilityMode::HUD_RelevantOnly;
 }
 
 

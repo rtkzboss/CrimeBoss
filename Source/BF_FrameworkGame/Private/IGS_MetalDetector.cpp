@@ -1,16 +1,13 @@
 #include "IGS_MetalDetector.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_MetalDetector::AIGS_MetalDetector(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AlarmAudioComponent = NULL;
-    this->BoxCollisionComponent = NULL;
-    this->AlarmLight = NULL;
-    this->StatusLight = NULL;
-    this->AlarmLightDuration = 10.00f;
-    this->AINoiseLoudness = 0.50f;
-    this->AINoiseMaxRange = 500.00f;
-    this->PlayerOffenceDuration = 5.00f;
-    this->mR_bIsEnabled = false;
+    (*this).AlarmLightDuration = 1.000000000e+01f;
+    (*this).AINoiseLoudness = 5.000000000e-01f;
+    (*this).AINoiseMaxRange = 5.000000000e+02f;
+    (*this).PlayerOffenceDuration = 5.000000000e+00f;
 }
 
 void AIGS_MetalDetector::SetEnabled(bool inState) {

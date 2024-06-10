@@ -1,7 +1,9 @@
 #include "IGS_ScriptableBehaviorComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ScriptableBehaviorComponent::UIGS_ScriptableBehaviorComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_Controller = NULL;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.TickInterval = 1.000000015e-01f;
 }
 
 void UIGS_ScriptableBehaviorComponent::SetDefendPositionBP(FVector InPosition, float inDistance) {

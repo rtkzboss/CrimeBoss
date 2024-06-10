@@ -1,12 +1,9 @@
 #include "IGS_LockComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_LockComponent::UIGS_LockComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bLocked = false;
-    this->KeyRoomType = EIGS_RoomType::Street;
-    this->KeyRoomSecurityType = EIGS_RoomSecurityType::Outside;
-    this->UniqueKeyID = -1;
-    this->EmployeeKeyClass = NULL;
-    this->SecurityKeyClass = NULL;
+    (*this).KeyRoomType = EIGS_RoomType::Street;
+    (*this).UniqueKeyID = -1;
 }
 
 void UIGS_LockComponent::SetLockState(bool inLocked) {

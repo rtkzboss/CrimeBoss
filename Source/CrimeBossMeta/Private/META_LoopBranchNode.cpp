@@ -2,11 +2,8 @@
 #include "EMETA_NodeType.h"
 
 UMETA_LoopBranchNode::UMETA_LoopBranchNode() {
-    this->Type = EMETA_NodeType::LoopBranch;
-    this->AmountOfActivations = 0;
-    this->CurrentAmountOfActivation = 0;
-    this->LimitExceededNodeId = -1;
-    this->ContinueNodeId = 0;
+    (*this).LimitExceededNodeId = -1;
+    (*this).Type = EMETA_NodeType::LoopBranch;
 }
 
 void UMETA_LoopBranchNode::SetSaveData(FMETA_LoopBranchNodeSaveData SaveData) {

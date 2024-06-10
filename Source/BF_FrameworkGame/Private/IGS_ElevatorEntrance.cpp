@@ -1,9 +1,8 @@
 #include "IGS_ElevatorEntrance.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_ElevatorEntrance::AIGS_ElevatorEntrance(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Elevator = NULL;
-    this->FloorIndex = 0;
-    this->OutOfOrder = false;
 }
 
 

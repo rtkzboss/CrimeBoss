@@ -1,7 +1,6 @@
 #include "GenericGraphNode.h"
 
 UGenericGraphNode::UGenericGraphNode() {
-    this->Graph = NULL;
 }
 
 void UGenericGraphNode::RefreshValuesOnSaveGraph() {

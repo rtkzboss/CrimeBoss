@@ -1,8 +1,8 @@
 #include "BTDecorator_RandomChance.h"
 
 UBTDecorator_RandomChance::UBTDecorator_RandomChance() {
-    this->NodeName = TEXT("Random Chance");
-    this->Chance = 0.25f;
+    (*this).Chance = 2.500000000e-01f;
+    (*this).NodeName = TEXT("Random Chance");
 }
 
 

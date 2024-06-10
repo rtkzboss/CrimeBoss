@@ -1,19 +1,20 @@
 #include "IGS_RideableCar_Base.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 #include "WheeledVehicleMovementComponent4W.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_RideableCar_Base::AIGS_RideableCar_Base(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SuspensionLength = 252;
-    this->WheelRadius = 50.00f;
-    this->BrakeForceMultiplier = 0.02f;
-    this->CollisionSoundMultiplier = 1.40f;
-    this->CollisionTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision Trigger"));
-    this->VehicleMovement = CreateDefaultSubobject<UWheeledVehicleMovementComponent4W>(TEXT("Wheeled Vehicle Movement"));
-    this->ExitSpeedLimit = 10.00f;
-    this->Steering = 0.00f;
-    this->m_SteeringTarget = 0.00f;
-    this->CollisionTrigger->SetupAttachment(RootComponent);
+    (*this).SuspensionLength = 252;
+    (*this).WheelRadius = 5.000000000e+01f;
+    (*this).BrakeForceMultiplier = 1.999999955e-02f;
+    (*this).CollisionSoundMultiplier = 1.399999976e+00f;
+    (*this).CollisionTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision Trigger"));
+    (*this).VehicleMovement = CreateDefaultSubobject<UWheeledVehicleMovementComponent4W>(TEXT("Wheeled Vehicle Movement"));
+    (*this).ExitSpeedLimit = 1.000000000e+01f;
+    (*this).CollisionTrigger->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_RideableCar_Base::SyncSteering_SERVER_Implementation(float InValue) {

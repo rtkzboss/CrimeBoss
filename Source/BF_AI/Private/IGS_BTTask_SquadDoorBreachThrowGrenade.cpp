@@ -1,9 +1,10 @@
 #include "IGS_BTTask_SquadDoorBreachThrowGrenade.h"
 
 UIGS_BTTask_SquadDoorBreachThrowGrenade::UIGS_BTTask_SquadDoorBreachThrowGrenade() {
-    this->NodeName = TEXT("Squad Breach Throw Grenade");
-    this->ContextActionCharacter = NULL;
-    this->ContextActionCommand = NULL;
+    auto& gen535 = (*this).BreachRolesKey.AllowedTypes;
+    gen535.Empty();
+    gen535.AddDefaulted(1);
+    (*this).NodeName = TEXT("Squad Breach Throw Grenade");
 }
 
 bool UIGS_BTTask_SquadDoorBreachThrowGrenade::HasFlashbangExploded(UIGS_AICommandBreachThrowFlashbang* Command) {

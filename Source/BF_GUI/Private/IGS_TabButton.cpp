@@ -1,8 +1,12 @@
 #include "IGS_TabButton.h"
+#include "EIGS_InputAction.h"
+#include "Input/CommonInputMode.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_TabButton::UIGS_TabButton() {
-    this->Icon = NULL;
-    this->CategoryTitle = NULL;
 }
 
 void UIGS_TabButton::SetIconText(const FText& InText) {

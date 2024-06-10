@@ -17,6 +17,7 @@ public class BF_FrameworkBase : ModuleRules {
             "Common_Utils",
             "Core",
             "CoreUObject",
+            "DataRegistry",
             "DeveloperSettings",
             "Engine",
             "GameplayAbilities",

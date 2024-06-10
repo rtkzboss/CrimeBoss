@@ -1,7 +1,9 @@
 #include "ConstructionSystemUIPrefabEntry.h"
 
 FConstructionSystemUIPrefabEntry::FConstructionSystemUIPrefabEntry() {
-    this->Icon = NULL;
-    this->Prefab = NULL;
+    (*this).DisplayName = FText::FromString(TEXT(""));
+    (*this).Tooltip = FText::FromString(TEXT(""));
+    (*this).Icon = nullptr;
+    (*this).Prefab = nullptr;
 }
 

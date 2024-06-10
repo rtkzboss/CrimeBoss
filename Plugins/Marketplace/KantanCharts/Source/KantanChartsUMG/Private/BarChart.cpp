@@ -1,7 +1,12 @@
 #include "BarChart.h"
+#include "EKantanBarChartOrientation.h"
+#include "EKantanBarLabelPosition.h"
+#include "EKantanBarValueExtents.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
 
 UBarChart::UBarChart() {
-    this->DataSource = NULL;
 }
 
 bool UBarChart::SetDatasource(UObject* InDatasource) {

@@ -1,15 +1,13 @@
 #include "IGS_OverheatComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_OverheatComponent::UIGS_OverheatComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bAutoBindShooter = false;
-    this->OverheatCurve = NULL;
-    this->IncreasePerBullet = -1.00f;
-    this->IncreasePerSecond = 0.10f;
-    this->DecreasePerSecond = -1.00f;
-    this->TimeUntilCooldown = 0.50f;
-    this->mR_bIsOverheated = false;
-    this->mR_CurrentOverheat = 0.00f;
+    (*this).IncreasePerBullet = -1.000000000e+00f;
+    (*this).IncreasePerSecond = 1.000000015e-01f;
+    (*this).DecreasePerSecond = -1.000000000e+00f;
+    (*this).TimeUntilCooldown = 5.000000000e-01f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_OverheatComponent::SetStaticMeshToApplyOverheat(UStaticMeshComponent* inStaticMesh, const int32 inIndex) {

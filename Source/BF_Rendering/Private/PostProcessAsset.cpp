@@ -1,7 +1,7 @@
 #include "PostProcessAsset.h"
 
 UPostProcessAsset::UPostProcessAsset() {
-    this->Duration = -1.00f;
+    (*this).Duration = -1.000000000e+00f;
 }
 
 

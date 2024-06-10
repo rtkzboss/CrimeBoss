@@ -1,14 +1,14 @@
 #include "IGS_WidgetOptionsMenu.h"
+#include "EScreenInputMode.h"
+#include "EScreenInputPass.h"
+#include "EScreenModifier.h"
+#include "EScreenZOrder.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetOptionsMenu::UIGS_WidgetOptionsMenu() {
-    this->GameSetButton = NULL;
-    this->GraphicsSetButton = NULL;
-    this->SoundSetButton = NULL;
-    this->ControlsSetButton = NULL;
-    this->ApplyButton = NULL;
-    this->RevertButton = NULL;
-    this->CloseButton = NULL;
-    this->SettingsWidgetSwitcher = NULL;
 }
 
 void UIGS_WidgetOptionsMenu::UpdateMenu(bool inSoundSubmenuOnly) const {

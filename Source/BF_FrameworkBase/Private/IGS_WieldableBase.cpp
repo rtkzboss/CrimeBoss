@@ -1,19 +1,20 @@
 #include "IGS_WieldableBase.h"
+#include "AkAudioEvent.h"
 #include "SkeletalMeshComponentBudgeted.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Materials/MaterialParameterCollection.h"
 #include "IGS_DynamicMaterialHandlerComponent.h"
 
 AIGS_WieldableBase::AIGS_WieldableBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USkeletalMeshComponentBudgeted>(TEXT("WieldableMesh"));
-    this->bHasCollision = false;
-    this->bIsUsingPrimaryAction = false;
-    this->bIsUsingSecondaryAction = false;
-    this->bIsAiming = false;
-    this->bIsHolstering = false;
-    this->bIsUnholstering = false;
-    this->CurrentZoomLevel = 0;
-    this->WieldableMPCInstance = NULL;
-    this->DynamicMaterialHandlerComponent = CreateDefaultSubobject<UIGS_DynamicMaterialHandlerComponent>(TEXT("DynamicMaterialHandlerComponent"));
-    this->WieldableMesh = (USkeletalMeshComponentBudgeted*)RootComponent;
+    static ConstructorHelpers::FObjectFinder<UMaterialParameterCollection> gen262(TEXT("/Game/00_Main/MaterialLibrary/Common/MPC_GlobalsCharactersWeapons.MPC_GlobalsCharactersWeapons"));
+    (*this).WieldableMPC = gen262.Object;
+    (*this).DynamicMaterialHandlerComponent = CreateDefaultSubobject<UIGS_DynamicMaterialHandlerComponent>(TEXT("DynamicMaterialHandlerComponent"));
+    (*this).WieldableMesh = CreateDefaultSubobject<USkeletalMeshComponentBudgeted>(TEXT("WieldableMesh"));
+    static ConstructorHelpers::FObjectFinder<UAkAudioEvent> gen263(TEXT("/Game/WwiseAudio/GeneratedSoundData/SoundBanks/Events/Default_Work_Unit/WU_Weapons/WU_Weapons_Ranged/AKE_Weapon_Inspect_Stop.AKE_Weapon_Inspect_Stop"));
+    (*this).StopInspectingAkEvent = gen263.Object;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).RootComponent = (USceneComponent*)WieldableMesh;
 }
 
 bool AIGS_WieldableBase::UsesAmmo() {

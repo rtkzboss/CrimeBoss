@@ -1,8 +1,8 @@
 #include "IGS_UnlockManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_UnlockManagerComponent::UIGS_UnlockManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_SaveGameAccount = NULL;
-    this->m_SaveManager = NULL;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UIGS_UnlockManagerComponent::UnlockUniqueCharacter(EIGS_CharacterID inCharacter, bool bMaxLeveled) {

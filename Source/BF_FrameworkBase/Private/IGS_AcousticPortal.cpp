@@ -1,17 +1,17 @@
 #include "IGS_AcousticPortal.h"
+#include "AkAcousticPortalState.h"
 #include "IGS_SignificanceComponent.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_AcousticPortal::AIGS_AcousticPortal(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->bOverrideShape = false;
-    this->mR_IsOpened = false;
-    this->bUseCustomOcclusion = false;
-    this->MaxOcclusionValue = 1.00f;
-    this->SignificanceComponent = CreateDefaultSubobject<UIGS_SignificanceComponent>(TEXT("SignificanceComponent"));
+    (*this).MaxOcclusionValue = 1.000000000e+00f;
+    (*this).SignificanceComponent = CreateDefaultSubobject<UIGS_SignificanceComponent>(TEXT("SignificanceComponent"));
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).NetDormancy = DORM_Initial;
 }
 
 void AIGS_AcousticPortal::OnRep_IsOpened() {

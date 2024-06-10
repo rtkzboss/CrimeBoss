@@ -1,18 +1,15 @@
 #include "IGS_WaypointBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 
 AIGS_WaypointBase::AIGS_WaypointBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->IsActive = true;
-    this->StoppingDistance = 10.00f;
-    this->ApproachDistance = 150.00f;
-    this->ExactPosition = false;
-    this->FiltersByTeamSide = false;
-    this->ValidForEnemySide = EIGS_TeamSideEnum::TS_Unknown;
-    this->ValidTeamSides = 0;
-    this->Root = (USceneComponent*)RootComponent;
-    this->Difficulty = EIGS_ScenarioDifficulty::SD_Unknown;
-    this->bDifficultyLocked = false;
+    (*this).IsActive = true;
+    (*this).StoppingDistance = 1.000000000e+01f;
+    (*this).ApproachDistance = 1.500000000e+02f;
+    (*this).ValidForEnemySide_DEPRECATED = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).Root = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    (*this).RootComponent = (USceneComponent*)Root;
 }
 
 void AIGS_WaypointBase::Visit(AIGS_GameCharacterFramework* inCharacter) {

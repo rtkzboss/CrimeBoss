@@ -1,9 +1,15 @@
 #include "IGS_InstancedBreakableWindow.h"
+#include "EIGS_OverlapResponseType.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
+#include "EIGS_BreakPushImpulse.h"
+#include "EIGS_WindowBreakBehaviour.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_InstancedBreakableWindow::UIGS_InstancedBreakableWindow(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->mR_DecalsLocation.AddDefaulted(7);
-    this->IgnoreSectionIndex = 20;
+    (*this).IgnoreSectionIndex = 20;
 }
 
 void UIGS_InstancedBreakableWindow::HideWindowInstance(const int32& InstanceIndex) {

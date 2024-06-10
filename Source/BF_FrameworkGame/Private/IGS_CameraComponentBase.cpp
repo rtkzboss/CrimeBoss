@@ -1,4 +1,5 @@
 #include "IGS_CameraComponentBase.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_CameraComponentBase::UIGS_CameraComponentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

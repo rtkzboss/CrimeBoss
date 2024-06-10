@@ -2,10 +2,6 @@
 #include "Templates/SubclassOf.h"
 
 UIGS_GameScreenHandler::UIGS_GameScreenHandler() {
-    this->GoDirectlyToMainMenu = false;
-    this->m_BaseScreen = NULL;
-    this->m_SystemMenuScreen = NULL;
-    this->m_Settings = NULL;
 }
 
 void UIGS_GameScreenHandler::SwitchBackToMainScreen(bool directlyToMainMenu) {

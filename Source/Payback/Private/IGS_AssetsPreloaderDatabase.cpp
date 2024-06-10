@@ -1,7 +1,9 @@
 #include "IGS_AssetsPreloaderDatabase.h"
+#include "IGS_AssetsPreloaderData.h"
 
 UIGS_AssetsPreloaderDatabase::UIGS_AssetsPreloaderDatabase() {
-    this->m_AssetsPreloader = NULL;
+    static ConstructorHelpers::FObjectFinder<UIGS_AssetsPreloaderData> gen651(TEXT("/Game/00_Main/Core/Tables/DA_AssetsPreloaderData.DA_AssetsPreloaderData"));
+    (*this).m_AssetsPreloaderData = gen651.Object;
 }
 
 void UIGS_AssetsPreloaderDatabase::UseOrCreateAssetsPreloader(UObject* inWCO) {

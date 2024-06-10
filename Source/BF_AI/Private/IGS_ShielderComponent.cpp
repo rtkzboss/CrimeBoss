@@ -1,12 +1,9 @@
 #include "IGS_ShielderComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_ShielderComponent::UIGS_ShielderComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->ShieldActor = NULL;
-    this->HandleHolsterFromCode = true;
-    this->MaxBreakableWindowHealth = 0.00f;
-    this->CurrentBreakableWindowHealth = 0.00f;
-    this->m_Shield = NULL;
+    (*this).HandleHolsterFromCode = true;
 }
 
 void UIGS_ShielderComponent::OnShieldTakeAnyDamage(AActor* inDamagedActor, float inDamage, const UDamageType* inDamageType, AController* inInstigatedBy, AActor* inDamageCauser) {

@@ -1,9 +1,9 @@
 #include "IGS_FirstPersonThrowablesAnimDatabase.h"
 
 FIGS_FirstPersonThrowablesAnimDatabase::FIGS_FirstPersonThrowablesAnimDatabase() {
-    this->Throw_Up = NULL;
-    this->Throw_Down = NULL;
-    this->Throw_UpWeapon = NULL;
-    this->Throw_DownWeapon = NULL;
+    (*this).Throw_Up = nullptr;
+    (*this).Throw_Down = nullptr;
+    (*this).Throw_UpWeapon = nullptr;
+    (*this).Throw_DownWeapon = nullptr;
 }
 

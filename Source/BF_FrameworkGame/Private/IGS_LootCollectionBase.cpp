@@ -1,27 +1,23 @@
 #include "IGS_LootCollectionBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_LootCollectionBase::AIGS_LootCollectionBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
-    this->CurrentValue = 0.00f;
-    this->CurrentWeight = 0;
-    this->TotalValue = 0.00f;
-    this->TotalLootValue = 0.00f;
-    this->TotalMoneyValue = 0.00f;
-    this->TotalBagSize = 0.00f;
-    this->LootCollectionInteraction = NULL;
-    this->LootingCharacter = NULL;
-    this->LootSuggestedFor = NULL;
-    this->bIsCosmetic = false;
-    this->DefaultSceneRoot = (USceneComponent*)RootComponent;
-    this->bIsEmpty = false;
-    this->bIsShineEnabled = true;
-    this->m_AILootingBehavior = EIGS_AILootingBehavior::Allways;
+    (*this).LootingPos.X = 3.402823466e+38f;
+    (*this).LootingPos.Y = 3.402823466e+38f;
+    (*this).LootingPos.Z = 3.402823466e+38f;
+    (*this).LootingRotation.Pitch = 3.402823466e+38f;
+    (*this).LootingRotation.Yaw = 3.402823466e+38f;
+    (*this).LootingRotation.Roll = 3.402823466e+38f;
+    (*this).DefaultSceneRoot = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
+    (*this).bIsShineEnabled = true;
+    (*this).PrimaryActorTick.bCanEverTick = true;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).NetDormancy = DORM_Initial;
+    (*this).RootComponent = (USceneComponent*)DefaultSceneRoot;
 }
 
 void AIGS_LootCollectionBase::TestLootPosition() {

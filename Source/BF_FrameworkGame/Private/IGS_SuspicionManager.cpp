@@ -1,11 +1,11 @@
 #include "IGS_SuspicionManager.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_SuspicionManager::UIGS_SuspicionManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentStrikes = 0;
-    this->AlarmReason = EIGS_AlarmReason::Alarm_UNKNOWN;
-    this->IsAlarmed = false;
-    this->HeistCanStart = false;
+    (*this).AlarmReason = EIGS_AlarmReason::Alarm_UNKNOWN;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.TickInterval = 2.000000000e+00f;
 }
 
 bool UIGS_SuspicionManager::WouldStrikeCauseAlarm(int32 inStrikeCount) const {

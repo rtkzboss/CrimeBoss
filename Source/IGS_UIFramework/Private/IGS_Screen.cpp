@@ -1,16 +1,13 @@
 #include "IGS_Screen.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_Screen::UIGS_Screen() {
-    this->ScreenZOrder = EScreenZOrder::Normal;
-    this->ScreenModifier = EScreenModifier::None;
-    this->BaseScreenModifier = 0;
-    this->ScreenInputMode = EScreenInputMode::UIOnly;
-    this->InputPass = EScreenInputPass::NoPass;
-    this->SupressSystemMenuOpen = false;
-    this->InputDelay = 0.30f;
-    this->RefreshFocusAfterClose = true;
-    this->IsOverlay = false;
-    this->m_ScreenHandler = NULL;
+    (*this).ScreenInputMode = EScreenInputMode::UIOnly;
+    (*this).InputDelay = 3.000000119e-01f;
+    (*this).RefreshFocusAfterClose = true;
 }
 
 void UIGS_Screen::RefreshFocus_Implementation() {

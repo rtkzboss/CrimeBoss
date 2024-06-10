@@ -1,25 +1,20 @@
 #include "IGS_DownStateHandlerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_DownStateHandlerComponent::UIGS_DownStateHandlerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BleedOutDamageType = NULL;
-    this->DownedEffect = NULL;
-    this->AfterRevivedSomeoneEffect = NULL;
-    this->AfterBeingRevivedEffect = NULL;
-    this->DownstatePhase1StartAkEventFPP = NULL;
-    this->DownstatePhase2StartAkEventFPP = NULL;
-    this->DeathAKEventFPP = NULL;
-    this->ReviveStartedAkEventFPP = NULL;
-    this->ReviveFinishedAkEventFPP = NULL;
-    this->DownstatePhase1StartAkEventTPP = NULL;
-    this->DownstatePhase2StartAkEventTPP = NULL;
-    this->DeathAKEventTPP = NULL;
-    this->ReviveStartedAkEventTPP = NULL;
-    this->ReviveFinishedAkEventTPP = NULL;
-    this->GracePeriodGoingDownEndTimestamp = 0.00f;
-    this->GracePeriodAfterReviveEndTimestamp = 0.00f;
-    this->CurrentDownStatesCount = 3;
-    this->BaseDownStatesCount = 3;
+    (*this).DownStateHealthMax.Value = 1.000000000e+03f;
+    (*this).ReviveTime.Value = 3.000000000e+00f;
+    (*this).ReviveTimePinned.Value = 6.000000000e+00f;
+    (*this).DownStateLengthInSeconds.Value = 1.200000000e+01f;
+    (*this).PinnedDownStateLengthInSeconds.Value = 4.500000000e+01f;
+    (*this).DownStateDamageGracePeriod.Value = 2.000000000e+00f;
+    (*this).GracePeriodAfterRevive.Value = 2.000000000e+00f;
+    (*this).PinnedHealthThreshold.Value = 3.000000119e-01f;
+    (*this).HealthDecayTickPeriod.Value = 5.000000075e-02f;
+    (*this).DownStateMovementSpeedMultiplier.Value = 5.000000000e-01f;
+    (*this).CurrentDownStatesCount = 3;
+    (*this).BaseDownStatesCount = 3;
 }
 
 void UIGS_DownStateHandlerComponent::OnRep_DownStateCount() {

@@ -1,21 +1,26 @@
 #include "PaybackRobotCharacter.h"
-#include "SkeletalMeshComponentBudgeted.h"
 #include "IGS_WeakSpotComponent.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Character.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_CharacterID.h"
+#include "EIGS_TeamSideEnum.h"
+#include "EIGS_UnitSpecialization.h"
 
 APaybackRobotCharacter::APaybackRobotCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->WeakSpotCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("WeakSpotCollisionComponent"));
-    const FProperty* p_Mesh_Parent = GetClass()->FindPropertyByName("Mesh");
-    this->WeakSpotHealth = 50.00f;
-    this->WeakSpotAIDamageMultiplier = 0.20f;
-    this->MaxHealthPercentageTaken = 0.50f;
-    this->ForcedOverloadTime = 0.00f;
-    this->OverloadOuterDamageRadius = 600.00f;
-    this->OverloadInnerDamageRadius = 200.00f;
-    this->OverloadEffectRadius = 1500.00f;
-    this->OverloadBaseDamage = 500.00f;
-    this->m_WeakSpotComponent = CreateDefaultSubobject<UIGS_WeakSpotComponent>(TEXT("WeakSpot Component"));
-    this->WeakSpotCollision->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
+    (*this).WeakSpotCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("WeakSpotCollisionComponent"));
+    (*this).WeakSpotHealth = 5.000000000e+01f;
+    (*this).WeakSpotAIDamageMultiplier = 2.000000030e-01f;
+    (*this).MaxHealthPercentageTaken = 5.000000000e-01f;
+    (*this).OverloadOuterDamageRadius = 6.000000000e+02f;
+    (*this).OverloadInnerDamageRadius = 2.000000000e+02f;
+    (*this).OverloadEffectRadius = 1.500000000e+03f;
+    (*this).OverloadBaseDamage = 5.000000000e+02f;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).OverloadAnimationTag, 0)) = TEXT("Anim.Combat.Robot.Overload");
+    (*this).m_WeakSpotComponent = CreateDefaultSubobject<UIGS_WeakSpotComponent>(TEXT("WeakSpot Component"));
+    (*this).WeakSpotCollision->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
 }
 
 void APaybackRobotCharacter::StartOverloadSequenceDelayed(AController* inInstigator, const float inDelay) {

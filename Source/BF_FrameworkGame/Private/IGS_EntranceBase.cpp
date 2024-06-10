@@ -2,24 +2,22 @@
 #include "IGS_ObjectStatus.h"
 #include "IGS_VisbilityComponent.h"
 #include "Components/ChildActorComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_EntranceBase::AIGS_EntranceBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->NetDormancy = DORM_Initial;
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("EntranceRootComponent"));
-    this->EntranceRootComponent = (USceneComponent*)RootComponent;
-    this->DoorObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("DoorObjectStatus"));
-    this->VisibilityComponent = CreateDefaultSubobject<UIGS_VisbilityComponent>(TEXT("VisibilityComponent"));
-    this->FrontBreachingPoints = CreateDefaultSubobject<UChildActorComponent>(TEXT("FrontBreachingPoints"));
-    this->BackBreachingPoints = CreateDefaultSubobject<UChildActorComponent>(TEXT("BackBreachingPoints"));
-    this->bPortalDoor = false;
-    this->bLocked = false;
-    this->bOpen = false;
-    this->bFullyProgressed = true;
-    this->NavigationBlock = NULL;
-    this->BackBreachingPoints->SetupAttachment(RootComponent);
-    this->FrontBreachingPoints->SetupAttachment(RootComponent);
+    (*this).EntranceRootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("EntranceRootComponent"));
+    (*this).DoorObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("DoorObjectStatus"));
+    (*this).VisibilityComponent = CreateDefaultSubobject<UIGS_VisbilityComponent>(TEXT("VisibilityComponent"));
+    (*this).FrontBreachingPoints = CreateDefaultSubobject<UChildActorComponent>(TEXT("FrontBreachingPoints"));
+    (*this).BackBreachingPoints = CreateDefaultSubobject<UChildActorComponent>(TEXT("BackBreachingPoints"));
+    (*this).bFullyProgressed = true;
+    (*this).NetDormancy = DORM_Initial;
+    (*this).RootComponent = (USceneComponent*)EntranceRootComponent;
+    (*this).FrontBreachingPoints->SetupAttachment((*this).EntranceRootComponent);
+    (*this).BackBreachingPoints->SetupAttachment((*this).EntranceRootComponent);
 }
 
 void AIGS_EntranceBase::SetOpenState(bool inOpen) {

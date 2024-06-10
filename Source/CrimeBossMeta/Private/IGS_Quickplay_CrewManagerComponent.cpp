@@ -1,7 +1,7 @@
 #include "IGS_Quickplay_CrewManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_Quickplay_CrewManagerComponent::UIGS_Quickplay_CrewManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BossCharacter = NULL;
 }
 
 void UIGS_Quickplay_CrewManagerComponent::SetBossPerk(int32 inSlot, FGameplayTag inPerk) {

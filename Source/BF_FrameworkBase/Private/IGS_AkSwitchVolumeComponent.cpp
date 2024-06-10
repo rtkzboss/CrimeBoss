@@ -1,10 +1,12 @@
 #include "IGS_AkSwitchVolumeComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 
 UIGS_AkSwitchVolumeComponent::UIGS_AkSwitchVolumeComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bCanEverAffectNavigation = false;
-    this->CanCharacterStepUpOn = ECB_No;
-    this->FootstepAkSwitch = NULL;
-    this->FootstepNoneAkSwitch = NULL;
+    (*this).CanCharacterStepUpOn = ECB_No;
+    (*this).bCanEverAffectNavigation = false;
 }
 
 void UIGS_AkSwitchVolumeComponent::NotifyActorEndOverlap(UPrimitiveComponent* inOverlappedComponent, AActor* inOtherActor, UPrimitiveComponent* inOtherComp, int32 inOtherBodyIndex) {

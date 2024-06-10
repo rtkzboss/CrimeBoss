@@ -1,4 +1,6 @@
 #include "IGS_MetalDetectorManager.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_MetalDetectorManager::AIGS_MetalDetectorManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

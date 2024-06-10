@@ -1,7 +1,10 @@
 #include "IGS_WidgetBotRadialMenu.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetBotRadialMenu::UIGS_WidgetBotRadialMenu() {
-    this->PlayerCommandComponent = NULL;
 }
 
 void UIGS_WidgetBotRadialMenu::OnLootBagsCountChanged_Internal(int32 inCount, const TArray<EIGS_BagType>& inBagTypes) {

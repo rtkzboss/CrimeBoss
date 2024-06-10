@@ -1,24 +1,15 @@
 #include "IGS_UseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_UseComponent::UIGS_UseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PuzzleInteraction = NULL;
-    this->InteractionDistance = 100.00f;
-    this->InteractionDotProductThreshold = 0.75f;
-    this->IsInteractionEnabled = true;
-    this->InteractiveDeltaThreshold = 0.50f;
-    this->isCurrentlyUsingInteraction = false;
-    this->isCurrentlyHoldingInteraction = false;
-    this->CanUseCarryables = true;
-    this->InteractiveObjectsNearPlayerForHUDAngleLimit = 45.00f;
-    this->InteractiveObjectsNearPlayerForHUDAngleDotLimit = 0.71f;
-    this->ComponentToInteractWith = NULL;
-    this->LastComponentToInteractWith = NULL;
-    this->OwnerPlayerController = NULL;
-    this->OwnerPlayerPawn = NULL;
-    this->OwnerPlayerCharacter = NULL;
-    this->isNearInteractible = false;
-    this->isNotifiedAboutInteraction = false;
-    this->isCurrentlyInteracting = false;
+    (*this).InteractionDistance = 1.000000000e+02f;
+    (*this).InteractionDotProductThreshold = 7.500000000e-01f;
+    (*this).IsInteractionEnabled = true;
+    (*this).InteractiveDeltaThreshold = 5.000000000e-01f;
+    (*this).CanUseCarryables = true;
+    (*this).InteractiveObjectsNearPlayerForHUDAngleLimit = 4.500000000e+01f;
+    (*this).InteractiveObjectsNearPlayerForHUDAngleDotLimit = 7.071067691e-01f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 bool UIGS_UseComponent::Use(UIGS_InteractiveComponent* inInteractiveComponent, bool bIsHolding) {

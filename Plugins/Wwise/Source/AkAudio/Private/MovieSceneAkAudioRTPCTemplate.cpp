@@ -1,6 +1,7 @@
 #include "MovieSceneAkAudioRTPCTemplate.h"
+#include "Evaluation/MovieSceneCompletionMode.h"
 
 FMovieSceneAkAudioRTPCTemplate::FMovieSceneAkAudioRTPCTemplate() {
-    this->Section = NULL;
+    (*this).Section = nullptr;
 }
 

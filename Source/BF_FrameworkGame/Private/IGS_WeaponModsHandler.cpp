@@ -1,4 +1,5 @@
 #include "IGS_WeaponModsHandler.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_WeaponModsHandler::UIGS_WeaponModsHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

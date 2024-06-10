@@ -1,4 +1,5 @@
 #include "IGS_WarManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_WarManagerBaseComponent::UIGS_WarManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

@@ -1,7 +1,8 @@
 #include "HumanBlockingNavArea.h"
 
 UHumanBlockingNavArea::UHumanBlockingNavArea() {
-    this->bSupportsAgent1 = false;
+    (*this).SupportedAgents.bSupportsAgent1 = false;
+    (*this).bSupportsAgent1 = false;
 }
 
 

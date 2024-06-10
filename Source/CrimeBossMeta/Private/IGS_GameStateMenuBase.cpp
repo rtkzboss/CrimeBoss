@@ -1,8 +1,8 @@
 #include "IGS_GameStateMenuBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_GameStateMenuBase::AIGS_GameStateMenuBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->EconomyBaseData = NULL;
-    this->CommonBaseData = NULL;
 }
 
 void AIGS_GameStateMenuBase::SetUserDifficulty(EIGS_UserDifficulty inUserDifficulty) {

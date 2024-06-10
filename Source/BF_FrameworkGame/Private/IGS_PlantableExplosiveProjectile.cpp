@@ -1,12 +1,15 @@
 #include "IGS_PlantableExplosiveProjectile.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SphereComponent.h"
+#include "EIGS_WorldWidgetType.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_PlantableExplosiveProjectile::AIGS_PlantableExplosiveProjectile(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bIsShootable = false;
-    this->PushIntoMeshDistance = 3.00f;
-    this->ShootCollisionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("ShootCollisionSphere"));
-    this->ShootCollisionSphere->SetupAttachment(RootComponent);
+    (*this).PushIntoMeshDistance = 3.000000000e+00f;
+    (*this).RotateMeshOnPlant.Pitch = -9.000000000e+01f;
+    (*this).ShootCollisionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("ShootCollisionSphere"));
+    (*this).ShootCollisionSphere->SetupAttachment((*this).RootComponent);
 }
 
 

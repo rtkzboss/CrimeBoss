@@ -2,8 +2,7 @@
 #include "EHoudiniParameterType.h"
 
 UHoudiniParameterString::UHoudiniParameterString() {
-    this->ParmType = EHoudiniParameterType::String;
-    this->bIsAssetRef = false;
+    (*this).ParmType = EHoudiniParameterType::String;
 }
 
 

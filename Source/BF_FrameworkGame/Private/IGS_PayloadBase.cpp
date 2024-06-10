@@ -1,11 +1,10 @@
 #include "IGS_PayloadBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_PayloadBase::AIGS_PayloadBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->BoxCollisionComponent = NULL;
-    this->mR_bIsEnabled = false;
-    this->mR_bIsActive = false;
-    this->mR_bIsFinished = false;
+    (*this).PrimaryActorTick.bCanEverTick = true;
 }
 
 void AIGS_PayloadBase::SetEnabled(bool inState) {

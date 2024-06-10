@@ -1,40 +1,21 @@
 #include "IGS_Crane.h"
 #include "AkComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_Crane::AIGS_Crane(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->RootObject = (USceneComponent*)RootComponent;
-    this->InteractiveComponent = NULL;
-    this->CraneTopModule = NULL;
-    this->MagnetComponent = NULL;
-    this->MagnetComponentMinMovePoint = NULL;
-    this->MagnetComponentMaxMovePoint = NULL;
-    this->MagnetHead = NULL;
-    this->MagnetHeadSweepComponent = NULL;
-    this->MagnetHeadPinPoint = NULL;
-    this->MagnetHeadTopPosition = NULL;
-    this->CableInstancedMesh = NULL;
-    this->MagnetBox = NULL;
-    this->DetectionSphere = NULL;
-    this->AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
-    this->RotateStartAkEvent = NULL;
-    this->RotateStopAkEvent = NULL;
-    this->MagnetToggleOnAkEvent = NULL;
-    this->MagnetToggleOffAkEvent = NULL;
-    this->MagnetLiftStartAkEvent = NULL;
-    this->MagnetLiftStopAkEvent = NULL;
-    this->MagnetMoveStartAkEvent = NULL;
-    this->MagnetMoveStopAkEvent = NULL;
-    this->EngineStartAkEvent = NULL;
-    this->EngineStopAkEvent = NULL;
-    this->CableMeshHeight = 100.00f;
-    this->MoveSpeed = 200.00f;
-    this->LiftSpeed = 600.00f;
-    this->RotationSpeed = 5.00f;
-    this->mR_CableInstancesCount = 1;
-    this->AkAudioComponent->SetupAttachment(RootComponent);
+    (*this).RootObject = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
+    (*this).AkAudioComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
+    (*this).CableMeshHeight = 1.000000000e+02f;
+    (*this).MoveSpeed = 2.000000000e+02f;
+    (*this).LiftSpeed = 6.000000000e+02f;
+    (*this).RotationSpeed = 5.000000000e+00f;
+    (*this).mR_CableInstancesCount = 1;
+    (*this).RootComponent = (USceneComponent*)RootObject;
+    (*this).AkAudioComponent->SetupAttachment((*this).RootObject);
 }
 
 void AIGS_Crane::UseCrane(AIGS_GameCharacterFramework* inInstigator) {

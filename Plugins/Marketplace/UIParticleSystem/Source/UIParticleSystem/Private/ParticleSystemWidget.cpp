@@ -1,11 +1,10 @@
 #include "ParticleSystemWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
 
 UParticleSystemWidget::UParticleSystemWidget() {
-    this->ParticleSystemTemplate = NULL;
-    this->bAutoActivate = true;
-    this->bReactivate = false;
-    this->WorldParticleComponent = NULL;
-    this->WorldParticleActor = NULL;
+    (*this).bAutoActivate = true;
 }
 
 void UParticleSystemWidget::SetReactivate(bool bActivateAndReset) {

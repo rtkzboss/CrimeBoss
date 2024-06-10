@@ -1,9 +1,12 @@
 #include "IGS_WorldSettingsExtension.h"
+#include "GameFramework/Actor.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_WorldSettingsExtension::AIGS_WorldSettingsExtension(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = false;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_None;
+    (*this).KillZ = -1.000100000e+04f;
+    (*this).bReplicates = false;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_None;
 }
 
 

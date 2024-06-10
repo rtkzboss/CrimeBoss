@@ -2,15 +2,9 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_BaseMission::UMETA_BaseMission() {
-    this->m_Result = EMETA_JobResult::Ignored;
-    this->m_AmbushResult = EMETA_JobResult::Ignored;
-    this->m_TotalResult = EMETA_JobResult::Ignored;
-    this->bCanExpire = false;
-    this->InitTime = 0.00f;
-    this->EndTime = 0.00f;
-    this->bIsSelected = false;
-    this->m_LobbyVisibilityType = EMETA_LobbyVisibilityType::Unknown;
-    this->m_UserDifficulty = EIGS_UserDifficulty::UD_Unknown;
+    (*this).m_Result = EMETA_JobResult::Ignored;
+    (*this).m_AmbushResult = EMETA_JobResult::Ignored;
+    (*this).m_TotalResult = EMETA_JobResult::Ignored;
 }
 
 void UMETA_BaseMission::SetUserDifficulty(EIGS_UserDifficulty inNewDifficulty) {

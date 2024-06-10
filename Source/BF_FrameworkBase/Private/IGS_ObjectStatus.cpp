@@ -1,22 +1,10 @@
 #include "IGS_ObjectStatus.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_ObjectStatus::UIGS_ObjectStatus(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bCurrentHealthWasReplicated = false;
-    this->MaxHealth = 100.00f;
-    this->MaxShield = 0.00f;
-    this->mR_ReplicatedCurrentHealth = 0.00f;
-    this->R_IsDead = false;
-    this->Unkillable = false;
-    this->ScriptInvulnerable = false;
-    this->DifficultyInvulnerable = false;
-    this->HealthDecayDisabled = false;
-    this->InstantKillable = false;
-    this->HealthState = EIGS_HealthState::HS_Normal;
-    this->IsInjured = false;
-    this->AccumulateDamagePeriod = 0.03f;
-    this->m_OverrideReportingOfDamageDealt = false;
-    this->m_OverrideReportingOfDamageDealtValue = false;
+    (*this).MaxHealth = 1.000000000e+02f;
+    (*this).AccumulateDamagePeriod = 2.999999933e-02f;
 }
 
 void UIGS_ObjectStatus::SetHealthDecayDisabled(bool inDisabled) {

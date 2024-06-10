@@ -1,8 +1,6 @@
 #include "IGS_TutorialsManager.h"
 
 UIGS_TutorialsManager::UIGS_TutorialsManager() {
-    this->m_SaveManager = NULL;
-    this->m_SaveGameAccount = NULL;
 }
 
 void UIGS_TutorialsManager::ResetAllTutorials() {

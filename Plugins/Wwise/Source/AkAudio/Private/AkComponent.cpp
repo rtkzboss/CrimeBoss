@@ -1,29 +1,16 @@
 #include "AkComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkComponent::UAkComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bAutoActivate = true;
-    this->bUseSpatialAudio = false;
-    this->OcclusionCollisionChannel = ECC_GameTraceChannel8;
-    this->EnableSpotReflectors = false;
-    this->OuterRadius = 0.00f;
-    this->InnerRadius = 0.00f;
-    this->EarlyReflectionAuxBus = NULL;
-    this->EarlyReflectionOrder = 0;
-    this->EarlyReflectionBusSendGain = 1.00f;
-    this->EarlyReflectionMaxPathLength = 0.00f;
-    this->roomReverbAuxBusGain = 0.00f;
-    this->diffractionMaxEdges = 0;
-    this->diffractionMaxPaths = 0;
-    this->diffractionMaxPathLength = 0.00f;
-    this->DrawFirstOrderReflections = false;
-    this->DrawSecondOrderReflections = false;
-    this->DrawHigherOrderReflections = false;
-    this->DrawDiffraction = false;
-    this->StopWhenOwnerDestroyed = true;
-    this->AttenuationScalingFactor = 1.00f;
-    this->OcclusionRefreshInterval = 0.20f;
-    this->bUseReverbVolumes = true;
-    this->bUpdateRoomOnce = false;
+    (*this).OcclusionCollisionChannel = ECC_GameTraceChannel8;
+    (*this).EarlyReflectionBusSendGain = 1.000000000e+00f;
+    (*this).StopWhenOwnerDestroyed = true;
+    (*this).AttenuationScalingFactor = 1.000000000e+00f;
+    (*this).OcclusionRefreshInterval = 2.000000030e-01f;
+    (*this).bUseReverbVolumes = true;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bAllowTickOnDedicatedServer = false;
+    (*this).bAutoActivate = true;
 }
 
 void UAkComponent::UseReverbVolumes(bool inUseReverbVolumes) {

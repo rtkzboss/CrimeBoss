@@ -2,9 +2,7 @@
 #include "EHoudiniParameterType.h"
 
 UHoudiniParameterFolderList::UHoudiniParameterFolderList() {
-    this->ParmType = EHoudiniParameterType::FolderList;
-    this->bIsTabMenu = false;
-    this->bIsTabsShown = false;
+    (*this).ParmType = EHoudiniParameterType::FolderList;
 }
 
 

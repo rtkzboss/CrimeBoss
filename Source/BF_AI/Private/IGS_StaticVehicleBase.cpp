@@ -1,15 +1,16 @@
 #include "IGS_StaticVehicleBase.h"
 #include "IGS_NavModifierComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_StaticVehicleBase::AIGS_StaticVehicleBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->VehicleMesh = NULL;
-    this->NavModifier = CreateDefaultSubobject<UIGS_NavModifierComponent>(TEXT("NavModifierComponent"));
-    this->ClearCanAffectNavigationFlag = true;
+    (*this).NavModifier = CreateDefaultSubobject<UIGS_NavModifierComponent>(TEXT("NavModifierComponent"));
+    (*this).mR_Color.A = 255;
+    (*this).ClearCanAffectNavigationFlag = true;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).NetDormancy = DORM_Initial;
 }
 
 void AIGS_StaticVehicleBase::Server_SetColor_Implementation(FColor InColor) {

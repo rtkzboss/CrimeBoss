@@ -2,7 +2,7 @@
 #include "IGS_AISense_Danger.h"
 
 UIGS_AISenseConfig_Danger::UIGS_AISenseConfig_Danger() {
-    this->Implementation = UIGS_AISense_Danger::StaticClass();
+    (*this).Implementation = UIGS_AISense_Danger::StaticClass();
 }
 
 

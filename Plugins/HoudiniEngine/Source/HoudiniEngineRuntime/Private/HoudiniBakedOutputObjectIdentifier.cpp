@@ -1,6 +1,7 @@
 #include "HoudiniBakedOutputObjectIdentifier.h"
 
 FHoudiniBakedOutputObjectIdentifier::FHoudiniBakedOutputObjectIdentifier() {
-    this->PartId = 0;
+    (*this).PartId = -1;
+    (*this).SplitIdentifier = TEXT("");
 }
 

@@ -1,10 +1,9 @@
 #include "AkSurfaceReflectorSetComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkSurfaceReflectorSetComponent::UAkSurfaceReflectorSetComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bEnableSurfaceReflectors = true;
-    this->bEnableDiffraction = true;
-    this->bEnableDiffractionOnBoundaryEdges = false;
-    this->AssociatedRoom = NULL;
+    (*this).bEnableSurfaceReflectors = true;
+    (*this).bEnableDiffraction = true;
 }
 
 void UAkSurfaceReflectorSetComponent::UpdateSurfaceReflectorSet() {

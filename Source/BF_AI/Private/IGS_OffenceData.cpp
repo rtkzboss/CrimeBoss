@@ -1,11 +1,9 @@
 #include "IGS_OffenceData.h"
 
 UIGS_OffenceData::UIGS_OffenceData() {
-    this->OffenceReactionType = EIGS_OffenceReactionType::Offence_Player;
-    this->ReactionBehavior = EIGS_CivOffenceReactionBehavior::None;
-    this->OffenceObject = NULL;
-    this->IsReactionForced = false;
-    this->Strikes = 0;
+    (*this).OffencePosition.X = 3.402823466e+38f;
+    (*this).OffencePosition.Y = 3.402823466e+38f;
+    (*this).OffencePosition.Z = 3.402823466e+38f;
 }
 
 

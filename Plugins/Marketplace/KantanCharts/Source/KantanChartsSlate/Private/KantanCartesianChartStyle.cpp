@@ -1,7 +1,7 @@
 #include "KantanCartesianChartStyle.h"
 
 FKantanCartesianChartStyle::FKantanCartesianChartStyle() {
-    this->DataOpacity = 0.00f;
-    this->DataLineThickness = 0.00f;
+    (*this).DataOpacity = 1.000000000e+00f;
+    (*this).DataLineThickness = 1.000000000e+00f;
 }
 

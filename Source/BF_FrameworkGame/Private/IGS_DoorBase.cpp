@@ -1,28 +1,10 @@
 #include "IGS_DoorBase.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_DoorBase::AIGS_DoorBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->AcousticPortalInitState = AkAcousticPortalState::Closed;
-    this->bHasAcousticPortal = true;
-    this->bDoorDirection = false;
-    this->bStartOpen = false;
-    this->bFlipStartingRotation = false;
-    this->bStartLocked = false;
-    this->bOpenableFromBack = false;
-    this->bUnlockFromBack = false;
-    this->bStartHardLocked = false;
-    this->bStartAsStatic = false;
-    this->bDontBreachOpen = false;
-    this->DoorLink = NULL;
-    this->DoorTier = EIGS_DoorTier::DT_Tier1;
-    this->bRammable = false;
-    this->bTakesExplosiveDamage = false;
-    this->bTakesPointDamage = false;
-    this->bShootableLock = false;
-    this->bPenetrable = false;
-    this->bCanEnemiesOpenWhenLocked = false;
-    this->m_bHardLock = false;
-    this->m_bPreBreach = false;
+    (*this).bHasAcousticPortal = true;
 }
 
 void AIGS_DoorBase::UpdateDoorOrientation(AIGS_GameCharacterFramework* inCharacter) {

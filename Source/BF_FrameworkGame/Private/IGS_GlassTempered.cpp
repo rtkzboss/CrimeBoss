@@ -1,35 +1,34 @@
 #include "IGS_GlassTempered.h"
+#include "PhysicsEngine/BodyInstance.h"
+#include "PhysicsEngine/BodyInstance.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
+#include "Chaos/ChaosEngineInterface.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_GlassTempered::UIGS_GlassTempered(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->GlassPanelPreset = EIGS_GlassPreset::Panel_None;
-    this->BaseMesh = NULL;
-    this->FracturedMesh = NULL;
-    this->MaterialOverride = NULL;
-    this->ParticleOnBreak = NULL;
-    this->ParticleOnFracture = NULL;
-    this->StickerTexture = NULL;
-    this->ShardSpawnRatio = 25.00f;
-    this->AkEventOnBreak = NULL;
-    this->AkEventOnFracture = NULL;
-    this->ClearBrush = NULL;
-    this->FracturedImpactBrush = NULL;
-    this->SaveLastFrameBrush = NULL;
-    this->ImpactHoleSize = 20.00f;
-    this->DamageMax = 120.00f;
-    this->VelocityDamageThreshold = 1500.00f;
-    this->RTWidthAndHeight = 64;
-    this->bKeepCollisionOnDestroy = false;
-    this->m_HitpointsRT = NULL;
-    this->m_LastFrameRT = NULL;
-    this->m_DynamicFracturedMaterial = NULL;
-    this->m_DynamicPaintBrushMaterial = NULL;
-    this->m_DynamicSavedFrameMaterial = NULL;
-    this->m_OriginalMaterial = NULL;
-    this->m_HitParticle1Ref = NULL;
-    this->m_HitParticle2Ref = NULL;
-    this->m_BreakParticleRef = NULL;
-    this->m_bIdBrokenLocal = false;
+    (*this).ShardSpawnRatio = 2.500000000e+01f;
+    (*this).ImpactHoleSize = 2.000000000e+01f;
+    (*this).HoleSizeRatioClamp.X = 4.000000060e-01f;
+    (*this).HoleSizeRatioClamp.Y = 4.000000000e+00f;
+    (*this).RandomHoleRatio.X = 8.000000119e-01f;
+    (*this).RandomHoleRatio.Y = 1.200000048e+00f;
+    (*this).DamageMax = 1.200000000e+02f;
+    (*this).VelocityDamageThreshold = 1.500000000e+03f;
+    (*this).RTWidthAndHeight = 64;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("ObjectType")->ContainerPtrToValuePtr<TEnumAsByte<ECollisionChannel>>(&(*this).BodyInstance, 0)) = ECC_Destructible;
+    (*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionProfileName")->ContainerPtrToValuePtr<FName>(&(*this).BodyInstance, 0)) = TEXT("BreakableGlassDefault");
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).Visibility = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).Vehicle = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel1 = ECR_Overlap;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel3 = ECR_Overlap;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel6 = ECR_Ignore;
+    (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseToChannels")->ContainerPtrToValuePtr<FCollisionResponseContainer>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0)).GameTraceChannel15 = ECR_Ignore;
+    auto& gen605 = (*TBaseStructure<FCollisionResponse>::Get()->FindPropertyByName("ResponseArray")->ContainerPtrToValuePtr<TArray<FResponseChannel>>(&(*TBaseStructure<FBodyInstance>::Get()->FindPropertyByName("CollisionResponses")->ContainerPtrToValuePtr<FCollisionResponse>(&(*this).BodyInstance, 0)), 0));
+    gen605.Empty();
+    gen605.AddDefaulted(5);
 }
 
 void UIGS_GlassTempered::UpdateRenderTarget() {

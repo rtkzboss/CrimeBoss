@@ -28,12 +28,14 @@ public class BF_FrameworkGame : ModuleRules {
             "Engine",
             "GameplayAbilities",
             "GameplayTags",
+            "GameplayTasks",
             "IGS_UIFramework",
             "NavigationSystem",
             "Niagara",
             "PaybackDefinitions",
             "PhysicsCore",
             "SkinnedDecalComponent",
+            "SlateCore",
             "UMG",
         });
     }

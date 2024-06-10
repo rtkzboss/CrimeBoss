@@ -2,7 +2,7 @@
 #include "EIGS_ItemType.h"
 
 UIGS_EquipmentInventoryObject::UIGS_EquipmentInventoryObject() {
-    this->ItemType = EIGS_ItemType::Item_Equipment;
+    (*this).ItemType = EIGS_ItemType::Item_Equipment;
 }
 
 float UIGS_EquipmentInventoryObject::GetLastChargeTimestamp() const {

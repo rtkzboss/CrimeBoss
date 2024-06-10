@@ -1,7 +1,11 @@
 #include "IGS_JobsItemWidget.h"
+#include "Input/CommonInputMode.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_JobsItemWidget::UIGS_JobsItemWidget() {
-    this->IsOwned = false;
 }
 
 void UIGS_JobsItemWidget::SetUIData(const FIGS_JobCategoryItemUIData& inUIData) {

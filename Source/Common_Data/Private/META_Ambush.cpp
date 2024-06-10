@@ -1,4 +1,7 @@
 #include "META_Ambush.h"
+#include "EIGS_UserDifficulty.h"
+#include "EMETA_JobResult.h"
+#include "EMETA_LobbyVisibilityType.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_Ambush::UMETA_Ambush() {

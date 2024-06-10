@@ -1,9 +1,7 @@
 #include "IGS_ChallengesBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_ChallengesBaseComponent::UIGS_ChallengesBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->m_SaveGameAccount = NULL;
-    this->m_SaveManager = NULL;
-    this->m_ChallengesDatabase = NULL;
 }
 
 void UIGS_ChallengesBaseComponent::TryResolveCompletedChallenges(bool inNotify) {

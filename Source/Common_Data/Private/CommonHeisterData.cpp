@@ -1,23 +1,42 @@
 #include "CommonHeisterData.h"
 
 FCommonHeisterData::FCommonHeisterData() {
-    this->CharacterID = EIGS_CharacterID::Char_Gen_Start;
-    this->UniqGenericId = 0;
-    this->GenericVariantID = 0;
-    this->bIsMaxLeveled = false;
-    this->HeisterNumber = 0;
-    this->PlayerId = 0;
-    this->ProgressionLevel = 0;
-    this->Experience = 0;
-    this->Injuries = 0;
-    this->CharacterState = EMETA_CharacterState::None;
-    this->IsBot = false;
-    this->bUseCustomLoadout = false;
-    this->bComesFromMeta = false;
-    this->KilledByTeamSide = EIGS_TeamSideEnum::TS_Heisters;
-    this->KilledByGangsterVariation = EIGS_GangsterVariationType::US_None;
-    this->PlayerRespect = EMETA_RespectLvl::Low;
-    this->MutableVariationIndex = 0;
-    this->MissionCutPercentWithModifiers = 0;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).TagID, 0)) = NAME_None;
+    (*this).CharacterID = EIGS_CharacterID::Char_Unknown;
+    (*this).UniqGenericId = -1;
+    (*this).GenericVariantID = -1;
+    (*this).CharacterName = FText::FromString(TEXT(""));
+    (*this).bIsMaxLeveled = false;
+    (*this).HeisterNumber = -1;
+    (*this).PlayerId = -1;
+    (*this).ProgressionLevel = 1;
+    auto& gen938 = (*TBaseStructure<FUniqueNetIdRepl>::Get()->FindPropertyByName("ReplicationBytes")->ContainerPtrToValuePtr<TArray<uint8>>(&(*this).UniquePlayerId, 0));
+    gen938.Empty();
+    (*this).Loadout.PrimaryWeapon = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Loadout.PrimaryWeaponSkin, 0)) = NAME_None;
+    (*this).Loadout.SecondaryWeapon = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Loadout.SecondaryWeaponSkin, 0)) = NAME_None;
+    auto& gen939 = (*this).Loadout.Equipment;
+    gen939.Empty();
+    auto& gen940 = (*this).Loadout.Perks;
+    gen940.Empty();
+    (*this).Loadout.Ability1ChargesLeft = -1;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Loadout.CharacterSkinID, 0)) = NAME_None;
+    (*this).Experience = 0;
+    (*this).Injuries = 0;
+    (*this).CharacterState = EMETA_CharacterState::None;
+    (*this).IsBot = false;
+    (*this).bUseCustomLoadout = false;
+    (*this).bComesFromMeta = false;
+    (*this).MissionStats.Kills = -1;
+    (*this).MissionStats.Accuracy = -1.000000000e+00f;
+    (*this).MissionStats.RevivesLeft = -1.000000000e+00f;
+    (*this).MissionStats.CollectedMoney = 0.000000000e+00f;
+    (*this).KilledByTeamSide = EIGS_TeamSideEnum::TS_Unknown;
+    (*this).KilledByGangsterVariation = EIGS_GangsterVariationType::US_None;
+    (*this).PlayerRespect = EMETA_RespectLvl::Low;
+    (*this).MutableVariationIndex = -1;
+    (*this).MissionCutPercentWithModifiers = 0;
+    (*this).CachedPlayerName = FText::FromString(TEXT(""));
 }
 

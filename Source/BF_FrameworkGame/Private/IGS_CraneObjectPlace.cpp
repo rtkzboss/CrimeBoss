@@ -1,8 +1,8 @@
 #include "IGS_CraneObjectPlace.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_CraneObjectPlace::AIGS_CraneObjectPlace(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->DetectionComponent = NULL;
-    this->PlacePinPoint = NULL;
 }
 
 void AIGS_CraneObjectPlace::OnEndOverlap(UPrimitiveComponent* inOverlappedComponent, AActor* inOtherActor, UPrimitiveComponent* inOtherComp, int32 inOtherBodyIndex) {

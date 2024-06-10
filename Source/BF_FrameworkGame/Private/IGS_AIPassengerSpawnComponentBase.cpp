@@ -1,13 +1,12 @@
 #include "IGS_AIPassengerSpawnComponentBase.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_AIPassengerSpawnComponentBase::UIGS_AIPassengerSpawnComponentBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->TeamSide = EIGS_TeamSideEnum::TS_Cops;
-    this->SettingsOverride = NULL;
-    this->CarType = EIGS_CarType::C_Unknown;
-    this->PlaySpawnVoiceovers = true;
-    this->SocketParentMesh = NULL;
-    this->EnableDebugSpheres = false;
-    this->AmountOfPassengersToSpawn = 0;
+    (*this).TeamSide = EIGS_TeamSideEnum::TS_Cops;
+    (*this).CarType = EIGS_CarType::C_Unknown;
+    (*this).PassangersCount.Min = 4;
+    (*this).PassangersCount.Max = 4;
+    (*this).PlaySpawnVoiceovers = true;
 }
 
 void UIGS_AIPassengerSpawnComponentBase::SpawnGroup(int32 inPassengersCount) {

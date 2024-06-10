@@ -2,8 +2,8 @@
 #include "EnvironmentQuery/Items/EnvQueryItemType_Actor.h"
 
 UEnvQueryGenerator_RemoverSpecialObjectives::UEnvQueryGenerator_RemoverSpecialObjectives() {
-    this->ItemType = UEnvQueryItemType_Actor::StaticClass();
-    this->Querier = NULL;
+    (*this).Range.DefaultValue = 5.000000000e+04f;
+    (*this).ItemType = UEnvQueryItemType_Actor::StaticClass();
 }
 
 

@@ -1,17 +1,11 @@
 #include "IGS_KeypadMinigame.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 
 AIGS_KeypadMinigame::AIGS_KeypadMinigame(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->bEnteredAnyCombination = false;
-    this->bWrongCodeAddsStrike = false;
-    this->SolutionCode = TEXT("0451");
-    this->AkComponent = NULL;
-    this->ButtonPressAkAudioEvent = NULL;
-    this->m_Instigator = NULL;
-    this->m_InstigatorController = NULL;
-    this->m_InstigatorInputComponent = NULL;
+    (*this).SolutionCode = TEXT("0451");
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
 }
 
 void AIGS_KeypadMinigame::WinKeypad() {

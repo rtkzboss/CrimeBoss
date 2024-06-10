@@ -1,14 +1,14 @@
 #include "IGS_VehicleGenerator.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 
 AIGS_VehicleGenerator::AIGS_VehicleGenerator(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
-    this->FirstDelayInSeconds = 0.00f;
-    this->SpawnFrequencyMinRangeInSeconds = 10.00f;
-    this->SpawnFrequencyMaxRangeInSeconds = 10.00f;
-    this->bUseMaxSpeedRandomizer = false;
-    this->CarMaxSpeedMaxRangeValue = 600.00f;
-    this->CarMaxSpeedMinRangeValue = 400.00f;
+    (*this).SpawnFrequencyMinRangeInSeconds = 1.000000000e+01f;
+    (*this).SpawnFrequencyMaxRangeInSeconds = 1.000000000e+01f;
+    (*this).CarMaxSpeedMaxRangeValue = 6.000000000e+02f;
+    (*this).CarMaxSpeedMinRangeValue = 4.000000000e+02f;
+    (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 }
 
 void AIGS_VehicleGenerator::OnVehicleDriveFinished(AIGS_VehicleBase* inVehicle) {

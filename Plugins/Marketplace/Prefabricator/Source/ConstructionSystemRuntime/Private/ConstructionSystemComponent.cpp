@@ -1,17 +1,12 @@
 #include "ConstructionSystemComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UConstructionSystemComponent::UConstructionSystemComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CursorMaterial = NULL;
-    this->CursorInvalidMaterial = NULL;
-    this->TraceStartDistance = 1000.00f;
-    this->TraceSweepRadius = 40.00f;
-    this->ConstructionCameraActor = NULL;
-    this->ConstructionCameraTransitionTime = 0.15f;
-    this->ConstructionCameraTransitionExp = 1.00f;
-    this->BuildMenuUI = NULL;
-    this->BuildMenuData = NULL;
-    this->BuildMenuUIInstance = NULL;
-    this->ActiveToolType = EConstructionSystemToolType::BuildTool;
+    (*this).TraceStartDistance = 1.000000000e+03f;
+    (*this).TraceSweepRadius = 4.000000000e+01f;
+    (*this).ConstructionCameraTransitionTime = 1.500000060e-01f;
+    (*this).ConstructionCameraTransitionExp = 1.000000000e+00f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UConstructionSystemComponent::ToggleConstructionSystem() {

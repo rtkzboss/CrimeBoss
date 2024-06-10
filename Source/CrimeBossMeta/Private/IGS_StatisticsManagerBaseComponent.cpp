@@ -1,4 +1,5 @@
 #include "IGS_StatisticsManagerBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_StatisticsManagerBaseComponent::UIGS_StatisticsManagerBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

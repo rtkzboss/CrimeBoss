@@ -1,11 +1,10 @@
 #include "IGS_NavLinkComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 
 UIGS_NavLinkComponent::UIGS_NavLinkComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CommonAnimation = EIGS_SmartLinkAnimVariant::AIM_None;
-    this->LeftAnimation = EIGS_SmartLinkAnimVariant::AIM_None;
-    this->LeftAnimationAsset = NULL;
-    this->RightAnimation = EIGS_SmartLinkAnimVariant::AIM_None;
-    this->RightAnimationAsset = NULL;
 }
 
 

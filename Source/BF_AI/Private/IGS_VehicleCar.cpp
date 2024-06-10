@@ -2,57 +2,48 @@
 #include "IGS_ObjectStatus.h"
 #include "IGS_AICarSpawnComponent.h"
 #include "IGS_NavModifierComponent.h"
+#include "GameFramework/Actor.h"
 #include "Components/BoxComponent.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SceneComponent.h"
 #include "SimpleWheeledVehicleMovementComponent.h"
+#include "EIGS_VehicleSplineGroup.h"
 #include "IGS_DestructableVehicleComponent.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_VehicleCar::AIGS_VehicleCar(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("ObjectStatus"));
-    this->DestructableVehicleComponent = CreateDefaultSubobject<UIGS_DestructableVehicleComponent>(TEXT("DestructableVehicleComponent"));
-    this->MissionLeaveAnimation = NULL;
-    this->AICarSpawner = CreateDefaultSubobject<UIGS_AICarSpawnComponent>(TEXT("AICarSpawnComponent"));
-    this->WheeledVehicleComponent = CreateDefaultSubobject<USimpleWheeledVehicleMovementComponent>(TEXT("WheeledVehicleComponent"));
-    this->PlayerPushAwayTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("PlayerPushAwayTrigger"));
-    this->PlayerPushAwayBlockingCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("PlayerPushAwayBlockingCollider"));
-    this->TopTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("TopTrigger"));
-    this->DistanceSensorLocation = CreateDefaultSubobject<USceneComponent>(TEXT("DistanceSensorLocation"));
-    this->DriveNavAreaClass = NULL;
-    this->StopNavAreaClass = NULL;
-    this->NavModifier = CreateDefaultSubobject<UIGS_NavModifierComponent>(TEXT("NavModifierComponent"));
-    this->ParkingAniamtion = NULL;
-    this->ParkingStopAniamtion = NULL;
-    this->ParkTestCollisionBox = NULL;
-    this->NeedsPassengers = true;
-    this->bUseGravity = true;
-    this->GravityDefault = 500.00f;
-    this->MaxFollowSpeed = 1500.00f;
-    this->AccelerateSpeed = 600.00f;
-    this->StartParkingDistance = 300.00f;
-    this->ParkingSpeed = 600.00f;
-    this->ParkingSlowdownTime = 15.00f;
-    this->RotationSpeed = 8.00f;
-    this->WheelRotationSpeed = 10.00f;
-    this->DriftDistance = 500.00f;
-    this->DiftAngle = 13.00f;
-    this->DiftSpeedDecrease = 400.00f;
-    this->MaxLeashDistance = 300.00f;
-    this->PushPlayerDamage = 0.00f;
-    this->WheelSize = 50.00f;
-    this->FrontStopTriggerOffset = -10.00f;
-    this->SkidMarks = NULL;
-    this->bIsFullyAccelerated = false;
-    this->bDisableCar = false;
-    this->bDisableWhenGrounded = false;
-    this->FrontWheelAngle = 0.00f;
-    this->PlayerPushAwayTrigger->SetupAttachment(RootComponent);
-    this->PlayerPushAwayBlockingCollider->SetupAttachment(RootComponent);
-    this->TopTrigger->SetupAttachment(RootComponent);
-    this->DestructableVehicleComponent->SetupAttachment(RootComponent);
+    (*this).ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("ObjectStatus"));
+    (*this).DestructableVehicleComponent = CreateDefaultSubobject<UIGS_DestructableVehicleComponent>(TEXT("DestructableVehicleComponent"));
+    (*this).AICarSpawner = CreateDefaultSubobject<UIGS_AICarSpawnComponent>(TEXT("AICarSpawnComponent"));
+    (*this).WheeledVehicleComponent = CreateDefaultSubobject<USimpleWheeledVehicleMovementComponent>(TEXT("WheeledVehicleComponent"));
+    (*this).PlayerPushAwayTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("PlayerPushAwayTrigger"));
+    (*this).PlayerPushAwayBlockingCollider = CreateDefaultSubobject<UBoxComponent>(TEXT("PlayerPushAwayBlockingCollider"));
+    (*this).TopTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("TopTrigger"));
+    (*this).DistanceSensorLocation = CreateDefaultSubobject<USceneComponent>(TEXT("DistanceSensorLocation"));
+    (*this).NavModifier = CreateDefaultSubobject<UIGS_NavModifierComponent>(TEXT("NavModifierComponent"));
+    (*this).NeedsPassengers = true;
+    (*this).bUseGravity = true;
+    (*this).GravityDefault = 5.000000000e+02f;
+    (*this).MaxFollowSpeed = 1.500000000e+03f;
+    (*this).AccelerateSpeed = 6.000000000e+02f;
+    (*this).StartParkingDistance = 3.000000000e+02f;
+    (*this).ParkingSpeed = 6.000000000e+02f;
+    (*this).ParkingSlowdownTime = 1.500000000e+01f;
+    (*this).RotationSpeed = 8.000000000e+00f;
+    (*this).WheelRotationSpeed = 1.000000000e+01f;
+    (*this).DriftDistance = 5.000000000e+02f;
+    (*this).DiftAngle = 1.300000000e+01f;
+    (*this).DiftSpeedDecrease = 4.000000000e+02f;
+    (*this).MaxLeashDistance = 3.000000000e+02f;
+    (*this).WheelSize = 5.000000000e+01f;
+    (*this).FrontStopTriggerOffset = -1.000000000e+01f;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).PlayerPushAwayTrigger->SetupAttachment((*this).RootComponent);
+    (*this).PlayerPushAwayBlockingCollider->SetupAttachment((*this).RootComponent);
+    (*this).TopTrigger->SetupAttachment((*this).RootComponent);
+    (*this).DestructableVehicleComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_VehicleCar::SpawnPassengers() {

@@ -1,6 +1,6 @@
 #include "IGS_AISwatShieldTierData.h"
 
 FIGS_AISwatShieldTierData::FIGS_AISwatShieldTierData() {
-    this->ShieldGlassHP = 0.00f;
+    (*this).ShieldGlassHP = 3.000000000e+02f;
 }
 

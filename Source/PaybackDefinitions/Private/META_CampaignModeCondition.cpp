@@ -1,7 +1,8 @@
 #include "META_CampaignModeCondition.h"
 
 FMETA_CampaignModeCondition::FMETA_CampaignModeCondition() {
-    this->Operator = EMETA_ConditionOperator::Equal;
-    this->Value = 0;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ConditionalTag, 0)) = NAME_None;
+    (*this).Operator = EMETA_ConditionOperator::Greater;
+    (*this).Value = 0;
 }
 

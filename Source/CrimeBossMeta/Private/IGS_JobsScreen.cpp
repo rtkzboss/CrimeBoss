@@ -1,13 +1,14 @@
 #include "IGS_JobsScreen.h"
+#include "EScreenInputMode.h"
+#include "EScreenInputPass.h"
+#include "EScreenModifier.h"
+#include "EScreenZOrder.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_JobsScreen::UIGS_JobsScreen() {
-    this->JobsCategoriesContent = NULL;
-    this->IGSScrollBoxWidget = NULL;
-    this->ScrollPaddingOnCategorySelect = 0.00f;
-    this->CategoryWidgetClass = NULL;
-    this->SelectedCategoryIndex = 0;
-    this->AllowEndlessScroll = false;
-    this->RecomendedCategoryWidget = NULL;
 }
 
 void UIGS_JobsScreen::UpdateRecomendedCategory() {

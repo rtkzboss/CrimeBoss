@@ -1,9 +1,8 @@
 #include "META_VoiceoverDialogueSettings.h"
 
 UMETA_VoiceoverDialogueSettings::UMETA_VoiceoverDialogueSettings() {
-    this->DelayAfterScreenSwitch = 0.50f;
-    this->DefaultTypePriority = 0;
-    this->DefaultTypeChance = 1.00f;
+    (*this).DelayAfterScreenSwitch = 5.000000000e-01f;
+    (*this).DefaultTypeChance = 1.000000000e+00f;
 }
 
 FMETA_VODialoguesCommonTypeSettings UMETA_VoiceoverDialogueSettings::GetTypeSettings(FGameplayTag inType) {

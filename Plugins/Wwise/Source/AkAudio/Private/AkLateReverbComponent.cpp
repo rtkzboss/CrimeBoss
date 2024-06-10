@@ -1,14 +1,13 @@
 #include "AkLateReverbComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UAkLateReverbComponent::UAkLateReverbComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bUseAttachParentBound = true;
-    this->bEnable = true;
-    this->SendLevel = 1.00f;
-    this->FadeRate = 0.50f;
-    this->Priority = 1.00f;
-    this->AutoAssignAuxBus = true;
-    this->AuxBus = NULL;
-    this->AuxBusManual = NULL;
+    (*this).bEnable = true;
+    (*this).SendLevel = 1.000000000e+00f;
+    (*this).FadeRate = 5.000000000e-01f;
+    (*this).Priority = 1.000000000e+00f;
+    (*this).AutoAssignAuxBus = true;
+    (*this).bUseAttachParentBound = true;
 }
 
 void UAkLateReverbComponent::AssociateAkTextureSetComponent(UAkAcousticTextureSetComponent* textureSetComponent) {

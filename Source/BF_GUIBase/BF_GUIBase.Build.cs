@@ -11,6 +11,7 @@ public class BF_GUIBase : ModuleRules {
             "Core",
             "CoreUObject",
             "Engine",
+            "Slate",
             "SlateCore",
             "UMG",
         });

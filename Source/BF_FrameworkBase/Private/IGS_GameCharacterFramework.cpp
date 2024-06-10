@@ -1,5 +1,8 @@
 #include "IGS_GameCharacterFramework.h"
 #include "SkeletalMeshComponentBudgeted.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "Engine/EngineTypes.h"
 #include "SkinnedDecalSampler.h"
 #include "IGS_CharacterData.h"
 #include "IGS_DamageHandlerComponentFramework.h"
@@ -13,36 +16,21 @@
 #include "Templates/SubclassOf.h"
 
 AIGS_GameCharacterFramework::AIGS_GameCharacterFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USkeletalMeshComponentBudgeted>(TEXT("CharacterMesh0")).SetDefaultSubobjectClass<UIGS_GameCharacterMovementComponent>(TEXT("CharMoveComp"))) {
-    this->AkEnviroSwitchIndoors = NULL;
-    this->AkEnviroSwitchOutdoors = NULL;
-    this->AkEnviroStateIndoors = NULL;
-    this->AkEnviroStateOutdoors = NULL;
-    this->bSpawnedForFirstTime = true;
-    this->LeftHandAttachedActor = NULL;
-    this->RightHandAttachedActor = NULL;
-    this->CharacterData = CreateDefaultSubobject<UIGS_CharacterData>(TEXT("Character Data"));
-    this->ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("Object Status"));
-    this->DamageHandlerComponent2 = CreateDefaultSubobject<UIGS_DamageHandlerComponentFramework>(TEXT("DamageHandlerComponent2"));
-    this->DealtDamageEventsWatcher = CreateDefaultSubobject<UIGS_DealtDamageEventsWatcher>(TEXT("DealtDamageEventsWatcher"));
-    this->DownStateHandlerComponent = NULL;
-    this->OutlineComponent = CreateDefaultSubobject<UIGS_OutlineComponent>(TEXT("Outline Component"));
-    this->GASComponent = CreateDefaultSubobject<UIGS_GASComponentBase>(TEXT("GASComponent"));
-    this->SkinnedDecalSampler = CreateDefaultSubobject<USkinnedDecalSampler>(TEXT("kinned Decal Sampler"));
-    this->GASAttributeSet = CreateDefaultSubobject<UIGS_GASAttributeSetBase>(TEXT("GASAttributeSet"));
-    this->SquadID = -1;
-    this->LastSquadID = -1;
-    this->CurrentAim = 0.00f;
-    this->bWantsAim = false;
-    this->bCanAttack = true;
-    this->bStartsWithCombatStance = false;
-    this->bCombatStance = false;
-    this->mR_IsMovementDisabled = false;
-    this->CharacterIDEnum = EIGS_CharacterID::Char_Unknown;
-    this->GenericCharacterID = -1;
-    this->bIsMaxLeveled = false;
-    this->GameCMC = NULL;
-    const FProperty* p_Mesh = GetClass()->FindPropertyByName("Mesh");
-    (*p_Mesh->ContainerPtrToValuePtr<USkeletalMeshComponent*>(this))->SetupAttachment(RootComponent);
+    (*this).bSpawnedForFirstTime = true;
+    (*this).CharacterData = CreateDefaultSubobject<UIGS_CharacterData>(TEXT("Character Data"));
+    (*this).ObjectStatus = CreateDefaultSubobject<UIGS_ObjectStatus>(TEXT("Object Status"));
+    (*this).DamageHandlerComponent2 = CreateDefaultSubobject<UIGS_DamageHandlerComponentFramework>(TEXT("DamageHandlerComponent2"));
+    (*this).DealtDamageEventsWatcher = CreateDefaultSubobject<UIGS_DealtDamageEventsWatcher>(TEXT("DealtDamageEventsWatcher"));
+    (*this).OutlineComponent = CreateDefaultSubobject<UIGS_OutlineComponent>(TEXT("Outline Component"));
+    (*this).GASComponent = CreateDefaultSubobject<UIGS_GASComponentBase>(TEXT("GASComponent"));
+    (*this).SkinnedDecalSampler = CreateDefaultSubobject<USkinnedDecalSampler>(TEXT("kinned Decal Sampler"));
+    (*this).GASAttributeSet = CreateDefaultSubobject<UIGS_GASAttributeSetBase>(TEXT("GASAttributeSet"));
+    (*this).SquadID = -1;
+    (*this).LastSquadID = -1;
+    (*this).bCanAttack = true;
+    (*this).CharacterIDEnum = EIGS_CharacterID::Char_Unknown;
+    (*this).GenericCharacterID = -1;
+    (*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0))->SetupAttachment((*this).RootComponent);
 }
 
 bool AIGS_GameCharacterFramework::WantsAim() const {

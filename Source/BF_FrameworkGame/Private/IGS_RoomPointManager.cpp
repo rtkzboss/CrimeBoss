@@ -2,7 +2,6 @@
 #include "Net/UnrealNetwork.h"
 
 UIGS_RoomPointManager::UIGS_RoomPointManager() {
-    this->bRoomPolysGathered = false;
 }
 
 void UIGS_RoomPointManager::RefreshBadRooms(const bool inHighlight) {

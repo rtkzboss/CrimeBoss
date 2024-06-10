@@ -1,4 +1,7 @@
 #include "AkItemBoolProperties.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
 
 UAkItemBoolProperties::UAkItemBoolProperties() {
 }

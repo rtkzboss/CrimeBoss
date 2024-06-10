@@ -1,16 +1,12 @@
 #include "IGS_PingableComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_PingableComponent::UIGS_PingableComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bUseRootForOutline = true;
-    this->bShowOutline = true;
-    this->PingDuration = -1.00f;
-    this->PingableType = EIGS_PingableType::Generic;
-    this->mR_bCanBePinged = true;
-    this->PingedAkAudioEventLoaded = NULL;
-    this->PingedDangerousAkAudioEventLoaded = NULL;
-    this->mR_bIsPinged = false;
-    this->m_OutlineComponent = NULL;
+    (*this).bUseRootForOutline = true;
+    (*this).bShowOutline = true;
+    (*this).PingDuration = -1.000000000e+00f;
+    (*this).mR_bCanBePinged = true;
 }
 
 void UIGS_PingableComponent::SetOutlineState(EIGS_CameraOutlineState inType, bool inEnabled) {

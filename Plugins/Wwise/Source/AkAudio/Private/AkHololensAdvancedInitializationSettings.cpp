@@ -1,6 +1,6 @@
 #include "AkHololensAdvancedInitializationSettings.h"
 
 FAkHololensAdvancedInitializationSettings::FAkHololensAdvancedInitializationSettings() {
-    this->UseHeadMountedDisplayAudioDevice = false;
+    (*this).UseHeadMountedDisplayAudioDevice = false;
 }
 

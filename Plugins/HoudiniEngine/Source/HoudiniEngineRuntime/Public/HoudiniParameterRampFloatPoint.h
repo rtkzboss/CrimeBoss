@@ -12,7 +12,7 @@ class HOUDINIENGINERUNTIME_API UHoudiniParameterRampFloatPoint : public UObject 
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float position;
+    float Position;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float Value;

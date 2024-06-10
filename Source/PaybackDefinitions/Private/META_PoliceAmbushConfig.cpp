@@ -1,17 +1,17 @@
 #include "META_PoliceAmbushConfig.h"
 
 FMETA_PoliceAmbushConfig::FMETA_PoliceAmbushConfig() {
-    this->PoliceAmbush = 0;
-    this->MissionWasDoneInStealth = 0;
-    this->MissionEndedWith3PoliceBadges = 0;
-    this->MissionEndedWith4PoliceBadges = 0;
-    this->MissionEndedWith5PoliceBadges = 0;
-    this->DetectiveOnTile = 0;
-    this->DetectiveActiveAnywhere = 0;
-    this->HeatVeryLow = 0;
-    this->HeatLow = 0;
-    this->HeatMedium = 0;
-    this->HeatHigh = 0;
-    this->HeatVeryHigh = 0;
+    (*this).PoliceAmbush = 0;
+    (*this).MissionWasDoneInStealth = -20;
+    (*this).MissionEndedWith3PoliceBadges = 5;
+    (*this).MissionEndedWith4PoliceBadges = 10;
+    (*this).MissionEndedWith5PoliceBadges = 15;
+    (*this).DetectiveOnTile = 50;
+    (*this).DetectiveActiveAnywhere = 20;
+    (*this).HeatVeryLow = -4;
+    (*this).HeatLow = 0;
+    (*this).HeatMedium = 4;
+    (*this).HeatHigh = 8;
+    (*this).HeatVeryHigh = 12;
 }
 

@@ -1,9 +1,9 @@
 #include "META_GangAmbushConfig.h"
 
 FMETA_GangAmbushConfig::FMETA_GangAmbushConfig() {
-    this->NoGangsterKilledInMission = 0;
-    this->MissionWasDoneInStealth = 0;
-    this->BossInTopEnemyList = 0;
-    this->BossIsInGangsEnemyList = 0;
+    (*this).NoGangsterKilledInMission = -5;
+    (*this).MissionWasDoneInStealth = -20;
+    (*this).BossInTopEnemyList = 20;
+    (*this).BossIsInGangsEnemyList = 20;
 }
 

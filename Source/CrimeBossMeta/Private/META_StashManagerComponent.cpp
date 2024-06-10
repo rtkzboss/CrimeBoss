@@ -1,12 +1,9 @@
 #include "META_StashManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_StashManagerComponent::UMETA_StashManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->CurrentLootValueWasSoldToPawnShop = 0;
-    this->LastDayWhenWarehouseAttackStarted = 0;
-    this->ChanceWarehouseAttack = 0;
-    this->WarehouseAttackMissionID = NULL;
-    this->MoneyWarehouseAttackWasRemoved = 0;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
 void UMETA_StashManagerComponent::SetCashForPartner(EMETA_Partner Partner, int32 inCash) {

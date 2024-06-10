@@ -1,12 +1,6 @@
 #include "CustomizableObject.h"
 
 UCustomizableObject::UCustomizableObject() {
-    this->ReferenceSkeletalMesh = NULL;
-    this->ReferenceStaticMesh = NULL;
-    this->Relevancy = ECustomizableObjectRelevancy::All;
-    this->bDisableTextureLayoutManagement = false;
-    this->bIsChildObject = false;
-    this->MaskOutCache_HardRef = NULL;
 }
 
 void UCustomizableObject::UnloadMaskOutCache() {

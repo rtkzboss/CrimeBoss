@@ -1,7 +1,10 @@
 #include "IGS_WidgetSlider.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
 
 UIGS_WidgetSlider::UIGS_WidgetSlider() : UUserWidget(FObjectInitializer::Get()) {
-    this->Slider = NULL;
 }
 
 void UIGS_WidgetSlider::SetValue(float InValue) {

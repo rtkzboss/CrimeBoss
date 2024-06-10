@@ -1,10 +1,12 @@
 #include "IGS_HealthSectionWidget.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_HealthSectionWidget::UIGS_HealthSectionWidget() {
-    this->CurrentHealth = 0.00f;
-    this->MaxHealth = 0.00f;
-    this->bLocalPlayer = true;
-    this->PawnToMonitor = NULL;
+    (*this).bLocalPlayer = true;
 }
 
 

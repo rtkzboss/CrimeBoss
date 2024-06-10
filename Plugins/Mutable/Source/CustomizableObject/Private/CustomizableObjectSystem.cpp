@@ -1,9 +1,6 @@
 #include "CustomizableObjectSystem.h"
 
 UCustomizableObjectSystem::UCustomizableObjectSystem() {
-    this->PreviewExternalImageProvider = NULL;
-    this->DefaultInstanceLODManagement = NULL;
-    this->CurrentInstanceLODManagement = NULL;
 }
 
 void UCustomizableObjectSystem::SetReleaseMutableTexturesImmediately(bool bReleaseTextures) {

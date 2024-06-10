@@ -2,12 +2,10 @@
 #include "Templates/SubclassOf.h"
 
 UMETA_PlotlineSelection::UMETA_PlotlineSelection() {
-    this->PrimaryGoal = NULL;
-    this->CampaignVictoryCondition = EMETA_CampaignVictoryCondition::Default;
-    this->InvestigationGrowth = 1.00f;
-    this->FinalScoreMultiplier = 1.00f;
-    this->InitialSoldiersAmount = 0;
-    this->InitialArmyTier = EMETA_ArmyTier::Low;
+    (*this).InvestigationGrowth = 1.000000000e+00f;
+    (*this).FinalScoreMultiplier = 1.000000000e+00f;
+    (*this).AnyNextPlotlineDays.Min = 2;
+    (*this).AnyNextPlotlineDays.Max = 4;
 }
 
 bool UMETA_PlotlineSelection::IsBossBonusIgnored(EMETA_BonusType inBonusType) const {

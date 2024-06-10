@@ -1,11 +1,11 @@
 #include "IGS_LootItemBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 
 UIGS_LootItemBaseComponent::UIGS_LootItemBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bCanEverAffectNavigation = false;
-    this->LootItem = NULL;
-    this->LootOrderIndex = 0;
-    this->Value = 0;
-    this->ItemWeight = 0;
+    (*this).bCanEverAffectNavigation = false;
 }
 
 FIGS_LootItemsData UIGS_LootItemBaseComponent::GetLootItemData() {

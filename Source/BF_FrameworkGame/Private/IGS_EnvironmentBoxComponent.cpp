@@ -1,13 +1,16 @@
 #include "IGS_EnvironmentBoxComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 #include "NavAreas/NavArea_Obstacle.h"
 
 UIGS_EnvironmentBoxComponent::UIGS_EnvironmentBoxComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bCanEverAffectNavigation = false;
-    this->AreaClass = UNavArea_Obstacle::StaticClass();
-    this->EffectBlendStartDuration = 10.00f;
-    this->EffectBlendStopDuration = 25.00f;
-    this->VolumeType = EIGS_EnvironmentVolumeType::Exterior;
-    this->m_IsEnabled = true;
+    (*this).EffectBlendStartDuration = 1.000000000e+01f;
+    (*this).EffectBlendStopDuration = 2.500000000e+01f;
+    (*this).m_IsEnabled = true;
+    (*this).AreaClass = UNavArea_Obstacle::StaticClass();
+    (*this).bCanEverAffectNavigation = false;
 }
 
 void UIGS_EnvironmentBoxComponent::SetEnabled(bool inNewIsEnabled) {

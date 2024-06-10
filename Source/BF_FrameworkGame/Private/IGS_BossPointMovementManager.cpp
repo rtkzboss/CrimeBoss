@@ -1,10 +1,11 @@
 #include "IGS_BossPointMovementManager.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/SplineComponent.h"
 
 AIGS_BossPointMovementManager::AIGS_BossPointMovementManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->SplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("SplineComp"));
-    this->MovingPlayer = NULL;
-    this->MovementComp = NULL;
+    (*this).SplineComponent = CreateDefaultSubobject<USplineComponent>(TEXT("SplineComp"));
+    (*this).PrimaryActorTick.bCanEverTick = true;
 }
 
 void AIGS_BossPointMovementManager::ResumeMoving() {

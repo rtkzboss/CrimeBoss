@@ -1,9 +1,8 @@
 #include "IGS_AnimBudgetAllocatorSettings.h"
 
 UIGS_AnimBudgetAllocatorSettings::UIGS_AnimBudgetAllocatorSettings() {
-    this->MinimumSignificance = 0.00f;
-    this->MaximumSignificance = 1.00f;
-    this->PauseAnimSignificanceThreshold = 0.20f;
+    (*this).MaximumSignificance = 1.000000000e+00f;
+    (*this).PauseAnimSignificanceThreshold = 2.000000030e-01f;
 }
 
 void UIGS_AnimBudgetAllocatorSettings::SetParameters(const FAnimationBudgetAllocatorParameters& inParameters) {

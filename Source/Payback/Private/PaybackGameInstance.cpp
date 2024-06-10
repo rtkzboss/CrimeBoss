@@ -1,7 +1,6 @@
 #include "PaybackGameInstance.h"
 
 UPaybackGameInstance::UPaybackGameInstance() {
-    this->CoreMapsData = NULL;
 }
 
 void UPaybackGameInstance::TriggerOnLoginChangedAfterEAS() const {

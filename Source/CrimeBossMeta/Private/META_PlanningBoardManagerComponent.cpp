@@ -1,4 +1,5 @@
 #include "META_PlanningBoardManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UMETA_PlanningBoardManagerComponent::UMETA_PlanningBoardManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

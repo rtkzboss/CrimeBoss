@@ -1,4 +1,5 @@
 #include "IGS_Quickplay_StashManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_Quickplay_StashManagerComponent::UIGS_Quickplay_StashManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

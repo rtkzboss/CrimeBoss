@@ -1,11 +1,11 @@
 #include "IGS_TeammateHealthInfo.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_TeammateHealthInfo::UIGS_TeammateHealthInfo() {
-    this->PlayerPawn = NULL;
-    this->PlayerController = NULL;
-    this->SecondPlayerWidget = NULL;
-    this->ThirdPlayerWidget = NULL;
-    this->FourthPlayerWidget = NULL;
 }
 
 

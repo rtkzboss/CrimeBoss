@@ -9,7 +9,6 @@ public class Payback : ModuleRules {
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
             "AkAudio",
-            "AnimationBudgetAllocator",
             "BF_AI",
             "BF_Debug",
             "BF_FrameworkBase",
@@ -31,6 +30,8 @@ public class Payback : ModuleRules {
             "OnlineSubsystemUtils",
             "PaybackDefinitions",
             "PhysicsCore",
+            "SlateCore",
+            "UMG",
         });
     }
 }

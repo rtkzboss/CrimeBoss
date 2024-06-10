@@ -1,7 +1,8 @@
 #include "VehicleBlockingNavArea.h"
 
 UVehicleBlockingNavArea::UVehicleBlockingNavArea() {
-    this->bSupportsAgent0 = false;
+    (*this).SupportedAgents.bSupportsAgent0 = false;
+    (*this).bSupportsAgent0 = false;
 }
 
 

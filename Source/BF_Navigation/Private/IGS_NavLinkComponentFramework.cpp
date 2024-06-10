@@ -1,4 +1,8 @@
 #include "IGS_NavLinkComponentFramework.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 
 UIGS_NavLinkComponentFramework::UIGS_NavLinkComponentFramework(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

@@ -1,29 +1,21 @@
 #include "IGS_NetworkComponentCharacter.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
 UIGS_NetworkComponentCharacter::UIGS_NetworkComponentCharacter(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->PickupClasses = NULL;
-    this->mR_CharacterState = EIGS_CharacterState::Calm;
-    this->mR_MovementSpeed = EIGS_Speed::MS_Walk;
-    this->mR_RequestedLeanSide = EIGS_LeanSide::LeanSide_None;
-    this->mR_LeaningDirection = EIGS_CharacterLeaningDirectionEnum::None;
-    this->mR_IsMoving = false;
-    this->mR_IsMantling = false;
-    this->mR_IsVisibilityModOn = false;
-    this->mR_IsRunningAttack = false;
-    this->mR_ShooterType = EIGS_WeaponAttackType::AT_UNKNOWN;
-    this->mR_AvailableWieldables.AddDefaulted(6);
-    this->m_OwningInventoryObjects.AddDefaulted(6);
-    this->mR_CurrentSlot = EIGS_WieldableSlot::S_Unarmed;
-    this->OverrideCharacterAkSwitch = NULL;
-    this->ComponentData = NULL;
-    this->Data = NULL;
-    this->DialogueData = NULL;
-    this->VoiceExpressionEnabled = true;
-    this->NearDeathHealthPercentage = 0.40f;
-    this->SpeakerAkSwitch = NULL;
-    this->CharacterAkSwitch = NULL;
+    (*this).mR_ShooterType = EIGS_WeaponAttackType::AT_UNKNOWN;
+    auto& gen642 = (*this).mR_AvailableWieldables;
+    gen642.Empty();
+    gen642.AddDefaulted(6);
+    auto& gen643 = (*this).m_OwningInventoryObjects;
+    gen643.Empty();
+    gen643.AddDefaulted(6);
+    (*this).mR_CurrentSlot = EIGS_WieldableSlot::S_Unarmed;
+    (*this).VoiceExpressionEnabled = true;
+    (*this).NearDeathHealthPercentage = 4.000000060e-01f;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
 }
 
 void UIGS_NetworkComponentCharacter::StopVoice(const FIGS_PlayVariationData& inPlayVariationData) {

@@ -1,7 +1,7 @@
 #include "META_TimerNodeSaveData.h"
 
 FMETA_TimerNodeSaveData::FMETA_TimerNodeSaveData() {
-    this->StartingDay = 0;
-    this->ResultValue = 0;
+    (*this).StartingDay = -1;
+    (*this).ResultValue = -1;
 }
 

@@ -1,45 +1,47 @@
 #include "IGS_MountedWeapon.h"
 #include "AkComponent.h"
+#include "EIGS_WeaponAttackType.h"
+#include "GameFramework/Actor.h"
 #include "Components/BoxComponent.h"
 #include "Curves/CurveFloat.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Components/TimelineComponent.h"
 #include "IGS_AnimatedInteractiveComponentSimple.h"
 #include "IGS_SimpleReloader.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_MountedWeapon::AIGS_MountedWeapon(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->WeaponModsArray.AddDefaulted(8);
-    this->CanReloadInADS = false;
-    this->UseByAI = true;
-    this->NextAIUseTime = 0.00f;
-    this->VisitingChar = NULL;
-    this->AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
-    this->IsMGCanShoot = false;
-    this->PitchLimit = 45.00f;
-    this->PitchDotLimit = 0.71f;
-    this->YawLimit = 45.00f;
-    this->YawDotLimit = 0.71f;
-    this->InteractiveComponent = CreateDefaultSubobject<UIGS_AnimatedInteractiveComponentSimple>(TEXT("Interactive"));
-    this->InteractiveBoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("InteractiveBoxComponent"));
-    this->ReloadTimelineComponent = CreateDefaultSubobject<UTimelineComponent>(TEXT("ReloadTimelineComponent"));
-    this->ReloadCurve = CreateDefaultSubobject<UCurveFloat>(TEXT("ReloadCurve"));
-    this->Shooter = NULL;
-    this->Reloader = CreateDefaultSubobject<UIGS_SimpleReloader>(TEXT("Reloader"));
-    this->DefaultMagazineCount = 3;
-    this->WeaponItemClass = NULL;
-    this->AmmoItemClass = NULL;
-    this->WeaponYaw = 0.00f;
-    this->WeaponPitch = 0.00f;
-    this->lastActiveSlot = EIGS_WieldableSlot::S_Unarmed;
-    this->WeaponItemObject = NULL;
-    this->AmmoItemObject = NULL;
-    this->AkComponent->SetupAttachment(RootComponent);
-    this->InteractiveComponent->SetupAttachment(RootComponent);
-    this->InteractiveBoxComponent->SetupAttachment(RootComponent);
+    (*this).UseByAI = true;
+    (*this).AIShotsToFire.Min = 30;
+    (*this).AIShotsToFire.Max = 40;
+    (*this).AIDelayBetweenShots.Min = 3.000000000e+00f;
+    (*this).AIDelayBetweenShots.Max = 5.000000000e+00f;
+    (*this).AIUseCooldown.Min = 7.000000000e+00f;
+    (*this).AIUseCooldown.Max = 1.000000000e+01f;
+    (*this).AnimationRotationOffset.Yaw = -1.800000000e+02f;
+    (*this).AkComponent = CreateDefaultSubobject<UAkComponent>(TEXT("AkAudioComponent"));
+    (*this).PitchLimit = 4.500000000e+01f;
+    (*this).PitchDotLimit = 7.071067691e-01f;
+    (*this).YawLimit = 4.500000000e+01f;
+    (*this).YawDotLimit = 7.071067691e-01f;
+    (*this).InteractiveComponent = CreateDefaultSubobject<UIGS_AnimatedInteractiveComponentSimple>(TEXT("Interactive"));
+    (*this).InteractiveBoxComponent = CreateDefaultSubobject<UBoxComponent>(TEXT("InteractiveBoxComponent"));
+    (*this).ReloadTimelineComponent = CreateDefaultSubobject<UTimelineComponent>(TEXT("ReloadTimelineComponent"));
+    (*this).ReloadCurve = CreateDefaultSubobject<UCurveFloat>(TEXT("ReloadCurve"));
+    (*this).Reloader = CreateDefaultSubobject<UIGS_SimpleReloader>(TEXT("Reloader"));
+    (*this).DefaultMagazineCount = 3;
+    (*this).lastActiveSlot = EIGS_WieldableSlot::S_Unarmed;
+    auto& gen592 = (*this).WeaponModsArray;
+    gen592.Empty();
+    gen592.AddDefaulted(8);
+    (*this).CanReloadInADS = false;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).NetDormancy = DORM_Initial;
+    (*this).AkComponent->SetupAttachment((*this).RootComponent);
+    (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
+    (*this).InteractiveBoxComponent->SetupAttachment((*this).RootComponent);
 }
 
 

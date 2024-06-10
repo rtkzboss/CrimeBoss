@@ -1,24 +1,15 @@
 #include "IGS_Keypad.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
 #include "Net/UnrealNetwork.h"
 
 AIGS_Keypad::AIGS_Keypad(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->bReplicates = true;
-    const FProperty* p_RemoteRole = GetClass()->FindPropertyByName("RemoteRole");
-    (*p_RemoteRole->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(this)) = ROLE_SimulatedProxy;
-    this->NetDormancy = DORM_Initial;
-    this->KeypadCode = 0;
-    this->InteractiveComponent = NULL;
-    this->AkComponent = NULL;
-    this->KeycodePassAkAudioEvent = NULL;
-    this->KeycodeFailAkAudioEvent = NULL;
-    this->ButtonPressAkAudioEvent = NULL;
-    this->GreenLight = NULL;
-    this->RedLight = NULL;
-    this->CodeTextRenderComponent = NULL;
-    this->ButtonHighlightTime = 0.50f;
-    this->TimeToClearAfterFail = 1.00f;
-    this->MaximalCodeLength = 4;
-    this->mR_IsInUse = false;
+    (*this).ButtonHighlightTime = 5.000000000e-01f;
+    (*this).TimeToClearAfterFail = 1.000000000e+00f;
+    (*this).MaximalCodeLength = 4;
+    (*this).bReplicates = true;
+    (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).NetDormancy = DORM_Initial;
 }
 
 void AIGS_Keypad::SetButtonHighlightAfterDelay(int32 inButtonId) {

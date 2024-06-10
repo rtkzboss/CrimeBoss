@@ -1,7 +1,6 @@
 #include "IGS_MenuWidgetManager.h"
 
 UIGS_MenuWidgetManager::UIGS_MenuWidgetManager() {
-    this->bAlreadyReset = false;
 }
 
 void UIGS_MenuWidgetManager::UnregisterWidget(UIGS_MenuScreenWidget* InWidget) {

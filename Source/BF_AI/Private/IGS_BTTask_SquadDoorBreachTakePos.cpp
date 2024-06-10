@@ -1,7 +1,10 @@
 #include "IGS_BTTask_SquadDoorBreachTakePos.h"
 
 UIGS_BTTask_SquadDoorBreachTakePos::UIGS_BTTask_SquadDoorBreachTakePos() {
-    this->NodeName = TEXT("Squad Breach Take Pos");
+    auto& gen534 = (*this).BreachRolesKey.AllowedTypes;
+    gen534.Empty();
+    gen534.AddDefaulted(1);
+    (*this).NodeName = TEXT("Squad Breach Take Pos");
 }
 
 void UIGS_BTTask_SquadDoorBreachTakePos::OnNotifyReceived(EIGS_AINotif Type, AIGS_GameCharacterFramework* Instigator, AIGS_GameCharacterFramework* Target, FVector Pos, FVector dir) {

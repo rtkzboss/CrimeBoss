@@ -1,7 +1,13 @@
 #include "IGSScrollBox.h"
+#include "Widgets/Layout/SScrollBox.h"
+#include "Widgets/Layout/SScrollBox.h"
+#include "Styling/SlateTypes.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
 
 UIGSScrollBox::UIGSScrollBox() {
-    this->Speed = 10.00f;
+    (*this).Speed = 1.000000000e+01f;
 }
 
 void UIGSScrollBox::ScrollPageUp() {

@@ -1,23 +1,17 @@
 #include "IGS_WeaponVisibilityHandler.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_WeaponVisibilityHandler::UIGS_WeaponVisibilityHandler(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->MaxLaserDistanceFromAimPoint = false;
-    this->LaserDistanceFromAimPointOffset = 0.00f;
-    this->ForceLaserAimAtPoint = false;
-    this->LaserParticleSystem = NULL;
-    this->LaserTortillaParticleSystem = NULL;
-    this->LaserNiagaraSystem = NULL;
-    this->LaserTortillaNiagaraSystem = NULL;
-    this->m_LaserParticleSpawnPointName = TEXT("socket_laser_origin");
-    this->m_LaserParticleBeamTargetName = TEXT("BeamTarget");
-    this->m_LaserParticlePointSizeName = TEXT("LaserPointSize");
-    this->MaxLaserDistance = 50000.00f;
-    this->DotThreshold = 0.95f;
-    this->WeaponScopeGlintNiagaraSystem = NULL;
-    this->m_SightGlintNiagaraComponent = NULL;
-    this->m_LaserNiagaraComponent = NULL;
-    this->m_LaserParticleSystemComponent = NULL;
-    this->bTraceForward = true;
+    (*this).m_LaserParticleSpawnPointName = TEXT("socket_laser_origin");
+    (*this).m_LaserParticleBeamTargetName = TEXT("BeamTarget");
+    (*this).m_LaserParticlePointSizeName = TEXT("LaserPointSize");
+    (*this).MaxLaserDistance = 5.000000000e+04f;
+    (*this).DotThreshold = 9.499999881e-01f;
+    (*this).bTraceForward = true;
+    (*this).PrimaryComponentTick.TickGroup = TG_PostUpdateWork;
+    (*this).PrimaryComponentTick.EndTickGroup = TG_PostUpdateWork;
+    (*this).PrimaryComponentTick.bCanEverTick = true;
+    (*this).PrimaryComponentTick.bStartWithTickEnabled = false;
 }
 
 bool UIGS_WeaponVisibilityHandler::ToggleMod() {

@@ -1,12 +1,11 @@
 #include "IGS_InteractiveFollowComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_InteractiveFollowComponent::UIGS_InteractiveFollowComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->IsFollowing = false;
-    this->TimerHoldTimeFollow = 1.00f;
-    this->TimerHoldTimeStop = 0.30f;
-    this->followDistance = 100.00f;
-    this->CanBeUseInAlarm = false;
+    (*this).TimerHoldTimeFollow = 1.000000000e+00f;
+    (*this).TimerHoldTimeStop = 3.000000119e-01f;
+    (*this).followDistance = 1.000000000e+02f;
 }
 
 void UIGS_InteractiveFollowComponent::OnRep_IsFollowing() {

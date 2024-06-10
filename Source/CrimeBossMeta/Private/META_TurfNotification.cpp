@@ -1,7 +1,8 @@
 #include "META_TurfNotification.h"
+#include "EMETA_NotificationEffect.h"
+#include "EMETA_NotificationType.h"
 
 UMETA_TurfNotification::UMETA_TurfNotification() {
-    this->m_Tile = NULL;
 }
 
 void UMETA_TurfNotification::SetData(UMapTile* inTile, const EMETA_Gang inGang) {

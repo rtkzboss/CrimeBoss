@@ -1,7 +1,6 @@
 #include "IGS_AsyncTaskAbilityGranted.h"
 
 UIGS_AsyncTaskAbilityGranted::UIGS_AsyncTaskAbilityGranted() {
-    this->ASC = NULL;
 }
 
 UIGS_AsyncTaskAbilityGranted* UIGS_AsyncTaskAbilityGranted::ListenForAbilityWithTagGranted(UAbilitySystemComponent* inAbilitySystemComponent, FGameplayTag inAbilityTagFilter) {

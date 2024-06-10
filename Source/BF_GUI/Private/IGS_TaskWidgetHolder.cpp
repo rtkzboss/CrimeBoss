@@ -1,15 +1,14 @@
 #include "IGS_TaskWidgetHolder.h"
+#include "Layout/FlowDirection.h"
+#include "Layout/Clipping.h"
+#include "Components/SlateWrapperTypes.h"
+#include "Blueprint/UserWidget.h"
+#include "EIGS_HUDVisibilityMode.h"
 
 UIGS_TaskWidgetHolder::UIGS_TaskWidgetHolder() {
-    this->ID = -1;
-    this->TaskState = EIGS_ObjectiveState::Active;
-    this->CountLeft = 0;
-    this->CountTotal = 0;
-    this->TaskWidgetClass = NULL;
-    this->HolderBox = NULL;
-    this->bShouldPlayWidgetAnimations = true;
-    this->FontSize = 12;
-    this->m_ObjectiveManager = NULL;
+    (*this).ID = -1;
+    (*this).bShouldPlayWidgetAnimations = true;
+    (*this).FontSize = 12;
 }
 
 

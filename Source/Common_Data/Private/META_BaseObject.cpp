@@ -1,7 +1,6 @@
 #include "META_BaseObject.h"
 
 UMETA_BaseObject::UMETA_BaseObject() {
-    this->ItemCost = 0;
 }
 
 void UMETA_BaseObject::SetTagID(FGameplayTag inTag) {

@@ -1,4 +1,5 @@
 #include "IGS_BossLevelBaseComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_BossLevelBaseComponent::UIGS_BossLevelBaseComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

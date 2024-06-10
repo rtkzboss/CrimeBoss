@@ -1,7 +1,8 @@
 #include "META_WeaponNotification.h"
+#include "EMETA_NotificationEffect.h"
+#include "EMETA_NotificationType.h"
 
 UMETA_WeaponNotification::UMETA_WeaponNotification() {
-    this->m_Weapon = NULL;
 }
 
 void UMETA_WeaponNotification::SetWeapon(UMETA_Weapon* inWeapon) {

@@ -1,4 +1,5 @@
 #include "IGS_AIHeavyMeleeSettingsComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_AIHeavyMeleeSettingsComponent::UIGS_AIHeavyMeleeSettingsComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

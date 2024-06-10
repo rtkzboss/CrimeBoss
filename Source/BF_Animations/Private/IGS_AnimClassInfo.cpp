@@ -1,7 +1,7 @@
 #include "IGS_AnimClassInfo.h"
 
 FIGS_AnimClassInfo::FIGS_AnimClassInfo() {
-    this->ArmsAnimClass = NULL;
-    this->CharacterAnimClass = NULL;
+    (*this).ArmsAnimClass = nullptr;
+    (*this).CharacterAnimClass = nullptr;
 }
 

@@ -1,7 +1,7 @@
 #include "PendingReleaseSkeletalMeshInfo.h"
 
 FPendingReleaseSkeletalMeshInfo::FPendingReleaseSkeletalMeshInfo() {
-    this->SkeletalMesh = NULL;
-    this->Timestamp = 0.00f;
+    (*this).SkeletalMesh = nullptr;
+    (*this).Timestamp = 0.00000000000000000e+00;
 }
 

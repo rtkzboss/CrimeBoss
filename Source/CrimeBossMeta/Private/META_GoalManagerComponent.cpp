@@ -1,4 +1,5 @@
 #include "META_GoalManagerComponent.h"
+#include "ComponentInstanceDataCache.h"
 #include "Templates/SubclassOf.h"
 
 UMETA_GoalManagerComponent::UMETA_GoalManagerComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {

@@ -2,7 +2,7 @@
 #include "EHoudiniParameterType.h"
 
 UHoudiniParameterButton::UHoudiniParameterButton() {
-    this->ParmType = EHoudiniParameterType::Button;
+    (*this).ParmType = EHoudiniParameterType::Button;
 }
 
 

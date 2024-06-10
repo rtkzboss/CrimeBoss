@@ -1,6 +1,7 @@
 #include "MovieSceneAkAudioEventTemplate.h"
+#include "Evaluation/MovieSceneCompletionMode.h"
 
 FMovieSceneAkAudioEventTemplate::FMovieSceneAkAudioEventTemplate() {
-    this->Section = NULL;
+    (*this).Section = nullptr;
 }
 

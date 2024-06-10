@@ -2,27 +2,25 @@
 #include "IGS_AISense_ComplexSight.h"
 
 UIGS_AISenseConfig_ComplexSight::UIGS_AISenseConfig_ComplexSight() {
-    this->Implementation = UIGS_AISense_ComplexSight::StaticClass();
-    this->SightRadius = 2500.00f;
-    this->LoseSightRadius = 1650.00f;
-    this->PeripheralVisionAngleDegrees = 90.00f;
-    this->AutoSuccessRangeFromLastSeenLocation = -1.00f;
-    this->PointOfViewBackwardOffset = 0.00f;
-    this->NearClippingRadius = 0.00f;
-    this->AutoSuccessSightStrength = 1.00f;
-    this->bUseVisionShapes = false;
-    this->bUseMainCone = true;
-    this->bUseFrontBox = false;
-    this->bUseSixthSenseCircle = true;
-    this->VerticalDistanceStart = 350.00f;
-    this->VerticalDistanceEnd = 350.00f;
-    this->MainVisionConeHalfAngleDeg = 45.00f;
-    this->MainVisionConeMaxDistance = 1200.00f;
-    this->FrontBoxWidth = 350.00f;
-    this->FrontBoxMaxDistance = 2000.00f;
-    this->SixthSenseCircleRadius = 150.00f;
-    this->SixthSenseCircleBackwardsOffset = 0.00f;
-    this->SixthSenseVisionStrengthLimit = 0.33f;
+    (*this).Implementation = UIGS_AISense_ComplexSight::StaticClass();
+    (*this).SightRadius = 2.500000000e+03f;
+    (*this).LoseSightRadius = 1.650000000e+03f;
+    (*this).PeripheralVisionAngleDegrees = 9.000000000e+01f;
+    (*this).DetectionByAffiliation.bDetectEnemies = true;
+    (*this).AutoSuccessRangeFromLastSeenLocation = -1.000000000e+00f;
+    (*this).AutoSuccessSightStrength = 1.000000000e+00f;
+    (*this).bUseMainCone = true;
+    (*this).bUseSixthSenseCircle = true;
+    (*this).VerticalDistanceStart = 3.500000000e+02f;
+    (*this).VerticalDistanceEnd = 3.500000000e+02f;
+    (*this).MainVisionConeHalfAngleDeg = 4.500000000e+01f;
+    (*this).MainVisionConeMaxDistance = 1.200000000e+03f;
+    (*this).FrontBoxWidth = 3.500000000e+02f;
+    (*this).FrontBoxMaxDistance = 2.000000000e+03f;
+    (*this).SixthSenseCircleRadius = 1.500000000e+02f;
+    (*this).SixthSenseVisionStrengthLimit = 3.300000131e-01f;
+    (*this).DebugColor.B = 0;
+    (*this).DebugColor.R = 0;
 }
 
 

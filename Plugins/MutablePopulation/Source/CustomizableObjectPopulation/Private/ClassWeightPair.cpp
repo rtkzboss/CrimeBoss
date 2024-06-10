@@ -1,7 +1,7 @@
 #include "ClassWeightPair.h"
 
 FClassWeightPair::FClassWeightPair() {
-    this->Class = NULL;
-    this->ClassWeight = 0;
+    (*this).Class = nullptr;
+    (*this).ClassWeight = 1;
 }
 

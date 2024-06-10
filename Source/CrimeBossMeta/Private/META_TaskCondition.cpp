@@ -1,12 +1,6 @@
 #include "META_TaskCondition.h"
 
 UMETA_TaskCondition::UMETA_TaskCondition() {
-    this->TaskID = 0;
-    this->ProcessValue = 0;
-    this->NeedValueType = EMETA_NeedValueType::Integer;
-    this->NeedValue = 0;
-    this->bOptional = false;
-    this->Status = EMETA_TaskStatus::None;
 }
 
 void UMETA_TaskCondition::SetStativeInformation(AMETA_BaseGameMode* inGameMode, FMETA_TaskStativeInfo inTaskStativeInfo) {

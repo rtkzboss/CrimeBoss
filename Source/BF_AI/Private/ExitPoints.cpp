@@ -1,10 +1,10 @@
 #include "ExitPoints.h"
 
 FExitPoints::FExitPoints() {
-    this->LeftNear = NULL;
-    this->LeftFar = NULL;
-    this->RightNear = NULL;
-    this->RightFar = NULL;
-    this->StackPos = NULL;
+    (*this).LeftNear = nullptr;
+    (*this).LeftFar = nullptr;
+    (*this).RightNear = nullptr;
+    (*this).RightFar = nullptr;
+    (*this).StackPos = nullptr;
 }
 

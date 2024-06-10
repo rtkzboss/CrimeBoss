@@ -1,13 +1,13 @@
 #include "IGS_ScriptPoint.h"
+#include "GameFramework/Actor.h"
+#include "Engine/EngineTypes.h"
+#include "EIGS_ScenarioDifficulty.h"
+#include "EIGS_TeamSideEnum.h"
 
 AIGS_ScriptPoint::AIGS_ScriptPoint(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->Enabled = true;
-    this->bHasDirection = false;
-    this->ExecuteOn = EIGS_ScriptPointExecuteOn::ExecuteOn_Arrive;
-    this->DirectionLookAtPosDistance = 1000.00f;
-    this->CanEverBeEnabled = true;
-    this->OptionalNextPoint = NULL;
-    this->OptionalNextPointCasted = NULL;
+    (*this).Enabled = true;
+    (*this).DirectionLookAtPosDistance = 1.000000000e+03f;
+    (*this).CanEverBeEnabled = true;
 }
 
 bool AIGS_ScriptPoint::TryActivateScriptPoint(AIGS_GameCharacterFramework* inActivator) {

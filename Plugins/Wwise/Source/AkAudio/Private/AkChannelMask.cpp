@@ -1,6 +1,6 @@
 #include "AkChannelMask.h"
 
 FAkChannelMask::FAkChannelMask() {
-    this->ChannelMask = 0;
+    (*this).ChannelMask = 0;
 }
 

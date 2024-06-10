@@ -1,4 +1,5 @@
 #include "IGS_AIMemoryComponent.h"
+#include "ComponentInstanceDataCache.h"
 
 UIGS_AIMemoryComponent::UIGS_AIMemoryComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }

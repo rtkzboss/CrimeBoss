@@ -1,7 +1,6 @@
 #include "IGS_ImpactManager.h"
 
 UIGS_ImpactManager::UIGS_ImpactManager() {
-    this->ImpactManagerSettings = NULL;
 }
 
 void UIGS_ImpactManager::CreateSkinnedDecalImpact(USkinnedDecalSampler* inSampler, const FHitResult& inHitResult, EIGS_WoundType inWoundType) {

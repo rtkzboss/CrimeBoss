@@ -1,20 +1,27 @@
 #include "IGS_BreakableWindowComponent.h"
+#include "EIGS_OverlapResponseType.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
+#include "EIGS_BreakPushImpulse.h"
+#include "EIGS_WindowBreakBehaviour.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_BreakableWindowComponent::UIGS_BreakableWindowComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->mR_DecalsLocation.AddDefaulted(7);
-    this->mR_CurrentDecalIndex = -1;
-    this->MinimalDecalDistance = 0.00f;
-    this->MinDecalAngle = 0.15f;
-    this->MaxDecalAngle = 0.85f;
-    this->ParticleWidth = 25.00f;
-    this->ParticleHeight = 25.00f;
-    this->ParticleAmount = 1.00f;
-    this->bShowDecals = true;
-    this->bCanTakePlayerImpactDamage = false;
-    this->bBulletsPassThrough = true;
-    this->HitCameraShakeIntensity = 1.00f;
-    this->SkinnedDecalSampler = NULL;
+    auto& gen588 = (*this).mR_DecalsLocation;
+    gen588.Empty();
+    gen588.AddDefaulted(7);
+    (*this).mR_CurrentDecalIndex = -1;
+    (*this).MinDecalAngle = 1.500000060e-01f;
+    (*this).MaxDecalAngle = 8.500000238e-01f;
+    (*this).ParticleWidth = 2.500000000e+01f;
+    (*this).ParticleHeight = 2.500000000e+01f;
+    (*this).ParticleAmount = 1.000000000e+00f;
+    (*this).ParticleVelocity.X = 1.000000000e+02f;
+    (*this).bShowDecals = true;
+    (*this).bBulletsPassThrough = true;
+    (*this).HitCameraShakeIntensity = 1.000000000e+00f;
 }
 
 void UIGS_BreakableWindowComponent::RefreshDecalData(int32 inDecalIndex, FVector inDecalLocation, FVector inDecalRotation) {

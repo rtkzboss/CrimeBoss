@@ -2,7 +2,7 @@
 #include "EnvironmentQuery/Items/EnvQueryItemType_Actor.h"
 
 UIGS_EnvQueryGenerator_DisruptibleGadgets::UIGS_EnvQueryGenerator_DisruptibleGadgets() {
-    this->ItemType = UEnvQueryItemType_Actor::StaticClass();
+    (*this).ItemType = UEnvQueryItemType_Actor::StaticClass();
 }
 
 

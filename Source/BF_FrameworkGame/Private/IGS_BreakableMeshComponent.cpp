@@ -1,31 +1,19 @@
 #include "IGS_BreakableMeshComponent.h"
+#include "ComponentInstanceDataCache.h"
+#include "Engine/EngineTypes.h"
+#include "Components/PrimitiveComponent.h"
+#include "VT/RuntimeVirtualTextureEnum.h"
 #include "Net/UnrealNetwork.h"
 
 UIGS_BreakableMeshComponent::UIGS_BreakableMeshComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    this->OverlappableType = EIGS_OverlapResponseType::ORT_Penetration;
-    this->bIsEplosive = false;
-    this->bShowMeleePrompt = true;
-    this->bOnlyTakesDamageToSelf = false;
-    this->bUseObjectStatusHealth = true;
-    this->m_ObjectStatus = NULL;
-    this->HasMultiBreakableComps = false;
-    this->bUsesObjectStatus = false;
-    this->BreakBehaviour = EIGS_WindowBreakBehaviour::Breakable;
-    this->mR_IsBroken = false;
-    this->mR_IsMaterialSwitched = false;
-    this->bCanTakeBulletDamage = true;
-    this->bCanTakeMeleeDamage = true;
-    this->bCanTakeExplosiveDamage = true;
-    this->bCanTakeBreachExplosiveDamage = false;
-    this->bSimulatePhysicsOnBreak = false;
-    this->CollisionProfileOnBreak = TEXT("PhysicsActor");
-    this->PushImpulseOnBreak = EIGS_BreakPushImpulse::Break_Impulse_None;
-    this->PushImpulseStrength = 100.00f;
-    this->StaticMeshBroken = NULL;
-    this->ParticleBreak = NULL;
-    this->ParticleImpact = NULL;
-    this->AkEventOnBreak = NULL;
-    this->AkEventOnImpact = NULL;
+    (*this).OverlappableType = EIGS_OverlapResponseType::ORT_Penetration;
+    (*this).bShowMeleePrompt = true;
+    (*this).bUseObjectStatusHealth = true;
+    (*this).bCanTakeBulletDamage = true;
+    (*this).bCanTakeMeleeDamage = true;
+    (*this).bCanTakeExplosiveDamage = true;
+    (*this).CollisionProfileOnBreak = TEXT("PhysicsActor");
+    (*this).PushImpulseStrength = 1.000000000e+02f;
 }
 
 void UIGS_BreakableMeshComponent::TriggerBreakEvents(AActor* inDmgCauser) {

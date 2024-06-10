@@ -14,6 +14,7 @@ public class IGS_UIFramework : ModuleRules {
             "Engine",
             "GameplayTags",
             "SlateCore",
+            "UMG",
         });
     }
 }
