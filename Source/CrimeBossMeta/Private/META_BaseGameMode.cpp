@@ -26,6 +26,10 @@ bool AMETA_BaseGameMode::IsMetaInDebugMode() {
     return false;
 }
 
+
+void AMETA_BaseGameMode::IncreaseCompletedCampaignCount(EIGS_UserDifficulty inDifficulty) {
+}
+
 void AMETA_BaseGameMode::HandleMenuStateChange_Implementation(EMETA_MenuState inState) {
 }
 
@@ -81,12 +85,19 @@ TSoftObjectPtr<UMETA_PlotlineSelection> AMETA_BaseGameMode::GetCampaignModeOnIni
     return NULL;
 }
 
+void AMETA_BaseGameMode::GetCampaignDifficulty(EIGS_UserDifficulty& outUserDifficulty, FMETA_CampaignUserDifficultyConfiguration& outConfiguration) const {
+}
+
 UMETA_BossLevelComponent* AMETA_BaseGameMode::GetBossLevelComponent_Implementation() const {
     return NULL;
 }
 
 UIGS_ActivityManagerBaseComponent* AMETA_BaseGameMode::GetActivityManagerComponent_Implementation() {
     return NULL;
+}
+
+FMETA_ActiveCampaignConfiguration AMETA_BaseGameMode::GetActiveCampaignConfiguration() const {
+    return FMETA_ActiveCampaignConfiguration{};
 }
 
 

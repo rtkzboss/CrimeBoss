@@ -26,9 +26,6 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName m_WaitingLevelToLoad;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool m_IsAnyBackgroundLoaded;
-    
 public:
     UIGS_BossBackgroundManager(const FObjectInitializer& ObjectInitializer);
 
@@ -63,6 +60,10 @@ public:
 private:
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetLoadedBackgroundLevelNames() const;
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void ForceReloadLevel(FName inLevelToLoad);
     
 };
 

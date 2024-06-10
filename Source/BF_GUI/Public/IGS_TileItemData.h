@@ -42,6 +42,9 @@ public:
     void SetIsEquiped(bool inIsSelected);
     
     UFUNCTION(BlueprintCallable)
+    void SetIsChallenge(bool inIsChallenge);
+    
+    UFUNCTION(BlueprintCallable)
     void SetData(FIGS_TileItemDataStruct inData);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -64,6 +67,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetIsEquiped() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetIsChallenge() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TSoftObjectPtr<UTexture2D> GetImage() const;

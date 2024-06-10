@@ -183,7 +183,7 @@ public:
     FIGS_PanicStateChangedSignature OnHintShout;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FIGS_PanicStateChangedSignature OnStealthTakedownChanged;
+    FIGS_PanicStateChangedSignature OnSubdueTargetChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_PanicStateChangedSignature OnStealthKillChanged;
@@ -313,10 +313,10 @@ protected:
     FShoutScanData m_ShoutScanData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AIGS_GameCharacterFramework* m_StealthTakedownPossibleCharacter;
+    AIGS_GameCharacterFramework* m_SubdueTargetCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AIGS_GameCharacterFramework* m_StealthTakedownPossibleCharacterCached;
+    AIGS_GameCharacterFramework* m_SubdueTargetCharacterCached;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     uint8 mR_SubdueAllowed: 1;
@@ -401,6 +401,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool IsShoutHint();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    AIGS_GameCharacterFramework* GetSubduedBy() const;
     
     UFUNCTION(BlueprintCallable)
     AActor* GetStealthTakedownActor();

@@ -10,7 +10,10 @@ APaybackRobotCharacter::APaybackRobotCharacter(const FObjectInitializer& ObjectI
     this->WeakSpotAIDamageMultiplier = 0.20f;
     this->MaxHealthPercentageTaken = 0.50f;
     this->ForcedOverloadTime = 0.00f;
-    this->OverloadOuterDamageRange = 300.00f;
+    this->OverloadOuterDamageRadius = 600.00f;
+    this->OverloadInnerDamageRadius = 200.00f;
+    this->OverloadEffectRadius = 1500.00f;
+    this->OverloadBaseDamage = 500.00f;
     this->m_WeakSpotComponent = CreateDefaultSubobject<UIGS_WeakSpotComponent>(TEXT("WeakSpot Component"));
     this->WeakSpotCollision->SetupAttachment(*p_Mesh_Parent->ContainerPtrToValuePtr<USkeletalMeshComponentBudgeted*>(this));
 }
@@ -39,6 +42,9 @@ void APaybackRobotCharacter::OnHealthChangedWithCompromisedWeakSpot(float inCurr
 
 
 
+void APaybackRobotCharacter::OnEnableVfx_Implementation(const bool inEnable) {
+}
+
 void APaybackRobotCharacter::OnEffectApplied(const FGameplayTag inGameplayTag, int32 inCount) {
 }
 
@@ -49,6 +55,9 @@ void APaybackRobotCharacter::OnAnyShootablePartShotOff(const UActorComponent* In
 }
 
 void APaybackRobotCharacter::Multicast_Overload_Implementation(AController* inInstigator) {
+}
+
+void APaybackRobotCharacter::EnableVfx(const bool inEnable) {
 }
 
 

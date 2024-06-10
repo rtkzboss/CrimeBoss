@@ -139,4 +139,8 @@ int32 UIGS_MathFunctionLibrary::AddInt32Safe(const int32 inA, const int32 inB, c
     return 0;
 }
 
+float UIGS_MathFunctionLibrary::AddFloatSafe(const float inA, const float inB, const float inMax) {
+    return 0.0f;
+}
+
 

@@ -4,6 +4,7 @@
 #include "CommonMissionDataBase.h"
 #include "EIGS_MenuCategory.h"
 #include "GameplayTagContainer.h"
+#include "EIGS_CharacterID.h"
 #include "EIGS_HubBackdropTypes.h"
 #include "EIGS_LightingScenarioType.h"
 #include "EIGS_ScenarioDifficulty.h"
@@ -41,6 +42,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 AmountOfBots;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<EIGS_CharacterID> SpecificBotIDs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMETA_Heat Heat;

@@ -39,9 +39,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool CanUseMonsterCloset;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool IsButcherSawBroken;
-    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AIGS_WaypointBase* LastWaypoint;
@@ -63,9 +60,6 @@ public:
 
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_ShootingOverride GetShootingOverride() const;
-    
-    UFUNCTION(BlueprintCallable)
-    void BreakButcherSaw();
     
 };
 

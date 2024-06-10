@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "IGS_UnlockProperties.generated.h"
 
 class UTexture2D;
@@ -16,10 +17,19 @@ public:
     FGameplayTag RequiredTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftObjectPtr<UTexture2D> UnlockCoverImage;
+    FGameplayTagContainer RequiredTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag EntitlementTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RequiredValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowIfNotOwned;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UTexture2D> UnlockCoverImage;
     
     COMMON_DATA_API FIGS_UnlockProperties();
 };

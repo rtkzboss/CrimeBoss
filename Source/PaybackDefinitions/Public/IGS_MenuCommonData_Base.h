@@ -4,6 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
 #include "EIGS_ScenarioDifficulty.h"
+#include "EIGS_UserDifficulty.h"
 #include "EMETA_RespectLvl.h"
 #include "META_DifficultyConfig.h"
 #include "IGS_MenuCommonData_Base.generated.h"
@@ -31,6 +32,9 @@ protected:
 public:
     UIGS_MenuCommonData_Base();
 
+    UFUNCTION(BlueprintCallable)
+    TArray<EIGS_UserDifficulty> GetSupportedDifficulties();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EIGS_ScenarioDifficulty GetRandomizedDifficulty(EMETA_RespectLvl inRespectLvl) const;
     

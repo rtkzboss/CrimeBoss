@@ -17,10 +17,7 @@ bool UIGS_RoomHelpers::InSameArea(AIGS_RoomBase* room1, AIGS_RoomBase* room2, in
     return false;
 }
 
-void UIGS_RoomHelpers::HighlightBadRooms(const UObject* inWorldContextObject, TArray<FIGS_RoomTestStruct> rooms_without_room, TArray<FIGS_RoomTestStruct> rooms_with_multiple_rooms) {
-}
-
-void UIGS_RoomHelpers::HighlightBadPolysFix(const UObject* inWorldContextObject) {
+void UIGS_RoomHelpers::HighlightBadPolys(const UObject* inWorldContextObject, TArray<FIGS_RoomTestStruct>& inGroupsWithoutRoom, TArray<FIGS_RoomTestStruct>& inGroupsWithMultipleRooms) {
 }
 
 TArray<AActor*> UIGS_RoomHelpers::GetTransitionPointsFromRoom(AIGS_RoomBase* Room) {
@@ -79,9 +76,6 @@ TArray<AIGS_RoomBase*> UIGS_RoomHelpers::FindRoom(const UObject* inWorldContextO
 
 FVector UIGS_RoomHelpers::FindCenterPolygonOfRoom(const TArray<FVector>& Room) {
     return FVector{};
-}
-
-void UIGS_RoomHelpers::FindBadPolys(const UObject* inWorldContextObject, TArray<FIGS_RoomTestStruct>& nodesWithoutRoom, TArray<FIGS_RoomTestStruct>& nodesWithMultipleRooms) {
 }
 
 void UIGS_RoomHelpers::DebugHighlightRoomPolys(AIGS_RoomBase* inRoom) {

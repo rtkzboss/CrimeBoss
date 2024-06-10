@@ -43,6 +43,9 @@ public:
     void UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo);
     
     UFUNCTION(BlueprintCallable)
+    bool TryUnlockItemByRequiredTagValue(FGameplayTag inUnlockTag, float InValue);
+    
+    UFUNCTION(BlueprintCallable)
     bool TryGetPendingUnlockedRewards(TArray<FIGS_UnlockItemInfo>& outUnlockedItems);
     
     UFUNCTION(BlueprintCallable)

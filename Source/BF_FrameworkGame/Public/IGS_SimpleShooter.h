@@ -87,6 +87,12 @@ public:
     UFUNCTION(BlueprintCallable)
     void InitAkComponent(UAkComponent* inAkComponent);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetRPM() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetProjectilesPerShot() const;
+    
     UFUNCTION(BlueprintCallable)
     void BeginAttack(const bool inForced);
     

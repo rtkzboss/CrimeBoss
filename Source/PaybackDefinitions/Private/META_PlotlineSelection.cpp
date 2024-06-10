@@ -38,8 +38,8 @@ TSubclassOf<UMETA_BaseGoal> UMETA_PlotlineSelection::GetPrimaryGoalID() const {
     return NULL;
 }
 
-TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime> UMETA_PlotlineSelection::GetPlotlineGraphs() {
-    return TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime>();
+TArray<FIGS_PlotlineGraphData> UMETA_PlotlineSelection::GetPlotlineGraphs() {
+    return TArray<FIGS_PlotlineGraphData>();
 }
 
 TArray<FMETA_Interval> UMETA_PlotlineSelection::GetPlotlineDaysArray() const {

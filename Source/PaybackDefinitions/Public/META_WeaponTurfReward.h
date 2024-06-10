@@ -11,6 +11,9 @@ public:
     EMETA_ItemQuality Quality;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 WeaponQuality;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 Amount;
     
     FMETA_WeaponTurfReward();

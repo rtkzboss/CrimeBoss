@@ -7,10 +7,12 @@
 #include "IGS_TileItemDataConvertorsBFL.generated.h"
 
 class UIGS_TileItemData;
+class UIGS_TileItemWeaponFamilyData;
 class UIGS_UnlockManager;
 class UMETA_BaseObject;
 class UMETA_BossCharacter;
 class UMETA_Character;
+class UObject;
 
 UCLASS(Blueprintable)
 class BF_GUI_API UIGS_TileItemDataConvertorsBFL : public UBlueprintFunctionLibrary {
@@ -19,19 +21,22 @@ public:
     UIGS_TileItemDataConvertorsBFL();
 
     UFUNCTION(BlueprintCallable)
-    static UIGS_TileItemData* UnlockItemToTileItemData(FIGS_UnlockItemInfo inUnlockItemInfo, EIGS_TileItemState inState);
+    static UIGS_TileItemData* UnlockItemToTileItemData(FIGS_UnlockItemInfo inUnlockItemInfo, EIGS_TileItemState inState, UObject* inWCO);
+    
+    UFUNCTION(BlueprintCallable)
+    static TArray<UIGS_TileItemWeaponFamilyData*> SortWeaponFamilyData(TArray<UIGS_TileItemWeaponFamilyData*> inArray);
     
     UFUNCTION(BlueprintCallable)
     static TArray<UIGS_TileItemData*> SortTileItemData(TArray<UIGS_TileItemData*> inArray);
     
     UFUNCTION(BlueprintCallable)
-    static TArray<UIGS_TileItemData*> SortedUnlockItemsToTileItemData(TArray<FIGS_UnlockItemInfo> inUnlockItemsInfo, EIGS_TileItemState inState);
+    static TArray<UIGS_TileItemData*> SortedUnlockItemsToTileItemData(TArray<FIGS_UnlockItemInfo> inUnlockItemsInfo, EIGS_TileItemState inState, UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
-    static TArray<UIGS_TileItemData*> SortedBaseObjectsToTileItemData(const UIGS_UnlockManager* inUnlockManager, TArray<UMETA_BaseObject*> inObjects, EIGS_TileItemState inState);
+    static TArray<UIGS_TileItemData*> SortedBaseObjectsToTileItemData(const UIGS_UnlockManager* inUnlockManager, TArray<UMETA_BaseObject*> inObjects, EIGS_TileItemState inState, UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
-    static UIGS_TileItemData* MetaBaseObjectToTileItemData(const UIGS_UnlockManager* inUnlockManager, const UMETA_BaseObject* inBaseObject, EIGS_TileItemState inState);
+    static UIGS_TileItemData* MetaBaseObjectToTileItemData(const UIGS_UnlockManager* inUnlockManager, const UMETA_BaseObject* inBaseObject, EIGS_TileItemState inState, UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_CharacterPanelDataStruct CharacterToCharacterPanelData(UMETA_Character* inCharacter);

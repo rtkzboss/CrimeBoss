@@ -69,6 +69,10 @@ int32 UMETA_EconomyData::GetWarehouseAttackCooldown() const {
     return 0;
 }
 
+bool UMETA_EconomyData::GetUniqueCharacterConfiguration(const UObject* inWCO, FGameplayTag inCharacter, FMETA_UniqueCharacterConfiguration& outConfig) const {
+    return false;
+}
+
 FMETA_TurfRewardsDistribution UMETA_EconomyData::GetTurfRewardsDistributionConfig(EMETA_TileWealth inWealth) {
     return FMETA_TurfRewardsDistribution{};
 }
@@ -146,6 +150,10 @@ float UMETA_EconomyData::GetMultiplierOfExpensesForBigHeist(EMETA_RespectLvl inR
 }
 
 float UMETA_EconomyData::GetMultiplierForHealing() const {
+    return 0.0f;
+}
+
+float UMETA_EconomyData::GetMissionBonusRewardForBoss() const {
     return 0.0f;
 }
 
@@ -286,6 +294,10 @@ FMETA_BossEliminationRewardsDistribution UMETA_EconomyData::GetBossEliminationRe
 
 TMap<EMETA_BossEliminationReward, int32> UMETA_EconomyData::GetBossEliminationRewardChances() const {
     return TMap<EMETA_BossEliminationReward, int32>();
+}
+
+FMETA_BossCharacterConfiguration UMETA_EconomyData::GetBossCharacterConfiguration() const {
+    return FMETA_BossCharacterConfiguration{};
 }
 
 FMETA_BMEventWeaponData UMETA_EconomyData::GetBmEventWeaponInfoByBossRespect(UObject* inWCO, EMETA_RespectLvl inBossRespectLvl, bool& outSuccess) {

@@ -49,6 +49,9 @@ float UIGS_SuspicionManager::GetHQSuspicion() {
     return 0.0f;
 }
 
+void UIGS_SuspicionManager::CanShowHeistHint(const bool inCanShow) {
+}
+
 void UIGS_SuspicionManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     

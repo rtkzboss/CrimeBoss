@@ -15,6 +15,9 @@ void UIGS_TileItemData::SetIsNew(bool inIsNew) {
 void UIGS_TileItemData::SetIsEquiped(bool inIsSelected) {
 }
 
+void UIGS_TileItemData::SetIsChallenge(bool inIsChallenge) {
+}
+
 void UIGS_TileItemData::SetData(FIGS_TileItemDataStruct inData) {
 }
 
@@ -43,6 +46,10 @@ bool UIGS_TileItemData::GetIsNew() const {
 }
 
 bool UIGS_TileItemData::GetIsEquiped() const {
+    return false;
+}
+
+bool UIGS_TileItemData::GetIsChallenge() const {
     return false;
 }
 

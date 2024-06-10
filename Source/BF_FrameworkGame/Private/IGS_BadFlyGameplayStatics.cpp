@@ -154,7 +154,7 @@ int32 UIGS_BadFlyGameplayStatics::PlayerOffencesToIndex(const UObject* inWCO, FG
     return 0;
 }
 
-void UIGS_BadFlyGameplayStatics::OverrideSpecialTierRatio(const UObject* inWCO, const float inNewRatio) {
+void UIGS_BadFlyGameplayStatics::OverrideSpecialTierRatio(const UObject* inWCO, const float inNewRatio, const EIGS_TeamSideEnum inTeamSide) {
 }
 
 bool UIGS_BadFlyGameplayStatics::MatchesTagDepth(FGameplayTag inTagLeft, FGameplayTag inTagRight, int32 InDepth) {
@@ -202,6 +202,10 @@ void UIGS_BadFlyGameplayStatics::GetSubTagOnDepth(FGameplayTag inTag, int32 InDe
 
 int32 UIGS_BadFlyGameplayStatics::GetStrikeCountForOffender(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender) {
     return 0;
+}
+
+EIGS_StorePlatform UIGS_BadFlyGameplayStatics::GetStorePlatformType(const UObject* inWCO) {
+    return EIGS_StorePlatform::None;
 }
 
 AIGS_ScriptManagerBase* UIGS_BadFlyGameplayStatics::GetScriptManager(UObject* inWCO) {

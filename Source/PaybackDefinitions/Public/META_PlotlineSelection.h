@@ -9,11 +9,11 @@
 #include "EMETA_CampaignVictoryCondition.h"
 #include "EMETA_Gang.h"
 #include "EMETA_GraphStatus.h"
+#include "IGS_PlotlineGraphData.h"
 #include "META_CareerStartStuff.h"
 #include "META_EnemyTierLimitOnCampaignStart.h"
 #include "META_GangInitialConfiguration.h"
 #include "META_Interval.h"
-#include "META_PlotlineGraphStartTime.h"
 #include "META_UniqueCharacterGraphInfo.h"
 #include "Templates/SubclassOf.h"
 #include "META_PlotlineSelection.generated.h"
@@ -34,6 +34,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMETA_CampaignVictoryCondition CampaignVictoryCondition;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FName StatisticsRoot;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMETA_CareerStartStuff CareerStartConfiguration;
@@ -63,7 +66,7 @@ protected:
     TMap<EIGS_CharacterID, FMETA_UniqueCharacterGraphInfo> CharacterStoryGraphs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime> PlotlineGraphs;
+    TArray<FIGS_PlotlineGraphData> PlotlineGraphs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMETA_BaseStoryGraphManager> CrewRandEventsGraph;
@@ -120,7 +123,7 @@ public:
     TSubclassOf<UMETA_BaseGoal> GetPrimaryGoalID() const;
     
     UFUNCTION(BlueprintCallable)
-    TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime> GetPlotlineGraphs();
+    TArray<FIGS_PlotlineGraphData> GetPlotlineGraphs();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FMETA_Interval> GetPlotlineDaysArray() const;

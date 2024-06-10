@@ -67,6 +67,9 @@ public:
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UDataAsset> MenuBGAkStatesDataAsset;
     
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UDataTable> ChallengesDataTable;
+    
     UIGS_Common_DataDevSettings_Meta();
 
 };

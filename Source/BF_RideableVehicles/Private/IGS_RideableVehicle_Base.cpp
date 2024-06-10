@@ -37,10 +37,10 @@ AIGS_RideableVehicle_Base::AIGS_RideableVehicle_Base(const FObjectInitializer& O
     this->Mesh = (USkeletalMeshComponent*)RootComponent;
     this->m_Speedometer = NULL;
     this->m_Driver = NULL;
-    this->AkComponent->SetupAttachment(RootComponent);
-    this->InteractiveComponent->SetupAttachment(RootComponent);
     this->FirstPersonCameraComponent->SetupAttachment(RootComponent);
     this->EntryTrigger->SetupAttachment(RootComponent);
+    this->AkComponent->SetupAttachment(RootComponent);
+    this->InteractiveComponent->SetupAttachment(RootComponent);
 }
 
 void AIGS_RideableVehicle_Base::VehicleDestroy(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo) {

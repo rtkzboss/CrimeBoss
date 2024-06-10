@@ -3,7 +3,6 @@
 UIGS_BossBackgroundManager::UIGS_BossBackgroundManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     this->m_DataTable = NULL;
     this->m_BackgroundChangeInProgress = false;
-    this->m_IsAnyBackgroundLoaded = false;
 }
 
 void UIGS_BossBackgroundManager::UnloadIncorrectLevel(FName inLevelToUnload) {
@@ -35,6 +34,9 @@ FName UIGS_BossBackgroundManager::GetNameForLevel(int32 inLevel) {
 
 TArray<FName> UIGS_BossBackgroundManager::GetLoadedBackgroundLevelNames() const {
     return TArray<FName>();
+}
+
+void UIGS_BossBackgroundManager::ForceReloadLevel(FName inLevelToLoad) {
 }
 
 

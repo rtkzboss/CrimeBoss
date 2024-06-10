@@ -3,6 +3,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameplayTagContainer.h"
 #include "IGS_UnlockItemInfo.h"
+#include "IGS_UnlockStats.h"
 #include "IGS_UnlockHelpers.generated.h"
 
 class UObject;
@@ -14,6 +15,9 @@ public:
     UIGS_UnlockHelpers();
 
     UFUNCTION(BlueprintCallable)
+    static void PrintUnlockStats(UObject* inWCO, const FIGS_UnlockStats& inOutUnlockStats, int32 inSimulationsCount);
+    
+    UFUNCTION(BlueprintCallable)
     static TArray<FIGS_UnlockItemInfo> GetAllWeaponSkinsFromFamilyTag(UObject* inWCO, const FGameplayTag& inTag, const TArray<FIGS_UnlockItemInfo>& inUnlockItems);
     
     UFUNCTION(BlueprintCallable)
@@ -24,6 +28,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static TArray<FIGS_UnlockItemInfo> GetAllBaseWeaponsOfFamilyFromWeapons(const TArray<FIGS_UnlockItemInfo>& inUnlockItems);
+    
+    UFUNCTION(BlueprintCallable)
+    static void AddUnlockStats(UObject* inWCO, UPARAM(Ref) FIGS_UnlockStats& inOutUnlockStats, const FIGS_UnlockItemInfo& inUnlockItemInfo, int32 inLevel);
     
 };
 

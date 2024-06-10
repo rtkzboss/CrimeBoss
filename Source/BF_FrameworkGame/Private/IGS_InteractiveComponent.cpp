@@ -15,6 +15,7 @@ UIGS_InteractiveComponent::UIGS_InteractiveComponent(const FObjectInitializer& O
     this->InteractionPriority = 0;
     this->OutlineDistance = 250.00f;
     this->InteractionDistance = 150.00f;
+    this->HUDDistance = 500.00f;
     this->InteractionDistanceOnly2D = false;
     this->InteractionBottomZTreshold = 100.00f;
     this->InteractionDotThreshold = 0.75f;

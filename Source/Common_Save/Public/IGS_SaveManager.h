@@ -56,6 +56,9 @@ protected:
 public:
     UIGS_SaveManager();
 
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool ShouldUnlockVeteranRewards() const;
+    
     UFUNCTION(BlueprintCallable)
     static void SetPlotlinesDisableDebugData(const UObject* inWCO, bool bDisable);
     
@@ -135,13 +138,7 @@ public:
     TArray<FIGS_CareerSlotInfo> GetAllCareerSaveFiles() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool DoesQuickplaySavePatching();
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesQuickplaySaveExist();
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool DoesNormalCarrerSavePatching();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool DoesNormalCareerSaveExist();

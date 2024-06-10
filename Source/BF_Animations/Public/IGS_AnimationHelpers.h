@@ -4,7 +4,11 @@
 #include "EIGS_Anim4Sides.h"
 #include "IGS_AnimationHelpers.generated.h"
 
+class AIGS_GameCharacterFramework;
 class UAnimInstance;
+class UAnimMontage;
+class UIGS_PlayerAnimInstance;
+class UIGS_UArmsAniminstance;
 
 UCLASS(Blueprintable)
 class BF_ANIMATIONS_API UIGS_AnimationHelpers : public UBlueprintFunctionLibrary {
@@ -14,6 +18,15 @@ public:
 
     UFUNCTION(BlueprintCallable)
     static void StopAllMontages(UAnimInstance* inAnimInstance, float inBlendOut);
+    
+    UFUNCTION(BlueprintCallable)
+    static UIGS_PlayerAnimInstance* GetPlayerAnimInstance(const AIGS_GameCharacterFramework*& inCharacter);
+    
+    UFUNCTION(BlueprintCallable)
+    static void GetMeleePushMontages(const AIGS_GameCharacterFramework*& inCharacter, UAnimMontage*& outCharacterFPP, UAnimMontage*& outCharacterTPP, UAnimMontage*& outWeaponFPP);
+    
+    UFUNCTION(BlueprintCallable)
+    static UIGS_UArmsAniminstance* GetArmsAnimInstance(const AIGS_GameCharacterFramework*& inCharacter);
     
     UFUNCTION(BlueprintCallable)
     static EIGS_Anim4Sides GetAnimationSideForAngle(float inAngle);

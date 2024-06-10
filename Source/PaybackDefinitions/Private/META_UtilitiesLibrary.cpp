@@ -43,6 +43,10 @@ TArray<EMETA_ItemQuality> UMETA_UtilitiesLibrary::GetQualitiesFromBitmask(int32 
     return TArray<EMETA_ItemQuality>();
 }
 
+int32 UMETA_UtilitiesLibrary::GetNumberOfDigits(const int32 inNumber) {
+    return 0;
+}
+
 bool UMETA_UtilitiesLibrary::GetLootLevel(FGameplayTag inLootTag, int32& Level, FGameplayTag& outMainLootTag) {
     return false;
 }

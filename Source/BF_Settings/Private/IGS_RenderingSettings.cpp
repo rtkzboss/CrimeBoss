@@ -3,10 +3,10 @@
 UIGS_RenderingSettings::UIGS_RenderingSettings() {
     this->bSettingsValid = true;
     this->FullscreenModeValue = 1;
-    this->ResolutionValue = 20;
+    this->ResolutionValue = 25;
     this->VSyncEnabledValue = false;
     this->ResolutionScaleValue = 100.00f;
-    this->ProfileValue = 0;
+    this->ProfileValue = 6;
     this->ViewDistanceQualityValue = 3;
     this->AntiAliasingQualityValue = 3;
     this->PostProcessingQualityValue = 3;
@@ -28,7 +28,7 @@ UIGS_RenderingSettings::UIGS_RenderingSettings() {
     this->MotionBlurEnabled = false;
     this->FramerateLimitInGame = 239;
     this->FramerateLimitInMenu = 239;
-    this->FramerateLimitOutOfFocus = 5;
+    this->FramerateLimitOutOfFocus = 30;
     this->bCanChangeMonitorPositions = true;
     this->bQualityModeForConsoles = false;
 }

@@ -67,8 +67,8 @@ UIGS_CharacterData::UIGS_CharacterData(const FObjectInitializer& ObjectInitializ
     this->mR_CurrentDetection = 0.00f;
     this->mR_DetectionSecondPhase = false;
     this->mR_ReportDetection = true;
-    this->m_StealthTakedownPossibleCharacter = NULL;
-    this->m_StealthTakedownPossibleCharacterCached = NULL;
+    this->m_SubdueTargetCharacter = NULL;
+    this->m_SubdueTargetCharacterCached = NULL;
     this->mR_SubdueAllowed = false;
     this->mR_Reviving = false;
     this->mR_LockPicking = false;
@@ -137,6 +137,10 @@ void UIGS_CharacterData::Multicast_SetCarType_Implementation(const EIGS_CarType 
 
 bool UIGS_CharacterData::IsShoutHint() {
     return false;
+}
+
+AIGS_GameCharacterFramework* UIGS_CharacterData::GetSubduedBy() const {
+    return NULL;
 }
 
 AActor* UIGS_CharacterData::GetStealthTakedownActor() {

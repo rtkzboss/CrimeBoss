@@ -6,13 +6,13 @@ UIGS_SubtitleManager::UIGS_SubtitleManager(const FObjectInitializer& ObjectIniti
 void UIGS_SubtitleManager::ShowDialogueTestSubtitle(const UObject* inWCO, const FString& inDialogueText) {
 }
 
-void UIGS_SubtitleManager::SetDialogueSubtitleEnabled(bool inState, bool inIsImportant) {
+void UIGS_SubtitleManager::SetDialogueSubtitleEnabled(bool inState, EIGS_SubtitleType inSubtitleType) {
 }
 
-void UIGS_SubtitleManager::InsertDialogueSubtitle(const FIGS_SubtitleData& inSubtitleData, bool inIsImportant) {
+void UIGS_SubtitleManager::InsertDialogueSubtitle(const FIGS_SubtitleData& inSubtitleData) {
 }
 
-void UIGS_SubtitleManager::ClearDialogueSubtitle(bool inIsImportant) {
+void UIGS_SubtitleManager::ClearDialogueSubtitle(EIGS_SubtitleType inSubtitleType) {
 }
 
 void UIGS_SubtitleManager::ClearAndDisableAllSubtitles() {

@@ -43,6 +43,8 @@ enum class EIGS_WorldWidgetType : uint8 {
     Widget_FlashGrenadePlayer,
     Widget_StunGrenadeAI,
     Widget_StunGrenadePlayer,
+    Widget_EMPGrenadeAI,
+    Widget_EMPGrenadePlayer,
     Widget_PlantedC4,
     Widget_ExplodingBarrel,
     Widget_EmptyButVisible,

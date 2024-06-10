@@ -6,6 +6,8 @@
 #include "IGS_SniperAimData.h"
 #include "IGS_SniperAimComponent.generated.h"
 
+class AActor;
+class AIGS_AIControllerBase;
 class AIGS_WieldableBase;
 class UIGS_WieldableInventoryObjectBase;
 
@@ -43,6 +45,9 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void OnRep_SniperAimData();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnAggroTargetChanged(AIGS_AIControllerBase* InController, AActor* inAggroTarget);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_ReportFire(bool inIsHit);

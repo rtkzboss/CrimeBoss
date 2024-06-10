@@ -288,6 +288,9 @@ public:
     bool GetSuitableEquipmentAfterHeisterUpgrade(const UObject* inWCO, const FIGS_CharacterTableRow& inGenericTableRow, EMETA_ItemQuality inHeisterQuality, const FMETA_HeisterEconomyData inEconomyData, TArray<FMETA_PerkData> inCurrentPerks, TSubclassOf<UIGS_EquipmentInventoryObject> inCurrentEquipments, const TArray<FGameplayTag>& inUnlockedEquipment, TSubclassOf<UIGS_EquipmentInventoryObject>& outEquipment);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetStartingPerkCountOfCharacter(UObject* inWCO, const FGameplayTag inCharacter, const EMETA_ItemQuality inQuality);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetStartingLevelOfCharacter(UObject* inWCO, const FGameplayTag inCharacter, const EMETA_ItemQuality inQuality);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

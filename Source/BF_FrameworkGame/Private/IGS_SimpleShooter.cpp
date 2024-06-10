@@ -30,6 +30,14 @@ void UIGS_SimpleShooter::InitializeMuzzleReference(UChildActorComponent* inMuzzl
 void UIGS_SimpleShooter::InitAkComponent(UAkComponent* inAkComponent) {
 }
 
+float UIGS_SimpleShooter::GetRPM() const {
+    return 0.0f;
+}
+
+int32 UIGS_SimpleShooter::GetProjectilesPerShot() const {
+    return 0;
+}
+
 void UIGS_SimpleShooter::BeginAttack(const bool inForced) {
 }
 

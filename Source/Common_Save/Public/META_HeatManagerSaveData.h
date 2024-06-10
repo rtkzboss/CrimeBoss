@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "EMETA_Gang.h"
 #include "EMETA_Heat.h"
 #include "META_DetectiveInfo.h"
@@ -37,7 +38,13 @@ public:
     TMap<TSubclassOf<UMETA_DetectiveID>, FMETA_DetectiveInfo> ActiveDetectives;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    TSet<int32> UsedInvestigationValuesForDetectives;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UMETA_DetectiveID>> DeadDetectives;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    TMap<FGameplayTag, int32> InvestigationEffects;
     
     FMETA_HeatManagerSaveData();
 };

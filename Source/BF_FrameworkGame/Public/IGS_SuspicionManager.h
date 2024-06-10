@@ -131,5 +131,8 @@ public:
     UFUNCTION(BlueprintCallable)
     float GetHQSuspicion();
     
+    UFUNCTION(BlueprintCallable)
+    void CanShowHeistHint(const bool inCanShow);
+    
 };
 

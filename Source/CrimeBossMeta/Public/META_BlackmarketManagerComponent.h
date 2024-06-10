@@ -3,7 +3,6 @@
 #include "META_ArmyTierConfiguration.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
-#include "EIGS_CharacterID.h"
 #include "EMETA_RespectLvl.h"
 #include "META_BMActiveEventLootData.h"
 #include "META_BMEventEquipmentData.h"
@@ -235,9 +234,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void BuySoldiers(int32 inAmount, int32& outAmountOfSoldiersBought);
-    
-    UFUNCTION(BlueprintCallable)
-    void AddUniqueHeisterToMarketPool(EIGS_CharacterID inCharacterID, bool inIgnoreLock);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void ActivateLootEventByVendor(FMETA_VendorLootKey inVendorLootKey);

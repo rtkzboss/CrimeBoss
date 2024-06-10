@@ -150,6 +150,9 @@ void AIGS_PlayerControllerRoot::OnBotPossessInMenu_Implementation(bool inIsHoldi
 void AIGS_PlayerControllerRoot::OnBotFollow_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
 }
 
+void AIGS_PlayerControllerRoot::OnBotDeliverLoot_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
+}
+
 void AIGS_PlayerControllerRoot::OnBotCancelInMenu_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
 }
 

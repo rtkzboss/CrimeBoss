@@ -5,6 +5,7 @@
 #include "DialogueSubtitleInsertEventDelegate.h"
 #include "DialogueSubtitleRemoveEventDelegate.h"
 #include "DialogueTestSubtitleInsertEventDelegate.h"
+#include "EIGS_SubtitleType.h"
 #include "IGS_SubtitleData.h"
 #include "IGS_SubtitleManager.generated.h"
 
@@ -32,13 +33,13 @@ public:
     static void ShowDialogueTestSubtitle(const UObject* inWCO, const FString& inDialogueText);
     
     UFUNCTION(BlueprintCallable)
-    void SetDialogueSubtitleEnabled(bool inState, bool inIsImportant);
+    void SetDialogueSubtitleEnabled(bool inState, EIGS_SubtitleType inSubtitleType);
     
     UFUNCTION(BlueprintCallable)
-    void InsertDialogueSubtitle(const FIGS_SubtitleData& inSubtitleData, bool inIsImportant);
+    void InsertDialogueSubtitle(const FIGS_SubtitleData& inSubtitleData);
     
     UFUNCTION(BlueprintCallable)
-    void ClearDialogueSubtitle(bool inIsImportant);
+    void ClearDialogueSubtitle(EIGS_SubtitleType inSubtitleType);
     
     UFUNCTION(BlueprintCallable)
     void ClearAndDisableAllSubtitles();

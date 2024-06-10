@@ -55,9 +55,6 @@ public:
     float GetStealthTakedownRangeMult() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    float GetStealthTakedownMinAngleTreshold() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetStealthTakedownDamageMult() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -65,6 +62,12 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetSprintDetectionMultiplier() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetSniperVisionCapsuleRadius() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetSniperTimeToForgetTarget() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetShoutCooldown() const;

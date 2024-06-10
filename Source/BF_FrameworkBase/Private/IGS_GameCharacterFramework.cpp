@@ -323,9 +323,6 @@ bool AIGS_GameCharacterFramework::CanBeUnarmed() const {
     return false;
 }
 
-void AIGS_GameCharacterFramework::CanBeStealthTakedownedBy(AIGS_GameCharacterFramework* inCharacter, bool InValue) {
-}
-
 bool AIGS_GameCharacterFramework::CanAim() const {
     return false;
 }

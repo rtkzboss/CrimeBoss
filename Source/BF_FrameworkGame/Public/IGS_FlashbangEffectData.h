@@ -36,6 +36,12 @@ public:
     TSoftObjectPtr<UAkAudioEvent> StunnedElectricStopAkAudioEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UAkAudioEvent> StunnedStartAkAudioEvent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UAkAudioEvent> StunnedStopAkAudioEvent;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D ExplosionAroundPlayerPowerTrigger;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

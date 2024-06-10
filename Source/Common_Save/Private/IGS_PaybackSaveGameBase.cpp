@@ -5,7 +5,7 @@ UIGS_PaybackSaveGameBase::UIGS_PaybackSaveGameBase() {
     this->SaveDataEncryptionKey = TEXT("6516263");
     this->bFailedChecksum = false;
     this->bWasPatchingSaveFiles = false;
-    this->PatchSaveLocation = TEXT("Backup/PatchBackup");
+    this->bShouldUnlockVeteranRewards = false;
 }
 
 

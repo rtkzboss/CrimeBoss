@@ -85,6 +85,12 @@ public:
     void PerformanceCheck(int32 inFrames);
     
     UFUNCTION(BlueprintCallable, Exec)
+    void OutlineAllPickups();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void OpenSteamKeyboard();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void NeverEnd();
     
     UFUNCTION(BlueprintCallable, Exec)

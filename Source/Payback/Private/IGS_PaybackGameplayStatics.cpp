@@ -36,6 +36,9 @@ bool UIGS_PaybackGameplayStatics::SetAccountVariableValue(UObject* inWCO, FGamep
     return false;
 }
 
+void UIGS_PaybackGameplayStatics::RestartGame(UObject* inWCO) {
+}
+
 void UIGS_PaybackGameplayStatics::ResetUnlockedCharactersAndContracts(UObject* inWCO) {
 }
 
@@ -57,6 +60,9 @@ void UIGS_PaybackGameplayStatics::OverridePlayerInventory(AIGS_PlayerCharacter* 
 void UIGS_PaybackGameplayStatics::OverloadAllRobotsOfSide(UObject* inWCO, const EIGS_TeamSideEnum inTeamSide, AController*& inInstigator, const FVector inOrigin, const float inMaxDelay, const float inMaxDistance) {
 }
 
+void UIGS_PaybackGameplayStatics::OutlineAllPickups(UObject* inWCO) {
+}
+
 bool UIGS_PaybackGameplayStatics::IsAccountVariableUnlocked(UObject* inWCO, FGameplayTag inVariable) {
     return false;
 }
@@ -76,6 +82,10 @@ void UIGS_PaybackGameplayStatics::GetPlayerLoadoutFromAILoadoutHolder(const UObj
 }
 
 void UIGS_PaybackGameplayStatics::GetPlayerLoadoutFromAICharacter(const UObject* inWCO, AIGS_IntelligentGameCharacter*& inCharacter, TSubclassOf<UMETA_WeaponInventoryObject>& outPrimary, TSubclassOf<UMETA_WeaponInventoryObject>& outSecondary, TSubclassOf<UIGS_EquipmentInventoryObject>& outEquipment) {
+}
+
+FString UIGS_PaybackGameplayStatics::GetPlayerIdFromUniqueNetId(const FUniqueNetIdRepl& inUniqueNetId) {
+    return TEXT("");
 }
 
 UPaybackGameViewportClient* UIGS_PaybackGameplayStatics::GetPaybackViewport(UObject* inWCO) {

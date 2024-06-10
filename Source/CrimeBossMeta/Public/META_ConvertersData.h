@@ -9,6 +9,7 @@
 #include "META_MissionsSave.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "EMETA_JobResult.h"
 #include "EMETA_RespectLvl.h"
 #include "META_CharacterSkinSaveData.h"
@@ -42,6 +43,9 @@ class CRIMEBOSSMETA_API UMETA_ConvertersData : public UBlueprintFunctionLibrary 
 public:
     UMETA_ConvertersData();
 
+    UFUNCTION(BlueprintCallable)
+    static FGameplayTagContainer GetCharactersTagFromSaveForCrew(UObject* inWCO, UPARAM(Ref) TArray<FMETA_HeisterSaveData>& inUniqueCharacters);
+    
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_WeaponSaveData> ConvertWeaponsToSave2(UPARAM(Ref) TArray<UMETA_Weapon*>& inWeapons);
     

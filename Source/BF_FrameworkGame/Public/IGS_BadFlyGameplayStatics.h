@@ -20,6 +20,7 @@
 #include "EIGS_BagType.h"
 #include "EIGS_DamageLimiterType.h"
 #include "EIGS_SpawnAnimType.h"
+#include "EIGS_StorePlatform.h"
 #include "IGS_LootBagInfo.h"
 #include "IGS_SpawnerEventDelegateDelegate.h"
 #include "Templates/SubclassOf.h"
@@ -197,7 +198,7 @@ public:
     static int32 PlayerOffencesToIndex(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
     
     UFUNCTION(BlueprintCallable)
-    static void OverrideSpecialTierRatio(const UObject* inWCO, const float inNewRatio);
+    static void OverrideSpecialTierRatio(const UObject* inWCO, const float inNewRatio, const EIGS_TeamSideEnum inTeamSide);
     
     UFUNCTION(BlueprintCallable)
     static bool MatchesTagDepth(FGameplayTag inTagLeft, FGameplayTag inTagRight, int32 InDepth);
@@ -234,6 +235,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static int32 GetStrikeCountForOffender(const UObject* inWCO, FGameplayTagContainer inOffences, AActor* inDetector, AActor* inOffender);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static EIGS_StorePlatform GetStorePlatformType(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static AIGS_ScriptManagerBase* GetScriptManager(UObject* inWCO);

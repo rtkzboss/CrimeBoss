@@ -14,7 +14,7 @@ int32 UIGS_WarzoneHelpers::CallWarzoneReinforcment(UObject* inWCO, int32 inCount
     return 0;
 }
 
-int32 UIGS_WarzoneHelpers::CallWarzoneCaptain(UObject* inWCO, int32 inCount, const TArray<EIGS_UnitSpecialization> inUnitSpecializations) {
+int32 UIGS_WarzoneHelpers::CallWarzoneCaptain(UObject* inWCO, int32 inCount) {
     return 0;
 }
 

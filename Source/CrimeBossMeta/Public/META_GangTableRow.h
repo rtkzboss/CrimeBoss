@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "Kismet/KismetTextLibrary.h"
 #include "Engine/DataTable.h"
 #include "EMETA_Gang.h"
 #include "META_GangTableRow.generated.h"
@@ -18,6 +19,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText GangName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    ETextGender BossGender;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText BossDescription;

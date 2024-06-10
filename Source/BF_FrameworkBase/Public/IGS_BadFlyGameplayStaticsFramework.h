@@ -22,6 +22,7 @@
 class AActor;
 class AIGS_GameCharacterFramework;
 class ALandscape;
+class APlayerController;
 class UActorComponent;
 class UIGS_RandomStreamHolder;
 class ULightComponentBase;
@@ -67,6 +68,9 @@ public:
     static void SetIsPlayerSpawnEnabled(UObject* inWCO, bool InValue);
     
     UFUNCTION(BlueprintCallable)
+    static void SetIsAccountLinkedInConfig(bool inIsAccountLinked);
+    
+    UFUNCTION(BlueprintCallable)
     static void SetCustomDepthStencilOnLandscape(ALandscape* inLandscape, ERendererStencilMask inStencilMask, int32 InValue);
     
     UFUNCTION(BlueprintCallable)
@@ -83,6 +87,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void PrintExtraSessionSettings(FBlueprintSessionResult SessionResult);
+    
+    UFUNCTION(BlueprintCallable)
+    static void OpenSteamKeyboard(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static void MakeTouchEventForAI(UObject* inWCO, AActor* inTouchReceiver, AActor* inOtherActor, const FVector& inEventLocation);
@@ -128,6 +135,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static FString GetOnlyRevisionNumber();
+    
+    UFUNCTION(BlueprintCallable)
+    static void GetNicknames(APlayerController* InPlayerController, FString& outPlatformNickname, FString& outNickname);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetMaxPlayers(const FBlueprintSessionResult& Result);

@@ -91,7 +91,7 @@ bool UIGS_AIHelpersLibrary::IsBossCharacterDowned(UObject* inWCO) {
     return false;
 }
 
-bool UIGS_AIHelpersLibrary::IsArmed(AActor* inCharacter) {
+bool UIGS_AIHelpersLibrary::IsArmed(const AActor* inCharacter) {
     return false;
 }
 
@@ -215,6 +215,10 @@ bool UIGS_AIHelpersLibrary::GetAllAliveHeisterCharacters(const UObject* inWCO, T
 
 FVector UIGS_AIHelpersLibrary::GetAIFocusLocationOffsetForActor(const AActor* inActor, const bool inPreferHead) {
     return FVector{};
+}
+
+TArray<FIGS_BotOrderAction> UIGS_AIHelpersLibrary::CreateBotOrderActions(APawn* inPlayerPawn, EIGS_BotCommandDefinition InAction, EIGS_BotOrderActionSource inSource, const APawn* inBotPawn) {
+    return TArray<FIGS_BotOrderAction>();
 }
 
 void UIGS_AIHelpersLibrary::ClearFocusHelper(AIGS_GameCharacterFramework* inCharacter) {

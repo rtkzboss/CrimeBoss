@@ -6,6 +6,7 @@ FIGS_FirstPersonMeleeAnimDatabase::FIGS_FirstPersonMeleeAnimDatabase() {
     this->MeleePushMontage = NULL;
     this->MarkMontage = NULL;
     this->OneHandCalmWeaponPose = false;
+    this->MeleePush = NULL;
     this->EquipWeaponMontage = NULL;
     this->UnequipWeaponMontage = NULL;
     this->MarkWeaponMontage = NULL;

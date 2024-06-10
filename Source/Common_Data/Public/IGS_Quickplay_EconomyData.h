@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_ChainDifficulty.h"
 #include "EMETA_ItemQuality.h"
 #include "EIGS_UnlockCategory.h"
@@ -45,6 +46,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EMETA_ItemQuality, int32> HeisterLevelPerQuality;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EMETA_ItemQuality, int32> CharacterStartingPerksPerQuality;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<FGameplayTag, int32> CharacterStartingPerksOverride;
     
 public:
     UIGS_Quickplay_EconomyData();

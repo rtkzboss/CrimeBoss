@@ -38,6 +38,7 @@ FIGS_ThirdPersonMeleeAnimDatabase::FIGS_ThirdPersonMeleeAnimDatabase() {
     this->LeanLeftCrouch = NULL;
     this->LeanRightCrouch = NULL;
     this->LeanCrouchUp = NULL;
+    this->MeleePush = NULL;
     this->LightHitReactions = NULL;
     this->OneHandCalmWeaponPose = false;
     this->LeftHandIKEnabled = false;

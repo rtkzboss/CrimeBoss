@@ -16,8 +16,6 @@
 	"IsExperimentalVersion": false,
 	"Installed": true,
 	"SupportedTargetPlatforms": [
-		"XSX",
-		"PS5",
 		"Win64"
 	],
 	"Modules": [
@@ -26,8 +24,6 @@
 			"Type": "Runtime",
 			"LoadingPhase": "PostConfigInit",
 			"WhitelistPlatforms": [
-				"PS5",
-				"XSX",
 				"Win64"
 			]
 		}

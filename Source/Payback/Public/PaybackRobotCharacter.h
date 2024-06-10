@@ -34,7 +34,16 @@ public:
     float ForcedOverloadTime;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float OverloadOuterDamageRange;
+    float OverloadOuterDamageRadius;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float OverloadInnerDamageRadius;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float OverloadEffectRadius;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float OverloadBaseDamage;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag OverloadAnimationTag;
@@ -86,6 +95,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnFlashedEvent(bool inStart);
     
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void OnEnableVfx(const bool inEnable);
+    
 private:
     UFUNCTION(BlueprintCallable)
     void OnEffectApplied(const FGameplayTag inGameplayTag, int32 inCount);
@@ -98,6 +110,10 @@ private:
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_Overload(AController* inInstigator);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void EnableVfx(const bool inEnable);
     
 
     // Fix for true pure virtual functions not being implemented

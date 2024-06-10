@@ -25,7 +25,7 @@ public:
     static FMETA_PerkData GetClassPerkForCharacter(UObject* inWCO, FGameplayTag inCharacterTag);
     
     UFUNCTION(BlueprintCallable)
-    static TArray<FMETA_PerkData> GetCharacterPerksAtLevel(UObject* inWCO, FGameplayTag inCharacterTag, int32 inCharacterLevel);
+    static TArray<FMETA_PerkData> GetCharacterPerksAtLevel(UObject* inWCO, FGameplayTag inCharacterTag, int32 inCharacterLevel, int32 inStartingPerkCount);
     
     UFUNCTION(BlueprintCallable)
     static TArray<FMETA_PerkData> GetAvailableNewPerks(UObject* inWCO, FGameplayTag inCharacterTag, const TArray<FMETA_PerkData>& inCurrentPerks);

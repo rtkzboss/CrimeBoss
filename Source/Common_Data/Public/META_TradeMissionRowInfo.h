@@ -5,6 +5,7 @@
 #include "EIGS_HubBackdropTypes.h"
 #include "EIGS_HubDistrict.h"
 #include "EMETA_JobResult.h"
+#include "META_TradeExpense.h"
 #include "META_TradeMissionRowInfo.generated.h"
 
 class UTexture2D;
@@ -27,6 +28,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, FGameplayTag> ExpensesMap;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FMETA_TradeExpense> Expenses;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText Name;

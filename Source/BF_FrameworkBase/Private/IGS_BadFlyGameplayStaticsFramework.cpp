@@ -34,6 +34,9 @@ void UIGS_BadFlyGameplayStaticsFramework::SetNotWorldShadows(UPrimitiveComponent
 void UIGS_BadFlyGameplayStaticsFramework::SetIsPlayerSpawnEnabled(UObject* inWCO, bool InValue) {
 }
 
+void UIGS_BadFlyGameplayStaticsFramework::SetIsAccountLinkedInConfig(bool inIsAccountLinked) {
+}
+
 void UIGS_BadFlyGameplayStaticsFramework::SetCustomDepthStencilOnLandscape(ALandscape* inLandscape, ERendererStencilMask inStencilMask, int32 InValue) {
 }
 
@@ -51,6 +54,9 @@ UTexture2D* UIGS_BadFlyGameplayStaticsFramework::RenderTargetCreateStaticTexture
 }
 
 void UIGS_BadFlyGameplayStaticsFramework::PrintExtraSessionSettings(FBlueprintSessionResult SessionResult) {
+}
+
+void UIGS_BadFlyGameplayStaticsFramework::OpenSteamKeyboard(const UObject* inWCO) {
 }
 
 void UIGS_BadFlyGameplayStaticsFramework::MakeTouchEventForAI(UObject* inWCO, AActor* inTouchReceiver, AActor* inOtherActor, const FVector& inEventLocation) {
@@ -107,6 +113,9 @@ FString UIGS_BadFlyGameplayStaticsFramework::GetProjectVersion() {
 
 FString UIGS_BadFlyGameplayStaticsFramework::GetOnlyRevisionNumber() {
     return TEXT("");
+}
+
+void UIGS_BadFlyGameplayStaticsFramework::GetNicknames(APlayerController* InPlayerController, FString& outPlatformNickname, FString& outNickname) {
 }
 
 int32 UIGS_BadFlyGameplayStaticsFramework::GetMaxPlayers(const FBlueprintSessionResult& Result) {

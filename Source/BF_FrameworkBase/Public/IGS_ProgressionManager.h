@@ -83,6 +83,9 @@ public:
     float GetMaxPointsForLevel(int32 inLevel) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetMaxLevel() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetDebugMultiplier() const;
     
 };

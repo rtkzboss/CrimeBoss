@@ -85,6 +85,9 @@ void UMETA_EventFunctionLibrary::FromSaveFinishedGraphsResults(const TMap<TSoftO
 void UMETA_EventFunctionLibrary::FromSaveCrewEventsAndTheirGraphs(const TMap<FGameplayTag, TSoftObjectPtr<UMETA_BaseStoryGraphManager>>& CrewEventsAndTheirGraphs, TMap<FGameplayTag, TSoftObjectPtr<UStoryGraphManager>>& outCrewEventsAndTheirGraphs) {
 }
 
+void UMETA_EventFunctionLibrary::FromPlotlineGraphsData(AMETA_BaseGameMode* inGameMode, const TArray<FIGS_PlotlineGraphData>& PlotlineGraphs, TMap<TSoftObjectPtr<UStoryGraphManager>, FMETA_PlotlineGraphStartTime>& outPlotlineGraphs) {
+}
+
 void UMETA_EventFunctionLibrary::FromPlotlineGraphs(const TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime>& PlotlineGraphs, TMap<TSoftObjectPtr<UStoryGraphManager>, FMETA_PlotlineGraphStartTime>& outPlotlineGraphs) {
 }
 

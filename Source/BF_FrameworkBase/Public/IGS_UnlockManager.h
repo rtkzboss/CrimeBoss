@@ -3,6 +3,8 @@
 #include "EIGS_UnlockCategory.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
+#include "EIGS_InventorySlot.h"
 #include "IGS_OnRewardItemUnlockedSignatureDelegate.h"
 #include "IGS_OnUnlockManagerInitedSignatureDelegate.h"
 #include "IGS_UnlockItemInfo.h"
@@ -83,6 +85,12 @@ public:
     bool IsPendingUnlockedItem(const FIGS_UnlockItemInfo& inUnlockItemInfo) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsChallengeItem(FGameplayTag inTagID) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasSomePendingItemsByInventorySlot(EIGS_InventorySlot inSlot);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FIGS_UnlockItemInfo> GetUnlockItemInfos(const TArray<FGameplayTag>& inTagIDs) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -90,6 +98,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FIGS_UnlockItemInfo> GetForcedUnlockRewards(const TArray<FIGS_UnlockItemInfo>& inUnlockItemInfos, const int32 inLevel) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FGameplayTagContainer GetChallengeTags(FGameplayTag inTagID) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FIGS_UnlockItemInfo> GetAllUnlockedItemsByCategory(EIGS_UnlockCategory inUnlockCategory) const;

@@ -5,6 +5,9 @@ UIGS_RoomPointManager::UIGS_RoomPointManager() {
     this->bRoomPolysGathered = false;
 }
 
+void UIGS_RoomPointManager::RefreshBadRooms(const bool inHighlight) {
+}
+
 UIGS_RoomPointManager* UIGS_RoomPointManager::Instance(const UObject* inWorldContextObject) {
     return NULL;
 }

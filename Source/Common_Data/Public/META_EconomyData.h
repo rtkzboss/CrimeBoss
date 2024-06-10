@@ -22,6 +22,7 @@
 #include "IGS_CharacterClasses.h"
 #include "IGS_EconomyData_Base.h"
 #include "META_ArmyTierConfiguration.h"
+#include "META_BossCharacterConfiguration.h"
 #include "META_BossEliminationRewardsDistribution.h"
 #include "META_CategoryEconomyVariable.h"
 #include "META_CharacterInfo.h"
@@ -33,6 +34,7 @@
 #include "META_PerkData.h"
 #include "META_TradeSettings.h"
 #include "META_TurfRewardsDistribution.h"
+#include "META_UniqueCharacterConfiguration.h"
 #include "META_WarehouseWealthData.h"
 #include "Templates/SubclassOf.h"
 #include "META_EconomyData.generated.h"
@@ -125,10 +127,13 @@ protected:
     TMap<EMETA_ItemQuality, FMETA_GenericCharacterConfiguration> GenericCharacterConfigurationPerQuality;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FMETA_Interval UniqueCharacterLevelRange;
+    TMap<EMETA_ItemQuality, FMETA_UniqueCharacterConfiguration> UniqueCharacterConfigurationPerQuality;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FMETA_Interval BossCharacterLevelRange;
+    TMap<FGameplayTag, FMETA_UniqueCharacterConfiguration> UniqueCharacterConfigurationOverride;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMETA_BossCharacterConfiguration BossCharacterConfiguration;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<int32, FMETA_LevelUpHeisterData> LevelUpGenericHeisterData;
@@ -244,6 +249,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetWarehouseAttackCooldown() const;
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetUniqueCharacterConfiguration(const UObject* inWCO, FGameplayTag inCharacter, FMETA_UniqueCharacterConfiguration& outConfig) const;
+    
     UFUNCTION(BlueprintCallable)
     FMETA_TurfRewardsDistribution GetTurfRewardsDistributionConfig(EMETA_TileWealth inWealth);
     
@@ -303,6 +311,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     float GetMultiplierForHealing() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMissionBonusRewardForBoss() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMinAmountOfEachLootCanBeStolen() const;
@@ -408,6 +419,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TMap<EMETA_BossEliminationReward, int32> GetBossEliminationRewardChances() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMETA_BossCharacterConfiguration GetBossCharacterConfiguration() const;
     
     UFUNCTION(BlueprintCallable)
     FMETA_BMEventWeaponData GetBmEventWeaponInfoByBossRespect(UObject* inWCO, EMETA_RespectLvl inBossRespectLvl, bool& outSuccess);

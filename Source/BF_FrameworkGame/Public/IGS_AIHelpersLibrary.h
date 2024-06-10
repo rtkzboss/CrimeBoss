@@ -7,6 +7,9 @@
 #include "EIGS_SwitchWeaponTask_WeaponType.h"
 #include "EIGS_TeamSideEnum.h"
 #include "EIGS_WieldableSlot.h"
+#include "EIGS_BotCommandDefinition.h"
+#include "EIGS_BotOrderActionSource.h"
+#include "IGS_BotOrderAction.h"
 #include "IGS_AIHelpersLibrary.generated.h"
 
 class AActor;
@@ -17,6 +20,7 @@ class AIGS_PickupActorBase;
 class AIGS_PlayerCharacter;
 class AIGS_RoomBase;
 class AIGS_WeaponPickupActor;
+class APawn;
 class UActorComponent;
 class UObject;
 
@@ -96,7 +100,7 @@ public:
     static bool IsBossCharacterDowned(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
-    static bool IsArmed(AActor* inCharacter);
+    static bool IsArmed(const AActor* inCharacter);
     
     UFUNCTION(BlueprintCallable)
     static bool IsAnyPlayerWithinDistace(const UObject* inWCO, FVector InPosition, float inDistance);
@@ -190,6 +194,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static FVector GetAIFocusLocationOffsetForActor(const AActor* inActor, const bool inPreferHead);
+    
+    UFUNCTION(BlueprintCallable)
+    static TArray<FIGS_BotOrderAction> CreateBotOrderActions(APawn* inPlayerPawn, EIGS_BotCommandDefinition InAction, EIGS_BotOrderActionSource inSource, const APawn* inBotPawn);
     
     UFUNCTION(BlueprintCallable)
     static void ClearFocusHelper(AIGS_GameCharacterFramework* inCharacter);

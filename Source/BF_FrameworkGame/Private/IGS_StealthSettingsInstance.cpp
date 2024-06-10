@@ -56,10 +56,6 @@ float UIGS_StealthSettingsInstance::GetStealthTakedownRangeMult() const {
     return 0.0f;
 }
 
-float UIGS_StealthSettingsInstance::GetStealthTakedownMinAngleTreshold() const {
-    return 0.0f;
-}
-
 float UIGS_StealthSettingsInstance::GetStealthTakedownDamageMult() const {
     return 0.0f;
 }
@@ -69,6 +65,14 @@ float UIGS_StealthSettingsInstance::GetStealthRangedDamageMult() const {
 }
 
 float UIGS_StealthSettingsInstance::GetSprintDetectionMultiplier() const {
+    return 0.0f;
+}
+
+float UIGS_StealthSettingsInstance::GetSniperVisionCapsuleRadius() const {
+    return 0.0f;
+}
+
+float UIGS_StealthSettingsInstance::GetSniperTimeToForgetTarget() const {
     return 0.0f;
 }
 

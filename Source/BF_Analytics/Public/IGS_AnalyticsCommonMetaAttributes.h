@@ -36,6 +36,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString CampaignMode;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FString UserDifficulty;
+    
     FIGS_AnalyticsCommonMetaAttributes();
 };
 

@@ -12,6 +12,7 @@ enum class EIGS_InputDevice : uint8 {
     ID_Gamepad_XOne,
     ID_Gamepad_XBoxSX,
     ID_Gamepad_Switch,
+    ID_Gamepad_SteamDeck,
     ID_VR_Oculus,
     ID_VR_HTC_Vive,
     ID_VR_PSVR_Gamepad,

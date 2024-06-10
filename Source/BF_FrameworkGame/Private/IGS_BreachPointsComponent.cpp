@@ -16,6 +16,7 @@ AIGS_BreachPointsComponent::AIGS_BreachPointsComponent(const FObjectInitializer&
     this->MiddleExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("StarckExitPoint"));
     this->RightNearExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("RightNearExitPoint"));
     this->RightFarExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("RightFarExitPoint"));
+    this->RightFarExitPoint->SetupAttachment(RootComponent);
     this->LeftNearEntryPoint->SetupAttachment(RootComponent);
     this->LeftFarEntryPoint->SetupAttachment(RootComponent);
     this->MiddleEntryPoint->SetupAttachment(RootComponent);
@@ -25,7 +26,6 @@ AIGS_BreachPointsComponent::AIGS_BreachPointsComponent(const FObjectInitializer&
     this->LeftFarExitPoint->SetupAttachment(RootComponent);
     this->MiddleExitPoint->SetupAttachment(RootComponent);
     this->RightNearExitPoint->SetupAttachment(RootComponent);
-    this->RightFarExitPoint->SetupAttachment(RootComponent);
 }
 
 

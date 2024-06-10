@@ -20,5 +20,7 @@ enum class EIGS_PlayerCommandType : uint8 {
     Command_Custom1,
     Command_Custom2,
     Command_NoticedEnemy,
+    Command_DeliverLoot,
+    Command_DeliverLootAll,
 };
 

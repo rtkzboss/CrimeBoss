@@ -1,6 +1,8 @@
 #include "IGS_LaserBase.h"
+#include "Components/SceneComponent.h"
 
 AIGS_LaserBase::AIGS_LaserBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    this->RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("DefaultSceneRoot"));
     this->Indestructible = false;
     this->DestroyingReportsToHQ = true;
     this->DestroyingIsSuspicious = true;

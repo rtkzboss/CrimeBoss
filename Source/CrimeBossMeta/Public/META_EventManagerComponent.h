@@ -180,8 +180,8 @@ public:
     UFUNCTION(BlueprintCallable)
     bool EvaluateManyHeisterConditions(const FMETA_CharacterID inCharacter, TArray<UMETA_BaseHeisterCondition*> inConditions, const EMETA_ConditionExprOperator inConditionOperator);
     
-    UFUNCTION(BlueprintCallable)
-    bool EvaluateManyGraphConditions(TArray<UMETA_BaseCondition*> inConditions, const EMETA_ConditionExprOperator inConditionOperator);
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool EvaluateManyGraphConditions(const TArray<UMETA_BaseCondition*>& inConditions, const EMETA_ConditionExprOperator inConditionOperator) const;
     
     UFUNCTION(BlueprintCallable)
     void ClearCurrentNodes(UPARAM(Ref) FMETA_GraphStruct& inGraphData);

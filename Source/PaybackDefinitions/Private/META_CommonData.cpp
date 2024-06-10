@@ -46,6 +46,9 @@ UMETA_CommonData::UMETA_CommonData() {
     this->MaxPriceCoefficient = 1.00f;
     this->IncreasePriceCoefficient = 0.50f;
     this->TradeVendorCooldownAfterFailure = 2;
+    this->GuaranteedPositiveTrends = 0;
+    this->GuaranteedNegativeTrends = 0;
+    this->PositiveTrendChangeChance = 50.00f;
     this->RandomPoolSize = 0;
     this->ChanceOfUsingPriorityPool = 0;
     this->ChanceOfCharacterCanBeSelectedForRevengePool = 0;
@@ -53,6 +56,10 @@ UMETA_CommonData::UMETA_CommonData() {
 }
 
 bool UMETA_CommonData::NeedRemoveUnfinishedMissions() const {
+    return false;
+}
+
+bool UMETA_CommonData::IsMissionGangMission(const FGameplayTag inScenario) const {
     return false;
 }
 
@@ -76,6 +83,14 @@ void UMETA_CommonData::GetTradeRelationshipData(TMap<EMETA_TradeRelationship, in
 
 int32 UMETA_CommonData::GetTimeForCharactersMoodSwitchToNeutral() const {
     return 0;
+}
+
+FMETA_StatisticsRootTags UMETA_CommonData::GetStatisticsRootTags() const {
+    return FMETA_StatisticsRootTags{};
+}
+
+FGameplayTagContainer UMETA_CommonData::GetStatisticsRootTagContainer() const {
+    return FGameplayTagContainer{};
 }
 
 EMETA_RespectLvl UMETA_CommonData::GetRespectLvlRelatedToTurfsAmount(int32 inTurfsUnderControl) const {
@@ -241,7 +256,7 @@ int32 UMETA_CommonData::GetDurationMoneyMakingOpportunities() const {
     return 0;
 }
 
-FMETA_DetectivesInvestigationConfig UMETA_CommonData::GetDetectivesInvestigationConfigForPoliceInvestigationPercent(int32 inPoliceInvestigationPercent) {
+FMETA_DetectivesInvestigationConfig UMETA_CommonData::GetDetectivesInvestigationConfigForPoliceInvestigationPercent(const int32 inPoliceInvestigationPercent, TSet<int32> inForbiddenValues, int32& outSelectedValue) {
     return FMETA_DetectivesInvestigationConfig{};
 }
 
@@ -332,6 +347,10 @@ int32 UMETA_CommonData::GetChanceForGeneric_ArrestEvent() const {
     return 0;
 }
 
+FMETA_CampaignUserDifficultyConfiguration UMETA_CommonData::GetCampaignDifficultyConfiguration(const EIGS_UserDifficulty inUserDifficulty) const {
+    return FMETA_CampaignUserDifficultyConfiguration{};
+}
+
 void UMETA_CommonData::GetBossLoadout(UClass*& outPrimaryWeapon, UClass*& outSecondaryWeapon, UClass*& outEquipment) const {
 }
 
@@ -375,6 +394,10 @@ FMETA_AmbushConfig UMETA_CommonData::GetAmbushConfig() {
     return FMETA_AmbushConfig{};
 }
 
+TSet<EMETA_Gang> UMETA_CommonData::FilterGangsWithGangMissions(const TArray<EMETA_Gang>& inAliveGangs) const {
+    return TSet<EMETA_Gang>();
+}
+
 bool UMETA_CommonData::CanUseRandEventsCategoriesPriority() const {
     return false;
 }
@@ -389,6 +412,12 @@ bool UMETA_CommonData::CanFPSMissionAffectPoliceInvestigation(EMETA_FPSMissionSu
 
 bool UMETA_CommonData::CanFPSMissionAffectHeat(EMETA_FPSMissionSubtype inSubtype) const {
     return false;
+}
+
+void UMETA_CommonData::CalculateTrendDistribution(FGameplayTagContainer& outPositiveTrends, FGameplayTagContainer& outNegativeTrends) {
+}
+
+void UMETA_CommonData::CalculateNextTrendChangeDirection(bool& outPositive) const {
 }
 
 

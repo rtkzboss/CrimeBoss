@@ -41,6 +41,14 @@ bool UIGS_UnlockManager::IsPendingUnlockedItem(const FIGS_UnlockItemInfo& inUnlo
     return false;
 }
 
+bool UIGS_UnlockManager::IsChallengeItem(FGameplayTag inTagID) const {
+    return false;
+}
+
+bool UIGS_UnlockManager::HasSomePendingItemsByInventorySlot(EIGS_InventorySlot inSlot) {
+    return false;
+}
+
 TArray<FIGS_UnlockItemInfo> UIGS_UnlockManager::GetUnlockItemInfos(const TArray<FGameplayTag>& inTagIDs) const {
     return TArray<FIGS_UnlockItemInfo>();
 }
@@ -51,6 +59,10 @@ FIGS_UnlockItemInfo UIGS_UnlockManager::GetUnlockItemInfo(FGameplayTag inTagID, 
 
 TArray<FIGS_UnlockItemInfo> UIGS_UnlockManager::GetForcedUnlockRewards(const TArray<FIGS_UnlockItemInfo>& inUnlockItemInfos, const int32 inLevel) const {
     return TArray<FIGS_UnlockItemInfo>();
+}
+
+FGameplayTagContainer UIGS_UnlockManager::GetChallengeTags(FGameplayTag inTagID) const {
+    return FGameplayTagContainer{};
 }
 
 TArray<FIGS_UnlockItemInfo> UIGS_UnlockManager::GetAllUnlockedItemsByCategory(EIGS_UnlockCategory inUnlockCategory) const {

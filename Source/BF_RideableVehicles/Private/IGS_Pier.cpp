@@ -22,15 +22,15 @@ AIGS_Pier::AIGS_Pier(const FObjectInitializer& ObjectInitializer) : Super(Object
     this->FourthPlayerPosition = CreateDefaultSubobject<UArrowComponent>(TEXT("Fourth Player Position"));
     this->RightDockArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Right Dock Arrow"));
     this->LeftDockArrow = CreateDefaultSubobject<UArrowComponent>(TEXT("Left Dock Arrow"));
+    this->FourthPlayerPosition->SetupAttachment(RootComponent);
+    this->RightDockArrow->SetupAttachment(RootComponent);
+    this->LeftDockArrow->SetupAttachment(RootComponent);
     this->SafeArea->SetupAttachment(RootComponent);
     this->Bridge->SetupAttachment(RootComponent);
     this->DockZone->SetupAttachment(RootComponent);
     this->FirstPlayerPosition->SetupAttachment(RootComponent);
     this->SecondPlayerPosition->SetupAttachment(RootComponent);
     this->ThirdPlayerPosition->SetupAttachment(RootComponent);
-    this->FourthPlayerPosition->SetupAttachment(RootComponent);
-    this->RightDockArrow->SetupAttachment(RootComponent);
-    this->LeftDockArrow->SetupAttachment(RootComponent);
 }
 
 void AIGS_Pier::VesselExited_Implementation(AIGS_Vessel_Base* inVessel) {

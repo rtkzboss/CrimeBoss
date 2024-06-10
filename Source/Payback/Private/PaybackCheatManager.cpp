@@ -78,6 +78,12 @@ void UPaybackCheatManager::Ping(const FString& inTeamSide) {
 void UPaybackCheatManager::PerformanceCheck(int32 inFrames) {
 }
 
+void UPaybackCheatManager::OutlineAllPickups() {
+}
+
+void UPaybackCheatManager::OpenSteamKeyboard() {
+}
+
 void UPaybackCheatManager::NeverEnd() {
 }
 

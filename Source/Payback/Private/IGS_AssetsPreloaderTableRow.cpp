@@ -2,5 +2,6 @@
 
 FIGS_AssetsPreloaderTableRow::FIGS_AssetsPreloaderTableRow() {
     this->PreloadBackupHeisters = false;
+    this->PreloadRobots = false;
 }
 

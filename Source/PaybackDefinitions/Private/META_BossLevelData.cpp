@@ -11,8 +11,8 @@ UMETA_BossLevelData::UMETA_BossLevelData() {
     this->BossPointsPerSuccessfulTWDefence = 0;
     this->BossPointsPer10000Score = 0;
     this->BossPointsPerWaveMaxPoints = 0;
-    this->BossPointsPerWaveMaxPercentAwardPerKill = 0;
-    this->BossPointsPerWaveMaxPercentAwardPerSecond = 0;
+    this->BossPointsPerWaveMaxPercentAwardPerKill = 0.00f;
+    this->BossPointsPerWaveMaxPercentAwardPerSecond = 0.00f;
     this->BonusesTable = NULL;
 }
 
@@ -48,15 +48,11 @@ TSubclassOf<UGameplayEffect> UMETA_BossLevelData::GetCaptainHiddenPerkByBonusTyp
     return NULL;
 }
 
-int32 UMETA_BossLevelData::GetBossPointsPerWaveMaxPoints() const {
+int32 UMETA_BossLevelData::GetBossPointsPerWaveDefenseSecondsSurvived(const int32 InSeconds) const {
     return 0;
 }
 
-int32 UMETA_BossLevelData::GetBossPointsPerWaveMaxPercentAwardPerSecond() const {
-    return 0;
-}
-
-int32 UMETA_BossLevelData::GetBossPointsPerWaveMaxPercentAwardPerKill() const {
+int32 UMETA_BossLevelData::GetBossPointsPerWaveDefenseKills(const int32 inKills) const {
     return 0;
 }
 
@@ -85,6 +81,10 @@ int32 UMETA_BossLevelData::GetBossPointsPerAsset() const {
 }
 
 int32 UMETA_BossLevelData::GetBossPointsPer10000Score() const {
+    return 0;
+}
+
+int32 UMETA_BossLevelData::GetBossPointMaxRewardPerWaveDefense() const {
     return 0;
 }
 

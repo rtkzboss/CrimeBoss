@@ -10,7 +10,6 @@ UIGS_AIDataComponent::UIGS_AIDataComponent(const FObjectInitializer& ObjectIniti
     this->LastMoveTime = -1.00f;
     this->CanEscape = true;
     this->CanUseMonsterCloset = false;
-    this->IsButcherSawBroken = false;
     this->LastWaypoint = NULL;
     this->CurrentWaypoint = NULL;
     this->WaypointSpeed = EIGS_Speed::MS_Walk;
@@ -19,9 +18,6 @@ UIGS_AIDataComponent::UIGS_AIDataComponent(const FObjectInitializer& ObjectIniti
 
 FIGS_ShootingOverride UIGS_AIDataComponent::GetShootingOverride() const {
     return FIGS_ShootingOverride{};
-}
-
-void UIGS_AIDataComponent::BreakButcherSaw() {
 }
 
 

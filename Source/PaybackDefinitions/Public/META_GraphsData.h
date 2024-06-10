@@ -4,8 +4,8 @@
 #include "GameplayTagContainer.h"
 #include "EIGS_CharacterID.h"
 #include "EMETA_GraphStatus.h"
+#include "IGS_PlotlineGraphData.h"
 #include "META_Interval.h"
-#include "META_PlotlineGraphStartTime.h"
 #include "META_UniqueCharacterGraphInfo.h"
 #include "META_GraphsData.generated.h"
 
@@ -32,7 +32,7 @@ protected:
     TMap<EIGS_CharacterID, FMETA_UniqueCharacterGraphInfo> CharacterStoryGraphs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime> PlotlineGraphs;
+    TArray<FIGS_PlotlineGraphData> PlotlineGraphs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UMETA_BaseStoryGraphManager> CrewRandEventsGraph;
@@ -56,7 +56,7 @@ public:
     FMETA_Interval GetSecondPlotlineDays() const;
     
     UFUNCTION(BlueprintCallable)
-    TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime> GetPlotlineGraphs();
+    TArray<FIGS_PlotlineGraphData> GetPlotlineGraphs();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_Interval GetFirstPlotlineDays() const;

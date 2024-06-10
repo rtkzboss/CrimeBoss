@@ -65,6 +65,10 @@ FUniqueNetIdRepl AIGS_PlayerStateGame::GetUniquePlayerID() {
 void AIGS_PlayerStateGame::GetTeammateStatus(float& outCurrentHP, float& outMaxHP, float& outRelativeHP, float& outRelativeShield, float& outRelativeArmor) const {
 }
 
+EIGS_StorePlatform AIGS_PlayerStateGame::GetStorePlatform() const {
+    return EIGS_StorePlatform::None;
+}
+
 FCommonHeisterData AIGS_PlayerStateGame::GetHeisterData() const {
     return FCommonHeisterData{};
 }

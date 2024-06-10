@@ -5,6 +5,9 @@ UIGS_PlayBinkMedia::UIGS_PlayBinkMedia() {
     this->m_ScreenHandler = NULL;
 }
 
+void UIGS_PlayBinkMedia::StopMovie() {
+}
+
 void UIGS_PlayBinkMedia::SkipMovie() {
 }
 

@@ -81,6 +81,9 @@ public:
     static bool SetAccountVariableValue(UObject* inWCO, FGameplayTag inVariable, int32 InValue, bool inIsDebugSave);
     
     UFUNCTION(BlueprintCallable)
+    static void RestartGame(UObject* inWCO);
+    
+    UFUNCTION(BlueprintCallable)
     static void ResetUnlockedCharactersAndContracts(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
@@ -101,6 +104,9 @@ public:
     UFUNCTION(BlueprintCallable)
     static void OverloadAllRobotsOfSide(UObject* inWCO, const EIGS_TeamSideEnum inTeamSide, UPARAM(Ref) AController*& inInstigator, const FVector inOrigin, const float inMaxDelay, const float inMaxDistance);
     
+    UFUNCTION(BlueprintCallable)
+    static void OutlineAllPickups(UObject* inWCO);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsAccountVariableUnlocked(UObject* inWCO, FGameplayTag inVariable);
     
@@ -118,6 +124,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void GetPlayerLoadoutFromAICharacter(const UObject* inWCO, UPARAM(Ref) AIGS_IntelligentGameCharacter*& inCharacter, TSubclassOf<UMETA_WeaponInventoryObject>& outPrimary, TSubclassOf<UMETA_WeaponInventoryObject>& outSecondary, TSubclassOf<UIGS_EquipmentInventoryObject>& outEquipment);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FString GetPlayerIdFromUniqueNetId(const FUniqueNetIdRepl& inUniqueNetId);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UPaybackGameViewportClient* GetPaybackViewport(UObject* inWCO);

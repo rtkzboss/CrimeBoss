@@ -6,14 +6,17 @@ UIGS_WeaponVisibilityHandler::UIGS_WeaponVisibilityHandler(const FObjectInitiali
     this->ForceLaserAimAtPoint = false;
     this->LaserParticleSystem = NULL;
     this->LaserTortillaParticleSystem = NULL;
+    this->LaserNiagaraSystem = NULL;
+    this->LaserTortillaNiagaraSystem = NULL;
     this->m_LaserParticleSpawnPointName = TEXT("socket_laser_origin");
     this->m_LaserParticleBeamTargetName = TEXT("BeamTarget");
     this->m_LaserParticlePointSizeName = TEXT("LaserPointSize");
     this->MaxLaserDistance = 50000.00f;
     this->DotThreshold = 0.95f;
-    this->LaserParticleSystemComponent = NULL;
     this->WeaponScopeGlintNiagaraSystem = NULL;
     this->m_SightGlintNiagaraComponent = NULL;
+    this->m_LaserNiagaraComponent = NULL;
+    this->m_LaserParticleSystemComponent = NULL;
     this->bTraceForward = true;
 }
 

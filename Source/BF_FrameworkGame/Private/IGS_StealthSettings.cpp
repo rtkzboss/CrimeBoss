@@ -36,9 +36,10 @@ UIGS_StealthSettings::UIGS_StealthSettings() {
     this->StrikeAddedCooldown = 5.00f;
     this->CivEscapedDelay = 10.00f;
     this->CivEscapedStrikes = 1;
-    this->StealthTakedownMinAngleTreshold = 60.00f;
     this->ZiptieNavigationFilter = NULL;
     this->MaxFollowerCount = 3;
+    this->TimeToForgetTarget = 5.00f;
+    this->VisionCapsuleRadius = 400.00f;
 }
 
 

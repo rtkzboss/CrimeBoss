@@ -53,6 +53,9 @@ public:
     UFUNCTION(BlueprintCallable)
     static TArray<EMETA_ItemQuality> GetQualitiesFromBitmask(int32 inBitmask);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetNumberOfDigits(const int32 inNumber);
+    
     UFUNCTION(BlueprintCallable)
     static bool GetLootLevel(FGameplayTag inLootTag, int32& Level, FGameplayTag& outMainLootTag);
     

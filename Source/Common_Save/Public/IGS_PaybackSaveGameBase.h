@@ -27,7 +27,7 @@ protected:
     bool bWasPatchingSaveFiles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    FString PatchSaveLocation;
+    bool bShouldUnlockVeteranRewards;
     
 public:
     UIGS_PaybackSaveGameBase();

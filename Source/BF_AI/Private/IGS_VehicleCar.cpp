@@ -49,10 +49,10 @@ AIGS_VehicleCar::AIGS_VehicleCar(const FObjectInitializer& ObjectInitializer) : 
     this->bDisableCar = false;
     this->bDisableWhenGrounded = false;
     this->FrontWheelAngle = 0.00f;
+    this->PlayerPushAwayTrigger->SetupAttachment(RootComponent);
     this->PlayerPushAwayBlockingCollider->SetupAttachment(RootComponent);
     this->TopTrigger->SetupAttachment(RootComponent);
     this->DestructableVehicleComponent->SetupAttachment(RootComponent);
-    this->PlayerPushAwayTrigger->SetupAttachment(RootComponent);
 }
 
 void AIGS_VehicleCar::SpawnPassengers() {

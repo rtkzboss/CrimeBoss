@@ -122,5 +122,8 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 AddInt32Safe(const int32 inA, const int32 inB, const int32 inMax);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static float AddFloatSafe(const float inA, const float inB, const float inMax);
+    
 };
 

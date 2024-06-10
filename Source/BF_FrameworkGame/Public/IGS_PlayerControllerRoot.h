@@ -12,6 +12,7 @@
 #include "Templates/SubclassOf.h"
 #include "IGS_PlayerControllerRoot.generated.h"
 
+class AHUD;
 class AIGS_GameCharacterFramework;
 class AIGS_PlayerCharacter;
 class UAISense;
@@ -32,6 +33,9 @@ class BF_FRAMEWORKGAME_API AIGS_PlayerControllerRoot : public AIGS_PlayerControl
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEntranceUnlockMenuOpen;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<AHUD> DefaultHUDClass;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_PawnChangedEventSignature OnPawnChangedEvent;
@@ -257,6 +261,9 @@ protected:
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnBotFollow(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void OnBotDeliverLoot(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnBotCancelInMenu(bool inIsHoldingButton, EIGS_MenuInputState inInputState);

@@ -34,10 +34,7 @@ public:
     static bool InSameArea(AIGS_RoomBase* room1, AIGS_RoomBase* room2, int32 Depth);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext=inWorldContextObject))
-    static void HighlightBadRooms(const UObject* inWorldContextObject, TArray<FIGS_RoomTestStruct> rooms_without_room, TArray<FIGS_RoomTestStruct> rooms_with_multiple_rooms);
-    
-    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWorldContextObject))
-    static void HighlightBadPolysFix(const UObject* inWorldContextObject);
+    static void HighlightBadPolys(const UObject* inWorldContextObject, UPARAM(Ref) TArray<FIGS_RoomTestStruct>& inGroupsWithoutRoom, UPARAM(Ref) TArray<FIGS_RoomTestStruct>& inGroupsWithMultipleRooms);
     
     UFUNCTION(BlueprintCallable)
     static TArray<AActor*> GetTransitionPointsFromRoom(AIGS_RoomBase* Room);
@@ -83,9 +80,6 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static FVector FindCenterPolygonOfRoom(const TArray<FVector>& Room);
-    
-    UFUNCTION(BlueprintCallable, meta=(WorldContext=inWorldContextObject))
-    static void FindBadPolys(const UObject* inWorldContextObject, TArray<FIGS_RoomTestStruct>& nodesWithoutRoom, TArray<FIGS_RoomTestStruct>& nodesWithMultipleRooms);
     
     UFUNCTION(BlueprintCallable)
     static void DebugHighlightRoomPolys(AIGS_RoomBase* inRoom);

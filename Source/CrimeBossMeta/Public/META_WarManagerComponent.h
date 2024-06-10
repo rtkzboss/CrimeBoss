@@ -105,6 +105,9 @@ public:
     void SetAIBossStrengthChangeFromTerritory(EMETA_Gang inGang, int32 inNewValue);
     
     UFUNCTION(BlueprintCallable)
+    void ResolveConflictingGangAttitudes(EMETA_GangAttitudeList inAttitudeList, EMETA_Gang inOwnerGang, EMETA_Gang inTargetGang);
+    
+    UFUNCTION(BlueprintCallable)
     void RemoveGangFromAttitudeList(EMETA_GangAttitudeList inAttitudeList, EMETA_Gang inOwnerGang, EMETA_Gang inTargetGang);
     
     UFUNCTION(BlueprintCallable)
@@ -124,6 +127,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsThereGangInAttitudeList(EMETA_GangAttitudeList inAttitudeList, EMETA_Gang inOwnerGang, EMETA_Gang inTargetGang);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
+    bool IsCampaignWon();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsArmyTierChangingConditionAlreadyCompleted(EMETA_Gang inGang, const FMETA_ConditionForArmyTierChanging& inCompletedCondition) const;

@@ -101,6 +101,9 @@ protected:
     UPROPERTY(EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     float R_DoorHealth[5];
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsExploded, meta=(AllowPrivateAccess=true))
+    bool R_IsExploded;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     USkeletalMesh* SkelDestructedMesh;
     
@@ -160,6 +163,12 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void OnTakeDamage(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_IsExploded();
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable, WithValidation)
+    void Multicast_ExplodeVehicle();
     
     UFUNCTION(BlueprintCallable)
     void ExplodeVehicle();

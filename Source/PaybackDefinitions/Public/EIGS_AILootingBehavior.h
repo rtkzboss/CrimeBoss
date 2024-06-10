@@ -5,6 +5,7 @@
 UENUM(BlueprintType)
 enum class EIGS_AILootingBehavior : uint8 {
     Allways,
+    OnlyCommanded,
     OnlyUnlocked,
     Never,
 };

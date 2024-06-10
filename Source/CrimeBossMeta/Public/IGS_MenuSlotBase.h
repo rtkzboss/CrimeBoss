@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EIGS_StorePlatform.h"
 #include "CommonHeisterData.h"
 #include "GameFramework/Actor.h"
 #include "EIGS_MenuSlotOccupation.h"
@@ -19,6 +20,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     void IsConfirmed(bool& NewIsConfirmed);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
+    EIGS_StorePlatform GetStorePlatform() const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)
     void GetPlayerState(AIGS_PlayerStateGame*& PlayerState);

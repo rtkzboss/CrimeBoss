@@ -101,6 +101,10 @@ int32 UMETA_ScoreData::GetScoreDecreasePerDayElapsedLost() const {
     return 0;
 }
 
+FText UMETA_ScoreData::GetRatingForScore(const int32 inScore, const EIGS_UserDifficulty inDifficulty) const {
+    return FText::GetEmpty();
+}
+
 int32 UMETA_ScoreData::GetMinScoreWon() const {
     return 0;
 }

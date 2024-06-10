@@ -147,9 +147,6 @@ bool UMETA_BlackmarketManagerComponent::CanWeaponEventBeTriggered() {
 void UMETA_BlackmarketManagerComponent::BuySoldiers_Implementation(int32 inAmount, int32& outAmountOfSoldiersBought) {
 }
 
-void UMETA_BlackmarketManagerComponent::AddUniqueHeisterToMarketPool(EIGS_CharacterID inCharacterID, bool inIgnoreLock) {
-}
-
 void UMETA_BlackmarketManagerComponent::ActivateLootEventByVendor_Implementation(FMETA_VendorLootKey inVendorLootKey) {
 }
 

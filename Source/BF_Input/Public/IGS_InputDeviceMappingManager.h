@@ -19,6 +19,9 @@ public:
     UIGS_InputDeviceIconsDataAsset* XBOXInputDeviceIconDataAsset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UIGS_InputDeviceIconsDataAsset* SteamDeckInputDeviceIconDataAsset;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UIGS_InputDeviceIconsDataAsset* PCInputDeviceIconDataAsset;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

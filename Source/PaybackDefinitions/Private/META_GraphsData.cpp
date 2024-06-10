@@ -15,8 +15,8 @@ FMETA_Interval UMETA_GraphsData::GetSecondPlotlineDays() const {
     return FMETA_Interval{};
 }
 
-TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime> UMETA_GraphsData::GetPlotlineGraphs() {
-    return TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime>();
+TArray<FIGS_PlotlineGraphData> UMETA_GraphsData::GetPlotlineGraphs() {
+    return TArray<FIGS_PlotlineGraphData>();
 }
 
 FMETA_Interval UMETA_GraphsData::GetFirstPlotlineDays() const {

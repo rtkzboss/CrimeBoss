@@ -16,6 +16,12 @@ public:
     bool bIsBlackboardBased;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bIsBasedOnCombatRange;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EIGS_Speed MovementSpeedOutsideCombatRange;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EIGS_Speed MovementSpeed;
     
     UIGS_BTTask_SetMovementSpeed();

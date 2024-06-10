@@ -68,7 +68,7 @@ public:
     UFUNCTION(BlueprintCallable)
     AIGS_WaypointBase* GetNextPoint();
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     TArray<AActor*> GetExtraArrowActors();
     
     UFUNCTION(BlueprintCallable)

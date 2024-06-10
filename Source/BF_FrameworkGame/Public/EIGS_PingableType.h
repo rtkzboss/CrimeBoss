@@ -21,5 +21,6 @@ enum class EIGS_PingableType : uint8 {
     EscapeVan,
     Blank,
     Laser,
+    Objective,
 };
 

@@ -63,6 +63,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FString MetaPersistentId;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    bool WantsToGoOffline;
+    
     FIGS_SaveData_Quickplay();
 };
 

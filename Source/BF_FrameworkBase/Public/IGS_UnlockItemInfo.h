@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "EIGS_UnlockCategory.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "EMETA_ItemQuality.h"
 #include "IGS_UnlockItemInfo.generated.h"
 
@@ -34,6 +35,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag RequiredEntitlementID;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer RequiredTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float RequiredValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool ShowIfNotOwned;

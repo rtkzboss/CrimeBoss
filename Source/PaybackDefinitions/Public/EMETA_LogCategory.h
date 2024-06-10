@@ -44,5 +44,6 @@ enum class EMETA_LogCategory : uint8 {
     Achievement,
     GoalManager,
     WeakenMissions,
+    Difficulty,
 };
 

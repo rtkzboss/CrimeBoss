@@ -61,11 +61,14 @@ protected:
     void OnScreenOpen(FGameplayTag inScreenTag);
     
 public:
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnBeforeOpenInitializationScreen();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsTopContentVisible() const;
     
-    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnAfterOpenInitializationScreen();
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBottomContentVisible() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsBaseScreenVisible() const;
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UIGS_Screen* GetScreenToBeOpenOnInitialization();

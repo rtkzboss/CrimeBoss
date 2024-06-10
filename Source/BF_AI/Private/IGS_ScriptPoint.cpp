@@ -42,6 +42,9 @@ AIGS_WaypointBase* AIGS_ScriptPoint::GetNextPoint() {
     return NULL;
 }
 
+TArray<AActor*> AIGS_ScriptPoint::GetExtraArrowActors_Implementation() {
+    return TArray<AActor*>();
+}
 
 void AIGS_ScriptPoint::Finish(AIGS_GameCharacterFramework* inActivator) {
 }

@@ -3,6 +3,7 @@
 FIGS_TileItemDataStruct::FIGS_TileItemDataStruct() {
     this->Price = 0;
     this->IsNew = false;
+    this->IsChallenge = false;
     this->HasCustomAction = false;
     this->IsEquiped = false;
     this->IsTaken = false;

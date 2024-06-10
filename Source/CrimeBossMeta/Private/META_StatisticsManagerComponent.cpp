@@ -7,6 +7,14 @@ UMETA_StatisticsManagerComponent::UMETA_StatisticsManagerComponent(const FObject
     this->StartDayForStatistics = 0;
 }
 
+bool UMETA_StatisticsManagerComponent::TryModifyGlobalStatistic(const FGameplayTag inStatistic, const float InValue, float& outNewValue, const bool inExpand, const EMETA_StatisticModificationType inMode) {
+    return false;
+}
+
+bool UMETA_StatisticsManagerComponent::TryGetExpandedStatisticsTag(FGameplayTag inRootTag, FGameplayTag& outExpandedTag) const {
+    return false;
+}
+
 void UMETA_StatisticsManagerComponent::SetStatisticFromLoad(TMap<int32, FMETA_StatisticNoteSaveData> inStatistic, int32 inCurrentDay) {
 }
 
@@ -17,6 +25,10 @@ void UMETA_StatisticsManagerComponent::RemoveAssetFromStatistic(FGameplayTag InA
 }
 
 void UMETA_StatisticsManagerComponent::InitStatisticCurrentDay(int32 inDay) {
+}
+
+FMETA_StatisticsRootTags UMETA_StatisticsManagerComponent::GetStatisticsRootTags() const {
+    return FMETA_StatisticsRootTags{};
 }
 
 TMap<int32, FMETA_StatisticNoteSaveData> UMETA_StatisticsManagerComponent::GetStatisticForSave() {
@@ -31,8 +43,16 @@ FMETA_StatisticNoteSaveData UMETA_StatisticsManagerComponent::GetStatisticByDay(
     return FMETA_StatisticNoteSaveData{};
 }
 
+float UMETA_StatisticsManagerComponent::GetGlobalStatistic(const FGameplayTag inStatistic, const bool inExpand) const {
+    return 0.0f;
+}
+
 FMETA_StatisticNoteSaveData UMETA_StatisticsManagerComponent::GetFullStatistic() const {
     return FMETA_StatisticNoteSaveData{};
+}
+
+float UMETA_StatisticsManagerComponent::GetFinalScoreMultiplier() const {
+    return 0.0f;
 }
 
 void UMETA_StatisticsManagerComponent::AddWeaponBoughtToStatistic(UMETA_Weapon* inWeapon) {

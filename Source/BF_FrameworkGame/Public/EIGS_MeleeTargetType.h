@@ -5,7 +5,6 @@
 UENUM(BlueprintType)
 enum class EIGS_MeleeTargetType : uint8 {
     MeleeTargetType_None,
-    MeleeTargetType_StealthTakedown,
     MeleeTargetType_StealthKill,
     MeleeTargetType_Break,
 };

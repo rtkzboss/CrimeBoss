@@ -10,6 +10,10 @@ UProgressionBaseComponent::UProgressionBaseComponent(const FObjectInitializer& O
 void UProgressionBaseComponent::UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo) {
 }
 
+bool UProgressionBaseComponent::TryUnlockItemByRequiredTagValue(FGameplayTag inUnlockTag, float InValue) {
+    return false;
+}
+
 bool UProgressionBaseComponent::TryGetPendingUnlockedRewards(TArray<FIGS_UnlockItemInfo>& outUnlockedItems) {
     return false;
 }

@@ -24,6 +24,9 @@ public:
     FIGS_BinkMediaEvent Started;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_BinkMediaEvent Stopped;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_BinkMediaEvent Failed;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -43,6 +46,9 @@ private:
 public:
     UIGS_PlayBinkMedia();
 
+    UFUNCTION(BlueprintCallable)
+    void StopMovie();
+    
     UFUNCTION(BlueprintCallable)
     void SkipMovie();
     

@@ -8,8 +8,6 @@
 #include "IGS_TogglesSettings.h"
 
 UIGS_CustomGameUserSettings::UIGS_CustomGameUserSettings() {
-    this->LastCPUBenchmarkSteps.AddDefaulted(2);
-    this->LastGPUBenchmarkSteps.AddDefaulted(7);
     this->SoundSettings = CreateDefaultSubobject<UIGS_SoundSettings>(TEXT("SoundSettings"));
     this->GameSettings = CreateDefaultSubobject<UIGS_GameSettings>(TEXT("GameSettings"));
     this->RenderingSettings = CreateDefaultSubobject<UIGS_RenderingSettings>(TEXT("RenderingSettings"));

@@ -36,7 +36,7 @@ void UIGS_Analytics::PlotlineCheckpointReached(int32 campaignID, const FString& 
 void UIGS_Analytics::PlatformShopOpened(const FString& inScreenTag, const FString& inAssetID) {
 }
 
-void UIGS_Analytics::MoneyEarned(float Money, float totalMoney, const FString& Source, const FString& inScreenTag, bool isMultiplayer) {
+void UIGS_Analytics::MoneyEarned(int32 Money, int32 totalMoney, const FString& Source, const FString& inScreenTag, bool isMultiplayer) {
 }
 
 void UIGS_Analytics::MissionStarted(const FString& MissionName, const FString& missionVariant, bool isMultiplayer, bool isQuickJoin, bool isJIP, int32 numBots, int32 Day, int32 ArmySize, int32 armyAvailable, bool isChain, int32 Investigation, int32 attempt) {
@@ -82,6 +82,9 @@ void UIGS_Analytics::DayStarted2(int32 upkeep, FIGS_AnalyticsCommonMetaAttribute
 }
 
 void UIGS_Analytics::DayStarted(int32 campaignID, int32 Day, int32 Heat, int32 Respect, int32 Investigation, int32 Cash, int32 upkeep, int32 OwnedTurfs, int32 AvailableHeisters, int32 AvailableArmy) {
+}
+
+void UIGS_Analytics::CampaignStarted_v2(const FString& CampaignMode, int32 CampaignNum, FIGS_AnalyticsCommonMetaAttributes inMetaAttributes) {
 }
 
 void UIGS_Analytics::CampaignStarted(const FString& CampaignMode, int32 CampaignNum) {

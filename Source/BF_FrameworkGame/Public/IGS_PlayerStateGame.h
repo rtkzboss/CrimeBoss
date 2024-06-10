@@ -5,6 +5,7 @@
 #include "CommonHeisterData.h"
 #include "CommonHeisterLoadout.h"
 #include "GameFramework/OnlineReplStructs.h"
+#include "EIGS_StorePlatform.h"
 #include "IGS_IsLevelLoadedDelegateDelegate.h"
 #include "IGS_PlayerStateData.h"
 #include "IGS_PlayerStatePlayerDataUpdateReceivedDelegateDelegate.h"
@@ -94,6 +95,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetTeammateStatus(float& outCurrentHP, float& outMaxHP, float& outRelativeHP, float& outRelativeShield, float& outRelativeArmor) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EIGS_StorePlatform GetStorePlatform() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FCommonHeisterData GetHeisterData() const;

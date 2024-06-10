@@ -11,6 +11,9 @@ void UIGS_SniperAimComponent::OnWieldableChanged(EIGS_WieldableSlot inSlotType, 
 void UIGS_SniperAimComponent::OnRep_SniperAimData() {
 }
 
+void UIGS_SniperAimComponent::OnAggroTargetChanged(AIGS_AIControllerBase* InController, AActor* inAggroTarget) {
+}
+
 void UIGS_SniperAimComponent::Multicast_ReportFire_Implementation(bool inIsHit) {
 }
 

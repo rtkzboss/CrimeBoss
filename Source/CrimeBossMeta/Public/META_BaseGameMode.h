@@ -1,9 +1,12 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "META_ActiveCampaignConfiguration.h"
 #include "GameplayTagContainer.h"
+#include "EIGS_UserDifficulty.h"
 #include "EMETA_CareerCompletionReason.h"
 #include "EMETA_Gang.h"
 #include "EMETA_ManagersStartUpMode.h"
+#include "META_CampaignUserDifficultyConfiguration.h"
 #include "EIGS_MetaAdditionalButtonType.h"
 #include "EMETA_MenuState.h"
 #include "IGS_GameModeMenuBase.h"
@@ -74,6 +77,14 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsMetaInDebugMode();
     
+public:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    bool IsGameOverPending();
+    
+protected:
+    UFUNCTION(BlueprintCallable)
+    void IncreaseCompletedCampaignCount(EIGS_UserDifficulty inDifficulty);
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void HandleMenuStateChange(EMETA_MenuState inState);
     
@@ -117,12 +128,20 @@ public:
     UFUNCTION(BlueprintCallable)
     TSoftObjectPtr<UMETA_PlotlineSelection> GetCampaignModeOnInitByTag(const UMETA_PlotlineSelectionMapping* inCampaignMapping, FGameplayTag inModeTag, bool& outSuccess);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void GetCampaignDifficulty(EIGS_UserDifficulty& outUserDifficulty, FMETA_CampaignUserDifficultyConfiguration& outConfiguration) const;
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
     UMETA_BossLevelComponent* GetBossLevelComponent() const;
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     UIGS_ActivityManagerBaseComponent* GetActivityManagerComponent();
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMETA_ActiveCampaignConfiguration GetActiveCampaignConfiguration() const;
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CompleteCareerBase(EMETA_CareerCompletionReason CompletionReason, EMETA_Gang OptionalGang);
     

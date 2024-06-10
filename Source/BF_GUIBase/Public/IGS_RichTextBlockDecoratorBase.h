@@ -21,7 +21,7 @@ public:
     UIGS_InputDeviceIconsDataAsset* InputKeyIconMap;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    EIGS_InputDevice SupportedInputDevice;
+    TArray<EIGS_InputDevice> SupportedInputDevices;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FSlateFontInfo IconFont;

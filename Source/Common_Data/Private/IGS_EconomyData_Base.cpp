@@ -96,6 +96,10 @@ bool UIGS_EconomyData_Base::GetSuitableEquipmentAfterHeisterUpgrade(const UObjec
     return false;
 }
 
+int32 UIGS_EconomyData_Base::GetStartingPerkCountOfCharacter(UObject* inWCO, const FGameplayTag inCharacter, const EMETA_ItemQuality inQuality) {
+    return 0;
+}
+
 int32 UIGS_EconomyData_Base::GetStartingLevelOfCharacter(UObject* inWCO, const FGameplayTag inCharacter, const EMETA_ItemQuality inQuality) {
     return 0;
 }

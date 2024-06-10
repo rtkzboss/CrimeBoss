@@ -33,6 +33,9 @@ public:
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
+    UFUNCTION(BlueprintCallable)
+    void RefreshBadRooms(const bool inHighlight);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWorldContextObject))
     static UIGS_RoomPointManager* Instance(const UObject* inWorldContextObject);
     

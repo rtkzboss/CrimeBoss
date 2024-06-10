@@ -9,4 +9,7 @@ AIGS_AIControllerSniper::AIGS_AIControllerSniper(const FObjectInitializer& Objec
     this->SettingsComponent = CreateDefaultSubobject<UIGS_AISniperSettingsComponent>(TEXT("SettingsComponent"));
 }
 
+void AIGS_AIControllerSniper::OnHealthChanged(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo) const {
+}
+
 

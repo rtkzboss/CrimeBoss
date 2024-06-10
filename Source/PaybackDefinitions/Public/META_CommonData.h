@@ -4,8 +4,10 @@
 #include "GameplayTagContainer.h"
 #include "EIGS_AITiers.h"
 #include "EIGS_CharacterID.h"
+#include "EIGS_UserDifficulty.h"
 #include "EMETA_AmbushType.h"
 #include "EMETA_FPSMissionSubtype.h"
+#include "EMETA_Gang.h"
 #include "EMETA_Heat.h"
 #include "EMETA_IntelUnlockLevel.h"
 #include "EMETA_PoliceInvestigationChangeForGraph.h"
@@ -15,6 +17,7 @@
 #include "EMETA_TradeVendor.h"
 #include "IGS_MenuCommonData_Base.h"
 #include "META_AmbushConfig.h"
+#include "META_CampaignUserDifficultyConfiguration.h"
 #include "META_DetectiveChancesToAppear.h"
 #include "META_DetectivesInvestigationConfig.h"
 #include "META_FloatInterval.h"
@@ -27,6 +30,7 @@
 #include "META_PawnShopTrendData.h"
 #include "META_PerkInfo.h"
 #include "META_RandEventCategoryConfig.h"
+#include "META_StatisticsRootTags.h"
 #include "META_TradeRelationshipInfo.h"
 #include "META_CommonData.generated.h"
 
@@ -54,7 +58,16 @@ protected:
     UClass* Equipment;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EIGS_UserDifficulty, FMETA_CampaignUserDifficultyConfiguration> CampaignDifficulty;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ChanceToPickSecondaryGangFromNearestGangs;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer GangMissionScenarios;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSet<EMETA_Gang> GangsWithGangMissions;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EMETA_RespectLvl, int32> CrewCapacity;
@@ -279,6 +292,15 @@ protected:
     FMETA_Interval LootAmountPercentForAmbush;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 GuaranteedPositiveTrends;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 GuaranteedNegativeTrends;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float PositiveTrendChangeChance;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, FMETA_PawnShopTrendData> TrendsData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -300,6 +322,9 @@ protected:
     int32 RevengePoolSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FMETA_StatisticsRootTags StatisticsRootTags;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMETA_Interval AmountOfUnseenItemsToBeAddedForPurchase;
     
 public:
@@ -307,6 +332,9 @@ public:
 
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool NeedRemoveUnfinishedMissions() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsMissionGangMission(const FGameplayTag inScenario) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<EMETA_TradeVendor> GetVendorsForTrade(FGameplayTag inLootTag) const;
@@ -325,6 +353,12 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTimeForCharactersMoodSwitchToNeutral() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMETA_StatisticsRootTags GetStatisticsRootTags() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FGameplayTagContainer GetStatisticsRootTagContainer() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EMETA_RespectLvl GetRespectLvlRelatedToTurfsAmount(int32 inTurfsUnderControl) const;
@@ -450,7 +484,7 @@ public:
     int32 GetDurationMoneyMakingOpportunities() const;
     
     UFUNCTION(BlueprintCallable)
-    FMETA_DetectivesInvestigationConfig GetDetectivesInvestigationConfigForPoliceInvestigationPercent(int32 inPoliceInvestigationPercent);
+    FMETA_DetectivesInvestigationConfig GetDetectivesInvestigationConfigForPoliceInvestigationPercent(const int32 inPoliceInvestigationPercent, TSet<int32> inForbiddenValues, int32& outSelectedValue);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FGameplayTag GetDetectiveObjectivePreset() const;
@@ -519,6 +553,9 @@ public:
     int32 GetChanceForGeneric_ArrestEvent() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMETA_CampaignUserDifficultyConfiguration GetCampaignDifficultyConfiguration(const EIGS_UserDifficulty inUserDifficulty) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     void GetBossLoadout(UClass*& outPrimaryWeapon, UClass*& outSecondaryWeapon, UClass*& outEquipment) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -552,6 +589,9 @@ public:
     FMETA_AmbushConfig GetAmbushConfig();
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    TSet<EMETA_Gang> FilterGangsWithGangMissions(const TArray<EMETA_Gang>& inAliveGangs) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanUseRandEventsCategoriesPriority() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -562,6 +602,12 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanFPSMissionAffectHeat(EMETA_FPSMissionSubtype inSubtype) const;
+    
+    UFUNCTION(BlueprintCallable)
+    void CalculateTrendDistribution(FGameplayTagContainer& outPositiveTrends, FGameplayTagContainer& outNegativeTrends);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    void CalculateNextTrendChangeDirection(bool& outPositive) const;
     
 };
 

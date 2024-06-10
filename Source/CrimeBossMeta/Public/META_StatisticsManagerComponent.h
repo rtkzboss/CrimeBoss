@@ -8,9 +8,11 @@
 #include "EMETA_Gang.h"
 #include "EMETA_GoalStatus.h"
 #include "EMETA_PlotlineAssetAvailability.h"
+#include "EMETA_StatisticModificationType.h"
 #include "EMETA_StatisticsHeisterState.h"
 #include "META_CharacterID.h"
 #include "META_HeisterStatisticData.h"
+#include "META_StatisticsRootTags.h"
 #include "IGS_StatisticsManagerBaseComponent.h"
 #include "Templates/SubclassOf.h"
 #include "META_StatisticsManagerComponent.generated.h"
@@ -56,6 +58,12 @@ public:
     UMETA_StatisticsManagerComponent(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
+    bool TryModifyGlobalStatistic(const FGameplayTag inStatistic, const float InValue, float& outNewValue, const bool inExpand, const EMETA_StatisticModificationType inMode);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool TryGetExpandedStatisticsTag(FGameplayTag inRootTag, FGameplayTag& outExpandedTag) const;
+    
+    UFUNCTION(BlueprintCallable)
     void SetStatisticFromLoad(TMap<int32, FMETA_StatisticNoteSaveData> inStatistic, int32 inCurrentDay);
     
     UFUNCTION(BlueprintCallable)
@@ -67,6 +75,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void InitStatisticCurrentDay(int32 inDay);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FMETA_StatisticsRootTags GetStatisticsRootTags() const;
+    
     UFUNCTION(BlueprintCallable)
     TMap<int32, FMETA_StatisticNoteSaveData> GetStatisticForSave();
     
@@ -77,7 +88,13 @@ public:
     FMETA_StatisticNoteSaveData GetStatisticByDay(int32 inDay) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetGlobalStatistic(const FGameplayTag inStatistic, const bool inExpand) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_StatisticNoteSaveData GetFullStatistic() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetFinalScoreMultiplier() const;
     
     UFUNCTION(BlueprintCallable)
     void AddWeaponBoughtToStatistic(UMETA_Weapon* inWeapon);

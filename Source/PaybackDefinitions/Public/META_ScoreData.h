@@ -1,6 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "EIGS_UserDifficulty.h"
+#include "META_ScoreRatingEntry.h"
 #include "META_ScoreData.generated.h"
 
 UCLASS(Blueprintable)
@@ -31,6 +33,12 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 MinDaysLost;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EIGS_UserDifficulty, float> RatingMultiplierPerCampaignDifficulty;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FMETA_ScoreRatingEntry> Ratings;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ScorePer1PercentControlledTerritory;
@@ -142,6 +150,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetScoreDecreasePerDayElapsedLost() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FText GetRatingForScore(const int32 inScore, const EIGS_UserDifficulty inDifficulty) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMinScoreWon() const;

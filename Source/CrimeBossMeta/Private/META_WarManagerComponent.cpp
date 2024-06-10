@@ -35,6 +35,9 @@ void UMETA_WarManagerComponent::SetBaseAIBossStrength(EMETA_Gang inGang, int32 i
 void UMETA_WarManagerComponent::SetAIBossStrengthChangeFromTerritory(EMETA_Gang inGang, int32 inNewValue) {
 }
 
+void UMETA_WarManagerComponent::ResolveConflictingGangAttitudes(EMETA_GangAttitudeList inAttitudeList, EMETA_Gang inOwnerGang, EMETA_Gang inTargetGang) {
+}
+
 void UMETA_WarManagerComponent::RemoveGangFromAttitudeList(EMETA_GangAttitudeList inAttitudeList, EMETA_Gang inOwnerGang, EMETA_Gang inTargetGang) {
 }
 
@@ -57,6 +60,7 @@ bool UMETA_WarManagerComponent::IsTradeVendorHasCooldown(EMETA_TradeVendor inTra
 bool UMETA_WarManagerComponent::IsThereGangInAttitudeList(EMETA_GangAttitudeList inAttitudeList, EMETA_Gang inOwnerGang, EMETA_Gang inTargetGang) {
     return false;
 }
+
 
 bool UMETA_WarManagerComponent::IsArmyTierChangingConditionAlreadyCompleted(EMETA_Gang inGang, const FMETA_ConditionForArmyTierChanging& inCompletedCondition) const {
     return false;

@@ -21,6 +21,9 @@ public:
     TSoftObjectPtr<UIGS_InputDeviceIconsDataAsset> InputActionIconMapXBSX;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UIGS_InputDeviceIconsDataAsset> InputActionIconMapSteamDeck;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UIGS_InputDeviceIconsDataAsset> InputActionIconMapPC;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

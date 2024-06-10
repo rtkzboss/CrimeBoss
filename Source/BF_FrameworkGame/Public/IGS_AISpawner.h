@@ -31,6 +31,9 @@ protected:
     FGameplayTag NoSpecialTierTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag ForceSpecialTierTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UClass*> LoadedPawnClasses;
     
 public:

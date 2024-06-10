@@ -34,6 +34,7 @@ UIGS_DestructableVehicleComponent::UIGS_DestructableVehicleComponent(const FObje
     this->R_DoorHealth[2] = 0.00f;
     this->R_DoorHealth[3] = 0.00f;
     this->R_DoorHealth[4] = 0.00f;
+    this->R_IsExploded = false;
     this->SkelDestructedMesh = NULL;
     this->StaticDestructedMesh = NULL;
     this->bFireParticleSpawned = false;
@@ -63,6 +64,15 @@ void UIGS_DestructableVehicleComponent::SelfDamage(float inDamage) {
 void UIGS_DestructableVehicleComponent::OnTakeDamage(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo) {
 }
 
+void UIGS_DestructableVehicleComponent::OnRep_IsExploded() {
+}
+
+void UIGS_DestructableVehicleComponent::Multicast_ExplodeVehicle_Implementation() {
+}
+bool UIGS_DestructableVehicleComponent::Multicast_ExplodeVehicle_Validate() {
+    return true;
+}
+
 void UIGS_DestructableVehicleComponent::ExplodeVehicle() {
 }
 
@@ -74,6 +84,7 @@ void UIGS_DestructableVehicleComponent::GetLifetimeReplicatedProps(TArray<FLifet
     
     DOREPLIFETIME(UIGS_DestructableVehicleComponent, R_EngineHealth);
     DOREPLIFETIME(UIGS_DestructableVehicleComponent, R_DoorHealth);
+    DOREPLIFETIME(UIGS_DestructableVehicleComponent, R_IsExploded);
 }
 
 

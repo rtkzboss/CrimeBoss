@@ -24,7 +24,17 @@ void UIGS_BaseMenuWidget::OnScreenOpen_Internal(FGameplayTag inScreenTag) {
 }
 
 
+bool UIGS_BaseMenuWidget::IsTopContentVisible() const {
+    return false;
+}
 
+bool UIGS_BaseMenuWidget::IsBottomContentVisible() const {
+    return false;
+}
+
+bool UIGS_BaseMenuWidget::IsBaseScreenVisible() const {
+    return false;
+}
 
 UIGS_Screen* UIGS_BaseMenuWidget::GetScreenToBeOpenOnInitialization_Implementation() {
     return NULL;

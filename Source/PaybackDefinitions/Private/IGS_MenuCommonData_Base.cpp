@@ -4,6 +4,10 @@ UIGS_MenuCommonData_Base::UIGS_MenuCommonData_Base() {
     this->AmountOfMissionsCanBeCompletedByEachHeisterPerDay = 1;
 }
 
+TArray<EIGS_UserDifficulty> UIGS_MenuCommonData_Base::GetSupportedDifficulties() {
+    return TArray<EIGS_UserDifficulty>();
+}
+
 EIGS_ScenarioDifficulty UIGS_MenuCommonData_Base::GetRandomizedDifficulty(EMETA_RespectLvl inRespectLvl) const {
     return EIGS_ScenarioDifficulty::SD_Unknown;
 }

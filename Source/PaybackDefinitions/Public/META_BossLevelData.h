@@ -50,10 +50,10 @@ protected:
     int32 BossPointsPerWaveMaxPoints;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 BossPointsPerWaveMaxPercentAwardPerKill;
+    float BossPointsPerWaveMaxPercentAwardPerKill;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 BossPointsPerWaveMaxPercentAwardPerSecond;
+    float BossPointsPerWaveMaxPercentAwardPerSecond;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMETA_BossLevelReductionConfig BossLevelReductionConfig;
@@ -122,13 +122,10 @@ public:
     TSubclassOf<UGameplayEffect> GetCaptainHiddenPerkByBonusType(EMETA_BonusType inBonus) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetBossPointsPerWaveMaxPoints() const;
+    int32 GetBossPointsPerWaveDefenseSecondsSurvived(const int32 InSeconds) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetBossPointsPerWaveMaxPercentAwardPerSecond() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetBossPointsPerWaveMaxPercentAwardPerKill() const;
+    int32 GetBossPointsPerWaveDefenseKills(const int32 inKills) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBossPointsPerSuccessfulTwDefence() const;
@@ -150,6 +147,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetBossPointsPer10000Score() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetBossPointMaxRewardPerWaveDefense() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<TSubclassOf<UGameplayEffect>> GetBossPerks() const;

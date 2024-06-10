@@ -10,6 +10,7 @@ public class Common_Save : ModuleRules {
             "Common_Data",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
             "GameplayTags",
             "PaybackDefinitions",

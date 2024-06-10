@@ -9,6 +9,10 @@ UIGS_SaveManager::UIGS_SaveManager() {
     this->WeaponCheatSelectionDebugSave = NULL;
 }
 
+bool UIGS_SaveManager::ShouldUnlockVeteranRewards() const {
+    return false;
+}
+
 void UIGS_SaveManager::SetPlotlinesDisableDebugData(const UObject* inWCO, bool bDisable) {
 }
 
@@ -100,15 +104,7 @@ TArray<FIGS_CareerSlotInfo> UIGS_SaveManager::GetAllCareerSaveFiles() const {
     return TArray<FIGS_CareerSlotInfo>();
 }
 
-bool UIGS_SaveManager::DoesQuickplaySavePatching() {
-    return false;
-}
-
 bool UIGS_SaveManager::DoesQuickplaySaveExist() {
-    return false;
-}
-
-bool UIGS_SaveManager::DoesNormalCarrerSavePatching() {
     return false;
 }
 

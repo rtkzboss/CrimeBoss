@@ -44,7 +44,7 @@ public:
     static void PlatformShopOpened(const FString& inScreenTag, const FString& inAssetID);
     
     UFUNCTION(BlueprintCallable)
-    static void MoneyEarned(float Money, float totalMoney, const FString& Source, const FString& inScreenTag, bool isMultiplayer);
+    static void MoneyEarned(int32 Money, int32 totalMoney, const FString& Source, const FString& inScreenTag, bool isMultiplayer);
     
 private:
     UFUNCTION(BlueprintCallable)
@@ -92,6 +92,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void DayStarted(int32 campaignID, int32 Day, int32 Heat, int32 Respect, int32 Investigation, int32 Cash, int32 upkeep, int32 OwnedTurfs, int32 AvailableHeisters, int32 AvailableArmy);
+    
+    UFUNCTION(BlueprintCallable)
+    static void CampaignStarted_v2(const FString& CampaignMode, int32 CampaignNum, FIGS_AnalyticsCommonMetaAttributes inMetaAttributes);
     
     UFUNCTION(BlueprintCallable)
     static void CampaignStarted(const FString& CampaignMode, int32 CampaignNum);

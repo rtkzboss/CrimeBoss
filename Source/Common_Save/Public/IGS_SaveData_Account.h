@@ -5,10 +5,12 @@
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
 #include "EIGS_CharacterID.h"
+#include "EIGS_UserDifficulty.h"
 #include "META_BossLevelSaveData.h"
 #include "META_GlobalStatisticsData.h"
 #include "META_LastCitySetupConfigurationSaveData.h"
 #include "IGS_AchievementSaveData.h"
+#include "IGS_ChallengesSaveData.h"
 #include "IGS_CharacterMissionProgress.h"
 #include "IGS_NewsInfoRelatedSaveData.h"
 #include "IGS_PreviousSessionSaveData.h"
@@ -16,6 +18,7 @@
 #include "IGS_QuickPlayPreferencesSaveData.h"
 #include "IGS_SaveData_Version.h"
 #include "IGS_UnlockedCharacterSaveData.h"
+#include "META_ActiveCampaignConfiguration.h"
 #include "Templates/SubclassOf.h"
 #include "IGS_SaveData_Account.generated.h"
 
@@ -131,7 +134,7 @@ public:
     bool bUserShouldAdvertise;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
-    FGameplayTag ActiveCampaignMode;
+    FMETA_ActiveCampaignConfiguration ActiveCampaign;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<EIGS_UnlockCategory, FGameplayTagContainer> UnlockedItemIDs;
@@ -141,6 +144,12 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FIGS_ProgressionSaveData Progression;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    FIGS_ChallengesSaveData Challenges;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    TMap<EIGS_UserDifficulty, int32> CompletedCampaignCounts;
     
     FIGS_SaveData_Account();
 };

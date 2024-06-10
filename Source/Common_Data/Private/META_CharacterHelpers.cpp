@@ -15,7 +15,7 @@ FMETA_PerkData UMETA_CharacterHelpers::GetClassPerkForCharacter(UObject* inWCO, 
     return FMETA_PerkData{};
 }
 
-TArray<FMETA_PerkData> UMETA_CharacterHelpers::GetCharacterPerksAtLevel(UObject* inWCO, FGameplayTag inCharacterTag, int32 inCharacterLevel) {
+TArray<FMETA_PerkData> UMETA_CharacterHelpers::GetCharacterPerksAtLevel(UObject* inWCO, FGameplayTag inCharacterTag, int32 inCharacterLevel, int32 inStartingPerkCount) {
     return TArray<FMETA_PerkData>();
 }
 

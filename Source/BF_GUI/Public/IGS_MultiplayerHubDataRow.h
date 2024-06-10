@@ -18,6 +18,12 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText ButtonDescription;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText SelectionLabelDefaultText;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText SelectionLabelDisabledText;
+    
     BF_GUI_API FIGS_MultiplayerHubDataRow();
 };
 

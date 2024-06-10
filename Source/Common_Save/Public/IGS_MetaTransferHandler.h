@@ -39,6 +39,9 @@ public:
     UIGS_MetaTransferHandler();
 
     UFUNCTION(BlueprintCallable)
+    static void SetMissionScenarioOverride(const UObject* inWCO, FGameplayTag inMissionScenario);
+    
+    UFUNCTION(BlueprintCallable)
     static void SetMissionData(const UObject* inWCO, FGameplayTag inTag, int32 InValue);
     
     UFUNCTION(BlueprintCallable)

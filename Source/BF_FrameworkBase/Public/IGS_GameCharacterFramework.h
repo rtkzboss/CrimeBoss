@@ -426,9 +426,6 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanBeUnarmed() const;
     
-    UFUNCTION(BlueprintCallable)
-    void CanBeStealthTakedownedBy(AIGS_GameCharacterFramework* inCharacter, bool InValue);
-    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanAim() const;
     

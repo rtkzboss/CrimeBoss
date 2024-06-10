@@ -1,7 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
-#include "EIGS_UnitSpecialization.h"
 #include "IGS_WarzoneHelpers.generated.h"
 
 class AIGS_AIEnemyGroupSpawner;
@@ -24,7 +23,7 @@ public:
     static int32 CallWarzoneReinforcment(UObject* inWCO, int32 inCount, bool inAllies);
     
     UFUNCTION(BlueprintCallable)
-    static int32 CallWarzoneCaptain(UObject* inWCO, int32 inCount, const TArray<EIGS_UnitSpecialization> inUnitSpecializations);
+    static int32 CallWarzoneCaptain(UObject* inWCO, int32 inCount);
     
 };
 

@@ -18,9 +18,9 @@ AIGS_GrenadeProjectileBase::AIGS_GrenadeProjectileBase(const FObjectInitializer&
     this->ImpactDistance = 150.00f;
     this->bMakeNoiseAndEvent = true;
     this->mR_bIsExploded = false;
-    this->ExplosionLight->SetupAttachment(ThrowableMesh);
     this->GrenadeIndicatorWidget->SetupAttachment(ThrowableMesh);
     this->AkComponent->SetupAttachment(ThrowableMesh);
+    this->ExplosionLight->SetupAttachment(ThrowableMesh);
 }
 
 void AIGS_GrenadeProjectileBase::SetIndicatorIconWidget() const {

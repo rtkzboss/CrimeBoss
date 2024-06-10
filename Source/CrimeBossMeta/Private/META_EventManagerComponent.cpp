@@ -105,7 +105,7 @@ bool UMETA_EventManagerComponent::EvaluateManyHeisterConditions(const FMETA_Char
     return false;
 }
 
-bool UMETA_EventManagerComponent::EvaluateManyGraphConditions(TArray<UMETA_BaseCondition*> inConditions, const EMETA_ConditionExprOperator inConditionOperator) {
+bool UMETA_EventManagerComponent::EvaluateManyGraphConditions(const TArray<UMETA_BaseCondition*>& inConditions, const EMETA_ConditionExprOperator inConditionOperator) const {
     return false;
 }
 

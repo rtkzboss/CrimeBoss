@@ -3,13 +3,11 @@
 UIGS_SoundSettings::UIGS_SoundSettings() {
     this->bSettingsValid = true;
     this->MasterVolumeValue = 0.00f;
-    this->SFXVolumeValue = 100.00f;
-    this->MusicVolumeValue = 0.00f;
-    this->DialogueVolumeValue = 100.00f;
+    this->SFXVolumeValue = 80.00f;
+    this->MusicVolumeValue = 80.00f;
+    this->DialogueVolumeValue = 80.00f;
     this->ControllerSpeakerVolumeValue = 80.00f;
-    this->LastInputDevice = TEXT("Default device");
-    this->LastOutputDevice = TEXT("Default Device");
-    this->bAudioMixSpeakers = false;
+    this->bAudioMixSpeakers = true;
     this->bSoundEnabledValue = true;
     this->bSoundInBackgroundEnabledValue = false;
     this->bStreamerModeValue = false;

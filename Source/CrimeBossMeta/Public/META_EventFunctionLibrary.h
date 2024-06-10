@@ -11,10 +11,12 @@
 #include "EMETA_BonusType.h"
 #include "EMETA_GoalStatus.h"
 #include "EMETA_GraphStatus.h"
+#include "IGS_PlotlineGraphData.h"
 #include "META_PlotlineGraphStartTime.h"
 #include "Templates/SubclassOf.h"
 #include "META_EventFunctionLibrary.generated.h"
 
+class AMETA_BaseGameMode;
 class UIGS_BossLevelBaseComponent;
 class UIGS_EquipmentInventoryObject;
 class UMETA_BaseGoal;
@@ -113,6 +115,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static void FromSaveCrewEventsAndTheirGraphs(const TMap<FGameplayTag, TSoftObjectPtr<UMETA_BaseStoryGraphManager>>& CrewEventsAndTheirGraphs, TMap<FGameplayTag, TSoftObjectPtr<UStoryGraphManager>>& outCrewEventsAndTheirGraphs);
+    
+    UFUNCTION(BlueprintCallable)
+    static void FromPlotlineGraphsData(AMETA_BaseGameMode* inGameMode, const TArray<FIGS_PlotlineGraphData>& PlotlineGraphs, TMap<TSoftObjectPtr<UStoryGraphManager>, FMETA_PlotlineGraphStartTime>& outPlotlineGraphs);
     
     UFUNCTION(BlueprintCallable)
     static void FromPlotlineGraphs(const TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime>& PlotlineGraphs, TMap<TSoftObjectPtr<UStoryGraphManager>, FMETA_PlotlineGraphStartTime>& outPlotlineGraphs);

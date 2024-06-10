@@ -13,9 +13,9 @@ AIGS_Ladder::AIGS_Ladder(const FObjectInitializer& ObjectInitializer) : Super(Ob
     this->AIGetOutUpOffset = -173.50f;
     this->LadderTopInteractiveComponent = CreateDefaultSubobject<UIGS_LadderInteractiveComponent>(TEXT("LadderTopInteractiveComponent"));
     this->LadderBottomInteractiveComponent = CreateDefaultSubobject<UIGS_LadderInteractiveComponent>(TEXT("LadderBottomInteractiveComponent"));
-    this->PlayerSnappingPoint->SetupAttachment(RootComponent);
     this->LadderTopInteractiveComponent->SetupAttachment(RootComponent);
     this->LadderBottomInteractiveComponent->SetupAttachment(RootComponent);
+    this->PlayerSnappingPoint->SetupAttachment(RootComponent);
 }
 
 
