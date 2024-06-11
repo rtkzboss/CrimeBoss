@@ -13,6 +13,6 @@ public:
 
 
     // Fix for true pure virtual functions not being implemented
-    virtual FMovieSceneEvalTemplatePtr CreateTemplateForSection(const UMovieSceneSection& InSection) const PURE_VIRTUAL(CreateTemplateForSection,return {};);
+    virtual FMovieSceneEvalTemplatePtr CreateTemplateForSection(const UMovieSceneSection& InSection) const override { return {}; }
 };
 

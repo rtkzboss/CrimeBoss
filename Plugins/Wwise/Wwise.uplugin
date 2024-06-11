@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
-	"Version": 202112505,
-	"VersionName": "2021.1.12.7973.2505",
+	"Version": 202112656,
+	"VersionName": "2021.1.14.8108.2656",
 	"FriendlyName": "Wwise Unreal Engine Integration",
 	"Description": "Wwise integration for Unreal Engine",
 	"Category": "Audio",

@@ -152,6 +152,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float m_GivingUpTime;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float HUDReconstructTimePeriod;
+    
 public:
     AIGS_PlayerControllerRoot(const FObjectInitializer& ObjectInitializer);
 
@@ -213,6 +216,10 @@ public:
     
     UFUNCTION(BlueprintCallable)
     bool OpenUnlockMethodMenu(FGameplayTagContainer inMethods);
+    
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnTryToReconstructHUD();
     
 protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

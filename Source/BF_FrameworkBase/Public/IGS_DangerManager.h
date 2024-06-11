@@ -19,5 +19,6 @@ private:
 public:
     UIGS_DangerManager();
 
+    virtual TStatId GetStatId() const override { return {}; }
 };
 

@@ -41,7 +41,7 @@ private:
     
 
     // Fix for true pure virtual functions not being implemented
-    virtual bool EncompassesPoint(FVector Point, float SphereRadius/*=0.f*/, float* OutDistanceToPoint) PURE_VIRTUAL(EncompassesPoint,return false;);
-    virtual FPostProcessVolumeProperties GetProperties() const PURE_VIRTUAL(GetProperties,return {};);
+    virtual bool EncompassesPoint(FVector Point, float SphereRadius/*=0.f*/, float* OutDistanceToPoint) override { return false; }
+    virtual FPostProcessVolumeProperties GetProperties() const override { return {}; }
 };
 

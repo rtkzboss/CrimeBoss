@@ -21,8 +21,6 @@ AIGS_Pier::AIGS_Pier(const FObjectInitializer& ObjectInitializer) : Super(Object
     (*this).bReplicates = true;
     (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
     (*this).RootComponent = (USceneComponent*)Root;
-    (*this).ThirdPlayerPosition->SetupAttachment((*this).Root);
-    (*this).FourthPlayerPosition->SetupAttachment((*this).Root);
     (*this).RightDockArrow->SetupAttachment((*this).Root);
     (*this).LeftDockArrow->SetupAttachment((*this).Root);
     (*this).SafeArea->SetupAttachment((*this).Root);
@@ -30,6 +28,8 @@ AIGS_Pier::AIGS_Pier(const FObjectInitializer& ObjectInitializer) : Super(Object
     (*this).DockZone->SetupAttachment((*this).Root);
     (*this).FirstPlayerPosition->SetupAttachment((*this).Root);
     (*this).SecondPlayerPosition->SetupAttachment((*this).Root);
+    (*this).ThirdPlayerPosition->SetupAttachment((*this).Root);
+    (*this).FourthPlayerPosition->SetupAttachment((*this).Root);
 }
 
 void AIGS_Pier::VesselExited_Implementation(AIGS_Vessel_Base* inVessel) {

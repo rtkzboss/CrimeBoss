@@ -41,8 +41,8 @@ AIGS_LevelBlockingBounds::AIGS_LevelBlockingBounds(const FObjectInitializer& Obj
     (*this).Color.G = 0;
     (*this).Color.R = 255;
     (*this).bDisableShapeSelection = true;
-    (*this).PostProcessComponent->SetupAttachment((*AIGS_BoxSphere::StaticClass()->FindPropertyByName("BoxCollisionComponent")->ContainerPtrToValuePtr<UIGS_CustomBoxComponent*>(&(*this), 0)));
     (*this).BlockerComponent->SetupAttachment((*this).RootComponent);
+    (*this).PostProcessComponent->SetupAttachment((*AIGS_BoxSphere::StaticClass()->FindPropertyByName("BoxCollisionComponent")->ContainerPtrToValuePtr<UIGS_CustomBoxComponent*>(&(*this), 0)));
 }
 
 void AIGS_LevelBlockingBounds::SetBlockerSize(float inBlockerSize) {

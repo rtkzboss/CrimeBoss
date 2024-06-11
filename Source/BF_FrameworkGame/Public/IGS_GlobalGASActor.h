@@ -48,6 +48,6 @@ public:
     UFUNCTION(BlueprintCallable)
     void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override PURE_VIRTUAL(GetOwnedGameplayTags,);
     
-    virtual UAbilitySystemComponent* GetAbilitySystemComponent() const PURE_VIRTUAL(GetAbilitySystemComponent,return nullptr;);
+    virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override PURE_VIRTUAL(GetAbilitySystemComponent, return nullptr;);
 };
 

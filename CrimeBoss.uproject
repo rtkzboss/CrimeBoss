@@ -1,6 +1,6 @@
 {
 	"FileVersion": 3,
-	"EngineAssociation": "{256D7BCB-4C1F-576B-542F-B297527C3549}",
+	"EngineAssociation": "{37F33531-426E-170E-BAA3-8C8C57B39A51}",
 	"Category": "",
 	"Description": "",
 	"Modules": [
@@ -14,21 +14,25 @@
 				"Engine",
 				"AkAudio",
 				"PhysicsCore",
+				"DeveloperSettings",
 				"AdvancedSessions",
 				"CinematicCamera",
 				"BF_GUIBase",
+				"LevelSequence",
 				"InputCore",
 				"AIModule",
 				"ApplicationCore",
 				"GameplayTags",
 				"Common_Utils",
 				"Common_Data",
+				"IGS_UIFramework",
 				"BF_AI",
 				"BF_FrameworkBase",
 				"BF_Debug",
 				"BF_FrameworkGame",
 				"BF_LevelGenerator",
 				"BF_Loading",
+				"BF_Impacts",
 				"PaybackDefinitions",
 				"BF_Voiceover",
 				"Common_Save",
@@ -42,6 +46,8 @@
 				"UMG",
 				"Slate",
 				"NavigationSystem",
+				"RenderCore",
+				"RHI",
 				"CustomizableObject",
 				"EngineSettings"
 			]
@@ -59,7 +65,8 @@
 				"Slate",
 				"GameplayTags",
 				"AkAudio",
-				"GenericGraphRuntime"
+				"GenericGraphRuntime",
+				"DeveloperSettings"
 			]
 		},
 		{
@@ -68,6 +75,7 @@
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"CustomizableObjectPopulation",
+				"BF_Settings",
 				"CustomizableObject",
 				"Core",
 				"CoreUObject",
@@ -82,7 +90,8 @@
 				"PaybackDefinitions",
 				"SlateCore",
 				"Slate",
-				"UMG"
+				"UMG",
+				"DeveloperSettings"
 			]
 		},
 		{
@@ -100,9 +109,12 @@
 				"PaybackDefinitions",
 				"BF_Debug",
 				"GameplayTags",
+				"DeveloperSettings",
 				"EOSSDK",
 				"JsonUtilities",
-				"Json"
+				"Json",
+				"Http",
+				"Steamworks"
 			]
 		},
 		{
@@ -124,7 +136,9 @@
 				"AkAudio",
 				"BF_Input",
 				"BF_GUIBase",
-				"PreLoadScreen"
+				"PreLoadScreen",
+				"BF_Debug",
+				"BF_Settings"
 			]
 		},
 		{
@@ -142,12 +156,14 @@
 				"BF_Covers",
 				"BF_FrameworkGame",
 				"BF_Rendering",
+				"DeveloperSettings",
 				"AIModule",
 				"GameplayTasks",
 				"NavigationSystem",
 				"Navmesh",
 				"CoverGenerator",
-				"LevelSequence"
+				"LevelSequence",
+				"MovieScene"
 			]
 		},
 		{
@@ -215,12 +231,14 @@
 				"Payback",
 				"BF_Input",
 				"BF_GUIBase",
+				"IGS_UIFramework",
 				"KantanChartsDatasource",
 				"KantanChartsUMG",
 				"KantanCHartsSlate",
 				"BF_Voiceover",
 				"BF_AI",
 				"BF_Audio",
+				"DeveloperSettings",
 				"DLSSBlueprint",
 				"XeSSBlueprint"
 			]
@@ -256,7 +274,8 @@
 				"JsonUtilities",
 				"PaybackDefinitions",
 				"Common_Data",
-				"Common_Utils"
+				"Common_Utils",
+				"DeveloperSettings"
 			]
 		},
 		{
@@ -290,7 +309,26 @@
 				"Engine",
 				"RHI",
 				"BF_FrameworkBase",
-				"BF_Settings"
+				"BF_Settings",
+				"DeveloperSettings"
+			]
+		},
+		{
+			"Name": "IGS_UIFramework",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Core",
+				"GameplayTags",
+				"BF_Input",
+				"UMG",
+				"CoreUObject",
+				"Engine",
+				"Slate",
+				"SlateCore",
+				"InputCore",
+				"Common_Utils",
+				"BF_FrameworkBase"
 			]
 		},
 		{
@@ -305,7 +343,8 @@
 				"AkAudio",
 				"PaybackDefinitions",
 				"GameplayTags",
-				"Common_Utils"
+				"Common_Utils",
+				"DeveloperSettings"
 			]
 		},
 		{
@@ -329,6 +368,7 @@
 				"BF_Pool",
 				"BF_Voiceover",
 				"BF_Debug",
+				"DeveloperSettings",
 				"BF_Audio",
 				"BF_Loading",
 				"BF_Settings"
@@ -366,7 +406,8 @@
 				"DeveloperSettings",
 				"Common_Utils",
 				"KiBLII",
-				"BF_Debug"
+				"BF_Debug",
+				"AkAudio"
 			]
 		},
 		{
@@ -401,6 +442,7 @@
 				"SkinnedDecalComponent",
 				"HeatMapsRuntime",
 				"BF_Loading",
+				"BF_Analytics",
 				"NavigationSystem",
 				"CustomizableObject",
 				"EngineSettings",
@@ -416,6 +458,7 @@
 				"CoreUObject",
 				"Engine",
 				"PhysicsCore",
+				"DeveloperSettings",
 				"UMG",
 				"Slate",
 				"SlateCore",
@@ -448,10 +491,12 @@
 				"BF_Loading",
 				"BF_Navigation",
 				"BF_Covers",
+				"IGS_UIFramework",
 				"BF_Rendering",
 				"BF_Impacts",
 				"BF_Pool",
 				"BF_AudioBase",
+				"DeveloperSettings",
 				"BF_Analytics",
 				"CustomizableObject",
 				"AIModule",
@@ -465,7 +510,10 @@
 				"SkinnedDecalComponent",
 				"DeveloperSettings",
 				"AdvancedSessions",
-				"UMG"
+				"SlateCore",
+				"Slate",
+				"UMG",
+				"ApplicationCore"
 			]
 		},
 		{
@@ -508,6 +556,7 @@
 				"BF_LevelGenerator",
 				"BF_Network",
 				"BF_Pool",
+				"DeveloperSettings",
 				"AIModule",
 				"NavMesh",
 				"NavigationSystem",
@@ -544,7 +593,8 @@
 				"Common_Utils",
 				"BF_AudioBase",
 				"BF_Loading",
-				"BF_Settings"
+				"BF_Settings",
+				"DeveloperSettings"
 			]
 		},
 		{
@@ -563,6 +613,7 @@
 				"Common_Utils",
 				"BF_FrameworkBase",
 				"BF_Pool",
+				"DeveloperSettings",
 				"SkinnedDecalComponent"
 			]
 		},
@@ -583,7 +634,7 @@
 				"BF_AudioBase",
 				"BF_FrameworkGame",
 				"BF_Loading",
-				"GameplayTags",
+				"Common_Data",
 				"EOSSDK",
 				"GameplayTags"
 			]
@@ -602,7 +653,9 @@
 				"Common_utils",
 				"BF_FrameworkBase",
 				"BF_Debug",
-				"BF_Settings"
+				"BF_Settings",
+				"BF_Input",
+				"DeveloperSettings"
 			]
 		},
 		{
@@ -646,11 +699,16 @@
 				"BF_FrameworkBase",
 				"BF_FrameworkGame",
 				"BF_Input",
+				"BF_Settings",
 				"GenericGraphRuntime",
 				"Json",
 				"JsonUtilities",
+				"BF_Settings",
+				"DeveloperSettings",
 				"GameplayTags",
-				"RenderCore"
+				"RenderCore",
+				"BF_Analytics",
+				"IGS_UIFramework"
 			]
 		},
 		{
@@ -671,11 +729,6 @@
 				"Common_Utils",
 				"BF_Input"
 			]
-		},
-		{
-			"Name": "IGS_UIFramework",
-			"Type": "Runtime",
-			"LoadingPhase": "Default"
 		},
 		{
 			"Name": "PS5AudioFeatures",

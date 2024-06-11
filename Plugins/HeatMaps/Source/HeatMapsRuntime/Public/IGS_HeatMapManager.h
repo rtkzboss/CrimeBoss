@@ -9,5 +9,6 @@ class HEATMAPSRUNTIME_API UIGS_HeatMapManager : public UTickableWorldSubsystem {
 public:
     UIGS_HeatMapManager();
 
+    virtual TStatId GetStatId() const override { return {}; }
 };
 

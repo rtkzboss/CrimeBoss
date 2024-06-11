@@ -32,6 +32,7 @@ AIGS_PlayerControllerRoot::AIGS_PlayerControllerRoot(const FObjectInitializer& O
     (*this).PlayerBotOrderComponent = CreateDefaultSubobject<UIGS_PlayerBotOrderComponent>(TEXT("PlayerBotOrderComponent"));
     (*this).m_AimAssistComponent = CreateDefaultSubobject<UIGS_AimAssistComponent>(TEXT("AimAssistComponent"));
     (*this).m_GivingUpTime = 2.000000000e+00f;
+    (*this).HUDReconstructTimePeriod = 2.000000000e+00f;
     (*this).bAttachToPawn = true;
     (*this).m_StreamingVolumeCollision->SetupAttachment((*this).RootComponent);
 }
@@ -93,6 +94,9 @@ void AIGS_PlayerControllerRoot::ReleaseHeldKeys() {
 
 bool AIGS_PlayerControllerRoot::OpenUnlockMethodMenu(FGameplayTagContainer inMethods) {
     return false;
+}
+
+void AIGS_PlayerControllerRoot::OnTryToReconstructHUD() {
 }
 
 void AIGS_PlayerControllerRoot::OnSystemMenuInput_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {

@@ -5,7 +5,7 @@
 
 AIGS_SquadSniper::AIGS_SquadSniper(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).DebugColor.B = 255;
-    (*this).DebugColor.G = 168;
+    (*this).DebugColor.G = 236;
     (*this).DebugColor.R = 0;
 }
 
