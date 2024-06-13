@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkMultiPositionType.h"
-#include "OnAkPostEventCallbackDelegate.h"
+#include "AkGameplayTypes.h"
+#include "AkGameplayTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"

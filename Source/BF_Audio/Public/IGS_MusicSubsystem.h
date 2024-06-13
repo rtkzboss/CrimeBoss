@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAkCallbackType.h"
+#include "AkGameplayTypes.h"
 #include "Subsystems/GameInstanceSubsystem.h"
 #include "EIGS_MusicMissionState.h"
 #include "EIGS_MusicStoryMissionState.h"

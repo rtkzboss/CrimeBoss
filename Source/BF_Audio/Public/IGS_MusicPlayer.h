@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAkCallbackType.h"
+#include "AkGameplayTypes.h"
 #include "GameFramework/Actor.h"
 #include "IGS_MusicPlayer.generated.h"
 

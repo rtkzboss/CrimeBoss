@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "AkAcousticPortalState.h"
+#include "AkGameplayTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "GameplayTagContainer.h"
 #include "EIGS_DoorTier.h"

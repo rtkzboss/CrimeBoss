@@ -12,7 +12,6 @@
 				"Core",
 				"CoreUObject",
 				"Engine",
-				"AkAudio",
 				"PhysicsCore",
 				"DeveloperSettings",
 				"AdvancedSessions",
@@ -64,7 +63,6 @@
 				"SlateCore",
 				"Slate",
 				"GameplayTags",
-				"AkAudio",
 				"GenericGraphRuntime",
 				"DeveloperSettings"
 			]
@@ -83,7 +81,6 @@
 				"InputCore",
 				"GameplayTags",
 				"PhysicsCore",
-				"AkAudio",
 				"Common_Utils",
 				"BF_Debug",
 				"BF_Pool",
@@ -105,7 +102,6 @@
 				"Slate",
 				"SlateCore",
 				"UMG",
-				"AkAudio",
 				"PaybackDefinitions",
 				"BF_Debug",
 				"GameplayTags",
@@ -133,7 +129,6 @@
 				"DeveloperSettings",
 				"GameplayTags",
 				"Common_Utils",
-				"AkAudio",
 				"BF_Input",
 				"BF_GUIBase",
 				"PreLoadScreen",
@@ -219,7 +214,6 @@
 				"Slate",
 				"SlateCore",
 				"InputCore",
-				"AkAudio",
 				"EngineSettings",
 				"Common_Utils",
 				"Common_Data",
@@ -253,7 +247,6 @@
 				"Engine",
 				"PaybackDefinitions",
 				"BF_FrameworkBase",
-				"AkAudio",
 				"BF_FrameworkGame",
 				"BF_LevelGenerator"
 			]
@@ -288,7 +281,6 @@
 				"Engine",
 				"InputCore",
 				"RHI",
-				"AkAudio",
 				"SlateCore",
 				"Slate",
 				"ApplicationCore",
@@ -340,7 +332,6 @@
 				"CoreUObject",
 				"BF_Debug",
 				"Engine",
-				"AkAudio",
 				"PaybackDefinitions",
 				"GameplayTags",
 				"Common_Utils",
@@ -355,7 +346,6 @@
 				"Core",
 				"CoreUObject",
 				"Engine",
-				"AkAudio",
 				"PhysicsCore",
 				"GameplayTags",
 				"Common_Data",
@@ -406,8 +396,7 @@
 				"DeveloperSettings",
 				"Common_Utils",
 				"KiBLII",
-				"BF_Debug",
-				"AkAudio"
+				"BF_Debug"
 			]
 		},
 		{
@@ -424,7 +413,6 @@
 				"PhysicsCore",
 				"Landscape",
 				"SlateCore",
-				"AkAudio",
 				"PathFollow",
 				"AdvancedSessions",
 				"Common_Data",
@@ -462,7 +450,6 @@
 				"UMG",
 				"Slate",
 				"SlateCore",
-				"AkAudio",
 				"PaybackDefinitions",
 				"CoverGenerator"
 			]
@@ -482,7 +469,6 @@
 				"Common_Utils",
 				"Common_Data",
 				"CoverGenerator",
-				"AkAudio",
 				"BF_FrameworkBase",
 				"BF_Debug",
 				"BF_Input",
@@ -567,8 +553,7 @@
 				"HeatMapsRuntime",
 				"UMG",
 				"PathFollow",
-				"InputCore",
-				"AkAudio"
+				"InputCore"
 			]
 		},
 		{
@@ -581,7 +566,6 @@
 				"CoreUObject",
 				"Engine",
 				"InputCore",
-				"AkAudio",
 				"GameplayTags",
 				"CustomizableObject",
 				"CustomizableObjectPopulation",
@@ -605,7 +589,6 @@
 				"Core",
 				"CoreUObject",
 				"Engine",
-				"AkAudio",
 				"Landscape",
 				"PhysicsCore",
 				"GameplayTags",
@@ -625,7 +608,6 @@
 				"Core",
 				"CoreUObject",
 				"Engine",
-				"AkAudio",
 				"PaybackDefinitions",
 				"Common_Utils",
 				"BF_FrameworkBase",
@@ -647,7 +629,6 @@
 				"Core",
 				"CoreUObject",
 				"Engine",
-				"AkAudio",
 				"Slate",
 				"PaybackDefinitions",
 				"Common_utils",
@@ -669,7 +650,6 @@
 				"PhysicsCore",
 				"UMG",
 				"Landscape",
-				"AkAudio",
 				"PaybackDefinitions",
 				"Common_Utils",
 				"BF_FrameworkGame",

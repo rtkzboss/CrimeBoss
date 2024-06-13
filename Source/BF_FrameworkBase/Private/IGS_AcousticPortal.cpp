@@ -1,5 +1,5 @@
 #include "IGS_AcousticPortal.h"
-#include "AkAcousticPortalState.h"
+#include "AkGameplayTypes.h"
 #include "IGS_SignificanceComponent.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/Actor.h"

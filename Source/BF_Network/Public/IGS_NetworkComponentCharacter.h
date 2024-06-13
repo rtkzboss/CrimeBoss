@@ -1,6 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
-#include "EAkCallbackType.h"
+#include "AkGameplayTypes.h"
 #include "EIGS_AnimationTaskFinishedReason.h"
 #include "EIGS_CharacterLeaningDirectionEnum.h"
 #include "EIGS_CharacterState.h"
