@@ -62,6 +62,9 @@ public:
     void SetMissionObjectiveMonetaryValue(int32 InValue);
     
     UFUNCTION(BlueprintCallable)
+    void SetMissionMonetaryValueMultiplier(float InValue);
+    
+    UFUNCTION(BlueprintCallable)
     void SetMissionMonetaryRewards(int32 in1stStarReward, int32 in2ndStarReward, int32 in3rdStarReward, int32 inLootMonetaryValue);
     
     UFUNCTION(BlueprintCallable)
@@ -138,6 +141,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionObjectiveMonetaryValue() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMissionMonetaryValueMultiplier() const;
     
     UFUNCTION(BlueprintCallable)
     void GetMissionMonetaryRewards(int32& out1stStarReward, int32& out2ndStarReward, int32& out3rdStarReward, int32& outLootMonetaryValue);

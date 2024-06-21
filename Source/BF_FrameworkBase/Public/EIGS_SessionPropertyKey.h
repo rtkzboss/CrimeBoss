@@ -17,5 +17,6 @@ enum class EIGS_SessionPropertyKey : uint8 {
     PS5PlayerSessionID,
     UserDifficulty,
     LobbyType,
+    Ping,
 };
 

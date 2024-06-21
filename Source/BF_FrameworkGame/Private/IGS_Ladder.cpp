@@ -15,9 +15,9 @@ AIGS_Ladder::AIGS_Ladder(const FObjectInitializer& ObjectInitializer) : Super(Ob
     (*this).LadderBottomInteractiveComponent = CreateDefaultSubobject<UIGS_LadderInteractiveComponent>(TEXT("LadderBottomInteractiveComponent"));
     (*this).NetDormancy = DORM_Initial;
     (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
+    (*this).PlayerSnappingPoint->SetupAttachment((*this).RootComponent);
     (*this).LadderTopInteractiveComponent->SetupAttachment((*this).RootComponent);
     (*this).LadderBottomInteractiveComponent->SetupAttachment((*this).RootComponent);
-    (*this).PlayerSnappingPoint->SetupAttachment((*this).RootComponent);
 }
 
 

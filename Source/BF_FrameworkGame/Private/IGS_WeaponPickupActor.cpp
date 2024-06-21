@@ -7,11 +7,11 @@
 #include "Net/UnrealNetwork.h"
 #include "Templates/SubclassOf.h"
 
-AIGS_WeaponPickupActor::AIGS_WeaponPickupActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+AIGS_WeaponPickupActor::AIGS_WeaponPickupActor(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USkeletalMeshComponentBudgeted>(TEXT("RootComp"))) {
     (*this).WeaponSkin = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).WeaponSkinTag, 0)) = TEXT("ID.Skins.Weapons.Default.Base");
     (*this).DefaultMesh = nullptr;
-    (*this).WeaponPickupSkelMeshComp = CreateDefaultSubobject<USkeletalMeshComponentBudgeted>(TEXT("RootComp"));
+    (*this).WeaponPickupSkelMeshComp = (USkeletalMeshComponentBudgeted*)RootComponent;
     (*this).SightModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SightModMesh"));
     (*this).VisibilityModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("VisibilityModMesh"));
     (*this).BarrelModMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("BarrelModMesh"));
@@ -22,15 +22,14 @@ AIGS_WeaponPickupActor::AIGS_WeaponPickupActor(const FObjectInitializer& ObjectI
     gen0.Empty();
     gen0.AddDefaulted(6);
     (*this).mR_IsVisible = true;
-    (*this).PickupMeshComp = (UPrimitiveComponent*)WeaponPickupSkelMeshComp;
-    (*this).SceneRoot = (USceneComponent*)WeaponPickupSkelMeshComp;
-    (*this).RootComponent = (USceneComponent*)WeaponPickupSkelMeshComp;
-    (*this).SightModMesh->SetupAttachment((*this).WeaponPickupSkelMeshComp);
-    (*this).VisibilityModMesh->SetupAttachment((*this).WeaponPickupSkelMeshComp);
-    (*this).BarrelModMesh->SetupAttachment((*this).WeaponPickupSkelMeshComp);
-    (*this).GripModMesh->SetupAttachment((*this).WeaponPickupSkelMeshComp);
-    (*this).MagazineModMesh->SetupAttachment((*this).WeaponPickupSkelMeshComp);
-    (*this).StockModMesh->SetupAttachment((*this).WeaponPickupSkelMeshComp);
+    (*this).PickupMeshComp = (UPrimitiveComponent*)RootComponent;
+    (*this).SceneRoot = (USceneComponent*)RootComponent;
+    (*this).SightModMesh->SetupAttachment((*this).RootComponent);
+    (*this).VisibilityModMesh->SetupAttachment((*this).RootComponent);
+    (*this).BarrelModMesh->SetupAttachment((*this).RootComponent);
+    (*this).GripModMesh->SetupAttachment((*this).RootComponent);
+    (*this).MagazineModMesh->SetupAttachment((*this).RootComponent);
+    (*this).StockModMesh->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_WeaponPickupActor::Setup(const TSubclassOf<UMETA_WeaponInventoryObject>& inItemClass, const TSoftObjectPtr<UIGS_WeaponSkinData> inSkin) {

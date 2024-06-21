@@ -40,10 +40,10 @@ AIGS_VehicleCar::AIGS_VehicleCar(const FObjectInitializer& ObjectInitializer) : 
     (*this).FrontStopTriggerOffset = -1.000000000e+01f;
     (*this).bReplicates = true;
     (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
+    (*this).DestructableVehicleComponent->SetupAttachment((*this).RootComponent);
     (*this).PlayerPushAwayTrigger->SetupAttachment((*this).RootComponent);
     (*this).PlayerPushAwayBlockingCollider->SetupAttachment((*this).RootComponent);
     (*this).TopTrigger->SetupAttachment((*this).RootComponent);
-    (*this).DestructableVehicleComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_VehicleCar::SpawnPassengers() {

@@ -37,6 +37,9 @@ void UMETA_BaseFPSMission::SetMissionOutCome(int32 inExpenses) {
 void UMETA_BaseFPSMission::SetMissionObjectiveMonetaryValue(int32 InValue) {
 }
 
+void UMETA_BaseFPSMission::SetMissionMonetaryValueMultiplier(float InValue) {
+}
+
 void UMETA_BaseFPSMission::SetMissionMonetaryRewards(int32 in1stStarReward, int32 in2ndStarReward, int32 in3rdStarReward, int32 inLootMonetaryValue) {
 }
 
@@ -129,6 +132,10 @@ int32 UMETA_BaseFPSMission::GetMissionOutCome() const {
 
 int32 UMETA_BaseFPSMission::GetMissionObjectiveMonetaryValue() const {
     return 0;
+}
+
+float UMETA_BaseFPSMission::GetMissionMonetaryValueMultiplier() const {
+    return 0.0f;
 }
 
 void UMETA_BaseFPSMission::GetMissionMonetaryRewards(int32& out1stStarReward, int32& out2ndStarReward, int32& out3rdStarReward, int32& outLootMonetaryValue) {

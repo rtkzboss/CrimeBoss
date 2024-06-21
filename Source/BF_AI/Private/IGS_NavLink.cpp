@@ -6,8 +6,8 @@
 AIGS_NavLink::AIGS_NavLink(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).LinkComponent = CreateDefaultSubobject<UIGS_NavLinkComponent>(TEXT("Link Component"));
     (*this).NavLink = (UIGS_NavLinkComponentFramework*)LinkComponent;
-    (*this).NavLink->SetupAttachment((*this).RootComponent);
     (*this).LinkComponent->SetupAttachment((*this).RootComponent);
+    (*this).NavLink->SetupAttachment((*this).RootComponent);
 }
 
 

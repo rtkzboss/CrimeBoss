@@ -14,16 +14,16 @@ AIGS_DoorsBreachPoints::AIGS_DoorsBreachPoints(const FObjectInitializer& ObjectI
     (*this).MiddleExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("MiddleExitPoint"));
     (*this).RightNearExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("RightNearExitPoint"));
     (*this).RightFarExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("RightFarExitPoint"));
-    (*this).LeftFarExitPoint->SetupAttachment((*this).RootComponent);
-    (*this).MiddleExitPoint->SetupAttachment((*this).RootComponent);
-    (*this).RightNearExitPoint->SetupAttachment((*this).RootComponent);
-    (*this).RightFarExitPoint->SetupAttachment((*this).RootComponent);
     (*this).LeftNearEntryPoint->SetupAttachment((*this).RootComponent);
     (*this).LeftFarEntryPoint->SetupAttachment((*this).RootComponent);
     (*this).MiddleEntryPoint->SetupAttachment((*this).RootComponent);
     (*this).RightNearEntryPoint->SetupAttachment((*this).RootComponent);
     (*this).RightFarEntryPoint->SetupAttachment((*this).RootComponent);
     (*this).LeftNearExitPoint->SetupAttachment((*this).RootComponent);
+    (*this).LeftFarExitPoint->SetupAttachment((*this).RootComponent);
+    (*this).MiddleExitPoint->SetupAttachment((*this).RootComponent);
+    (*this).RightNearExitPoint->SetupAttachment((*this).RootComponent);
+    (*this).RightFarExitPoint->SetupAttachment((*this).RootComponent);
 }
 
 

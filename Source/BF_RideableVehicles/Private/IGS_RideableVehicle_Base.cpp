@@ -28,10 +28,10 @@ AIGS_RideableVehicle_Base::AIGS_RideableVehicle_Base(const FObjectInitializer& O
     (*this).Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
     (*this).bAlwaysRelevant = true;
     (*this).RootComponent = (USceneComponent*)Mesh;
-    (*this).EntryTrigger->SetupAttachment((*this).RootComponent);
     (*this).AkComponent->SetupAttachment((*this).RootComponent);
     (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
     (*this).FirstPersonCameraComponent->SetupAttachment((*this).RootComponent);
+    (*this).EntryTrigger->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_RideableVehicle_Base::VehicleDestroy(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo) {

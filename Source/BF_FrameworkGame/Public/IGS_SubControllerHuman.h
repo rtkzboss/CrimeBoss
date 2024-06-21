@@ -6,16 +6,12 @@
 #include "IGS_SubControllerHuman.generated.h"
 
 class ACharacter;
-class UIGS_AnalogControllerSettings;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
 class UIGS_SubControllerHuman : public UIGS_SubControllerCommon {
     GENERATED_BODY()
 public:
 protected:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UIGS_AnalogControllerSettings* AnalogControllerSettings;
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayAbilitySpecHandle m_RunningAbilitySpecHandle;
     

@@ -19,6 +19,7 @@ FMETA_StoryMissionSave::FMETA_StoryMissionSave() {
     (*this).BonusCash = 0;
     (*this).ObjectiveMonetaryValue = 0;
     (*this).MaxMonetaryValue = 0;
+    (*this).MonetaryValueMultiplier = 1.000000000e+00f;
     (*this).Reward1stStar = 0;
     (*this).Reward2ndStar = 0;
     (*this).Reward3rdStar = 0;

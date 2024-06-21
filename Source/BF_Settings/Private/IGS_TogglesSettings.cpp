@@ -3,6 +3,7 @@
 UIGS_TogglesSettings::UIGS_TogglesSettings() {
     (*this).bSprintToggleable = true;
     (*this).bCrouchToggleable = true;
+    (*this).bAimToggleable = true;
     (*this).bSettingsValid = true;
 }
 

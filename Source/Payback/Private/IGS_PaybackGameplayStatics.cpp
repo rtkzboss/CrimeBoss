@@ -22,7 +22,7 @@ void UIGS_PaybackGameplayStatics::TeleportCharactersRelativeTo(const UObject* in
 void UIGS_PaybackGameplayStatics::StartEndMission(UObject* inWCO, ECommonMissionResult inMissionResult) {
 }
 
-TArray<FBlueprintSessionResult> UIGS_PaybackGameplayStatics::SortSessionsByParameter(TArray<FBlueprintSessionResult> inSessions, bool inAscending, EIGS_SessionPropertyKey inKey) {
+TArray<FBlueprintSessionResult> UIGS_PaybackGameplayStatics::SortSessionsByParameter(const UObject* inWCO, TArray<FBlueprintSessionResult> inSessions, bool inAscending, EIGS_SessionPropertyKey inKey) {
     return TArray<FBlueprintSessionResult>();
 }
 

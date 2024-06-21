@@ -4,13 +4,12 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "EIGS_TeamSideEnum.h"
 
-AIGS_LootBagPickup::AIGS_LootBagPickup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+AIGS_LootBagPickup::AIGS_LootBagPickup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer.SetDefaultSubobjectClass<USkeletalMeshComponent>(TEXT("RootComp"))) {
     (*this).PlacedInLevelItemType = EIGS_ItemType::Item_UNKNOWN;
-    (*this).SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("RootComp"));
+    (*this).SkeletalMesh = (USkeletalMeshComponent*)RootComponent;
     (*this).IsPickableByAI = true;
-    (*this).PickupMeshComp = (UPrimitiveComponent*)SkeletalMesh;
-    (*this).SceneRoot = (USceneComponent*)SkeletalMesh;
-    (*this).RootComponent = (USceneComponent*)SkeletalMesh;
+    (*this).PickupMeshComp = (UPrimitiveComponent*)RootComponent;
+    (*this).SceneRoot = (USceneComponent*)RootComponent;
 }
 
 

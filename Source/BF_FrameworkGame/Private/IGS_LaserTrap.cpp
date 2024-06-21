@@ -27,13 +27,13 @@ AIGS_LaserTrap::AIGS_LaserTrap(const FObjectInitializer& ObjectInitializer) : Su
     (*this).PrimaryActorTick.bCanEverTick = true;
     (*this).PrimaryActorTick.TickInterval = 5.000000000e-01f;
     (*this).RootComponent = (USceneComponent*)RootObject;
+    (*this).BeamOrigin->SetupAttachment((*this).RootObject);
+    (*this).BeamDetectionBox->SetupAttachment((*this).BeamOrigin);
     (*this).BeamDirectionArrow->SetupAttachment((*this).RootObject);
     (*this).BeamEmitter->SetupAttachment((*this).RootObject);
     (*this).LaserMesh->SetupAttachment((*this).RootObject);
     (*this).StatusLight->SetupAttachment((*this).RootObject);
     (*this).AkAudioComponent->SetupAttachment((*this).RootObject);
-    (*this).BeamOrigin->SetupAttachment((*this).RootObject);
-    (*this).BeamDetectionBox->SetupAttachment((*this).BeamOrigin);
 }
 
 void AIGS_LaserTrap::SetEnabled(bool inState, bool inIgnoreChargeTime) {

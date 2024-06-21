@@ -18,15 +18,15 @@ AIGS_DynamicWallBase::AIGS_DynamicWallBase(const FObjectInitializer& ObjectIniti
     (*this).WallBottomRightTrimCornerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("WallBottomRightTrimCornerMesh"));
     (*this).CoverPointClass = AIGS_CoverPointBase::StaticClass();
     (*this).RootComponent = (USceneComponent*)WallRootComponent;
+    (*this).WallMesh->SetupAttachment((*this).WallRootComponent);
+    (*this).WallTopTrimMesh->SetupAttachment((*this).WallRootComponent);
+    (*this).WallBottomTrimMesh->SetupAttachment((*this).WallRootComponent);
     (*this).WallLeftCornerMesh->SetupAttachment((*this).WallRootComponent);
     (*this).WallRightCornerMesh->SetupAttachment((*this).WallRootComponent);
     (*this).WallTopLeftTrimCornerMesh->SetupAttachment((*this).WallRootComponent);
     (*this).WallBottomLeftTrimCornerMesh->SetupAttachment((*this).WallRootComponent);
     (*this).WallTopRightTrimCornerMesh->SetupAttachment((*this).WallRootComponent);
     (*this).WallBottomRightTrimCornerMesh->SetupAttachment((*this).WallRootComponent);
-    (*this).WallMesh->SetupAttachment((*this).WallRootComponent);
-    (*this).WallTopTrimMesh->SetupAttachment((*this).WallRootComponent);
-    (*this).WallBottomTrimMesh->SetupAttachment((*this).WallRootComponent);
 }
 
 void AIGS_DynamicWallBase::OnGenerationFinished(ANavigationData* inNavData) {

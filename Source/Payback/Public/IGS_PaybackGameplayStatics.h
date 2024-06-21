@@ -69,7 +69,7 @@ public:
     static void StartEndMission(UObject* inWCO, ECommonMissionResult inMissionResult);
     
     UFUNCTION(BlueprintCallable)
-    static TArray<FBlueprintSessionResult> SortSessionsByParameter(TArray<FBlueprintSessionResult> inSessions, bool inAscending, EIGS_SessionPropertyKey inKey);
+    static TArray<FBlueprintSessionResult> SortSessionsByParameter(const UObject* inWCO, TArray<FBlueprintSessionResult> inSessions, bool inAscending, EIGS_SessionPropertyKey inKey);
     
     UFUNCTION(BlueprintCallable)
     static void SetPlayerImmortality(UObject* inWCO, bool inImmortal);
