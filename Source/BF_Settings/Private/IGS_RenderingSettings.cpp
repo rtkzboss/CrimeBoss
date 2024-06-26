@@ -2,21 +2,22 @@
 
 UIGS_RenderingSettings::UIGS_RenderingSettings() {
     (*this).FullscreenModeValue = 1;
+    (*this).ResolutionValue = 25;
     (*this).ResolutionScaleValue = 1.000000000e+02f;
-    (*this).ProfileValue = 6;
-    (*this).ViewDistanceQualityValue = 3;
+    (*this).ViewDistanceQualityValue = 4;
     (*this).AntiAliasingQualityValue = 3;
-    (*this).PostProcessingQualityValue = 3;
-    (*this).ShadowQualityValue = 3;
-    (*this).TextureQualityValue = 3;
-    (*this).VisualEffectQualityValue = 3;
-    (*this).FoliageQualityValue = 3;
+    (*this).PostProcessingQualityValue = 4;
+    (*this).ShadowQualityValue = 4;
+    (*this).TextureQualityValue = 4;
+    (*this).VisualEffectQualityValue = 4;
+    (*this).FoliageQualityValue = 4;
     (*this).MotionBlurScaleFPV = 1.000000000e+00f;
     (*this).MotionBlurScale3PV = 1.000000000e+00f;
     (*this).BaseCameraFOVHorizontal = 1.200000000e+02f;
-    (*this).DLSSMode = 1;
-    (*this).FramerateLimitInGame = 239;
-    (*this).FramerateLimitInMenu = 239;
+    (*this).ReflexMode = 2;
+    (*this).ChosenDisplay = 1;
+    (*this).FramerateLimitInGame = 60;
+    (*this).FramerateLimitInMenu = 60;
     (*this).FramerateLimitOutOfFocus = 5;
     (*this).bCanChangeMonitorPositions = true;
     (*this).bSettingsValid = true;

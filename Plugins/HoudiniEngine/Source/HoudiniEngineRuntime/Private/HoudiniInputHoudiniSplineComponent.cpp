@@ -2,10 +2,10 @@
 #include "EHoudiniInputObjectType.h"
 
 UHoudiniInputHoudiniSplineComponent::UHoudiniInputHoudiniSplineComponent() {
-    (*this).Guid.A = 425558294;
-    (*this).Guid.B = 1230401368;
-    (*this).Guid.C = -1277678682;
-    (*this).Guid.D = 136538361;
+    (*this).Guid.A = 1321197641;
+    (*this).Guid.B = 1251916003;
+    (*this).Guid.C = 2053111487;
+    (*this).Guid.D = 1709680044;
 }
 
 

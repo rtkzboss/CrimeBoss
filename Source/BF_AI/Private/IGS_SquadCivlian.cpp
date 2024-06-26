@@ -5,7 +5,8 @@
 
 AIGS_SquadCivlian::AIGS_SquadCivlian(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).DebugColor.B = 255;
-    (*this).DebugColor.G = 193;
+    (*this).DebugColor.G = 153;
+    (*this).DebugColor.R = 0;
 }
 
 
