@@ -29,7 +29,7 @@ void UIGS_WorldSpaceWidgetBase::SetForceHidden(bool inHidden) {
 }
 
 
-void UIGS_WorldSpaceWidgetBase::OnRep_WidgetType() {
+void UIGS_WorldSpaceWidgetBase::OnRep_WidgetType(const EIGS_WorldWidgetType inOldType) {
 }
 
 void UIGS_WorldSpaceWidgetBase::OnRep_HeisterNumber() {

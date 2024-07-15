@@ -76,7 +76,7 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable)
-    void OnRep_WidgetType();
+    void OnRep_WidgetType(const EIGS_WorldWidgetType inOldType);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_HeisterNumber();

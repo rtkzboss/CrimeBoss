@@ -16,6 +16,9 @@ void UIGS_MediaManagerBaseComponent::HandleMediaForScreen_Implementation(FGamepl
 void UIGS_MediaManagerBaseComponent::HandleMediaForPartner_Implementation(EMETA_Partner inPartner) {
 }
 
+void UIGS_MediaManagerBaseComponent::ForceStopBinkMovie_Implementation() {
+}
+
 void UIGS_MediaManagerBaseComponent::DialogueTypeShouldBePlayed_Implementation(FGameplayTag inTypeTag, FGameplayTag inScreenTag) {
 }
 

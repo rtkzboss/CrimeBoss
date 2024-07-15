@@ -29,11 +29,11 @@ APaybackHeavyCharacter::APaybackHeavyCharacter(const FObjectInitializer& ObjectI
     (*this).ShockChargeMeshScale.Y = 1.000000000e+00f;
     (*this).ShockChargeMeshScale.Z = 1.000000000e+00f;
     (*this).ShockChargeMeshComponentAttachBone = TEXT("neck_01");
-    (*this).WeakSpotCapsule->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
     (*this).ShockChargeMeshComponent1->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
     (*this).ShockChargeMeshComponent2->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
     (*this).ShockChargeMeshComponent3->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
     (*this).ShockChargeMeshComponent4->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
+    (*this).WeakSpotCapsule->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
 }
 
 void APaybackHeavyCharacter::OnWeakSpotCompromised(const UPrimitiveComponent* inWeakSpotComponent, const FIGS_HitInfo& inLastHitInfo) {

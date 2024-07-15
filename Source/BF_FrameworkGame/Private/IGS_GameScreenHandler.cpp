@@ -28,6 +28,9 @@ void UIGS_GameScreenHandler::RefreshFocus() {
 void UIGS_GameScreenHandler::OpenSystemMenuScreen() {
 }
 
+void UIGS_GameScreenHandler::OnMovieFinished_Internal() {
+}
+
 void UIGS_GameScreenHandler::InitializeMenuScreen(TSubclassOf<UIGS_SystemMenuScreen> inMenuScreenClass) {
 }
 

@@ -85,6 +85,9 @@ public:
     UFUNCTION(BlueprintCallable)
     static UTexture2D* RenderTargetCreateStaticTexture2DEditorOnlyToSameFile(UTextureRenderTarget2D* RenderTarget, const FString& Name, const FString& InPath, TEnumAsByte<TextureCompressionSettings> CompressionSettings, TEnumAsByte<TextureMipGenSettings> MipSettings);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 RemainingCompilingShaders();
+    
     UFUNCTION(BlueprintCallable)
     static void PrintExtraSessionSettings(FBlueprintSessionResult SessionResult);
     

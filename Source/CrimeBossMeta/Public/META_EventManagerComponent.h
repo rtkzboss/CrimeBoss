@@ -12,6 +12,7 @@
 #include "EMETA_GoalStatus.h"
 #include "EMETA_GraphStatus.h"
 #include "EMETA_PlanningBoardItemStatus.h"
+#include "IGS_PlotlineGraphData.h"
 #include "META_CharacterID.h"
 #include "META_HeistersOnEvent.h"
 #include "IGS_EventManagerBaseComponent.h"
@@ -177,6 +178,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     TArray<FMETA_CharacterID> GetAllHeistersFromEvent(FGameplayTag inEventTag, bool& outSuccess);
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    void FilterByPlotlineConditions(const TArray<FIGS_PlotlineGraphData>& PlotlineGraphs, const int32 inUsedPlotlinesCount, TArray<FIGS_PlotlineGraphData>& outPlotlineGraphs);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool EvaluatePlotlineConditions(const FIGS_PlotlineGraphData& inGraphData, const int32 inUsedPlotlinesCount);
+    
+public:
     UFUNCTION(BlueprintCallable)
     bool EvaluateManyHeisterConditions(const FMETA_CharacterID inCharacter, TArray<UMETA_BaseHeisterCondition*> inConditions, const EMETA_ConditionExprOperator inConditionOperator);
     

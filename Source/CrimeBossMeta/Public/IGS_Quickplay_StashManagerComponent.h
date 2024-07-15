@@ -47,6 +47,9 @@ public:
     void RemoveItem(FGameplayTag inItemTag);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsWeaponSubvariant(FGameplayTag inItemTag) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsItemOwned(FGameplayTag inItemTag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

@@ -53,6 +53,10 @@ UTexture2D* UIGS_BadFlyGameplayStaticsFramework::RenderTargetCreateStaticTexture
     return NULL;
 }
 
+int32 UIGS_BadFlyGameplayStaticsFramework::RemainingCompilingShaders() {
+    return 0;
+}
+
 void UIGS_BadFlyGameplayStaticsFramework::PrintExtraSessionSettings(FBlueprintSessionResult SessionResult) {
 }
 

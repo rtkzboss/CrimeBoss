@@ -13,6 +13,10 @@ void UIGS_Quickplay_StashManagerComponent::RemoveItems(FGameplayTagContainer inI
 void UIGS_Quickplay_StashManagerComponent::RemoveItem(FGameplayTag inItemTag) {
 }
 
+bool UIGS_Quickplay_StashManagerComponent::IsWeaponSubvariant(FGameplayTag inItemTag) const {
+    return false;
+}
+
 bool UIGS_Quickplay_StashManagerComponent::IsItemOwned(FGameplayTag inItemTag) const {
     return false;
 }

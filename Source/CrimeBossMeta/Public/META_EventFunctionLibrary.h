@@ -16,7 +16,6 @@
 #include "Templates/SubclassOf.h"
 #include "META_EventFunctionLibrary.generated.h"
 
-class AMETA_BaseGameMode;
 class UIGS_BossLevelBaseComponent;
 class UIGS_EquipmentInventoryObject;
 class UMETA_BaseGoal;
@@ -117,7 +116,7 @@ public:
     static void FromSaveCrewEventsAndTheirGraphs(const TMap<FGameplayTag, TSoftObjectPtr<UMETA_BaseStoryGraphManager>>& CrewEventsAndTheirGraphs, TMap<FGameplayTag, TSoftObjectPtr<UStoryGraphManager>>& outCrewEventsAndTheirGraphs);
     
     UFUNCTION(BlueprintCallable)
-    static void FromPlotlineGraphsData(AMETA_BaseGameMode* inGameMode, const TArray<FIGS_PlotlineGraphData>& PlotlineGraphs, TMap<TSoftObjectPtr<UStoryGraphManager>, FMETA_PlotlineGraphStartTime>& outPlotlineGraphs);
+    static void FromPlotlineGraphsData(const TArray<FIGS_PlotlineGraphData>& PlotlineGraphs, TArray<TSoftObjectPtr<UStoryGraphManager>>& outPlotlineGraphs);
     
     UFUNCTION(BlueprintCallable)
     static void FromPlotlineGraphs(const TMap<TSoftObjectPtr<UMETA_BaseStoryGraphManager>, FMETA_PlotlineGraphStartTime>& PlotlineGraphs, TMap<TSoftObjectPtr<UStoryGraphManager>, FMETA_PlotlineGraphStartTime>& outPlotlineGraphs);

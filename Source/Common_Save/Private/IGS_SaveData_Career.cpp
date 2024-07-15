@@ -142,6 +142,7 @@ FIGS_SaveData_Career::FIGS_SaveData_Career() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).PlanningBoardManagerData.ActivePlanningBoardTag, 0)) = NAME_None;
     (*this).Achievements.Empty();
     (*this).CareerEnd.bIsPending = false;
+    (*this).CareerEnd.bChallengeRewardGenerated = false;
     (*this).CareerEnd.bRewardsClaimed = false;
     (*this).CareerEnd.Reason = EMETA_CareerCompletionReason::NoTurfTiles;
     (*this).CareerEnd.BossKilledBy = EMETA_Gang::None;

@@ -28,6 +28,9 @@ public:
     void HandleMediaForPartner(EMETA_Partner inPartner);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void ForceStopBinkMovie();
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void DialogueTypeShouldBePlayed(FGameplayTag inTypeTag, FGameplayTag inScreenTag);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)

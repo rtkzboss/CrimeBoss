@@ -29,9 +29,9 @@ APaybackAICharacter::APaybackAICharacter(const FObjectInitializer& ObjectInitial
     (*this).bUseControllerRotationYaw = false;
     (*this).AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
     (*this).AIControllerClass = nullptr;
+    (*this).InteractionStealthKill->SetupAttachment((*this).RootComponent);
     (*this).AimAssistCapsule->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
     (*this).ShootableHelmetCollision->SetupAttachment((*ACharacter::StaticClass()->FindPropertyByName("Mesh")->ContainerPtrToValuePtr<USkeletalMeshComponent*>(&(*this), 0)));
-    (*this).InteractionStealthKill->SetupAttachment((*this).RootComponent);
 }
 
 

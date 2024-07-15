@@ -96,6 +96,13 @@ TArray<FMETA_CharacterID> UMETA_EventManagerComponent::GetAllHeistersFromEvent_I
     return TArray<FMETA_CharacterID>();
 }
 
+void UMETA_EventManagerComponent::FilterByPlotlineConditions(const TArray<FIGS_PlotlineGraphData>& PlotlineGraphs, const int32 inUsedPlotlinesCount, TArray<FIGS_PlotlineGraphData>& outPlotlineGraphs) {
+}
+
+bool UMETA_EventManagerComponent::EvaluatePlotlineConditions(const FIGS_PlotlineGraphData& inGraphData, const int32 inUsedPlotlinesCount) {
+    return false;
+}
+
 bool UMETA_EventManagerComponent::EvaluateManyHeisterConditions(const FMETA_CharacterID inCharacter, TArray<UMETA_BaseHeisterCondition*> inConditions, const EMETA_ConditionExprOperator inConditionOperator) {
     return false;
 }

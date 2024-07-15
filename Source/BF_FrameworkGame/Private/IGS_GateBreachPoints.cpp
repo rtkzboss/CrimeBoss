@@ -7,9 +7,9 @@ AIGS_GateBreachPoints::AIGS_GateBreachPoints(const FObjectInitializer& ObjectIni
     (*this).StackEntryPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("StackEntryPoint"));
     (*this).BreachEntryPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("BreachEntryPoint"));
     (*this).StackExitPoint = CreateDefaultSubobject<UIGS_BreachPointComponent>(TEXT("StackExitPoint"));
+    (*this).StackExitPoint->SetupAttachment((*this).RootComponent);
     (*this).StackEntryPoint->SetupAttachment((*this).RootComponent);
     (*this).BreachEntryPoint->SetupAttachment((*this).RootComponent);
-    (*this).StackExitPoint->SetupAttachment((*this).RootComponent);
 }
 
 

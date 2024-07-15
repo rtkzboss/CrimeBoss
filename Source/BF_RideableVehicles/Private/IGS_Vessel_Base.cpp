@@ -33,12 +33,12 @@ AIGS_Vessel_Base::AIGS_Vessel_Base(const FObjectInitializer& ObjectInitializer) 
     auto& gen0 = (*this).PontoonWaterStatus;
     gen0.Empty();
     gen0.AddDefaulted(2);
+    (*this).PlayerBlockBoxComponent->SetupAttachment((*this).RootComponent);
     (*this).LeftEngineParticleEffect->SetupAttachment((*this).RootComponent);
     (*this).RightEngineParticleEffect->SetupAttachment((*this).RootComponent);
     (*this).LeftBoardParticleEffect->SetupAttachment((*this).RootComponent);
     (*this).CenterBoardParticleEffect->SetupAttachment((*this).RootComponent);
     (*this).RightBoardParticleEffect->SetupAttachment((*this).RootComponent);
-    (*this).PlayerBlockBoxComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_Vessel_Base::SyncControls_SERVER_Implementation(float inSteering, float inThrottle) {

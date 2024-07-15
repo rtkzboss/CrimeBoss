@@ -30,6 +30,9 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_GameScreenHandlerEvent OnScreensStackChanged;
     
+    UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_GameScreenHandlerEvent OnMovieFinished;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool GoDirectlyToMainMenu;
     
@@ -73,6 +76,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void OpenSystemMenuScreen();
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnMovieFinished_Internal();
+    
+public:
     UFUNCTION(BlueprintCallable)
     void InitializeMenuScreen(TSubclassOf<UIGS_SystemMenuScreen> inMenuScreenClass);
     
