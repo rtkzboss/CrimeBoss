@@ -19,4 +19,5 @@ public:
     
     PAYBACKDEFINITIONS_API FMETA_PerkStatGroup();
 };
+FORCEINLINE uint32 GetTypeHash(const FMETA_PerkStatGroup) { return 0; }
 
