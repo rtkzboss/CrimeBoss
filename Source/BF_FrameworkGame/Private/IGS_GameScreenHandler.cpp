@@ -20,15 +20,14 @@ void UIGS_GameScreenHandler::RequestOpenScreen(UObject* inWCO, UIGS_Screen* inSc
     {
         inScreen->AddScreenToViewport();
     }
-    inScreen->ActivateWidget();
+    inScreen->Open();
 }
 
 void UIGS_GameScreenHandler::RequestCloseScreenByTag(UObject* inWCO, FGameplayTag inTag) {
 }
 
 void UIGS_GameScreenHandler::RequestCloseScreen(UObject* inWCO, UIGS_Screen* inScreen, bool destroyAfterClose) {
-    inScreen->SetVisibility(ESlateVisibility::Collapsed);
-    inScreen->DeactivateWidget();
+    inScreen->Close();
 }
 
 void UIGS_GameScreenHandler::RefreshFocus() {

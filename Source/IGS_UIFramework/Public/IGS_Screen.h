@@ -110,7 +110,9 @@ public:
     void AddScreenToViewport();
     
 protected:
-    void NativeOnActivated() override;
-    void NativeOnDeactivated() override;
+    //void NativeOnActivated() override;
+    //void NativeOnDeactivated() override;
+public:
+    void Open();
 };
 

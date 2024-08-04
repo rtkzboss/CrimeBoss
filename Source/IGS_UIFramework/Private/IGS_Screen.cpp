@@ -32,27 +32,19 @@ FText UIGS_Screen::GetTitleOverride_Implementation() const {
     return FText::GetEmpty();
 }
 
-void UIGS_Screen::Close() {
-}
-
-void UIGS_Screen::AddScreenToViewport() {
-    AddToViewport(static_cast<int32>(ScreenZOrder));
-}
-
-void UIGS_Screen::NativeOnActivated()
-{
-    Super::NativeOnActivated();
-    // game completely ignores the bSetVisibilityOnActivated and just sets visibility always (?!)
+// I don't know why any of this shit exists and why IGS doesn't just use the built in activation system
+void UIGS_Screen::Open() {
     SetVisibility(ESlateVisibility::SelfHitTestInvisible);
     OnOpen();
     OnOpenEvent.Broadcast();
+    RefreshFocus();
 }
-void UIGS_Screen::NativeOnDeactivated()
-{
-    Super::NativeOnDeactivated();
+void UIGS_Screen::Close() {
     SetVisibility(ESlateVisibility::Collapsed);
     OnClosed();
     OnClosedEvent.Broadcast();
 }
 
-
+void UIGS_Screen::AddScreenToViewport() {
+    AddToViewport(static_cast<int32>(ScreenZOrder));
+}
