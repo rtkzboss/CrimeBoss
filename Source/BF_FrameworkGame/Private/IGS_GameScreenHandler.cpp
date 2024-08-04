@@ -1,5 +1,7 @@
 #include "IGS_GameScreenHandler.h"
 #include "Templates/SubclassOf.h"
+#include "IGS_BlueprintUtilities.h"
+#include "IGS_Screen.h"
 
 UIGS_GameScreenHandler::UIGS_GameScreenHandler() {
 }
@@ -14,12 +16,19 @@ void UIGS_GameScreenHandler::RequestOpenScreenByTag(UObject* inWCO, FGameplayTag
 }
 
 void UIGS_GameScreenHandler::RequestOpenScreen(UObject* inWCO, UIGS_Screen* inScreen, bool AddToViewport) {
+    if (AddToViewport)
+    {
+        inScreen->AddScreenToViewport();
+    }
+    inScreen->ActivateWidget();
 }
 
 void UIGS_GameScreenHandler::RequestCloseScreenByTag(UObject* inWCO, FGameplayTag inTag) {
 }
 
 void UIGS_GameScreenHandler::RequestCloseScreen(UObject* inWCO, UIGS_Screen* inScreen, bool destroyAfterClose) {
+    inScreen->SetVisibility(ESlateVisibility::Collapsed);
+    inScreen->DeactivateWidget();
 }
 
 void UIGS_GameScreenHandler::RefreshFocus() {

@@ -36,6 +36,23 @@ void UIGS_Screen::Close() {
 }
 
 void UIGS_Screen::AddScreenToViewport() {
+    AddToViewport(static_cast<int32>(ScreenZOrder));
+}
+
+void UIGS_Screen::NativeOnActivated()
+{
+    Super::NativeOnActivated();
+    // game completely ignores the bSetVisibilityOnActivated and just sets visibility always (?!)
+    SetVisibility(ESlateVisibility::SelfHitTestInvisible);
+    OnOpen();
+    OnOpenEvent.Broadcast();
+}
+void UIGS_Screen::NativeOnDeactivated()
+{
+    Super::NativeOnDeactivated();
+    SetVisibility(ESlateVisibility::Collapsed);
+    OnClosed();
+    OnClosedEvent.Broadcast();
 }
 
 

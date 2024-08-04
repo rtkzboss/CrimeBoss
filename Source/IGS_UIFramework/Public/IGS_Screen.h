@@ -109,5 +109,8 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddScreenToViewport();
     
+protected:
+    void NativeOnActivated() override;
+    void NativeOnDeactivated() override;
 };
 

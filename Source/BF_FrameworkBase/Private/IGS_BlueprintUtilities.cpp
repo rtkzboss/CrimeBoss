@@ -44,7 +44,7 @@ APlayerController* UIGS_BlueprintUtilities::GetLocalPlayerControllerForWorld(UOb
 }
 
 APlayerController* UIGS_BlueprintUtilities::GetLocalPlayerController(UObject* inWCO) {
-    return NULL;
+    return UGameplayStatics::GetPlayerController(inWCO->GetWorld(), 0);
 }
 
 FColor UIGS_BlueprintUtilities::GetColorForTeamSide(EIGS_TeamSideEnum inTeamSide) {
