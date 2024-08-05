@@ -9,7 +9,7 @@ public class BF_FrameworkBase : ModuleRules {
         PrivateDependencyModuleNames.AddRange(new string[] {
             "InputCore",
             "OnlineSubsystem",
-            "SimpleUGC",
+            "CrimeBossUGC",
         });
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",
