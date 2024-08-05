@@ -1,0 +1,36 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Smoke Tests",
+	"Description": "Smoke Tests",
+	"Category": "Testing",
+	"CreatedBy": "INGAME STUDIOS, a.s.",
+	"CreatedByURL": "https://ingamestudios.com/",
+	"DocsURL": "https://badfly.atlassian.net/l/c/HXPVm1iD",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EnabledByDefault": true,
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Plugins": [
+		{
+			"Name": "AssetTags",
+			"Enabled": true
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		},
+		{
+			"Name": "AssetManagerEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "CoverGenerator",
+			"Enabled": true
+		}
+	]
+}

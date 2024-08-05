@@ -1,0 +1,231 @@
+#include "META_MissionDatabase.h"
+#include "EIGS_AITiers.h"
+#include "EIGS_GangsterVariationType.h"
+#include "EIGS_HeistersBackupVariationType.h"
+#include "EIGS_HubBackdropTypes.h"
+#include "EIGS_HubDistrict.h"
+#include "EIGS_LightingScenarioType.h"
+#include "EIGS_SWATVariationType.h"
+#include "EIGS_ScenarioDifficulty.h"
+#include "EIGS_TileEnviroment.h"
+#include "EMETA_AIBossStrengthChangeIntensity.h"
+#include "EMETA_FPSMissionSubtype.h"
+#include "EMETA_Heat.h"
+#include "EMETA_RespectLvl.h"
+#include "EMETA_ReturnedDataProcessingMode.h"
+#include "EMETA_StealthMode.h"
+#include "EMETA_TradeVendor.h"
+#include "EMETA_TurfActionAfterSuccess.h"
+
+FMETA_MissionDatabase::FMETA_MissionDatabase() {
+    (*this).ID = nullptr;
+    (*this).MissionType = EMETA_JobType::FPSMission;
+    (*this).MissionInfo.MissionSubtype = EMETA_FPSMissionSubtype::Story;
+    (*this).MissionInfo.Picture = nullptr;
+    (*this).MissionInfo.MapIconOverride = nullptr;
+    (*this).MissionInfo.Name = FText::FromString(TEXT(""));
+    (*this).MissionInfo.Objective = FText::FromString(TEXT(""));
+    (*this).MissionInfo.Description = FText::FromString(TEXT(""));
+    (*this).MissionInfo.DaysOnMap = -1;
+    (*this).MissionInfo.SupportIntel = false;
+    (*this).MissionInfo.IntelSoldierMultiplier = 1.000000000e+00f;
+    (*this).MissionInfo.MinCrewSize = 1;
+    (*this).MissionInfo.MaxCrewSize = 4;
+    (*this).MissionInfo.WeaponsRequired.Empty();
+    (*this).MissionInfo.CharactersRequired.Empty();
+    (*this).MissionInfo.CharactersRequiredButNotOwned.Empty();
+    (*this).MissionInfo.ResultsWhenJobIsNotRemovedFromTheMap.Empty();
+    (*this).MissionInfo.ReturnedDataProcessingMode = EMETA_ReturnedDataProcessingMode::AcceptLoot;
+    (*this).MissionInfo.LootPercentageFromSuccess = 0;
+    (*this).MissionInfo.TurfActionAfterSuccess = EMETA_TurfActionAfterSuccess::None;
+    (*this).MissionInfo.StrengthChangeIntensity = EMETA_AIBossStrengthChangeIntensity::None;
+    (*this).MissionInfo.FPSMissionInfo.FPSMissionID = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MissionInfo.FPSMissionInfo.Scenario, 0)) = NAME_None;
+    (*this).MissionInfo.FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
+    (*this).MissionInfo.FPSMissionInfo.BackdropType = EIGS_HubBackdropTypes::AllRandom;
+    (*this).MissionInfo.FPSMissionInfo.TileEnviroment = EIGS_TileEnviroment::None;
+    (*this).MissionInfo.FPSMissionInfo.NeedObjectiveCompletion = false;
+    (*this).MissionInfo.FPSMissionInfo.PrimaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).MissionInfo.FPSMissionInfo.SecondaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).MissionInfo.FPSMissionInfo.SWATVariation = EIGS_SWATVariationType::US_None;
+    (*this).MissionInfo.FPSMissionInfo.AllyVariation = EIGS_HeistersBackupVariationType::US_None;
+    (*this).MissionInfo.FPSMissionInfo.bForceEnemyTier = false;
+    (*this).MissionInfo.FPSMissionInfo.EnemyTier = EIGS_AITiers::AT_Tier1;
+    (*this).MissionInfo.FPSMissionInfo.bForceSWATTier = false;
+    (*this).MissionInfo.FPSMissionInfo.SWATTier = EIGS_AITiers::AT_Tier1;
+    (*this).MissionInfo.FPSMissionInfo.bForceAllyTier = false;
+    (*this).MissionInfo.FPSMissionInfo.AllyTier = EIGS_AITiers::AT_Tier1;
+    (*this).MissionInfo.FPSMissionInfo.bForceDifficulty = false;
+    (*this).MissionInfo.FPSMissionInfo.Difficulty = EIGS_ScenarioDifficulty::SD_MediumForce;
+    (*this).MissionInfo.FPSMissionInfo.bForceHeat = false;
+    (*this).MissionInfo.FPSMissionInfo.bMinimalHeatOnly = false;
+    (*this).MissionInfo.FPSMissionInfo.Heat = EMETA_Heat::Medium;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionInfo.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionInfo.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*this).MissionInfo.FPSMissionInfo.TotalLootbagCount = -1;
+    (*this).MissionInfo.FPSMissionInfo.ForcedDetectivesCount = 0;
+    (*this).MissionInfo.FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;
+    (*this).MissionInfo.FPSMissionInfo.bDownedCharctersSurvive = false;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MissionInfo.ObjectivesPreset, 0)) = NAME_None;
+    (*this).MissionInfo.UnlockRespect = EMETA_RespectLvl::Low;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MissionInfo.UnlockTag, 0)) = NAME_None;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionInfo.LootType, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionInfo.LootType, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionInfo.MissionTypeTags, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).MissionInfo.MissionTypeTags, 0)).Empty();
+    (*this).TradeInfo.CutsceneID = FText::FromString(TEXT(""));
+    (*this).TradeInfo.DebugText = FText::FromString(TEXT(""));
+    (*this).TradeInfo.Picture = nullptr;
+    (*this).TradeInfo.MapIconOverride = nullptr;
+    (*this).TradeInfo.Expenses.Empty();
+    (*this).TradeInfo.Name = FText::FromString(TEXT(""));
+    (*this).TradeInfo.Description = FText::FromString(TEXT(""));
+    (*this).TradeInfo.DaysOnMap = -1;
+    (*this).TradeInfo.MinCrewSize = 1;
+    (*this).TradeInfo.MaxCrewSize = 4;
+    (*this).TradeInfo.CharactersRequired.Empty();
+    (*this).TradeInfo.CharactersRequiredButNotOwned.Empty();
+    (*this).TradeInfo.ResultsWhenJobIsNotRemovedFromTheMap.Empty();
+    (*this).TradeInfo.DistrictType = EIGS_HubDistrict::Downtown;
+    (*this).TradeInfo.BackdropType = EIGS_HubBackdropTypes::AllRandom;
+    (*this).CinematicInfo.CutsceneID = FText::FromString(TEXT(""));
+    (*this).CinematicInfo.DebugText = FText::FromString(TEXT(""));
+    (*this).CinematicInfo.Picture = nullptr;
+    (*this).CinematicInfo.MapIconOverride = nullptr;
+    (*this).CinematicInfo.Name = FText::FromString(TEXT(""));
+    (*this).CinematicInfo.Description = FText::FromString(TEXT(""));
+    (*this).CinematicInfo.DaysOnMap = -1;
+    (*this).CinematicInfo.MinCrewSize = 1;
+    (*this).CinematicInfo.MaxCrewSize = 4;
+    (*this).CinematicInfo.CharactersRequired.Empty();
+    (*this).CinematicInfo.CharactersRequiredButNotOwned.Empty();
+    (*this).CinematicInfo.ResultsWhenJobIsNotRemovedFromTheMap.Empty();
+    (*this).CinematicInfo.DistrictType = EIGS_HubDistrict::INVALID;
+    (*this).CinematicInfo.BackdropType = EIGS_HubBackdropTypes::AllRandom;
+    (*this).AmbushInfo.Name = FText::FromString(TEXT(""));
+    (*this).AmbushInfo.Description = FText::FromString(TEXT(""));
+    (*this).AmbushInfo.Picture = nullptr;
+    (*this).AmbushInfo.MapIconOverride = nullptr;
+    (*this).AmbushInfo.FPSMissionInfo.FPSMissionID = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).AmbushInfo.FPSMissionInfo.Scenario, 0)) = NAME_None;
+    (*this).AmbushInfo.FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
+    (*this).AmbushInfo.FPSMissionInfo.BackdropType = EIGS_HubBackdropTypes::AllRandom;
+    (*this).AmbushInfo.FPSMissionInfo.TileEnviroment = EIGS_TileEnviroment::None;
+    (*this).AmbushInfo.FPSMissionInfo.NeedObjectiveCompletion = false;
+    (*this).AmbushInfo.FPSMissionInfo.PrimaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).AmbushInfo.FPSMissionInfo.SecondaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).AmbushInfo.FPSMissionInfo.SWATVariation = EIGS_SWATVariationType::US_None;
+    (*this).AmbushInfo.FPSMissionInfo.AllyVariation = EIGS_HeistersBackupVariationType::US_None;
+    (*this).AmbushInfo.FPSMissionInfo.bForceEnemyTier = false;
+    (*this).AmbushInfo.FPSMissionInfo.EnemyTier = EIGS_AITiers::AT_Tier1;
+    (*this).AmbushInfo.FPSMissionInfo.bForceSWATTier = false;
+    (*this).AmbushInfo.FPSMissionInfo.SWATTier = EIGS_AITiers::AT_Tier1;
+    (*this).AmbushInfo.FPSMissionInfo.bForceAllyTier = false;
+    (*this).AmbushInfo.FPSMissionInfo.AllyTier = EIGS_AITiers::AT_Tier1;
+    (*this).AmbushInfo.FPSMissionInfo.bForceDifficulty = false;
+    (*this).AmbushInfo.FPSMissionInfo.Difficulty = EIGS_ScenarioDifficulty::SD_MediumForce;
+    (*this).AmbushInfo.FPSMissionInfo.bForceHeat = false;
+    (*this).AmbushInfo.FPSMissionInfo.bMinimalHeatOnly = false;
+    (*this).AmbushInfo.FPSMissionInfo.Heat = EMETA_Heat::Medium;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AmbushInfo.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AmbushInfo.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*this).AmbushInfo.FPSMissionInfo.TotalLootbagCount = -1;
+    (*this).AmbushInfo.FPSMissionInfo.ForcedDetectivesCount = 0;
+    (*this).AmbushInfo.FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;
+    (*this).AmbushInfo.FPSMissionInfo.bDownedCharctersSurvive = false;
+    (*this).RivalAttack.Name = FText::FromString(TEXT(""));
+    (*this).RivalAttack.Description = FText::FromString(TEXT(""));
+    (*this).RivalAttack.Picture = nullptr;
+    (*this).RivalAttack.MapIconOverride = nullptr;
+    (*this).RivalAttack.FPSMissionInfo.FPSMissionID = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).RivalAttack.FPSMissionInfo.Scenario, 0)) = NAME_None;
+    (*this).RivalAttack.FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
+    (*this).RivalAttack.FPSMissionInfo.BackdropType = EIGS_HubBackdropTypes::AllRandom;
+    (*this).RivalAttack.FPSMissionInfo.TileEnviroment = EIGS_TileEnviroment::None;
+    (*this).RivalAttack.FPSMissionInfo.NeedObjectiveCompletion = false;
+    (*this).RivalAttack.FPSMissionInfo.PrimaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).RivalAttack.FPSMissionInfo.SecondaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).RivalAttack.FPSMissionInfo.SWATVariation = EIGS_SWATVariationType::US_None;
+    (*this).RivalAttack.FPSMissionInfo.AllyVariation = EIGS_HeistersBackupVariationType::US_None;
+    (*this).RivalAttack.FPSMissionInfo.bForceEnemyTier = false;
+    (*this).RivalAttack.FPSMissionInfo.EnemyTier = EIGS_AITiers::AT_Tier1;
+    (*this).RivalAttack.FPSMissionInfo.bForceSWATTier = false;
+    (*this).RivalAttack.FPSMissionInfo.SWATTier = EIGS_AITiers::AT_Tier1;
+    (*this).RivalAttack.FPSMissionInfo.bForceAllyTier = false;
+    (*this).RivalAttack.FPSMissionInfo.AllyTier = EIGS_AITiers::AT_Tier1;
+    (*this).RivalAttack.FPSMissionInfo.bForceDifficulty = false;
+    (*this).RivalAttack.FPSMissionInfo.Difficulty = EIGS_ScenarioDifficulty::SD_MediumForce;
+    (*this).RivalAttack.FPSMissionInfo.bForceHeat = false;
+    (*this).RivalAttack.FPSMissionInfo.bMinimalHeatOnly = false;
+    (*this).RivalAttack.FPSMissionInfo.Heat = EMETA_Heat::Medium;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).RivalAttack.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).RivalAttack.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*this).RivalAttack.FPSMissionInfo.TotalLootbagCount = -1;
+    (*this).RivalAttack.FPSMissionInfo.ForcedDetectivesCount = 0;
+    (*this).RivalAttack.FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;
+    (*this).RivalAttack.FPSMissionInfo.bDownedCharctersSurvive = false;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).RivalAttack.UnlockTag, 0)) = NAME_None;
+    (*this).NeutralAttack.Name = FText::FromString(TEXT(""));
+    (*this).NeutralAttack.Description = FText::FromString(TEXT(""));
+    (*this).NeutralAttack.Picture = nullptr;
+    (*this).NeutralAttack.MapIconOverride = nullptr;
+    (*this).Defence.Name = FText::FromString(TEXT(""));
+    (*this).Defence.Description = FText::FromString(TEXT(""));
+    (*this).Defence.Picture = nullptr;
+    (*this).Defence.MapIconOverride = nullptr;
+    (*this).Defence.FPSMissionInfo.FPSMissionID = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Defence.FPSMissionInfo.Scenario, 0)) = NAME_None;
+    (*this).Defence.FPSMissionInfo.LightingScenario = EIGS_LightingScenarioType::Morning;
+    (*this).Defence.FPSMissionInfo.BackdropType = EIGS_HubBackdropTypes::AllRandom;
+    (*this).Defence.FPSMissionInfo.TileEnviroment = EIGS_TileEnviroment::None;
+    (*this).Defence.FPSMissionInfo.NeedObjectiveCompletion = false;
+    (*this).Defence.FPSMissionInfo.PrimaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).Defence.FPSMissionInfo.SecondaryEnemyVariation = EIGS_GangsterVariationType::US_None;
+    (*this).Defence.FPSMissionInfo.SWATVariation = EIGS_SWATVariationType::US_None;
+    (*this).Defence.FPSMissionInfo.AllyVariation = EIGS_HeistersBackupVariationType::US_None;
+    (*this).Defence.FPSMissionInfo.bForceEnemyTier = false;
+    (*this).Defence.FPSMissionInfo.EnemyTier = EIGS_AITiers::AT_Tier1;
+    (*this).Defence.FPSMissionInfo.bForceSWATTier = false;
+    (*this).Defence.FPSMissionInfo.SWATTier = EIGS_AITiers::AT_Tier1;
+    (*this).Defence.FPSMissionInfo.bForceAllyTier = false;
+    (*this).Defence.FPSMissionInfo.AllyTier = EIGS_AITiers::AT_Tier1;
+    (*this).Defence.FPSMissionInfo.bForceDifficulty = false;
+    (*this).Defence.FPSMissionInfo.Difficulty = EIGS_ScenarioDifficulty::SD_MediumForce;
+    (*this).Defence.FPSMissionInfo.bForceHeat = false;
+    (*this).Defence.FPSMissionInfo.bMinimalHeatOnly = false;
+    (*this).Defence.FPSMissionInfo.Heat = EMETA_Heat::Medium;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Defence.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Defence.FPSMissionInfo.SupportedLoot, 0)).Empty();
+    (*this).Defence.FPSMissionInfo.TotalLootbagCount = -1;
+    (*this).Defence.FPSMissionInfo.ForcedDetectivesCount = 0;
+    (*this).Defence.FPSMissionInfo.StealthMode = EMETA_StealthMode::NotAvailable;
+    (*this).Defence.FPSMissionInfo.bDownedCharctersSurvive = false;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Defence.UnlockTag, 0)) = NAME_None;
+    (*this).TradeDeal.CutsceneID = FText::FromString(TEXT(""));
+    (*this).TradeDeal.DebugText = FText::FromString(TEXT(""));
+    (*this).TradeDeal.Picture = nullptr;
+    (*this).TradeDeal.MapIconOverride = nullptr;
+    (*this).TradeDeal.Name = FText::FromString(TEXT(""));
+    (*this).TradeDeal.Description = FText::FromString(TEXT(""));
+    (*this).TradeDeal.DaysOnMap = -1;
+    (*this).TradeDeal.MinCrewSize = 1;
+    (*this).TradeDeal.MaxCrewSize = 4;
+    (*this).TradeDeal.CharactersRequired.Empty();
+    (*this).TradeDeal.CharactersRequiredButNotOwned.Empty();
+    (*this).TradeDeal.ResultsWhenJobIsNotRemovedFromTheMap.Empty();
+    (*this).TradeDeal.Vendor = EMETA_TradeVendor::UNDEFINED;
+    (*this).CanAmbushAppear = false;
+    (*this).AmbushOverrideIDs.Empty();
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).AmbushOverrideChance, 0)) = NAME_None;
+    (*this).AmbushResultOverridesTotalMissionResult = false;
+    (*this).AmbushGang = EMETA_AmbushGang::None;
+    (*this).DebriefType = EMETA_DebriefType::Standard;
+    (*this).PlacementPriority = EMETA_PlacementPriority::Default;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).SpecialPositionTag, 0)) = NAME_None;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AllowedTiles, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).AllowedTiles, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).RestrictedTiles, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).RestrictedTiles, 0)).Empty();
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).EntitlementTag, 0)) = NAME_None;
+}
+

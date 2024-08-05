@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 2,
+	"VersionName": "2.0",
+	"FriendlyName": "BuilderToolkit",
+	"Description": "Set of tools helping level builders with convenient functionalities for selection, transformation and edition.",
+	"Category": "Editor",
+	"CreatedBy": "Louis Le Brun",
+	"CreatedByURL": "iwa.infographie@gmail.com",
+	"DocsURL": "https://docs.google.com/document/d/1LuKhTQ_9vbYNzsD23GG__Ljyi0M_qWp1y-1y8ya2xG4/edit?usp=sharing",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/67adf46c87104e6e9b3dc1fbf75adf3a",
+	"SupportURL": "iwa.infographie@gmail.com",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Plugins": [
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		}
+	]
+}

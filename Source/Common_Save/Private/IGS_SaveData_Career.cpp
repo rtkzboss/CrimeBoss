@@ -1,0 +1,154 @@
+#include "IGS_SaveData_Career.h"
+#include "GameplayTagContainer.h"
+#include "EMETA_ArmyTier.h"
+#include "EMETA_CareerCompletionReason.h"
+#include "EMETA_EventTime.h"
+#include "EMETA_Gang.h"
+#include "EMETA_Heat.h"
+#include "EMETA_RespectLvl.h"
+#include "EMETA_TradeVendor.h"
+#include "EMETA_UsingCrewInGraph.h"
+
+FIGS_SaveData_Career::FIGS_SaveData_Career() {
+    (*this).SaveSlot = TEXT("");
+    (*this).bIsFilled = false;
+    (*this).CampaignVersion = TEXT("");
+    (*this).BlackmarketManagerData.GenericRecruitsPool.Empty();
+    (*this).BlackmarketManagerData.GenericCheapRecruitsPool.Empty();
+    (*this).BlackmarketManagerData.UniqueRecruitsPool.Empty();
+    (*this).BlackmarketManagerData.UnseenUnlockedCharacterTagIDs.Empty();
+    (*this).BlackmarketManagerData.UnseenUnlockedWeaponTagIDs.Empty();
+    (*this).BlackmarketManagerData.UnseenUnlockedEquipmentTagIDs.Empty();
+    (*this).BlackmarketManagerData.GenericPrevID = 0;
+    (*this).BlackmarketManagerData.DayWhenHeistersMarketBecameAvailable = 0;
+    (*this).BlackmarketManagerData.DayWhenWeaponsMarketBecameAvailable = 0;
+    (*this).BlackmarketManagerData.PlotlineAssetsPool.Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).BlackmarketManagerData.TemporaryLockedPlotlineAssetsTags, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).BlackmarketManagerData.TemporaryLockedPlotlineAssetsTags, 0)).Empty();
+    (*this).BlackmarketManagerData.ActiveLootEvent.Vendor = EMETA_TradeVendor::UNDEFINED;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).BlackmarketManagerData.ActiveLootEvent.LootTag, 0)) = NAME_None;
+    (*this).BlackmarketManagerData.ActiveLootEvent.MinLootValue = 0;
+    (*this).BlackmarketManagerData.ActiveLootEvent.MissionID = nullptr;
+    (*this).BlackmarketManagerData.BaseDayForLootEvents = 0;
+    (*this).BlackmarketManagerData.WeaponEvent.Cooldown = 0;
+    (*this).BlackmarketManagerData.WeaponEvent.MinAvailableCash = 0;
+    (*this).BlackmarketManagerData.WeaponEvent.NumberOfWeaponsPerEvent = 1;
+    (*this).BlackmarketManagerData.WeaponEvent.ExpirationTime = 0;
+    (*this).BlackmarketManagerData.WeaponEvent.WeaponClassesChances.Empty();
+    (*this).BlackmarketManagerData.WeaponEvent.WeaponQualitiesChances.Empty();
+    (*this).BlackmarketManagerData.BaseDayForWeaponEvent = 0;
+    (*this).BlackmarketManagerData.EquipmentEvent.Cooldown = 0;
+    (*this).BlackmarketManagerData.EquipmentEvent.MinAvailableCash = 0;
+    (*this).BlackmarketManagerData.EquipmentEvent.NumberOfEquipmentPerEvent = 1;
+    (*this).BlackmarketManagerData.EquipmentEvent.ExpirationTime = 0;
+    (*this).BlackmarketManagerData.EquipmentEvent.EquipmentQualitiesChances.Empty();
+    (*this).BlackmarketManagerData.EquipmentEventPool.Empty();
+    (*this).BlackmarketManagerData.BaseDayForEquipmentEvent = 0;
+    (*this).BlackmarketManagerData.WeaponsPoolRefreshesCounter = 0;
+    (*this).BlackmarketManagerData.WeaponsPoolRefreshesPrice = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.SoldierCostMultiplierForAttack = 0.000000000e+00f;
+    (*this).BlackmarketManagerData.HireArmyEventData.SoldierCostMultiplierForAttackNeutral = 0.000000000e+00f;
+    (*this).BlackmarketManagerData.HireArmyEventData.SoldierCostMultiplierForDefense = 0.000000000e+00f;
+    (*this).BlackmarketManagerData.HireArmyEventData.SoldierUpkeepCost = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.SoldierHireCost = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.SoldierHireCostMultiplierInPercent = 0.000000000e+00f;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireArmyEventConfig.SoldierHireAmountPerHireEvent.Min = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireArmyEventConfig.SoldierHireAmountPerHireEvent.Max = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireArmyEventConfig.ShouldBeClampedByArmyCapacity = false;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireArmyEventConfig.ClampedMinimumArmy = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireEventDelay.Min = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireEventDelay.Max = 0;
+    (*this).BlackmarketManagerData.HireArmyEventData.HireEventDurationTime = 0;
+    (*this).BlackmarketManagerData.AmountOfGeneratedSoldiers = 0;
+    (*this).BlackmarketManagerData.BaseDayForHireArmyEvent = 0;
+    (*this).BlackmarketManagerData.AmountOfBoughtCheapHeisters = 0;
+    (*this).BlackmarketManagerData.HeistersPoolRefreshesCounter = 0;
+    (*this).BlackmarketManagerData.HeistersPoolRefreshPrice = 0;
+    (*this).CrewManagerData.GenericCrewHeisters.Empty();
+    (*this).CrewManagerData.UniqueCrewHeisters.Empty();
+    (*this).CrewManagerData.GenericHeistersOnJob.Empty();
+    (*this).CrewManagerData.UniqueHeistersOnJob.Empty();
+    (*this).CrewManagerData.RemovedHeisters.Empty();
+    (*this).CrewManagerData.RemainAmountOfCompletedMissionsBeforeUnlock = 0;
+    (*this).DailyManagerData.CurrentDay = 0;
+    (*this).StashManagerData.Equipment.Empty();
+    (*this).StashManagerData.PlayerRespect = EMETA_RespectLvl::Low;
+    (*this).StashManagerData.Army = 0;
+    (*this).StashManagerData.AvailableArmy = 0;
+    (*this).StashManagerData.ArmyTier = EMETA_ArmyTier::Low;
+    (*this).StashManagerData.CurrentLootValueWasSoldToPawnShop = 0;
+    (*this).StashManagerData.LastDayWhenWarehouseAttackStarted = -1;
+    (*this).StashManagerData.ChanceWarehouseAttack = 0;
+    (*this).StashManagerData.WarehouseAttackMissionID = nullptr;
+    (*this).StashManagerData.MoneyForWarehouseAttack = 0;
+    (*this).EventManagerData.DefaultGraphValues.Empty();
+    (*this).EventManagerData.EventTime = EMETA_EventTime::DayStart;
+    (*this).EventManagerData.bPoolFrozen = false;
+    (*this).EventManagerData.bShouldCallEndDay = false;
+    (*this).EventManagerData.bEndDayWasCalled = false;
+    (*this).GoalManagerData.StoryGoalsSave.Empty();
+    (*this).GoalManagerData.MoneyMakingGoalsSave.Empty();
+    (*this).GoalManagerData.GoalsPools.Empty();
+    (*this).GoalManagerData.BacklogGoalsPools.Empty();
+    (*this).GoalManagerData.FinishedGoals.Empty();
+    (*this).GoalManagerData.GoalsRepeatCounters.Empty();
+    (*this).JobManagerData.CurrentJob = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).JobManagerData.CurrentJobTileID, 0)) = NAME_None;
+    (*this).JobManagerData.JobsOnMap.MoneyMakingMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.AmbushMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.StoryMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.TradeMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.TradeDealSellMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.CinematicMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.TurfWarMissions.Empty();
+    (*this).JobManagerData.JobsOnMap.OtherMissions.Empty();
+    (*this).JobManagerData.JobsCompletedAmount = 0;
+    (*this).JobManagerData.bWasPlayerTransferredToFPSSide = false;
+    (*this).JobManagerData.bUsingTemporaryCrewAfterFPS = EMETA_UsingCrewInGraph::TemporaryCrew;
+    (*this).RandomEventManagerData.CooldownCounterForFuneralOfGenericHeisters = 0;
+    (*this).CityMapManagerData.LastDayOfTilesIncomeRefresh = 0;
+    (*this).WarManagerData.AttemptsToCaptureTileCounter = 0;
+    (*this).WarManagerData.TodaysLockedTilesForAI.Empty();
+    (*this).WarManagerData.DaysWithMoreAttack = 0;
+    (*this).WarManagerData.AILastTileConfigIndex = 0;
+    (*this).WarManagerData.bIsAllTileCaptured = false;
+    (*this).WarManagerData.bIsAllGangsEradicated = false;
+    (*this).FinanceManagerData.Balance = 0;
+    (*this).FinanceManagerData.HiredCrewSpending = 0;
+    (*this).FinanceManagerData.MarketSpending = 0;
+    (*this).FinanceManagerData.DayWhenPlayerReachedBankruptState = 0;
+    (*this).FinanceManagerData.CurrentLoan.ActivatedDay = 0;
+    (*this).FinanceManagerData.CurrentLoan.BorrowedCash = 0.000000000e+00f;
+    (*this).FinanceManagerData.CurrentLoan.DailyRepaymentInPercentsFromBorrowedCash = 0;
+    (*this).FinanceManagerData.CurrentLoan.DaysToRepay = 0;
+    (*this).FinanceManagerData.CurrentLoan.CooldownToNextOffer = 0;
+    (*this).FinanceManagerData.CooldownToNextOffer = 0;
+    (*this).FinanceManagerData.MissionIncome = 0;
+    (*this).FinanceManagerData.TradeIncome = 0;
+    (*this).FinanceManagerData.OtherIncome = 0;
+    (*this).FinanceManagerData.OtherSpending = 0;
+    (*this).MoneyMakingOpportunitiesData.bStarted = false;
+    (*this).MoneyMakingOpportunitiesData.StartDay = 0;
+    (*this).MoneyMakingOpportunitiesData.FinishDay = 0;
+    (*this).HeatManagerData.DaysLeftForTheHeatRevision = 0;
+    (*this).HeatManagerData.HeatState = EMETA_Heat::VeryLow;
+    (*this).HeatManagerData.HeatValue = 0.000000000e+00f;
+    (*this).HeatManagerData.PoliceInvestigationValue = 0.000000000e+00f;
+    (*this).HeatManagerData.SheriffTargetGang = EMETA_Gang::None;
+    (*this).HeatManagerData.DetectivesPool.Empty();
+    (*this).HeatManagerData.DeadDetectives.Empty();
+    (*this).BossLevelManagerData.AmountOfPrimaryWeaponsIssued = 0;
+    (*this).BossLevelManagerData.AmountOfAdditionalEquipmentIssued = 0;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).PlanningBoardManagerData.ActivePlanningBoardTag, 0)) = NAME_None;
+    (*this).CareerEnd.bIsPending = false;
+    (*this).CareerEnd.bChallengeRewardGenerated = false;
+    (*this).CareerEnd.bRewardsClaimed = false;
+    (*this).CareerEnd.Reason = EMETA_CareerCompletionReason::NoTurfTiles;
+    (*this).CareerEnd.BossKilledBy = EMETA_Gang::None;
+    (*this).SaveDataVersion.JsonVersion = 0;
+    (*this).SaveDataVersion.RevisionCreated = TEXT("");
+    (*this).SaveDataVersion.RevisionSaved = TEXT("");
+    (*this).SaveDataVersion.SnapshotRevision = TEXT("");
+    (*this).StartingEntitlementTags.Empty();
+}
+

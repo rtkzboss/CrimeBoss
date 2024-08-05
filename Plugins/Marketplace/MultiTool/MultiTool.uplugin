@@ -1,0 +1,28 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "MultiTool",
+	"Description": "A multi batch tool to quickly execute batch operations on selections, materials, assets and more.",
+	"Category": "PS Studios",
+	"CreatedBy": "PS Studios",
+	"CreatedByURL": "https://psstudios.nl/",
+	"DocsURL": "https://psstudios.nl/multitool/",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/product/252d5e4820694c15814112ca738aba1d",
+	"SupportURL": "https://discord.gg/zuFFh7292E",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true,
+	"Plugins": [
+		{
+			"Name": "PythonScriptPlugin",
+			"Enabled": true
+		},
+		{
+			"Name": "EditorScriptingUtilities",
+			"Enabled": true
+		}
+	]
+}

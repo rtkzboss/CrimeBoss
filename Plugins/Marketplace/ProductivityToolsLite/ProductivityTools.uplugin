@@ -1,0 +1,18 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1",
+	"FriendlyName": "ProductivityTools Lite",
+	"Description": "Tools to help you to organize your project",
+	"Category": "Other",
+	"CreatedBy": "IsaraTech.",
+	"CreatedByURL": "http://www.isaratech.com",
+	"DocsURL": "https://docs.isaratech.com/ue4-plugins/productivity-tools",
+	"MarketplaceURL": "com.epicgames.launcher://ue/marketplace/content/8beef99c4399462189d66689e2b48475",
+	"SupportURL": "",
+	"EngineVersion": "4.27.0",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": true
+}

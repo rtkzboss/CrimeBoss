@@ -1,0 +1,105 @@
+#include "IGS_SaveData_Quickplay.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
+#include "EIGS_ChainType.h"
+#include "EMETA_ItemQuality.h"
+
+FIGS_SaveData_Quickplay::FIGS_SaveData_Quickplay() {
+    (*this).SaveSlot = TEXT("");
+    (*this).bIsFilled = false;
+    (*this).BlackmarketManagerData.bInited = false;
+    (*this).BlackmarketManagerData.Heisters.Empty();
+    (*this).BlackmarketManagerData.Weapons.Empty();
+    (*this).BlackmarketManagerData.WeaponSkins.Empty();
+    (*this).BlackmarketManagerData.Equipment.Empty();
+    (*this).BlackmarketManagerData.Perks.Empty();
+    (*this).BlackmarketManagerData.BossCharacterSkins.Empty();
+    (*this).BlackmarketManagerData.UnseenUnlockedCharacterTagIDs.Empty();
+    (*this).BlackmarketManagerData.UnseenUnlockedWeaponTagIDs.Empty();
+    (*this).BlackmarketManagerData.UnseenUnlockedEquipmentTagIDs.Empty();
+    (*this).CrewManagerData.bInited = false;
+    (*this).CrewManagerData.Heisters.Empty();
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeapon = nullptr;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.Amount = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.AdditionalPercentageOfWeaponPrice = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.SuccessfulMissions = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.DaysInShop = 0;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.WeaponSkin, 0)) = NAME_None;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.TargetWeaponsForUpgrade.Empty();
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.TargetQualityToUpdateWeapon = EMETA_ItemQuality::None;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.itemTag, 0)) = NAME_None;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.Price = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryWeaponSaveData.IsUnseenInShop = false;
+    (*this).CrewManagerData.BossCharacter.Loadout.PrimaryPersonalWeapons.Empty();
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeapon = nullptr;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.Amount = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.AdditionalPercentageOfWeaponPrice = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.SuccessfulMissions = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.DaysInShop = 0;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.WeaponSkin, 0)) = NAME_None;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.TargetWeaponsForUpgrade.Empty();
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.TargetQualityToUpdateWeapon = EMETA_ItemQuality::None;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.itemTag, 0)) = NAME_None;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.Price = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryWeaponSaveData.IsUnseenInShop = false;
+    (*this).CrewManagerData.BossCharacter.Loadout.SecondaryPersonalWeapons.Empty();
+    (*this).CrewManagerData.BossCharacter.Loadout.Equipment.Empty();
+    (*this).CrewManagerData.BossCharacter.Loadout.SelectedEquipment.EquipmentID = nullptr;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).CrewManagerData.BossCharacter.Loadout.SelectedEquipment.itemTag, 0)) = NAME_None;
+    (*this).CrewManagerData.BossCharacter.Loadout.SelectedEquipment.Price = 0;
+    (*this).CrewManagerData.BossCharacter.Loadout.SelectedEquipment.IsUnseenInShop = false;
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).CrewManagerData.BossCharacter.Loadout.CharacterSkin, 0)) = NAME_None;
+    (*this).CrewManagerData.BossCharacter.Perks.Empty();
+    (*this).StashManagerData.bInited = false;
+    (*this).StashManagerData.PrimaryWeapons.Empty();
+    (*this).StashManagerData.SecondaryWeapons.Empty();
+    (*this).StashManagerData.WeaponSkins.Empty();
+    (*this).StashManagerData.Equipment.Empty();
+    (*this).StashManagerData.Perks.Empty();
+    (*this).StashManagerData.BossCharacterSkins.Empty();
+    (*this).CityMapManagerData.LastDayOfTilesIncomeRefresh = 0;
+    (*this).FinanceManagerData.bInited = false;
+    (*this).FinanceManagerData.Balance = 0;
+    (*this).ContractManagerData.AvailableContracts.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.MoneyMakingMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.AmbushMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.StoryMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.TradeMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.TradeDealSellMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.CinematicMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.TurfWarMissions.Empty();
+    (*this).ContractManagerData.ActiveContractMissions.OtherMissions.Empty();
+    (*this).ChainContractManagerData.ActiveChainsData.Empty();
+    (*this).ChainContractManagerData.ActiveChainType = EIGS_ChainType::UrbanLegend;
+    (*this).ChainContractManagerData.LastUsedGenericID = 0;
+    (*this).ChainContractManagerData.WasPlayingChainMission = false;
+    (*this).JobManagerData.CurrentJob = nullptr;
+    (*this).JobManagerData.Opportunities.MoneyMakingMissions.Empty();
+    (*this).JobManagerData.Opportunities.AmbushMissions.Empty();
+    (*this).JobManagerData.Opportunities.StoryMissions.Empty();
+    (*this).JobManagerData.Opportunities.TradeMissions.Empty();
+    (*this).JobManagerData.Opportunities.TradeDealSellMissions.Empty();
+    (*this).JobManagerData.Opportunities.CinematicMissions.Empty();
+    (*this).JobManagerData.Opportunities.TurfWarMissions.Empty();
+    (*this).JobManagerData.Opportunities.OtherMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.MoneyMakingMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.AmbushMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.StoryMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.TradeMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.TradeDealSellMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.CinematicMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.TurfWarMissions.Empty();
+    (*this).JobManagerData.LastPlayedMission.OtherMissions.Empty();
+    (*this).JobManagerData.FinishedMissionsIDs.Empty();
+    (*this).JobManagerData.bLastPlayedWasChain = false;
+    (*this).PlayerManagerData.RespectPoints = 0;
+    (*this).PlayerManagerData.TotalScorePoints = 0;
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).EntitlementItemsData.IDs, 0)).Empty();
+    (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).EntitlementItemsData.IDs, 0)).Empty();
+    (*this).SaveDataVersion.JsonVersion = 0;
+    (*this).SaveDataVersion.RevisionCreated = TEXT("");
+    (*this).SaveDataVersion.RevisionSaved = TEXT("");
+    (*this).SaveDataVersion.SnapshotRevision = TEXT("");
+    (*this).WantsToGoOffline = false;
+}
+

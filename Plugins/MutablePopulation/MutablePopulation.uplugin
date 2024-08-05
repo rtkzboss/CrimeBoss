@@ -1,0 +1,30 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.1",
+	"FriendlyName": "Mutable Population",
+	"Description": "Mutable Populations adds the tools and runtime to define and generate randomized instances of Mutable Customizable Objects.",
+	"Category": "CustomizableObjectPopulation",
+	"CreatedBy": "Anticto Estudi Binari, SL",
+	"CreatedByURL": "https://anticto.com",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "CustomizableObjectPopulation",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "Mutable",
+			"Enabled": true
+		}
+	]
+}

@@ -1,0 +1,78 @@
+#include "IGS_StealthSettings.h"
+
+UIGS_StealthSettings::UIGS_StealthSettings() {
+    (*this).DefaultDetectionUpTime = 2.000000000e+00f;
+    (*this).DetectionUpMuliplierCiv = 6.000000238e-01f;
+    (*this).VisionConeMaxDistanceCiv = 1.200000000e+03f;
+    (*this).VisionHalfAngleDegCiv = 4.500000000e+01f;
+    (*this).DetectionUpMuliplierEmployee = 6.000000238e-01f;
+    (*this).VisionConeMaxDistanceEmployee = 1.200000000e+03f;
+    (*this).VisionHalfAngleDegEmployee = 4.500000000e+01f;
+    (*this).DetectionUpFirstStageMultiplierGuard = 1.000000000e+00f;
+    (*this).DetectionUpSecondStageMultiplierGuard = 1.000000000e+00f;
+    (*this).VisionConeMaxDistanceGuard = 1.200000000e+03f;
+    (*this).VisionHalfAngleDegGuard = 4.500000000e+01f;
+    (*this).OffenceReactionDelayPlayerGuard.Min = 8.999999762e-01f;
+    (*this).OffenceReactionDelayPlayerGuard.Max = 1.200000048e+00f;
+    (*this).OffenceReactionDelayActorGuard.Min = 6.999999881e-01f;
+    (*this).OffenceReactionDelayActorGuard.Max = 1.100000024e+00f;
+    (*this).DetectionUpFirstStageMultiplierCop = 1.000000000e+00f;
+    (*this).DetectionUpSecondStageMultiplierCop = 1.000000000e+00f;
+    (*this).VisionConeMaxDistanceCop = 1.200000000e+03f;
+    (*this).VisionHalfAngleDegCop = 4.500000000e+01f;
+    (*this).OffenceReactionDelayPlayerCop.Min = 8.999999762e-01f;
+    (*this).OffenceReactionDelayPlayerCop.Max = 1.200000048e+00f;
+    (*this).OffenceReactionDelayActorCop.Min = 6.999999881e-01f;
+    (*this).OffenceReactionDelayActorCop.Max = 1.100000024e+00f;
+    (*this).DetectionUpFirstStageMultiplierGangster = 1.000000000e+00f;
+    (*this).DetectionUpSecondStageMultiplierGangster = 1.000000000e+00f;
+    (*this).VisionConeMaxDistanceGangster = 1.200000000e+03f;
+    (*this).VisionHalfAngleDegGangster = 4.500000000e+01f;
+    (*this).OffenceReactionDelayPlayerGangster.Min = 6.999999881e-01f;
+    (*this).OffenceReactionDelayPlayerGangster.Max = 8.999999762e-01f;
+    (*this).OffenceReactionDelayActorGangster.Min = 3.000000119e-01f;
+    (*this).OffenceReactionDelayActorGangster.Max = 6.999999881e-01f;
+    (*this).DetectionDownTime = 5.000000000e+00f;
+    (*this).CrouchDetectionMultiplier = 6.000000238e-01f;
+    (*this).SprintDetectionMultiplier = 2.000000000e+00f;
+    auto& gen0 = (*this).DistanceDetectionSpeedCurve.EditorCurveData.Keys;
+    gen0.Empty();
+    gen0.AddDefaulted(3);
+    (*this).DistanceDetectionSpeedCurve.EditorCurveData.DefaultValue = 3.402823466e+38f;
+    (*this).DistanceDetectionSpeedCurve.EditorCurveData.PreInfinityExtrap = RCCE_Constant;
+    (*this).DistanceDetectionSpeedCurve.EditorCurveData.PostInfinityExtrap = RCCE_Constant;
+    auto& gen1 = (*this).AngleDetectionSpeedCurve.EditorCurveData.Keys;
+    gen1.Empty();
+    gen1.AddDefaulted(3);
+    (*this).AngleDetectionSpeedCurve.EditorCurveData.DefaultValue = 3.402823466e+38f;
+    (*this).AngleDetectionSpeedCurve.EditorCurveData.PreInfinityExtrap = RCCE_Constant;
+    (*this).AngleDetectionSpeedCurve.EditorCurveData.PostInfinityExtrap = RCCE_Constant;
+    (*this).BotDetectionMuliplier = 2.000000030e-01f;
+    (*this).CombatStateDetectionMuliplier = 4.000000000e+00f;
+    (*this).FootstepDetectionMuliplier = 8.999999762e-01f;
+    (*this).CameraDetectionUpTime = 3.000000000e+00f;
+    (*this).CameraDetectionDownTime = 2.000000000e+00f;
+    (*this).CameraDetectionPlayerIdleCoef = 6.600000262e-01f;
+    (*this).DetectionIncreaseThreshold = 9.999999776e-03f;
+    (*this).DetectedCooldown = 3.000000000e+00f;
+    (*this).DetectionMidPoint = 5.000000000e-01f;
+    (*this).UseFootstepDetection = true;
+    (*this).HQSuspcionDelay.Min = 5.000000000e+00f;
+    (*this).HQSuspcionDelay.Max = 6.000000000e+00f;
+    (*this).HQSuspcionStartValue.Min = 1.000000000e+02f;
+    (*this).HQSuspcionStartValue.Max = 1.000000000e+02f;
+    (*this).HQSuspcionAdditionalOffenceIncrease.Min = 1.500000000e+01f;
+    (*this).HQSuspcionAdditionalOffenceIncrease.Max = 2.500000000e+01f;
+    (*this).StrikeAddedCooldown = 5.000000000e+00f;
+    (*this).CivEscapedDelay = 1.000000000e+01f;
+    (*this).CivEscapedStrikes = 1;
+    (*this).ShoutCooldown.Value = 1.250000000e+00f;
+    (*this).StealthRangedDamageMult.Value = 2.000000000e+00f;
+    (*this).StealthTakedownRangeMult.Value = 1.500000000e+00f;
+    (*this).StealthTakedownDamageMult.Value = 1.000000000e+01f;
+    (*this).MaxFollowerCount = 3;
+    (*this).TimeToForgetTarget = 5.000000000e+00f;
+    (*this).VisionCapsuleRadius = 4.000000000e+02f;
+}
+
+
