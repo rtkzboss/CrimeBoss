@@ -35,6 +35,10 @@ bool UMETA_UtilitiesLibrary::IsBoss(EIGS_CharacterID ID) {
     return false;
 }
 
+FGameplayTag UMETA_UtilitiesLibrary::GetRandomTag(const FGameplayTagContainer& inContainer) {
+    return FGameplayTag{};
+}
+
 FGameplayTag UMETA_UtilitiesLibrary::GetRandomizedLootItemAvailableOnMeta() {
     return FGameplayTag{};
 }

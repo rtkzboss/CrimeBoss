@@ -20,7 +20,7 @@ void UIGS_ProgressionManager::ResetProgression() {
 void UIGS_ProgressionManager::ReInitProgressionManager() {
 }
 
-FIGS_ProgressionResult UIGS_ProgressionManager::ProcessMissionResult(FIGS_MissionResult& inMissionResult) {
+FIGS_ProgressionResult UIGS_ProgressionManager::ProcessMissionResult(FIGS_MissionResult& inMissionResult, float inAdditionalPoints) {
     return FIGS_ProgressionResult{};
 }
 

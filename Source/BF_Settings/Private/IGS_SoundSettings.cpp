@@ -1,8 +1,8 @@
 #include "IGS_SoundSettings.h"
 
 UIGS_SoundSettings::UIGS_SoundSettings() {
+    (*this).MasterVolumeValue = 1.000000000e+02f;
     (*this).SFXVolumeValue = 8.000000000e+01f;
-    (*this).MusicVolumeValue = 8.000000000e+01f;
     (*this).DialogueVolumeValue = 8.000000000e+01f;
     (*this).ControllerSpeakerVolumeValue = 8.000000000e+01f;
     (*this).bAudioMixSpeakers = true;

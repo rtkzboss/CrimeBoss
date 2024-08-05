@@ -24,6 +24,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FString Description;
     
-    SIMPLEUGC_API FUGCPackage();
+    CRIMEBOSSUGC_API FUGCPackage();
 };
 

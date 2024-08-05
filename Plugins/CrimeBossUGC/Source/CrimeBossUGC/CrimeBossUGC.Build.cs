@@ -1,7 +1,7 @@
 using UnrealBuildTool;
 
-public class SimpleUGC : ModuleRules {
-    public SimpleUGC(ReadOnlyTargetRules Target) : base(Target) {
+public class CrimeBossUGC : ModuleRules {
+    public CrimeBossUGC(ReadOnlyTargetRules Target) : base(Target) {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;

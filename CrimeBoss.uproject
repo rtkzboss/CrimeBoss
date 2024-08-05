@@ -688,7 +688,8 @@
 				"GameplayTags",
 				"RenderCore",
 				"BF_Analytics",
-				"IGS_UIFramework"
+				"IGS_UIFramework",
+				"CrimeBossUGC"
 			]
 		},
 		{
@@ -1038,7 +1039,7 @@
 			"Enabled": true
 		},
 		{
-			"Name": "SimpleUGC",
+			"Name": "CrimeBossUGC",
 			"Enabled": true
 		},
 		{

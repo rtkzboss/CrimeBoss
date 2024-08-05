@@ -7,7 +7,7 @@ class UObject;
 class UUGCRegistry;
 
 UCLASS(Blueprintable)
-class SIMPLEUGC_API UUGCBlueprintLibrary : public UBlueprintFunctionLibrary {
+class CRIMEBOSSUGC_API UUGCBlueprintLibrary : public UBlueprintFunctionLibrary {
     GENERATED_BODY()
 public:
     UUGCBlueprintLibrary();

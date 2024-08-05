@@ -120,6 +120,10 @@ int32 UMETA_Weapon::GetDaysInShop() const {
     return 0;
 }
 
+FGameplayTagContainer UMETA_Weapon::GetCompatibleWeaponSkins(UObject* inWCO, const TArray<FGameplayTag>& inUnlockedWeaponSkinTagIDs) {
+    return FGameplayTagContainer{};
+}
+
 UMETA_Character* UMETA_Weapon::GetCharacter() const {
     return NULL;
 }

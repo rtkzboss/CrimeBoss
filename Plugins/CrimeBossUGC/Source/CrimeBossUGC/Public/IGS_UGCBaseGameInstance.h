@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
-#include "UGCBaseGameInstance.generated.h"
+#include "IGS_UGCBaseGameInstance.generated.h"
 
 class UIGS_UGCModBase;
 class UUGCRegistry;
 
 UCLASS(Blueprintable, NonTransient)
-class SIMPLEUGC_API UUGCBaseGameInstance : public UGameInstance {
+class CRIMEBOSSUGC_API UIGS_UGCBaseGameInstance : public UGameInstance {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -16,7 +16,13 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UIGS_UGCModBase*> UGCModObjects;
     
-    UUGCBaseGameInstance();
+    UIGS_UGCBaseGameInstance();
 
+    UFUNCTION(BlueprintCallable)
+    void OnQuickPlayStashInitialized();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnMetaPlayStashInitialized();
+    
 };
 

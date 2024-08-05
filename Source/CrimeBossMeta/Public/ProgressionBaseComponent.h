@@ -50,6 +50,9 @@ public:
     bool TryGetPendingUnlockedRewards(TArray<FIGS_UnlockItemInfo>& outUnlockedItems);
     
     UFUNCTION(BlueprintCallable)
+    void SetPendingPoints(float inPoints);
+    
+    UFUNCTION(BlueprintCallable)
     void SaveSelectedUnlockedRewardsHistory(const FGameplayTag& selectedReward);
     
     UFUNCTION(BlueprintCallable)
@@ -82,6 +85,9 @@ public:
     TArray<FGameplayTag> GetPendingUnlockRewards() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetPendingPoints() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPendingLevelsCount() const;
     
 protected:
@@ -107,6 +113,10 @@ protected:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BP_ClaimDailyMultiplayerBonus();
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void AddPendingPoints(float inPoints);
     
 };
 

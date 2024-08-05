@@ -16,8 +16,8 @@ AIGS_GrenadeLauncherProjectileBase::AIGS_GrenadeLauncherProjectileBase(const FOb
     (*this).LightFlashTime = 2.000000030e-01f;
     (*this).ImpactDistance = 1.500000000e+02f;
     (*this).bMakeNoiseAndEvent = true;
-    (*this).AkComponent->SetupAttachment((*this).ThrowableMesh);
     (*this).ExplosionLight->SetupAttachment((*this).ThrowableMesh);
+    (*this).AkComponent->SetupAttachment((*this).ThrowableMesh);
 }
 
 void AIGS_GrenadeLauncherProjectileBase::PlayEffect_Implementation() {

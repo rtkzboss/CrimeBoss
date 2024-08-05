@@ -2,10 +2,10 @@
 	"FileVersion": 3,
 	"Version": 1,
 	"VersionName": "1.0",
-	"FriendlyName": "SimpleUGC",
-	"Description": "",
+	"FriendlyName": "CrimeBossUGC",
+	"Description": "Modding plugin for CrimeBoss: Rockay City",
 	"Category": "Other",
-	"CreatedBy": "",
+	"CreatedBy": "IGS",
 	"CreatedByURL": "",
 	"DocsURL": "",
 	"MarketplaceURL": "",
@@ -16,7 +16,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "SimpleUGC",
+			"Name": "CrimeBossUGC",
 			"Type": "Runtime",
 			"LoadingPhase": "PreLoadingScreen"
 		}

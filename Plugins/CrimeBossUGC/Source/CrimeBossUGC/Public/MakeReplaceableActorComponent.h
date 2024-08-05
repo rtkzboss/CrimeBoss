@@ -2,18 +2,18 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "Templates/SubclassOf.h"
-#include "ReplacementActorComponent.generated.h"
+#include "MakeReplaceableActorComponent.generated.h"
 
 class AActor;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
-class SIMPLEUGC_API UReplacementActorComponent : public UActorComponent {
+class CRIMEBOSSUGC_API UMakeReplaceableActorComponent : public UActorComponent {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TSubclassOf<AActor>> ActorClassesToReplace;
+    TSubclassOf<AActor> CompatibleReplacement;
     
-    UReplacementActorComponent(const FObjectInitializer& ObjectInitializer);
+    UMakeReplaceableActorComponent(const FObjectInitializer& ObjectInitializer);
 
 };
 

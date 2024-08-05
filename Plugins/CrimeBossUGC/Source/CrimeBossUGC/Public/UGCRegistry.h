@@ -8,7 +8,7 @@
 class AActor;
 
 UCLASS(Blueprintable)
-class SIMPLEUGC_API UUGCRegistry : public UObject {
+class CRIMEBOSSUGC_API UUGCRegistry : public UObject {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

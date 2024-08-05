@@ -3,6 +3,9 @@
 UIGS_UGCModBase::UIGS_UGCModBase() {
 }
 
+
+
+
 UWorld* UIGS_UGCModBase::GetGameWorld() const {
     return NULL;
 }

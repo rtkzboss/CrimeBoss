@@ -63,7 +63,7 @@ public:
     void ReInitProgressionManager();
     
     UFUNCTION(BlueprintCallable)
-    FIGS_ProgressionResult ProcessMissionResult(UPARAM(Ref) FIGS_MissionResult& inMissionResult);
+    FIGS_ProgressionResult ProcessMissionResult(UPARAM(Ref) FIGS_MissionResult& inMissionResult, float inAdditionalPoints);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasMaxLevel() const;

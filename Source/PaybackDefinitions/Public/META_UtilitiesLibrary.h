@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_CharacterID.h"
 #include "EIGS_InventorySlot.h"
 #include "EIGS_WeaponSubtype.h"
@@ -46,6 +47,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsBoss(EIGS_CharacterID ID);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FGameplayTag GetRandomTag(const FGameplayTagContainer& inContainer);
     
     UFUNCTION(BlueprintCallable)
     static FGameplayTag GetRandomizedLootItemAvailableOnMeta();

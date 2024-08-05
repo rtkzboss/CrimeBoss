@@ -55,6 +55,6 @@ FFTIAnimationFrameData::FFTIAnimationFrameData() {
     (*this).HeadRot.Y = 0.000000000e+00f;
     (*this).HeadRot.Z = 0.000000000e+00f;
     (*this).HeadRot.W = 0.000000000e+00f;
-    (*TBaseStructure<FLiveLinkWorldTime>::Get()->FindPropertyByName("Time")->ContainerPtrToValuePtr<double>(&(*this).WorldTime, 0)) = 1.77799867326527983e+07;
+    (*TBaseStructure<FLiveLinkWorldTime>::Get()->FindPropertyByName("Time")->ContainerPtrToValuePtr<double>(&(*this).WorldTime, 0)) = 1.68449749061013013e+07;
 }
 

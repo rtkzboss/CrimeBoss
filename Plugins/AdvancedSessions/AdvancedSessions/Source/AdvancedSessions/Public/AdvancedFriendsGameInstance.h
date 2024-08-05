@@ -1,13 +1,13 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "IGS_UGCBaseGameInstance.h"
 #include "FindSessionsCallbackProxy.h"
-#include "UGCBaseGameInstance.h"
 #include "BPUniqueNetId.h"
 #include "EBPLoginStatus.h"
 #include "AdvancedFriendsGameInstance.generated.h"
 
 UCLASS(Blueprintable, NonTransient)
-class ADVANCEDSESSIONS_API UAdvancedFriendsGameInstance : public UUGCBaseGameInstance {
+class ADVANCEDSESSIONS_API UAdvancedFriendsGameInstance : public UIGS_UGCBaseGameInstance {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
