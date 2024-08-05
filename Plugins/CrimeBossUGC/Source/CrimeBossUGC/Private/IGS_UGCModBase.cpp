@@ -3,6 +3,10 @@
 UIGS_UGCModBase::UIGS_UGCModBase() {
 }
 
+UWorld* UIGS_UGCModBase::GetWorld() const
+{
+    return nullptr;
+}
 
 
 

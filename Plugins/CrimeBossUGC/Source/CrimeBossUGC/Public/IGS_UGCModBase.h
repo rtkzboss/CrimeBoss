@@ -11,6 +11,7 @@ class CRIMEBOSSUGC_API UIGS_UGCModBase : public UObject {
     GENERATED_BODY()
 public:
     UIGS_UGCModBase();
+    virtual class UWorld* GetWorld() const;
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StarterMapInitialized();
