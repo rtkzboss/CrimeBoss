@@ -10,6 +10,9 @@ class AActor;
 UCLASS(Blueprintable)
 class CRIMEBOSSUGC_API UUGCRegistry : public UObject {
     GENERATED_BODY()
+private:
+    class FAssetRegistryModule* CachedAssetRegistryModule;
+    class IAssetRegistry& GetAssetRegistry();
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FUGCPackage> UGCPackages;

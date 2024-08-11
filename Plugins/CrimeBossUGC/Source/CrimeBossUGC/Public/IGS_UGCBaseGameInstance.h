@@ -10,6 +10,9 @@ UCLASS(Blueprintable, NonTransient)
 class CRIMEBOSSUGC_API UIGS_UGCBaseGameInstance : public UGameInstance {
     GENERATED_BODY()
 public:
+    virtual void Init() override;
+    void OnStarterMapInitialized();
+public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UUGCRegistry* UGCRegistry;
     
@@ -23,6 +26,5 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnMetaPlayStashInitialized();
-    
 };
 

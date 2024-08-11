@@ -10,8 +10,11 @@ UCLASS(Abstract, Blueprintable)
 class CRIMEBOSSUGC_API UIGS_UGCModBase : public UObject {
     GENERATED_BODY()
 public:
-    UIGS_UGCModBase();
+    class UIGS_UGCBaseGameInstance* GameInstance;
     virtual class UWorld* GetWorld() const;
+
+public:
+    UIGS_UGCModBase();
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StarterMapInitialized();
@@ -27,6 +30,6 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void GameInstanceInitialized();
-    
+
 };
 

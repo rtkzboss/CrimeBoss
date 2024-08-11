@@ -5,7 +5,11 @@ public class CrimeBossUGC : ModuleRules {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         bLegacyPublicIncludePaths = false;
         ShadowVariableWarningLevel = WarningLevel.Warning;
-        
+
+        PrivateDependencyModuleNames.AddRange(new string[] {
+            "Projects",
+        });
+
         PublicDependencyModuleNames.AddRange(new string[] {
             "Core",
             "CoreUObject",

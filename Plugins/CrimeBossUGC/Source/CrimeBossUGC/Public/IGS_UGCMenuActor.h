@@ -9,5 +9,7 @@ class CRIMEBOSSUGC_API AIGS_UGCMenuActor : public AActor {
 public:
     AIGS_UGCMenuActor(const FObjectInitializer& ObjectInitializer);
 
+protected:
+    virtual void BeginPlay() override;
 };
 
