@@ -14,6 +14,11 @@ UCLASS(Blueprintable, EditInlineNew)
 class BF_GUI_API UIGS_ObjectiveWidget : public UIGS_HUDSubwidgetBase {
     GENERATED_BODY()
 public:
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIGS_ObjectiveEvent);
+    
+    UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_ObjectiveEvent OnObjectivesShown;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UVerticalBox* TaskBox;

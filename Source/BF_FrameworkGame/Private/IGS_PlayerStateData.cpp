@@ -43,5 +43,6 @@ FIGS_PlayerStateData::FIGS_PlayerStateData() {
     (*this).HeisterDataHolder.MissionCutPercentWithModifiers = 0;
     (*this).HeisterDataHolder.CachedPlayerName = FText::FromString(TEXT(""));
     (*this).StorePlatform = EIGS_StorePlatform::None;
+    (*this).HordeModeTokens = 0;
 }
 

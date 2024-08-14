@@ -28,6 +28,9 @@ public:
     TSoftObjectPtr<UDataTable> PerksDataTable;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UDataAsset> PerkStatsDataAsset;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UDataTable> ClassDataTable;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

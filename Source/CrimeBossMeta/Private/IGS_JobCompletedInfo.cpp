@@ -15,6 +15,7 @@ FIGS_JobCompletedInfo::FIGS_JobCompletedInfo() {
     (*this).MetaData.EnemiesRemaining = 0;
     (*this).MetaData.BackupHeistersCasualties = 0;
     (*this).MetaData.bAlarmTriggered = false;
+    (*this).MetaData.bCleanExecution = true;
     (*this).MetaData.WantedBadges = 0;
     (*this).MetaData.LootBagsCollected = 0;
     (*this).MetaData.GameplayTime = 0.000000000e+00f;

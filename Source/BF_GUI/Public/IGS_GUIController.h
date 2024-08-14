@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "GameplayTagContainer.h"
+#include "EIGS_WheelMenuType.h"
 #include "IGS_GUIVisibilityChangedDelegate.h"
 #include "IGS_TextChatInputStateChangedDelegate.h"
 #include "Templates/SubclassOf.h"
@@ -10,7 +10,6 @@
 class AIGS_PlayerControllerRoot;
 class UIGS_GameScreenHandler;
 class UIGS_SystemMenuScreen;
-class UIGS_WidgetDoorUnlockRadialMenu;
 class UIGS_WidgetRadialMenuBase;
 class UIGS_WidgetTextChatMenu;
 
@@ -29,6 +28,9 @@ protected:
     TSubclassOf<UIGS_SystemMenuScreen> WidgetSystemMenuClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EIGS_WheelMenuType, TSubclassOf<UIGS_WidgetRadialMenuBase>> WheelMenuClasses;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSubclassOf<UIGS_WidgetRadialMenuBase> WidgetUnlockRadialMenuClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -41,13 +43,7 @@ protected:
     TSubclassOf<UIGS_WidgetTextChatMenu> WidgetTextChatClass;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UIGS_WidgetDoorUnlockRadialMenu* WidgetUnlockMenu;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UIGS_WidgetRadialMenuBase* WidgetBotSelectionMenu;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
-    UIGS_WidgetRadialMenuBase* WidgetPingMenu;
+    UIGS_WidgetRadialMenuBase* ActiveWheelMenuScreen;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TWeakObjectPtr<AIGS_PlayerControllerRoot> OwningPlayerController;
@@ -74,15 +70,25 @@ public:
     UFUNCTION(BlueprintCallable)
     void ToggleGameMenu();
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    void SwitchToWheelMenuType(EIGS_WheelMenuType inType);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void SetupGUIVisible(bool inGUIVisible, bool inIgnoreLook, bool inIgnoreMove, bool inIgnoreInteraction, bool inShowMouse);
     
     UFUNCTION(BlueprintCallable)
     void SetShouldShowVirtualCursor(bool inShow);
     
+protected:
     UFUNCTION(BlueprintCallable)
-    bool OpenUnlockMethodMenu(FGameplayTagContainer inMethods);
+    bool OpenWheelMenuInternal(EIGS_WheelMenuType inType);
     
+    UFUNCTION(BlueprintCallable)
+    bool OpenWheelMenu();
+    
+public:
     UFUNCTION(BlueprintCallable)
     void OpenTextChat();
     
@@ -90,14 +96,7 @@ public:
     void OpenSystemMenu();
     
     UFUNCTION(BlueprintCallable)
-    void OpenPingMenu();
-    
-    UFUNCTION(BlueprintCallable)
     void OpenGameMenu();
-    
-protected:
-    UFUNCTION(BlueprintCallable)
-    void OpenBotSelectionMenu();
     
 private:
     UFUNCTION(BlueprintCallable)
@@ -114,19 +113,13 @@ public:
     void OnRadialMenuAnalogX(float inAxis);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsUnlockMenuOpen() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsTextChatOpen() const;
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsPingMenuOpen() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsGameMenuOpen() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsBotMenuOpen() const;
+    bool IsAnyWheelMenuOpen() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyModalMenuOpen() const;
@@ -134,12 +127,19 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsAnyMenuOpen() const;
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    EIGS_WheelMenuType GetWheelMenuType() const;
+    
+public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetShouldShowVirtualCursor();
     
+protected:
     UFUNCTION(BlueprintCallable)
-    void CloseUnlockMethodMenu();
+    void CloseWheelMenu();
     
+public:
     UFUNCTION(BlueprintCallable)
     void CloseTextChat();
     
@@ -147,18 +147,14 @@ public:
     void CloseSystemMenu();
     
     UFUNCTION(BlueprintCallable)
-    void ClosePingMenu(bool bForceClose);
-    
-    UFUNCTION(BlueprintCallable)
     void CloseGameMenu();
     
-protected:
-    UFUNCTION(BlueprintCallable)
-    void CloseBotSelectionMenu();
-    
-public:
     UFUNCTION(BlueprintCallable)
     void CloseAnyMenu();
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    bool CanWheelMenuBeOpen(EIGS_WheelMenuType inType) const;
     
 };
 

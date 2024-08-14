@@ -48,6 +48,7 @@ void UIGS_PlayerAnimInstance::OnZiptieFinished() {
 void UIGS_PlayerAnimInstance::OnWieldableSlotChange(EIGS_WieldableSlot Type, AIGS_WieldableBase* inWieldable, UIGS_InventoryObjectFramework* inWeaponObject) {
 }
 
+
 void UIGS_PlayerAnimInstance::OnWeaponObjectChange(AIGS_WieldableBase* InWeaponBase) {
 }
 

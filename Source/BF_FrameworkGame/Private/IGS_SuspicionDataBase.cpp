@@ -1,6 +1,7 @@
 #include "IGS_SuspicionDataBase.h"
 
 FIGS_SuspicionDataBase::FIGS_SuspicionDataBase() {
+    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).OffenceTag, 0)) = NAME_None;
     (*this).OffenceType = EIGS_OffenceType::Offence_UNKNOWN;
     (*this).OffenceNoticedBy = 0;
     (*this).Strikes = 3;

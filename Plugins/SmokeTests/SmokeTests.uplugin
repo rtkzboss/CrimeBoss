@@ -27,6 +27,10 @@
 		{
 			"Name": "AssetManagerEditor",
 			"Enabled": true
+		},
+		{
+			"Name": "CoverGenerator",
+			"Enabled": true
 		}
 	]
 }

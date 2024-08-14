@@ -20,6 +20,9 @@ public:
     UIGS_WidgetFocusableSpinBox* SubtitlesEnabledSpinBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
+    UIGS_WidgetFocusableSpinBox* HitMarkerSettingSpinBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UIGS_WidgetFocusableSpinBox* ShowCrosshairSettingSpinBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
@@ -45,6 +48,18 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UIGS_WidgetFocusableSlider* ColorVisionDeficiencySeveritySlider;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
+    UIGS_WidgetFocusableSlider* HeadBobIntensitySlider;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
+    UIGS_WidgetFocusableSpinBox* HeisterColorsInSubtitlesSpinBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
+    UIGS_WidgetFocusableSpinBox* PoliceChatterSpinBox;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
+    UIGS_WidgetFocusableSpinBox* TinnitusSpinBox;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UIGS_WidgetFocusableSpinBox* TutorialsDisplayModeSpinBox;

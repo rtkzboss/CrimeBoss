@@ -19,8 +19,8 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UIGS_AICommand*> Commands;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<AIGS_GameCharacterFramework*, FDelayedCommand> DelayedCommands;
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<TWeakObjectPtr<AIGS_GameCharacterFramework>, FDelayedCommand> DelayedCommands;
     
 public:
     UIGS_BTTask_SquadBase();

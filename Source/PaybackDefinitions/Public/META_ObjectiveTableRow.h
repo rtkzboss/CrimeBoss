@@ -13,6 +13,9 @@ public:
     FGameplayTag ID;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool CampaignOnly;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FMETA_ObjectiveConfig Config;
     
     FMETA_ObjectiveTableRow();

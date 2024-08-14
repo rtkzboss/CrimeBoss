@@ -71,6 +71,10 @@ int32 UMETA_CommonData::GetTimeForCharactersMoodSwitchToNeutral() const {
     return 0;
 }
 
+int32 UMETA_CommonData::GetTileCapacityBySize(const EMETA_TileSize inTileSize) {
+    return 0;
+}
+
 FMETA_StatisticsRootTags UMETA_CommonData::GetStatisticsRootTags() const {
     return FMETA_StatisticsRootTags{};
 }

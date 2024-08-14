@@ -29,7 +29,7 @@ void UIGS_DestructableVehicleComponent::SelfDamage(float inDamage) {
 void UIGS_DestructableVehicleComponent::OnTakeDamage(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo) {
 }
 
-void UIGS_DestructableVehicleComponent::OnRep_IsExploded() {
+void UIGS_DestructableVehicleComponent::OnRep_IsExploded(bool inIsExploded) {
 }
 
 void UIGS_DestructableVehicleComponent::Multicast_ExplodeVehicle_Implementation() {

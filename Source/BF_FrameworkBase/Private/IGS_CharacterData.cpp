@@ -106,6 +106,10 @@ FVector UIGS_CharacterData::GetLastNavmeshLocation() const {
     return FVector{};
 }
 
+TArray<AIGS_GameCharacterFramework*> UIGS_CharacterData::GetDetectingPlayers() const {
+    return TArray<AIGS_GameCharacterFramework*>();
+}
+
 AIGS_GameCharacterFramework* UIGS_CharacterData::GetCharacterOwner() const {
     return NULL;
 }

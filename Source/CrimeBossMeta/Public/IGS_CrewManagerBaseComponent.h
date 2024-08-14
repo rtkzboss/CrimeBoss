@@ -39,7 +39,7 @@ public:
     bool PromoteHeister(UMETA_Character* inCharacter);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    bool MoveWeaponToItsSlotInHeistersLoadoutFromStash(UMETA_Character* ToCharacter, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponId, UMETA_Character* FromCharacter);
+    bool MoveWeaponToItsSlotInHeistersLoadoutFromStash(UMETA_Character* ToCharacter, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponId, UMETA_Character* FromCharacter, FGameplayTag inWeaponSkinTagID);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool MoveWeaponFromHeistersSlotToStash(UMETA_Character* Character, EIGS_InventorySlot inInventorySlot);

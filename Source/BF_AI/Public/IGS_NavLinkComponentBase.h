@@ -48,6 +48,9 @@ public:
     TEnumAsByte<ENavLinkDirection::Type> FirstUseLinkDirection;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bEditTypes;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<EIGS_TeamSideEnum> CharacterTypes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

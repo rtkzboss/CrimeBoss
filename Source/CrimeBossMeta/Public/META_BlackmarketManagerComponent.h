@@ -112,6 +112,9 @@ protected:
     TArray<FGameplayTag> UnlockedWeaponTagIDs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FGameplayTag> UnlockedWeaponSkinTagIDs;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FGameplayTag> UnlockedEquipmentTagIDs;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

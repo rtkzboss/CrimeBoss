@@ -6,7 +6,11 @@ FMETA_TileSaveData::FMETA_TileSaveData() {
     (*this).MinAmountOfSoldiersForAttack = 0;
     (*this).MinAmountOfSoldiersForDefence = 0;
     (*this).CurrentStrength = 0;
+    (*this).WeaknessLowerTier = false;
+    (*this).CurrentWeakness = 0;
+    (*this).WeaknessExpireDays = 0;
     (*this).CounterOfCapturesByPlayer = 0;
+    (*this).CountdownForAttackAfterLost = 0;
     (*this).Wealth = EMETA_TileWealth::Poor;
     (*this).CaptureRewards.Empty();
     (*this).BossEliminationRewards.Empty();

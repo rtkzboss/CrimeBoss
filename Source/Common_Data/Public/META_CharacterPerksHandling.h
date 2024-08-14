@@ -1,9 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
+#include "AttributeSet.h"
+#include "GameplayTagContainer.h"
+#include "META_PerkStatGroup.h"
 #include "META_CharacterPerksHandling.generated.h"
 
 class UMETA_Character;
+class UMETA_PerkStatsData;
+class UObject;
 
 UCLASS(Blueprintable)
 class COMMON_DATA_API UMETA_CharacterPerksHandling : public UBlueprintFunctionLibrary {
@@ -25,6 +30,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static float GetPriceCoefficientOfHealingAction(UMETA_Character* inCharacter);
+    
+    UFUNCTION(BlueprintCallable)
+    static void GetPerkStats(const UObject* inWCO, const FGameplayTag inPerkID, bool& outSuccess, TMap<FGameplayAttribute, float>& outStats);
     
     UFUNCTION(BlueprintCallable)
     static float GetPercentageOfMissionPlaningCost(UMETA_Character* inCharacter);
@@ -65,11 +73,17 @@ public:
     UFUNCTION(BlueprintCallable)
     static float GetHealingMultiplier(UMETA_Character* inCharacter);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FText GetFormattedPerkDescription(const UObject* inWCO, const FGameplayTag inPerkID, const bool inEnableRichText, const FString& inOverrideStyle);
+    
     UFUNCTION(BlueprintCallable)
     static float GetExtraMoneyInPercentsAfterMission(UMETA_Character* inCharacter);
     
     UFUNCTION(BlueprintCallable)
     static int32 GetConvertsAmountFromDeathToRestingAfterFps(UMETA_Character* inCharacter);
+    
+    UFUNCTION(BlueprintCallable)
+    static void GetCombinedPerkStats(const UObject* inWCO, const UMETA_PerkStatsData* inPerkStatsData, const FGameplayTag inPerkID, bool& outSuccess, TMap<FMETA_PerkStatGroup, int32>& outStats);
     
     UFUNCTION(BlueprintCallable)
     static float GetChanceToStartMissionWith1LessWantedStart(UMETA_Character* inCharacter);

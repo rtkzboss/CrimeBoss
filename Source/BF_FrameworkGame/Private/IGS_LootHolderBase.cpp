@@ -3,6 +3,7 @@
 #include "Engine/EngineTypes.h"
 
 AIGS_LootHolderBase::AIGS_LootHolderBase(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).OpeningAffectsLootCollection = true;
     (*this).MaxAIAttempts = 2;
 }
 

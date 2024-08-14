@@ -1,6 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EIGS_QPModeSource.h"
 #include "UObject/NoExportTypes.h"
+#include "EIGS_UserDifficulty.h"
 #include "META_MissionsSave.h"
 #include "Templates/SubclassOf.h"
 #include "IGS_Quick_JobManagerSaveData.generated.h"
@@ -16,6 +18,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FMETA_MissionsSave Opportunities;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    TMap<EIGS_QPModeSource, EIGS_UserDifficulty> LastSelectedDifficulties;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FMETA_MissionsSave LastPlayedMission;

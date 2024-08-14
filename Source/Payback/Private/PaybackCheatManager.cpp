@@ -24,6 +24,9 @@ void UPaybackCheatManager::SwitchCharacter(int32 inCharacterID) {
 void UPaybackCheatManager::Suicide() {
 }
 
+void UPaybackCheatManager::SpawnLootBag() {
+}
+
 void UPaybackCheatManager::SpawnAmmoBox() {
 }
 
@@ -39,10 +42,16 @@ void UPaybackCheatManager::SetHealth(int32 inHealth) {
 void UPaybackCheatManager::SetGameHUDEnabled(bool bEnable) {
 }
 
+void UPaybackCheatManager::SetDisableOutlines(bool inIsDisabled) {
+}
+
+void UPaybackCheatManager::SetDisabledBloodImpacts(bool isOn) {
+}
+
 void UPaybackCheatManager::SetCombatState(bool inIsCombat) {
 }
 
-void UPaybackCheatManager::SelfRevive() {
+void UPaybackCheatManager::Selfrevive() {
 }
 
 void UPaybackCheatManager::SelfDamage(float inDamage) {
@@ -67,6 +76,9 @@ void UPaybackCheatManager::PrintInventory() {
 }
 
 void UPaybackCheatManager::PrintGameplayEffects() {
+}
+
+void UPaybackCheatManager::PrintCharacterCount() {
 }
 
 void UPaybackCheatManager::PingAll() {
@@ -99,6 +111,9 @@ void UPaybackCheatManager::Multicast_ChangeSize_Implementation(float InSize) {
 void UPaybackCheatManager::MaximumDamage() {
 }
 
+void UPaybackCheatManager::MakeCameraMovableWhenPaused() {
+}
+
 void UPaybackCheatManager::KillEnemies() {
 }
 
@@ -109,6 +124,9 @@ void UPaybackCheatManager::KillBackupHeisters() {
 }
 
 void UPaybackCheatManager::KillAll() {
+}
+
+void UPaybackCheatManager::InsightsBookmark(const FString& inOptionalText) {
 }
 
 void UPaybackCheatManager::InfiniteMagazines() {
@@ -130,6 +148,9 @@ void UPaybackCheatManager::ForceTortillaBlend(float inWeight) {
 }
 
 void UPaybackCheatManager::ForceRefreshEquipment() {
+}
+
+void UPaybackCheatManager::ForceDisableOutlines() {
 }
 
 void UPaybackCheatManager::FocusPlayer() {

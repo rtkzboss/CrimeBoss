@@ -84,6 +84,9 @@ void UIGS_Analytics::DayStarted2(int32 upkeep, FIGS_AnalyticsCommonMetaAttribute
 void UIGS_Analytics::DayStarted(int32 campaignID, int32 Day, int32 Heat, int32 Respect, int32 Investigation, int32 Cash, int32 upkeep, int32 OwnedTurfs, int32 AvailableHeisters, int32 AvailableArmy) {
 }
 
+void UIGS_Analytics::DailyBonusClaimed(float xpGain, float moneyGain, int32 userLevel, const FString& ScenarioTag, const FString& resultText, float GameplayTime) {
+}
+
 void UIGS_Analytics::CampaignStarted_v2(const FString& CampaignMode, int32 CampaignNum, FIGS_AnalyticsCommonMetaAttributes inMetaAttributes) {
 }
 

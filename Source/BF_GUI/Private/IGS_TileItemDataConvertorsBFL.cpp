@@ -27,7 +27,15 @@ UIGS_TileItemData* UIGS_TileItemDataConvertorsBFL::MetaBaseObjectToTileItemData(
     return NULL;
 }
 
-FIGS_CharacterPanelDataStruct UIGS_TileItemDataConvertorsBFL::CharacterToCharacterPanelData(UMETA_Character* inCharacter) {
+FIGS_CharacterPanelDataStruct UIGS_TileItemDataConvertorsBFL::HeisterDataToCharacterPanelData(FCommonHeisterData& inHeisterData, UObject* inWCO) {
+    return FIGS_CharacterPanelDataStruct{};
+}
+
+FIGS_UITileQualityColors UIGS_TileItemDataConvertorsBFL::GetColorSetForQuality(EMETA_ItemQuality inQuality) {
+    return FIGS_UITileQualityColors{};
+}
+
+FIGS_CharacterPanelDataStruct UIGS_TileItemDataConvertorsBFL::CharacterToCharacterPanelData(UObject* inWCO, UMETA_Character* inCharacter) {
     return FIGS_CharacterPanelDataStruct{};
 }
 

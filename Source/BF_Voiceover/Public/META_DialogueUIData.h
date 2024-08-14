@@ -16,7 +16,7 @@ public:
     TMap<EIGS_MetaDialogueCharacterSlot, EIGS_MetaDialogueCharacter> Characters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameplayTag ScreenTag;
+    FGameplayTag screenTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag TypeTag;

@@ -24,10 +24,10 @@ protected:
     bool bHealthRegenAllowed;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float HealthMultiplierAttribute;
+    float HealthRegenDelayAttribute;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    float HealthRegenDelayAttribute;
+    float HealthRegenMultiplierAttribute;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bAutoregenMaxOverriden;

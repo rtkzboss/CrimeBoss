@@ -7,6 +7,10 @@ UMETA_Weapon::UMETA_Weapon() {
 void UMETA_Weapon::SetWeaponSkin(FGameplayTag inSkinTag) {
 }
 
+bool UMETA_Weapon::SetRandomWeaponSkin(UObject* inWCO, const TArray<FGameplayTag>& inUnlockedWeaponSkinTagIDs) {
+    return false;
+}
+
 void UMETA_Weapon::SetPrice(int32 inNewPrice) {
 }
 
@@ -114,6 +118,10 @@ FText UMETA_Weapon::GetDescription() const {
 
 int32 UMETA_Weapon::GetDaysInShop() const {
     return 0;
+}
+
+FGameplayTagContainer UMETA_Weapon::GetCompatibleWeaponSkins(UObject* inWCO, const TArray<FGameplayTag>& inUnlockedWeaponSkinTagIDs) {
+    return FGameplayTagContainer{};
 }
 
 UMETA_Character* UMETA_Weapon::GetCharacter() const {

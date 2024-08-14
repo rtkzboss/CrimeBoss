@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "GameplayTagContainer.h"
 #include "ControllerDefaultsHolder.h"
 #include "IGS_AIBackupTeamDef.h"
 #include "IGS_AIBaseDisabledSpecializations.h"
@@ -22,10 +23,10 @@
 #include "Templates/SubclassOf.h"
 #include "IGS_AIDatabaseFPS.generated.h"
 
-class AIGS_AISpawnPoint;
 class AIGS_GameCharacterFramework;
 class UIGS_AIDatabaseStory;
 class UIGS_SettingsID;
+class UObject;
 
 UCLASS(Blueprintable)
 class BF_FRAMEWORKGAME_API UIGS_AIDatabaseFPS : public UDataAsset {
@@ -103,7 +104,7 @@ public:
     UIGS_AIDatabaseFPS();
 
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    FIGS_AILoadout GetLoadout(const FIGS_AILoadoutHolder& inLoadoutHolder, const AIGS_AISpawnPoint* inSpawnPoint, bool inIsStory) const;
+    FIGS_AILoadout GetLoadout(const FIGS_AILoadoutHolder& inLoadoutHolder, FGameplayTagContainer inLoadoutTags, const TSubclassOf<UIGS_SettingsID> inSettingsOverride, const bool inIsStory, const UObject* inDebugWco) const;
     
 };
 

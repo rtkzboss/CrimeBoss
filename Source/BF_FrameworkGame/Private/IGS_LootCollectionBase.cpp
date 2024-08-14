@@ -50,6 +50,9 @@ void AIGS_LootCollectionBase::RegisterLootComponent(UIGS_LootItemBaseComponent* 
 void AIGS_LootCollectionBase::OnRep_LootItems() {
 }
 
+void AIGS_LootCollectionBase::OnRep_bIsInCase() {
+}
+
 void AIGS_LootCollectionBase::OnRep_bIsEmpty() {
 }
 
@@ -75,6 +78,7 @@ void AIGS_LootCollectionBase::GetLifetimeReplicatedProps(TArray<FLifetimePropert
     
     DOREPLIFETIME(AIGS_LootCollectionBase, LootItems);
     DOREPLIFETIME(AIGS_LootCollectionBase, bIsEmpty);
+    DOREPLIFETIME(AIGS_LootCollectionBase, m_bIsInCase);
 }
 
 

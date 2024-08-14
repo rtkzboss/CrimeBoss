@@ -31,7 +31,7 @@ public:
     static UIGS_RequestOpenModalWindow* RequestOpenVideoModalWindow(UObject* WorldContextObject, TSubclassOf<UIGS_ModalScreen> modalScreenClass, FText InTitle, FText inDescription, FText inConfirmText, FText inCancelText, FText inExtraOptionText, UBinkMediaPlayer* inMedia, bool inSlownDown, EScreenZOrder screenOrder);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext=WorldContextObject))
-    static UIGS_RequestOpenModalWindow* RequestOpenModalWindowDataRow(UObject* WorldContextObject, UPARAM(Ref) FIGS_ModalTableRow& modalData, EScreenZOrder screenOrder);
+    static UIGS_RequestOpenModalWindow* RequestOpenModalWindowDataRow(UObject* WorldContextObject, UPARAM(Ref) FIGS_ModalTableRow& ModalData, EScreenZOrder screenOrder, bool isTutorial);
     
     UFUNCTION(BlueprintCallable, meta=(WorldContext=WorldContextObject))
     static UIGS_RequestOpenModalWindow* RequestOpenModalWindow(UObject* WorldContextObject, TSubclassOf<UIGS_ModalScreen> modalScreenClass, FText InTitle, FText inDescription, FText inConfirmText, FText inCancelText, FText inExtraOptionText, EScreenZOrder screenOrder);

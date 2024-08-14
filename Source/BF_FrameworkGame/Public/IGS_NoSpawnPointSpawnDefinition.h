@@ -25,6 +25,9 @@ public:
     TSubclassOf<UIGS_SettingsID> SettingsOverride;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EIGS_TeamSideEnum TeamSideOverride;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FTransform Transform;
     
     BF_FRAMEWORKGAME_API FIGS_NoSpawnPointSpawnDefinition();

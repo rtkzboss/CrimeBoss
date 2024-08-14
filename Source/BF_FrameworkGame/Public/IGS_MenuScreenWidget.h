@@ -12,7 +12,7 @@ class BF_FRAMEWORKGAME_API UIGS_MenuScreenWidget : public UUserWidget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameplayTag ScreenTag;
+    FGameplayTag screenTag;
     
     UIGS_MenuScreenWidget();
 

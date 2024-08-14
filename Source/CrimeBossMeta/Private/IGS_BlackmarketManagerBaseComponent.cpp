@@ -12,6 +12,10 @@ TArray<UMETA_Weapon*> UIGS_BlackmarketManagerBaseComponent::GetWeaponsMarketPool
     return TArray<UMETA_Weapon*>();
 }
 
+UMETA_Weapon* UIGS_BlackmarketManagerBaseComponent::GetWeaponByTagAndSkinTag(FGameplayTag inWeaponTag, FGameplayTag inSkinTag) const {
+    return NULL;
+}
+
 UMETA_Weapon* UIGS_BlackmarketManagerBaseComponent::GetWeaponByTag(FGameplayTag inWeaponTag) const {
     return NULL;
 }
@@ -32,7 +36,7 @@ UMETA_Character* UIGS_BlackmarketManagerBaseComponent::GetCharacterByTag(FGamepl
     return NULL;
 }
 
-bool UIGS_BlackmarketManagerBaseComponent::BuyItem_Implementation(FGameplayTag itemTag, FGameplayTag ScreenTag) {
+bool UIGS_BlackmarketManagerBaseComponent::BuyItem_Implementation(FGameplayTag itemTag, FGameplayTag screenTag, FGameplayTag SkinTag) {
     return false;
 }
 

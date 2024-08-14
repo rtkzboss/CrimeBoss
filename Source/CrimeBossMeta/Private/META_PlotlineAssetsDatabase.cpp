@@ -3,6 +3,10 @@
 UMETA_PlotlineAssetsDatabase::UMETA_PlotlineAssetsDatabase() {
 }
 
+TArray<UMETA_PlotlineAsset*> UMETA_PlotlineAssetsDatabase::SortAssetsByPrice(TArray<UMETA_PlotlineAsset*> inAssets, bool inAscending) {
+    return TArray<UMETA_PlotlineAsset*>();
+}
+
 bool UMETA_PlotlineAssetsDatabase::IsPersistent(FGameplayTag inAssetID) const {
     return false;
 }

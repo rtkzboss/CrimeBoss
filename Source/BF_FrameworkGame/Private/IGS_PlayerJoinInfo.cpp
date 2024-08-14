@@ -13,8 +13,10 @@ FIGS_PlayerJoinInfo::FIGS_PlayerJoinInfo() {
     (*this).HeisterNumber = -1;
     (*this).InitialJoiningHeisterNumber = -1;
     (*this).IsBot = false;
+    (*this).WasBotRightBefore = false;
     (*this).IsDisconnected = false;
     (*this).IsDead = false;
+    (*this).WasDeadRightBefore = false;
     (*this).IsOccupied = false;
     (*this).PreviouslyUsed = false;
     (*this).BotSwitchedAfterDeath = false;

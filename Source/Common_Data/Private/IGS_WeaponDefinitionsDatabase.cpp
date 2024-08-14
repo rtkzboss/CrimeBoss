@@ -7,11 +7,18 @@ UIGS_WeaponDefinitionsDatabase::UIGS_WeaponDefinitionsDatabase() {
 void UIGS_WeaponDefinitionsDatabase::SetWeaponIcon(FIGS_WeaponDefinitionTableRow& inStructRef, TSoftObjectPtr<UIGS_WeaponSkinData> inWeaponSkin, TSoftObjectPtr<UTexture2D> inWeaponIcon) {
 }
 
+void UIGS_WeaponDefinitionsDatabase::ModAppendDataTable(UDataTable* inNewTable) {
+}
+
 FGameplayTag UIGS_WeaponDefinitionsDatabase::GetWiedableClassById(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inWeaponId) {
     return FGameplayTag{};
 }
 
 TSoftObjectPtr<UTexture2D> UIGS_WeaponDefinitionsDatabase::GetWeaponIcon(UObject* inWCO, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponObject, TSoftObjectPtr<UDataAsset> inWeaponSkin) {
+    return NULL;
+}
+
+UIGS_WeaponDefinitionsDatabase* UIGS_WeaponDefinitionsDatabase::GetWeaponDefinitionsDatabaseInstance(UObject* inWCO) {
     return NULL;
 }
 
@@ -28,6 +35,10 @@ FIGS_WeaponDefinitionTableRow UIGS_WeaponDefinitionsDatabase::GetDataByIndexBP(i
 }
 
 TArray<FIGS_WeaponDefinitionTableRow> UIGS_WeaponDefinitionsDatabase::GetDatabaseTableBP() {
+    return TArray<FIGS_WeaponDefinitionTableRow>();
+}
+
+TArray<FIGS_WeaponDefinitionTableRow> UIGS_WeaponDefinitionsDatabase::GetAllGenerableWeaponsData(const UObject* inWCO, bool inIncludeDLCs) {
     return TArray<FIGS_WeaponDefinitionTableRow>();
 }
 

@@ -3,6 +3,8 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "IGS_ToolFunctionLibrary.generated.h"
 
+class UCompositeDataTable;
+class UDataTable;
 class UObject;
 class UPrimitiveComponent;
 
@@ -26,6 +28,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 EvaluateGeoLocation(const FString& LocalRegion, const FString& RemoteRegion);
+    
+    UFUNCTION(BlueprintCallable)
+    static void AppendTableToComposite(UCompositeDataTable* inTargetCompositeTable, UDataTable* inNewTable);
     
 };
 

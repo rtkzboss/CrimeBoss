@@ -5,7 +5,7 @@
 #include "EIGS_HubBackdropTypes.h"
 #include "EIGS_HubDistrict.h"
 #include "EMETA_Gang.h"
-#include "EMETA_GangSpawnArea.h"
+#include "EMETA_TileSize.h"
 #include "EMETA_TileType.h"
 #include "EMETA_TileWealth.h"
 #include "META_BossEliminationRewardData.h"
@@ -112,7 +112,7 @@ private:
     EIGS_HubBackdropTypes m_BackdropType;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    EMETA_GangSpawnArea m_GangSpawnArea;
+    EMETA_TileSize m_TileSize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<UMETA_BaseMission*> m_Missions;
@@ -187,6 +187,9 @@ public:
     void SetWeaknessLowerTier(bool inState);
     
     UFUNCTION(BlueprintCallable)
+    void SetWeaknessExpirationInDays(int32 inDays);
+    
+    UFUNCTION(BlueprintCallable)
     void SetType(EMETA_TileType inType);
     
     UFUNCTION(BlueprintCallable)
@@ -250,7 +253,13 @@ public:
     bool GetWeaknessLowerTier() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetWeaknessExpirationInDays() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     EMETA_TileType GetType() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    EMETA_TileSize GetTileSize() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<FGameplayTag> GetNeighbours() const;
@@ -265,19 +274,16 @@ public:
     TArray<TSubclassOf<UMETA_MissionID>> GetMissionClasses() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetMinAmountOfSoldiersForDefence();
+    int32 GetMinAmountOfSoldiersForDefence() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    int32 GetMinAmountOfSoldiersForAttack();
+    int32 GetMinAmountOfSoldiersForAttack() const;
     
     UFUNCTION(BlueprintCallable)
     void GetIncome(const UObject* inWCO, int32& OutValue, FGameplayTag& outLootItem);
     
     UFUNCTION(BlueprintCallable)
     FGameplayTag GetId();
-    
-    UFUNCTION(BlueprintCallable, BlueprintPure)
-    EMETA_GangSpawnArea GetGangSpawnArea() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EMETA_Gang GetGang() const;

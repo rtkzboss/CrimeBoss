@@ -2,6 +2,8 @@
 #include "CoreMinimal.h"
 #include "AdvancedFriendsGameInstance.h"
 #include "ECommonMissionResult.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_PlatformServerConnectionStatus.h"
 #include "EIGS_SessionJoinFailureReason.h"
 #include "IGS_OnConnectionStatusChangedDelegate.h"
@@ -25,6 +27,11 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bComesFromMission;
     
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTagContainer TurfWarMissionTags;
+    
+public:
     UIGS_GameInstanceFramework();
 
 protected:
@@ -69,6 +76,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     bool IsTextChatAllowed();
+    
+    UFUNCTION(BlueprintCallable)
+    bool IsMissionTagTurfWar(FGameplayTag inMissionTag);
     
     UFUNCTION(BlueprintCallable)
     static bool IsMissionEndIgnored(const UObject* inWCO);

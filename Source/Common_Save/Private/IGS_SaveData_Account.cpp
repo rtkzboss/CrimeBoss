@@ -82,7 +82,6 @@ FIGS_SaveData_Account::FIGS_SaveData_Account() {
     (*this).SaveDataVersion.RevisionCreated = TEXT("");
     (*this).SaveDataVersion.RevisionSaved = TEXT("");
     (*this).SaveDataVersion.SnapshotRevision = TEXT("");
-    (*this).MetaPersistentId = TEXT("0");
     (*this).bUserShouldAdvertise = true;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ActiveCampaign.CampaignMode, 0)) = NAME_None;
     (*this).ActiveCampaign.Difficulty = EIGS_UserDifficulty::UD_Unknown;

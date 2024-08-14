@@ -31,94 +31,94 @@ protected:
     void PlayerDirectionCue(const AIGS_GameCharacterFramework* inCharacter, const AIGS_GameCharacterFramework* inPlayer, const EIGS_PlayerDirectionalCueDefinition inPlayerDirectionCue);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnWentSecurity(AIGS_GameCharacterFramework* inInstigator);
+    void OnWentSecurity(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnWentPublic(AIGS_GameCharacterFramework* inInstigator);
+    void OnWentPublic(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnWentOutside(AIGS_GameCharacterFramework* inInstigator);
+    void OnWentOutside(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnWentEmployee(AIGS_GameCharacterFramework* inInstigator);
+    void OnWentEmployee(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnThrowGas(AIGS_GameCharacterFramework* inInstigator);
+    void OnThrowGas(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnThrowFrag(AIGS_GameCharacterFramework* inInstigator);
+    void OnThrowFrag(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnThrowFlash(AIGS_GameCharacterFramework* inInstigator);
+    void OnThrowFlash(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnTakingDamage(AIGS_GameCharacterFramework* inInstigator);
+    void OnTakingDamage(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSquadEnemySeen(AIGS_GameCharacterFramework* inInstigator);
+    void OnSquadEnemySeen(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSquadEnemyLost(AIGS_GameCharacterFramework* inInstigator);
+    void OnSquadEnemyLost(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpottedDeath(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpottedDeath(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedWindows(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpawnedWindows(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedSpecial(AIGS_GameCharacterFramework* inInstigator, EIGS_UnitSpecialization inUnitSpecialization);
+    void OnSpawnedSpecial(const AIGS_GameCharacterFramework* inInstigator, EIGS_UnitSpecialization inUnitSpecialization);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedSecurity(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpawnedSecurity(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedPublic(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpawnedPublic(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedOutside(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpawnedOutside(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedInVehicle(AIGS_GameCharacterFramework* inInstigator, EIGS_CarType inCarType);
+    void OnSpawnedInVehicle(const AIGS_GameCharacterFramework* inInstigator, EIGS_CarType inCarType);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedEmployee(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpawnedEmployee(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSpawnedBuilding(AIGS_GameCharacterFramework* inInstigator);
+    void OnSpawnedBuilding(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnSlope(AIGS_GameCharacterFramework* inInstigator, float inSlope);
+    void OnSlope(const AIGS_GameCharacterFramework* inInstigator, float inSlope);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnReloading(AIGS_GameCharacterFramework* inInstigator);
+    void OnReloading(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnMassKill(AIGS_GameCharacterFramework* inInstigator);
+    void OnMassKill(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnInjured(AIGS_GameCharacterFramework* inInstigator);
+    void OnInjured(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnGadgetDisrupted(AIGS_GameCharacterFramework* inInstigator);
+    void OnGadgetDisrupted(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnDeath(AIGS_GameCharacterFramework* inInstigator, bool inLastSquadMemberRemaining);
+    void OnDeath(const AIGS_GameCharacterFramework* inInstigator, bool inLastSquadMemberRemaining);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnCombatTaunt(AIGS_GameCharacterFramework* inInstigator, bool isTargetVisible, bool IsDefending);
+    void OnCombatTaunt(const AIGS_GameCharacterFramework* inInstigator, bool isTargetVisible, bool IsDefending);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnBreachTakePosition(AIGS_GameCharacterFramework* inInstigator);
+    void OnBreachTakePosition(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnBreachIn(AIGS_GameCharacterFramework* inInstigator);
+    void OnBreachIn(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnBreachEnd(AIGS_GameCharacterFramework* inInstigator);
+    void OnBreachEnd(const AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void OnBreachClearObstacle(AIGS_GameCharacterFramework* inInstigator);
+    void OnBreachClearObstacle(const AIGS_GameCharacterFramework* inInstigator);
     
 };
 

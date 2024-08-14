@@ -40,5 +40,8 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool CanBotDeliver(const AIGS_GameCharacterFramework* inBotReference) const;
     
+    UFUNCTION(BlueprintCallable)
+    void CallBotCommand(EIGS_BotCommandDefinition inCommand);
+    
 };
 

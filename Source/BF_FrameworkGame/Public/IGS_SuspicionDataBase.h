@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Engine/DataTable.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_ReactionTypeTags.h"
 #include "EIGS_AmbientReaction.h"
 #include "EIGS_OffenceType.h"
@@ -10,6 +11,9 @@ USTRUCT(BlueprintType)
 struct BF_FRAMEWORKGAME_API FIGS_SuspicionDataBase : public FTableRowBase {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FGameplayTag OffenceTag;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EIGS_OffenceType OffenceType;
     

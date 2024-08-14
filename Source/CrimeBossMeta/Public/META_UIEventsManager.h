@@ -40,7 +40,7 @@ public:
     void WeaponBought(UMETA_Weapon* inWeapon);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void WarehouseWasAttacked();
+    void WarehouseWasAttacked(UMETA_BaseFPSMission* inMission);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void WarehouseDefenceWasIgnored();

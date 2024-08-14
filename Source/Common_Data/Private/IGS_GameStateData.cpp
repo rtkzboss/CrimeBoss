@@ -33,6 +33,7 @@ FIGS_GameStateData::FIGS_GameStateData() {
     (*this).AllyVariation = EIGS_HeistersBackupVariationType::US_None;
     (*this).AllyTier = EIGS_AITiers::AT_Tier1;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).BonusObjectiveData.ID, 0)) = NAME_None;
+    (*this).BonusObjectiveData.CampaignOnly = false;
     (*this).BonusObjectiveData.Config.ShorDescription = FText::FromString(TEXT(""));
     (*this).BonusObjectiveData.Config.Description = FText::FromString(TEXT(""));
     (*this).BonusObjectiveData.Config.ObjectiveType = EMETA_ObjectiveType::None;
@@ -65,6 +66,7 @@ FIGS_GameStateData::FIGS_GameStateData() {
     (*this).MissionName = FText::FromString(TEXT(""));
     (*this).TotalMissionValue = 0;
     (*this).ObjectiveValue = 0;
+    (*this).SupportsCleanExecution = false;
     (*this).TotalLootbagCount = -1;
     (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0)).Empty();
     (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).SpecificLootTypes, 0)).Empty();

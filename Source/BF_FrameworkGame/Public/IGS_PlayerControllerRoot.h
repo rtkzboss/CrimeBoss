@@ -4,6 +4,7 @@
 #include "EIGS_InputDevice.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
+#include "EIGS_BotCommandDefinition.h"
 #include "EIGS_MenuInputState.h"
 #include "IGS_GiveUpEventDelegate.h"
 #include "IGS_OnCinematicModeChangedDelegate.h"
@@ -34,9 +35,6 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bEntranceUnlockMenuOpen;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TSoftClassPtr<AHUD> DefaultHUDClass;
-    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_PawnChangedEventSignature OnPawnChangedEvent;
     
@@ -57,6 +55,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bInvertLook;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftClassPtr<AHUD> DefaultHUDClass;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -217,6 +218,10 @@ public:
     UFUNCTION(BlueprintCallable)
     bool OpenUnlockMethodMenu(FGameplayTagContainer inMethods);
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void OnWheelMenu(bool inIsHoldingButton);
+    
 private:
     UFUNCTION(BlueprintCallable)
     void OnTryToReconstructHUD();
@@ -240,6 +245,11 @@ protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnOpenNotepadMenu(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
     
+public:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnOpenMenuWheel();
+    
+protected:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnOpenInventoryMenu(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
     
@@ -253,28 +263,19 @@ protected:
     void OnGameMenuInput(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void OnDropWieldable(bool inIsHoldingButton);
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnCloseUnlockMenu();
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnCloseMenuWheel();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnClientFadeScreen(bool inIsFadeOut, float inFadeDuration);
     
 protected:
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void OnBotStandby(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
-    
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void OnBotPossessInMenu(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
-    
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void OnBotFollow(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
-    
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void OnBotDeliverLoot(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
-    
-    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    void OnBotCancelInMenu(bool inIsHoldingButton, EIGS_MenuInputState inInputState);
-    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     float OnAddYawInput(float inYaw);
     
@@ -369,6 +370,10 @@ public:
 protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void ChooseBotQuickly();
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void CallBotCommand(EIGS_BotCommandDefinition inCommand);
     
 };
 

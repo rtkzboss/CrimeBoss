@@ -94,6 +94,9 @@ public:
     static void DayStarted(int32 campaignID, int32 Day, int32 Heat, int32 Respect, int32 Investigation, int32 Cash, int32 upkeep, int32 OwnedTurfs, int32 AvailableHeisters, int32 AvailableArmy);
     
     UFUNCTION(BlueprintCallable)
+    static void DailyBonusClaimed(float xpGain, float moneyGain, int32 userLevel, const FString& ScenarioTag, const FString& resultText, float GameplayTime);
+    
+    UFUNCTION(BlueprintCallable)
     static void CampaignStarted_v2(const FString& CampaignMode, int32 CampaignNum, FIGS_AnalyticsCommonMetaAttributes inMetaAttributes);
     
     UFUNCTION(BlueprintCallable)

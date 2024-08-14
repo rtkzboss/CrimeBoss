@@ -38,6 +38,9 @@ FEventReply UIGS_GenericButton::OnHoldBorderMouseButtonDown(FGeometry Geometry, 
     return FEventReply{};
 }
 
+void UIGS_GenericButton::InitInputActionIcon() {
+}
+
 void UIGS_GenericButton::HandleHoldTick() {
 }
 

@@ -6,6 +6,7 @@
 
 FMETA_ObjectiveTableRow::FMETA_ObjectiveTableRow() {
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).ID, 0)) = NAME_None;
+    (*this).CampaignOnly = false;
     (*this).Config.ShorDescription = FText::FromString(TEXT(""));
     (*this).Config.Description = FText::FromString(TEXT(""));
     (*this).Config.ObjectiveType = EMETA_ObjectiveType::None;

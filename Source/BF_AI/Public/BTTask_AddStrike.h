@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
+#include "GameplayTagContainer.h"
 #include "BTTask_AddStrike.generated.h"
 
 UCLASS(Blueprintable)
@@ -11,7 +12,7 @@ public:
     int32 StrikeCount;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText BlameText;
+    FGameplayTag BlameTag;
     
     UBTTask_AddStrike();
 

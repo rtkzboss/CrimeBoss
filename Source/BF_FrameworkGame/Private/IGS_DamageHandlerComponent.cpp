@@ -8,7 +8,7 @@ UIGS_DamageHandlerComponent::UIGS_DamageHandlerComponent(const FObjectInitialize
     (*this).ShieldPenetrationMultiplier = 1.000000015e-01f;
     (*this).UnknownBodyPartMultiplier = 1.000000000e+00f;
     (*this).ApplyPlayerNeutralFire = true;
-    (*this).ApplyGangsterNeutralFire = true;
+    (*this).AINeutralFireMultiplier = 2.500000000e-01f;
     (*this).FriendlyFireMultiplier = 1.000000015e-01f;
     (*this).FriendlyFireMinHealth = 1.000000000e+00f;
     (*this).SelfDamageMultiplier = 3.000000119e-01f;

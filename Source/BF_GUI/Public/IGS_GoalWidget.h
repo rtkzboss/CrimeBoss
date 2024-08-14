@@ -51,6 +51,9 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnObjectivesShown();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnActiveObjectiveChanged();
     
     UFUNCTION(BlueprintCallable)

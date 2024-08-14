@@ -16,14 +16,26 @@ bool UIGS_PlayerLoadoutComponent::Server_GivePerks_Validate(const TArray<FMETA_P
     return true;
 }
 
+void UIGS_PlayerLoadoutComponent::Selfrevive() {
+}
+
+void UIGS_PlayerLoadoutComponent::OnEnemyKilled(AIGS_GameCharacterFramework* inInstigator, const FHitResult& inHitResult) {
+}
+
 void UIGS_PlayerLoadoutComponent::InitializeLoadout() {
+}
+
+void UIGS_PlayerLoadoutComponent::HandlePlayerDownState() {
 }
 
 UIGS_EquipmentInventoryObject* UIGS_PlayerLoadoutComponent::GetCurrentEquipmentObject() {
     return NULL;
 }
 
-void UIGS_PlayerLoadoutComponent::Client_SetEquipmentData_Implementation(float inTimestamp, int32 inCount) {
+void UIGS_PlayerLoadoutComponent::ForceDownstateUseAbility() {
+}
+
+void UIGS_PlayerLoadoutComponent::Client_SetEquipmentData_Implementation(float inTimestamp, int32 inCount, int32 inKillCount) {
 }
 
 

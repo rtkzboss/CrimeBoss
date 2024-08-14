@@ -12,6 +12,7 @@ UIGS_UseTextWidget::UIGS_UseTextWidget() {
 
 
 
+
 void UIGS_UseTextWidget::OnInteractiveObjectIsNear(bool inEnabled, EIGS_InteractionType inType, UIGS_InteractiveComponent* inInteractiveComponent, TSubclassOf<UIGS_InventoryObjectFramework> inNeededItem) {
 }
 

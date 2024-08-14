@@ -7,6 +7,7 @@ FIGS_MissionResult::FIGS_MissionResult() {
     (*this).MissionID.C = 0;
     (*this).MissionID.D = 0;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MissionTag, 0)) = NAME_None;
+    (*this).MissionSubtype = EMETA_FPSMissionSubtype::MoneyMaking;
     (*this).MissionResult = ECommonMissionResult::Res_UNKNOWN;
     (*this).bCleanExecution = false;
     (*this).bBonusObjective = false;

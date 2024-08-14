@@ -6,6 +6,8 @@
 #include "IGS_CharacterSkinDatabase.generated.h"
 
 class APaperDollAbstract;
+class UDataTable;
+class UIGS_CharacterSkinDatabase;
 class UObject;
 
 UCLASS(Blueprintable)
@@ -14,6 +16,9 @@ class COMMON_DATA_API UIGS_CharacterSkinDatabase : public UGameInstanceSubsystem
 public:
     UIGS_CharacterSkinDatabase();
 
+    UFUNCTION(BlueprintCallable)
+    void ModAppendDataTable(UDataTable* inNewTable);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(FGameplayTag inID) const;
     
@@ -22,6 +27,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_CharacterSkinTableRow GetDataByIndexBP(int32 inIndex, bool& outSucceeded) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UIGS_CharacterSkinDatabase* GetCharacterSkinDatabaseInstance(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static TSoftClassPtr<APaperDollAbstract> GetCharacterPaperDoll(UObject* inWCO, FGameplayTag inID);

@@ -66,6 +66,9 @@ public:
     static void TriggerAlarm(const UObject* inWCO, EIGS_AlarmReason inReason);
     
     UFUNCTION(BlueprintCallable)
+    static void TogglePlayerEjectPosses();
+    
+    UFUNCTION(BlueprintCallable)
     static void StopWaveManager(const UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
@@ -160,6 +163,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void SetSpawnGroupsActive(const UObject* inWCO, bool Inactive, const TArray<FGameplayTagContainer>& inPointsGameplayTags);
+    
+    UFUNCTION(BlueprintCallable)
+    static void SetShowPlayerOutline(const UObject* inWCO, bool inShowPlayerOutline);
     
     UFUNCTION(BlueprintCallable)
     static void SetMissionRequiredBagsInWeight(UObject* inWCO, int32 inRequiredWeight);
@@ -384,7 +390,7 @@ public:
     static void AddStrikesForNoise(const UObject* inWCO, FName inNoiseTag, AActor* inDetector, AActor* inOffender);
     
     UFUNCTION(BlueprintCallable)
-    static void AddStrikesCustom(const UObject* inWCO, int32 inCount, const FText& inBlameText, AActor* inDetector, AActor* inOffender);
+    static void AddStrikesCustom(const UObject* inWCO, int32 inCount, const FGameplayTag inBlameTag, AActor* inDetector, AActor* inOffender);
     
     UFUNCTION(BlueprintCallable)
     static void AddInfoMessageClientOnly(const UObject* inWCO, FText inInfoText);

@@ -12,6 +12,7 @@ public class AdvancedSessions : ModuleRules {
         PublicDependencyModuleNames.AddRange(new string[] {
             "Core",
             "CoreUObject",
+            "CrimeBossUGC",
             "Engine",
             "OnlineSubsystemUtils",
         });

@@ -1,4 +1,5 @@
 #include "IGS_BlueprintUtilities.h"
+#include "Kismet\GameplayStatics.h"
 
 UIGS_BlueprintUtilities::UIGS_BlueprintUtilities() {
 }
@@ -39,11 +40,11 @@ void UIGS_BlueprintUtilities::GetUniqueNetID(APlayerController* PlayerController
 }
 
 APlayerController* UIGS_BlueprintUtilities::GetLocalPlayerControllerForWorld(UObject* inWCO) {
-    return NULL;
+    return UGameplayStatics::GetPlayerController(inWCO->GetWorld(), 0);
 }
 
 APlayerController* UIGS_BlueprintUtilities::GetLocalPlayerController(UObject* inWCO) {
-    return NULL;
+    return UGameplayStatics::GetPlayerController(inWCO->GetWorld(), 0);
 }
 
 FColor UIGS_BlueprintUtilities::GetColorForTeamSide(EIGS_TeamSideEnum inTeamSide) {

@@ -2,6 +2,7 @@
 #include "GameplayTagContainer.h"
 #include "EIGS_GangsterVariationType.h"
 #include "EIGS_TeamSideEnum.h"
+#include "Templates/SubclassOf.h"
 
 UIGS_AIDatabaseFPS::UIGS_AIDatabaseFPS() {
     (*this).DollarDragon.Tiers.Tier1.Variation = EIGS_GangsterVariationType::US_Sicarios;
@@ -1822,7 +1823,7 @@ UIGS_AIDatabaseFPS::UIGS_AIDatabaseFPS() {
     (*this).Cagnali.TeamSide = EIGS_TeamSideEnum::TS_Gangsters;
 }
 
-FIGS_AILoadout UIGS_AIDatabaseFPS::GetLoadout(const FIGS_AILoadoutHolder& inLoadoutHolder, const AIGS_AISpawnPoint* inSpawnPoint, bool inIsStory) const {
+FIGS_AILoadout UIGS_AIDatabaseFPS::GetLoadout(const FIGS_AILoadoutHolder& inLoadoutHolder, FGameplayTagContainer inLoadoutTags, const TSubclassOf<UIGS_SettingsID> inSettingsOverride, const bool inIsStory, const UObject* inDebugWco) const {
     return FIGS_AILoadout{};
 }
 

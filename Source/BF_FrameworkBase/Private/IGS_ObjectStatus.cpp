@@ -4,7 +4,9 @@
 
 UIGS_ObjectStatus::UIGS_ObjectStatus(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).MaxHealth = 1.000000000e+02f;
+    (*this).HealthMultiplierAttribute = 1.000000000e+00f;
     (*this).AccumulateDamagePeriod = 2.999999933e-02f;
+    (*this).mR_BaseMaxHealth = -1.000000000e+00f;
 }
 
 void UIGS_ObjectStatus::SetHealthDecayDisabled(bool inDisabled) {
@@ -171,6 +173,7 @@ void UIGS_ObjectStatus::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
     DOREPLIFETIME(UIGS_ObjectStatus, IsInjured);
     DOREPLIFETIME(UIGS_ObjectStatus, m_OverrideReportingOfDamageDealt);
     DOREPLIFETIME(UIGS_ObjectStatus, m_OverrideReportingOfDamageDealtValue);
+    DOREPLIFETIME(UIGS_ObjectStatus, mR_BaseMaxHealth);
 }
 
 

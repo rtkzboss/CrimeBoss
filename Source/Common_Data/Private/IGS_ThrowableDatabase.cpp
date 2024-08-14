@@ -4,6 +4,13 @@
 UIGS_ThrowableDatabase::UIGS_ThrowableDatabase() {
 }
 
+void UIGS_ThrowableDatabase::ModAppendDataTable(UDataTable* inNewTable) {
+}
+
+UIGS_ThrowableDatabase* UIGS_ThrowableDatabase::GetThrowableDatabaseInstance(UObject* inWCO) {
+    return NULL;
+}
+
 int32 UIGS_ThrowableDatabase::GetIndex(const TSubclassOf<UIGS_ThrowableInventoryObject>& inClass) const {
     return 0;
 }

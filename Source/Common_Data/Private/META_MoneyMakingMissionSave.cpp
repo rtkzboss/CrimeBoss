@@ -11,6 +11,7 @@ FMETA_MoneyMakingMissionSave::FMETA_MoneyMakingMissionSave() {
     (*this).IntelData.AmountOfSoldeirsWereSentToIntel = 0;
     (*this).IntelData.RequiredSoldiersForFullRevealIntel = 0;
     (*this).IntelData.RespectValueOnMissionSpawn = EMETA_RespectLvl::Low;
+    (*this).IntelData.IntelRewardMultiplier = 1.000000000e+00f;
     (*this).OwnerGoal = nullptr;
     (*this).MissionExpenses = 0;
     (*this).HeistersCut = 0;

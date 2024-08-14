@@ -51,10 +51,7 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     (*this).PrimaryShooter = EIGS_WeaponAttackType::AT_UNKNOWN;
     (*this).Basher = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Basher"));
     (*this).VirtualSightSocketName = TEXT("VirtualSight");
-    (*this).BarrelSmokeParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
-    (*this).MuzzleFlashLight3PV->SetupAttachment((*this).MuzzleFlashRootComponent);
-    (*this).MuzzleFlashLightFPV->SetupAttachment((*this).MuzzleFlashRootComponent);
-    (*this).MuzzleFlashLightFPVSecondary->SetupAttachment((*this).RootComponent);
+    (*this).PrimaryActorTick.TickGroup = TG_DuringPhysics;
     (*this).SightModMesh->SetupAttachment((*this).RootComponent);
     (*this).DynamicScopeMesh->SetupAttachment((*this).RootComponent);
     (*this).VisibilityModMesh->SetupAttachment((*this).RootComponent);
@@ -69,6 +66,10 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     (*this).MuzzleFlashRootComponent->SetupAttachment((*this).RootComponent);
     (*this).MuzzleFlashParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
     (*this).MuzzleFlashParticleComponentCascade->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).BarrelSmokeParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashLight3PV->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashLightFPV->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).MuzzleFlashLightFPVSecondary->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_WeaponBase::StopAttack() {

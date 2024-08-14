@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "META_EquipmentSaveData.h"
 #include "META_WeaponSaveData.h"
 #include "EIGS_ItemPropertyFlags.h"
@@ -52,7 +53,7 @@ public:
     static FMETA_HeisterLoadout MakeMetaHeisterLoadoutChains(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inPrimaryWeapon, FMETA_WeaponSaveData inPrimaryWeaponSaveData, const TSubclassOf<UMETA_WeaponInventoryObject>& inSecondaryWeapon, FMETA_WeaponSaveData inSecondaryWeaponSaveData, const TArray<TSubclassOf<UMETA_WeaponInventoryObject>>& inPrimaryWeapons, const TArray<TSubclassOf<UMETA_WeaponInventoryObject>>& inSecondaryWeapons, FMETA_EquipmentSaveData inEquipmentSaveData, const TArray<TSubclassOf<UIGS_EquipmentInventoryObject>>& inChainEquipments);
     
     UFUNCTION(BlueprintCallable)
-    static FMETA_HeisterLoadout MakeMetaHeisterLoadout(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inPrimaryWeapon, const TSubclassOf<UMETA_WeaponInventoryObject>& inSecondaryWeapon, const TSubclassOf<UIGS_EquipmentInventoryObject>& inEquipment);
+    static FMETA_HeisterLoadout MakeMetaHeisterLoadout(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inPrimaryWeapon, const TSubclassOf<UMETA_WeaponInventoryObject>& inSecondaryWeapon, const TSubclassOf<UIGS_EquipmentInventoryObject>& inEquipment, const TArray<FGameplayTag>& inUnlockedWeaponSkins);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static bool IsShotgun_WieldableObject(UIGS_WieldableInventoryObjectBase* inWieldableData);
@@ -143,6 +144,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static TSubclassOf<UIGS_EquipmentInventoryObject> GetEquipmentForThrowable(const UObject* inWCO, TSubclassOf<UIGS_ThrowableInventoryObject> inThrowable);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static FGameplayTag GetEntitlementTagFromContainer(const FGameplayTagContainer& inTagContainer);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_CommonItemData GetCommonDataForClassBP(const UObject* inWCO, const TSubclassOf<UIGS_InventoryObjectFramework>& inItemClass);

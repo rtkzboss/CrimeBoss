@@ -9,6 +9,7 @@ public class Payback : ModuleRules {
         PrivateDependencyModuleNames.AddRange(new string[] {
             "OnlineSubsystem",
             "CommonUI",
+            "CrimeBossUGC",
         });
         PublicDependencyModuleNames.AddRange(new string[] {
             "AIModule",

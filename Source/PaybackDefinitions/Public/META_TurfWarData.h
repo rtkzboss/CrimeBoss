@@ -249,7 +249,7 @@ public:
     int32 GetWeaknessChangeIntensity(EMETA_AIBossStrengthChangeIntensity inIntensity) const;
     
     UFUNCTION(BlueprintCallable)
-    FMETA_WeakenMissionTurfActionGenData GetWeakenMissionTurfActionGenData(EMETA_RespectLvl inRespect);
+    FMETA_WeakenMissionTurfActionGenData GetWeakenMissionTurfActionGenData(EMETA_RespectLvl inRespect, bool inDoesGangHaveSpecialTier, bool inDoesGangHaveWeakenArmyTierModifier);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_UIArmySizeConfig GetUIArmySizeConfigDefense() const;

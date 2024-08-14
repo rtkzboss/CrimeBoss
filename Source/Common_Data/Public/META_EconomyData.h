@@ -21,6 +21,7 @@
 #include "EIGS_ModType.h"
 #include "IGS_CharacterClasses.h"
 #include "IGS_EconomyData_Base.h"
+#include "META_AllowedWeaponsInfo.h"
 #include "META_ArmyTierConfiguration.h"
 #include "META_BossCharacterConfiguration.h"
 #include "META_BossEliminationRewardsDistribution.h"
@@ -156,6 +157,14 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EMETA_RespectLvl, FMETA_BMEventEquipmentData> BM_EquipmentInfoPerBossRespect;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EMETA_ItemQuality, float> WeaponSkinChancePerQuality;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<FGameplayTag> ForbiddenWeaponSkins;
+    
+protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 BM_LootEventCooldown;
     
@@ -214,6 +223,9 @@ public:
     void RandomizePerksByIDAndLevel(const UObject* inWCO, EIGS_CharacterID inID, int32 inHeisterLevel, const TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>>& inForbiddenPerks, const TArray<FMETA_PerkData>& inCurrentPerks, TArray<FMETA_PerkData>& outRandomizedPerks, bool bIsPromotion);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsWeaponQualityAllowedOnRespect(const EMETA_RespectLvl inRespect, const EMETA_ItemQuality inQuality, const bool inAllowLower, const int32 inChanceThreshold);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_WeaponTurfReward GetWeaponTurfRewardForRepeatedCapture() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -224,6 +236,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     float GetWeaponsPoolRefreshMultiplier();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetWeaponSkinChancePerQuality(const EMETA_ItemQuality inWeaponQuality) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_WeaponEliminationReward GetWeaponRewardForElimination() const;
@@ -370,7 +385,7 @@ public:
     void GetGraphEconomyVariableByTag(FGameplayTag inVariableTag, FMETA_EconomyGraphVariableModeData& outData, bool& outSuccess);
     
     UFUNCTION(BlueprintCallable)
-    TArray<FMETA_CharacterInfo> GetGenericHeistersPoolForBlackmarketWithOneFree(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, UPARAM(Ref) TArray<FIGS_CharacterClasses>& inActiveGenericVariants);
+    TArray<FMETA_CharacterInfo> GetGenericHeistersPoolForBlackmarketWithOneFree(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, UPARAM(Ref) TArray<FIGS_CharacterClasses>& inActiveGenericVariants);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetGenericCharacterConfiguration(EMETA_ItemQuality inQuality, FMETA_GenericCharacterConfiguration& outConfig) const;
@@ -459,6 +474,9 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<EIGS_CharacterID> GetAllSuitableGenericCharacterIdsByCharacterQuality(EMETA_ItemQuality inCharacterQuality) const;
     
+    UFUNCTION(BlueprintCallable)
+    FMETA_AllowedWeaponsInfo GetAllowedWeaponsByRespect(const EMETA_RespectLvl inRespect);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<EMETA_ItemQuality> GetAllowedHeistersForRespectLvl(EMETA_RespectLvl inCurrentRespectLvl) const;
     
@@ -469,7 +487,7 @@ public:
     FMETA_MissionAdditionalMonetaryValue GetAdditionalWealthOfMission(const TSubclassOf<UMETA_MissionID>& inMission) const;
     
     UFUNCTION(BlueprintCallable)
-    FMETA_CharacterInfo GenerateGenericHeisterByPlayerRespectWithHireValue(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, UPARAM(Ref) TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool inIsFree, bool& outSuccess);
+    FMETA_CharacterInfo GenerateGenericHeisterByPlayerRespectWithHireValue(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, UPARAM(Ref) TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool inIsFree, bool& outSuccess);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     void DoesHaveAdditionalWealthConfig(const TSubclassOf<UMETA_MissionID>& inMission, bool& bHasAdditionalWealthConfig) const;

@@ -106,6 +106,9 @@ public:
     static bool IsAnyPlayerWithinDistace(const UObject* inWCO, FVector InPosition, float inDistance);
     
     UFUNCTION(BlueprintCallable)
+    static bool IsAnyHeisterDowned(UObject* inWCO);
+    
+    UFUNCTION(BlueprintCallable)
     static bool IsAimingInTolerance(AIGS_GameCharacterFramework* Instigator, float minAgnle);
     
     UFUNCTION(BlueprintCallable)
@@ -149,6 +152,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static float GetDestinationDistanceBetweenCharacters(AIGS_GameCharacterFramework* inQuerrier, FVector inPoint1, FVector inPoint2);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static int32 GetCountOfAlivePlayersWithDownedState(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static int32 GetCountOfAlivePlayers(UObject* inWCO);

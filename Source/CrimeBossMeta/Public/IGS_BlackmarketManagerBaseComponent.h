@@ -33,6 +33,9 @@ public:
     TArray<UMETA_Weapon*> GetWeaponsMarketPool() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    UMETA_Weapon* GetWeaponByTagAndSkinTag(FGameplayTag inWeaponTag, FGameplayTag inSkinTag) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UMETA_Weapon* GetWeaponByTag(FGameplayTag inWeaponTag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -48,7 +51,7 @@ public:
     UMETA_Character* GetCharacterByTag(FGameplayTag inCharacterTag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    bool BuyItem(FGameplayTag itemTag, FGameplayTag ScreenTag);
+    bool BuyItem(FGameplayTag itemTag, FGameplayTag screenTag, FGameplayTag SkinTag);
     
 };
 

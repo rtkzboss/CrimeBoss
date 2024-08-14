@@ -1,6 +1,8 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EIGS_InteractionType.h"
+#include "EIGS_InteractionWarningPriority.h"
+#include "EIGS_InteractionWarningType.h"
 #include "IGS_HUDSubwidgetBase.h"
 #include "Templates/SubclassOf.h"
 #include "IGS_UseTextWidget.generated.h"
@@ -20,6 +22,9 @@ private:
 public:
     UIGS_UseTextWidget();
 
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UpdateWarningText(EIGS_InteractionWarningType inType, EIGS_InteractionWarningPriority InPriority, bool inIsVisible);
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void UpdateObjectiveVisual(bool inIsVisible, bool inObjectiveCompleted);
     

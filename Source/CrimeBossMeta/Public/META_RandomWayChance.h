@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EMETA_ConditionExprOperator.h"
 #include "META_AdditionalConditionChance.h"
 #include "META_RandomWayChance.generated.h"
 
@@ -15,6 +16,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FMETA_AdditionalConditionChance> Conditions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EMETA_ConditionExprOperator ConditionOperator;
     
     CRIMEBOSSMETA_API FMETA_RandomWayChance();
 };

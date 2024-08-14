@@ -11,6 +11,7 @@ enum class EIGS_WeaponAttackType : uint8 {
     AT_Continuous,
     AT_Charged,
     AT_Custom,
+    AT_GrenadeSemiAuto,
     AT_MAX UMETA(Hidden),
     AT_UNKNOWN = 255,
 };

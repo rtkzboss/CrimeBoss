@@ -35,7 +35,4 @@ TArray<FName> UIGS_BossBackgroundManager::GetLoadedBackgroundLevelNames() const 
     return TArray<FName>();
 }
 
-void UIGS_BossBackgroundManager::ForceReloadLevel(FName inLevelToLoad) {
-}
-
 

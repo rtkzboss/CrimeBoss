@@ -6,6 +6,7 @@
 #include "EIGS_HUDVisibilityMode.h"
 
 UIGS_HitMarkerWidget::UIGS_HitMarkerWidget() {
+    (*this).HitMarkersSetting = EIGS_HitMarkersSetting::All;
 }
 
 

@@ -24,6 +24,12 @@ public:
     UFUNCTION(BlueprintCallable, meta=(WorldContext=inWorldContextObject))
     static UIGS_MiniProgressLerp* MiniProgressLerp(UObject* inWorldContextObject, UIGS_MiniProgressLerp*& outSelf, float inDuration, float inFromValue, float inToValue, EIGS_LerpCurve inCurve);
     
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsActive() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetToValue() const;
+    
 private:
     UFUNCTION(BlueprintCallable)
     void ExecUpdate();

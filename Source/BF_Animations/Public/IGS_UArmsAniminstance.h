@@ -158,6 +158,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_RappelAnimationsInfo RappelAnimationInfo;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float CameraBobIntensity;
+    
 private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     AIGS_PlayerFPVArms* m_PlayerArms;
@@ -230,6 +233,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnZiplineEnd_Event();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnWeaponShooterChange_Event(EIGS_WeaponAttackType InWeaponAttackType);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnUnEquipEnded_Event();

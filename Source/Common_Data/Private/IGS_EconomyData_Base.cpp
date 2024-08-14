@@ -54,11 +54,11 @@ TArray<FGameplayTag> UIGS_EconomyData_Base::GetWeaponTagsByClassAndQuality(const
     return TArray<FGameplayTag>();
 }
 
-TArray<UMETA_Weapon*> UIGS_EconomyData_Base::GetWeaponsPoolForBlackmarket(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, const TArray<FGameplayTag>& inUnlockedWeapons, TArray<FGameplayTag>& inUnseenUnlockedWeapons, TArray<UMETA_Weapon*>& inOldWeaponsPool, int32 inTargetAmountOfUnseenItemsForPurchase) {
+TArray<UMETA_Weapon*> UIGS_EconomyData_Base::GetWeaponsPoolForBlackmarket(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, TArray<FGameplayTag>& inUnseenUnlockedWeapons, TArray<UMETA_Weapon*>& inOldWeaponsPool, int32 inTargetAmountOfUnseenItemsForPurchase) {
     return TArray<UMETA_Weapon*>();
 }
 
-TArray<TSubclassOf<UMETA_WeaponInventoryObject>> UIGS_EconomyData_Base::GetWeaponsByClassAndQuality(const UObject* inWCO, FGameplayTag inWeaponClass, EMETA_ItemQuality inQuality, const TArray<FGameplayTag>& inUnlockedWeapons, bool inIgnoreUnlock) {
+TArray<TSubclassOf<UMETA_WeaponInventoryObject>> UIGS_EconomyData_Base::GetWeaponsByClassAndQuality(const UObject* inWCO, FGameplayTag inWeaponClass, EMETA_ItemQuality inQuality, const TArray<TSubclassOf<UMETA_WeaponInventoryObject>>& inAlreadySelectedWeapons, const TArray<FGameplayTag>& inUnlockedWeapons, bool inIgnoreUnlock) {
     return TArray<TSubclassOf<UMETA_WeaponInventoryObject>>();
 }
 
@@ -120,7 +120,7 @@ int32 UIGS_EconomyData_Base::GetMaxLevelOfCharacter(UObject* inWCO, const FGamep
     return 0;
 }
 
-TArray<FMETA_CharacterInfo> UIGS_EconomyData_Base::GetGenericHeistersPoolForBlackmarket(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, TSet<int32> inUniqueGenericIDs, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants) {
+TArray<FMETA_CharacterInfo> UIGS_EconomyData_Base::GetGenericHeistersPoolForBlackmarket(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, TSet<int32> inUniqueGenericIDs, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants) {
     return TArray<FMETA_CharacterInfo>();
 }
 
@@ -158,11 +158,11 @@ TArray<FMETA_MoneyMakingScenariosAdditionalWealthAndProbabilitiesConfiguration> 
     return TArray<FMETA_MoneyMakingScenariosAdditionalWealthAndProbabilitiesConfiguration>();
 }
 
-FMETA_CharacterInfo UIGS_EconomyData_Base::GenerateGenericHeisterByPlayerRespect(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, const int32 inUniqueGenericID, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool& outSuccess) {
+FMETA_CharacterInfo UIGS_EconomyData_Base::GenerateGenericHeisterByPlayerRespect(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, const int32 inUniqueGenericID, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool& outSuccess) {
     return FMETA_CharacterInfo{};
 }
 
-FMETA_CharacterInfo UIGS_EconomyData_Base::GenerateGenericHeisterByIdAndTier(UObject* inWCO, EIGS_CharacterID inGenericHeisterID, EMETA_ItemQuality inGenericHeisterTier, const int32 inUniqueGenericID, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool& outSuccess) {
+FMETA_CharacterInfo UIGS_EconomyData_Base::GenerateGenericHeisterByIdAndTier(UObject* inWCO, EIGS_CharacterID inGenericHeisterID, EMETA_ItemQuality inGenericHeisterTier, const int32 inUniqueGenericID, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool& outSuccess) {
     return FMETA_CharacterInfo{};
 }
 

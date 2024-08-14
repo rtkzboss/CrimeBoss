@@ -4,8 +4,15 @@
 UIGS_EquipmentDatabase::UIGS_EquipmentDatabase() {
 }
 
+void UIGS_EquipmentDatabase::ModAppendDataTable(UDataTable* inNewTable) {
+}
+
 int32 UIGS_EquipmentDatabase::GetIndex(const TSubclassOf<UIGS_EquipmentInventoryObject>& inClass) const {
     return 0;
+}
+
+UIGS_EquipmentDatabase* UIGS_EquipmentDatabase::GetEquipmentDatabaseInstance(UObject* inWCO) {
+    return NULL;
 }
 
 TArray<TSubclassOf<UIGS_EquipmentInventoryObject>> UIGS_EquipmentDatabase::GetEquipmentByQualities(UObject* inWCO, const TArray<EMETA_ItemQuality>& inQualities, const TArray<FGameplayTag>& inUnlockedEquipment, bool inIgnoreUnlock) {

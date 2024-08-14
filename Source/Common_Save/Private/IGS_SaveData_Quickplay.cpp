@@ -100,7 +100,6 @@ FIGS_SaveData_Quickplay::FIGS_SaveData_Quickplay() {
     (*this).SaveDataVersion.RevisionCreated = TEXT("");
     (*this).SaveDataVersion.RevisionSaved = TEXT("");
     (*this).SaveDataVersion.SnapshotRevision = TEXT("");
-    (*this).MetaPersistentId = TEXT("0");
     (*this).WantsToGoOffline = false;
 }
 

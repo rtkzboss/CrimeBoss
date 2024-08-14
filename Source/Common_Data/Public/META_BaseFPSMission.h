@@ -56,6 +56,9 @@ public:
     void SetObjectiveState(EMETA_ObjectiveState inNewState);
     
     UFUNCTION(BlueprintCallable)
+    void SetMissionRewardMultiplierFromIntel(const float inMultiplier);
+    
+    UFUNCTION(BlueprintCallable)
     void SetMissionOutCome(int32 inExpenses);
     
     UFUNCTION(BlueprintCallable)
@@ -137,6 +140,9 @@ public:
     EMETA_FPSMissionSubtype GetMissionSubtype() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetMissionRewardMultiplierFromIntel() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetMissionOutCome() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -188,10 +194,13 @@ public:
     void ClearObjective();
     
     UFUNCTION(BlueprintCallable)
-    void ChangeMaxMonetaryValueByIntel();
+    void ChangeAmountOfSoldiersWereSentByValue(int32 ByValue);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float CalculateCombinedMissionRewardMultiplier() const;
     
     UFUNCTION(BlueprintCallable)
-    void ChangeAmountOfSoldiersWereSentByValue(int32 ByValue);
+    void ApplyIntelProgressToMission();
     
 };
 

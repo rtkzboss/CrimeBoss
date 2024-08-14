@@ -13,6 +13,7 @@
 #include "EIGS_RoomType.h"
 #include "EIGS_TargetProximity.h"
 #include "EIGS_WalkieTalkieStatus.h"
+#include "CharDetectingPlayersChangedEventDelegate.h"
 #include "IGS_BumpIntoSignatureDelegate.h"
 #include "IGS_FloatChangedSignatureDelegate.h"
 #include "IGS_IsChargingChangedDelegate.h"
@@ -166,6 +167,9 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_FloatChangedSignature OnEnemyDetectionChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FCharDetectingPlayersChangedEvent OnDetectingPlayersChangedEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AActor*> m_PlayersDetectingActors;
@@ -416,6 +420,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FVector GetLastNavmeshLocation() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    TArray<AIGS_GameCharacterFramework*> GetDetectingPlayers() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     AIGS_GameCharacterFramework* GetCharacterOwner() const;

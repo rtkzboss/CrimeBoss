@@ -16,15 +16,15 @@ FIGS_EquipmentTableRow::FIGS_EquipmentTableRow() {
     (*this).Data.Charges = 10;
     (*this).Data.bRefreshChargesOvertime = false;
     (*this).Data.SecondsUntilChargeRefresh = -1;
+    (*this).Data.bRefreshChargesWithKills = false;
+    (*this).Data.KillsToChargeRefresh = -1;
     (*this).Data.Cooldown = 1.000000000e+00f;
     (*this).Data.InitChargesGameplayEffect = FSoftObjectPath(TEXT("/Game/00_Main/GameplayAbilitySystem/Abilities/ChargesEffects/GE_InitAbilityCharges.GE_InitAbilityCharges_C"), TEXT(""));
     (*this).Data.AddChargesGameplayEffect = FSoftObjectPath(TEXT("/Game/00_Main/GameplayAbilitySystem/Abilities/ChargesEffects/GE_AddAbilityCharges.GE_AddAbilityCharges_C"), TEXT(""));
     (*this).Data.InventoryIconStringGlyph = TEXT("");
     (*this).Data.UnlockProperties.IsUnlockable = false;
-    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.UnlockProperties.RequiredTag, 0)) = NAME_None;
     (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.UnlockProperties.RequiredTags, 0)).Empty();
     (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.UnlockProperties.RequiredTags, 0)).Empty();
-    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.UnlockProperties.EntitlementTag, 0)) = NAME_None;
     (*this).Data.UnlockProperties.RequiredValue = 0.000000000e+00f;
     (*this).Data.UnlockProperties.ShowIfNotOwned = true;
     (*this).Data.UnlockProperties.UnlockCoverImage = nullptr;

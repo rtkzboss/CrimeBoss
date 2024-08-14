@@ -24,7 +24,7 @@ void UIGS_SuspicionManager::OnRep_Strikes(int32 inLastStrikes) {
 void UIGS_SuspicionManager::OnRep_Alarm() {
 }
 
-void UIGS_SuspicionManager::Multicast_OnStrikeAdded_Implementation(int32 inNewStrikes, int32 inIncrease, const FText& inBlame) {
+void UIGS_SuspicionManager::Multicast_OnStrikeAdded_Implementation(int32 inNewStrikes, int32 inIncrease, const FGameplayTag inBlameTag) {
 }
 
 void UIGS_SuspicionManager::Multicast_AddSuspicionInfoMessage_Implementation(int32 inStrikesIncrease, const FText& inBlame) {
@@ -56,7 +56,7 @@ void UIGS_SuspicionManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     
     DOREPLIFETIME(UIGS_SuspicionManager, CurrentStrikes);
-    DOREPLIFETIME(UIGS_SuspicionManager, Blame);
+    DOREPLIFETIME(UIGS_SuspicionManager, BlameTag);
     DOREPLIFETIME(UIGS_SuspicionManager, AlarmReason);
     DOREPLIFETIME(UIGS_SuspicionManager, IsAlarmed);
 }

@@ -11,6 +11,15 @@ UCLASS(Blueprintable, EditInlineNew)
 class BF_GUI_API UIGS_WidgetInputKeyIcon : public UUserWidget {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bOverrideInputActionsByDevice;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EIGS_InputAction KeyboardMouseInputAction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EIGS_InputAction GamepadInputAction;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FName InputKeyCharacter;
@@ -27,10 +36,10 @@ protected:
 public:
     UIGS_WidgetInputKeyIcon();
 
-protected:
     UFUNCTION(BlueprintCallable)
     void SetInputActionToShow(EIGS_InputAction InAction);
     
+protected:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnInputKeyCharacterChanged(FName inInputKeyCharacter, bool inIsFallback);
     

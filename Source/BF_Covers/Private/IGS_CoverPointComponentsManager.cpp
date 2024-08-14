@@ -9,6 +9,9 @@ UIGS_CoverPointComponentsManager::UIGS_CoverPointComponentsManager(const FObject
 void UIGS_CoverPointComponentsManager::SetCoverPointComponents(const TArray<UIGS_CoverPointComponent*>& inComponents) {
 }
 
+void UIGS_CoverPointComponentsManager::OnNavigationBuildFinished(ANavigationData* inNavData) {
+}
+
 void UIGS_CoverPointComponentsManager::DeactivateCovers() {
 }
 

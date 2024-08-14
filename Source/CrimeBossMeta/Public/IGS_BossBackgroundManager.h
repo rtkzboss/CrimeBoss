@@ -61,9 +61,5 @@ private:
     UFUNCTION(BlueprintCallable)
     TArray<FName> GetLoadedBackgroundLevelNames() const;
     
-public:
-    UFUNCTION(BlueprintCallable)
-    void ForceReloadLevel(FName inLevelToLoad);
-    
 };
 

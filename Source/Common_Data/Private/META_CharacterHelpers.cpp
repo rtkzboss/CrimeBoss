@@ -27,7 +27,7 @@ TArray<FMETA_PerkData> UMETA_CharacterHelpers::GenerateGenericCharacterPerksAtLe
     return TArray<FMETA_PerkData>();
 }
 
-UMETA_Character* UMETA_CharacterHelpers::CreateCharacter(UObject* inWCO, UObject* inOuter, UIGS_EconomyData_Base* inEconomyData, const FGameplayTag inCharacterTag) {
+UMETA_Character* UMETA_CharacterHelpers::CreateCharacter(UObject* inWCO, UObject* inOuter, UIGS_EconomyData_Base* inEconomyData, const FGameplayTag inCharacterTag, const TArray<FGameplayTag>& inUnlockedWeaponSkins) {
     return NULL;
 }
 

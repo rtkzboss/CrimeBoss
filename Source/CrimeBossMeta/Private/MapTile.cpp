@@ -19,6 +19,9 @@ void UMapTile::ToggleHighlighted(bool inHighlighted) {
 void UMapTile::SetWeaknessLowerTier(bool inState) {
 }
 
+void UMapTile::SetWeaknessExpirationInDays(int32 inDays) {
+}
+
 void UMapTile::SetType(EMETA_TileType inType) {
 }
 
@@ -84,8 +87,16 @@ bool UMapTile::GetWeaknessLowerTier() const {
     return false;
 }
 
+int32 UMapTile::GetWeaknessExpirationInDays() const {
+    return 0;
+}
+
 EMETA_TileType UMapTile::GetType() const {
     return EMETA_TileType::Empty;
+}
+
+EMETA_TileSize UMapTile::GetTileSize() const {
+    return EMETA_TileSize::Unlimited;
 }
 
 TArray<FGameplayTag> UMapTile::GetNeighbours() const {
@@ -104,11 +115,11 @@ TArray<TSubclassOf<UMETA_MissionID>> UMapTile::GetMissionClasses() const {
     return TArray<TSubclassOf<UMETA_MissionID>>();
 }
 
-int32 UMapTile::GetMinAmountOfSoldiersForDefence() {
+int32 UMapTile::GetMinAmountOfSoldiersForDefence() const {
     return 0;
 }
 
-int32 UMapTile::GetMinAmountOfSoldiersForAttack() {
+int32 UMapTile::GetMinAmountOfSoldiersForAttack() const {
     return 0;
 }
 
@@ -117,10 +128,6 @@ void UMapTile::GetIncome(const UObject* inWCO, int32& OutValue, FGameplayTag& ou
 
 FGameplayTag UMapTile::GetId() {
     return FGameplayTag{};
-}
-
-EMETA_GangSpawnArea UMapTile::GetGangSpawnArea() const {
-    return EMETA_GangSpawnArea::None;
 }
 
 EMETA_Gang UMapTile::GetGang() const {

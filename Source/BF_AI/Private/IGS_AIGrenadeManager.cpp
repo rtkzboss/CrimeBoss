@@ -1,6 +1,5 @@
 #include "IGS_AIGrenadeManager.h"
 #include "ComponentInstanceDataCache.h"
-#include "Templates/SubclassOf.h"
 
 UIGS_AIGrenadeManager::UIGS_AIGrenadeManager(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).TickInterval = 1.000000000e+00f;
@@ -31,7 +30,7 @@ UIGS_AIGrenadeManager::UIGS_AIGrenadeManager(const FObjectInitializer& ObjectIni
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).DownThrowTag, 0)) = TEXT("Anim.Combat.Throw.Frag.Down");
 }
 
-void UIGS_AIGrenadeManager::RemoveThrowableCooldown(const TSubclassOf<UIGS_ThrowableInventoryObject> inObject, const EIGS_UnitSpecialization inSpecialization, const AActor* inInstigator) {
+void UIGS_AIGrenadeManager::RemoveThrowableCooldown(const TSoftClassPtr<UIGS_ThrowableInventoryObject> inObject, const EIGS_UnitSpecialization inSpecialization, const AActor* inInstigator) {
 }
 
 UIGS_AIGrenadeManager* UIGS_AIGrenadeManager::Instance(const UObject* inWorldContextObject) {

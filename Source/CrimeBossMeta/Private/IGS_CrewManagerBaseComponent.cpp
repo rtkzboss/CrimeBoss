@@ -17,7 +17,7 @@ bool UIGS_CrewManagerBaseComponent::PromoteHeister_Implementation(UMETA_Characte
     return false;
 }
 
-bool UIGS_CrewManagerBaseComponent::MoveWeaponToItsSlotInHeistersLoadoutFromStash_Implementation(UMETA_Character* ToCharacter, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponId, UMETA_Character* FromCharacter) {
+bool UIGS_CrewManagerBaseComponent::MoveWeaponToItsSlotInHeistersLoadoutFromStash_Implementation(UMETA_Character* ToCharacter, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponId, UMETA_Character* FromCharacter, FGameplayTag inWeaponSkinTagID) {
     return false;
 }
 

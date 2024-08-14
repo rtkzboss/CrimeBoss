@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_CharacterID.h"
 #include "EIGS_InventorySlot.h"
 #include "EIGS_WeaponSubtype.h"
@@ -57,6 +58,9 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void SetWeaponSkin(FGameplayTag inSkinTag);
+    
+    UFUNCTION(BlueprintCallable)
+    bool SetRandomWeaponSkin(UObject* inWCO, const TArray<FGameplayTag>& inUnlockedWeaponSkinTagIDs);
     
     UFUNCTION(BlueprintCallable)
     void SetPrice(int32 inNewPrice);
@@ -144,6 +148,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetDaysInShop() const;
+    
+    UFUNCTION(BlueprintCallable)
+    FGameplayTagContainer GetCompatibleWeaponSkins(UObject* inWCO, const TArray<FGameplayTag>& inUnlockedWeaponSkinTagIDs);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMETA_Character* GetCharacter() const;

@@ -140,7 +140,6 @@ FIGS_SaveData_Career::FIGS_SaveData_Career() {
     (*this).BossLevelManagerData.AmountOfPrimaryWeaponsIssued = 0;
     (*this).BossLevelManagerData.AmountOfAdditionalEquipmentIssued = 0;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).PlanningBoardManagerData.ActivePlanningBoardTag, 0)) = NAME_None;
-    (*this).Achievements.Empty();
     (*this).CareerEnd.bIsPending = false;
     (*this).CareerEnd.bChallengeRewardGenerated = false;
     (*this).CareerEnd.bRewardsClaimed = false;
@@ -151,6 +150,5 @@ FIGS_SaveData_Career::FIGS_SaveData_Career() {
     (*this).SaveDataVersion.RevisionSaved = TEXT("");
     (*this).SaveDataVersion.SnapshotRevision = TEXT("");
     (*this).StartingEntitlementTags.Empty();
-    (*this).MetaPersistentId = TEXT("0");
 }
 

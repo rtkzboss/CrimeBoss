@@ -93,7 +93,13 @@ void AIGS_PlayerCharacter::SwitchToDeathCamera_Implementation() {
 
 
 
+void AIGS_PlayerCharacter::ShowChatWheelIcon_Implementation(const FText& inIconText) {
+}
+
 void AIGS_PlayerCharacter::Shout(bool inIsHolding) {
+}
+
+void AIGS_PlayerCharacter::SetShowPlayerOutline(bool inShowPlayerOutline) {
 }
 
 void AIGS_PlayerCharacter::SetRandomVoiceAccordingToEthnicityAndGender() {
@@ -215,6 +221,9 @@ void AIGS_PlayerCharacter::OwnerPossess_Implementation() {
 }
 
 void AIGS_PlayerCharacter::OnPlayerStateChanged_Implementation(AIGS_PlayerStateGame* inPlayerState) {
+}
+
+void AIGS_PlayerCharacter::OnEnemyKilled(AIGS_GameCharacterFramework* inInstigator, const FHitResult& inHitResult) {
 }
 
 void AIGS_PlayerCharacter::NotifyDeathCameraSkippable() {
@@ -346,6 +355,10 @@ AIGS_RideableVehicleBaseFramework* AIGS_PlayerCharacter::GetUsedVehicle() const 
     return NULL;
 }
 
+bool AIGS_PlayerCharacter::GetShowPlayerOutline() {
+    return false;
+}
+
 UIGS_PlayerCommandComponent* AIGS_PlayerCharacter::GetPlayerCommandComponent() const {
     return NULL;
 }
@@ -435,6 +448,9 @@ bool AIGS_PlayerCharacter::CanMoveOnLadder() const {
 }
 
 void AIGS_PlayerCharacter::CancelAndRemoveAbility1() {
+}
+
+void AIGS_PlayerCharacter::CallOnChangeShowPrediction(bool inShow, TSubclassOf<UIGS_ThrowableInventoryObject> inPredictedClass) {
 }
 
 void AIGS_PlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {

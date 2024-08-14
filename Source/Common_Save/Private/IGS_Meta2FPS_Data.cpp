@@ -14,6 +14,7 @@ FIGS_Meta2FPS_Data::FIGS_Meta2FPS_Data() {
     (*this).WantedBadges = 0;
     (*this).IntelLevel = -1;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).BonusObjectiveID, 0)) = NAME_None;
+    (*this).SupportsCleanExecution = false;
     (*this).StartMusic = EIGS_MusicMissionState::None;
     (*this).StartupSource = EIGS_MissionStartupSource::INVALID;
     (*this).MissionSubtype = TEXT("");

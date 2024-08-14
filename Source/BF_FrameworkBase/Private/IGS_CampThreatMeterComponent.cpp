@@ -3,7 +3,6 @@
 
 UIGS_CampThreatMeterComponent::UIGS_CampThreatMeterComponent(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).TickInterval = 1.000000000e+00f;
-    (*this).TimeProtected = 1.500000000e+01f;
     (*this).DistanceThreshold = 2.500000000e+02f;
     (*this).CampZoneDistance = 6.000000000e+02f;
     (*this).TimeToMarkAsCamp = 4.000000000e+00f;

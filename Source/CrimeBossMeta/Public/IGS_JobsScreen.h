@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "IGS_Screen.h"
 #include "IGS_MultiplayerJobCategoryRow.h"
 #include "Templates/SubclassOf.h"
@@ -9,15 +10,16 @@ class UHorizontalBox;
 class UIGSScrollBox;
 class UIGS_JobsItemWidget;
 class UIGS_JobsScreenCategoryWidget;
+class UUserWidget;
 
 UCLASS(Blueprintable, EditInlineNew)
 class CRIMEBOSSMETA_API UIGS_JobsScreen : public UIGS_Screen {
     GENERATED_BODY()
 public:
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UHorizontalBox* JobsCategoriesContent;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UIGSScrollBox* IGSScrollBoxWidget;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -86,6 +88,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void GoToCategory(int32 Direction);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UUserWidget* GetWidgetByJobTag(FGameplayTag inTag, bool inIncludeRecomended) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UIGS_JobsScreenCategoryWidget* GetSelectedCategoryWidget() const;

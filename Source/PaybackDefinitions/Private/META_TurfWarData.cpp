@@ -43,7 +43,7 @@ int32 UMETA_TurfWarData::GetWeaknessChangeIntensity(EMETA_AIBossStrengthChangeIn
     return 0;
 }
 
-FMETA_WeakenMissionTurfActionGenData UMETA_TurfWarData::GetWeakenMissionTurfActionGenData(EMETA_RespectLvl inRespect) {
+FMETA_WeakenMissionTurfActionGenData UMETA_TurfWarData::GetWeakenMissionTurfActionGenData(EMETA_RespectLvl inRespect, bool inDoesGangHaveSpecialTier, bool inDoesGangHaveWeakenArmyTierModifier) {
     return FMETA_WeakenMissionTurfActionGenData{};
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "EIGS_HitMarkersSetting.h"
 #include "UObject/NoExportTypes.h"
 #include "Engine/EngineTypes.h"
 #include "IGS_HUDSubwidgetBase.h"
@@ -22,6 +23,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     AIGS_WeaponBase* CurrentWeapon;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EIGS_HitMarkersSetting HitMarkersSetting;
     
     UIGS_HitMarkerWidget();
 

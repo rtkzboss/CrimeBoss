@@ -23,6 +23,9 @@ float UMETA_CharacterPerksHandling::GetPriceCoefficientOfHealingAction(UMETA_Cha
     return 0.0f;
 }
 
+void UMETA_CharacterPerksHandling::GetPerkStats(const UObject* inWCO, const FGameplayTag inPerkID, bool& outSuccess, TMap<FGameplayAttribute, float>& outStats) {
+}
+
 float UMETA_CharacterPerksHandling::GetPercentageOfMissionPlaningCost(UMETA_Character* inCharacter) {
     return 0.0f;
 }
@@ -75,12 +78,19 @@ float UMETA_CharacterPerksHandling::GetHealingMultiplier(UMETA_Character* inChar
     return 0.0f;
 }
 
+FText UMETA_CharacterPerksHandling::GetFormattedPerkDescription(const UObject* inWCO, const FGameplayTag inPerkID, const bool inEnableRichText, const FString& inOverrideStyle) {
+    return FText::GetEmpty();
+}
+
 float UMETA_CharacterPerksHandling::GetExtraMoneyInPercentsAfterMission(UMETA_Character* inCharacter) {
     return 0.0f;
 }
 
 int32 UMETA_CharacterPerksHandling::GetConvertsAmountFromDeathToRestingAfterFps(UMETA_Character* inCharacter) {
     return 0;
+}
+
+void UMETA_CharacterPerksHandling::GetCombinedPerkStats(const UObject* inWCO, const UMETA_PerkStatsData* inPerkStatsData, const FGameplayTag inPerkID, bool& outSuccess, TMap<FMETA_PerkStatGroup, int32>& outStats) {
 }
 
 float UMETA_CharacterPerksHandling::GetChanceToStartMissionWith1LessWantedStart(UMETA_Character* inCharacter) {

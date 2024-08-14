@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameplayTagContainer.h"
-#include "IGS_AchievementSaveData.h"
+#include "IGS_SaveData_Base.h"
 #include "IGS_SaveData_Version.h"
 #include "META_BlackmarketManagerSaveData.h"
 #include "META_BossLevelManagerSaveData.h"
@@ -23,7 +23,7 @@
 #include "IGS_SaveData_Career.generated.h"
 
 USTRUCT(BlueprintType)
-struct COMMON_SAVE_API FIGS_SaveData_Career {
+struct COMMON_SAVE_API FIGS_SaveData_Career : public FIGS_SaveData_Base {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
@@ -84,9 +84,6 @@ public:
     FMETA_PlanningBoardManagerSaveData PlanningBoardManagerData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
-    TArray<FIGS_AchievementSaveData> Achievements;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FMETA_CareerEndSaveData CareerEnd;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
@@ -94,9 +91,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TArray<FGameplayTag> StartingEntitlementTags;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
-    FString MetaPersistentId;
     
     FIGS_SaveData_Career();
 };

@@ -4,16 +4,15 @@
 #include "GameplayTagContainer.h"
 #include "EIGS_CharacterID.h"
 #include "IGS_InteractionStateChangedDelegate.h"
-#include "IGS_OnBossDownChangedSignatureDelegate.h"
 #include "IGS_OnClientHoldCanceledSignatureDelegate.h"
 #include "IGS_OnClientHoldStartedSignatureDelegate.h"
 #include "IGS_OnClientUseReleasedSignatureDelegate.h"
 #include "IGS_OnClientUsedSignatureDelegate.h"
-#include "IGS_OnObjectiveChangedSignatureDelegate.h"
 #include "IGS_OnServerHoldCanceledSignatureDelegate.h"
 #include "IGS_OnServerHoldStartedSignatureDelegate.h"
 #include "IGS_OnServerUseReleasedSignatureDelegate.h"
 #include "IGS_OnServerUsedSignatureDelegate.h"
+#include "IGS_OnWarningChangedSignatureDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "IGS_InteractiveComponent.generated.h"
 
@@ -55,10 +54,7 @@ public:
     FIGS_OnClientHoldCanceledSignature OnClientHoldCanceledEvent;
     
     UPROPERTY(BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FIGS_OnObjectiveChangedSignature OnObjectiveChangedEvent;
-    
-    UPROPERTY(BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FIGS_OnBossDownChangedSignature OnBossDownChangedEvent;
+    FIGS_OnWarningChangedSignature OnWarningChangedEvent;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool SingleUse;
@@ -143,6 +139,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bIsCarryableInteraction;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAutoPickupIgnoresObstacles;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTagContainer SuspicionTags;

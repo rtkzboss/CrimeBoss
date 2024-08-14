@@ -5,6 +5,7 @@
 #include "CommonHeisterData.h"
 #include "CommonHeisterLoadout.h"
 #include "GameFramework/OnlineReplStructs.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_StorePlatform.h"
 #include "IGS_IsLevelLoadedDelegateDelegate.h"
 #include "IGS_PlayerStateData.h"
@@ -55,6 +56,9 @@ public:
     bool ShouldUsePlayerStateLoadout();
     
     UFUNCTION(BlueprintCallable)
+    void SetHordeModeTokens(int32 inTokens);
+    
+    UFUNCTION(BlueprintCallable)
     void SetHeisterLoadout(FCommonHeisterLoadout inLoadout);
     
     UFUNCTION(BlueprintCallable)
@@ -72,6 +76,9 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void SendTextChatMessageTextOnly(const FText& inMessage);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void SendTextChatMessage(const FText& InText, const FString& inUserId, const TArray<FString>& inBlockedUsersList);
     
 protected:
@@ -85,6 +92,9 @@ protected:
     void OnRep_bIsReady() const;
     
 public:
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void Multicast_HandleChatWheelReaction(FGameplayTag inTag);
+    
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void MessageToServer_SendPlayerData(FIGS_PlayerStateData inPlayerData);
     
@@ -98,6 +108,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EIGS_StorePlatform GetStorePlatform() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetHordeModeTokens() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FCommonHeisterData GetHeisterData() const;

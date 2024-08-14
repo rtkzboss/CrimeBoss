@@ -153,5 +153,8 @@ public:
     
     UMETA_QuickPlayData();
 
+    UFUNCTION(BlueprintCallable)
+    void GetSpecialTierChance(const EIGS_UserDifficulty inUserDifficulty, const int32 inStormIntensity, bool& outHasOverride, float& outRatio);
+    
 };
 

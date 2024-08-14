@@ -220,6 +220,9 @@ public:
     UFUNCTION(BlueprintCallable)
     UIGS_BleedingHandlerComponent* GetBleedingComponent();
     
+    UFUNCTION(BlueprintCallable)
+    void ForceDestroyZiptieComponent();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure=false)
     void DropBag() const;
     

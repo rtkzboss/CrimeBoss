@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "EIGS_CharacterState.h"
 #include "EIGS_ReloadInterruptReasonEnum.h"
+#include "EIGS_WeaponAttackType.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
 #include "Animation/PoseSnapshot.h"
@@ -408,6 +409,11 @@ private:
     UFUNCTION(BlueprintCallable)
     void OnWieldableSlotChange(EIGS_WieldableSlot Type, AIGS_WieldableBase* inWieldable, UIGS_InventoryObjectFramework* inWeaponObject);
     
+public:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnWeaponShooterChange_Event(EIGS_WeaponAttackType InWeaponAttackType);
+    
+private:
     UFUNCTION(BlueprintCallable)
     void OnWeaponObjectChange(AIGS_WieldableBase* InWeaponBase);
     

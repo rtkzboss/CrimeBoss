@@ -1,5 +1,6 @@
 #pragma once
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "BTTask_CallWalkieTalkieBase.h"
 #include "BTTask_CallWalkieTalkieCustom.generated.h"
 
@@ -12,7 +13,7 @@ protected:
     int32 StrikesToAdd;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText BlameText;
+    FGameplayTag BlameTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText DialogueID;

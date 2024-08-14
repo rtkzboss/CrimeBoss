@@ -8,6 +8,9 @@ AIGS_PooledParticleNiagara::AIGS_PooledParticleNiagara(const FObjectInitializer&
     (*this).RootComponent = (USceneComponent*)NiagaraComponent;
 }
 
+void AIGS_PooledParticleNiagara::SetTemplate(UNiagaraSystem* inNewTemplate) const {
+}
+
 void AIGS_PooledParticleNiagara::OnNiagaraSystemFinished(UNiagaraComponent* FinishedComponent) {
 }
 

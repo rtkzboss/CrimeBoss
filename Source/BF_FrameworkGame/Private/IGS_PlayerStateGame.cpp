@@ -11,6 +11,9 @@ bool AIGS_PlayerStateGame::ShouldUsePlayerStateLoadout() {
     return false;
 }
 
+void AIGS_PlayerStateGame::SetHordeModeTokens(int32 inTokens) {
+}
+
 void AIGS_PlayerStateGame::SetHeisterLoadout(FCommonHeisterLoadout inLoadout) {
 }
 
@@ -35,6 +38,12 @@ bool AIGS_PlayerStateGame::Server_SetIsJustLevelLoaded_Validate() {
     return true;
 }
 
+void AIGS_PlayerStateGame::SendTextChatMessageTextOnly_Implementation(const FText& inMessage) {
+}
+bool AIGS_PlayerStateGame::SendTextChatMessageTextOnly_Validate(const FText& inMessage) {
+    return true;
+}
+
 void AIGS_PlayerStateGame::SendTextChatMessage_Implementation(const FText& InText, const FString& inUserId, const TArray<FString>& inBlockedUsersList) {
 }
 bool AIGS_PlayerStateGame::SendTextChatMessage_Validate(const FText& InText, const FString& inUserId, const TArray<FString>& inBlockedUsersList) {
@@ -48,6 +57,9 @@ void AIGS_PlayerStateGame::OnRep_IsJustLevelLoaded() const {
 }
 
 void AIGS_PlayerStateGame::OnRep_bIsReady() const {
+}
+
+void AIGS_PlayerStateGame::Multicast_HandleChatWheelReaction_Implementation(FGameplayTag inTag) {
 }
 
 void AIGS_PlayerStateGame::MessageToServer_SendPlayerData_Implementation(FIGS_PlayerStateData inPlayerData) {
@@ -65,6 +77,10 @@ void AIGS_PlayerStateGame::GetTeammateStatus(float& outCurrentHP, float& outMaxH
 
 EIGS_StorePlatform AIGS_PlayerStateGame::GetStorePlatform() const {
     return EIGS_StorePlatform::None;
+}
+
+int32 AIGS_PlayerStateGame::GetHordeModeTokens() const {
+    return 0;
 }
 
 FCommonHeisterData AIGS_PlayerStateGame::GetHeisterData() const {

@@ -99,6 +99,10 @@ bool UIGS_AIHelpersLibrary::IsAnyPlayerWithinDistace(const UObject* inWCO, FVect
     return false;
 }
 
+bool UIGS_AIHelpersLibrary::IsAnyHeisterDowned(UObject* inWCO) {
+    return false;
+}
+
 bool UIGS_AIHelpersLibrary::IsAimingInTolerance(AIGS_GameCharacterFramework* Instigator, float minAgnle) {
     return false;
 }
@@ -156,6 +160,10 @@ bool UIGS_AIHelpersLibrary::GetEnemiesOfSide(const UObject* inWCO, EIGS_TeamSide
 
 float UIGS_AIHelpersLibrary::GetDestinationDistanceBetweenCharacters(AIGS_GameCharacterFramework* inQuerrier, FVector inPoint1, FVector inPoint2) {
     return 0.0f;
+}
+
+int32 UIGS_AIHelpersLibrary::GetCountOfAlivePlayersWithDownedState(UObject* inWCO) {
+    return 0;
 }
 
 int32 UIGS_AIHelpersLibrary::GetCountOfAlivePlayers(UObject* inWCO) {

@@ -8,7 +8,7 @@ UIGS_RequestOpenModalWindow* UIGS_RequestOpenModalWindow::RequestOpenVideoModalW
     return NULL;
 }
 
-UIGS_RequestOpenModalWindow* UIGS_RequestOpenModalWindow::RequestOpenModalWindowDataRow(UObject* WorldContextObject, FIGS_ModalTableRow& modalData, EScreenZOrder screenOrder) {
+UIGS_RequestOpenModalWindow* UIGS_RequestOpenModalWindow::RequestOpenModalWindowDataRow(UObject* WorldContextObject, FIGS_ModalTableRow& ModalData, EScreenZOrder screenOrder, bool isTutorial) {
     return NULL;
 }
 

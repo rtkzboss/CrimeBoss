@@ -56,6 +56,9 @@ protected:
     
 public:
     UFUNCTION(BlueprintCallable)
+    UMETA_Perk* UpgradePerk(UMETA_Perk* inPerk, FGameplayTag inScreenTag);
+    
+    UFUNCTION(BlueprintCallable)
     void RemoveItem(FGameplayTag inItemTag);
     
 protected:
@@ -65,6 +68,9 @@ protected:
 public:
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsItemInPool(FGameplayTag inItemTag) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool HasPerkInPool(FGameplayTag inPerkTag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     TArray<UMETA_WeaponSkin*> GetWeaponSkinsMarketPool() const;

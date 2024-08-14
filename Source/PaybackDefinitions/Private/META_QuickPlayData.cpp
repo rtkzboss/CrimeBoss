@@ -34,4 +34,7 @@ UMETA_QuickPlayData::UMETA_QuickPlayData() {
     gen0.AddDefaulted(4);
 }
 
+void UMETA_QuickPlayData::GetSpecialTierChance(const EIGS_UserDifficulty inUserDifficulty, const int32 inStormIntensity, bool& outHasOverride, float& outRatio) {
+}
+
 

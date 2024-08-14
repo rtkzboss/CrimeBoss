@@ -6,11 +6,19 @@ UIGS_Quickplay_BlackMarketManagerComponent::UIGS_Quickplay_BlackMarketManagerCom
 
 
 
+UMETA_Perk* UIGS_Quickplay_BlackMarketManagerComponent::UpgradePerk(UMETA_Perk* inPerk, FGameplayTag inScreenTag) {
+    return NULL;
+}
+
 void UIGS_Quickplay_BlackMarketManagerComponent::RemoveItem(FGameplayTag inItemTag) {
 }
 
 
 bool UIGS_Quickplay_BlackMarketManagerComponent::IsItemInPool(FGameplayTag inItemTag) const {
+    return false;
+}
+
+bool UIGS_Quickplay_BlackMarketManagerComponent::HasPerkInPool(FGameplayTag inPerkTag) const {
     return false;
 }
 

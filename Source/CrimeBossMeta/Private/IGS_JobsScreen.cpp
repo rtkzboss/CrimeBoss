@@ -39,6 +39,10 @@ void UIGS_JobsScreen::InitializeJobScreen(const TArray<FIGS_MultiplayerJobCatego
 void UIGS_JobsScreen::GoToCategory(int32 Direction) {
 }
 
+UUserWidget* UIGS_JobsScreen::GetWidgetByJobTag(FGameplayTag inTag, bool inIncludeRecomended) const {
+    return NULL;
+}
+
 UIGS_JobsScreenCategoryWidget* UIGS_JobsScreen::GetSelectedCategoryWidget() const {
     return NULL;
 }

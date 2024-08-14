@@ -49,6 +49,12 @@ void UIGS_DownStateHandlerComponent::ForceChangeState(EIGS_HealthState inState) 
 void UIGS_DownStateHandlerComponent::Client_ReviveChange_Implementation(APawn* inHealer, bool Inactive, bool inIsFinished) {
 }
 
+void UIGS_DownStateHandlerComponent::CallOnCanSelfrevive() {
+}
+
+void UIGS_DownStateHandlerComponent::CallGoToDownstateAnimationDone() {
+}
+
 void UIGS_DownStateHandlerComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const {
     Super::GetLifetimeReplicatedProps(OutLifetimeProps);
     

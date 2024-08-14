@@ -10,6 +10,8 @@
 
 class APaperDollAbstract;
 class UCustomizableObjectPopulation;
+class UDataTable;
+class UIGS_CharacterDatabase;
 class UObject;
 
 UCLASS(Blueprintable)
@@ -18,6 +20,9 @@ class COMMON_DATA_API UIGS_CharacterDatabase : public UGameInstanceSubsystem {
 public:
     UIGS_CharacterDatabase();
 
+    UFUNCTION(BlueprintCallable)
+    void ModAppendDataTable(UDataTable* inNewTable);
+    
     UFUNCTION(BlueprintCallable)
     static int32 GetNextMutableIndex(UObject* inWCO);
     
@@ -44,6 +49,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static int32 GetCharacterGenericIDFromEntitlements(UObject* inWCO, EIGS_CharacterID inID, int32 inOriginalGenericID);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UIGS_CharacterDatabase* GetCharacterDatabaseInstance(UObject* inWCO);
     
 };
 

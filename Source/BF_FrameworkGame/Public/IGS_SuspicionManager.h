@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_AlarmReason.h"
 #include "IGS_AlarmedSignatureDelegate.h"
 #include "IGS_AllGuardsDeadSignatureDelegate.h"
@@ -27,7 +28,7 @@ public:
     int32 CurrentStrikes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
-    FText Blame;
+    FGameplayTag BlameTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     EIGS_AlarmReason AlarmReason;
@@ -110,7 +111,7 @@ protected:
     void OnRep_Alarm();
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
-    void Multicast_OnStrikeAdded(int32 inNewStrikes, int32 inIncrease, const FText& inBlame);
+    void Multicast_OnStrikeAdded(int32 inNewStrikes, int32 inIncrease, const FGameplayTag inBlameTag);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_AddSuspicionInfoMessage(int32 inStrikesIncrease, const FText& inBlame);

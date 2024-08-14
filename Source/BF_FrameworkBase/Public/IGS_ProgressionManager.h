@@ -42,11 +42,9 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_ProgressionManagerEvent OnInitialized;
     
-private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UCurveTable* m_ProgressionCurveTable;
+    UCurveTable* ProgressionCurveTable;
     
-public:
     UIGS_ProgressionManager();
 
     UFUNCTION(BlueprintCallable)
@@ -65,7 +63,7 @@ public:
     void ReInitProgressionManager();
     
     UFUNCTION(BlueprintCallable)
-    FIGS_ProgressionResult ProcessMissionResult(UPARAM(Ref) FIGS_MissionResult& inMissionResult);
+    FIGS_ProgressionResult ProcessMissionResult(UPARAM(Ref) FIGS_MissionResult& inMissionResult, float inAdditionalPoints);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool HasMaxLevel() const;

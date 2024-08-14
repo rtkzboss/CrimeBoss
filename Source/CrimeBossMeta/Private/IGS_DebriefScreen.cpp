@@ -20,13 +20,24 @@ void UIGS_DebriefScreen::SetMissionResult(FIGS_MissionResult& inMissionResult) {
 void UIGS_DebriefScreen::SetIsSkipped(bool inIsSkipped) {
 }
 
+void UIGS_DebriefScreen::SetDebriefBonuses(TArray<FIGS_DebriefBonus> inBonuses) {
+}
+
 void UIGS_DebriefScreen::PlayNextAnimation() {
 }
 
 
 
+bool UIGS_DebriefScreen::HasSomeDebriefBonuses() const {
+    return false;
+}
+
 FIGS_MissionResult UIGS_DebriefScreen::GetMissionResult() const {
     return FIGS_MissionResult{};
+}
+
+FIGS_DebriefBonus UIGS_DebriefScreen::GetDebriefBonusByTag(FGameplayTag inTag, bool& outSuccess) const {
+    return FIGS_DebriefBonus{};
 }
 
 void UIGS_DebriefScreen::AddAnimation(UIGS_AnimatedWidget* inAnimatedWidget, UObject* inPayloadData) {

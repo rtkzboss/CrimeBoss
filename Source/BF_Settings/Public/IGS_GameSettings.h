@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Rendering/RenderingCommon.h"
+#include "EIGS_HitMarkersSetting.h"
 #include "EIGS_ShowCrosshairSetting.h"
 #include "IGS_SettingsBase.h"
 #include "IGS_GameSettings.generated.h"
@@ -45,13 +46,28 @@ public:
     bool bFriendlyOutline;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    EIGS_HitMarkersSetting HitMarkersSetting;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EColorVisionDeficiency ColorVisionDeficiencyType;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     EIGS_ShowCrosshairSetting ShowCrosshairSetting;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float HeadBobIntensity;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     float ColorVisionDeficiencySeverity;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bShowHeisterColorsInSubtitlesValue;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bPoliceRadioChatterEnabled;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bTinnitusAudioEffectEnabled;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bUseSystemDefaultLanguage;

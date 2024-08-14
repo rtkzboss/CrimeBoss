@@ -15,6 +15,7 @@ UIGS_DecalContactShadowComponent::UIGS_DecalContactShadowComponent(const FObject
     (*this).FemaleHeelsSettings.Offset = -2.250000000e+00f;
     static ConstructorHelpers::FObjectFinder<UMaterial> gen0(TEXT("/Game/00_Main/MaterialLibrary/Utilities/M_DecalShadow.M_DecalShadow"));
     (*this).ShadowDecalMaterial = gen0.Object;
+    (*this).bUseAttachParentBound = true;
 }
 
 void UIGS_DecalContactShadowComponent::UpdateShadowRotation() {

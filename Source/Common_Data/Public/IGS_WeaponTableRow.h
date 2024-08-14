@@ -4,6 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "IGS_AIWeaponDefinitions.h"
 #include "IGS_DefaultWeaponModData.h"
+#include "IGS_ExtraFireModeDefinition.h"
 #include "IGS_RecoilDefinition.h"
 #include "IGS_WeaponAccuracyDefinition.h"
 #include "IGS_WeaponAdaptiveTriggerDefinitions.h"
@@ -65,6 +66,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_AIWeaponDefinitions AIData;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_ExtraFireModeDefinition ExtraFireModeData;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UAkSwitchValue> WeaponNameAkSwitch;

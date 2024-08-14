@@ -9,8 +9,8 @@
 #include "Templates/SubclassOf.h"
 #include "IGS_WeaponSkinTableRow.generated.h"
 
-class UIGS_InventoryObjectFramework;
 class UIGS_WeaponSkinData;
+class UIGS_WieldableInventoryObjectBase;
 class UTexture2D;
 
 USTRUCT(BlueprintType)
@@ -39,7 +39,7 @@ public:
     FIGS_WeaponSkinMaterialParameters MaterialParameters;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TMap<TSubclassOf<UIGS_InventoryObjectFramework>, FIGS_WeaponSkinStruct> SkinMaterialSlot;
+    TMap<TSubclassOf<UIGS_WieldableInventoryObjectBase>, FIGS_WeaponSkinStruct> SkinMaterialSlot;
     
     FIGS_WeaponSkinTableRow();
 };

@@ -19,13 +19,17 @@ UCLASS(Blueprintable)
 class IGS_UIFRAMEWORK_API UIGS_ScreenHandler : public UWorldSubsystem {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FIGS_OnScreenOpenWithTag, FGameplayTag, ScreenTag);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIGS_ScreenHandlerMulticastEvent);
+    DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FIGS_OnScreenOpenWithTag, FGameplayTag, screenTag);
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_OnScreenOpenWithTag OnScreenOpenWithTag;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_OnScreenOpenWithTag OnScreenSwitched;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_ScreenHandlerMulticastEvent OnViewportResized;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))

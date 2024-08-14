@@ -4,6 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "EMETA_Gang.h"
 #include "EMETA_TradeVendor.h"
+#include "EMETA_LootPurpose.h"
 #include "META_NotificationTableRow.h"
 #include "Templates/SubclassOf.h"
 #include "META_NotificationDatabase.generated.h"
@@ -17,6 +18,7 @@ class UMETA_DetectiveID;
 class UMETA_DetectiveNotification;
 class UMETA_FinancialNotification;
 class UMETA_GoalNotification;
+class UMETA_LootNotification;
 class UMETA_MissionNotification;
 class UMETA_NotificationID;
 class UMETA_PlotlineAsset;
@@ -56,6 +58,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     UMETA_MissionNotification* CreateMissionNotificationObject(UObject* inWCO, TSoftObjectPtr<UMETA_NotificationID> inID, UMETA_BaseMission* inMission);
+    
+    UFUNCTION(BlueprintCallable)
+    UMETA_LootNotification* CreateLootNotificationObject(UObject* inWCO, TSoftObjectPtr<UMETA_NotificationID> inID, const FText& inLootCategory, const EMETA_LootPurpose inLootPurpose, const int32 InValue);
     
     UFUNCTION(BlueprintCallable)
     UMETA_GoalNotification* CreateGoalNotificationObject(UObject* inWCO, TSoftObjectPtr<UMETA_NotificationID> inID, UMETA_BaseGoal* inGoal);

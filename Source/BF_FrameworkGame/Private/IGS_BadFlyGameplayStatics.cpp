@@ -13,6 +13,9 @@ void UIGS_BadFlyGameplayStatics::TriggerAlarmDelayed(const UObject* inWCO, EIGS_
 void UIGS_BadFlyGameplayStatics::TriggerAlarm(const UObject* inWCO, EIGS_AlarmReason inReason) {
 }
 
+void UIGS_BadFlyGameplayStatics::TogglePlayerEjectPosses() {
+}
+
 void UIGS_BadFlyGameplayStatics::StopWaveManager(const UObject* inWCO) {
 }
 
@@ -115,6 +118,9 @@ void UIGS_BadFlyGameplayStatics::SetTeamSidesVariations(const UObject* inWCO, TM
 }
 
 void UIGS_BadFlyGameplayStatics::SetSpawnGroupsActive(const UObject* inWCO, bool Inactive, const TArray<FGameplayTagContainer>& inPointsGameplayTags) {
+}
+
+void UIGS_BadFlyGameplayStatics::SetShowPlayerOutline(const UObject* inWCO, bool inShowPlayerOutline) {
 }
 
 void UIGS_BadFlyGameplayStatics::SetMissionRequiredBagsInWeight(UObject* inWCO, int32 inRequiredWeight) {
@@ -378,7 +384,7 @@ void UIGS_BadFlyGameplayStatics::AddStrikesForOffender(const UObject* inWCO, FGa
 void UIGS_BadFlyGameplayStatics::AddStrikesForNoise(const UObject* inWCO, FName inNoiseTag, AActor* inDetector, AActor* inOffender) {
 }
 
-void UIGS_BadFlyGameplayStatics::AddStrikesCustom(const UObject* inWCO, int32 inCount, const FText& inBlameText, AActor* inDetector, AActor* inOffender) {
+void UIGS_BadFlyGameplayStatics::AddStrikesCustom(const UObject* inWCO, int32 inCount, const FGameplayTag inBlameTag, AActor* inDetector, AActor* inOffender) {
 }
 
 void UIGS_BadFlyGameplayStatics::AddInfoMessageClientOnly(const UObject* inWCO, FText inInfoText) {

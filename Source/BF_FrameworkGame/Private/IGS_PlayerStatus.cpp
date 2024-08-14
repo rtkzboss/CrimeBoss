@@ -7,8 +7,8 @@ UIGS_PlayerStatus::UIGS_PlayerStatus(const FObjectInitializer& ObjectInitializer
     (*this).HealthRegenHPS.Value = 1.000000000e+02f;
     (*this).HealthRegenTickRateInSeconds.Value = 5.000000075e-02f;
     (*this).bHealthRegenAllowed = true;
-    (*this).HealthMultiplierAttribute = 1.000000000e+00f;
     (*this).HealthRegenDelayAttribute = 1.000000000e+00f;
+    (*this).HealthRegenMultiplierAttribute = 1.000000000e+00f;
 }
 
 void UIGS_PlayerStatus::SetRegenerationBlocked(bool inIsBlocked) {

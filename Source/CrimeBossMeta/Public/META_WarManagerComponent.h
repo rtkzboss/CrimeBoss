@@ -84,13 +84,19 @@ public:
     void SetTradeRelationship(EMETA_TradeVendor inTradeVendor, EMETA_TradeRelationship inTradeRelationship);
     
     UFUNCTION(BlueprintCallable)
+    void SetSpecialArmyTierDurationForGang(EMETA_Gang inGang, int32 inNewDuration);
+    
+    UFUNCTION(BlueprintCallable)
     void SetGangStrategy(EMETA_Gang inGang, EMETA_GangStrategy inStrategy);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetGangModifierDuration(EMETA_Gang inGang, FGameplayTag inModifier, int32 inDuration);
     
     UFUNCTION(BlueprintCallable)
     void SetGangInfo(EMETA_Gang inGang, const FMETA_GangInfo& inGangInfo);
     
     UFUNCTION(BlueprintCallable)
-    void SetGangArmyTier(EMETA_Gang inGang, EMETA_ArmyTier inArmyTier);
+    void SetGangArmyTier(EMETA_Gang inGang, EMETA_ArmyTier inArmyTier, int32 inSpecialTierDuration);
     
     UFUNCTION(BlueprintCallable)
     void SetChanceToAttackAnyAdjacentTerritory(EMETA_Gang inGang, float inNewValue);
@@ -157,6 +163,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     EMETA_GangStrategy GetGangStrategy(EMETA_Gang inGang) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetGangModifierDuration(EMETA_Gang inGang, FGameplayTag inModifier, bool& outSuccess) const;
     
     UFUNCTION(BlueprintCallable)
     FMETA_GangInfo GetGangInfo(EMETA_Gang inGang, bool& outSuccess);

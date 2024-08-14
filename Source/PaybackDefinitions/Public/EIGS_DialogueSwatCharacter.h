@@ -16,7 +16,8 @@ enum class EIGS_DialogueSwatCharacter : uint8 {
     Swat6,
     RobotSwat,
     GenericNPC = 99,
-    NoVoice = 255,
+    NoVoiceFemale = 254,
+    NoVoice,
     Character2DMin = GenericCommand,
     Character2DMax = 3,
     Character3DMin = GenericSwat,
@@ -25,5 +26,7 @@ enum class EIGS_DialogueSwatCharacter : uint8 {
     CommandMax = Command1,
     SwatMin = GenericSwat,
     SwatMax = RobotSwat,
+    NoVoiceMin = NoVoiceFemale,
+    NoVoiceMax = NoVoice,
 };
 

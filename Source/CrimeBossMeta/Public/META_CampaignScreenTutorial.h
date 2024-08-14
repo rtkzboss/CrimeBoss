@@ -9,7 +9,7 @@ struct FMETA_CampaignScreenTutorial : public FTableRowBase {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameplayTag ScreenTag;
+    FGameplayTag screenTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FGameplayTag TutorialID;

@@ -356,6 +356,9 @@ protected:
     bool AILogicDisabled;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool DisableOutlines;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UIGS_DebugSubsystemBlueprint* DebugSubsystemBlueprint;
     
 public:

@@ -7,5 +7,6 @@ FMETA_IntelDataSetup::FMETA_IntelDataSetup() {
     (*this).PercentageToRevealDifficulty = 0;
     (*this).PercentageToIncreaseMaxMonetaryValue = 0;
     (*this).PercentageToDifficultyReduction = 0;
+    (*this).PercentageToLowerDifficultyTwice = 50;
 }
 

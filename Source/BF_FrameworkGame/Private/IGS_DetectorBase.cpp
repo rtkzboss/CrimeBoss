@@ -11,6 +11,7 @@ AIGS_DetectorBase::AIGS_DetectorBase(const FObjectInitializer& ObjectInitializer
     (*this).SquadID = 118999881;
     (*this).bDisableOnAlarm = true;
     (*this).BeforeReenablingEventTime = 1.000000000e+00f;
+    (*this).BeforeReenablingSoundTime = 7.000000000e+00f;
     (*this).TeamSide = EIGS_TeamSideEnum::TS_Security;
     (*this).DetectorRotation = CreateDefaultSubobject<UDetectorRotation>(TEXT("DetectorRotation"));
     (*this).ShouldMoveWhenNoTarget = true;
@@ -24,6 +25,9 @@ AIGS_DetectorBase::AIGS_DetectorBase(const FObjectInitializer& ObjectInitializer
     (*this).PatrollingRotationSpeed = 1.500000000e+01f;
     (*this).ControlledRotationSpeed = 3.500000000e+01f;
     (*this).AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+}
+
+void AIGS_DetectorBase::TempDisable(float InTime) {
 }
 
 void AIGS_DetectorBase::SetTeamSideID(EIGS_TeamSideEnum inNewID) {
@@ -44,6 +48,9 @@ void AIGS_DetectorBase::OnRep_DetectorState(EIGS_DetectorState inOldState) {
 void AIGS_DetectorBase::OnRep_DetectingPlayers() {
 }
 
+
+void AIGS_DetectorBase::Multicast_CosmeticDetectorNearlyEnabled_Implementation() {
+}
 
 void AIGS_DetectorBase::Multicast_CosmeticDetectorEnabled_Implementation() {
 }
@@ -76,10 +83,10 @@ FVector AIGS_DetectorBase::GetFocusPoint() const {
 void AIGS_DetectorBase::Freeze(float InTime) {
 }
 
-void AIGS_DetectorBase::EnableDetectorDelayed(AActor* inInstigator, float inDelay) {
+void AIGS_DetectorBase::EnableDetectorDelayed(AActor* inInstigator, float inDelay, bool inEnablingAfterEMP) {
 }
 
-void AIGS_DetectorBase::EnableDetector(AActor* inInstigator) {
+void AIGS_DetectorBase::EnableDetector(AActor* inInstigator, bool inEnablingAfterEMP) {
 }
 
 void AIGS_DetectorBase::EnableDetection(bool InValue) {
@@ -88,7 +95,7 @@ void AIGS_DetectorBase::EnableDetection(bool InValue) {
 void AIGS_DetectorBase::Enable() {
 }
 
-void AIGS_DetectorBase::DisableDetector(AActor* inInstigator) {
+void AIGS_DetectorBase::DisableDetector(AActor* inInstigator, bool inDisabledByEMP) {
 }
 
 void AIGS_DetectorBase::Disable() {
@@ -96,6 +103,7 @@ void AIGS_DetectorBase::Disable() {
 
 void AIGS_DetectorBase::DestroyDetector(AActor* inInstigator) {
 }
+
 
 
 

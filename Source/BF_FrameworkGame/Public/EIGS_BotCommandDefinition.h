@@ -20,5 +20,7 @@ enum class EIGS_BotCommandDefinition : uint8 {
     ZipTie,
     SpeedUpGadget,
     DeliverLoot,
+    Revive,
+    Guard,
 };
 

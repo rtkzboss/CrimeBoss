@@ -91,8 +91,8 @@ private:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_LeaningDirection, meta=(AllowPrivateAccess=true))
     EIGS_CharacterLeaningDirectionEnum mR_LeaningDirection;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsMoving, meta=(AllowPrivateAccess=true))
-    bool mR_IsMoving;
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsMovingForced, meta=(AllowPrivateAccess=true))
+    bool mR_IsMovingForced;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsMantling, meta=(AllowPrivateAccess=true))
     bool mR_IsMantling;
@@ -223,7 +223,7 @@ protected:
     
 private:
     UFUNCTION(BlueprintCallable)
-    void OnRep_IsMoving() const;
+    void OnRep_IsMovingForced() const;
     
     UFUNCTION(BlueprintCallable)
     void OnRep_IsMantling() const;
@@ -417,7 +417,7 @@ protected:
     
 private:
     UFUNCTION(BlueprintCallable, NetMulticast, Unreliable)
-    void MessageToAll_IsMoving(bool inIsMoving);
+    void MessageToAll_IsMovingForced(bool inIsMovingForced);
     
 protected:
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)

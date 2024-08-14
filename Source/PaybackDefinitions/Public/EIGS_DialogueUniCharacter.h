@@ -29,7 +29,8 @@ enum class EIGS_DialogueUniCharacter : uint8 {
     StoryCharacter2D,
     StoryCharacter3D,
     StoryCharacter2DRadio,
-    NoVoice = 255,
+    NoVoiceFemale = 254,
+    NoVoice,
     Character2DMin = 1,
     Character2DMax = StoryCharacter2DRadio,
     Character3DMin = 30,
@@ -38,5 +39,7 @@ enum class EIGS_DialogueUniCharacter : uint8 {
     HarmlessMax = EmployeeF,
     HarmfulMin = GenericHarmful,
     HarmfulMax = RobotGraves,
+    NoVoiceMin = NoVoiceFemale,
+    NoVoiceMax = NoVoice,
 };
 

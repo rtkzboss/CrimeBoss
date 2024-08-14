@@ -5,6 +5,7 @@
 #include "IGS_GameplayAbilityGrantDataHolder.h"
 #include "UObject/NoExportTypes.h"
 #include "UObject/NoExportTypes.h"
+#include "Engine/EngineTypes.h"
 #include "GameplayTagContainer.h"
 #include "EIGS_DialogueHeisterCharacter.h"
 #include "EIGS_Ethnicity.h"
@@ -12,6 +13,7 @@
 #include "IGS_HeisterNumberInterface.h"
 #include "IGS_DeathCameraEndedSignatureDelegate.h"
 #include "IGS_IntelligentGameCharacter.h"
+#include "IGS_OnChangeShowPredictionSignatureDelegate.h"
 #include "IGS_OnZiptyingEventDelegate.h"
 #include "IGS_PlayerStateChangedSignatureDelegate.h"
 #include "IGS_ReplicatedLadder.h"
@@ -54,6 +56,8 @@ class UIGS_PlayerSuspicionComponent;
 class UIGS_PlayerWorldTracingComponent;
 class UIGS_PostProcessManagerComponent;
 class UIGS_ReviveComponent;
+class UIGS_ThrowableInventoryObject;
+class UIGS_ThrowableTrajectoryComponent;
 class UIGS_UseComponent;
 class USpringArmComponent;
 
@@ -75,6 +79,9 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_PlayerStateChangedSignature OnPlayerStateChangedEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_OnChangeShowPredictionSignature OnChangeShowPrediction;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UIGS_UseComponent* UseComponent;
@@ -194,6 +201,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     UIGS_CarryableInteractiveComponent* CarryableInteractiveComponent;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UIGS_ThrowableTrajectoryComponent* ThrowableTrajectoryComponent;
+    
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FIGS_GameplayAbilityGrantDataHolder> DefaultGrantedAbilities;
@@ -267,8 +277,14 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SwapPlayer(int32 inBotNumber);
     
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void ShowChatWheelIcon(const FText& inIconText);
+    
     UFUNCTION(BlueprintCallable)
     void Shout(bool inIsHolding);
+    
+    UFUNCTION(BlueprintCallable)
+    void SetShowPlayerOutline(bool inShowPlayerOutline);
     
     UFUNCTION(BlueprintCallable)
     void SetRandomVoiceAccordingToEthnicityAndGender();
@@ -382,6 +398,11 @@ public:
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void OnPlayerStateChanged(AIGS_PlayerStateGame* inPlayerState);
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    void OnEnemyKilled(AIGS_GameCharacterFramework* inInstigator, const FHitResult& inHitResult);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void NotifyDeathCameraSkippable();
     
@@ -493,6 +514,9 @@ public:
     AIGS_RideableVehicleBaseFramework* GetUsedVehicle() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetShowPlayerOutline();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     UIGS_PlayerCommandComponent* GetPlayerCommandComponent() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -570,6 +594,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void CancelAndRemoveAbility1();
+    
+    UFUNCTION(BlueprintCallable)
+    void CallOnChangeShowPrediction(bool inShow, TSubclassOf<UIGS_ThrowableInventoryObject> inPredictedClass);
     
 
     // Fix for true pure virtual functions not being implemented

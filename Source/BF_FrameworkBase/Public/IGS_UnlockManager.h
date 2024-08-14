@@ -52,10 +52,10 @@ public:
     UIGS_UnlockManager();
 
     UFUNCTION(BlueprintCallable)
-    void UnlockItemByID(FGameplayTag inTagID);
+    void UnlockItemByID(FGameplayTag inTagID, bool inAddToPendingList);
     
     UFUNCTION(BlueprintCallable)
-    void UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo);
+    void UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo, bool inAddToPendingList);
     
     UFUNCTION(BlueprintCallable)
     void ResetUnlocks();
@@ -79,10 +79,10 @@ public:
     bool IsUnlocked(FGameplayTag inTag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsPendingUnlockedItemByID(FGameplayTag inTagID) const;
+    bool IsPendingUnlockedItemByID(FGameplayTag inTagID, bool inExact) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
-    bool IsPendingUnlockedItem(const FIGS_UnlockItemInfo& inUnlockItemInfo) const;
+    bool IsPendingUnlockedItem(const FIGS_UnlockItemInfo& inUnlockItemInfo, bool inExact) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsChallengeItem(FGameplayTag inTagID) const;
@@ -152,6 +152,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void FilterEntitledItems(UPARAM(Ref) TArray<FIGS_UnlockItemInfo>& inOutUnlockItemInfos);
+    
+    UFUNCTION(BlueprintCallable)
+    void FilterChallengeItems(UPARAM(Ref) TArray<FIGS_UnlockItemInfo>& inOutUnlockItemInfos);
     
     UFUNCTION(BlueprintCallable)
     void EnsureNotSameCategory(const TArray<FIGS_UnlockItemInfo>& inLockedItems, UPARAM(Ref) TArray<FIGS_UnlockItemInfo>& inOutResultItems, const int32 inMaxRewardsCount);

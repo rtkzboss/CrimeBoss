@@ -3,6 +3,7 @@
 FMETA_HeatHeistsData::FMETA_HeatHeistsData() {
     (*this).MissionDoneInStealth = -5;
     (*this).MissionFailed = 10;
+    (*this).MissionDoneWithoutStars = 5;
     (*this).MissionDoneWith1Star = 5;
     (*this).MissionDoneWith2Stars = 0;
     (*this).MissionDoneWith3Stars = -5;

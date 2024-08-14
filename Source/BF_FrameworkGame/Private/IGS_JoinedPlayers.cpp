@@ -14,8 +14,10 @@ FIGS_JoinedPlayers::FIGS_JoinedPlayers() {
     (*this).FirstPlayer.HeisterNumber = -1;
     (*this).FirstPlayer.InitialJoiningHeisterNumber = -1;
     (*this).FirstPlayer.IsBot = false;
+    (*this).FirstPlayer.WasBotRightBefore = false;
     (*this).FirstPlayer.IsDisconnected = false;
     (*this).FirstPlayer.IsDead = false;
+    (*this).FirstPlayer.WasDeadRightBefore = false;
     (*this).FirstPlayer.IsOccupied = false;
     (*this).FirstPlayer.PreviouslyUsed = false;
     (*this).FirstPlayer.BotSwitchedAfterDeath = false;
@@ -64,8 +66,10 @@ FIGS_JoinedPlayers::FIGS_JoinedPlayers() {
     (*this).SecondPlayer.HeisterNumber = -1;
     (*this).SecondPlayer.InitialJoiningHeisterNumber = -1;
     (*this).SecondPlayer.IsBot = false;
+    (*this).SecondPlayer.WasBotRightBefore = false;
     (*this).SecondPlayer.IsDisconnected = false;
     (*this).SecondPlayer.IsDead = false;
+    (*this).SecondPlayer.WasDeadRightBefore = false;
     (*this).SecondPlayer.IsOccupied = false;
     (*this).SecondPlayer.PreviouslyUsed = false;
     (*this).SecondPlayer.BotSwitchedAfterDeath = false;
@@ -114,8 +118,10 @@ FIGS_JoinedPlayers::FIGS_JoinedPlayers() {
     (*this).ThirdPlayer.HeisterNumber = -1;
     (*this).ThirdPlayer.InitialJoiningHeisterNumber = -1;
     (*this).ThirdPlayer.IsBot = false;
+    (*this).ThirdPlayer.WasBotRightBefore = false;
     (*this).ThirdPlayer.IsDisconnected = false;
     (*this).ThirdPlayer.IsDead = false;
+    (*this).ThirdPlayer.WasDeadRightBefore = false;
     (*this).ThirdPlayer.IsOccupied = false;
     (*this).ThirdPlayer.PreviouslyUsed = false;
     (*this).ThirdPlayer.BotSwitchedAfterDeath = false;
@@ -164,8 +170,10 @@ FIGS_JoinedPlayers::FIGS_JoinedPlayers() {
     (*this).FourthPlayer.HeisterNumber = -1;
     (*this).FourthPlayer.InitialJoiningHeisterNumber = -1;
     (*this).FourthPlayer.IsBot = false;
+    (*this).FourthPlayer.WasBotRightBefore = false;
     (*this).FourthPlayer.IsDisconnected = false;
     (*this).FourthPlayer.IsDead = false;
+    (*this).FourthPlayer.WasDeadRightBefore = false;
     (*this).FourthPlayer.IsOccupied = false;
     (*this).FourthPlayer.PreviouslyUsed = false;
     (*this).FourthPlayer.BotSwitchedAfterDeath = false;

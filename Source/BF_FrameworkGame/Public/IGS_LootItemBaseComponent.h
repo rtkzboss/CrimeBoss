@@ -21,7 +21,7 @@ public:
     int32 Value;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 ItemWeight;
+    float ItemWeight;
     
     UIGS_LootItemBaseComponent(const FObjectInitializer& ObjectInitializer);
 

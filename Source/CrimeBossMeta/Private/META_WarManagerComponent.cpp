@@ -13,13 +13,19 @@ void UMETA_WarManagerComponent::SyncArmyTierChangingConditionsWithInitial(TArray
 void UMETA_WarManagerComponent::SetTradeRelationship(EMETA_TradeVendor inTradeVendor, EMETA_TradeRelationship inTradeRelationship) {
 }
 
+void UMETA_WarManagerComponent::SetSpecialArmyTierDurationForGang(EMETA_Gang inGang, int32 inNewDuration) {
+}
+
 void UMETA_WarManagerComponent::SetGangStrategy(EMETA_Gang inGang, EMETA_GangStrategy inStrategy) {
+}
+
+void UMETA_WarManagerComponent::SetGangModifierDuration(EMETA_Gang inGang, FGameplayTag inModifier, int32 inDuration) {
 }
 
 void UMETA_WarManagerComponent::SetGangInfo(EMETA_Gang inGang, const FMETA_GangInfo& inGangInfo) {
 }
 
-void UMETA_WarManagerComponent::SetGangArmyTier(EMETA_Gang inGang, EMETA_ArmyTier inArmyTier) {
+void UMETA_WarManagerComponent::SetGangArmyTier(EMETA_Gang inGang, EMETA_ArmyTier inArmyTier, int32 inSpecialTierDuration) {
 }
 
 void UMETA_WarManagerComponent::SetChanceToAttackAnyAdjacentTerritory(EMETA_Gang inGang, float inNewValue) {
@@ -94,6 +100,10 @@ TMap<FGameplayTag, int32> UMETA_WarManagerComponent::GetLostTiles(EMETA_Gang inG
 
 EMETA_GangStrategy UMETA_WarManagerComponent::GetGangStrategy(EMETA_Gang inGang) const {
     return EMETA_GangStrategy::Normal;
+}
+
+int32 UMETA_WarManagerComponent::GetGangModifierDuration(EMETA_Gang inGang, FGameplayTag inModifier, bool& outSuccess) const {
+    return 0;
 }
 
 FMETA_GangInfo UMETA_WarManagerComponent::GetGangInfo(EMETA_Gang inGang, bool& outSuccess) {

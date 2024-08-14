@@ -10,6 +10,7 @@ FIGS_FPS2Meta_Data::FIGS_FPS2Meta_Data() {
     (*this).EnemiesRemaining = 0;
     (*this).BackupHeistersCasualties = 0;
     (*this).bAlarmTriggered = false;
+    (*this).bCleanExecution = true;
     (*this).WantedBadges = 0;
     (*this).LootBagsCollected = 0;
     (*this).GameplayTime = 0.000000000e+00f;

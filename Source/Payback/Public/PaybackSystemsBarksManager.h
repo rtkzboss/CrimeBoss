@@ -26,22 +26,22 @@ protected:
     void WaveManagerAssaultEndingSoon(EIGS_TeamSideEnum inTeamSideEnum);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SuspicionManagerMultiKillGuard(AIGS_GameCharacterFramework* inCharacter);
+    void SuspicionManagerMultiKillGuard(const AIGS_GameCharacterFramework* inCharacter);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SuspicionManagerHQFinished(AActor* inCharacter, bool inWasStrikeAdded);
+    void SuspicionManagerHQFinished(const AActor* inCharacter, bool inWasStrikeAdded);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void SuspicionManagerHeistStarted();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SuspicionManagerFirstKillGuard(AIGS_GameCharacterFramework* inCharacter);
+    void SuspicionManagerFirstKillGuard(const AIGS_GameCharacterFramework* inCharacter);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SuspicionManagerAllGuardsDead(AIGS_GameCharacterFramework* inLastCharacter);
+    void SuspicionManagerAllGuardsDead(const AIGS_GameCharacterFramework* inLastCharacter);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void SuspicioManagerOnAlarm(EIGS_AlarmReason inReason, AActor* inOffender);
+    void SuspicioManagerOnAlarm(EIGS_AlarmReason inReason, const AActor* inOffender);
     
 };
 

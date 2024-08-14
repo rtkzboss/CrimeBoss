@@ -1,16 +1,19 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "EIGS_CharacterState.h"
+#include "EIGS_DamageEventType.h"
 #include "EIGS_Speed.h"
 #include "UObject/NoExportTypes.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "EIGS_ShootingOverrideType.h"
 #include "EIGS_SwitchWeaponTask_WeaponType.h"
+#include "Templates/SubclassOf.h"
 #include "IGS_ScriptingCommandsLibrary.generated.h"
 
 class AActor;
 class AIGS_GameCharacterFramework;
 class AIGS_MountedWeapon;
+class UDamageType;
 class UObject;
 
 UCLASS(Blueprintable)
@@ -57,6 +60,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static void ScriptingCommandPauseAI(UObject* inWCO, AIGS_GameCharacterFramework* inInstigator, const bool inPause);
+    
+    UFUNCTION(BlueprintCallable)
+    static void ScriptingCommandKillAdvanced(AIGS_GameCharacterFramework* Instigator, FVector Origin, float Radius, EIGS_DamageEventType DamageEventType, TSubclassOf<UDamageType> DamageTypeClass);
     
     UFUNCTION(BlueprintCallable)
     static void ScriptingCommandKill(AIGS_GameCharacterFramework* Instigator);

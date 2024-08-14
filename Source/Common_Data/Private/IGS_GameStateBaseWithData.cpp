@@ -6,6 +6,10 @@
 AIGS_GameStateBaseWithData::AIGS_GameStateBaseWithData(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
 }
 
+bool AIGS_GameStateBaseWithData::SupportsCleanExecution() const {
+    return false;
+}
+
 void AIGS_GameStateBaseWithData::SetSpecificLootTypes(FGameplayTagContainer inSpecificLootTypes) {
 }
 

@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "EIGS_CleanExecutionState.h"
 #include "EIGS_ObjectiveComponentType.h"
 #include "EIGS_ObjectiveState.h"
 #include "EIGS_TaskTimerType.h"
@@ -8,6 +9,7 @@
 #include "EIGS_UnregisterReason.h"
 #include "IGS_MissionObjective.h"
 #include "IGS_MissionTask.h"
+#include "IGS_OnCleanExecutionStateChangedDelegate.h"
 #include "IGS_OnCustomObjectiveEnabledDelegate.h"
 #include "IGS_OnCustomObjectiveValuesChangedDelegate.h"
 #include "ObjectiveAddedDelegate.h"
@@ -51,11 +53,17 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CustomObjectiveValues, meta=(AllowPrivateAccess=true))
     int32 GoalCustomObjectiveValue;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_CleanExecutionState, meta=(AllowPrivateAccess=true))
+    EIGS_CleanExecutionState CleanExecutionState;
+    
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_OnCustomObjectiveEnabled OnCustomObjectiveStateChanged;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_OnCustomObjectiveValuesChanged OnCustomObjectiveValuesChanged;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_OnCleanExecutionStateChanged OnCleanExecutionStateChanged;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FObjectiveAdded OnActiveObjectiveChangedEvent;
@@ -116,6 +124,9 @@ public:
     static void SetCustomObjectiveCurrentValue(UObject* inWCO, int32 InValue);
     
     UFUNCTION(BlueprintCallable)
+    void SetCleanExecutionState(EIGS_CleanExecutionState inState);
+    
+    UFUNCTION(BlueprintCallable)
     static void PauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask);
     
     UFUNCTION(BlueprintCallable)
@@ -141,6 +152,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void OnRep_CustomObjectiveProgressBar();
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_CleanExecutionState(EIGS_CleanExecutionState inOldState);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_ActiveObjective(FIGS_MissionObjective inOldObjective);

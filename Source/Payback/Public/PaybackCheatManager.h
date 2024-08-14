@@ -31,6 +31,9 @@ public:
     void Suicide();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void SpawnLootBag();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void SpawnAmmoBox();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -46,10 +49,16 @@ public:
     void SetGameHUDEnabled(bool bEnable);
     
     UFUNCTION(BlueprintCallable, Exec)
+    void SetDisableOutlines(bool inIsDisabled);
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void SetDisabledBloodImpacts(bool isOn);
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void SetCombatState(bool inIsCombat);
     
     UFUNCTION(BlueprintCallable, Exec)
-    void SelfRevive();
+    void Selfrevive();
     
     UFUNCTION(BlueprintCallable, Exec)
     void SelfDamage(float inDamage);
@@ -74,6 +83,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void PrintGameplayEffects();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void PrintCharacterCount();
     
     UFUNCTION(BlueprintCallable, Exec)
     void PingAll();
@@ -106,6 +118,9 @@ public:
     void MaximumDamage();
     
     UFUNCTION(BlueprintCallable, Exec)
+    void MakeCameraMovableWhenPaused();
+    
+    UFUNCTION(BlueprintCallable, Exec)
     void KillEnemies();
     
     UFUNCTION(BlueprintCallable, Exec)
@@ -116,6 +131,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void KillAll();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void InsightsBookmark(const FString& inOptionalText);
     
     UFUNCTION(BlueprintCallable, Exec)
     void InfiniteMagazines();
@@ -137,6 +155,9 @@ public:
     
     UFUNCTION(BlueprintCallable, Exec)
     void ForceRefreshEquipment();
+    
+    UFUNCTION(BlueprintCallable, Exec)
+    void ForceDisableOutlines();
     
     UFUNCTION(BlueprintCallable, Exec)
     void FocusPlayer();

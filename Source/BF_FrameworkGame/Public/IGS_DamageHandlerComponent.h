@@ -36,10 +36,7 @@ protected:
     bool ApplyPlayerNeutralFire;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool ApplyAINeutralFire;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    bool ApplyGangsterNeutralFire;
+    float AINeutralFireMultiplier;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float FriendlyFireMultiplier;

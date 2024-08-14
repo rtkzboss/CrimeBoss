@@ -28,6 +28,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EIGS_AITiers AllyTier;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<int32, float> SpecialTierOverrideChanceForStormIntensity;
+    
     FIGS_UserDifficulty();
 };
 

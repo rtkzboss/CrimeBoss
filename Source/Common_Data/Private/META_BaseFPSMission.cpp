@@ -31,6 +31,9 @@ void UMETA_BaseFPSMission::SetPrimaryEnemyVariation(EIGS_GangsterVariationType i
 void UMETA_BaseFPSMission::SetObjectiveState(EMETA_ObjectiveState inNewState) {
 }
 
+void UMETA_BaseFPSMission::SetMissionRewardMultiplierFromIntel(const float inMultiplier) {
+}
+
 void UMETA_BaseFPSMission::SetMissionOutCome(int32 inExpenses) {
 }
 
@@ -126,6 +129,10 @@ EMETA_FPSMissionSubtype UMETA_BaseFPSMission::GetMissionSubtype() const {
     return EMETA_FPSMissionSubtype::MoneyMaking;
 }
 
+float UMETA_BaseFPSMission::GetMissionRewardMultiplierFromIntel() const {
+    return 0.0f;
+}
+
 int32 UMETA_BaseFPSMission::GetMissionOutCome() const {
     return 0;
 }
@@ -192,10 +199,14 @@ EIGS_HeistersBackupVariationType UMETA_BaseFPSMission::GetAllyVariation() const 
 void UMETA_BaseFPSMission::ClearObjective() {
 }
 
-void UMETA_BaseFPSMission::ChangeMaxMonetaryValueByIntel() {
+void UMETA_BaseFPSMission::ChangeAmountOfSoldiersWereSentByValue(int32 ByValue) {
 }
 
-void UMETA_BaseFPSMission::ChangeAmountOfSoldiersWereSentByValue(int32 ByValue) {
+float UMETA_BaseFPSMission::CalculateCombinedMissionRewardMultiplier() const {
+    return 0.0f;
+}
+
+void UMETA_BaseFPSMission::ApplyIntelProgressToMission() {
 }
 
 

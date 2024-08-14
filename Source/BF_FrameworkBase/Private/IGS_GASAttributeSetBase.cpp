@@ -7,10 +7,16 @@ UIGS_GASAttributeSetBase::UIGS_GASAttributeSetBase() {
 void UIGS_GASAttributeSetBase::OnRep_WeaponDamageMult(const FGameplayAttributeData& inOldValue) {
 }
 
+void UIGS_GASAttributeSetBase::OnRep_ThrowableDamageMult(const FGameplayAttributeData& inOldValue) {
+}
+
 void UIGS_GASAttributeSetBase::OnRep_StunEffectivity(const FGameplayAttributeData& inOldValue) {
 }
 
 void UIGS_GASAttributeSetBase::OnRep_SprintSpeed(const FGameplayAttributeData& inOldValue) {
+}
+
+void UIGS_GASAttributeSetBase::OnRep_Selfrevive(const FGameplayAttributeData& inOldValue) {
 }
 
 void UIGS_GASAttributeSetBase::OnRep_ReviveSpeed(const FGameplayAttributeData& inOldValue) {
@@ -22,10 +28,19 @@ void UIGS_GASAttributeSetBase::OnRep_ReloadSpeed(const FGameplayAttributeData& i
 void UIGS_GASAttributeSetBase::OnRep_MoveSpeed(const FGameplayAttributeData& inOldValue) {
 }
 
+void UIGS_GASAttributeSetBase::OnRep_MeleeWeaponRangeMult(const FGameplayAttributeData& inOldValue) {
+}
+
 void UIGS_GASAttributeSetBase::OnRep_MeleeDamageReceived(const FGameplayAttributeData& inOldValue) {
 }
 
 void UIGS_GASAttributeSetBase::OnRep_MeleeDamageMult(const FGameplayAttributeData& inOldValue) {
+}
+
+void UIGS_GASAttributeSetBase::OnRep_MagazineSizeMult(const FGameplayAttributeData& inOldValue) {
+}
+
+void UIGS_GASAttributeSetBase::OnRep_MagazineSizeAddition(const FGameplayAttributeData& inOldValue) {
 }
 
 void UIGS_GASAttributeSetBase::OnRep_LookSpeed(const FGameplayAttributeData& inOldValue) {
@@ -35,6 +50,9 @@ void UIGS_GASAttributeSetBase::OnRep_HolsterSpeed(const FGameplayAttributeData& 
 }
 
 void UIGS_GASAttributeSetBase::OnRep_HipFireSpread(const FGameplayAttributeData& inOldValue) {
+}
+
+void UIGS_GASAttributeSetBase::OnRep_HealthRegenMultiplier(const FGameplayAttributeData& inOldValue) {
 }
 
 void UIGS_GASAttributeSetBase::OnRep_HealthRegenDelay(const FGameplayAttributeData& inOldValue) {
@@ -76,6 +94,12 @@ void UIGS_GASAttributeSetBase::OnRep_BulletDamageReceived(const FGameplayAttribu
 void UIGS_GASAttributeSetBase::OnRep_BeingRevivedSpeed(const FGameplayAttributeData& inOldValue) {
 }
 
+void UIGS_GASAttributeSetBase::OnRep_AmmoReserveSizeMult(const FGameplayAttributeData& inOldValue) {
+}
+
+void UIGS_GASAttributeSetBase::OnRep_AmmoReserveSizeAddition(const FGameplayAttributeData& inOldValue) {
+}
+
 void UIGS_GASAttributeSetBase::OnRep_AimingStability(const FGameplayAttributeData& inOldValue) {
 }
 
@@ -94,6 +118,9 @@ void UIGS_GASAttributeSetBase::OnRep_AdditionalDownStateCount(const FGameplayAtt
 void UIGS_GASAttributeSetBase::OnRep_AbilityRegenSpeedMult(const FGameplayAttributeData& inOldValue) {
 }
 
+void UIGS_GASAttributeSetBase::OnRep_AbilityDurationKillIncrease(const FGameplayAttributeData& inOldValue) {
+}
+
 void UIGS_GASAttributeSetBase::OnRep_Ability1Charges(const FGameplayAttributeData& inOldValue) {
 }
 
@@ -107,13 +134,19 @@ void UIGS_GASAttributeSetBase::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(UIGS_GASAttributeSetBase, ADSMovementSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, WeaponDamageMult);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, MeleeDamageMult);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, ThrowableDamageMult);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, ReloadSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, ADSSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, HolsterSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, LookSpeed);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, MagazineSizeMult);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, AmmoReserveSizeMult);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, MagazineSizeAddition);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, AmmoReserveSizeAddition);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, HipFireSpread);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, ADSSpread);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, AimingStability);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, MeleeWeaponRangeMult);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, DetectionSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, ExtraBag);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, DamageReceived);
@@ -123,14 +156,17 @@ void UIGS_GASAttributeSetBase::GetLifetimeReplicatedProps(TArray<FLifetimeProper
     DOREPLIFETIME(UIGS_GASAttributeSetBase, MeleeDamageReceived);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, HealthMultiplier);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, HealthRegenDelay);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, HealthRegenMultiplier);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, FlashEffectivity);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, StunEffectivity);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, ReviveSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, BeingRevivedSpeed);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, DownStateDuration);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, AdditionalDownStateCount);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, Selfrevive);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, Ability1Charges);
     DOREPLIFETIME(UIGS_GASAttributeSetBase, AbilityRegenSpeedMult);
+    DOREPLIFETIME(UIGS_GASAttributeSetBase, AbilityDurationKillIncrease);
 }
 
 

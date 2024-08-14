@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "GameplayTagContainer.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_CharacterID.h"
 #include "IGS_CharacterSkinTableRow.h"
 #include "IGS_CharacterTableRow.h"
@@ -68,6 +69,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     static TArray<EIGS_CharacterID> GetValidBossCharacters(const UObject* inWCO);
+    
+    UFUNCTION(BlueprintCallable)
+    static FGameplayTagContainer GetRelatedCharacterTagIDs(const UObject* inWCO, FGameplayTag inCharacterTagID);
     
     UFUNCTION(BlueprintCallable)
     static EIGS_CharacterID GetRandomUniqueCharacter(const UObject* inWCO);

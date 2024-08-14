@@ -11,6 +11,10 @@ UMETA_EconomyData::UMETA_EconomyData() {
 void UMETA_EconomyData::RandomizePerksByIDAndLevel(const UObject* inWCO, EIGS_CharacterID inID, int32 inHeisterLevel, const TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>>& inForbiddenPerks, const TArray<FMETA_PerkData>& inCurrentPerks, TArray<FMETA_PerkData>& outRandomizedPerks, bool bIsPromotion) {
 }
 
+bool UMETA_EconomyData::IsWeaponQualityAllowedOnRespect(const EMETA_RespectLvl inRespect, const EMETA_ItemQuality inQuality, const bool inAllowLower, const int32 inChanceThreshold) {
+    return false;
+}
+
 FMETA_WeaponTurfReward UMETA_EconomyData::GetWeaponTurfRewardForRepeatedCapture() const {
     return FMETA_WeaponTurfReward{};
 }
@@ -24,6 +28,10 @@ int32 UMETA_EconomyData::GetWeaponsPoolRefreshStartPrice(EMETA_RespectLvl inResp
 }
 
 float UMETA_EconomyData::GetWeaponsPoolRefreshMultiplier() {
+    return 0.0f;
+}
+
+float UMETA_EconomyData::GetWeaponSkinChancePerQuality(const EMETA_ItemQuality inWeaponQuality) const {
     return 0.0f;
 }
 
@@ -218,7 +226,7 @@ int32 UMETA_EconomyData::GetHealCostByRespectLevel(EMETA_RespectLvl inRespectLvl
 void UMETA_EconomyData::GetGraphEconomyVariableByTag(FGameplayTag inVariableTag, FMETA_EconomyGraphVariableModeData& outData, bool& outSuccess) {
 }
 
-TArray<FMETA_CharacterInfo> UMETA_EconomyData::GetGenericHeistersPoolForBlackmarketWithOneFree(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants) {
+TArray<FMETA_CharacterInfo> UMETA_EconomyData::GetGenericHeistersPoolForBlackmarketWithOneFree(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants) {
     return TArray<FMETA_CharacterInfo>();
 }
 
@@ -337,6 +345,10 @@ TArray<EIGS_CharacterID> UMETA_EconomyData::GetAllSuitableGenericCharacterIdsByC
     return TArray<EIGS_CharacterID>();
 }
 
+FMETA_AllowedWeaponsInfo UMETA_EconomyData::GetAllowedWeaponsByRespect(const EMETA_RespectLvl inRespect) {
+    return FMETA_AllowedWeaponsInfo{};
+}
+
 TArray<EMETA_ItemQuality> UMETA_EconomyData::GetAllowedHeistersForRespectLvl(EMETA_RespectLvl inCurrentRespectLvl) const {
     return TArray<EMETA_ItemQuality>();
 }
@@ -349,7 +361,7 @@ FMETA_MissionAdditionalMonetaryValue UMETA_EconomyData::GetAdditionalWealthOfMis
     return FMETA_MissionAdditionalMonetaryValue{};
 }
 
-FMETA_CharacterInfo UMETA_EconomyData::GenerateGenericHeisterByPlayerRespectWithHireValue(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool inIsFree, bool& outSuccess) {
+FMETA_CharacterInfo UMETA_EconomyData::GenerateGenericHeisterByPlayerRespectWithHireValue(UObject* inWCO, EMETA_RespectLvl inCurrentBossStatus, bool inCanLevelUp, TArray<TSubclassOf<UIGS_GameplayEffect_PerkBase>> inForbiddenPerks, const TArray<FGameplayTag>& inUnlockedWeapons, const TArray<FGameplayTag>& inUnlockedWeaponSkins, const TArray<FGameplayTag>& inUnlockedEquipment, TArray<FIGS_CharacterClasses>& inActiveGenericVariants, bool inIsFree, bool& outSuccess) {
     return FMETA_CharacterInfo{};
 }
 

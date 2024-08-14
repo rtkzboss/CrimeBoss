@@ -107,7 +107,7 @@ public:
     static UIGS_AICommandBreachFight* CreateBreachFightCommand(bool inFromRight, const FVector& inToWallPoint);
     
     UFUNCTION(BlueprintCallable)
-    static UIGS_AICommandBeingRevived* CreateBeingRevivedCommand(AIGS_GameCharacterFramework* revivedByChar);
+    static UIGS_AICommandBeingRevived* CreateBeingRevivedCommand(const AIGS_GameCharacterFramework* revivedByChar);
     
 };
 

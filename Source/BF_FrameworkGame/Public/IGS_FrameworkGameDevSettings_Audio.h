@@ -36,6 +36,12 @@ public:
     TSoftObjectPtr<UAkSwitchValue> SuppressedStateAkSwitch;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UAkSwitchValue> NormalFireModeStateAkSwitch;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TSoftObjectPtr<UAkSwitchValue> ExtraFireModeStateAkSwitch;
+    
+    UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSoftObjectPtr<UAkRtpc> WeaponFireRateRtpc;
     
     UPROPERTY(AdvancedDisplay, BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))

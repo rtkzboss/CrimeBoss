@@ -39,6 +39,10 @@ AIGS_ThrowableProjectileBase* UIGS_ThrowableHelpers::SpawnThrowableClass(UObject
 void UIGS_ThrowableHelpers::SortAffectedActors(TArray<FIGS_AffectActorsDelayedEntry>& refActors) {
 }
 
+FVector UIGS_ThrowableHelpers::GetVelocityInLocalSpaceOfTransform(FVector inThrowDirection, float inThrowSpeed, FTransform InTransform) {
+    return FVector{};
+}
+
 FTransform UIGS_ThrowableHelpers::GetPlayerThrowTransform(TSubclassOf<UIGS_ThrowableInventoryObject> inThrowableClass, AIGS_GameCharacterFramework* inThrowingPlayer, bool inLow) {
     return FTransform{};
 }

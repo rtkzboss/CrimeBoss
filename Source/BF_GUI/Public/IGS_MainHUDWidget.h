@@ -30,6 +30,9 @@ public:
     TArray<UIGS_HUDSubwidgetBase*> BattleWidgets;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    TArray<UIGS_HUDSubwidgetBase*> HordeModeWidgets;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
     TArray<UIGS_HUDSubwidgetBase*> EndMissionWidgets;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
@@ -41,6 +44,9 @@ public:
     UIGS_MainHUDWidget();
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void UnbindPawn();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void StopCustomTimer();
     
     UFUNCTION(BlueprintCallable)
@@ -51,6 +57,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void ShowInAbilityWidgets();
+    
+    UFUNCTION(BlueprintCallable)
+    void ShowHordeModeWidgets();
     
     UFUNCTION(BlueprintCallable)
     void ShowEndMissionWidgets();
@@ -78,6 +87,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void PauseCustomTimer();
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnNewPawn();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void HideTutorialHint(const int32 inHintEnumIdx);

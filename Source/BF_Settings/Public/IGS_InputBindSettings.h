@@ -41,6 +41,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void ResetToDefaults();
     
+    UFUNCTION(BlueprintCallable)
+    void ResetGamepadBindings();
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     static UIGS_InputBindSettings* Instance();
     

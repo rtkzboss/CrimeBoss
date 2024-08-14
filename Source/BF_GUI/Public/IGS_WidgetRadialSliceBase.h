@@ -1,14 +1,14 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
-#include "Blueprint/UserWidget.h"
+#include "IGS_Widget.h"
 #include "IGS_WidgetRadialSliceBase.generated.h"
 
 class AIGS_PlayerControllerRoot;
 class UImage;
 
 UCLASS(Blueprintable, EditInlineNew)
-class BF_GUI_API UIGS_WidgetRadialSliceBase : public UUserWidget {
+class BF_GUI_API UIGS_WidgetRadialSliceBase : public UIGS_Widget {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

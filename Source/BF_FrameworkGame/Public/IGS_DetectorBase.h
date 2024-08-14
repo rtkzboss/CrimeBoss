@@ -66,6 +66,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float BeforeReenablingEventTime;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float BeforeReenablingSoundTime;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EIGS_TeamSideEnum TeamSide;
@@ -91,6 +94,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FVector2D TimeToLoseTarget;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool DisabledByEMP;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_DetectingPlayers, meta=(AllowPrivateAccess=true))
@@ -138,6 +144,9 @@ public:
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
     UFUNCTION(BlueprintCallable)
+    void TempDisable(float InTime);
+    
+    UFUNCTION(BlueprintCallable)
     void SetTeamSideID(EIGS_TeamSideEnum inNewID);
     
 protected:
@@ -158,6 +167,9 @@ protected:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnDetectorStateChanged(EIGS_DetectorState inNewState);
+    
+    UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
+    void Multicast_CosmeticDetectorNearlyEnabled();
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable)
     void Multicast_CosmeticDetectorEnabled();
@@ -189,10 +201,10 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable)
-    void EnableDetectorDelayed(AActor* inInstigator, float inDelay);
+    void EnableDetectorDelayed(AActor* inInstigator, float inDelay, bool inEnablingAfterEMP);
     
     UFUNCTION(BlueprintCallable)
-    void EnableDetector(AActor* inInstigator);
+    void EnableDetector(AActor* inInstigator, bool inEnablingAfterEMP);
     
 public:
     UFUNCTION(BlueprintCallable)
@@ -203,7 +215,7 @@ public:
     
 protected:
     UFUNCTION(BlueprintCallable)
-    void DisableDetector(AActor* inInstigator);
+    void DisableDetector(AActor* inInstigator, bool inDisabledByEMP);
     
 public:
     UFUNCTION(BlueprintCallable)
@@ -218,6 +230,9 @@ protected:
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CosmeticDetectorStateChanged(EIGS_DetectorState inNewState, EIGS_DetectorState inOldState);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void CosmeticDetectorNearlyEnabled();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void CosmeticDetectorEnabled();

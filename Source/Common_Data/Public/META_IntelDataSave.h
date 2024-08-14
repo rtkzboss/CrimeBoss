@@ -16,6 +16,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EMETA_RespectLvl RespectValueOnMissionSpawn;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float IntelRewardMultiplier;
+    
     FMETA_IntelDataSave();
 };
 

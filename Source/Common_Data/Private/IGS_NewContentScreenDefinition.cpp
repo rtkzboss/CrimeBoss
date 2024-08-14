@@ -6,5 +6,6 @@ FIGS_NewContentScreenDefinition::FIGS_NewContentScreenDefinition() {
     (*this).Title = FText::FromString(TEXT(""));
     (*this).Description = FText::FromString(TEXT(""));
     (*this).BGImage = nullptr;
+    (*this).ShowInMenu = false;
 }
 

@@ -4,7 +4,7 @@
 #include "GameplayTagContainer.h"
 #include "EIGS_HubBackdropTypes.h"
 #include "EIGS_HubDistrict.h"
-#include "EMETA_GangSpawnArea.h"
+#include "EMETA_TileSize.h"
 #include "EMETA_TileType.h"
 #include "EMETA_TileWealth.h"
 #include "MapTileRow.generated.h"
@@ -32,7 +32,7 @@ public:
     EMETA_TileType Type;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    EMETA_GangSpawnArea GangSpawnArea;
+    EMETA_TileSize Size;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EIGS_HubDistrict DistrictType;

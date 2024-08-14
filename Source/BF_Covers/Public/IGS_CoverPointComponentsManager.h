@@ -3,6 +3,7 @@
 #include "Components/ActorComponent.h"
 #include "IGS_CoverPointComponentsManager.generated.h"
 
+class ANavigationData;
 class UIGS_CoverPointComponent;
 
 UCLASS(Blueprintable, ClassGroup=Custom, meta=(BlueprintSpawnableComponent))
@@ -24,6 +25,9 @@ public:
 
     UFUNCTION(BlueprintCallable)
     void SetCoverPointComponents(const TArray<UIGS_CoverPointComponent*>& inComponents);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnNavigationBuildFinished(ANavigationData* inNavData);
     
     UFUNCTION(BlueprintCallable)
     void DeactivateCovers();

@@ -7,6 +7,7 @@
 #include "Engine/EngineTypes.h"
 #include "VisualLogger/VisualLoggerDebugSnapshotInterface.h"
 #include "AbilitySystemInterface.h"
+#include "GameplayEffectTypes.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagContainer.h"
@@ -26,6 +27,7 @@
 #include "IGS_GameplayTagsChangedOnCharacterDynamicSignatureDelegate.h"
 #include "IGS_HasObjectStatusInterface.h"
 #include "IGS_InterestPointHolder.h"
+#include "IGS_PickupThrownSignatureDelegate.h"
 #include "IGS_PossessedByDynamicSignatureDelegate.h"
 #include "IGS_WieldAnyItemInterface.h"
 #include "Templates/SubclassOf.h"
@@ -38,6 +40,7 @@ class UAbilitySystemComponent;
 class UAkComponent;
 class UAkStateValue;
 class UAkSwitchValue;
+class UGameplayEffect;
 class UIGS_CharacterData;
 class UIGS_CharacterMaskBase;
 class UIGS_CharacterWieldablesHolderComponent;
@@ -98,6 +101,12 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_PossessedByDynamicSignature ServerOnlyOnPossessedByEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_PossessedByDynamicSignature OwningClientOnPossessedByEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_PickupThrownSignature OnPickupThrown;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_CrouchChangedEventSignature OnCrouchingChangedEvent;
@@ -234,6 +243,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void SetAimAtPoint(FIGS_InterestPointHolder inInterestPoint);
+    
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void Server_ApplyGameplayEffectToSelf(TSubclassOf<UGameplayEffect> inGameplayEffectClass, float inLevel, FGameplayEffectContextHandle inEffectContext);
     
     UFUNCTION(BlueprintCallable)
     void RequestStopCustomMontage(FGameplayTag inCustomAnimType);
@@ -389,6 +401,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCharacterCanAttack();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool GetCanUsePrimaryWithLootBag() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool GetCanSelectPrimaryWeaponSlots() const;

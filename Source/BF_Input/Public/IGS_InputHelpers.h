@@ -30,6 +30,9 @@ public:
     static void GetInputActionString(UObject* inWCO, EIGS_InputAction InAction, FName& OutText);
     
     UFUNCTION(BlueprintCallable)
+    static TArray<EIGS_InputAction> GetInputActionsFromFKey(UObject* inWCO, FKey inKey, bool bGamepadKey);
+    
+    UFUNCTION(BlueprintCallable)
     static TArray<FText> GetInputActionNamesFromFKey(UObject* inWCO, FKey inKey, bool bGamepadKey);
     
     UFUNCTION(BlueprintCallable)

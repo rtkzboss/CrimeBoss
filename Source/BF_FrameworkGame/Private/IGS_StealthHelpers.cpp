@@ -43,6 +43,12 @@ void UIGS_StealthHelpers::ReportPhotoCameraEnd(AIGS_GameCharacterFramework* inIn
 void UIGS_StealthHelpers::ReportMelee(AIGS_GameCharacterFramework* inInstigator) {
 }
 
+void UIGS_StealthHelpers::ReportMagazineThrowSeenStart(AIGS_GameCharacterFramework* inCharacter) {
+}
+
+void UIGS_StealthHelpers::ReportMagazineThrowSeenEnd(AIGS_GameCharacterFramework* inInstigator) {
+}
+
 void UIGS_StealthHelpers::ReportLootingStarts(AIGS_GameCharacterFramework* inCharacter) {
 }
 

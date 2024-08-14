@@ -13,6 +13,8 @@ enum class EMETA_MenuState : uint8 {
     MS_LoadingCutscene,
     MS_MapChanging,
     MS_StartUp,
-    MS_INVALID,
+    MS_LevelUpProgression,
+    MS_LevelUpBossCards,
+    MS_INVALID = 255,
 };
 

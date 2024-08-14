@@ -3,6 +3,9 @@
 UIGS_CharacterDatabase::UIGS_CharacterDatabase() {
 }
 
+void UIGS_CharacterDatabase::ModAppendDataTable(UDataTable* inNewTable) {
+}
+
 int32 UIGS_CharacterDatabase::GetNextMutableIndex(UObject* inWCO) {
     return 0;
 }
@@ -37,6 +40,10 @@ TSoftClassPtr<APaperDollAbstract> UIGS_CharacterDatabase::GetCharacterPaperDoll(
 
 int32 UIGS_CharacterDatabase::GetCharacterGenericIDFromEntitlements(UObject* inWCO, EIGS_CharacterID inID, int32 inOriginalGenericID) {
     return 0;
+}
+
+UIGS_CharacterDatabase* UIGS_CharacterDatabase::GetCharacterDatabaseInstance(UObject* inWCO) {
+    return NULL;
 }
 
 

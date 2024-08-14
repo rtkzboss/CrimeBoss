@@ -96,6 +96,9 @@ bool AIGS_PlayerControllerRoot::OpenUnlockMethodMenu(FGameplayTagContainer inMet
     return false;
 }
 
+void AIGS_PlayerControllerRoot::OnWheelMenu_Implementation(bool inIsHoldingButton) {
+}
+
 void AIGS_PlayerControllerRoot::OnTryToReconstructHUD() {
 }
 
@@ -118,6 +121,7 @@ void AIGS_PlayerControllerRoot::OnOpenTextChatMenu_Implementation(bool inIsHoldi
 void AIGS_PlayerControllerRoot::OnOpenNotepadMenu_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
 }
 
+
 void AIGS_PlayerControllerRoot::OnOpenInventoryMenu_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
 }
 
@@ -130,24 +134,13 @@ void AIGS_PlayerControllerRoot::OnInputDeviceChanged_Implementation(EIGS_InputDe
 void AIGS_PlayerControllerRoot::OnGameMenuInput_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
 }
 
+void AIGS_PlayerControllerRoot::OnDropWieldable_Implementation(bool inIsHoldingButton) {
+}
+
 void AIGS_PlayerControllerRoot::OnCloseUnlockMenu_Implementation() {
 }
 
 
-void AIGS_PlayerControllerRoot::OnBotStandby_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
-}
-
-void AIGS_PlayerControllerRoot::OnBotPossessInMenu_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
-}
-
-void AIGS_PlayerControllerRoot::OnBotFollow_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
-}
-
-void AIGS_PlayerControllerRoot::OnBotDeliverLoot_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
-}
-
-void AIGS_PlayerControllerRoot::OnBotCancelInMenu_Implementation(bool inIsHoldingButton, EIGS_MenuInputState inInputState) {
-}
 
 float AIGS_PlayerControllerRoot::OnAddYawInput_Implementation(float inYaw) {
     return 0.0f;
@@ -247,5 +240,8 @@ void AIGS_PlayerControllerRoot::ClientFadeScreen_Implementation(bool inIsFadeOut
 void AIGS_PlayerControllerRoot::Client_UnlockMethodChosen_Implementation(const FGameplayTag inMethod) {
 }
 
+
+void AIGS_PlayerControllerRoot::CallBotCommand(EIGS_BotCommandDefinition inCommand) {
+}
 
 

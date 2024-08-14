@@ -6,6 +6,10 @@ UMETA_StashManagerComponent::UMETA_StashManagerComponent(const FObjectInitialize
     (*this).PrimaryComponentTick.bCanEverTick = true;
 }
 
+bool UMETA_StashManagerComponent::TryGetValidParentLootTag(FGameplayTag inLootTag, FGameplayTag& outMetaTag) {
+    return false;
+}
+
 void UMETA_StashManagerComponent::SetCashForPartner(EMETA_Partner Partner, int32 inCash) {
 }
 
@@ -36,11 +40,7 @@ TArray<FGameplayTag> UMETA_StashManagerComponent::GetLootTagsByOperator(EMETA_Co
     return TArray<FGameplayTag>();
 }
 
-bool UMETA_StashManagerComponent::GetClosestMetaTagFromParents(FGameplayTag inLootTag, FGameplayTag& outMetaTag) {
-    return false;
-}
-
-void UMETA_StashManagerComponent::ChangeLootByValue(FGameplayTag inLootTag, int32 InValue) {
+void UMETA_StashManagerComponent::ChangeLootByValue(FGameplayTag inLootTag, int32 InValue, bool inRawValue) {
 }
 
 void UMETA_StashManagerComponent::ChangeCashForPartner(EMETA_Partner Partner, int32 ByValue) {

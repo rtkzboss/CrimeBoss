@@ -18,6 +18,9 @@ public:
     void SetCharacterSkinTag(FGameplayTag inSkinTag);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetSlotByPerkTag(FGameplayTag inTagID) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_PerkData GetPerkInSlot(int32 inSlot) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)

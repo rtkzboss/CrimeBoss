@@ -76,5 +76,7 @@ enum class EIGS_WorldWidgetType : uint8 {
     Widget_SmartPingValid,
     Widget_SmartPingInvalid,
     Widget_SmartPingProgress,
+    Widget_ChatWheelIcon,
+    Widget_HordeVan,
 };
 

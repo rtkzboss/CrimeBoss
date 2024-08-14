@@ -6,6 +6,7 @@
 #include "IGS_RenderingSettings.generated.h"
 
 class UIGS_RenderingSettings;
+class UMaterialParameterCollection;
 
 UCLASS(Blueprintable, DefaultConfig, Config=Engine)
 class BF_SETTINGS_API UIGS_RenderingSettings : public UIGS_SettingsBase {
@@ -72,6 +73,9 @@ public:
     uint8 FSRmode;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint8 FrameGenerationMode;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 ReflexMode;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -82,6 +86,15 @@ public:
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool MotionBlurEnabled;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bSSREnabled;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool bAOEnabled;
+    
+    UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
+    int32 SharpenFilterStrength;
     
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     int32 FramerateLimitInGame;
@@ -98,6 +111,9 @@ public:
     UPROPERTY(BlueprintReadWrite, Config, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool bQualityModeForConsoles;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UMaterialParameterCollection* m_ExtendedSettingsParameterCollection;
+    
     UIGS_RenderingSettings();
 
     UFUNCTION(BlueprintCallable, BlueprintPure)
@@ -105,6 +121,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     void UseLockpickRenderingSettings(bool inIsLockpicking);
+    
+    UFUNCTION(BlueprintCallable)
+    void UseBotWheelRenderingSettings(bool inIsPaused);
     
     UFUNCTION(BlueprintCallable)
     void SetQualityLevels_Auto(bool inRunBenchmark);

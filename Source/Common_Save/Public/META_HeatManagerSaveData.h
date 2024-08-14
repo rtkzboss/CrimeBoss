@@ -46,6 +46,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<FGameplayTag, int32> InvestigationEffects;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    TMap<FGameplayTag, int32> HeatEffects;
+    
     FMETA_HeatManagerSaveData();
 };
 

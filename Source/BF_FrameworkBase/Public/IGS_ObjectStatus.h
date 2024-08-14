@@ -65,6 +65,9 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_EncryptedF32 CurrentShield;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    float HealthMultiplierAttribute;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_IsDead, meta=(AllowPrivateAccess=true))
     bool R_IsDead;
     
@@ -97,6 +100,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
     bool m_OverrideReportingOfDamageDealtValue;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Replicated, meta=(AllowPrivateAccess=true))
+    float mR_BaseMaxHealth;
     
 public:
     UIGS_ObjectStatus(const FObjectInitializer& ObjectInitializer);

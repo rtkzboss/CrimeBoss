@@ -32,6 +32,10 @@ UMETA_MissionNotification* UMETA_NotificationDatabase::CreateMissionNotification
     return NULL;
 }
 
+UMETA_LootNotification* UMETA_NotificationDatabase::CreateLootNotificationObject(UObject* inWCO, TSoftObjectPtr<UMETA_NotificationID> inID, const FText& inLootCategory, const EMETA_LootPurpose inLootPurpose, const int32 InValue) {
+    return NULL;
+}
+
 UMETA_GoalNotification* UMETA_NotificationDatabase::CreateGoalNotificationObject(UObject* inWCO, TSoftObjectPtr<UMETA_NotificationID> inID, UMETA_BaseGoal* inGoal) {
     return NULL;
 }

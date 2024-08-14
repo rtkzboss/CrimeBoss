@@ -53,7 +53,7 @@ public:
     void SetLootBarGoalValue(float InValue);
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-    void AddHUDMessage(const FText& InText, float inDuration);
+    void AddHUDMessage(const FText& InText, float inDuration, int32 inCountdown);
     
 };
 

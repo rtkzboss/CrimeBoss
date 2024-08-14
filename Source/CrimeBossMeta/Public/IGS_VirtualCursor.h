@@ -7,6 +7,7 @@
 
 class IVirtualCursorTarget;
 class UVirtualCursorTarget;
+class UIGS_GameScreenHandler;
 class UStaticMeshComponent;
 
 UCLASS(Blueprintable)
@@ -24,6 +25,9 @@ public:
     AIGS_VirtualCursor(const FObjectInitializer& ObjectInitializer);
 
 private:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool IsSupportedScreenOpen(UIGS_GameScreenHandler* inGameScreenHandler) const;
+    
     UFUNCTION(BlueprintCallable)
     TScriptInterface<IVirtualCursorTarget> GetClosestTargetInDirection(FVector InDirection, const TArray<AActor*>& inActors);
     

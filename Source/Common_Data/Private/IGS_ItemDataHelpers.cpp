@@ -20,7 +20,7 @@ FMETA_HeisterLoadout UIGS_ItemDataHelpers::MakeMetaHeisterLoadoutChains(UObject*
     return FMETA_HeisterLoadout{};
 }
 
-FMETA_HeisterLoadout UIGS_ItemDataHelpers::MakeMetaHeisterLoadout(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inPrimaryWeapon, const TSubclassOf<UMETA_WeaponInventoryObject>& inSecondaryWeapon, const TSubclassOf<UIGS_EquipmentInventoryObject>& inEquipment) {
+FMETA_HeisterLoadout UIGS_ItemDataHelpers::MakeMetaHeisterLoadout(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inPrimaryWeapon, const TSubclassOf<UMETA_WeaponInventoryObject>& inSecondaryWeapon, const TSubclassOf<UIGS_EquipmentInventoryObject>& inEquipment, const TArray<FGameplayTag>& inUnlockedWeaponSkins) {
     return FMETA_HeisterLoadout{};
 }
 
@@ -142,6 +142,10 @@ FString UIGS_ItemDataHelpers::GetItemNameFromID(FGameplayTag inTagID) {
 
 TSubclassOf<UIGS_EquipmentInventoryObject> UIGS_ItemDataHelpers::GetEquipmentForThrowable(const UObject* inWCO, TSubclassOf<UIGS_ThrowableInventoryObject> inThrowable) {
     return NULL;
+}
+
+FGameplayTag UIGS_ItemDataHelpers::GetEntitlementTagFromContainer(const FGameplayTagContainer& inTagContainer) {
+    return FGameplayTag{};
 }
 
 FIGS_CommonItemData UIGS_ItemDataHelpers::GetCommonDataForClassBP(const UObject* inWCO, const TSubclassOf<UIGS_InventoryObjectFramework>& inItemClass) {

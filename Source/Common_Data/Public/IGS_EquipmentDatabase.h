@@ -7,6 +7,8 @@
 #include "Templates/SubclassOf.h"
 #include "IGS_EquipmentDatabase.generated.h"
 
+class UDataTable;
+class UIGS_EquipmentDatabase;
 class UIGS_EquipmentInventoryObject;
 class UObject;
 
@@ -16,8 +18,14 @@ class COMMON_DATA_API UIGS_EquipmentDatabase : public UGameInstanceSubsystem {
 public:
     UIGS_EquipmentDatabase();
 
+    UFUNCTION(BlueprintCallable)
+    void ModAppendDataTable(UDataTable* inNewTable);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetIndex(const TSubclassOf<UIGS_EquipmentInventoryObject>& inClass) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UIGS_EquipmentDatabase* GetEquipmentDatabaseInstance(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static TArray<TSubclassOf<UIGS_EquipmentInventoryObject>> GetEquipmentByQualities(UObject* inWCO, const TArray<EMETA_ItemQuality>& inQualities, const TArray<FGameplayTag>& inUnlockedEquipment, bool inIgnoreUnlock);

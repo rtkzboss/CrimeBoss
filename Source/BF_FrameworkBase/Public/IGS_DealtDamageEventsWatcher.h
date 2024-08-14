@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "IGS_CharacterDealtDamageSignatureDelegate.h"
+#include "IGS_CharacterKilledSignatureDelegate.h"
 #include "IGS_DealtDamageEventsWatcher.generated.h"
 
 class AIGS_GameCharacterFramework;
@@ -19,6 +20,9 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_CharacterDealtDamageSignature OnCharacterDealtDamageEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_CharacterKilledSignature OnCharacterKilledEvent;
     
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

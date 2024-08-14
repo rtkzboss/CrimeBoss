@@ -20,6 +20,9 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintCallable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_ModalWindowResponse OnCancelled;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_ModalTableRow ModalData;
+    
     UIGS_ModalScreen();
 
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)

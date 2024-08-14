@@ -56,6 +56,12 @@ public:
     static void ReportMelee(AIGS_GameCharacterFramework* inInstigator);
     
     UFUNCTION(BlueprintCallable)
+    static void ReportMagazineThrowSeenStart(AIGS_GameCharacterFramework* inCharacter);
+    
+    UFUNCTION(BlueprintCallable)
+    static void ReportMagazineThrowSeenEnd(AIGS_GameCharacterFramework* inInstigator);
+    
+    UFUNCTION(BlueprintCallable)
     static void ReportLootingStarts(AIGS_GameCharacterFramework* inCharacter);
     
     UFUNCTION(BlueprintCallable)

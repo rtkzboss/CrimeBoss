@@ -12,6 +12,7 @@ UIGS_MainHUDWidget::UIGS_MainHUDWidget() {
 }
 
 
+
 void UIGS_MainHUDWidget::ShowStealthWidgets() {
 }
 
@@ -19,6 +20,9 @@ void UIGS_MainHUDWidget::ShowSpectatorWidgets() {
 }
 
 void UIGS_MainHUDWidget::ShowInAbilityWidgets() {
+}
+
+void UIGS_MainHUDWidget::ShowHordeModeWidgets() {
 }
 
 void UIGS_MainHUDWidget::ShowEndMissionWidgets() {
@@ -33,6 +37,7 @@ void UIGS_MainHUDWidget::ShowBattleWidgets() {
 
 void UIGS_MainHUDWidget::RemoveRelevancyFromAllWidgets() {
 }
+
 
 
 

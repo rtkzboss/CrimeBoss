@@ -8,7 +8,6 @@
 #include "IGS_AIGrenadeUserMemory.h"
 #include "IGS_AIThrowInformation.h"
 #include "IGS_ThrowableLiveObjectsHolder.h"
-#include "Templates/SubclassOf.h"
 #include "IGS_AIGrenadeManager.generated.h"
 
 class AActor;
@@ -57,6 +56,9 @@ public:
     float GrenadeExplosionRange;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TArray<TSoftClassPtr<UIGS_ThrowableInventoryObject>> LethalThrowables;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool UseOnlyDirectThrow;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
@@ -100,16 +102,16 @@ private:
     FIGS_AIThrowInformation m_SelectedThrow;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TSubclassOf<UIGS_ThrowableInventoryObject>> m_ThrowablesOnCooldown;
+    TArray<TSoftClassPtr<UIGS_ThrowableInventoryObject>> m_ThrowablesOnCooldown;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    TArray<TSubclassOf<UIGS_ThrowableInventoryObject>> m_DetectiveThrowablesOnCooldown;
+    TArray<TSoftClassPtr<UIGS_ThrowableInventoryObject>> m_DetectiveThrowablesOnCooldown;
     
 public:
     UIGS_AIGrenadeManager(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
-    void RemoveThrowableCooldown(const TSubclassOf<UIGS_ThrowableInventoryObject> inObject, const EIGS_UnitSpecialization inSpecialization, const AActor* inInstigator);
+    void RemoveThrowableCooldown(const TSoftClassPtr<UIGS_ThrowableInventoryObject> inObject, const EIGS_UnitSpecialization inSpecialization, const AActor* inInstigator);
     
     UFUNCTION(BlueprintCallable, BlueprintPure, meta=(WorldContext=inWorldContextObject))
     static UIGS_AIGrenadeManager* Instance(const UObject* inWorldContextObject);

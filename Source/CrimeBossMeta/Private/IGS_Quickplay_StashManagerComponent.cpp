@@ -57,6 +57,10 @@ UMETA_Perk* UIGS_Quickplay_StashManagerComponent::GetPerkByTag(FGameplayTag inIt
     return NULL;
 }
 
+UMETA_BaseObject* UIGS_Quickplay_StashManagerComponent::GetItemByTag(FGameplayTag inItemTag) const {
+    return NULL;
+}
+
 UMETA_Equipment* UIGS_Quickplay_StashManagerComponent::GetEquipmentByTag(FGameplayTag inItemTag) const {
     return NULL;
 }

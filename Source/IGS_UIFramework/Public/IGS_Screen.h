@@ -10,6 +10,7 @@
 #include "EScreenInputPass.h"
 #include "EScreenModifier.h"
 #include "EScreenZOrder.h"
+#include "IGS_ScreenEventDelegate.h"
 #include "IGS_Screen.generated.h"
 
 class UIGS_ScreenHandler;
@@ -18,10 +19,8 @@ UCLASS(Abstract, Blueprintable, EditInlineNew)
 class IGS_UIFRAMEWORK_API UIGS_Screen : public UCommonActivatableWidget {
     GENERATED_BODY()
 public:
-    DECLARE_DYNAMIC_MULTICAST_DELEGATE(FIGS_ScreenEvent);
-    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FGameplayTag ScreenTag;
+    FGameplayTag screenTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     EScreenZOrder ScreenZOrder;
@@ -46,6 +45,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool RefreshFocusAfterClose;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool CallOnOpenAfterClosePreviousScreen;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     bool IsOverlay;
@@ -107,5 +109,10 @@ public:
     UFUNCTION(BlueprintCallable)
     void AddScreenToViewport();
     
+protected:
+    //void NativeOnActivated() override;
+    //void NativeOnDeactivated() override;
+public:
+    void Open();
 };
 

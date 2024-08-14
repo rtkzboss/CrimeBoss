@@ -9,5 +9,6 @@ enum class EMETA_JobStartRejectionReason : uint8 {
     NotEnoughIntelValue,
     WrongAmountOfAvailableSoldiers,
     TurfWar_NotEnoughMoneyToSendSoldiers,
+    TurfWar_CannotRecaptureTurfTheSameDay,
 };
 

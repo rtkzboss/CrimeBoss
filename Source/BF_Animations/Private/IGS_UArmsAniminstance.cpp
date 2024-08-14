@@ -10,6 +10,7 @@ UIGS_UArmsAniminstance::UIGS_UArmsAniminstance() {
     (*this).JumpingCameraOffset = 3.000000000e+01f;
     (*this).IsUnarmed = true;
     (*this).IsUnequipBlendedOut = true;
+    (*this).CameraBobIntensity = 5.000000000e-01f;
 }
 
 
@@ -24,6 +25,7 @@ UIGS_UArmsAniminstance::UIGS_UArmsAniminstance() {
 
 void UIGS_UArmsAniminstance::PlayHolsterChangeAnimation(bool inIsHolstering, bool inSkipAnimation, float inHolsterTimeInSeconds) {
 }
+
 
 
 

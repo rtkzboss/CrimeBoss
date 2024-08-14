@@ -127,6 +127,9 @@ UIGS_BleedingHandlerComponent* AIGS_IntelligentGameCharacter::GetBleedingCompone
     return NULL;
 }
 
+void AIGS_IntelligentGameCharacter::ForceDestroyZiptieComponent() {
+}
+
 void AIGS_IntelligentGameCharacter::DropBag() const {
 }
 

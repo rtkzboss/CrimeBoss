@@ -18,6 +18,9 @@ UCLASS(Blueprintable)
 class BF_IMPACTS_API UIGS_ImpactManager : public UWorldSubsystem {
     GENERATED_BODY()
 public:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool DisableBloodImpacts;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<TSubclassOf<UIGS_ImpactTypeObject>> LoadedIDs;

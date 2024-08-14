@@ -63,5 +63,7 @@ enum class EIGS_InputAction : uint8 {
     IA_MountTertiary,
     IA_MountQuaternary,
     IA_Lockpick,
+    IA_WheelMenu,
+    IA_PushToTalk,
 };
 

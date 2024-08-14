@@ -72,7 +72,7 @@ void UIGS_NetworkComponentCharacter::OnRep_IsVisibilityModOn() const {
 void UIGS_NetworkComponentCharacter::OnRep_IsRunningAttack() {
 }
 
-void UIGS_NetworkComponentCharacter::OnRep_IsMoving() const {
+void UIGS_NetworkComponentCharacter::OnRep_IsMovingForced() const {
 }
 
 void UIGS_NetworkComponentCharacter::OnRep_IsMantling() const {
@@ -360,7 +360,7 @@ void UIGS_NetworkComponentCharacter::MessageToAll_OnPlayerSpecialAction_Implemen
 void UIGS_NetworkComponentCharacter::MessageToAll_MeleeAttack_Implementation(EIGS_MeleeAttackType inMeleeAttackType) {
 }
 
-void UIGS_NetworkComponentCharacter::MessageToAll_IsMoving_Implementation(bool inIsMoving) {
+void UIGS_NetworkComponentCharacter::MessageToAll_IsMovingForced_Implementation(bool inIsMovingForced) {
 }
 
 void UIGS_NetworkComponentCharacter::MessageToAll_InterruptReload_Implementation(EIGS_ReloadInterruptReasonEnum inInterruptReason, const bool inImmediateInterrupt) {
@@ -419,7 +419,7 @@ void UIGS_NetworkComponentCharacter::GetLifetimeReplicatedProps(TArray<FLifetime
     DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_MovementSpeed);
     DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_RequestedLeanSide);
     DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_LeaningDirection);
-    DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_IsMoving);
+    DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_IsMovingForced);
     DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_IsMantling);
     DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_ReplicatedAcceleration);
     DOREPLIFETIME(UIGS_NetworkComponentCharacter, mR_ReplicatedLadder);

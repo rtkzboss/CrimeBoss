@@ -9,13 +9,14 @@
 #include "IGS_Quick_JobManagerSaveData.h"
 #include "IGS_Quick_PlayerManagerSaveData.h"
 #include "IGS_Quick_StashManagerSaveData.h"
+#include "IGS_SaveData_Base.h"
 #include "IGS_SaveData_Version.h"
 #include "META_CityMapManagerSaveData.h"
 #include "META_StatisticsManagerSaveData.h"
 #include "IGS_SaveData_Quickplay.generated.h"
 
 USTRUCT(BlueprintType)
-struct COMMON_SAVE_API FIGS_SaveData_Quickplay {
+struct COMMON_SAVE_API FIGS_SaveData_Quickplay : public FIGS_SaveData_Base {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
@@ -59,9 +60,6 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FIGS_SaveData_Version SaveDataVersion;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
-    FString MetaPersistentId;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool WantsToGoOffline;

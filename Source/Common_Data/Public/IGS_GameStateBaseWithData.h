@@ -52,6 +52,9 @@ public:
 
     virtual void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool SupportsCleanExecution() const;
+    
     UFUNCTION(BlueprintCallable)
     void SetSpecificLootTypes(FGameplayTagContainer inSpecificLootTypes);
     

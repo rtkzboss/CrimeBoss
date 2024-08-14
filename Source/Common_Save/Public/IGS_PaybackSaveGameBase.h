@@ -1,6 +1,7 @@
 #pragma once
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
+#include "IGS_SaveData_Base.h"
 #include "IGS_PaybackSaveGameBase.generated.h"
 
 UCLASS(Blueprintable)
@@ -18,16 +19,22 @@ protected:
     TArray<uint8> SaveDataCompressedBuffer;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    FString SaveDataSlotName;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     FString SaveDataEncryptionKey;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
     bool bFailedChecksum;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
-    bool bWasPatchingSaveFiles;
+    FIGS_SaveData_Base DebugSaveDataBase;
     
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, meta=(AllowPrivateAccess=true))
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool bShouldUnlockVeteranRewards;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    bool bAppliedPatchSave;
     
 public:
     UIGS_PaybackSaveGameBase();

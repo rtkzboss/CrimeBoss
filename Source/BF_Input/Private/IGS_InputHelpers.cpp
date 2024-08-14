@@ -9,6 +9,10 @@ void UIGS_InputHelpers::GetUserFriendlyActionNames(UObject* inWCO, FName inActio
 void UIGS_InputHelpers::GetInputActionString(UObject* inWCO, EIGS_InputAction InAction, FName& OutText) {
 }
 
+TArray<EIGS_InputAction> UIGS_InputHelpers::GetInputActionsFromFKey(UObject* inWCO, FKey inKey, bool bGamepadKey) {
+    return TArray<EIGS_InputAction>();
+}
+
 TArray<FText> UIGS_InputHelpers::GetInputActionNamesFromFKey(UObject* inWCO, FKey inKey, bool bGamepadKey) {
     return TArray<FText>();
 }

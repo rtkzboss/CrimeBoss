@@ -79,6 +79,9 @@ public:
     UMETA_StashManagerComponent(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)
+    bool TryGetValidParentLootTag(FGameplayTag inLootTag, FGameplayTag& outMetaTag);
+    
+    UFUNCTION(BlueprintCallable)
     void SetCashForPartner(EMETA_Partner Partner, int32 inCash);
     
     UFUNCTION(BlueprintCallable)
@@ -106,10 +109,7 @@ public:
     TArray<FGameplayTag> GetLootTagsByOperator(EMETA_ConditionOperator inOperator, int32 InValue);
     
     UFUNCTION(BlueprintCallable)
-    bool GetClosestMetaTagFromParents(FGameplayTag inLootTag, FGameplayTag& outMetaTag);
-    
-    UFUNCTION(BlueprintCallable)
-    void ChangeLootByValue(FGameplayTag inLootTag, int32 InValue);
+    void ChangeLootByValue(FGameplayTag inLootTag, int32 InValue, bool inRawValue);
     
     UFUNCTION(BlueprintCallable)
     void ChangeCashForPartner(EMETA_Partner Partner, int32 ByValue);

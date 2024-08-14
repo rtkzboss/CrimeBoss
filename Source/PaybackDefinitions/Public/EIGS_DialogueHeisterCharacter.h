@@ -64,7 +64,8 @@ enum class EIGS_DialogueHeisterCharacter : uint8 {
     GenericDriver = 245,
     DriverSmoke,
     DriverClutch,
-    NoVoice = 255,
+    NoVoiceFemale = 254,
+    NoVoice,
     Character2DMin = GenericPlanner,
     Character2DMax = ServoPlanner,
     Character3DMin = GenericHeister,
@@ -77,5 +78,7 @@ enum class EIGS_DialogueHeisterCharacter : uint8 {
     BossMax = Ice,
     DriverMin = GenericDriver,
     DriverMax = DriverClutch,
+    NoVoiceMin = NoVoiceFemale,
+    NoVoiceMax = NoVoice,
 };
 

@@ -50,6 +50,9 @@ public:
     TMap<FGameplayTag, int32> GetTradeableLoot();
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+    void GetTotalLootValue(int32& outTotalValue, int32& outRawValue);
+    
+    UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponAmountInfo> GetStashWeapons(bool inIsLobby);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent, BlueprintPure)
@@ -77,7 +80,7 @@ public:
     void GetModifiersForPriceForSellingLoot(FGameplayTag inMainLootTag, float& outTrendModifier, float& outBaseModifier);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-    int32 GetLootValueByLootTag(FGameplayTag inLootTag);
+    void GetLootValueByLootTag(FGameplayTag inLootTag, int32& OutValue, int32& outRawValue);
     
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     TMap<FGameplayTag, int32> GetLoot();

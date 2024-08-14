@@ -15,6 +15,12 @@ public:
     int32 FinalValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsMoney;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FText TextFormat;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<FIGS_EarnedMoneyAnimationSequenceData> Sequences;
     
     UIGS_EarnedMoneyAnimationData();

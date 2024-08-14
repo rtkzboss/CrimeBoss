@@ -8,6 +8,7 @@
 #include "EIGS_ChainType.h"
 #include "EIGS_UserDifficulty.h"
 #include "EMETA_DebriefType.h"
+#include "EMETA_FPSMissionSubtype.h"
 #include "EMETA_LobbyVisibilityType.h"
 #include "CommonDetectiveData.h"
 #include "IGS_MissionRewardCalculations.h"
@@ -25,6 +26,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     FGameplayTag MissionTag;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    EMETA_FPSMissionSubtype MissionSubtype;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     ECommonMissionResult MissionResult;

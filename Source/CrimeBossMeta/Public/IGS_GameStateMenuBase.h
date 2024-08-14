@@ -29,6 +29,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UIGS_MenuCommonData_Base* CommonBaseData;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    bool IsPreloadEnabled;
+    
     AIGS_GameStateMenuBase(const FObjectInitializer& ObjectInitializer);
 
     UFUNCTION(BlueprintCallable)

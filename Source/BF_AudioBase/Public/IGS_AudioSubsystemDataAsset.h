@@ -45,6 +45,12 @@ public:
     UAkRtpc* ControllerVibrationRtpc;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAkRtpc* PoliceRadioChatterVolumeRtpc;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UAkRtpc* TinnitusVolumeRtpc;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UAkRtpc* RadioDialogueOutputRtpc;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))

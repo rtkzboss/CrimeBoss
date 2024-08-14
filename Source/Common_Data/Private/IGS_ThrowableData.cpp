@@ -32,6 +32,7 @@ FIGS_ThrowableData::FIGS_ThrowableData() {
     (*this).HitImpactCooldown = 1.000000015e-01f;
     (*this).HitImpactCustomMass = 0.000000000e+00f;
     (*this).HitImpactUseDefaultMaterial = true;
+    (*this).ExplodeOnEnemyImpact = false;
     (*this).Bounciness = 5.000000075e-02f;
     (*this).Friction = 1.000000015e-01f;
     (*this).MinFrictionFraction = 5.000000000e-01f;

@@ -88,7 +88,7 @@ UIGS_AICommandBreachFight* UIGS_AICommandHelpers::CreateBreachFightCommand(bool 
     return NULL;
 }
 
-UIGS_AICommandBeingRevived* UIGS_AICommandHelpers::CreateBeingRevivedCommand(AIGS_GameCharacterFramework* revivedByChar) {
+UIGS_AICommandBeingRevived* UIGS_AICommandHelpers::CreateBeingRevivedCommand(const AIGS_GameCharacterFramework* revivedByChar) {
     return NULL;
 }
 

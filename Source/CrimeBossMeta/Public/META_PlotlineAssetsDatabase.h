@@ -6,6 +6,7 @@
 #include "META_PlotlineAssetTableRow.h"
 #include "META_PlotlineAssetsDatabase.generated.h"
 
+class UMETA_PlotlineAsset;
 class UTexture2D;
 
 UCLASS(Blueprintable)
@@ -14,6 +15,9 @@ class CRIMEBOSSMETA_API UMETA_PlotlineAssetsDatabase : public UGameInstanceSubsy
 public:
     UMETA_PlotlineAssetsDatabase();
 
+    UFUNCTION(BlueprintCallable)
+    static TArray<UMETA_PlotlineAsset*> SortAssetsByPrice(TArray<UMETA_PlotlineAsset*> inAssets, bool inAscending);
+    
     UFUNCTION(BlueprintCallable, BlueprintPure)
     bool IsPersistent(FGameplayTag inAssetID) const;
     

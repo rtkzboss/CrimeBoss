@@ -24,6 +24,9 @@ public:
     void SetShowCrosshair(bool inShowCrosshair) const;
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void SetLocalPlayerVoiceMute(bool inMute);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     void OnPreClientTravel();
     
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent, BlueprintPure)

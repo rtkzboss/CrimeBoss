@@ -39,9 +39,9 @@ AIGS_MountedWeapon::AIGS_MountedWeapon(const FObjectInitializer& ObjectInitializ
     (*this).bReplicates = true;
     (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
     (*this).NetDormancy = DORM_Initial;
+    (*this).AkComponent->SetupAttachment((*this).RootComponent);
     (*this).InteractiveComponent->SetupAttachment((*this).RootComponent);
     (*this).InteractiveBoxComponent->SetupAttachment((*this).RootComponent);
-    (*this).AkComponent->SetupAttachment((*this).RootComponent);
 }
 
 

@@ -13,6 +13,7 @@ void UIGS_GoalWidget::SpawnObjectiveWidget(int32 inID) {
 }
 
 
+
 void UIGS_GoalWidget::InitializeObjective() {
 }
 

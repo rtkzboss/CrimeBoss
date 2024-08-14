@@ -79,6 +79,12 @@ void AIGS_GameCharacterFramework::SetCanBeUnholstered(bool inEnabled) const {
 void AIGS_GameCharacterFramework::SetAimAtPoint(FIGS_InterestPointHolder inInterestPoint) {
 }
 
+void AIGS_GameCharacterFramework::Server_ApplyGameplayEffectToSelf_Implementation(TSubclassOf<UGameplayEffect> inGameplayEffectClass, float inLevel, FGameplayEffectContextHandle inEffectContext) {
+}
+bool AIGS_GameCharacterFramework::Server_ApplyGameplayEffectToSelf_Validate(TSubclassOf<UGameplayEffect> inGameplayEffectClass, float inLevel, FGameplayEffectContextHandle inEffectContext) {
+    return true;
+}
+
 void AIGS_GameCharacterFramework::RequestStopCustomMontage(FGameplayTag inCustomAnimType) {
 }
 
@@ -263,6 +269,10 @@ float AIGS_GameCharacterFramework::GetCharacterWieldable3PVModelScaleMultiplier(
 }
 
 bool AIGS_GameCharacterFramework::GetCharacterCanAttack() {
+    return false;
+}
+
+bool AIGS_GameCharacterFramework::GetCanUsePrimaryWithLootBag() const {
     return false;
 }
 

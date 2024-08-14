@@ -4,6 +4,7 @@
 #include "ScalableFloat.h"
 #include "IGS_DownStateCountChangedSignatureDelegate.h"
 #include "IGS_DownStateHandlerComponentBase.h"
+#include "IGS_OnGoToDownstateAnimationDoneSignatureDelegate.h"
 #include "Templates/SubclassOf.h"
 #include "IGS_DownStateHandlerComponent.generated.h"
 
@@ -91,6 +92,9 @@ public:
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_DownStateCountChangedSignature DownStateCountChanged;
     
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_OnGoToDownstateAnimationDoneSignature OnGoToDownstateAnimationDone;
+    
 protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float GracePeriodGoingDownEndTimestamp;
@@ -141,6 +145,13 @@ public:
 protected:
     UFUNCTION(BlueprintCallable, Client, Reliable)
     void Client_ReviveChange(APawn* inHealer, bool Inactive, bool inIsFinished);
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void CallOnCanSelfrevive();
+    
+    UFUNCTION(BlueprintCallable)
+    void CallGoToDownstateAnimationDone();
     
 };
 

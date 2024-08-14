@@ -6,7 +6,9 @@
 #include "Templates/SubclassOf.h"
 #include "IGS_WeaponDatabase.generated.h"
 
+class UDataTable;
 class UIGS_PerWeaponClassSettingsDataAsset;
+class UIGS_WeaponDatabase;
 class UIGS_WeaponInventoryObject;
 class UObject;
 
@@ -22,7 +24,13 @@ public:
     UIGS_WeaponDatabase();
 
     UFUNCTION(BlueprintCallable)
+    void ModAppendDataTable(UDataTable* inNewTable);
+    
+    UFUNCTION(BlueprintCallable)
     static FIGS_WeaponTableRow GetWeaponDataByTag(UObject* inWCO, FGameplayTag inTag, bool& outSucceeded);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UIGS_WeaponDatabase* GetWeaponDatabaseInstance(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_WeaponTableRow GetWeaponData(UObject* inWCO, const TSubclassOf<UIGS_WeaponInventoryObject>& inClass, bool& outSucceeded);

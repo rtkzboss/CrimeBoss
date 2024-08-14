@@ -7,6 +7,14 @@ UIGS_MiniProgressLerp* UIGS_MiniProgressLerp::MiniProgressLerp(UObject* inWorldC
     return NULL;
 }
 
+bool UIGS_MiniProgressLerp::IsActive() const {
+    return false;
+}
+
+float UIGS_MiniProgressLerp::GetToValue() const {
+    return 0.0f;
+}
+
 void UIGS_MiniProgressLerp::ExecUpdate() {
 }
 

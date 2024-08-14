@@ -3,10 +3,10 @@
 UIGS_UnlockManager::UIGS_UnlockManager() {
 }
 
-void UIGS_UnlockManager::UnlockItemByID(FGameplayTag inTagID) {
+void UIGS_UnlockManager::UnlockItemByID(FGameplayTag inTagID, bool inAddToPendingList) {
 }
 
-void UIGS_UnlockManager::UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo) {
+void UIGS_UnlockManager::UnlockItem(const FIGS_UnlockItemInfo& inUnlockItemInfo, bool inAddToPendingList) {
 }
 
 void UIGS_UnlockManager::ResetUnlocks() {
@@ -31,11 +31,11 @@ bool UIGS_UnlockManager::IsUnlocked(FGameplayTag inTag) const {
     return false;
 }
 
-bool UIGS_UnlockManager::IsPendingUnlockedItemByID(FGameplayTag inTagID) const {
+bool UIGS_UnlockManager::IsPendingUnlockedItemByID(FGameplayTag inTagID, bool inExact) const {
     return false;
 }
 
-bool UIGS_UnlockManager::IsPendingUnlockedItem(const FIGS_UnlockItemInfo& inUnlockItemInfo) const {
+bool UIGS_UnlockManager::IsPendingUnlockedItem(const FIGS_UnlockItemInfo& inUnlockItemInfo, bool inExact) const {
     return false;
 }
 
@@ -123,6 +123,9 @@ void UIGS_UnlockManager::FilterHigherLevelUnlockRewards(TArray<FIGS_UnlockItemIn
 }
 
 void UIGS_UnlockManager::FilterEntitledItems(TArray<FIGS_UnlockItemInfo>& inOutUnlockItemInfos) {
+}
+
+void UIGS_UnlockManager::FilterChallengeItems(TArray<FIGS_UnlockItemInfo>& inOutUnlockItemInfos) {
 }
 
 void UIGS_UnlockManager::EnsureNotSameCategory(const TArray<FIGS_UnlockItemInfo>& inLockedItems, TArray<FIGS_UnlockItemInfo>& inOutResultItems, const int32 inMaxRewardsCount) {

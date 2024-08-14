@@ -26,6 +26,9 @@ TMap<FGameplayTag, int32> UIGS_StashManagerBaseComponent::GetTradeableLoot_Imple
     return TMap<FGameplayTag, int32>();
 }
 
+void UIGS_StashManagerBaseComponent::GetTotalLootValue_Implementation(int32& outTotalValue, int32& outRawValue) {
+}
+
 TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponAmountInfo> UIGS_StashManagerBaseComponent::GetStashWeapons_Implementation(bool inIsLobby) {
     return TMap<TSubclassOf<UMETA_WeaponInventoryObject>, FMETA_WeaponAmountInfo>();
 }
@@ -61,8 +64,7 @@ int32 UIGS_StashManagerBaseComponent::GetPawnShopCurrentSellingLootValue_Impleme
 void UIGS_StashManagerBaseComponent::GetModifiersForPriceForSellingLoot_Implementation(FGameplayTag inMainLootTag, float& outTrendModifier, float& outBaseModifier) {
 }
 
-int32 UIGS_StashManagerBaseComponent::GetLootValueByLootTag_Implementation(FGameplayTag inLootTag) {
-    return 0;
+void UIGS_StashManagerBaseComponent::GetLootValueByLootTag_Implementation(FGameplayTag inLootTag, int32& OutValue, int32& outRawValue) {
 }
 
 TMap<FGameplayTag, int32> UIGS_StashManagerBaseComponent::GetLoot_Implementation() {

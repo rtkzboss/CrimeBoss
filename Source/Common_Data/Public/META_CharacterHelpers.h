@@ -34,7 +34,7 @@ public:
     static TArray<FMETA_PerkData> GenerateGenericCharacterPerksAtLevel(UObject* inWCO, FGameplayTag inCharacterTag, int32 inCharacterLevel, const TArray<FMETA_PerkData>& inCurrentPerks, int32 inPerkLimit);
     
     UFUNCTION(BlueprintCallable)
-    static UMETA_Character* CreateCharacter(UObject* inWCO, UObject* inOuter, UIGS_EconomyData_Base* inEconomyData, const FGameplayTag inCharacterTag);
+    static UMETA_Character* CreateCharacter(UObject* inWCO, UObject* inOuter, UIGS_EconomyData_Base* inEconomyData, const FGameplayTag inCharacterTag, const TArray<FGameplayTag>& inUnlockedWeaponSkins);
     
 };
 

@@ -22,4 +22,7 @@ int32 UIGS_ToolFunctionLibrary::EvaluateGeoLocation(const FString& LocalRegion, 
     return 0;
 }
 
+void UIGS_ToolFunctionLibrary::AppendTableToComposite(UCompositeDataTable* inTargetCompositeTable, UDataTable* inNewTable) {
+}
+
 

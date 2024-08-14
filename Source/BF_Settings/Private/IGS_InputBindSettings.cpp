@@ -22,6 +22,9 @@ void UIGS_InputBindSettings::RevertSettings() {
 void UIGS_InputBindSettings::ResetToDefaults() {
 }
 
+void UIGS_InputBindSettings::ResetGamepadBindings() {
+}
+
 UIGS_InputBindSettings* UIGS_InputBindSettings::Instance() {
     return NULL;
 }

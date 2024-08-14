@@ -15,6 +15,9 @@ bool UProgressionBaseComponent::TryGetPendingUnlockedRewards(TArray<FIGS_UnlockI
     return false;
 }
 
+void UProgressionBaseComponent::SetPendingPoints(float inPoints) {
+}
+
 void UProgressionBaseComponent::SaveSelectedUnlockedRewardsHistory(const FGameplayTag& selectedReward) {
 }
 
@@ -22,6 +25,10 @@ void UProgressionBaseComponent::SavePendingUnlockRewards(TArray<FIGS_UnlockItemI
 }
 
 void UProgressionBaseComponent::SavePendingLevelUps(const int32 inLevelUps) {
+}
+
+bool UProgressionBaseComponent::SaveLastClaimedDailyMultiplayerDateTime(FDateTime inDateTime) {
+    return false;
 }
 
 void UProgressionBaseComponent::ResetAccumulatedProgressionResult() {
@@ -46,12 +53,36 @@ TArray<FGameplayTag> UProgressionBaseComponent::GetPendingUnlockRewards() const 
     return TArray<FGameplayTag>();
 }
 
+float UProgressionBaseComponent::GetPendingPoints() const {
+    return 0.0f;
+}
+
 int32 UProgressionBaseComponent::GetPendingLevelsCount() const {
     return 0;
+}
+
+FDateTime UProgressionBaseComponent::GetLastClaimedDailyMultiplayerDateTime() const {
+    return FDateTime{};
+}
+
+float UProgressionBaseComponent::GetDailyXPBonus(int32 inLevel) const {
+    return 0.0f;
+}
+
+float UProgressionBaseComponent::GetDailyCashBonus(int32 inLevel) const {
+    return 0.0f;
 }
 
 void UProgressionBaseComponent::ClearPendingUnlockedRewards() {
 }
 
+bool UProgressionBaseComponent::CanRewardBeClaimed(FDateTime inDateTime) const {
+    return false;
+}
+
+
+
+void UProgressionBaseComponent::AddPendingPoints(float inPoints) {
+}
 
 

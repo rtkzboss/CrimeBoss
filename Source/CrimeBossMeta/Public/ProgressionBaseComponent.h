@@ -3,6 +3,7 @@
 #include "IGS_ProgressionResult.h"
 #include "IGS_UnlockItemInfo.h"
 #include "IGS_MissionResult.h"
+#include "UObject/NoExportTypes.h"
 #include "Components/ActorComponent.h"
 #include "GameplayTagContainer.h"
 #include "IGS_ProcessMissionProgressionResultDelegate.h"
@@ -49,6 +50,9 @@ public:
     bool TryGetPendingUnlockedRewards(TArray<FIGS_UnlockItemInfo>& outUnlockedItems);
     
     UFUNCTION(BlueprintCallable)
+    void SetPendingPoints(float inPoints);
+    
+    UFUNCTION(BlueprintCallable)
     void SaveSelectedUnlockedRewardsHistory(const FGameplayTag& selectedReward);
     
     UFUNCTION(BlueprintCallable)
@@ -57,6 +61,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void SavePendingLevelUps(const int32 inLevelUps);
     
+protected:
+    UFUNCTION(BlueprintCallable)
+    bool SaveLastClaimedDailyMultiplayerDateTime(FDateTime inDateTime);
+    
+public:
     UFUNCTION(BlueprintCallable)
     void ResetAccumulatedProgressionResult();
     
@@ -76,14 +85,38 @@ public:
     TArray<FGameplayTag> GetPendingUnlockRewards() const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetPendingPoints() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetPendingLevelsCount() const;
     
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    FDateTime GetLastClaimedDailyMultiplayerDateTime() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDailyXPBonus(int32 inLevel) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    float GetDailyCashBonus(int32 inLevel) const;
+    
+public:
     UFUNCTION(BlueprintCallable)
     void ClearPendingUnlockedRewards();
     
 protected:
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    bool CanRewardBeClaimed(FDateTime inDateTime) const;
+    
     UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
     bool BP_ProcessLevelUp(const int32 inLevel, TArray<FIGS_UnlockItemInfo>& outUnlockedItems);
+    
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    bool BP_ClaimDailyMultiplayerBonus();
+    
+public:
+    UFUNCTION(BlueprintCallable)
+    void AddPendingPoints(float inPoints);
     
 };
 

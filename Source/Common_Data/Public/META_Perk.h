@@ -11,6 +11,9 @@ public:
     UMETA_Perk();
 
     UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetPerkLevel();
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
     FIGS_PerksTableRow GetPerkData();
     
 };

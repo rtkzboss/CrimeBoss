@@ -23,7 +23,7 @@ public:
     float CurrentValue;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    int32 CurrentWeight;
+    float CurrentWeight;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     float TotalValue;
@@ -83,6 +83,10 @@ protected:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TArray<AIGS_GameCharacterFramework*> AllowedCharacters;
     
+private:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_bIsInCase, meta=(AllowPrivateAccess=true))
+    bool m_bIsInCase;
+    
 public:
     AIGS_LootCollectionBase(const FObjectInitializer& ObjectInitializer);
 
@@ -120,6 +124,11 @@ public:
     UFUNCTION(BlueprintCallable)
     void OnRep_LootItems();
     
+private:
+    UFUNCTION(BlueprintCallable)
+    void OnRep_bIsInCase();
+    
+public:
     UFUNCTION(BlueprintCallable)
     void OnRep_bIsEmpty();
     

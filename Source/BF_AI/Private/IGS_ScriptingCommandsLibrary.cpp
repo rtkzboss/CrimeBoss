@@ -1,4 +1,5 @@
 #include "IGS_ScriptingCommandsLibrary.h"
+#include "Templates/SubclassOf.h"
 
 UIGS_ScriptingCommandsLibrary::UIGS_ScriptingCommandsLibrary() {
 }
@@ -40,6 +41,9 @@ void UIGS_ScriptingCommandsLibrary::ScriptingCommandRevive(AIGS_GameCharacterFra
 }
 
 void UIGS_ScriptingCommandsLibrary::ScriptingCommandPauseAI(UObject* inWCO, AIGS_GameCharacterFramework* inInstigator, const bool inPause) {
+}
+
+void UIGS_ScriptingCommandsLibrary::ScriptingCommandKillAdvanced(AIGS_GameCharacterFramework* Instigator, FVector Origin, float Radius, EIGS_DamageEventType DamageEventType, TSubclassOf<UDamageType> DamageTypeClass) {
 }
 
 void UIGS_ScriptingCommandsLibrary::ScriptingCommandKill(AIGS_GameCharacterFramework* Instigator) {

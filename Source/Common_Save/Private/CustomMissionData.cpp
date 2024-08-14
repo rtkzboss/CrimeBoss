@@ -30,6 +30,7 @@ FCustomMissionData::FCustomMissionData() {
     (*this).MissionData.WantedBadges = 0;
     (*this).MissionData.IntelLevel = -1;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).MissionData.BonusObjectiveID, 0)) = NAME_None;
+    (*this).MissionData.SupportsCleanExecution = false;
     (*this).MissionData.StartMusic = EIGS_MusicMissionState::None;
     (*this).MissionData.StartupSource = EIGS_MissionStartupSource::INVALID;
     (*this).MissionData.MissionSubtype = TEXT("");

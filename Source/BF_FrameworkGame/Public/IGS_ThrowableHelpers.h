@@ -47,6 +47,9 @@ public:
     static void SortAffectedActors(UPARAM(Ref) TArray<FIGS_AffectActorsDelayedEntry>& refActors);
     
     UFUNCTION(BlueprintCallable)
+    static FVector GetVelocityInLocalSpaceOfTransform(FVector inThrowDirection, float inThrowSpeed, FTransform InTransform);
+    
+    UFUNCTION(BlueprintCallable)
     static FTransform GetPlayerThrowTransform(TSubclassOf<UIGS_ThrowableInventoryObject> inThrowableClass, AIGS_GameCharacterFramework* inThrowingPlayer, bool inLow);
     
 };

@@ -4,6 +4,7 @@
 #include "IGS_PooledParticleNiagara.generated.h"
 
 class UNiagaraComponent;
+class UNiagaraSystem;
 
 UCLASS(Blueprintable)
 class BF_POOL_API AIGS_PooledParticleNiagara : public AIGS_PoolableBaseActor {
@@ -14,6 +15,9 @@ public:
     
     AIGS_PooledParticleNiagara(const FObjectInitializer& ObjectInitializer);
 
+    UFUNCTION(BlueprintCallable, BlueprintPure=false)
+    void SetTemplate(UNiagaraSystem* inNewTemplate) const;
+    
 protected:
     UFUNCTION(BlueprintCallable)
     void OnNiagaraSystemFinished(UNiagaraComponent* FinishedComponent);

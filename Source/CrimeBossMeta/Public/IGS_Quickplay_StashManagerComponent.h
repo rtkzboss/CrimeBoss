@@ -5,6 +5,7 @@
 #include "IGS_StashManagerBaseComponent.h"
 #include "IGS_Quickplay_StashManagerComponent.generated.h"
 
+class UMETA_BaseObject;
 class UMETA_CharacterSkin;
 class UMETA_Equipment;
 class UMETA_Perk;
@@ -78,6 +79,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMETA_Perk* GetPerkByTag(FGameplayTag inItemTag) const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    UMETA_BaseObject* GetItemByTag(FGameplayTag inItemTag) const;
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     UMETA_Equipment* GetEquipmentByTag(FGameplayTag inItemTag) const;

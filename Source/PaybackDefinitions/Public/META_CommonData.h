@@ -13,6 +13,7 @@
 #include "EMETA_PoliceInvestigationChangeForGraph.h"
 #include "EMETA_RandEventCategory.h"
 #include "EMETA_RespectLvl.h"
+#include "EMETA_TileSize.h"
 #include "EMETA_TradeRelationship.h"
 #include "EMETA_TradeVendor.h"
 #include "IGS_MenuCommonData_Base.h"
@@ -68,6 +69,9 @@ protected:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TSet<EMETA_Gang> GangsWithGangMissions;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    TMap<EMETA_TileSize, int32> TileCapacityBySize;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     TMap<EMETA_RespectLvl, int32> CrewCapacity;
@@ -353,6 +357,9 @@ public:
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     int32 GetTimeForCharactersMoodSwitchToNeutral() const;
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    int32 GetTileCapacityBySize(const EMETA_TileSize inTileSize);
     
     UFUNCTION(BlueprintCallable, BlueprintPure)
     FMETA_StatisticsRootTags GetStatisticsRootTags() const;

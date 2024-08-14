@@ -33,6 +33,10 @@ bool UIGS_GameInstanceFramework::IsTextChatAllowed_Implementation() {
     return false;
 }
 
+bool UIGS_GameInstanceFramework::IsMissionTagTurfWar(FGameplayTag inMissionTag) {
+    return false;
+}
+
 bool UIGS_GameInstanceFramework::IsMissionEndIgnored(const UObject* inWCO) {
     return false;
 }

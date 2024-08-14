@@ -165,7 +165,7 @@ protected:
     void OnTakeDamage(float inCurrentHealth, float inCurrentShield, float inHealthChange, float inShieldChange, const FIGS_HitInfo& inHitInfo);
     
     UFUNCTION(BlueprintCallable)
-    void OnRep_IsExploded();
+    void OnRep_IsExploded(bool inIsExploded);
     
     UFUNCTION(BlueprintCallable, NetMulticast, Reliable, WithValidation)
     void Multicast_ExplodeVehicle();

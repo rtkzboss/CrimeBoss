@@ -25,10 +25,8 @@ FIGS_PerksTableRow::FIGS_PerksTableRow() {
     (*this).Data.SwapPerkIDAfterPromotion = nullptr;
     (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.SwapPerkTagAfterPromotion, 0)) = NAME_None;
     (*this).Data.UnlockProperties.IsUnlockable = false;
-    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.UnlockProperties.RequiredTag, 0)) = NAME_None;
     (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("GameplayTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.UnlockProperties.RequiredTags, 0)).Empty();
     (*TBaseStructure<FGameplayTagContainer>::Get()->FindPropertyByName("ParentTags")->ContainerPtrToValuePtr<TArray<FGameplayTag>>(&(*this).Data.UnlockProperties.RequiredTags, 0)).Empty();
-    (*TBaseStructure<FGameplayTag>::Get()->FindPropertyByName("TagName")->ContainerPtrToValuePtr<FName>(&(*this).Data.UnlockProperties.EntitlementTag, 0)) = NAME_None;
     (*this).Data.UnlockProperties.RequiredValue = 0.000000000e+00f;
     (*this).Data.UnlockProperties.ShowIfNotOwned = true;
     (*this).Data.UnlockProperties.UnlockCoverImage = nullptr;

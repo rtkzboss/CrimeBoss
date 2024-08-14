@@ -11,16 +11,16 @@ struct BF_AI_API FIGS_ReviveRecord {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AIGS_GameCharacterFramework* InjuredCharacter;
+    TWeakObjectPtr<AIGS_GameCharacterFramework> InjuredCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     UIGS_AICommandBeingRevived* BeingRevivedCommand;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    AIGS_GameCharacterFramework* RevivingCharacter;
+    TWeakObjectPtr<AIGS_GameCharacterFramework> RevivingCharacter;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    UIGS_AICommandRevive* ReviveingCommand;
+    UIGS_AICommandRevive* RevivingCommand;
     
     FIGS_ReviveRecord();
 };

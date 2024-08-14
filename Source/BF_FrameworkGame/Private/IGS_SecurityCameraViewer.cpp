@@ -5,6 +5,7 @@
 #include "Net/UnrealNetwork.h"
 
 AIGS_SecurityCameraViewer::AIGS_SecurityCameraViewer(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
+    (*this).TemporaryDisableDuration = 2.000000000e+01f;
     (*this).mR_AllowDisablingCameras = true;
     (*this).bSetListenerOnPossessed = true;
 }

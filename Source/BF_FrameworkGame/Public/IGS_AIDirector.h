@@ -5,6 +5,7 @@
 #include "EIGS_TeamSideEnum.h"
 #include "IGS_CharactersTeamSidesHolder.h"
 #include "IGS_GeneralListenerRegisteredDelegate.h"
+#include "IGS_OnCharacterDiedDynamicSignatureDelegate.h"
 #include "IGS_OnCharacterRegisteredDynamicSignatureDelegate.h"
 #include "IGS_OnCharacterUnregisteredDynamicSignatureDelegate.h"
 #include "IGS_AIDirector.generated.h"
@@ -34,6 +35,9 @@ public:
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_OnCharacterUnregisteredDynamicSignature OnCharacterUnregisteredEvent;
+    
+    UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    FIGS_OnCharacterDiedDynamicSignature OnCharacterDiedEvent;
     
     UPROPERTY(BlueprintAssignable, BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FIGS_OnCharacterRegisteredDynamicSignature OnPlayerCharacterRegisteredEvent;

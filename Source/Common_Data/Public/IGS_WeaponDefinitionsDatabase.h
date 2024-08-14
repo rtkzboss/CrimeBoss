@@ -7,6 +7,8 @@
 #include "IGS_WeaponDefinitionsDatabase.generated.h"
 
 class UDataAsset;
+class UDataTable;
+class UIGS_WeaponDefinitionsDatabase;
 class UIGS_WeaponSkinData;
 class UMETA_WeaponInventoryObject;
 class UObject;
@@ -22,10 +24,16 @@ public:
     static void SetWeaponIcon(UPARAM(Ref) FIGS_WeaponDefinitionTableRow& inStructRef, TSoftObjectPtr<UIGS_WeaponSkinData> inWeaponSkin, TSoftObjectPtr<UTexture2D> inWeaponIcon);
     
     UFUNCTION(BlueprintCallable)
+    void ModAppendDataTable(UDataTable* inNewTable);
+    
+    UFUNCTION(BlueprintCallable)
     static FGameplayTag GetWiedableClassById(UObject* inWCO, const TSubclassOf<UMETA_WeaponInventoryObject>& inWeaponId);
     
     UFUNCTION(BlueprintCallable)
     static TSoftObjectPtr<UTexture2D> GetWeaponIcon(UObject* inWCO, TSubclassOf<UMETA_WeaponInventoryObject> inWeaponObject, TSoftObjectPtr<UDataAsset> inWeaponSkin);
+    
+    UFUNCTION(BlueprintCallable, BlueprintPure)
+    static UIGS_WeaponDefinitionsDatabase* GetWeaponDefinitionsDatabaseInstance(UObject* inWCO);
     
     UFUNCTION(BlueprintCallable)
     static FIGS_WeaponDefinitionTableRow GetDataWeaponByTagID(const UObject* inWCO, FGameplayTag inTagID, bool& outSucceeded);
@@ -38,6 +46,9 @@ public:
     
     UFUNCTION(BlueprintCallable)
     TArray<FIGS_WeaponDefinitionTableRow> GetDatabaseTableBP();
+    
+    UFUNCTION(BlueprintCallable)
+    static TArray<FIGS_WeaponDefinitionTableRow> GetAllGenerableWeaponsData(const UObject* inWCO, bool inIncludeDLCs);
     
 };
 

@@ -29,6 +29,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MeleeDamageMult, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData MeleeDamageMult;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ThrowableDamageMult, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData ThrowableDamageMult;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_ReloadSpeed, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData ReloadSpeed;
     
@@ -41,6 +44,18 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_LookSpeed, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData LookSpeed;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MagazineSizeMult, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData MagazineSizeMult;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AmmoReserveSizeMult, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData AmmoReserveSizeMult;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MagazineSizeAddition, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData MagazineSizeAddition;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AmmoReserveSizeAddition, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData AmmoReserveSizeAddition;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_HipFireSpread, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData HipFireSpread;
     
@@ -49,6 +64,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AimingStability, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData AimingStability;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_MeleeWeaponRangeMult, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData MeleeWeaponRangeMult;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_DetectionSpeed, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData DetectionSpeed;
@@ -77,6 +95,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_HealthRegenDelay, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData HealthRegenDelay;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_HealthRegenDelay, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData HealthRegenMultiplier;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_FlashEffectivity, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData FlashEffectivity;
     
@@ -95,11 +116,17 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AdditionalDownStateCount, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData AdditionalDownStateCount;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_Selfrevive, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData Selfrevive;
+    
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing="OnRep_Ability1Charges", meta=(AllowPrivateAccess=true))
     FGameplayAttributeData Ability1Charges;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AbilityRegenSpeedMult, meta=(AllowPrivateAccess=true))
     FGameplayAttributeData AbilityRegenSpeedMult;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, ReplicatedUsing=OnRep_AbilityDurationKillIncrease, meta=(AllowPrivateAccess=true))
+    FGameplayAttributeData AbilityDurationKillIncrease;
     
     UIGS_GASAttributeSetBase();
 
@@ -110,10 +137,16 @@ protected:
     void OnRep_WeaponDamageMult(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
+    void OnRep_ThrowableDamageMult(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_StunEffectivity(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_SprintSpeed(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_Selfrevive(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_ReviveSpeed(const FGameplayAttributeData& inOldValue);
@@ -125,10 +158,19 @@ protected:
     void OnRep_MoveSpeed(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
+    void OnRep_MeleeWeaponRangeMult(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_MeleeDamageReceived(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_MeleeDamageMult(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_MagazineSizeMult(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_MagazineSizeAddition(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_LookSpeed(const FGameplayAttributeData& inOldValue);
@@ -138,6 +180,9 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void OnRep_HipFireSpread(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_HealthRegenMultiplier(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_HealthRegenDelay(const FGameplayAttributeData& inOldValue);
@@ -179,6 +224,12 @@ protected:
     void OnRep_BeingRevivedSpeed(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
+    void OnRep_AmmoReserveSizeMult(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_AmmoReserveSizeAddition(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
     void OnRep_AimingStability(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
@@ -195,6 +246,9 @@ protected:
     
     UFUNCTION(BlueprintCallable)
     void OnRep_AbilityRegenSpeedMult(const FGameplayAttributeData& inOldValue);
+    
+    UFUNCTION(BlueprintCallable)
+    void OnRep_AbilityDurationKillIncrease(const FGameplayAttributeData& inOldValue);
     
     UFUNCTION(BlueprintCallable)
     void OnRep_Ability1Charges(const FGameplayAttributeData& inOldValue);

@@ -10,12 +10,14 @@
 #include "META_GlobalStatisticsData.h"
 #include "META_LastCitySetupConfigurationSaveData.h"
 #include "IGS_AchievementSaveData.h"
+#include "IGS_BonusGameData.h"
 #include "IGS_ChallengesSaveData.h"
 #include "IGS_CharacterMissionProgress.h"
 #include "IGS_NewsInfoRelatedSaveData.h"
 #include "IGS_PreviousSessionSaveData.h"
 #include "IGS_ProgressionSaveData.h"
 #include "IGS_QuickPlayPreferencesSaveData.h"
+#include "IGS_SaveData_Base.h"
 #include "IGS_SaveData_Version.h"
 #include "IGS_UnlockedCharacterSaveData.h"
 #include "META_ActiveCampaignConfiguration.h"
@@ -25,7 +27,7 @@
 class UIGS_ChainContractID;
 
 USTRUCT(BlueprintType)
-struct COMMON_SAVE_API FIGS_SaveData_Account {
+struct COMMON_SAVE_API FIGS_SaveData_Account : public FIGS_SaveData_Base {
     GENERATED_BODY()
 public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
@@ -128,9 +130,6 @@ public:
     FIGS_SaveData_Version SaveDataVersion;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
-    FString MetaPersistentId;
-    
-    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     bool bUserShouldAdvertise;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
@@ -150,6 +149,9 @@ public:
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
     TMap<EIGS_UserDifficulty, int32> CompletedCampaignCounts;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, SaveGame, meta=(AllowPrivateAccess=true))
+    FIGS_BonusGameData BonusGameData;
     
     FIGS_SaveData_Account();
 };

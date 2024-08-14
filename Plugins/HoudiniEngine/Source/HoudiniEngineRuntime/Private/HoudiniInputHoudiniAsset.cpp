@@ -3,10 +3,10 @@
 
 UHoudiniInputHoudiniAsset::UHoudiniInputHoudiniAsset() {
     (*this).AssetOutputIndex = -1;
-    (*this).Guid.A = -276171009;
-    (*this).Guid.B = 1105519752;
-    (*this).Guid.C = 1705343665;
-    (*this).Guid.D = -488669253;
+    (*this).Guid.A = 764944741;
+    (*this).Guid.B = 1210403929;
+    (*this).Guid.C = -2133391970;
+    (*this).Guid.D = -2014296486;
 }
 
 

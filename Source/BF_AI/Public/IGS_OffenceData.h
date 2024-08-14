@@ -2,6 +2,7 @@
 #include "CoreMinimal.h"
 #include "UObject/Object.h"
 #include "UObject/NoExportTypes.h"
+#include "GameplayTagContainer.h"
 #include "EIGS_CivOffenceReactionBehavior.h"
 #include "EIGS_OffenceReactionType.h"
 #include "IGS_OffenceData.generated.h"
@@ -29,7 +30,7 @@ public:
     int32 Strikes;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
-    FText BlameText;
+    FGameplayTag BlameTag;
     
     UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
     FText DialogueID;

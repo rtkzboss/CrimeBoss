@@ -52,6 +52,9 @@ public:
     UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
     UIGS_WidgetFocusableSpinBox* InputDeviceSpinBox;
     
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true, BindWidget))
+    UIGS_WidgetFocusableSpinBox* VoiceChatActivationModeSpinBox;
+    
     UIGS_SubMenuSoundSettings();
 
 };

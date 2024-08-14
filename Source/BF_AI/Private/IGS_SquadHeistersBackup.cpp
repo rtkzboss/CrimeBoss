@@ -4,9 +4,7 @@
 #include "EIGS_TeamSideEnum.h"
 
 AIGS_SquadHeistersBackup::AIGS_SquadHeistersBackup(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    (*this).DebugColor.B = 110;
-    (*this).DebugColor.G = 255;
-    (*this).DebugColor.R = 0;
+    (*this).DebugColor.G = 102;
 }
 
 

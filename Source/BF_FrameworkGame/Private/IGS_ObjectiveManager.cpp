@@ -35,6 +35,9 @@ void UIGS_ObjectiveManager::SetCustomObjectiveGoalValue(UObject* inWCO, int32 In
 void UIGS_ObjectiveManager::SetCustomObjectiveCurrentValue(UObject* inWCO, int32 InValue) {
 }
 
+void UIGS_ObjectiveManager::SetCleanExecutionState(EIGS_CleanExecutionState inState) {
+}
+
 void UIGS_ObjectiveManager::PauseTimerForTask(UObject* inWCO, FIGS_MissionTask inTask) {
 }
 
@@ -60,6 +63,9 @@ void UIGS_ObjectiveManager::OnRep_CustomObjectiveValues() {
 }
 
 void UIGS_ObjectiveManager::OnRep_CustomObjectiveProgressBar() {
+}
+
+void UIGS_ObjectiveManager::OnRep_CleanExecutionState(EIGS_CleanExecutionState inOldState) {
 }
 
 void UIGS_ObjectiveManager::OnRep_ActiveObjective(FIGS_MissionObjective inOldObjective) {
@@ -154,6 +160,7 @@ void UIGS_ObjectiveManager::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>
     DOREPLIFETIME(UIGS_ObjectiveManager, CustomObjectiveText);
     DOREPLIFETIME(UIGS_ObjectiveManager, CurrentCustomObjectiveValue);
     DOREPLIFETIME(UIGS_ObjectiveManager, GoalCustomObjectiveValue);
+    DOREPLIFETIME(UIGS_ObjectiveManager, CleanExecutionState);
     DOREPLIFETIME(UIGS_ObjectiveManager, ObjectiveComponents);
 }
 
