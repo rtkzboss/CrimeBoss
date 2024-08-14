@@ -22,6 +22,7 @@ AIGS_WeaponPickupActor::AIGS_WeaponPickupActor(const FObjectInitializer& ObjectI
     gen0.Empty();
     gen0.AddDefaulted(6);
     (*this).mR_IsVisible = true;
+    (*this).IsPickableByAI = true;
     (*this).PickupMeshComp = (UPrimitiveComponent*)RootComponent;
     (*this).SceneRoot = (USceneComponent*)RootComponent;
     (*this).SightModMesh->SetupAttachment((*this).RootComponent);

@@ -2,7 +2,7 @@
 
 UIGS_RenderingSettings::UIGS_RenderingSettings() {
     (*this).FullscreenModeValue = 1;
-    (*this).ResolutionValue = 23;
+    (*this).ResolutionValue = 25;
     (*this).ResolutionScaleValue = 1.000000000e+02f;
     (*this).AntiAliasingQualityValue = 3;
     (*this).MotionBlurScaleFPV = 1.000000000e+00f;
@@ -10,7 +10,10 @@ UIGS_RenderingSettings::UIGS_RenderingSettings() {
     (*this).BaseCameraFOVHorizontal = 1.200000000e+02f;
     (*this).ReflexMode = 2;
     (*this).ChosenDisplay = 1;
-    (*this).FramerateLimitInMenu = 60;
+    (*this).bSSREnabled = true;
+    (*this).bAOEnabled = true;
+    (*this).SharpenFilterStrength = 10;
+    (*this).FramerateLimitInMenu = 239;
     (*this).FramerateLimitOutOfFocus = 5;
     (*this).bCanChangeMonitorPositions = true;
     (*this).bSettingsValid = true;

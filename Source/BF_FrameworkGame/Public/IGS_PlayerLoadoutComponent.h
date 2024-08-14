@@ -47,6 +47,9 @@ protected:
     UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
     void Server_GivePerks(const TArray<FMETA_PerkDataToFPS>& inPerkIDs);
     
+    UFUNCTION(BlueprintCallable, Reliable, Server, WithValidation)
+    void Server_GiveMPPerks(const TArray<FMETA_PerkDataToFPS>& inPerkIDs);
+    
     UFUNCTION(BlueprintCallable)
     void Selfrevive();
     

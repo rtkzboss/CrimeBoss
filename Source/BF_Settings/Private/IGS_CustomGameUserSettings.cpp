@@ -17,10 +17,18 @@ UIGS_CustomGameUserSettings::UIGS_CustomGameUserSettings() {
     (*this).InputBindSettings = CreateDefaultSubobject<UIGS_InputBindSettings>(TEXT("InputBindSettings"));
     (*this).ResolutionSizeX = 2560;
     (*this).ResolutionSizeY = 1440;
-    (*this).LastUserConfirmedResolutionSizeX = 2560;
-    (*this).LastUserConfirmedResolutionSizeY = 1440;
+    (*this).LastUserConfirmedResolutionSizeX = 1920;
+    (*this).LastUserConfirmedResolutionSizeY = 1080;
     (*this).LastConfirmedFullscreenMode = 2;
     (*this).Version = 5;
+    (*this).LastCPUBenchmarkResult = 2.903607178e+02f;
+    (*this).LastGPUBenchmarkResult = 1.337404175e+03f;
+    auto& gen0 = (*this).LastCPUBenchmarkSteps;
+    gen0.Empty();
+    gen0.AddDefaulted(2);
+    auto& gen1 = (*this).LastGPUBenchmarkSteps;
+    gen1.Empty();
+    gen1.AddDefaulted(7);
 }
 
 UIGS_CustomGameUserSettings* UIGS_CustomGameUserSettings::Instance() {

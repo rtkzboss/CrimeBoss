@@ -16,6 +16,12 @@ bool UIGS_PlayerLoadoutComponent::Server_GivePerks_Validate(const TArray<FMETA_P
     return true;
 }
 
+void UIGS_PlayerLoadoutComponent::Server_GiveMPPerks_Implementation(const TArray<FMETA_PerkDataToFPS>& inPerkIDs) {
+}
+bool UIGS_PlayerLoadoutComponent::Server_GiveMPPerks_Validate(const TArray<FMETA_PerkDataToFPS>& inPerkIDs) {
+    return true;
+}
+
 void UIGS_PlayerLoadoutComponent::Selfrevive() {
 }
 

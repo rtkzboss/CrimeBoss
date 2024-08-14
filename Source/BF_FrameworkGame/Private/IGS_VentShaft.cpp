@@ -15,10 +15,10 @@ AIGS_VentShaft::AIGS_VentShaft(const FObjectInitializer& ObjectInitializer) : Su
     (*AActor::StaticClass()->FindPropertyByName("RemoteRole")->ContainerPtrToValuePtr<TEnumAsByte<ENetRole>>(&(*this), 0)) = ROLE_SimulatedProxy;
     (*this).NetDormancy = DORM_Initial;
     (*this).RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-    (*this).VentShaftEnterInteractiveComponent->SetupAttachment((*this).RootComponent);
     (*this).VentShaftExitInteractiveComponent->SetupAttachment((*this).RootComponent);
     (*this).BoxBlocker->SetupAttachment((*this).RootComponent);
     (*this).BoxTrigger->SetupAttachment((*this).RootComponent);
+    (*this).VentShaftEnterInteractiveComponent->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_VentShaft::OnTriggerEndOverlap(UPrimitiveComponent* inOverlappedComponent, AActor* inOtherActor, UPrimitiveComponent* inOtherComp, int32 inOtherBodyIndex) {

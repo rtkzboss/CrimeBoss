@@ -22,12 +22,12 @@ AIGS_MuzzleFlash::AIGS_MuzzleFlash(const FObjectInitializer& ObjectInitializer) 
     (*this).PrimaryActorTick.bCanEverTick = true;
     (*this).PrimaryActorTick.bStartWithTickEnabled = false;
     (*this).RootComponent = (USceneComponent*)MuzzleFlashRootComponent;
-    (*this).ParticleNiagaraComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
-    (*this).ParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
-    (*this).ParticleNiagaraTortillaComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
     (*this).ParticleTortillaComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
     (*this).LightComponent3PV->SetupAttachment((*this).MuzzleFlashRootComponent);
     (*this).LightComponentFPV->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).ParticleNiagaraComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).ParticleComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
+    (*this).ParticleNiagaraTortillaComponent->SetupAttachment((*this).MuzzleFlashRootComponent);
 }
 
 void AIGS_MuzzleFlash::StopMuzzleFlash_Implementation() {

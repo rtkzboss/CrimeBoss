@@ -4,7 +4,8 @@
 #include "EIGS_TeamSideEnum.h"
 
 AIGS_SquadShielder::AIGS_SquadShielder(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
-    (*this).DebugColor.G = 137;
+    (*this).DebugColor.G = 0;
+    (*this).DebugColor.R = 199;
 }
 
 

@@ -52,8 +52,6 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     (*this).Basher = CreateDefaultSubobject<UIGS_BasherComponent>(TEXT("Basher"));
     (*this).VirtualSightSocketName = TEXT("VirtualSight");
     (*this).PrimaryActorTick.TickGroup = TG_DuringPhysics;
-    (*this).SightModMesh->SetupAttachment((*this).RootComponent);
-    (*this).DynamicScopeMesh->SetupAttachment((*this).RootComponent);
     (*this).VisibilityModMesh->SetupAttachment((*this).RootComponent);
     (*this).BarrelModMesh->SetupAttachment((*this).RootComponent);
     (*this).GripModMesh->SetupAttachment((*this).RootComponent);
@@ -70,6 +68,8 @@ AIGS_WeaponBase::AIGS_WeaponBase(const FObjectInitializer& ObjectInitializer) : 
     (*this).MuzzleFlashLight3PV->SetupAttachment((*this).MuzzleFlashRootComponent);
     (*this).MuzzleFlashLightFPV->SetupAttachment((*this).MuzzleFlashRootComponent);
     (*this).MuzzleFlashLightFPVSecondary->SetupAttachment((*this).RootComponent);
+    (*this).SightModMesh->SetupAttachment((*this).RootComponent);
+    (*this).DynamicScopeMesh->SetupAttachment((*this).RootComponent);
 }
 
 void AIGS_WeaponBase::StopAttack() {

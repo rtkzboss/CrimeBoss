@@ -265,6 +265,9 @@ public:
     UFUNCTION(BlueprintCallable)
     void UnarmedMeleeAttack();
     
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void TriggerMagazineSuspicion();
+    
     UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
     void SwitchToDeathCamera();
     

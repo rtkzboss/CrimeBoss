@@ -87,6 +87,7 @@ void AIGS_PlayerCharacter::UpdateSpectatingCam(bool inIsSpectating) {
 void AIGS_PlayerCharacter::UnarmedMeleeAttack() {
 }
 
+
 void AIGS_PlayerCharacter::SwitchToDeathCamera_Implementation() {
 }
 

@@ -6,8 +6,7 @@
 
 AIGS_SquadHeisters::AIGS_SquadHeisters(const FObjectInitializer& ObjectInitializer) : Super(ObjectInitializer) {
     (*this).SquadHeistersEventWatchComponent = CreateDefaultSubobject<UIGS_SquadHeistersEventWatchComponent>(TEXT("SquadHeistersEventWatchComponent"));
-    (*this).DebugColor.G = 0;
-    (*this).DebugColor.R = 180;
+    (*this).DebugColor.G = 200;
     (*this).PrimaryActorTick.bCanEverTick = true;
 }
 

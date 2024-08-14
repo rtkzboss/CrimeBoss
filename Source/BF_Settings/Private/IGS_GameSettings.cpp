@@ -2,9 +2,7 @@
 
 UIGS_GameSettings::UIGS_GameSettings() {
     (*this).Language = TEXT("en-US");
-    (*this).bShowPing = true;
     (*this).bUseAltDollarDragon = true;
-    (*this).bHalloweenMode = true;
     (*this).MenuBackgroundIndex = -1;
     (*this).bTutorialsEnabled = true;
     (*this).bFriendlyOutline = true;

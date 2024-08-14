@@ -36,6 +36,8 @@ public class CrimeBossEditorTarget : TargetRules {
 			"Payback",
 			"PaybackDefinitions",
 			"PS5AudioFeatures",
+			"StreamlineBlueprint",
+			"StreamlineRHI",
 		});
 	}
 }

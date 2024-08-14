@@ -9,7 +9,7 @@ AIGS_SquadBase::AIGS_SquadBase(const FObjectInitializer& ObjectInitializer) : Su
     (*this).BlackboardComponent = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComponent"));
     (*this).TeamSide = EIGS_TeamSideEnum::TS_Unknown;
     (*this).DebugColor.B = 255;
-    (*this).DebugColor.G = 153;
+    (*this).DebugColor.G = 207;
     (*this).DebugColor.A = 255;
 }
 
